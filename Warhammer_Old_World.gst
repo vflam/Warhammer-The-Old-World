@@ -169,6 +169,17 @@
         <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">2xS4 AP2</characteristic>
       </characteristics>
     </profile>
+    <profile name="Stubborn" hidden="false" id="e351-bbd6-f470-b604" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50"/>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Full Plate Armour" hidden="false" id="9a1d-38b0-7d7-7552" typeId="c14f-740-8107-d34b" typeName="Armour">
+      <characteristics>
+        <characteristic name="Armour" typeId="adcd-c649-e6fc-a9f6">+3 Armour Save</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -242,6 +253,15 @@
       <infoLinks>
         <infoLink name="Spear" hidden="false" type="profile" id="1c94-5f0a-c42a-26aa" targetId="a344-4142-98e7-c06b"/>
       </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Full Plate Armour" hidden="false" id="2505-873d-1655-3b0b" collective="true">
+      <infoLinks>
+        <infoLink name="Full Plate Armour" hidden="false" type="profile" id="5e28-a07e-24ed-aed0" targetId="9a1d-38b0-7d7-7552"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="12e6-599e-626f-e64"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e78c-1462-8bdf-29fd"/>
+      </constraints>
     </selectionEntry>
   </sharedSelectionEntries>
   <selectionEntries>
