@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="18" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true">
+<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="19" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -137,6 +137,7 @@
     <profile name="Close Order" hidden="false" id="883e-e1b1-4fe9-5912" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Close Orders description</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
       </characteristics>
     </profile>
     <profile name="Crossbow" hidden="false" id="fca0-3c32-72da-53b9" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
@@ -179,6 +180,74 @@
     <profile name="Full Plate Armour" hidden="false" id="9a1d-38b0-7d7-7552" typeId="c14f-740-8107-d34b" typeName="Armour">
       <characteristics>
         <characteristic name="Armour" typeId="adcd-c649-e6fc-a9f6">+3 Armour Save</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Shieldwall" hidden="false" id="32f7-8e30-3fe8-b11e" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Once per game, during a turn in which it was charged, a unit with this special rule that is arrayed in a Close Order formation, and that is equipped with and chooses to use shields,may Give Ground rather than Fall Back in Good Order.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Handgun" hidden="false" id="4035-287b-e117-6b9b" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">24&quot; S4 AP-1 Armour Bane(1), Ponderous</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Veteran" hidden="false" id="4022-c403-b083-ba83" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">If the majority of the models in a unit have this special rule, the unit may re-roll any failed Leadership test.
+
+
+Note that a Break test is not a Leadership test.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Move Through Cover" hidden="false" id="e83e-f127-1904-3858" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Models with this special rule do not suffer any modifier to their Movement characteristic for moving through difficult or dangerous terrain. In addition, a model with this special rule may re-roll any rolls of 1 when making Dangerous Terrain tests.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Open Order" hidden="false" id="5b67-8535-146c-7cea" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Open Order</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Scouts" hidden="false" id="fe5e-8838-7fbd-a7ec" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Units with this special rule may be deployed after all other units from both armies. They can be deployed anywhere on the battlefield that is more than 12&quot; away from an enemy model. If deployed in this way, Scouts cannot declare a charge during their first turn.
+
+
+If both armies contain Scouts, a roll-off should determine which player deploys Scouts first. The player then alternate deploying their scouting units one at a time, starting with the player who won the roll-off.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Skirmishers" hidden="false" id="59a5-7eca-ee35-96ac" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A unit consisting of models with this special rule may adopt a Skirmish formation.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Detachment" hidden="false" id="559-d4c6-b2e8-500f" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A unit with this special rule can be fielded as a detachment.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Ambushers" hidden="false" id="8c0b-6fe6-dc06-512" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A unit with this special rule may be held on reserve rather than be deployed on the start of the game. From the beginning of round two onwards roll a D6 during each of your Start of Turn sub phases for each unit of Ambushers in your army that is held on reserve. On a roll of 1-3 the unit is delayed ...????</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Vanguard" hidden="false" id="691e-10ec-4f7c-a2c4" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">After deployment units with this special rule may make a Vanguard move. A unit making a Vanguard move moves as described on the Basic Movement rules. It may manoeuvre normally but cannot march.
+
+
+If both armies contain Vanguard units a roll off determines who moves first. The players then alternate moving their Vanguard units one at a time starting with the player who won the roll-off.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
       </characteristics>
     </profile>
   </sharedProfiles>
@@ -262,6 +331,15 @@
       <constraints>
         <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="12e6-599e-626f-e64"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e78c-1462-8bdf-29fd"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Handgun" hidden="false" id="e2ed-a3fd-dee5-3e9f" collective="true">
+      <infoLinks>
+        <infoLink name="Handgun" hidden="false" type="profile" id="53c8-39c-1947-edf7" targetId="4035-287b-e117-6b9b"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="94d3-f30-8056-9665"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4d0a-3a4a-44b7-6d6"/>
       </constraints>
     </selectionEntry>
   </sharedSelectionEntries>
