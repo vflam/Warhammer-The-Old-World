@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer Old World" battleScribeVersion="2.03" revision="14" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true">
+<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer Old World" battleScribeVersion="2.03" revision="17" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -12,6 +12,7 @@
     <categoryEntry name="War Machine" hidden="false" id="9fcf-19ad-fe84-9c61"/>
     <categoryEntry name="50PTSLIMIT" hidden="true" id="db34-5941-b4e0-4ca2"/>
     <categoryEntry name="Configuration" hidden="false" id="48b5-1583-6fa3-acda"/>
+    <categoryEntry name="Heavy infantry" hidden="false" id="ca7e-d004-ccde-caf3"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
@@ -158,9 +159,19 @@
         <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
       </characteristics>
     </profile>
+    <profile name="Pistol" hidden="false" id="4c62-cdd4-4e0c-4265" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">S4 AP2</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Brace of pistols" hidden="false" id="cdb0-f5d2-68e0-205f" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">2xS4 AP2</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
-    <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
+    <selectionEntry type="upgrade" import="true" name="Hand weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
       <infoLinks>
         <infoLink name="Hand Weapon" hidden="false" type="profile" id="c4fd-6287-4ab1-bb65" targetId="ef45-edcd-18bf-fe1d"/>
       </infoLinks>
@@ -169,7 +180,7 @@
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9935-ed77-1e72-9842-max"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Great Weapon" hidden="false" id="2283-26e9-76c3-6048" collective="true">
+    <selectionEntry type="upgrade" import="true" name="Great weapon" hidden="false" id="2283-26e9-76c3-6048" collective="true">
       <infoLinks>
         <infoLink name="Great Weapon" hidden="false" type="profile" id="4465-7e60-819e-a74f" targetId="88e3-38f0-92d5-b616"/>
       </infoLinks>
@@ -196,7 +207,7 @@
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="43c1-42a1-9a0a-326e-max"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Heavy Armour" hidden="false" id="62fb-f89d-afc-1cf1" collective="true">
+    <selectionEntry type="upgrade" import="true" name="Heavy armour" hidden="false" id="62fb-f89d-afc-1cf1" collective="true">
       <infoLinks>
         <infoLink name="Heavy Armour" hidden="false" type="profile" id="38dd-cfd4-ea64-fa1b" targetId="c56e-8d1b-bb4-de99"/>
       </infoLinks>
