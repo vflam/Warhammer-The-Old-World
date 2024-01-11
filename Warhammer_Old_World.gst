@@ -250,6 +250,18 @@ If both armies contain Vanguard units a roll off determines who moves first. The
         <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
       </characteristics>
     </profile>
+    <profile name="Warband" hidden="false" id="505f-e12d-2e36-31d0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Unless it is fleeing, a Warband gains ...</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Impetuous" hidden="false" id="b664-8530-a988-7ba9" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">If during the Declare Charge &amp; Charge Reaction sub-phase of its turn, a unit that includes one or more Impetuous models is able to declare charge, roll a D6. On a roll of 1-3, the unit must declare a charge. On a roll of 4+, the unit may act as normal</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
