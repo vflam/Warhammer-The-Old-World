@@ -73,6 +73,11 @@
         <characteristicType id="adcd-c649-e6fc-a9f6" name="Armour"/>
       </characteristicTypes>
     </profileType>
+    <profileType name="Banner Enchants" hidden="false" id="60d4-a840-4aac-114c">
+      <characteristicTypes>
+        <characteristicType id="968d-b32a-6bdb-a394" name="Banner Enchant"/>
+      </characteristicTypes>
+    </profileType>
   </profileTypes>
   <sharedProfiles>
     <profile name="Base (30x60)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="3a8b-1dd5-77fb-fdc3">
@@ -416,6 +421,24 @@ If both armies contain Vanguard units a roll off determines who moves first. The
       <infoLinks>
         <infoLink name="Additional Hand Weapon" hidden="false" type="profile" id="1a2d-de59-94a9-b97d" targetId="300e-9667-fc8c-c763"/>
       </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Pistol" hidden="false" id="d3c7-5222-61e8-9920">
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="618f-5e83-63ef-f591-min"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="618f-5e83-63ef-f591-max"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Pistol" hidden="false" type="profile" id="8882-976e-6ce2-17a0" targetId="4c62-cdd4-4e0c-4265"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Brace of Pistols" hidden="false" id="d8bb-85b0-3575-6029">
+      <infoLinks>
+        <infoLink name="Brace of pistols" hidden="false" type="profile" id="da9a-ae92-f6bf-6372" targetId="cdb0-f5d2-68e0-205f"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="bb24-f518-d872-575c-min"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bb24-f518-d872-575c-max"/>
+      </constraints>
     </selectionEntry>
   </sharedSelectionEntries>
   <selectionEntries>
