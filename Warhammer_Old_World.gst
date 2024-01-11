@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="21" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true">
+<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="22" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -319,7 +319,6 @@ If both armies contain Vanguard units a roll off determines who moves first. The
         <infoLink name="Shield" hidden="false" type="profile" id="5300-a336-be3f-860e" targetId="8997-c74d-3a8d-ecf9"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9cb6-6690-ad82-be24-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9cb6-6690-ad82-be24-max"/>
       </constraints>
     </selectionEntry>
@@ -361,7 +360,6 @@ If both armies contain Vanguard units a roll off determines who moves first. The
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Throwing Spear" hidden="false" id="9113-238a-ef75-aa23" collective="true">
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2b55-9fe1-4d8d-e594-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2b55-9fe1-4d8d-e594-max"/>
       </constraints>
       <infoLinks>
@@ -397,7 +395,6 @@ If both armies contain Vanguard units a roll off determines who moves first. The
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Thrusting Spear" hidden="false" id="99d2-7f59-5c14-3bf7" collective="true">
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6ca-d9c3-ab47-ba21"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="386b-19fa-4c1c-3d68"/>
       </constraints>
       <infoLinks>
@@ -406,7 +403,6 @@ If both armies contain Vanguard units a roll off determines who moves first. The
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Warbow" hidden="false" id="244d-ff04-bdc1-56b8" collective="true">
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="80b8-e42f-87a1-fc23"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f0af-c3d3-876d-5263"/>
       </constraints>
       <infoLinks>
@@ -415,7 +411,6 @@ If both armies contain Vanguard units a roll off determines who moves first. The
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Additional Hand Weapon" hidden="false" id="8943-3e16-db2a-b7f3" collective="true">
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ec88-a021-2b30-836"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="12df-72d-f5b3-d569"/>
       </constraints>
       <infoLinks>
