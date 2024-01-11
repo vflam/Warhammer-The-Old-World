@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="19" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true">
+<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="20" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -7,7 +7,7 @@
     <categoryEntry name="Rare" hidden="false" id="2bfe-5863-46fe-d284"/>
     <categoryEntry name="Mercenaries" hidden="false" id="5b84-2c3c-869d-3522"/>
     <categoryEntry name="CHAMPION" hidden="true" id="83a1-945c-564c-84af"/>
-    <categoryEntry name="Infantry" hidden="false" id="f3f7-ca43-674e-115f"/>
+    <categoryEntry name="Regular Infantry" hidden="false" id="f3f7-ca43-674e-115f"/>
     <categoryEntry name="Cavalry" hidden="false" id="36e4-45e0-c904-55d1"/>
     <categoryEntry name="War Machine" hidden="false" id="9fcf-19ad-fe84-9c61"/>
     <categoryEntry name="50PTSLIMIT" hidden="true" id="db34-5941-b4e0-4ca2"/>
