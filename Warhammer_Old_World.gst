@@ -142,7 +142,7 @@
     </profile>
     <profile name="Close Order" hidden="false" id="883e-e1b1-4fe9-5912" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Close Orders description</characteristic>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A unit consisting of models with this special rule may adopt a Close Order formation.</characteristic>
         <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
       </characteristics>
     </profile>
@@ -151,14 +151,21 @@
         <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">Crossbow desc...</characteristic>
       </characteristics>
     </profile>
-    <profile name="Hatred" hidden="false" id="f4b3-18af-16bf-78dd" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+    <profile name="Hatred (X)" hidden="false" id="f4b3-18af-16bf-78dd" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50"/>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A model with this special rule may re-roll any failed rolls To Hit made against a hatred enemy during the first round of combat.
+
+
+Which enemies are hated varies from model to model and will be shown in brackets after the name of this special rule (X). Some models hate &apos;all enemies&apos; meaning they hate all enemy models equally.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
       </characteristics>
     </profile>
     <profile name="Magic Resistance" hidden="false" id="90ed-c9be-a611-79cc" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Description</characteristic>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">The Casting roll of any enemy spell (including Bound Spells) that targets a unit that includes one ore more models with this special rule suffers a modifier, as shown in brackets after the name of this special rule (-X).
+
+
+Note that this special rule is not cumulative. If two or more models in a unit have this special rule, use the highest modifier.</characteristic>
         <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
       </characteristics>
     </profile>
@@ -259,7 +266,7 @@ If both armies contain Vanguard units a roll off determines who moves first. The
     </profile>
     <profile name="Impetuous" hidden="false" id="b664-8530-a988-7ba9" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">If during the Declare Charge &amp; Charge Reaction sub-phase of its turn, a unit that includes one or more Impetuous models is able to declare charge, roll a D6. On a roll of 1-3, the unit must declare a charge. On a roll of 4+, the unit may act as normal</characteristic>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">If during the Declare Charge &amp; Charge Reaction sub-phase of its turn, a unit that includes one or more Impetuous models is able to declare charge, roll a D6. On a roll of 1-3, the unit must declare a charge. On a roll of 4+, the unit may act as normal.</characteristic>
         <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
       </characteristics>
     </profile>
@@ -290,7 +297,243 @@ If both armies contain Vanguard units a roll off determines who moves first. The
     </profile>
     <profile name="Frenzy" hidden="false" id="3b0c-a477-8823-3a25" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A frenzied model has a +1 modifier to the Attacks characteristic. ..</characteristic>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A Frenzied model has a +1 modifier to its Attacks characteristic. This modifier does not apply to the model&apos;s mount (i.e. the mount of a cavalry model), to the beasts that drag it (in the case of a chariot), or to its rider (in the case of a monster).
+In addition:
+- If the majority of the models in a unit are Frenzied, the unit automatically passes any Fear, Panic or Terror tests is required to make.
+- If a unit that includes one or more Frenzied models is able to declare a charge during the Declare Charges &amp; Charge Reactions sub-phase of its turn, it must do so.
+- If the majority of the models in a unit are Frenzied, it cannot choose to Flee to a charge reaction, nor can it ever choose to make a Restrain test.
+Loosing Frenzy: Unlike other special rules Frenzy can be lost during a game. Any model that loses a round of combat will immediately lose this special rule.
+
+</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Armour Bane (X)" hidden="false" id="2af0-975f-bb14-8b8f" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">If a model with this special rule rolls a natural 6 when making a roll To Wound, the Armour Piercing characteristic of its weapon is improved by the amount shown in brackets after the name of this special rule (X).
+
+
+For example, if a natural 6 is rolled when rolling To Wound with a weapon that has an AP of &quot;-&quot; and the Armour Bane (1) special rule its AP counts as being -1 when making an Armour Save roll against that wound.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Armour Hide (X)" hidden="false" id="5450-cbf1-3e74-254a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">The hide of some creatures forms natural armour and improves their armour value ( and that of their rider). By how much armour value is improved varies from model to model, as shown in brackets after the name of this special rule (X).
+
+
+Note that a model that wears no armour is considerer to have an armour value of 7+ for the purposes of rules that improve armour value.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Breath Weapon" hidden="false" id="e049-8b4d-23e9-7505" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A model with a Breath Weapon can use it once per round, during the Shooting phase of its turn. Place the ????</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Counter Charge" hidden="false" id="5186-798d-69d-6545" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">This special rule can only be used by units that consists entirely of models with this special rule. When a unit with this special rule is charged in its front arc by an enemy unit whose troop type is &apos;cavalry&apos;, &apos;chariot&apos; or &apos;monster&apos;, it may declare a &apos;Counter Charge&apos; charge reaction.
+
+
+Counter charge: The unit surges forward to meet the enemy charge. Measure the distance between the two units. If the distance is less than the Movement characteristic of the charging unit, the charged unit has not enough time to meet the enemy charge and must either Hold of Flee instead.
+
+
+Otherwise, pivot the unit about its center so that it is facing directly towards the centre of the charging enemy unit. After pivoting, the unit moves D3+1&quot; directly towards the enemy unit. Both units are considered to have charged during this turn.
+
+
+Fleeing units and units already engaged in combat when charged cannot Counter Charge. A unit can only Counter Charge in response to one charge per turn, even if charged by multiple units. Once all charges have been declared, the inactive player can choose which charging unit to Counter Charge. The unit will then Hold against the other charging units.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Cumbersome" hidden="false" id="9db1-2d1d-b6dd-6ff1" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Weapons with this special rule cannot be used when making a Stand &amp; Shoot charge reaction.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Dragged Along" hidden="false" id="a042-c2f5-ebcb-2bab" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A model with this special rule that begins its movement within 1&quot; of a friendly unit whose troop type is &apos;infantry&apos; that is not fleeing and that contains ten or more models may replace its Movement characteristic with that of the unit.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Drilled" hidden="false" id="1f64-3ddc-db58-12fb" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Unless it is fleeing, a Drilled unit may perform a free redraw the ranks manoeuvre immediately before moving. Once this manoeuvre is complete, the unit moves as normal. In addition a Drilled unit can march whilst within 8&quot; of an enemy unit without first having to make a Leadership test.
+
+
+Note that any character that joins a Drilled unit is considered to be Drilled as well.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Ethereal" hidden="false" id="6561-8029-dac3-162" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Ethereal creatures treat all terrain as open ground for the purpose of movement. They cannot end their movement inside impassible terrain, though they can pass through it. In addition, Ethereal creatures can only be wounded by Magical attacks. Characters that are not Ethereal cannot join units that are, and vice versa.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Evasive" hidden="false" id="9fff-999f-6e96-e149" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Once per turn, when the unit is declared the target during the enemy Shooting phase, it may choose to Fall Back in Good Order and will flee directly away form the enemy unit shooting at it. Once this unit has completed its move, the enemy unit may continue with its shooting as declared.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Extra Attacks (+X)" hidden="false" id="23c7-1aeb-5f02-c9e1" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A model with this special rule has a modifier to its Attacks characteristic, as shown in the brackets after the name of this special rule (+X). If this modifier is determined by the roll of a dice, roll when the model&apos;s combat is chosen during any Choose &amp; Fight sub phase.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Fast Cavalry" hidden="false" id="df-a39-e62-1c57" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">If all of the models (including Characters) within a unit arrayed in an Open Order formation have this special rule, the unit may perform its Quick Turn even if marched.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Fear" hidden="false" id="5ec9-a98-d8c5-e18b" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Models with this special rule cannot flee.
+
+
+If a unit whishes to declare a charge against an enemy unit that both causes Fear and has a higher Unit Strength, it must first make a Leadership test. If this test is failed, the unit cannot charge. It does not move and is considered to have make a failed charge. If this test is passed, the unit can charge as normal.
+
+
+If a unit is engaged with an enemy unit that both causes Fear and has a higher Unit Strength when its combat is chosen during any Choose &amp; Fight Combat sub-phase, it must make a Leadership test. If this test is failed, any models in the unit that direct their attacks against the Fear-causing enemy suffer a -1 modifier to their rolls To Hit.
+
+A unit only needs to make one Fear test per turn. Models that cause Fear are immune to Fear. A unit that does not cause Fear does not become immune to Fear when joined by a character that does.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Feigned Flight" hidden="false" id="eea7-89d9-a996-403c" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">If this unit chooses to Flee (or Fire &amp; Flee) as a charge reaction, it automatically rallies at the end of its move.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Fight In Extra Rank" hidden="false" id="b49e-b47f-fb38-596e" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A model with this special rule may make a supporting attack.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Fire &amp; Flee" hidden="false" id="1a06-31aa-cbfe-1a5" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A unit with this special rule that is also armed with missile weapons may declare that it will &apos;Fire &amp; Flee&apos; as a charge reaction.
+
+
+Fire and Flee: The unit launches a volley of weapons fire before turning to flee form the enemy. If a unit with this special rule is armed with missile weapons and can draw line of sight to the charging unit, it may declare that it will Fire &amp; Flee. The unit will Stand &amp; Shoot before turning tail and fleeing from the charge. However, due to the time spent shooting at the charging foe, when making its Flee roll the unit rolls two D6 and discards the lowest result. If both dice roll the same result, discard either.
+
+
+Note that, if the distance between this unit and the charging unit is less than the Movement characteristic of the charging unit, this unit must either Hold or Flee.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="First Charge" hidden="false" id="785a-2886-af42-dce9" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">If this unit&apos;s first charge of the game is successful (i.e. if the unit makes contact with the charge target), the charge target becomes Disrupted unit the end of the Combat phase of that turn.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Flaming Attacks" hidden="false" id="e45d-952-f679-ae2c" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Any attack made of hits caused by a model with this special rule or made using a weapon or spell with this special rule, is a &quot;Flaming&quot; attack. In addition, a model with this special rule causes Fear to models which troop type is &apos;war beasts&apos; or &apos;swarms&apos;.
+
+
+Unless otherwise stated, a model with this special rule makes Flaming attacks both when shooting and in combat (though any spells cast by the model are unaffected, as are any attacks made with magic weapons they might be weilding).</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Flammable" hidden="false" id="8f64-6d4c-466b-1b94" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A model with this special rule cannot make a Regeneration save against a wound caused by a Flaming attack.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Fly (X)" hidden="false" id="c557-6102-9a35-bbcd" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A model with this special rule can Fly. Models that can Fly can choose wither to move normally on the ground (using their Movement characteristic), or to move by flying. How many inches a model can Fly varies from model to model, and will be shown in brackets after the name of this special rule (X). Models tat choose to move by flying:
+
+- May move as normal (i.e. they may charge, march and manoeuvre as if moving on the ground), except that they are able to pass freely above other models, units and terrain features without any penalty, and they can march whilst within 8&quot; of an enemy unit without first having to make a Leadership test.
+
+
+- May end their movement in terrain, but will suffer its effects if they do. They cannot end their movement &apos;on top&apos; of impassable terrain or another unit, or within 1&quot; of an enemy unit.
+
+
+Models that can Fly must begin and end all their movement on the ground. A character with this special rule cannot join a unit without this special rule, and vice versa.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Furious Charge" hidden="false" id="eaca-69a2-8b6a-81c6" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">During a turn in which it made a charge move of 3&quot; or more, a model with this special rule gains a +1 modifier to its Attacks characteristic.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Horde" hidden="false" id="9cba-89a5-1796-5fe4" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A unit with this special rule may increase the maximum Rank Bonus it can claim (as determined by its troop type) by one.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Ignores Cover" hidden="false" id="a401-372d-446e-d27c" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">If a model making a shooting attack has this special rule, it ignores any To Hit modifiers caused by partial or full cover.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Immune to Psychology" hidden="false" id="93d9-c75b-f655-30ac" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">If the majority of the models in a unit are Immune to Psychology, the unit automatically passes any Fear, Panic or Terror tests it is required to make. However, if the majority of the models in a unit have this special rule, the unit cannot choose to Flee as a charge reaction.
+
+
+Note that this special rule does not make a unit immune to any test make against Leadership not stated here.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Killing Blow" hidden="false" id="860b-e13a-4710-9bf0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">If a model with this special rule rolls a natural 6 when making a roll To Wound for an attack made in combat, it ha struck a &apos;Killing Blow&apos;. Enemy models whose troop type is &apos;infantry&apos; or &apos;cavalry&apos; are not permitted an armour save or Regeneration save against a Killing Blow (Ward saves can be attempted as normal). If an enemy model whose troop type is &apos;infantry&apos; or &apos;cavalry&apos; suffers an unsaved wound from Killing Blow, it looses all of its remaining Wounds.
+
+
+Note that if an attack wounds automatically this special rule cannot be used/</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Levies" hidden="false" id="8cc3-d6f5-da17-6600" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Models with this special rule cannot use Inspiring Presence rule of the army&apos;s general nor the Hold your Ground rule of a Battle Standard. However, little is expected from Levies in battle. Therefore units that do not have this special rule are not required to make a Panic test when a friendly unit of Levies Breaks and flees from combat.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Loner" hidden="false" id="2ecd-c6b3-bd8b-864b" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A character with this special rule cannot be your General and cannot join a unit without this special rule. A unit with this special rule cannot be joined by a character without this special rule.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Magical Attacks" hidden="false" id="2125-6aa2-f782-42bf" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Any attack made or hit caused by a mode with this special rule, or made using a weapon with this special rule, is a &apos;Magical&apos; attack.
+
+
+Note that all spells are considered to have this special rule, as are any hits caused by magic items.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Mercenaries" hidden="false" id="4d1b-2617-ebdc-4f4d" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">Often, an army can include certain units drawn from another army list as mercenaries. Any such units included in your army gain this special rule. Mercenaries cannot use the Inspiring Presence rule of the army&apos;s general nor the Hold the Ground rule of a Battle Standard. Mercenaries cannot be joined by characters drawn form another army list.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
+    <profile name="Monster Handlers" hidden="false" id="1084-a4e9-79f-3462" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">A monster with this special rule is accompanied by one or more models representing its handlers. During deployment, position these models anywhere that is adjacent to, an in base contact with, the monster. If the handlers are found to be blocking movement or line of sight, simply move them aside.
+
+
+In combat, each handler adds its attacks to those of the monster. If the monster suffers an unsaved wound, roll a D6. On a roll of 1-4 the monster looses a Wound, but on a roll of 5+ a handler model suffers the wound instead. If the monster is removed from play, so are its handlers.</characteristic>
         <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
       </characteristics>
     </profile>
