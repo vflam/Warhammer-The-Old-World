@@ -722,6 +722,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9935-ed77-1e72-9842-max"/>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="221a-a41b-eb43-bf1b"/>
       </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Great weapon" hidden="false" id="2283-26e9-76c3-6048" collective="true">
@@ -730,6 +731,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e03-7cfb-4459-9b9a-max"/>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="660c-cef6-ab09-49fc"/>
       </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Shield" hidden="false" id="6192-f9f1-5d53-2042" collective="true">
