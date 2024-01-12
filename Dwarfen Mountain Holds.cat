@@ -228,6 +228,22 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
         <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">???</characteristic>
       </characteristics>
     </profile>
+    <profile name="Blasting Charges" hidden="false" id="c4cd-20ce-ab7a-199e" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">6&quot; S3 AP-1 Armour Bane(1), Flaming Attacks, Quick Shot</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Steam Drill" hidden="false" id="1394-5f7d-15ff-3370" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">S+3 AP-3 Furious Charge, Requires Two Hands, Strike Last</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Slayer" hidden="false" id="ea84-d53c-ef3b-57e8" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Special Rule" typeId="9f84-4221-785a-db50">When this model makes a toll To Wound, a roll of 4+ is always a wound regardless of the target&apos;s Toughness.</characteristic>
+        <characteristic name="Parameter" typeId="fe1a-e33f-651a-9cb8"/>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup name="Weapon Runes" hidden="false" id="5b6d-7452-75db-8b09">
@@ -481,6 +497,45 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
                   </modifiers>
                 </infoLink>
               </infoLinks>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Ranged Weapon" hidden="false" id="3060-5895-9bf3-484c" noAlphabeticalSort="false">
+                  <selectionEntries>
+                    <selectionEntry type="upgrade" import="true" name="Pistol" hidden="false" id="692-efac-ee00-7ba3" collective="true">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e8f3-55c4-4cdd-6366"/>
+                      </constraints>
+                      <costs>
+                        <cost name="pts" typeId="points" value="0"/>
+                      </costs>
+                      <entryLinks>
+                        <entryLink import="true" name="Pistol" hidden="false" type="selectionEntry" id="a675-4865-5452-3cce" targetId="d3c7-5222-61e8-9920"/>
+                      </entryLinks>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Brace of Pistols" hidden="false" id="9ade-f80c-9522-4732" collective="true">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="77e5-389f-c0e7-c52a"/>
+                      </constraints>
+                      <costs>
+                        <cost name="pts" typeId="points" value="5"/>
+                      </costs>
+                      <entryLinks>
+                        <entryLink import="true" name="Brace of Pistols" hidden="false" type="selectionEntry" id="b47f-a1b1-c32-e8f7" targetId="d8bb-85b0-3575-6029"/>
+                      </entryLinks>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Crossbow" hidden="false" id="ea79-52b-de65-dcb1" collective="true">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6195-c983-c72e-2068"/>
+                      </constraints>
+                      <entryLinks>
+                        <entryLink import="true" name="Crossbow" hidden="false" type="selectionEntry" id="8c99-21a8-3af3-5c81" targetId="c3af-77b3-b2d5-20db"/>
+                      </entryLinks>
+                    </selectionEntry>
+                  </selectionEntries>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8f89-e0b4-1b40-f95c"/>
+                  </constraints>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
             </selectionEntry>
           </selectionEntries>
           <entryLinks>
@@ -878,6 +933,7 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
                 <infoLink name="Ironbreaker" hidden="false" type="profile" id="5792-a378-9260-be2b" targetId="1d0d-1cf7-9340-5a6f">
                   <modifiers>
                     <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
+                    <modifier type="set" value="Ironbeard" field="name"/>
                   </modifiers>
                 </infoLink>
               </infoLinks>
@@ -890,9 +946,6 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
               <costs>
                 <cost name="pts" typeId="points" value="7"/>
               </costs>
-              <infoLinks>
-                <infoLink name="Ironbreaker" hidden="false" type="profile" id="2e28-da9d-c286-47a6" targetId="1d0d-1cf7-9340-5a6f"/>
-              </infoLinks>
               <comment>upgrades: a688-70ae-497f-c486</comment>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="e262-c056-64a4-a0ed" subType="crew">
@@ -902,9 +955,6 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
               <costs>
                 <cost name="pts" typeId="points" value="7"/>
               </costs>
-              <infoLinks>
-                <infoLink name="Ironbreaker" hidden="false" type="profile" id="ea36-ff31-2819-210f" targetId="1d0d-1cf7-9340-5a6f"/>
-              </infoLinks>
               <comment>upgrades: a688-70ae-497f-c486</comment>
             </selectionEntry>
           </selectionEntries>
@@ -993,23 +1043,13 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f772-36c7-24d2-4415"/>
               </constraints>
-              <profiles>
-                <profile name="Elder" hidden="false" id="9e49-b2d2-7fee-3516" typeId="b070-143a-73f-2772" typeName="Model">
-                  <characteristics>
-                    <characteristic name="M" typeId="cd3b-a5a4-e185-5a9d">3</characteristic>
-                    <characteristic name="WS" typeId="b007-7d58-4f14-1e01">3</characteristic>
-                    <characteristic name="BS" typeId="59f9-ccf5-1155-fb05">3</characteristic>
-                    <characteristic name="S" typeId="5b6b-1427-2a45-dd0c">4</characteristic>
-                    <characteristic name="T" typeId="ab43-8b61-83e7-d090">4</characteristic>
-                    <characteristic name="W" typeId="83ed-7b82-bf1f-e558">1</characteristic>
-                    <characteristic name="I" typeId="73b1-abe5-72f8-41e2">1</characteristic>
-                    <characteristic name="A" typeId="dddc-9fbd-b0fd-a480">2</characteristic>
-                    <characteristic name="Ld" typeId="c435-6b14-f77e-3c72">9</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
               <infoLinks>
-                <infoLink name="Base (25x25)" hidden="false" type="profile" id="d411-765e-5219-b5f1" targetId="193c-4d0d-de6b-bbb1"/>
+                <infoLink name="Longbeard" hidden="false" type="profile" id="4174-9df0-ca4f-9197" targetId="fbc8-de41-190b-8903">
+                  <modifiers>
+                    <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
+                    <modifier type="set" value="Elder" field="name"/>
+                  </modifiers>
+                </infoLink>
               </infoLinks>
               <comment>upgrades: e60a-105b-669a-f046</comment>
               <categoryLinks>
@@ -1024,10 +1064,6 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
                 <constraint id="86be-f5d0-be68-5b58" type="max" field="selections" scope="parent" value="1"/>
               </constraints>
               <comment>upgrades: e60a-105b-669a-f046</comment>
-              <infoLinks>
-                <infoLink name="Base (25x25)" hidden="false" type="profile" id="4a3d-945c-a61f-9c4b" targetId="193c-4d0d-de6b-bbb1"/>
-                <infoLink name="Longbeard" hidden="false" type="profile" id="2dac-a2ad-495b-36b6" targetId="fbc8-de41-190b-8903"/>
-              </infoLinks>
             </selectionEntry>
             <selectionEntry id="4875-69d2-f5c-9d74" name="Standard Bearer" type="upgrade" collective="false" hidden="false">
               <costs>
@@ -1037,10 +1073,6 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
                 <constraint id="16e3-7a74-2581-1a4f" type="max" field="selections" scope="parent" value="1"/>
               </constraints>
               <comment>upgrades: e60a-105b-669a-f046</comment>
-              <infoLinks>
-                <infoLink name="Base (25x25)" hidden="false" type="profile" id="beb7-fd89-a42d-e9e1" targetId="193c-4d0d-de6b-bbb1"/>
-                <infoLink name="Longbeard" hidden="false" type="profile" id="68dc-f005-4b38-ca7d" targetId="fbc8-de41-190b-8903"/>
-              </infoLinks>
               <categoryLinks>
                 <categoryLink targetId="db34-5941-b4e0-4ca2" id="a9a9-3678-6d3d-862" primary="false" name="50PTSLIMIT"/>
               </categoryLinks>
@@ -1171,9 +1203,6 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
               <costs>
                 <cost name="pts" typeId="points" value="5"/>
               </costs>
-              <infoLinks>
-                <infoLink name="Thunderer" hidden="false" type="profile" id="cddd-12f1-e802-629a" targetId="7d93-cfa7-3653-cf2f"/>
-              </infoLinks>
               <comment>upgrades: f776-e8d1-449f-6b99</comment>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="8780-5808-6fa3-223c" subType="crew">
@@ -1183,9 +1212,6 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
               <costs>
                 <cost name="pts" typeId="points" value="5"/>
               </costs>
-              <infoLinks>
-                <infoLink name="Thunderer" hidden="false" type="profile" id="ac35-31f6-12be-f39d" targetId="7d93-cfa7-3653-cf2f"/>
-              </infoLinks>
               <comment>upgrades: f776-e8d1-449f-6b99</comment>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Veteran" hidden="false" id="8c0-6477-f5a5-13a" subType="crew">
@@ -1199,10 +1225,50 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
                 <infoLink name="Thunderer" hidden="false" type="profile" id="23c0-59f6-1abd-3362" targetId="7d93-cfa7-3653-cf2f">
                   <modifiers>
                     <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
+                    <modifier type="set" value="Veteran" field="name"/>
                   </modifiers>
                 </infoLink>
               </infoLinks>
               <comment>upgrades: f776-e8d1-449f-6b99</comment>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Ranged Weapon" hidden="false" id="1b4c-38fc-c1a2-2551">
+                  <selectionEntries>
+                    <selectionEntry type="upgrade" import="true" name="Pistol" hidden="false" id="527b-ceac-1d55-a0c0" collective="true">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4098-6dbe-7466-d88"/>
+                      </constraints>
+                      <costs>
+                        <cost name="pts" typeId="points" value="0"/>
+                      </costs>
+                      <entryLinks>
+                        <entryLink import="true" name="Pistol" hidden="false" type="selectionEntry" id="2f8c-267c-9b8c-1be9" targetId="d3c7-5222-61e8-9920"/>
+                      </entryLinks>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Brace of Pistols" hidden="false" id="a67e-64e3-7347-844b" collective="true">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e307-ad4c-3de-2396"/>
+                      </constraints>
+                      <costs>
+                        <cost name="pts" typeId="points" value="5"/>
+                      </costs>
+                      <entryLinks>
+                        <entryLink import="true" name="Brace of Pistols" hidden="false" type="selectionEntry" id="255a-7521-a3ba-3f16" targetId="d8bb-85b0-3575-6029"/>
+                      </entryLinks>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Handgun" hidden="false" id="2403-f990-b8cd-94d1" collective="true">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7ad7-6486-5760-b7b"/>
+                      </constraints>
+                      <entryLinks>
+                        <entryLink import="true" name="Handgun" hidden="false" type="selectionEntry" id="1862-d6f-23da-271b" targetId="e2ed-a3fd-dee5-3e9f"/>
+                      </entryLinks>
+                    </selectionEntry>
+                  </selectionEntries>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="663f-6bbe-a87c-aa77"/>
+                  </constraints>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1267,6 +1333,7 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
                 <infoLink name="Hammerer" hidden="false" type="profile" id="fe90-3da6-3f0a-311c" targetId="7a34-50ec-fd82-d932">
                   <modifiers>
                     <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
+                    <modifier type="set" value="Royal Champion" field="name"/>
                   </modifiers>
                 </infoLink>
               </infoLinks>
@@ -1279,9 +1346,6 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
               <costs>
                 <cost name="pts" typeId="points" value="7"/>
               </costs>
-              <infoLinks>
-                <infoLink name="Hammerer" hidden="false" type="profile" id="be47-da39-3a3f-fb47" targetId="7a34-50ec-fd82-d932"/>
-              </infoLinks>
               <comment>upgrades: 5c52-5583-1847-9ede</comment>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="3761-f42e-e68d-a788" subType="crew">
@@ -1291,9 +1355,6 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
               <costs>
                 <cost name="pts" typeId="points" value="7"/>
               </costs>
-              <infoLinks>
-                <infoLink name="Hammerer" hidden="false" type="profile" id="8847-fb7d-29f4-5bdc" targetId="7a34-50ec-fd82-d932"/>
-              </infoLinks>
               <comment>upgrades: 5c52-5583-1847-9ede</comment>
             </selectionEntry>
           </selectionEntries>
@@ -1373,7 +1434,7 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="dea2-9373-bed8-a644" noAlphabeticalSort="true">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Iron?????" hidden="false" id="bf81-8260-3405-3f26" subType="crew">
+            <selectionEntry type="model" import="true" name="Ironwarden" hidden="false" id="bf81-8260-3405-3f26" subType="crew">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f61-b016-5e4e-17b8"/>
               </constraints>
@@ -1384,6 +1445,7 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
                 <infoLink name="Irondrake" hidden="false" type="profile" id="b757-e41a-ee8e-ef90" targetId="245b-57c-3e88-450f">
                   <modifiers>
                     <modifier type="increment" value="1" field="59f9-ccf5-1155-fb05"/>
+                    <modifier type="set" value="Ironwarden" field="name"/>
                   </modifiers>
                 </infoLink>
               </infoLinks>
@@ -1396,9 +1458,6 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
               <costs>
                 <cost name="pts" typeId="points" value="6"/>
               </costs>
-              <infoLinks>
-                <infoLink name="Irondrake" hidden="false" type="profile" id="863c-6897-9f33-6cd" targetId="245b-57c-3e88-450f"/>
-              </infoLinks>
               <comment>upgrades: 2a9a-fc7d-6622-a70b</comment>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="d7ee-e038-fc56-207c" subType="crew">
@@ -1408,9 +1467,6 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
               <costs>
                 <cost name="pts" typeId="points" value="6"/>
               </costs>
-              <infoLinks>
-                <infoLink name="Irondrake" hidden="false" type="profile" id="a69c-6932-9e17-bf0d" targetId="245b-57c-3e88-450f"/>
-              </infoLinks>
               <comment>upgrades: 2a9a-fc7d-6622-a70b</comment>
             </selectionEntry>
           </selectionEntries>
@@ -1464,12 +1520,12 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
           <selectionEntryGroups>
             <selectionEntryGroup name="Equipment" hidden="false" id="1300-6e64-cd32-4c24">
               <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Great weapons" hidden="false" id="e9b8-c855-a1e2-72e7" collective="true">
+                <selectionEntry type="upgrade" import="true" name="Blasting Charges" hidden="false" id="e9b8-c855-a1e2-72e7" collective="true">
                   <costs>
-                    <cost name="pts" typeId="points" value="2"/>
+                    <cost name="pts" typeId="points" value="1"/>
                   </costs>
                   <entryLinks>
-                    <entryLink import="true" name="Great Weapon" hidden="false" type="selectionEntry" id="d605-bfc-3c4b-e49b" targetId="2283-26e9-76c3-6048" collective="false">
+                    <entryLink import="true" name="Blasting Charges" hidden="false" type="selectionEntry" id="d605-bfc-3c4b-e49b" targetId="edff-d70-2c83-1bc4" collective="false">
                       <costs>
                         <cost name="pts" typeId="points" value="0"/>
                       </costs>
@@ -1477,21 +1533,6 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
                   </entryLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ddc6-693-8068-6d1a"/>
-                  </constraints>
-                </selectionEntry>
-                <selectionEntry type="upgrade" import="true" name="Shields" hidden="false" id="b0f0-a330-c157-c8e" collective="true">
-                  <costs>
-                    <cost name="pts" typeId="points" value="1"/>
-                  </costs>
-                  <entryLinks>
-                    <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="b43e-2c67-a258-4b76" targetId="6192-f9f1-5d53-2042" collective="false">
-                      <costs>
-                        <cost name="pts" typeId="points" value="0"/>
-                      </costs>
-                    </entryLink>
-                  </entryLinks>
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="317b-f130-e2ea-6d11"/>
                   </constraints>
                 </selectionEntry>
               </selectionEntries>
@@ -1536,9 +1577,6 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
               <costs>
                 <cost name="pts" typeId="points" value="5"/>
               </costs>
-              <infoLinks>
-                <infoLink name="Quarreller" hidden="false" type="profile" id="d49b-6c63-4eb8-c617" targetId="dc45-12a3-7d3a-a293"/>
-              </infoLinks>
               <comment>upgrades: b59d-d501-45b5-1d6a</comment>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="28e7-9a8a-e529-d384" subType="crew">
@@ -1548,9 +1586,6 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
               <costs>
                 <cost name="pts" typeId="points" value="5"/>
               </costs>
-              <infoLinks>
-                <infoLink name="Quarreller" hidden="false" type="profile" id="785e-d9b9-b889-e0bc" targetId="dc45-12a3-7d3a-a293"/>
-              </infoLinks>
               <comment>upgrades: b59d-d501-45b5-1d6a</comment>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Prospector" hidden="false" id="a6c2-b8c8-f21e-3479" subType="crew">
@@ -1561,9 +1596,10 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
                 <cost name="pts" typeId="points" value="5"/>
               </costs>
               <infoLinks>
-                <infoLink name="Quarreller" hidden="false" type="profile" id="24db-f6bd-823e-4a3e" targetId="dc45-12a3-7d3a-a293">
+                <infoLink name="Miner" hidden="false" type="profile" id="a6c0-fb9a-8707-4826" targetId="9204-9633-f443-590f">
                   <modifiers>
                     <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
+                    <modifier type="set" value="Prospector" field="name"/>
                   </modifiers>
                 </infoLink>
               </infoLinks>
@@ -1581,6 +1617,130 @@ Note that if this model is reduced to zero Wounds while engaged in a challenge, 
       <infoLinks>
         <infoLink name="Brace of Drakefire Pistols" hidden="false" type="profile" id="efd6-fb16-3668-44f5" targetId="76d4-c34d-d3dd-bedd"/>
       </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Blasting Charges" hidden="false" id="edff-d70-2c83-1bc4" collective="false">
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b7b9-c90-1e6e-7b03"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6337-a855-4de6-bea0"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Blasting Charges" hidden="false" type="profile" id="9ca3-5d5d-3817-c0fd" targetId="c4cd-20ce-ab7a-199e"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Steam Drill" hidden="false" id="d0d6-74ac-4c45-1396">
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2809-f16f-155c-87c3"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cd2c-ca58-86ad-dead"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Steam Drill" hidden="false" type="profile" id="a82f-2046-bb29-9fa5" targetId="1394-5f7d-15ff-3370"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Slayers" hidden="false" id="9f80-e41f-57be-c779">
+      <profiles>
+        <profile name="Slayers" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="6190-c4f9-cf7d-2ef9">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Regular infantry</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">5+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Troll Slayer" hidden="false" id="3b52-38a2-d485-2f83">
+          <constraints>
+            <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="8996-86dd-8b12-319c"/>
+          </constraints>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="3dce-f377-2bc8-ced3" targetId="721d-36e3-388a-c0d6"/>
+          </entryLinks>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Equipment" hidden="false" id="649f-4639-3ee4-6433">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Additional Hand Weapons" hidden="false" id="2ab-f92f-5789-87ab" collective="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="1"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="af3a-8e4f-ede3-7f1" targetId="8943-3e16-db2a-b7f3"/>
+                  </entryLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6ddf-c432-7432-6156"/>
+                  </constraints>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Great Weapons" hidden="false" id="cb85-35c9-7bf0-d5cd" collective="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="2"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Great weapon" hidden="false" type="selectionEntry" id="30f4-a97d-9140-bfa2" targetId="2283-26e9-76c3-6048"/>
+                  </entryLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c8d8-6eab-b746-5dec"/>
+                  </constraints>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <infoLinks>
+            <infoLink name="Dwarf Warrior" hidden="false" type="profile" id="a9ed-7426-99a5-24ed" targetId="b7d0-b961-74d0-f4ac"/>
+            <infoLink name="Base (25x25)" hidden="false" type="profile" id="9e3f-bfc4-5c20-94d0" targetId="193c-4d0d-de6b-bbb1"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="13"/>
+          </costs>
+          <categoryLinks>
+            <categoryLink targetId="f3f7-ca43-674e-115f" id="25ef-e1bf-7eaf-24b6" primary="false" name="Regular Infantry"/>
+            <categoryLink targetId="633f-f67a-1b6a-d203" id="25fc-9d1-2e6e-16f0" primary="true" name="Special"/>
+          </categoryLinks>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Command" hidden="false" id="5cd8-4e9-9d46-ef09" noAlphabeticalSort="true">
+          <selectionEntries>
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="f7e4-9d5e-2a8b-4b58" subType="crew">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b68e-580-90f7-c68b"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="6"/>
+              </costs>
+              <comment>upgrades: 7bea-2dc7-aa4e-5de2</comment>
+              <entryLinks>
+                <entryLink import="true" name="Standard Runes" hidden="false" type="selectionEntryGroup" id="ac4f-e5b-53b3-fb96" targetId="1ea5-5bf5-9a12-78a4"/>
+              </entryLinks>
+            </selectionEntry>
+            <selectionEntry type="model" import="true" name="Musician" hidden="false" id="6f0b-ebb9-b246-4e5b" subType="crew">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7074-9a26-b9b8-6533"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="6"/>
+              </costs>
+              <comment>upgrades: 7bea-2dc7-aa4e-5de2</comment>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <infoGroups>
+        <infoGroup name="Special Rules" hidden="false" id="b8fd-2a6f-a13e-6f75">
+          <infoLinks>
+            <infoLink name="Deathblow" hidden="false" type="profile" id="93bb-827c-7450-f1c2" targetId="233a-1715-82be-1410"/>
+            <infoLink name="Hatred" hidden="false" type="profile" id="bd1f-4580-7eb7-a828" targetId="f4b3-18af-16bf-78dd"/>
+            <infoLink name="Magic Resistance" hidden="false" type="profile" id="5951-49c1-8f65-d6e4" targetId="90ed-c9be-a611-79cc"/>
+            <infoLink name="Resolute" hidden="false" type="profile" id="bdff-482a-6b98-e277" targetId="a230-c540-6a65-4974"/>
+            <infoLink name="Open Order" hidden="false" type="profile" id="73d4-9bb6-c3f3-1ef8" targetId="5b67-8535-146c-7cea"/>
+            <infoLink name="Immune to Psychology" hidden="false" type="profile" id="277a-756c-1af9-40d7" targetId="93d9-c75b-f655-30ac"/>
+            <infoLink name="Loner" hidden="false" type="profile" id="b705-526a-49ab-a0ed" targetId="2ecd-c6b3-bd8b-864b"/>
+            <infoLink name="Motley Crew" hidden="false" type="profile" id="a769-bdfa-ee27-2ff" targetId="6359-4018-5cd4-3720"/>
+            <infoLink name="Unbreakable" hidden="false" type="profile" id="25bf-c9a8-1180-cfb4" targetId="d3eb-1fa0-bb19-f390"/>
+            <infoLink name="Slayer" hidden="false" type="profile" id="9103-2db8-3287-5604" targetId="ea84-d53c-ef3b-57e8"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <categoryLinks>
+        <categoryLink targetId="f0e3-2e32-8866-ea32" id="3d95-9a0c-c0c2-b31a" primary="true" name="Core"/>
+        <categoryLink targetId="ca7e-d004-ccde-caf3" id="6ba1-8c4a-c3b4-cb46" primary="false" name="Heavy infantry"/>
+      </categoryLinks>
     </selectionEntry>
   </sharedSelectionEntries>
 </catalogue>
