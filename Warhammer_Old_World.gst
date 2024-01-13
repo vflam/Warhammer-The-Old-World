@@ -929,7 +929,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Lance" hidden="false" id="906a-c09d-9f34-a31f" collective="true">
       <infoLinks>
-        <infoLink name="Lance" hidden="false" type="profile" id="4bb4-37af-dd08-93dd" targetId="c84c-99b6-75eb-4f40"/>
+        <infoLink name="Lance" hidden="false" type="profile" id="4bb4-37af-dd08-93dd" targetId="3520-64c9-a855-ce9e"/>
       </infoLinks>
       <constraints>
         <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="43c1-42a1-9a0a-326e-min"/>
@@ -956,7 +956,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Crossbow" hidden="false" id="c3af-77b3-b2d5-20db" collective="true">
       <infoLinks>
-        <infoLink name="Crossbow" hidden="false" type="profile" id="5eba-daec-5c9f-719b" targetId="fca0-3c32-72da-53b9"/>
+        <infoLink name="Crossbow" hidden="false" type="profile" id="5eba-daec-5c9f-719b" targetId="1ef1-8579-c310-4fb5"/>
       </infoLinks>
       <constraints>
         <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="cf85-256a-d8a8-b011-min"/>
@@ -1088,6 +1088,159 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b309-7f5e-d2cc-c9bc"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="890b-e8c0-76c1-6024"/>
       </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Repeater Crossbow" hidden="false" id="40ad-23e9-f0c7-4c15" collective="true">
+      <infoLinks>
+        <infoLink name="Repeater Crossbow" hidden="false" type="profile" id="90ea-8330-2e5a-5af9" targetId="e240-f607-2c57-b181"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a195-46bc-fb4-587d"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a3fd-a9c9-b05d-acf"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Longbow" hidden="false" id="c0e5-968b-c467-56ba" collective="true">
+      <infoLinks>
+        <infoLink name="Longbow" hidden="false" type="profile" id="90a9-4cb0-3fe3-caa" targetId="c84c-99b6-75eb-4f40"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="eaf6-74a6-c1e5-2074"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="333a-deff-559d-c446"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Shortbow" hidden="false" id="f187-20d4-41f3-63cc" collective="true">
+      <infoLinks>
+        <infoLink name="Shortbow" hidden="false" type="profile" id="bf02-c24f-a557-1323" targetId="1b65-71ef-52a3-93d0"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a5b7-a12c-f78c-6d67"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7efc-2607-1899-ffd5"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Two Hand Weapon" hidden="false" id="a5bd-e584-3c96-550f" collective="true">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cf5f-459a-36b3-81a4"/>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6d08-ab80-3f68-3882"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Two Hand Weapon" hidden="false" type="profile" id="1914-5906-5a1a-2ec5" targetId="1f58-a56f-e54c-ddc5"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Flail" hidden="false" id="308a-2562-9266-2151">
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b30c-6277-ff6b-2266"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a677-3b60-ae2b-abf1"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Flail" hidden="false" type="profile" id="d1df-59f0-b409-f6b3" targetId="b326-5bf3-9b4e-f8ad"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Halberd" hidden="false" id="f0a5-1b2e-3d2b-d540" collective="true">
+      <infoLinks>
+        <infoLink name="Halberd" hidden="false" type="profile" id="4a05-1d6f-d6ae-cbd4" targetId="98f8-9d8-94cd-3379"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8a02-5303-825a-3c77"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c8c1-1e74-a2de-b637"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Morning Star" hidden="false" id="7408-2024-917-7f11" collective="true">
+      <infoLinks>
+        <infoLink name="Morning Star" hidden="false" type="profile" id="e93d-cd2f-69d2-6fda" targetId="caad-2fc0-e82a-18fd"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ec77-5a8d-9b92-e39b"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7b10-be97-2cf2-6271"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Whip" hidden="false" id="4619-3a0d-3a3c-27af" collective="true">
+      <infoLinks>
+        <infoLink name="Whip" hidden="false" type="profile" id="5abd-ceb0-f68c-9111" targetId="7505-7edf-c3de-57a6"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="966b-b6b8-2ce4-a3cb"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d141-58b9-3a44-e76f"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Cavalry Spear" hidden="false" id="a2d0-40e9-83ad-23dc" collective="true">
+      <infoLinks>
+        <infoLink name="Cavalry Spear" hidden="false" type="profile" id="e62-14df-8b5f-255c" targetId="ee75-c1a8-2f0c-c264"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4c98-2e07-9e57-53eb"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e98e-d127-3c6f-9935"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Repeat Handgun" hidden="false" id="1748-87d-961c-9278">
+      <infoLinks>
+        <infoLink name="Repeater Handgun" hidden="false" type="profile" id="4d44-a8-e692-4d40" targetId="7f58-91d4-ee6c-3cb7"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7d4d-107-4fe4-78cb"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2cda-64ce-b498-7429"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Repeat Pistol" hidden="false" id="6d12-5625-aef5-e25d">
+      <infoLinks>
+        <infoLink name="Repeater Pistol" hidden="false" type="profile" id="d6c2-8220-bca4-c141" targetId="f675-db0d-397c-d873"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="62e4-16b-4710-503d"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7b22-afdc-1c29-745c"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Brace of Repeater Handbows" hidden="false" id="9f47-81ce-2112-83e1" collective="true">
+      <infoLinks>
+        <infoLink name="Crossbow" hidden="false" type="profile" id="dc96-7ebd-c388-3fda" targetId="fca0-3c32-72da-53b9"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f60-2250-21b6-624"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bebc-8aba-b2a3-e7a8"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Repeater Handbow" hidden="false" id="4f02-c0c2-a8f7-1672" collective="true">
+      <infoLinks>
+        <infoLink name="Repeater Handbow" hidden="false" type="profile" id="463-758b-a4dd-f4de" targetId="f187-983f-99f2-5ecd"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="730f-b491-caed-3d36"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="32d-bf74-9c21-f919"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Sling" hidden="false" id="d477-7d43-aa1b-5418" collective="true">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8bde-982b-2ff6-e384"/>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c9d7-1526-33b9-2e32"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Sling" hidden="false" type="profile" id="3a06-5a9d-48d7-772c" targetId="eee6-7b1-58de-6ad2"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Throwing Weapon" hidden="false" id="9acb-1a87-176-5a2f" collective="true">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6a65-c8b6-bdec-5ca3"/>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6064-a28d-a683-63a6"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Throwing Weapon" hidden="false" type="profile" id="1324-31d9-ec77-6d2" targetId="eee5-db12-1271-f2c5"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Javelin" hidden="false" id="e1f2-f9a2-c311-123c" collective="true">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b87a-ecdb-f337-2556"/>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8867-1895-efa0-ab16"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Javelin" hidden="false" type="profile" id="db1b-f777-1f1e-5546" targetId="f3f8-7476-d165-1a5d"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Throwing Axe" hidden="false" id="ac7b-2b4f-83e-b527" collective="true">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="45f1-5aeb-11f3-d308"/>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="646c-e2ea-cc51-20a7"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Throwing Axe" hidden="false" type="profile" id="bba9-3a55-ccf0-df33" targetId="9914-73b6-65c4-ec44"/>
+      </infoLinks>
     </selectionEntry>
   </sharedSelectionEntries>
   <selectionEntries>
