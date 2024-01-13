@@ -110,7 +110,7 @@
     </profile>
     <profile name="Hand Weapon" hidden="false" id="ef45-edcd-18bf-fe1d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">Description of hand weapon....</characteristic>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9"/>
       </characteristics>
     </profile>
     <profile name="Shield" hidden="false" id="8997-c74d-3a8d-ecf9" typeId="c14f-740-8107-d34b" typeName="Armour">
@@ -714,6 +714,95 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <characteristic name="Description" typeId="441a-ef3a-c07e-95f"/>
       </characteristics>
     </profile>
+    <profile name="Base (50x50)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="7813-4d15-143d-1bf1">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">50x50</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
+    </profile>
+    <profile name="Base (40x60)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="edea-5f38-530a-57f1">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">40x60</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
+    </profile>
+    <profile name="Base (25x50)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="2d9f-e535-9b2e-ca11">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">25x50</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
+    </profile>
+    <profile name="Base (40x40)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="1b54-27fc-b510-61b8">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">40x40</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
+    </profile>
+    <profile name="Base (50x75)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="2b6f-489f-3c3c-bf7c">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">50x75</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
+    </profile>
+    <profile name="Base (50x100)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="d456-e30e-f85d-14d">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">50x100</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
+    </profile>
+    <profile name="Base (60x100)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="5125-89a4-916a-eabd">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">60x100</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
+    </profile>
+    <profile name="Base (150x100)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="a35e-8f23-b67-1efe">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">150x100</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
+    </profile>
+    <profile name="Bolt Thrower" hidden="false" id="36e4-28b4-31ff-39dc" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">48&quot; S6 AP-3 Cumbersome, Move or Shoot, Multiple Wounds (2), Through or Through</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Cannon" hidden="false" id="8ef5-8512-e1c2-6474" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">48&quot; S8 AP-2 Armour Bane(2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Stone Thrower" hidden="false" id="3142-ada8-328d-1615" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">12-60&quot; S4(8) AP-1(-3) Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3+1)</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Organ Gun" hidden="false" id="5635-efd8-13b6-c841" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">30&quot; S5 AP-1 Armour Bane(2), Cumbersome, Move or Shoot, Multi-Barrelled</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Fire Thrower" hidden="false" id="2694-34f1-f146-6351" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">12&quot; S5 AP-1  Column of Fire, Cumbersome, Flaming Attack, Move or Shoot</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -721,8 +810,8 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Hand Weapon" hidden="false" type="profile" id="c4fd-6287-4ab1-bb65" targetId="ef45-edcd-18bf-fe1d"/>
       </infoLinks>
       <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9935-ed77-1e72-9842-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9935-ed77-1e72-9842-max"/>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="221a-a41b-eb43-bf1b"/>
       </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Great weapon" hidden="false" id="2283-26e9-76c3-6048" collective="true">
@@ -730,8 +819,8 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Great Weapon" hidden="false" type="profile" id="4465-7e60-819e-a74f" targetId="88e3-38f0-92d5-b616"/>
       </infoLinks>
       <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6e03-7cfb-4459-9b9a-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e03-7cfb-4459-9b9a-max"/>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="660c-cef6-ab09-49fc"/>
       </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Shield" hidden="false" id="6192-f9f1-5d53-2042" collective="true">
@@ -858,6 +947,51 @@ Note that models in rear ranks use the line of sight of the model at the front o
       <constraints>
         <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="bb24-f518-d872-575c-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bb24-f518-d872-575c-max"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Bolt Thrower" hidden="false" id="eace-1222-ef64-e030" collective="true">
+      <infoLinks>
+        <infoLink name="Bolt Thrower" hidden="false" type="profile" id="3f4-cc6e-a6e8-be2" targetId="36e4-28b4-31ff-39dc"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c953-924d-1fd3-bbc3"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8718-287f-7f31-316d"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Cannon" hidden="false" id="ca63-2c16-928e-1e45" collective="true">
+      <infoLinks>
+        <infoLink name="Cannon" hidden="false" type="profile" id="3e4c-9708-eee8-14cd" targetId="8ef5-8512-e1c2-6474"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c28e-3590-5aa7-efa9"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ae72-ea17-e2b-8ca6"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Organ Gun" hidden="false" id="e690-7263-fa52-7192" collective="true">
+      <infoLinks>
+        <infoLink name="Organ Gun" hidden="false" type="profile" id="93f0-c7ec-3e3-360e" targetId="5635-efd8-13b6-c841"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="3f09-f410-d712-580c"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="df7e-515b-6c02-41c0"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Stone Thrower" hidden="false" id="365a-2626-2fb2-3a69" collective="true">
+      <infoLinks>
+        <infoLink name="Stone Thrower" hidden="false" type="profile" id="a8ac-b1de-da49-351" targetId="3142-ada8-328d-1615"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1afd-d20-c884-a887"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e6a-f8b9-767b-e92c"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Fire Thrower" hidden="false" id="75a5-87ec-2be6-6adb" collective="true">
+      <infoLinks>
+        <infoLink name="Fire Thrower" hidden="false" type="profile" id="4c01-ea2c-2a89-b87b" targetId="2694-34f1-f146-6351"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b309-7f5e-d2cc-c9bc"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="890b-e8c0-76c1-6024"/>
       </constraints>
     </selectionEntry>
   </sharedSelectionEntries>
