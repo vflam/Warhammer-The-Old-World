@@ -111,22 +111,25 @@
     </profile>
     <profile name="Hand Weapon" hidden="false" id="ef45-edcd-18bf-fe1d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9"/>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">Unless specified otherwise, all models are assumed to be equipped with a hand weapon.</characteristic>
       </characteristics>
     </profile>
     <profile name="Shield" hidden="false" id="8997-c74d-3a8d-ecf9" typeId="c14f-740-8107-d34b" typeName="Armour">
       <characteristics>
-        <characteristic name="Armour" typeId="adcd-c649-e6fc-a9f6">+1 Armour Save</characteristic>
+        <characteristic name="Armour" typeId="adcd-c649-e6fc-a9f6">A model that carries a shield improves its armour value by 1. For example, a model equipped with a light armour has an armour value of 6+. Should that model also carry a shield, its armour value would be improved by 1 by lowering the target number from 6+ to 5+.
+
+
+Note that if a model uses a weapon that has the Requires To Hands special rule in combat, it cannot also use a shield.</characteristic>
       </characteristics>
     </profile>
     <profile name="Great Weapon" hidden="false" id="88e3-38f0-92d5-b616" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">+2S</characteristic>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">S+2 AP-2 Armour Bane (1), Requires Two Hands, Strike Last</characteristic>
       </characteristics>
     </profile>
-    <profile name="Lance" hidden="false" id="c84c-99b6-75eb-4f40" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+    <profile name="Longbow" hidden="false" id="c84c-99b6-75eb-4f40" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">+2S when charging</characteristic>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">30&quot; S3 Armour Bane (1), Volley Fire</characteristic>
       </characteristics>
     </profile>
     <profile name="Heavy Armour" hidden="false" id="c56e-8d1b-bb4-de99" typeId="c14f-740-8107-d34b" typeName="Armour">
@@ -136,7 +139,7 @@
     </profile>
     <profile name="Barding" hidden="false" id="eb5d-bd8a-c75c-66d7" typeId="c14f-740-8107-d34b" typeName="Armour">
       <characteristics>
-        <characteristic name="Armour" typeId="adcd-c649-e6fc-a9f6">+1 Armour Save</characteristic>
+        <characteristic name="Armour" typeId="adcd-c649-e6fc-a9f6">A model that rides a barded mount improves its armour value by 1. For example, a cavalry model equipped with heavy armour has a armour save of 5+. Should that model&apos;s mount be barded, its armour value would be improved by 1 by lowering the target number from 5+ to 4+.</characteristic>
       </characteristics>
     </profile>
     <profile name="Blessing of the Lady" hidden="false" id="8a35-b5d4-1652-b3d" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
@@ -149,9 +152,9 @@
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit consisting of models with this special rule may adopt a Close Order formation.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Crossbow" hidden="false" id="fca0-3c32-72da-53b9" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+    <profile name="Brace of Repeater Handbows" hidden="false" id="fca0-3c32-72da-53b9" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">Crossbow desc...</characteristic>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">12&quot; S3 Multiple Shots (4), Quick Shot</characteristic>
       </characteristics>
     </profile>
     <profile name="Hatred (X)" hidden="false" id="f4b3-18af-16bf-78dd" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
@@ -172,12 +175,13 @@ Note that this special rule is not cumulative. If two or more models in a unit h
     </profile>
     <profile name="Pistol" hidden="false" id="4c62-cdd4-4e0c-4265" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">S4 AP2</characteristic>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">12&quot; S4 AP-1 Armour Bane (1), Quick Shot</characteristic>
       </characteristics>
     </profile>
     <profile name="Brace of pistols" hidden="false" id="cdb0-f5d2-68e0-205f" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">2xS4 AP2</characteristic>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">12&quot; S4 AP-1 Armour Bane(1), Multiple Shots (2), Quick Shot.
+In combat: Extra Attacks (+1), Requires To Hands.</characteristic>
       </characteristics>
     </profile>
     <profile name="Stubborn" hidden="false" id="e351-bbd6-f470-b604" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
@@ -273,7 +277,7 @@ If both armies contain Vanguard units a roll off determines who moves first. The
     </profile>
     <profile name="Throwing Spear" hidden="false" id="8a6-cc93-b5fd-6636" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">Fight in Extra Rank. It can only be used during a turn in which welder charged. In subsequent turns (or if the welder did not charge) the model must use its hand weapon instead.</characteristic>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">Fight in Extra Rank. A throwing spear can only be used during a turn in which the wielder charged. In subsequent turns (or if the wielder did not charge) the model must use its hand weapon instead.</characteristic>
       </characteristics>
     </profile>
     <profile name="Thrusting Spear" hidden="false" id="85-9154-7dc1-ddc6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
@@ -802,6 +806,96 @@ Note that models in rear ranks use the line of sight of the model at the front o
     <profile name="Fire Thrower" hidden="false" id="2694-34f1-f146-6351" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">12&quot; S5 AP-1  Column of Fire, Cumbersome, Flaming Attack, Move or Shoot</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Javelin" hidden="false" id="f3f8-7476-d165-1a5d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">12&quot; S Move &amp; Shoot, Quick Shot</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Cavalry Spear" hidden="false" id="ee75-c1a8-2f0c-c264" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">S+1 AP-1 Fight in Extra Rank. Models which troop type is &apos;cavalry&apos; or &apos;monster&apos; only. A cavalry&apos;s spear Strength and Armor Piercing modifiers apply only during a turn in which the wielder charged. A model wielding a cavalry spear cannot make a supporting attack during a turn in which it charged.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Morning Star" hidden="false" id="caad-2fc0-e82a-18fd" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">S+1 AP-1 A morning star&apos;s Strength modifier applies only during the first round of combat.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Halberd" hidden="false" id="98f8-9d8-94cd-3379" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">S+1 AP-1 Armour Bane (1), Requires Two Hands</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Flail" hidden="false" id="b326-5bf3-9b4e-f8ad" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">S+2 AP-2 Requires Two Hands, A flail&apos;s Strength modifier applies only during the first round of combat.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Whip" hidden="false" id="7505-7edf-c3de-57a6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">Fight in Extra Rank, Strike First</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Lance" hidden="false" id="3520-64c9-a855-ce9e" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">S+2 AP-2 Armour Bane (1) Models which troop type is &apos;cavalry&apos; or &apos;monster&apos; only. A lance can only be used during a turn in which the wielder charged. In subsequent turns (or if the wielder did not charge) the model must use its hand weapon instead.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Shortbow" hidden="false" id="1b65-71ef-52a3-93d0" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">18&quot; S3 Quick Shot, Volley Fire</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Warbow" hidden="false" id="4ba0-4ae4-3ac2-a173" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">24&quot; S3 Volley Fire</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Repeater Pistol" hidden="false" id="f675-db0d-397c-d873" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">12&quot; S4 AP-1 Armour Bane (1), Multiple Shots (3), Quick Shot</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Repeater Handgun" hidden="false" id="7f58-91d4-ee6c-3cb7" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">24&quot; S4 AP-1 Armour Bane (1), Multiple Shots (3), Ponderous</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Crossbow" hidden="false" id="1ef1-8579-c310-4fb5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">30&quot; S4 Armour Bane (2), Ponderous</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Repeater Crossbow" hidden="false" id="e240-f607-2c57-b181" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">24&quot; S3 Armour Bane (1), Multiple Shots (2)</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Repeater Handbow" hidden="false" id="f187-983f-99f2-5ecd" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">12&quot; S3 Multiple Shots (2), Quick Shot</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Two Hand Weapon" hidden="false" id="1f58-a56f-e54c-ddc5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">Extra Atacks (+1), Require Two Hands</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Sling" hidden="false" id="eee6-7b1-58de-6ad2" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">18&quot; S3 Multiple Shots (2)</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Throwing Axe" hidden="false" id="9914-73b6-65c4-ec44" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">9&quot; S+1 Quick Shot</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Throwing Weapon" hidden="false" id="eee5-db12-1271-f2c5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">9&quot; S Multiple Shots (2), Move &amp; Shoot, Quick Shot</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
