@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="27" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="28" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -12,11 +12,14 @@
     <categoryEntry name="War Machine" hidden="false" id="9fcf-19ad-fe84-9c61"/>
     <categoryEntry name="50PTSLIMIT" hidden="true" id="db34-5941-b4e0-4ca2"/>
     <categoryEntry name="Configuration" hidden="false" id="48b5-1583-6fa3-acda"/>
-    <categoryEntry name="Heavy infantry" hidden="false" id="ca7e-d004-ccde-caf3"/>
+    <categoryEntry name="Heavy Infantry" hidden="false" id="ca7e-d004-ccde-caf3"/>
     <categoryEntry name="Light Cavalry" hidden="false" id="600c-7d08-5be1-fe0c"/>
     <categoryEntry name="Heavy Chariot" hidden="false" id="d768-7cf0-de0a-c249"/>
     <categoryEntry name="Light Chariot" hidden="false" id="7dce-b0f0-2217-2820"/>
     <categoryEntry name="Monstrous Creature" hidden="false" id="fb36-5275-617-c895"/>
+    <categoryEntry name="Monstrous Infantry" hidden="false" id="5c55-f9d6-b181-92f8"/>
+    <categoryEntry name="Heavy Cavalry" hidden="false" id="5165-d052-cfc2-5887"/>
+    <categoryEntry name="War Beasts" hidden="false" id="19f9-8dd8-bba4-625b"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
