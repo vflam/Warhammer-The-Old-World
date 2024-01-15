@@ -22,6 +22,7 @@
     <categoryEntry name="War Beasts" hidden="false" id="19f9-8dd8-bba4-625b"/>
     <categoryEntry name="NO EXPORT" hidden="true" id="49a9-ce63-af1a-18f7"/>
     <categoryEntry name="Monstrous Cavalry" hidden="false" id="2c85-5f2b-9288-1257"/>
+    <categoryEntry name="Behemoth" hidden="false" id="3755-6732-99b2-c713"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
@@ -934,6 +935,11 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
     </profile>
+    <profile name="Mortar" hidden="false" id="11c5-c8bc-6ce3-8932" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">12-48&quot; S2(6) AP-2(-3) Armour Bane (1), Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -1295,6 +1301,15 @@ Note that models in rear ranks use the line of sight of the model at the front o
       <infoLinks>
         <infoLink name="Serrated Maw" hidden="false" type="profile" id="145d-7d5f-52ce-e69f" targetId="2dea-8d5a-633c-cd7d"/>
       </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Mortar" hidden="false" id="b4ec-f8f5-83b4-5cd8" collective="true">
+      <infoLinks>
+        <infoLink name="Mortar" hidden="false" type="profile" id="e0aa-bc2b-9600-b9bf" targetId="11c5-c8bc-6ce3-8932"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1c31-2f01-93ff-fe16"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="74ca-7660-ed4a-7cd6"/>
+      </constraints>
     </selectionEntry>
   </sharedSelectionEntries>
   <selectionEntries>
