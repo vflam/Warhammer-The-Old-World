@@ -21,6 +21,7 @@
     <categoryEntry name="Heavy Cavalry" hidden="false" id="5165-d052-cfc2-5887"/>
     <categoryEntry name="War Beasts" hidden="false" id="19f9-8dd8-bba4-625b"/>
     <categoryEntry name="NO EXPORT" hidden="true" id="49a9-ce63-af1a-18f7"/>
+    <categoryEntry name="Monstrous Cavalry" hidden="false" id="2c85-5f2b-9288-1257"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
@@ -906,6 +907,16 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">9&quot; S Multiple Shots (2), Move &amp; Shoot, Quick Shot</characteristic>
       </characteristics>
     </profile>
+    <profile name="Wicked Claws" hidden="false" id="14c0-c7a7-dd09-ea49" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">AP-2</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Serrated Maw" hidden="false" id="2dea-8d5a-633c-cd7d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">Armour Bane(2), Multiple Wounds(2)</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -1248,6 +1259,24 @@ Note that models in rear ranks use the line of sight of the model at the front o
       </constraints>
       <infoLinks>
         <infoLink name="Throwing Axe" hidden="false" type="profile" id="bba9-3a55-ccf0-df33" targetId="9914-73b6-65c4-ec44"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Wicked Claws" hidden="false" id="7414-cec3-7cd7-a94b" collective="true">
+      <infoLinks>
+        <infoLink name="Wicked Claws" hidden="false" type="profile" id="4e04-9a9d-41d7-3e12" targetId="14c0-c7a7-dd09-ea49"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7176-9cf6-1eab-c3ff"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f1e2-76b3-2728-2664"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Serrated Maw" hidden="false" id="1e93-bd5f-4eab-4521" collective="false">
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4065-1a0a-a80c-4063"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="84e1-3194-eb8f-824c"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Serrated Maw" hidden="false" type="profile" id="145d-7d5f-52ce-e69f" targetId="2dea-8d5a-633c-cd7d"/>
       </infoLinks>
     </selectionEntry>
   </sharedSelectionEntries>
