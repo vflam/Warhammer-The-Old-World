@@ -640,24 +640,25 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="224c-4bfd-6515-ad72"/>
           </constraints>
         </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Standard Runes" hidden="false" id="baa-a804-e903-a730">
+          <categoryLinks>
+            <categoryLink targetId="49a9-ce63-af1a-18f7" id="2283-1950-e70b-8726" primary="false" name="NO EXPORT"/>
+          </categoryLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ce5f-eae1-dc7e-8504"/>
+          </constraints>
+        </selectionEntry>
       </selectionEntries>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="a52b-7775-c1e3-3c28"/>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="a52b-7775-c1e3-3c28">
+        <modifier type="increment" value="1" field="a52b-7775-c1e3-3c28">
           <repeats>
-            <repeat value="1000" repeats="1" field="points" scope="roster" childId="any" shared="true" roundUp="false" id="347e-59eb-2d43-e8a5"/>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" shared="true" roundUp="false" id="347e-59eb-2d43-e8a5"/>
           </repeats>
         </modifier>
       </modifiers>
-      <entryLinks>
-        <entryLink import="true" name="Talismanic Runes" hidden="false" type="selectionEntryGroup" id="11ab-aea3-b5db-f3f3" targetId="fd2a-a069-70be-732e">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5cbc-225e-1659-1d36"/>
-          </constraints>
-        </entryLink>
-      </entryLinks>
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <sharedRules>
@@ -1011,7 +1012,15 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
               </costs>
               <comment>upgrades: 7bea-2dc7-aa4e-5de2</comment>
               <entryLinks>
-                <entryLink import="true" name="Standard Runes" hidden="false" type="selectionEntryGroup" id="e8ff-393-1e9b-39cb" targetId="1ea5-5bf5-9a12-78a4"/>
+                <entryLink import="true" name="Standard Runes" hidden="true" type="selectionEntryGroup" id="e8ff-393-1e9b-39cb" targetId="1ea5-5bf5-9a12-78a4">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="b969-2677-1d5a-8449" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="53c2-2cbc-b6d6-7c06" targetId="bcf8-d942-102e-b155"/>
@@ -1047,6 +1056,9 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="ca57-f5e4-6592-6cb5" primary="true" name="Core"/>
         <categoryLink targetId="ca7e-d004-ccde-caf3" id="c8a6-a38b-d0db-81d0" primary="false" name="Heavy infantry"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Options" hidden="false" type="selectionEntryGroup" id="fa76-a7e7-2215-77a6" targetId="ce2e-bc0f-be9b-9221" noAlphabeticalSort="true"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Quarrellers" hidden="false" id="c4a9-d38a-2612-4a9a">
       <categoryLinks>

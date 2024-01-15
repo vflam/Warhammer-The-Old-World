@@ -20,6 +20,7 @@
     <categoryEntry name="Monstrous Infantry" hidden="false" id="5c55-f9d6-b181-92f8"/>
     <categoryEntry name="Heavy Cavalry" hidden="false" id="5165-d052-cfc2-5887"/>
     <categoryEntry name="War Beasts" hidden="false" id="19f9-8dd8-bba4-625b"/>
+    <categoryEntry name="NO EXPORT" hidden="true" id="49a9-ce63-af1a-18f7"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
