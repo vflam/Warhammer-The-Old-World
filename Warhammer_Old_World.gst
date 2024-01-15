@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="28" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="30" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -89,6 +89,15 @@
     <profileType name="Command" hidden="false" id="52d4-d959-fe4d-90fa">
       <characteristicTypes>
         <characteristicType id="441a-ef3a-c07e-95f" name="Description"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType name="Spell" hidden="false" id="8232-ae14-b1f6-b4df">
+      <characteristicTypes>
+        <characteristicType id="8a2b-690b-e552-6aa0" name="Number"/>
+        <characteristicType id="c2ca-5fd1-5e9d-bc90" name="Type"/>
+        <characteristicType id="d84d-3b8b-654a-9e1a" name="Casting Value"/>
+        <characteristicType id="1043-a0ad-2909-dd28" name="Range"/>
+        <characteristicType id="64ba-31-acf0-5a" name="Effect"/>
       </characteristicTypes>
     </profileType>
   </profileTypes>
