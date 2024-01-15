@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="30" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="31" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -43,13 +43,13 @@
     <costType id="points" name="pts" defaultCostLimit="2000"/>
   </costTypes>
   <profileTypes>
-    <profileType name="Unit" hidden="false" id="2878-9a1f-dd74-48e3" sortIndex="1">
+    <profileType name="Unit" hidden="false" id="2878-9a1f-dd74-48e3" sortIndex="7">
       <characteristicTypes>
         <characteristicType id="5d94-6b94-bd89-1944" name="Troop Type"/>
         <characteristicType id="80a1-bb6f-66e4-4a5b" name="Unit Size"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Model" hidden="false" id="b070-143a-73f-2772" sortIndex="2">
+    <profileType name="Model" hidden="false" id="b070-143a-73f-2772" sortIndex="1">
       <characteristicTypes>
         <characteristicType id="cd3b-a5a4-e185-5a9d" name="M"/>
         <characteristicType id="b007-7d58-4f14-1e01" name="WS"/>
@@ -62,37 +62,37 @@
         <characteristicType id="c435-6b14-f77e-3c72" name="Ld"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Base" hidden="false" id="1ae4-7f34-4055-fd5f" sortIndex="3">
+    <profileType name="Base" hidden="false" id="1ae4-7f34-4055-fd5f" sortIndex="9">
       <characteristicTypes>
         <characteristicType id="1adf-d238-57ca-2226" name="Base Size"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Weapon" hidden="false" id="cc88-6a7d-41c9-d63e" sortIndex="4">
+    <profileType name="Weapon" hidden="false" id="cc88-6a7d-41c9-d63e" sortIndex="2">
       <characteristicTypes>
         <characteristicType id="47f2-ecee-cae0-9ef9" name="Weapon"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Special Rule" hidden="false" id="c1ac-c1c8-f9d5-9673">
+    <profileType name="Special Rule" hidden="false" id="c1ac-c1c8-f9d5-9673" sortIndex="4">
       <characteristicTypes>
         <characteristicType id="9f84-4221-785a-db50" name="Description"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Armour" hidden="false" id="c14f-740-8107-d34b" sortIndex="5">
+    <profileType name="Armour" hidden="false" id="c14f-740-8107-d34b" sortIndex="3">
       <characteristicTypes>
         <characteristicType id="adcd-c649-e6fc-a9f6" name="Armour"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Banner Enchants" hidden="false" id="60d4-a840-4aac-114c">
+    <profileType name="Banner Enchants" hidden="false" id="60d4-a840-4aac-114c" sortIndex="5">
       <characteristicTypes>
         <characteristicType id="968d-b32a-6bdb-a394" name="Banner Enchant"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Command" hidden="false" id="52d4-d959-fe4d-90fa">
+    <profileType name="Command" hidden="false" id="52d4-d959-fe4d-90fa" sortIndex="8">
       <characteristicTypes>
         <characteristicType id="441a-ef3a-c07e-95f" name="Description"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Spell" hidden="false" id="8232-ae14-b1f6-b4df">
+    <profileType name="Spell" hidden="false" id="8232-ae14-b1f6-b4df" sortIndex="6">
       <characteristicTypes>
         <characteristicType id="8a2b-690b-e552-6aa0" name="Number"/>
         <characteristicType id="c2ca-5fd1-5e9d-bc90" name="Type"/>
@@ -925,6 +925,14 @@ Note that models in rear ranks use the line of sight of the model at the front o
       <characteristics>
         <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">Armour Bane(2), Multiple Wounds(2)</characteristic>
       </characteristics>
+    </profile>
+    <profile name="Base (round 50)" hidden="false" id="2c87-b5d6-e13b-4082" typeId="1ae4-7f34-4055-fd5f" typeName="Base">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">50</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
     </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
