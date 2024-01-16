@@ -23,20 +23,24 @@
     <categoryEntry name="NO EXPORT" hidden="true" id="49a9-ce63-af1a-18f7"/>
     <categoryEntry name="Monstrous Cavalry" hidden="false" id="2c85-5f2b-9288-1257"/>
     <categoryEntry name="Behemoth" hidden="false" id="3755-6732-99b2-c713"/>
+    <categoryEntry name="25PTSLIMIT" hidden="true" id="9ec3-3046-6db2-dd57"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
       <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="a936-639f-e214-e9d" targetId="a4cc-15c9-cfae-1b3b" type="category"/>
         <categoryLink id="ab07-e23d-ab54-8822" targetId="f0e3-2e32-8866-ea32" name="Core" type="category">
           <constraints>
-            <constraint id="d66d-a221-5af9-c648" type="min" value="25" percentValue="true" field="limit::points" scope="roster" includeChildSelections="true"/>
+            <constraint type="min" value="25" field="limit::points" scope="roster" shared="true" id="563-332d-aa18-dad" percentValue="true" includeChildSelections="true"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Special" hidden="false" id="c64f-52a4-9d57-2c86" targetId="633f-f67a-1b6a-d203" type="category">
+          <constraints>
+            <constraint type="max" value="25" field="selections" scope="roster" shared="true" id="2212-630f-3cec-36df" percentValue="true" includeChildSelections="true"/>
           </constraints>
         </categoryLink>
         <categoryLink name="Rare" hidden="false" id="e603-b373-46b1-4237" targetId="2bfe-5863-46fe-d284" type="category"/>
         <categoryLink name="Cavalry" hidden="false" id="d59f-8eb0-78c4-68c1" targetId="36e4-45e0-c904-55d1" type="category"/>
-        <categoryLink name="Configuration" hidden="false" id="aed4-542f-e6ec-d809" targetId="48b5-1583-6fa3-acda" type="category"/>
-        <categoryLink name="Special" hidden="false" id="c64f-52a4-9d57-2c86" targetId="633f-f67a-1b6a-d203" type="category"/>
-        <categoryLink name="Characters" hidden="false" id="a936-639f-e214-e9d" targetId="a4cc-15c9-cfae-1b3b" type="category"/>
       </categoryLinks>
     </forceEntry>
   </forceEntries>

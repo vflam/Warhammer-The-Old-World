@@ -636,6 +636,16 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
           <infoLinks>
             <infoLink name="Drilled" hidden="false" type="profile" id="259e-bfd1-c6fa-bdf9" targetId="1f64-3ddc-db58-12fb"/>
           </infoLinks>
+          <modifiers>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="7bea-2dc7-aa4e-5de2" shared="true" roundUp="false" id="367d-8a01-7d63-77c9" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="c985-f197-891a-d623">
           <constraints>
@@ -644,6 +654,13 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
           <infoLinks>
             <infoLink name="Veteran" hidden="false" type="profile" id="e8fc-d773-d51e-8d0a" targetId="4022-c403-b083-ba83"/>
           </infoLinks>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="7a58-7bb5-284f-7a2f" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Standard Runes" hidden="false" id="baa-a804-e903-a730">
           <categoryLinks>
@@ -652,6 +669,13 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ce5f-eae1-dc7e-8504"/>
           </constraints>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="85a0-f498-d9da-fcf5" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <constraints>
@@ -737,7 +761,6 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1ce7-da39-56d2-ba1f"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Crossbow" hidden="false" type="selectionEntry" id="fa54-1fb4-9aee-cb9d" targetId="c3af-77b3-b2d5-20db"/>
           </entryLinks>
           <infoLinks>
             <infoLink name="Ranger" hidden="false" type="profile" id="1c6b-55bf-3792-a89b" targetId="24b7-5ecf-bfb9-bb76"/>
@@ -777,6 +800,39 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Ranged Weapon" hidden="false" id="2950-5cbf-911-3057">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Crossbow" hidden="false" id="7fa9-f977-ccbe-b70b" collective="true">
+                  <entryLinks>
+                    <entryLink import="true" name="Crossbow" hidden="false" type="selectionEntry" id="5b9c-597b-e5d-32cc" targetId="c3af-77b3-b2d5-20db"/>
+                  </entryLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8ece-8bc6-5d30-d638"/>
+                  </constraints>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Throwing Axe" hidden="false" id="9a39-bd0a-cd46-b5f6" collective="true">
+                  <infoLinks>
+                    <infoLink name="Throwing Axe" hidden="false" type="profile" id="d1c0-c754-d0d7-1375" targetId="9914-73b6-65c4-ec44"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f735-3eed-a629-742e"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="0"/>
+                  </costs>
+                  <modifiers>
+                    <modifier type="set" value="1" field="points">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="7fa9-f977-ccbe-b70b" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </selectionEntry>
+              </selectionEntries>
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7dc-b061-6614-f4d6"/>
+              </constraints>
+            </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
@@ -807,7 +863,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="14a-4329-1222-3065" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Of Deadeye" hidden="false" id="7b45-e0af-d8e3-c481" noAlphabeticalSort="true" subType="crew">
+            <selectionEntry type="model" import="true" name="Ol Deadeye" hidden="false" id="7b45-e0af-d8e3-c481" noAlphabeticalSort="true" subType="crew">
               <costs>
                 <cost name="pts" typeId="points" value="6"/>
               </costs>
@@ -822,7 +878,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 <infoLink name="Ranger" hidden="false" type="profile" id="eb7-c648-c45a-fdeb" targetId="24b7-5ecf-bfb9-bb76">
                   <modifiers>
                     <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
-                    <modifier type="set" value="Of Deadeye" field="name"/>
+                    <modifier type="set" value="Ol Deadeye" field="name"/>
                   </modifiers>
                 </infoLink>
                 <infoLink name="Champion" hidden="false" type="profile" id="f85-4b50-4d1f-28fc" targetId="5f1c-fd04-b0d5-d5e"/>
@@ -985,6 +1041,16 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 <infoLink name="Champion" hidden="false" type="profile" id="f367-2ce-fad3-c78d" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <comment>upgrades: 7bea-2dc7-aa4e-5de2</comment>
+              <entryLinks>
+                <entryLink import="true" name="Weapon Runes" hidden="false" type="selectionEntryGroup" id="cd0a-38ca-d51e-639b" targetId="5b6d-7452-75db-8b09">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="true" id="43a2-7ae7-a20c-a817"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+              <categoryLinks>
+                <categoryLink targetId="9ec3-3046-6db2-dd57" id="381e-cd3c-d580-4802" primary="false" name="25PTSLIMIT"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="307f-9b57-8cf8-6f15" subType="crew">
               <constraints>
@@ -1345,6 +1411,8 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
     <selectionEntry id="a663-69e2-1593-4ae9" name="Long Beards" type="unit" collective="false" hidden="false" page="0" noAlphabeticalSort="true">
       <categoryLinks>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="f74e-267-6d9e-99f3" primary="true" name="Special"/>
+        <categoryLink targetId="7a58-7bb5-284f-7a2f" id="ef90-1735-bf44-460f" primary="false" name="HIDE VETERAN"/>
+        <categoryLink targetId="85a0-f498-d9da-fcf5" id="7ee7-925c-b34d-fad2" primary="false" name="HIDE STANDARD"/>
       </categoryLinks>
       <costs>
         <cost typeId="points" name="pts" value="0"/>
@@ -1445,7 +1513,6 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
               <entryLinks>
                 <entryLink import="true" name="Standard Runes" hidden="false" type="selectionEntryGroup" id="849a-74d8-405b-88c5" targetId="1ea5-5bf5-9a12-78a4">
                   <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a18b-f0e8-6a17-4a3a"/>
                     <constraint type="max" value="50" field="points" scope="parent" shared="true" id="1f66-b37-1c5c-e0f4" includeChildSelections="true"/>
                   </constraints>
                   <categoryLinks>
@@ -1482,6 +1549,9 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
           </infoLinks>
         </infoGroup>
       </infoGroups>
+      <entryLinks>
+        <entryLink import="true" name="Options" hidden="false" type="selectionEntryGroup" id="70c2-a9cc-7728-8da" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Thunderers" hidden="false" id="dd27-431-f28d-8698">
       <categoryLinks>
@@ -3133,4 +3203,11 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
     <profileType name="Engineering Runes" hidden="false" id="1259-b3c-4179-7c40"/>
     <profileType name="Talismanic Runes" hidden="false" id="d839-c07a-fdb2-5492"/>
   </profileTypes>
+  <catalogueLinks>
+    <catalogueLink type="catalogue" name="Magic Items" id="f744-ecff-f413-da33" targetId="6c22-b0e4-7c83-f9ce"/>
+  </catalogueLinks>
+  <categoryEntries>
+    <categoryEntry name="HIDE VETERAN" hidden="true" id="7a58-7bb5-284f-7a2f"/>
+    <categoryEntry name="HIDE STANDARD" hidden="false" id="85a0-f498-d9da-fcf5"/>
+  </categoryEntries>
 </catalogue>
