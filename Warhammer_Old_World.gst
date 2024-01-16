@@ -161,11 +161,6 @@ Note that if a model uses a weapon that has the Requires To Hands special rule i
         <characteristic name="Armour" typeId="adcd-c649-e6fc-a9f6">A model that rides a barded mount improves its armour value by 1. For example, a cavalry model equipped with heavy armour has a armour save of 5+. Should that model&apos;s mount be barded, its armour value would be improved by 1 by lowering the target number from 5+ to 4+.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Blessing of the Lady" hidden="false" id="8a35-b5d4-1652-b3d" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
-      <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Blessing....</characteristic>
-      </characteristics>
-    </profile>
     <profile name="Close Order" hidden="false" id="883e-e1b1-4fe9-5912" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit consisting of models with this special rule may adopt a Close Order formation.</characteristic>
