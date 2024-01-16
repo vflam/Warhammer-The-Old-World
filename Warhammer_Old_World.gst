@@ -171,10 +171,9 @@ Note that if a model uses a weapon that has the Requires To Hands special rule i
         <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9">12&quot; S3 Multiple Shots (4), Quick Shot</characteristic>
       </characteristics>
     </profile>
-    <profile name="Hatred (X)" hidden="false" id="f4b3-18af-16bf-78dd" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+    <profile name="Hatred" hidden="false" id="f4b3-18af-16bf-78dd" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule may re-roll any failed rolls To Hit made against a hatred enemy during the first round of combat.
-
 
 Which enemies are hated varies from model to model and will be shown in brackets after the name of this special rule (X). Some models hate &apos;all enemies&apos; meaning they hate all enemy models equally.</characteristic>
       </characteristics>
@@ -182,7 +181,6 @@ Which enemies are hated varies from model to model and will be shown in brackets
     <profile name="Magic Resistance" hidden="false" id="90ed-c9be-a611-79cc" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">The Casting roll of any enemy spell (including Bound Spells) that targets a unit that includes one ore more models with this special rule suffers a modifier, as shown in brackets after the name of this special rule (-X).
-
 
 Note that this special rule is not cumulative. If two or more models in a unit have this special rule, use the highest modifier.</characteristic>
       </characteristics>
@@ -937,7 +935,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
     </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
-    <selectionEntry type="upgrade" import="true" name="Hand weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
+    <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
       <infoLinks>
         <infoLink name="Hand Weapon" hidden="false" type="profile" id="c4fd-6287-4ab1-bb65" targetId="ef45-edcd-18bf-fe1d"/>
       </infoLinks>
