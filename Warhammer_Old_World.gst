@@ -83,11 +83,6 @@
         <characteristicType id="adcd-c649-e6fc-a9f6" name="Armour"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Banner Enchants" hidden="false" id="60d4-a840-4aac-114c" sortIndex="5">
-      <characteristicTypes>
-        <characteristicType id="968d-b32a-6bdb-a394" name="Banner Enchant"/>
-      </characteristicTypes>
-    </profileType>
     <profileType name="Command" hidden="false" id="52d4-d959-fe4d-90fa" sortIndex="8">
       <characteristicTypes>
         <characteristicType id="441a-ef3a-c07e-95f" name="Description"/>
