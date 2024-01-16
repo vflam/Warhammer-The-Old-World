@@ -68,7 +68,7 @@
         <characteristicType id="c435-6b14-f77e-3c72" name="Ld"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Base" hidden="false" id="1ae4-7f34-4055-fd5f" sortIndex="9">
+    <profileType name="Base" hidden="false" id="1ae4-7f34-4055-fd5f" sortIndex="19">
       <characteristicTypes>
         <characteristicType id="1adf-d238-57ca-2226" name="Base Size"/>
       </characteristicTypes>
@@ -358,7 +358,6 @@ Fleeing units and units already engaged in combat when charged cannot Counter Ch
     <profile name="Drilled" hidden="false" id="1f64-3ddc-db58-12fb" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless it is fleeing, a Drilled unit may perform a free redress the ranks manoeuvre immediately before moving. Once this manoeuvre is complete, the unit moves as normal. In addition a Drilled unit can march whilst within 8&quot; of an enemy unit without first having to make a Leadership test.
-
 
 Note that any character that joins a Drilled unit is considered to be Drilled as well.</characteristic>
       </characteristics>

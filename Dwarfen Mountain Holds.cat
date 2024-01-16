@@ -573,7 +573,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
     </profile>
     <profile name="Master Rune of Smiting" hidden="false" id="599-5e44-7276-ba0e" typeId="a981-4ba6-83fd-3044" typeName="Weapon Runes">
       <characteristics>
-        <characteristic name="Description" typeId="8e20-307f-c900-61b3">A weapon inscribed with the Master Rune of Smiting gains the &lt;nuxt-link&gt;Multiple Wounds (D6)&lt;/nuxt-link&gt; special rule.</characteristic>
+        <characteristic name="Description" typeId="8e20-307f-c900-61b3">A weapon inscribed with the Master Rune of Smiting gains the [Multiple Wounds (D6)] special rule.</characteristic>
       </characteristics>
     </profile>
     <profile name="Troll Slayer" hidden="false" id="1e1b-5c34-8f12-5ba4" typeId="b070-143a-73f-2772" typeName="Model">
@@ -604,7 +604,12 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
     </profile>
     <profile name="Master Rune of Skalf Blackhammer" hidden="false" id="d434-7c36-3dd2-ac4" typeId="a981-4ba6-83fd-3044" typeName="Weapon Runes">
       <characteristics>
-        <characteristic name="Description" typeId="8e20-307f-c900-61b3">When making a roll to Wound with a weapon inscribed with the Master Rune of Skalf Blackhammer, a roll of 2+ is always a success, regardless of the target&apos;s Toughness</characteristic>
+        <characteristic name="Description" typeId="8e20-307f-c900-61b3">When making a roll to Wound with a weapon inscribed with the Master Rune of Skalf Blackhammer, a roll of 2+ is always a success, regardless of the target&apos;s Toughness.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Cinderblast Bombs" hidden="false" id="edb7-2817-a45e-9e05" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Weapon" typeId="47f2-ecee-cae0-9ef9"/>
       </characteristics>
     </profile>
   </sharedProfiles>
@@ -621,13 +626,18 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
           <modifiers>
             <modifier type="increment" value="1" field="points">
               <repeats>
-                <repeat value="1" repeats="1" field="selections" scope="parent" childId="7bea-2dc7-aa4e-5de2" shared="true" roundUp="false" id="367d-8a01-7d63-77c9" includeChildSelections="true"/>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="367d-8a01-7d63-77c9" includeChildSelections="true"/>
               </repeats>
             </modifier>
             <modifier type="set" value="false" field="hidden">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="b969-2677-1d5a-8449" shared="true"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="parent" childId="ed17-90ba-6e91-d0d6" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="parent" childId="b969-2677-1d5a-8449" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <costs>
@@ -697,7 +707,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </modifier>
       </modifiers>
     </selectionEntryGroup>
-    <selectionEntryGroup name="Runes" hidden="false" id="1e31-2c1f-9494-2b89">
+    <selectionEntryGroup name="Runes" hidden="false" id="1e31-2c1f-9494-2b89" flatten="true">
       <entryLinks>
         <entryLink import="true" name="Weapon Runes" hidden="false" type="selectionEntryGroup" id="ec42-72c0-9941-966c" targetId="9f5a-e0f5-60ed-1066"/>
         <entryLink targetId="bb15-91b5-9a62-f31a" id="47a8-e164-1547-94fb" type="selectionEntryGroup" name="Talismanic Runes" hidden="false"/>
@@ -759,13 +769,12 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         <constraint type="max" value="3" field="selections" scope="parent" shared="true" id="dbec-8150-dae0-26a8"/>
       </constraints>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Master Runes" hidden="false" id="9192-6729-6358-1e7a">
+        <selectionEntryGroup name="Master Runes" hidden="false" id="9192-6729-6358-1e7a" flatten="true">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5786-d9cb-dffb-e1b0"/>
           </constraints>
-          <comment>[nogroup]</comment>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Normal Runes" hidden="false" id="4165-9cb9-7b2c-ad1">
+        <selectionEntryGroup name="Normal Runes" hidden="false" id="4165-9cb9-7b2c-ad1" flatten="true">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Rune of Fear" hidden="false" id="aab1-7fd8-b03-e285">
               <costs>
@@ -801,7 +810,6 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
               </constraints>
             </selectionEntry>
           </selectionEntries>
-          <comment>[nogroup]</comment>
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntryGroup>
@@ -902,7 +910,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         <cost typeId="points" name="pts" value="0"/>
       </costs>
       <selectionEntries>
-        <selectionEntry id="ff65-5ffb-12a2-2f50" name="Ranger" type="model" collective="false" hidden="false" publicationId="3a81ff07--pubd1e638">
+        <selectionEntry id="ff65-5ffb-12a2-2f50" name="Ranger" type="model" collective="false" hidden="false" publicationId="3a81ff07--pubd1e638" flatten="true">
           <costs>
             <cost name="pts" typeId="points" value="11"/>
           </costs>
@@ -998,9 +1006,9 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup id="28a9-fdde-d981-2ef9" name="Command" collective="false" hidden="false" noAlphabeticalSort="true">
+        <selectionEntryGroup id="28a9-fdde-d981-2ef9" name="Command" collective="false" hidden="false">
           <selectionEntries>
-            <selectionEntry id="7eed-badb-d1aa-a537" name="Musician" type="model" collective="false" hidden="false" noAlphabeticalSort="true" subType="crew">
+            <selectionEntry id="7eed-badb-d1aa-a537" name="Musician" type="model" collective="false" hidden="false" subType="crew">
               <costs>
                 <cost name="pts" typeId="points" value="6"/>
               </costs>
@@ -1012,12 +1020,13 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 <infoLink name="Musician" hidden="false" type="profile" id="b5f4-9ba3-c38f-ea2c" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
             </selectionEntry>
-            <selectionEntry id="fa54-8383-7757-71f" name="Standard Bearer" type="model" collective="false" hidden="false" noAlphabeticalSort="true" subType="crew">
+            <selectionEntry id="fa54-8383-7757-71f" name="Standard Bearer" type="model" collective="false" hidden="false" subType="crew" flatten="true">
               <costs>
                 <cost name="pts" typeId="points" value="6"/>
               </costs>
               <constraints>
                 <constraint id="de18-a8d6-17ee-1388" type="max" field="points" scope="parent" value="25"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fa44-103c-d06-52c2"/>
               </constraints>
               <comment>upgrades: ff65-5ffb-12a2-2f50</comment>
               <infoLinks>
@@ -1027,10 +1036,14 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 <categoryLink targetId="9ec3-3046-6db2-dd57" id="3426-1536-2c4f-e5a" primary="false" name="25PTSLIMIT"/>
               </categoryLinks>
               <entryLinks>
-                <entryLink import="true" name="Standard Runes" hidden="false" type="selectionEntryGroup" id="506b-8679-3f55-d305" targetId="c4a0-bdf6-454f-5e57"/>
+                <entryLink import="true" name="Standard Runes" hidden="false" type="selectionEntryGroup" id="df39-78e7-8892-9b15" targetId="c4a0-bdf6-454f-5e57" flatten="false">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="f1b3-23f3-f357-5d87" includeChildSelections="false"/>
+                  </constraints>
+                </entryLink>
               </entryLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Ol Deadeye" hidden="false" id="7b45-e0af-d8e3-c481" noAlphabeticalSort="true" subType="crew">
+            <selectionEntry type="model" import="true" name="Ol Deadeye" hidden="false" id="7b45-e0af-d8e3-c481" subType="crew" flatten="true">
               <costs>
                 <cost name="pts" typeId="points" value="6"/>
               </costs>
@@ -1051,7 +1064,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 <infoLink name="Champion" hidden="false" type="profile" id="f85-4b50-4d1f-28fc" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <selectionEntryGroups>
-                <selectionEntryGroup name="Ranged Weapon" hidden="false" id="3060-5895-9bf3-484c" noAlphabeticalSort="false">
+                <selectionEntryGroup name="Ranged Weapon" hidden="false" id="3060-5895-9bf3-484c">
                   <selectionEntries>
                     <selectionEntry type="upgrade" import="true" name="Pistol" hidden="false" id="692-efac-ee00-7ba3" collective="true">
                       <constraints>
@@ -1091,24 +1104,6 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
               </selectionEntryGroups>
             </selectionEntry>
           </selectionEntries>
-          <entryLinks>
-            <entryLink import="true" name="Standard Runes" hidden="true" type="selectionEntryGroup" id="3a4e-a575-c0d6-8d87" targetId="c4a0-bdf6-454f-5e57">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8def-30c-a842-2071"/>
-                <constraint type="max" value="50" field="points" scope="parent" shared="true" id="b80d-169d-d0cf-e17b" includeChildSelections="true"/>
-              </constraints>
-              <modifiers>
-                <modifier type="set" value="false" field="hidden">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="fa54-8383-7757-71f" shared="true"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <categoryLinks>
-                <categoryLink targetId="db34-5941-b4e0-4ca2" id="e1c7-59df-8aeb-97bb" primary="false" name="50PTSLIMIT"/>
-              </categoryLinks>
-            </entryLink>
-          </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <profiles>
@@ -1143,7 +1138,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </profile>
       </profiles>
       <selectionEntries>
-        <selectionEntry type="model" import="true" name="Dwarf Warrior" hidden="false" id="7bea-2dc7-aa4e-5de2">
+        <selectionEntry type="model" import="true" name="Dwarf Warrior" hidden="false" id="7bea-2dc7-aa4e-5de2" flatten="true">
           <constraints>
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="ca3c-e9c2-44f3-7918"/>
           </constraints>
@@ -1189,7 +1184,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="4415-7d91-5156-7813" noAlphabeticalSort="true">
+        <selectionEntryGroup name="Command" hidden="false" id="4415-7d91-5156-7813" flatten="false">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Veteran" hidden="false" id="f5a8-5cc5-3d62-93f3" subType="crew">
               <constraints>
@@ -1211,7 +1206,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
               <entryLinks>
                 <entryLink import="true" name="Weapon Runes" hidden="false" type="selectionEntryGroup" id="cd0a-38ca-d51e-639b" targetId="9f5a-e0f5-60ed-1066">
                   <constraints>
-                    <constraint type="max" value="25" field="points" scope="parent" shared="true" id="43a2-7ae7-a20c-a817"/>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="43a2-7ae7-a20c-a817"/>
                   </constraints>
                 </entryLink>
               </entryLinks>
@@ -1220,7 +1215,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 <categoryLink targetId="83a1-945c-564c-84af" id="f68a-9cb9-c6f9-76d6" primary="false" name="CHAMPION"/>
               </categoryLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="307f-9b57-8cf8-6f15" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="307f-9b57-8cf8-6f15" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4759-f113-3304-eee9"/>
               </constraints>
@@ -1237,6 +1232,9 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                       </conditions>
                     </modifier>
                   </modifiers>
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="2d28-32cc-1fc3-934e" includeChildSelections="false"/>
+                  </constraints>
                 </entryLink>
               </entryLinks>
               <infoLinks>
@@ -1264,12 +1262,12 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
             <infoLink name="Close Order" hidden="false" type="profile" id="cbc9-5a19-68b9-db6c" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Hatred" hidden="false" type="profile" id="c20-665d-2af5-75c0" targetId="f4b3-18af-16bf-78dd">
               <modifiers>
-                <modifier type="append" value=" (Orcs &amp; Goblins)" field="name"/>
+                <modifier type="append" value="(Orcs &amp; Goblins)" field="name"/>
               </modifiers>
             </infoLink>
             <infoLink name="Magic Resistance" hidden="false" type="profile" id="9732-ae3b-3bf2-23e6" targetId="90ed-c9be-a611-79cc">
               <modifiers>
-                <modifier type="append" value=" (-1)" field="name"/>
+                <modifier type="append" value="(-1)" field="name"/>
               </modifiers>
             </infoLink>
             <infoLink name="Resolute" hidden="false" type="profile" id="fa54-13-a6b1-f166" targetId="a230-c540-6a65-4974"/>
@@ -1282,7 +1280,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         <categoryLink targetId="ca7e-d004-ccde-caf3" id="c8a6-a38b-d0db-81d0" primary="false" name="Heavy infantry"/>
       </categoryLinks>
       <entryLinks>
-        <entryLink import="true" name="Options" hidden="false" type="selectionEntryGroup" id="fa76-a7e7-2215-77a6" targetId="ce2e-bc0f-be9b-9221" noAlphabeticalSort="true"/>
+        <entryLink import="true" name="Options" hidden="false" type="selectionEntryGroup" id="fa76-a7e7-2215-77a6" targetId="ce2e-bc0f-be9b-9221"/>
       </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Quarrellers" hidden="false" id="c4a9-d38a-2612-4a9a">
@@ -1291,7 +1289,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         <categoryLink targetId="ca7e-d004-ccde-caf3" id="2aba-6719-48fd-5a1e" primary="false" name="Heavy infantry"/>
       </categoryLinks>
       <selectionEntries>
-        <selectionEntry type="model" import="true" name="Quarreller" hidden="false" id="eb1d-9ea-e98-a454">
+        <selectionEntry type="model" import="true" name="Quarreller" hidden="false" id="eb1d-9ea-e98-a454" flatten="true">
           <costs>
             <cost name="pts" typeId="points" value="9"/>
           </costs>
@@ -1365,7 +1363,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </infoGroup>
       </infoGroups>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="4778-1248-73ff-ec19" noAlphabeticalSort="true">
+        <selectionEntryGroup name="Command" hidden="false" id="4778-1248-73ff-ec19">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="8190-92f3-11b7-db2e" subType="crew">
               <constraints>
@@ -1391,7 +1389,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="a190-a4e2-8bd-1305" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Veteran" hidden="false" id="3b83-9f1f-eae4-e96b" subType="crew">
+            <selectionEntry type="model" import="true" name="Veteran" hidden="false" id="3b83-9f1f-eae4-e96b" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b512-4d34-558-5879"/>
               </constraints>
@@ -1462,51 +1460,15 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </profile>
       </profiles>
       <selectionEntries>
-        <selectionEntry type="model" import="true" name="Ironbreaker" hidden="false" id="a688-70ae-497f-c486">
+        <selectionEntry type="model" import="true" name="Ironbreaker" hidden="false" id="a688-70ae-497f-c486" flatten="true">
           <constraints>
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="2c13-3225-3e77-8f2"/>
           </constraints>
           <entryLinks>
             <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="c7c-8054-5fb2-4b23" targetId="721d-36e3-388a-c0d6"/>
             <entryLink import="true" name="Full Plate Armour" hidden="false" type="selectionEntry" id="c8b8-5138-5e22-c7c1" targetId="2505-873d-1655-3b0b"/>
+            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="4ac4-938d-758b-7cc4" targetId="6192-f9f1-5d53-2042"/>
           </entryLinks>
-          <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="adba-174f-191d-fa3d" noAlphabeticalSort="true" defaultSelectionEntryId="c34f-2f69-f298-ebfe">
-              <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Shields" hidden="false" id="c34f-2f69-f298-ebfe" collective="true">
-                  <costs>
-                    <cost name="pts" typeId="points" value="0"/>
-                  </costs>
-                  <entryLinks>
-                    <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="ce3e-7448-7b4f-e774" targetId="6192-f9f1-5d53-2042"/>
-                  </entryLinks>
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c5e5-40a1-e4cf-5d5c"/>
-                  </constraints>
-                </selectionEntry>
-                <selectionEntry type="upgrade" import="true" name="Brace of Drakefire Pistols" hidden="false" id="db5d-a6e9-f602-1b67" collective="true">
-                  <costs>
-                    <cost name="pts" typeId="points" value="3"/>
-                  </costs>
-                  <entryLinks>
-                    <entryLink import="true" name="Brace of Drakefire Pistols" hidden="false" type="selectionEntry" id="8188-7fd5-6474-5390" targetId="c30d-ef4-6f9d-ef24"/>
-                  </entryLinks>
-                </selectionEntry>
-                <selectionEntry type="upgrade" import="true" name="Drakegun" hidden="false" id="370a-346a-7230-5cc" collective="true">
-                  <costs>
-                    <cost name="pts" typeId="points" value="2"/>
-                  </costs>
-                  <entryLinks>
-                    <entryLink import="true" name="Drakegun" hidden="false" type="selectionEntry" id="5fc7-b02f-d0ea-cc7" targetId="dec9-b9dc-6f2e-c905"/>
-                  </entryLinks>
-                </selectionEntry>
-              </selectionEntries>
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a510-d01e-600c-e140-min"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a510-d01e-600c-e140-max"/>
-              </constraints>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
           <infoLinks>
             <infoLink name="Ironbreaker" hidden="false" type="profile" id="82a5-83cc-8818-42fb" targetId="1d0d-1cf7-9340-5a6f"/>
             <infoLink name="Base (25x25)" hidden="false" type="profile" id="a27b-9900-2006-386e" targetId="193c-4d0d-de6b-bbb1"/>
@@ -1517,7 +1479,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="dfa6-b798-4d0e-3bfa" noAlphabeticalSort="true">
+        <selectionEntryGroup name="Command" hidden="false" id="dfa6-b798-4d0e-3bfa">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Ironbeard" hidden="false" id="ceb2-e2e3-8dd3-5db3" subType="crew">
               <constraints>
@@ -1536,8 +1498,43 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 <infoLink name="Champion" hidden="false" type="profile" id="960a-e890-f7a0-f4ca" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <comment>upgrades: a688-70ae-497f-c486</comment>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Brace of Drakefire Pistols" hidden="false" id="1b5-1b3d-5a4-5c2e" collective="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="10"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Brace of Drakefire Pistols" hidden="false" type="selectionEntry" id="a941-d304-b80e-84c2" targetId="c30d-ef4-6f9d-ef24"/>
+                  </entryLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="159b-a184-f334-a8cd"/>
+                  </constraints>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Drakegun" hidden="false" id="b2-39ea-e1e4-dd5f" collective="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="10"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Drakegun" hidden="false" type="selectionEntry" id="661e-3e5b-788f-688" targetId="dec9-b9dc-6f2e-c905"/>
+                  </entryLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="477-6d18-e7f5-6811"/>
+                  </constraints>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Cinderblast Bombs" hidden="false" id="ce44-90a1-41d4-404f" collective="false">
+                  <entryLinks>
+                    <entryLink import="true" name="Cinderblast Bombs" hidden="false" type="selectionEntry" id="20a6-c3-8085-32e" targetId="872d-db29-8846-515b"/>
+                  </entryLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="15"/>
+                  </costs>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1749-77bc-81ee-4794"/>
+                  </constraints>
+                </selectionEntry>
+              </selectionEntries>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="d9c-dae5-9199-1e47" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="d9c-dae5-9199-1e47" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1722-6f33-f0f7-5244"/>
               </constraints>
@@ -1548,6 +1545,20 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="60c3-f617-1329-fac4" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Standard Runes" hidden="true" type="selectionEntryGroup" id="5735-d325-ea7b-e9b3" targetId="c4a0-bdf6-454f-5e57">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="ed17-90ba-6e91-d0d6" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="true" id="ff76-878b-856f-c16a"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="e262-c056-64a4-a0ed" subType="crew">
               <constraints>
@@ -1562,14 +1573,25 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
               </infoLinks>
             </selectionEntry>
           </selectionEntries>
+          <entryLinks>
+            <entryLink import="true" name="Options" hidden="false" type="selectionEntryGroup" id="5587-3712-c2ec-7521" targetId="ce2e-bc0f-be9b-9221"/>
+          </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="6789-24c5-52cc-d0e5">
           <infoLinks>
             <infoLink name="Close Order" hidden="false" type="profile" id="7f99-12b1-52f9-772f" targetId="883e-e1b1-4fe9-5912"/>
-            <infoLink name="Hatred" hidden="false" type="profile" id="b3b0-2230-dde5-ab3b" targetId="f4b3-18af-16bf-78dd"/>
-            <infoLink name="Magic Resistance" hidden="false" type="profile" id="bd62-c12d-82f1-e885" targetId="90ed-c9be-a611-79cc"/>
+            <infoLink name="Hatred" hidden="false" type="profile" id="b3b0-2230-dde5-ab3b" targetId="f4b3-18af-16bf-78dd">
+              <modifiers>
+                <modifier type="append" value=" (Orcs &amp; Goblins)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Magic Resistance" hidden="false" type="profile" id="bd62-c12d-82f1-e885" targetId="90ed-c9be-a611-79cc">
+              <modifiers>
+                <modifier type="append" value=" (-1)" field="name"/>
+              </modifiers>
+            </infoLink>
             <infoLink name="Resolute" hidden="false" type="profile" id="50d2-febf-a185-6bdc" targetId="a230-c540-6a65-4974"/>
             <infoLink name="Gromil Armour" hidden="false" type="profile" id="cd60-bd9c-6be9-7728" targetId="1a10-9069-8ff3-84ef"/>
             <infoLink name="Gromil Weapons" hidden="false" type="profile" id="272d-3809-8edc-d1ad" targetId="2e16-e293-353e-6881"/>
@@ -1582,9 +1604,10 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
       <categoryLinks>
         <categoryLink targetId="ca7e-d004-ccde-caf3" id="4df1-6d25-a398-ef21" primary="false" name="Heavy infantry"/>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="4d47-ebb2-cba1-97fb" primary="true" name="Special"/>
+        <categoryLink targetId="7a58-7bb5-284f-7a2f" id="2782-19bb-4f2e-d15f" primary="false" name="HIDE VETERAN"/>
       </categoryLinks>
     </selectionEntry>
-    <selectionEntry id="a663-69e2-1593-4ae9" name="Long Beards" type="unit" collective="false" hidden="false" page="0" noAlphabeticalSort="true">
+    <selectionEntry id="a663-69e2-1593-4ae9" name="Long Beards" type="unit" collective="false" hidden="false" page="0">
       <categoryLinks>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="f74e-267-6d9e-99f3" primary="true" name="Special"/>
         <categoryLink targetId="7a58-7bb5-284f-7a2f" id="ef90-1735-bf44-460f" primary="false" name="HIDE VETERAN"/>
@@ -1640,7 +1663,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup id="f6a-83d3-bd2-5dc1" name="Command" collective="false" hidden="false" noAlphabeticalSort="true">
+        <selectionEntryGroup id="f6a-83d3-bd2-5dc1" name="Command" collective="false" hidden="false">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Elder" hidden="false" id="a708-64eb-f654-a045">
               <costs>
@@ -1663,13 +1686,13 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 <categoryLink targetId="83a1-945c-564c-84af" id="5f6-61e0-cf3e-72d9" primary="false" name="CHAMPION"/>
                 <categoryLink targetId="9ec3-3046-6db2-dd57" id="53a6-33a0-d0d5-9d31" primary="false" name="25PTSLIMIT"/>
               </categoryLinks>
-              <selectionEntryGroups>
-                <selectionEntryGroup name="Runes" hidden="false" id="6d19-895a-b870-b394">
+              <entryLinks>
+                <entryLink import="true" name="Runes" hidden="false" type="selectionEntryGroup" id="be00-4097-d815-3b27" targetId="1e31-2c1f-9494-2b89" flatten="true">
                   <constraints>
-                    <constraint type="max" value="50" field="points" scope="parent" shared="true" id="582b-95a9-66c2-3c82"/>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="19f0-1e4f-3321-8391"/>
                   </constraints>
-                </selectionEntryGroup>
-              </selectionEntryGroups>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry id="aa08-42e4-eaa-4e30" name="Musician" type="upgrade" collective="false" hidden="false">
               <costs>
@@ -1697,7 +1720,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
               <entryLinks>
                 <entryLink import="true" name="Standard Runes" hidden="false" type="selectionEntryGroup" id="849a-74d8-405b-88c5" targetId="c4a0-bdf6-454f-5e57">
                   <constraints>
-                    <constraint type="max" value="50" field="points" scope="parent" shared="true" id="1f66-b37-1c5c-e0f4" includeChildSelections="true"/>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="1f66-b37-1c5c-e0f4" includeChildSelections="false"/>
                   </constraints>
                   <categoryLinks>
                     <categoryLink targetId="db34-5941-b4e0-4ca2" id="b664-8fc1-584e-5205" primary="false" name="50PTSLIMIT"/>
@@ -1743,7 +1766,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         <categoryLink targetId="ca7e-d004-ccde-caf3" id="b9d1-9f81-98bc-703c" primary="false" name="Heavy infantry"/>
       </categoryLinks>
       <selectionEntries>
-        <selectionEntry type="model" import="true" name="Thunderer" hidden="false" id="f776-e8d1-449f-6b99">
+        <selectionEntry type="model" import="true" name="Thunderer" hidden="false" id="f776-e8d1-449f-6b99" flatten="true">
           <costs>
             <cost name="pts" typeId="points" value="10"/>
           </costs>
@@ -1817,7 +1840,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </infoGroup>
       </infoGroups>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="8372-bf23-c7f3-1346" noAlphabeticalSort="true">
+        <selectionEntryGroup name="Command" hidden="false" id="8372-bf23-c7f3-1346">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="dd17-2f96-31a3-865" subType="crew">
               <constraints>
@@ -1843,7 +1866,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="251b-8301-6ecf-9f07" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Veteran" hidden="false" id="8c0-6477-f5a5-13a" subType="crew">
+            <selectionEntry type="model" import="true" name="Veteran" hidden="false" id="8c0-6477-f5a5-13a" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8d2-bb19-2aca-89c9"/>
               </constraints>
@@ -1924,7 +1947,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
             <entryLink import="true" name="Great hammer" hidden="false" type="selectionEntry" id="ec77-240b-8b17-c61" targetId="3fff-5ac9-5ee0-70a9" collective="true"/>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="377b-4298-d4dd-c14">
+            <selectionEntryGroup name="Equipment" hidden="false" id="377b-4298-d4dd-c14" flatten="true">
               <selectionEntries>
                 <selectionEntry type="upgrade" import="true" name="Shields" hidden="false" id="5449-c4b-5ba0-c848" collective="true">
                   <costs>
@@ -1947,10 +1970,31 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
           <costs>
             <cost name="pts" typeId="points" value="16"/>
           </costs>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="8130-65d-7bbf-5144" collective="true">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+              <infoLinks>
+                <infoLink name="Drilled" hidden="false" type="profile" id="2832-2143-5cc0-b139" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="70ab-7e7e-19fc-d688"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="970-71b7-98f8-842d" collective="true">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e15f-89ac-bb27-c4a"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="69e7-e2e8-250d-e65" noAlphabeticalSort="true">
+        <selectionEntryGroup name="Command" hidden="false" id="69e7-e2e8-250d-e65">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Royal Champion" hidden="false" id="b507-b4e0-e3c0-f750" subType="crew">
               <constraints>
@@ -1969,6 +2013,22 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
                 <infoLink name="Champion" hidden="false" type="profile" id="8f2a-fc32-252b-55c2" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <comment>upgrades: 5c52-5583-1847-9ede</comment>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Runes" hidden="false" id="62bc-132e-6b2c-c125" flatten="true">
+                  <entryLinks>
+                    <entryLink import="true" name="Weapon Runes" hidden="false" type="selectionEntryGroup" id="e78-f80b-22df-6e4b" targetId="9f5a-e0f5-60ed-1066">
+                      <constraints>
+                        <constraint type="max" value="25" field="points" scope="parent" shared="false" id="36ff-f09b-8b4a-c393"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink import="true" name="Talismanic Runes" hidden="false" type="selectionEntryGroup" id="8c26-60be-1f0e-d5fd" targetId="bb15-91b5-9a62-f31a">
+                      <constraints>
+                        <constraint type="max" value="25" field="points" scope="parent" shared="false" id="2b2c-df71-6fa-9958"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="8feb-651a-36f-ce2d" subType="crew">
               <constraints>
@@ -1993,22 +2053,15 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="1fde-5702-8987-3337" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Standard Runes" hidden="false" type="selectionEntryGroup" id="fda7-e3f9-7d8e-3338" targetId="c4a0-bdf6-454f-5e57">
+                  <constraints>
+                    <constraint type="max" value="75" field="points" scope="parent" shared="false" id="9767-308-7bdb-df0a"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
-          <entryLinks>
-            <entryLink import="true" name="Standard Runes" hidden="true" type="selectionEntryGroup" id="7b6c-b3dc-6bff-6972" targetId="c4a0-bdf6-454f-5e57">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7ae4-243e-1bb0-8702"/>
-              </constraints>
-              <modifiers>
-                <modifier type="set" value="false" field="hidden">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="3761-f42e-e68d-a788" shared="true"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </entryLink>
-          </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
@@ -2069,7 +2122,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="dea2-9373-bed8-a644" noAlphabeticalSort="true">
+        <selectionEntryGroup name="Command" hidden="false" id="dea2-9373-bed8-a644">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Ironwarden" hidden="false" id="bf81-8260-3405-3f26" subType="crew">
               <constraints>
@@ -2230,7 +2283,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </infoGroup>
       </infoGroups>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="40bd-744a-e4cb-39eb" noAlphabeticalSort="true">
+        <selectionEntryGroup name="Command" hidden="false" id="40bd-744a-e4cb-39eb">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="7377-6fcf-62da-4515" subType="crew">
               <constraints>
@@ -2321,7 +2374,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         <infoLink name="Steam Drill" hidden="false" type="profile" id="a82f-2046-bb29-9fa5" targetId="1394-5f7d-15ff-3370"/>
       </infoLinks>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Slayers" hidden="false" id="9f80-e41f-57be-c779" noAlphabeticalSort="true">
+    <selectionEntry type="unit" import="true" name="Slayers" hidden="false" id="9f80-e41f-57be-c779">
       <profiles>
         <profile name="Slayers" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="6190-c4f9-cf7d-2ef9">
           <characteristics>
@@ -2331,7 +2384,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </profile>
       </profiles>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Models" hidden="false" id="d1c7-b093-a15b-6c6d" noAlphabeticalSort="true">
+        <selectionEntryGroup name="Models" hidden="false" id="d1c7-b093-a15b-6c6d">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Troll Slayer" hidden="false" id="1ec1-2f1b-346e-a065">
               <entryLinks>
@@ -2450,7 +2503,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Command" hidden="false" id="5cd8-4e9-9d46-ef09" noAlphabeticalSort="true">
+        <selectionEntryGroup name="Command" hidden="false" id="5cd8-4e9-9d46-ef09">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="f7e4-9d5e-2a8b-4b58" subType="crew">
               <constraints>
@@ -2919,17 +2972,6 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="99a0-a174-5d2b-c615"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d10f-d3e2-19cc-db4f"/>
           </constraints>
-          <entryLinks>
-            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="2aa-8996-a23f-c722" targetId="721d-36e3-388a-c0d6"/>
-            <entryLink import="true" name="Heavy armour" hidden="false" type="selectionEntry" id="ea69-6538-af2f-704f" targetId="62fb-f89d-afc-1cf1"/>
-            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="115e-332c-6abf-5c29" targetId="6192-f9f1-5d53-2042"/>
-            <entryLink import="true" name="Forgeather &amp; Anvil Guard" hidden="false" type="selectionEntry" id="d0c8-794f-7238-9133" targetId="9807-8fc6-e11d-42b2" collective="false">
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="af94-6972-a37e-96a5"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d8d9-bdb9-f812-e5d5"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
           <infoLinks>
             <infoLink name="Anvil of Doom" hidden="false" type="profile" id="d26a-417-ac6d-e5a0" targetId="cd5c-ba65-a201-d5a5"/>
             <infoLink name="Base (50x50)" hidden="false" type="profile" id="2372-9bb1-bb6d-639e" targetId="7813-4d15-143d-1bf1"/>
@@ -2960,6 +3002,19 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         <categoryLink targetId="ca7e-d004-ccde-caf3" id="d23f-c3a4-646-2b1b" primary="false" name="Heavy infantry"/>
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="721a-d328-6746-8c90" primary="true" name="Characters"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Forgeather &amp; Anvil Guard" hidden="false" type="selectionEntry" id="243-4b73-d423-459e" targetId="9807-8fc6-e11d-42b2" collective="false">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="d86b-a4d5-c7cf-82cc"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8b41-da86-6f28-4e12"/>
+          </constraints>
+        </entryLink>
+        <entryLink import="true" name="Runes" hidden="false" type="selectionEntryGroup" id="e393-8508-cc40-bf96" targetId="1e31-2c1f-9494-2b89">
+          <constraints>
+            <constraint type="max" value="100" field="selections" scope="parent" shared="false" id="6f0e-ebda-d0b4-4d01"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Shieldbearers" hidden="false" id="62ce-b588-ae38-e331" collective="true" subType="mount">
       <infoLinks>
@@ -2969,7 +3024,11 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="6ce0-bedb-4e87-5da6">
           <infoLinks>
-            <infoLink name="Hatred" hidden="false" type="profile" id="7163-346c-e701-e962" targetId="f4b3-18af-16bf-78dd"/>
+            <infoLink name="Hatred" hidden="false" type="profile" id="7163-346c-e701-e962" targetId="f4b3-18af-16bf-78dd">
+              <modifiers>
+                <modifier type="append" value="(Orcs &amp; Goblins)" field="name"/>
+              </modifiers>
+            </infoLink>
             <infoLink name="Resolute" hidden="false" type="profile" id="8850-60f1-72bd-8db5" targetId="a230-c540-6a65-4974"/>
             <infoLink name="Borne Aloft" hidden="false" type="profile" id="cc54-798a-dabd-a490" targetId="93e6-c161-1b92-c8af"/>
             <infoLink name="Gromil Weapons" hidden="false" type="profile" id="663-f53b-37b7-ce87" targetId="2e16-e293-353e-6881"/>
@@ -2980,6 +3039,9 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2bfa-d126-45ab-a932-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2bfa-d126-45ab-a932-max"/>
       </constraints>
+      <entryLinks>
+        <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="cecb-1e7d-c0d4-3574" targetId="721d-36e3-388a-c0d6"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Runelord" hidden="false" id="452a-cd9b-a28c-e4e">
       <profiles>
@@ -3081,9 +3143,14 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Forgeather &amp; Anvil Guard" hidden="false" id="9807-8fc6-e11d-42b2" collective="true" subType="crew">
       <infoLinks>
-        <infoLink name="Forgefather &amp; Anvil Guard" hidden="false" type="profile" id="bd0-4b60-35cf-f1cd" targetId="c4b5-b173-357f-aeb2"/>
-        <infoLink name="Base (50x50)" hidden="false" type="profile" id="8db5-163-9e10-ae29" targetId="7813-4d15-143d-1bf1"/>
+        <infoLink name="Forgefather" hidden="false" type="profile" id="bd0-4b60-35cf-f1cd" targetId="c4b5-b173-357f-aeb2"/>
+        <infoLink name="Base (50x50)" hidden="false" type="profile" id="164c-ef3c-24ec-beb4" targetId="7813-4d15-143d-1bf1"/>
       </infoLinks>
+      <entryLinks>
+        <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="8afe-f6a7-1ca1-e74f" targetId="721d-36e3-388a-c0d6"/>
+        <entryLink import="true" name="Heavy armour" hidden="false" type="selectionEntry" id="683c-9fa9-930b-4e92" targetId="62fb-f89d-afc-1cf1"/>
+        <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="b8c2-993b-5488-5e3" targetId="6192-f9f1-5d53-2042"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="King" hidden="false" id="1739-9b05-10db-2f70">
       <profiles>
@@ -3095,7 +3162,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </profile>
       </profiles>
       <selectionEntries>
-        <selectionEntry type="model" import="true" name="King" hidden="false" id="c11-db0a-4cd9-9724">
+        <selectionEntry type="model" import="true" name="King" hidden="false" id="c11-db0a-4cd9-9724" flatten="true">
           <constraints>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="5585-85fa-1410-e664"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6911-809b-d89e-6a50"/>
@@ -3103,11 +3170,10 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
           <entryLinks>
             <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="4a97-2d3c-4000-6630" targetId="721d-36e3-388a-c0d6"/>
             <entryLink import="true" name="Full Plate Armour" hidden="false" type="selectionEntry" id="9fda-38ce-3407-f336" targetId="2505-873d-1655-3b0b"/>
-            <entryLink import="true" name="Runes" hidden="false" type="selectionEntryGroup" id="ee56-404d-cb33-86d2" targetId="1e31-2c1f-9494-2b89">
+            <entryLink import="true" name="Runes" hidden="false" type="selectionEntryGroup" id="ee56-404d-cb33-86d2" targetId="1e31-2c1f-9494-2b89" flatten="true">
               <constraints>
                 <constraint type="max" value="125" field="points" scope="parent" shared="true" id="5b0a-f563-3d5b-f30f"/>
               </constraints>
-              <comment>[nogroup]</comment>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
@@ -3199,7 +3265,6 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
           <costs>
             <cost name="pts" typeId="points" value="125"/>
           </costs>
-          <comment>[nogroup]</comment>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -3476,7 +3541,7 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         </profile>
       </profiles>
       <selectionEntries>
-        <selectionEntry type="model" import="true" name="Thane" hidden="false" id="5040-c8ec-3baf-fd21">
+        <selectionEntry type="model" import="true" name="Thane" hidden="false" id="5040-c8ec-3baf-fd21" flatten="true">
           <constraints>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="dadc-7a7d-e105-d169"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2938-6930-616a-eea9"/>
@@ -3484,11 +3549,10 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
           <entryLinks>
             <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="f34d-6818-c977-aec3" targetId="721d-36e3-388a-c0d6"/>
             <entryLink import="true" name="Full Plate Armour" hidden="false" type="selectionEntry" id="e4c4-dc18-29ad-1149" targetId="2505-873d-1655-3b0b"/>
-            <entryLink import="true" name="Runes" hidden="false" type="selectionEntryGroup" id="2853-9887-3119-79e9" targetId="1e31-2c1f-9494-2b89">
+            <entryLink import="true" name="Runes" hidden="false" type="selectionEntryGroup" id="2853-9887-3119-79e9" targetId="1e31-2c1f-9494-2b89" flatten="true">
               <constraints>
                 <constraint type="max" value="75" field="points" scope="parent" shared="true" id="3879-e760-7ee0-d97d"/>
               </constraints>
-              <comment>[nogroup]</comment>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
@@ -3580,7 +3644,6 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
           <costs>
             <cost name="pts" typeId="points" value="125"/>
           </costs>
-          <comment>[nogroup]</comment>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -3603,29 +3666,38 @@ Note that an Anvil of Doom can still pivot freely at any time during its turn (t
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="7a19-e642-4c84-12a5" primary="true" name="Characters"/>
       </categoryLinks>
     </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Cinderblast Bombs" hidden="false" id="872d-db29-8846-515b" collective="true">
+      <infoLinks>
+        <infoLink targetId="edb7-2817-a45e-9e05" id="8acb-962d-7a99-64aa" type="profile" name="Cinderblast Bombs" hidden="false"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2e0-f7ac-859d-678a-min"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2e0-f7ac-859d-678a-max"/>
+      </constraints>
+    </selectionEntry>
   </sharedSelectionEntries>
   <profileTypes>
-    <profileType name="Standard Runes" hidden="false" id="9c4f-4e8-f3bf-3908">
+    <profileType name="Standard Runes" hidden="false" id="9c4f-4e8-f3bf-3908" sortIndex="14">
       <characteristicTypes>
         <characteristicType id="e1f9-c2b6-81a4-2d6" name="Description"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Weapon Runes" hidden="false" id="a981-4ba6-83fd-3044">
+    <profileType name="Weapon Runes" hidden="false" id="a981-4ba6-83fd-3044" sortIndex="15">
       <characteristicTypes>
         <characteristicType id="8e20-307f-c900-61b3" name="Description"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Armour Runes" hidden="false" id="c5ef-cad7-9aee-7302">
+    <profileType name="Armour Runes" hidden="false" id="c5ef-cad7-9aee-7302" sortIndex="16">
       <characteristicTypes>
         <characteristicType id="ca93-7d2c-11a-3762" name="Description"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Engineering Runes" hidden="false" id="1259-b3c-4179-7c40">
+    <profileType name="Engineering Runes" hidden="false" id="1259-b3c-4179-7c40" sortIndex="17">
       <characteristicTypes>
         <characteristicType id="b43f-5dcb-c595-3518" name="Description"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Talismanic Runes" hidden="false" id="d839-c07a-fdb2-5492">
+    <profileType name="Talismanic Runes" hidden="false" id="d839-c07a-fdb2-5492" sortIndex="18">
       <characteristicTypes>
         <characteristicType id="7145-6b91-ed0d-f17a" name="Description"/>
       </characteristicTypes>
