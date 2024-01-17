@@ -29,7 +29,11 @@
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
       <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="a936-639f-e214-e9d" targetId="a4cc-15c9-cfae-1b3b" type="category"/>
+        <categoryLink name="Characters" hidden="false" id="a936-639f-e214-e9d" targetId="a4cc-15c9-cfae-1b3b" type="category">
+          <constraints>
+            <constraint type="max" value="50" field="limit::points" scope="roster" shared="true" id="abe-35b3-cb6f-604d" percentValue="true"/>
+          </constraints>
+        </categoryLink>
         <categoryLink id="ab07-e23d-ab54-8822" targetId="f0e3-2e32-8866-ea32" name="Core" type="category">
           <constraints>
             <constraint type="min" value="25" field="limit::points" scope="roster" shared="true" id="563-332d-aa18-dad" percentValue="true" includeChildSelections="true"/>
@@ -37,11 +41,19 @@
         </categoryLink>
         <categoryLink name="Special" hidden="false" id="c64f-52a4-9d57-2c86" targetId="633f-f67a-1b6a-d203" type="category">
           <constraints>
-            <constraint type="max" value="25" field="selections" scope="roster" shared="true" id="2212-630f-3cec-36df" percentValue="true" includeChildSelections="true"/>
+            <constraint type="max" value="50" field="selections" scope="roster" shared="true" id="2212-630f-3cec-36df" percentValue="true" includeChildSelections="true"/>
           </constraints>
         </categoryLink>
-        <categoryLink name="Rare" hidden="false" id="e603-b373-46b1-4237" targetId="2bfe-5863-46fe-d284" type="category"/>
-        <categoryLink name="Cavalry" hidden="false" id="d59f-8eb0-78c4-68c1" targetId="36e4-45e0-c904-55d1" type="category"/>
+        <categoryLink name="Rare" hidden="false" id="e603-b373-46b1-4237" targetId="2bfe-5863-46fe-d284" type="category">
+          <constraints>
+            <constraint type="max" value="25" field="selections" scope="roster" shared="true" id="f0f7-32b6-d076-214a" percentValue="true" includeChildSelections="true"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Mercenaries" hidden="false" id="6032-af52-ae71-e755" targetId="5b84-2c3c-869d-3522" type="category">
+          <constraints>
+            <constraint type="max" value="20" field="selections" scope="roster" shared="true" id="4bbb-90a8-3513-cbec" percentValue="true" includeChildSelections="true"/>
+          </constraints>
+        </categoryLink>
       </categoryLinks>
     </forceEntry>
   </forceEntries>
@@ -908,6 +920,16 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
     </profile>
+    <profile name="Flame Cannon" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" hidden="false" id="5207-3185-698f-a161">
+      <characteristics>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">description of flame cannon</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="General" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="609a-2943-a6e1-e002">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">the general...</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -919,7 +941,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9935-ed77-1e72-9842-max"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Great weapon" hidden="false" id="2283-26e9-76c3-6048" collective="true">
+    <selectionEntry type="upgrade" import="true" name="Great Weapon" hidden="false" id="2283-26e9-76c3-6048" collective="true">
       <infoLinks>
         <infoLink name="Great Weapon" hidden="false" type="profile" id="4465-7e60-819e-a74f" targetId="88e3-38f0-92d5-b616"/>
       </infoLinks>
@@ -946,7 +968,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="43c1-42a1-9a0a-326e-max"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Heavy armour" hidden="false" id="62fb-f89d-afc-1cf1" collective="true">
+    <selectionEntry type="upgrade" import="true" name="Heavy Armour" hidden="false" id="62fb-f89d-afc-1cf1" collective="true">
       <infoLinks>
         <infoLink name="Heavy Armour" hidden="false" type="profile" id="38dd-cfd4-ea64-fa1b" targetId="c56e-8d1b-bb4-de99"/>
       </infoLinks>
@@ -1278,6 +1300,23 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1c31-2f01-93ff-fe16"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="74ca-7660-ed4a-7cd6"/>
       </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Flame Cannon" hidden="false" id="b7b6-5993-feab-cc81">
+      <infoLinks>
+        <infoLink name="Flame Cannon" hidden="false" type="profile" id="526b-6831-ddf-b22d" targetId="5207-3185-698f-a161"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a9af-9404-4702-ee53-min"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a9af-9404-4702-ee53-max"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="General" hidden="false" id="7d76-b1a1-1535-a04c">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d7d2-b39d-2dc7-e2a0"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="General" hidden="false" type="profile" id="32de-47ba-5fe9-7fb6" targetId="609a-2943-a6e1-e002"/>
+      </infoLinks>
     </selectionEntry>
   </sharedSelectionEntries>
   <selectionEntries>
