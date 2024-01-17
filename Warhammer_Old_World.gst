@@ -32,6 +32,7 @@
     <categoryEntry name="VANGUARD UPGRADE2" hidden="true" id="871f-ae50-ed04-428a"/>
     <categoryEntry name="FIRE AND FLEE UPGRADE" hidden="true" id="2661-a58f-ff4f-20cb"/>
     <categoryEntry name="VANGUARD UPGRADE" hidden="true" id="1008-a8fa-67f7-3e39"/>
+    <categoryEntry name="STUBBORN UPGRADE2" hidden="true" id="2392-f089-8a93-dfc3"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
@@ -1497,6 +1498,24 @@ Note that models in rear ranks use the line of sight of the model at the front o
           <costs>
             <cost name="pts" typeId="points" value="1"/>
           </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="true" id="bae9-43d9-f739-2ba6">
+          <costs>
+            <cost name="pts" typeId="points" value="2"/>
+          </costs>
+          <infoLinks>
+            <infoLink name="Stubborn" hidden="false" type="profile" id="68fc-a4a7-b7f6-7781" targetId="e351-bbd6-f470-b604"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e47-3d8-cc76-3f1f"/>
+          </constraints>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="2392-f089-8a93-dfc3" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <constraints>

@@ -599,9 +599,19 @@ After determining the number of shots, roll To hit for each as normal, using the
         <characteristic name="Ld" typeId="c435-6b14-f77e-3c72">-</characteristic>
       </characteristics>
     </profile>
+    <profile name="Hochland Long Rifle" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" hidden="false" id="ec0a-ce53-127c-7c0d">
+      <characteristics>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">???</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Grenade Launching Blunderbuss" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" hidden="false" id="b8f7-c4e5-2793-bc18">
+      <characteristics>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">???</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
-    <selectionEntry type="model" import="true" name="Barded Warhorse" hidden="false" id="e0b3-b528-aa3e-dbbb" subType="mount">
+    <selectionEntry type="model" import="true" name="Barded Warhorse" hidden="false" id="e0b3-b528-aa3e-dbbb" subType="mount" collective="true">
       <costs>
         <cost name="pts" typeId="points" value="16"/>
       </costs>
@@ -625,6 +635,9 @@ After determining the number of shots, roll To hit for each as normal, using the
       <categoryLinks>
         <categoryLink targetId="5165-d052-cfc2-5887" id="2cd2-36e8-dc3a-3a30" primary="false" name="Heavy Cavalry"/>
       </categoryLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fb7f-81f5-ca6d-7595"/>
+      </constraints>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Empire Warhorse" hidden="false" id="50f2-3c1-5900-c47f" subType="mount">
       <costs>
@@ -1235,24 +1248,38 @@ After determining the number of shots, roll To hit for each as normal, using the
             <constraint type="min" value="10" field="selections" scope="parent" shared="true" id="fe18-ea23-6c57-7161"/>
           </constraints>
           <entryLinks>
-            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="d012-6674-9464-c3" targetId="721d-36e3-388a-c0d6"/>
-            <entryLink import="true" name="Light armour" hidden="false" type="selectionEntry" id="16fd-b477-9ab8-9cbd" targetId="7cab-40e6-f134-de78"/>
+            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="d012-6674-9464-c3" targetId="721d-36e3-388a-c0d6" collective="true"/>
+            <entryLink import="true" name="Light armour" hidden="false" type="selectionEntry" id="16fd-b477-9ab8-9cbd" targetId="7cab-40e6-f134-de78" collective="true"/>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="2b7-431f-d64-7039">
+            <selectionEntryGroup name="Weapons" hidden="false" id="2b7-431f-d64-7039">
               <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Shields" hidden="false" id="d71-e219-4ffd-cd8a" collective="true">
+                <selectionEntry type="upgrade" import="true" name="Halberds" hidden="false" id="7da6-a6f6-592a-f256" collective="true">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cee8-eeba-a9b4-5c4e"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink import="true" name="Halberd" hidden="false" type="selectionEntry" id="961a-8056-de3b-4bf2" targetId="f0a5-1b2e-3d2b-d540"/>
+                  </entryLinks>
                   <costs>
                     <cost name="pts" typeId="points" value="1"/>
                   </costs>
-                  <entryLinks>
-                    <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="6774-6790-ecc7-8bb3" targetId="6192-f9f1-5d53-2042"/>
-                  </entryLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Thrusting Spears" hidden="false" id="2a57-f0d6-7352-cc13" collective="true">
                   <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="123a-7001-c292-1d8e"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b40f-c4f1-f5f8-4772"/>
                   </constraints>
+                  <entryLinks>
+                    <entryLink import="true" name="Thrusting Spear" hidden="false" type="selectionEntry" id="e850-dce6-56f2-8215" targetId="99d2-7f59-5c14-3bf7"/>
+                  </entryLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="1"/>
+                  </costs>
                 </selectionEntry>
               </selectionEntries>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8277-ee9d-14ed-80ac"/>
+              </constraints>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <infoLinks>
@@ -1262,12 +1289,32 @@ After determining the number of shots, roll To hit for each as normal, using the
           <costs>
             <cost name="pts" typeId="points" value="5"/>
           </costs>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Shields" hidden="false" id="b0d2-ccdb-8a36-ab54" collective="true">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+              <entryLinks>
+                <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="194d-733-6df6-73a9" targetId="6192-f9f1-5d53-2042"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fad5-3f2a-d439-59af"/>
+              </constraints>
+            </selectionEntry>
+          </selectionEntries>
+          <modifiers>
+            <modifier type="set" value="5" field="fe18-ea23-6c57-7161">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="551d-34fe-3832-416d" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="a6c7-17dd-f9eb-e77f">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Sargeant" hidden="false" id="7df7-8fd-2b09-6b7f" subType="crew">
+            <selectionEntry type="model" import="true" name="Sergeant" hidden="false" id="7df7-8fd-2b09-6b7f" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3e43-8d77-94f5-e5da"/>
               </constraints>
@@ -1285,7 +1332,7 @@ After determining the number of shots, roll To hit for each as normal, using the
               </infoLinks>
               <comment>upgrades: b804-2976-136-c0f1</comment>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="345b-db4f-f2ec-1e93" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="345b-db4f-f2ec-1e93" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="70-bb6b-cc84-1df"/>
               </constraints>
@@ -1325,6 +1372,9 @@ After determining the number of shots, roll To hit for each as normal, using the
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="2fd9-d947-5e4f-f967" primary="true" name="Core"/>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="9b53-fadb-6da6-40a7" primary="false" name="Regular Infantry"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink targetId="551d-34fe-3832-416d" id="66da-50d5-7e7a-1c1d" type="selectionEntry" name="Detachment" hidden="false"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Veteran State Troops" hidden="false" id="fa63-72a0-7edb-a2dc">
       <profiles>
@@ -1345,20 +1395,34 @@ After determining the number of shots, roll To hit for each as normal, using the
             <entryLink import="true" name="Light armour" hidden="false" type="selectionEntry" id="cbb4-84e0-c9ef-42a1" targetId="7cab-40e6-f134-de78"/>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="43bc-8091-863e-6aa5">
+            <selectionEntryGroup name="Weapons" hidden="false" id="39cb-f426-6c2f-454d">
               <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Shields" hidden="false" id="5f08-24ff-108d-cf9d" collective="true">
+                <selectionEntry type="upgrade" import="true" name="Halberds" hidden="false" id="ae43-938b-5ec2-d305" collective="true">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5fd7-a089-f4f-1b2f"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink import="true" name="Halberd" hidden="false" type="selectionEntry" id="aa19-dbd-730c-6be6" targetId="f0a5-1b2e-3d2b-d540"/>
+                  </entryLinks>
                   <costs>
                     <cost name="pts" typeId="points" value="1"/>
                   </costs>
-                  <entryLinks>
-                    <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="8701-2df9-6fd7-e617" targetId="6192-f9f1-5d53-2042"/>
-                  </entryLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Thrusting Spears" hidden="false" id="c00d-b404-4511-879" collective="true">
                   <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fc6f-7341-17b-bd7"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bfa1-c2e8-c95a-c9f3"/>
                   </constraints>
+                  <entryLinks>
+                    <entryLink import="true" name="Thrusting Spear" hidden="false" type="selectionEntry" id="fbd8-5388-1a5b-9e56" targetId="99d2-7f59-5c14-3bf7"/>
+                  </entryLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="1"/>
+                  </costs>
                 </selectionEntry>
               </selectionEntries>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="12c8-c8b3-59db-d52f"/>
+              </constraints>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <infoLinks>
@@ -1368,12 +1432,43 @@ After determining the number of shots, roll To hit for each as normal, using the
           <costs>
             <cost name="pts" typeId="points" value="7"/>
           </costs>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Shields" hidden="false" id="d733-6ce0-7936-3741" collective="true">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+              <entryLinks>
+                <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="5681-d971-f2a9-694d" targetId="6192-f9f1-5d53-2042"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e80b-495e-e75b-9d9a"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="e186-1911-c7b0-46b2" collective="true">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="220a-8d12-c7ea-28f0"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Drilled" hidden="false" type="profile" id="b8c7-a05c-9599-2648" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <modifiers>
+            <modifier type="set" value="5" field="9810-e931-71c4-b05f">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="551d-34fe-3832-416d" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="7a62-e7ab-6713-245">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Sargeant" hidden="false" id="3c93-42b5-2587-e8e8" subType="crew">
+            <selectionEntry type="model" import="true" name="Sergeant" hidden="false" id="3c93-42b5-2587-e8e8" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5124-c558-4368-a411"/>
               </constraints>
@@ -1390,8 +1485,15 @@ After determining the number of shots, roll To hit for each as normal, using the
                 <infoLink name="Champion" hidden="false" type="profile" id="ef6f-2788-b892-6cd1" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <comment>upgrades: 1a33-6ef0-f7fb-db55</comment>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="e1cc-7477-fab-3ba4" targetId="1539-fd78-88f-badd" flatten="true">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="ce52-2bb5-5447-4e95"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="3010-ad3d-1dc8-722c" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="3010-ad3d-1dc8-722c" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6536-5221-c03a-a9b3"/>
               </constraints>
@@ -1402,6 +1504,13 @@ After determining the number of shots, roll To hit for each as normal, using the
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="c1e5-54d6-bbca-c5cb" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="79ea-91ff-70b2-5153" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="10d1-7028-83f0-ebc0"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="fde0-2cbe-f15a-fb4" subType="crew">
               <constraints>
@@ -1432,6 +1541,9 @@ After determining the number of shots, roll To hit for each as normal, using the
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="b787-1567-c762-7c8e" primary="true" name="Core"/>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="c724-2534-ad57-b927" primary="false" name="Regular Infantry"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink targetId="551d-34fe-3832-416d" id="d6ee-46dc-c56b-816d" type="selectionEntry" name="Detachment" hidden="false"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="State Missile Troops" hidden="false" id="5f37-778f-edf0-1fae">
       <profiles>
@@ -1475,12 +1587,19 @@ After determining the number of shots, roll To hit for each as normal, using the
           <costs>
             <cost name="pts" typeId="points" value="5"/>
           </costs>
+          <modifiers>
+            <modifier type="set" value="5" field="ba7-12d2-ca78-1865">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="551d-34fe-3832-416d" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="b741-242e-2597-8b90">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Sargeant" hidden="false" id="c515-be3d-53dd-9052" subType="crew">
+            <selectionEntry type="model" import="true" name="Sergeant" hidden="false" id="c515-be3d-53dd-9052" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="71f2-f95e-a2fb-8aed"/>
               </constraints>
@@ -1491,14 +1610,62 @@ After determining the number of shots, roll To hit for each as normal, using the
                 <infoLink name="State Missile Trooper" hidden="false" type="profile" id="f94b-df4b-ab72-a8e" targetId="bd08-df61-f45c-349">
                   <modifiers>
                     <modifier type="increment" value="1" field="59f9-ccf5-1155-fb05"/>
-                    <modifier type="set" value="Sargeant" field="name"/>
+                    <modifier type="set" value="Sergeant" field="name"/>
                   </modifiers>
                 </infoLink>
                 <infoLink name="Champion" hidden="false" type="profile" id="dca4-5157-5b85-28cc" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <comment>upgrades: 3e11-1ae1-1c1a-6094</comment>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Ranged Weapon" hidden="false" id="b0bd-4709-c51b-8b0d" defaultSelectionEntryId="ed3b-8bf1-2dd5-91d2">
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8ace-e4e1-3ecc-c30f-min"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8ace-e4e1-3ecc-c30f-max"/>
+                  </constraints>
+                  <selectionEntries>
+                    <selectionEntry type="upgrade" import="true" name="Crossbow" hidden="false" id="ed3b-8bf1-2dd5-91d2" collective="true">
+                      <entryLinks>
+                        <entryLink import="true" name="Crossbow" hidden="false" type="selectionEntry" id="820c-1258-dbad-642d" targetId="c3af-77b3-b2d5-20db"/>
+                      </entryLinks>
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="64d7-99fa-72b4-7d1a"/>
+                      </constraints>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Brace of Pistols" hidden="false" id="87fa-bc4b-36d-db03" collective="true">
+                      <costs>
+                        <cost name="pts" typeId="points" value="5"/>
+                      </costs>
+                      <entryLinks>
+                        <entryLink import="true" name="Brace of Pistols" hidden="false" type="selectionEntry" id="736e-1748-5621-c4c9" targetId="d8bb-85b0-3575-6029"/>
+                      </entryLinks>
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1307-b62b-c2fa-1a5c"/>
+                      </constraints>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Hochland Long Rifle" hidden="false" id="2375-634f-e106-20a" collective="true">
+                      <costs>
+                        <cost name="pts" typeId="points" value="8"/>
+                      </costs>
+                      <entryLinks>
+                        <entryLink import="true" name="Hochland Long Rifle" hidden="false" type="selectionEntry" id="94e9-5ed3-c6b7-7422" targetId="451f-4f26-82e2-7f07"/>
+                      </entryLinks>
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3699-5a59-1533-d7ac"/>
+                      </constraints>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Repeater Handgun" hidden="false" id="dbe8-65dd-d66-8667" collective="true">
+                      <costs>
+                        <cost name="pts" typeId="points" value="5"/>
+                      </costs>
+                      <entryLinks>
+                        <entryLink import="true" name="Repeat Handgun" hidden="false" type="selectionEntry" id="17b9-494-4a68-b003" targetId="1748-87d-961c-9278"/>
+                      </entryLinks>
+                    </selectionEntry>
+                  </selectionEntries>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="884-8499-c299-f2be" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="884-8499-c299-f2be" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d8ef-653b-e117-e685"/>
               </constraints>
@@ -1509,6 +1676,20 @@ After determining the number of shots, roll To hit for each as normal, using the
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="ad62-7f45-42d4-845f" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="4684-b5fe-4add-aadf" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="true" id="b1e4-3969-9a5c-d4e9"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="5f37-778f-edf0-1fae" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="502a-cc06-6b06-8e79" subType="crew">
               <constraints>
@@ -1537,7 +1718,13 @@ After determining the number of shots, roll To hit for each as normal, using the
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="adf6-6074-f555-a87e" primary="true" name="Core"/>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="f034-c8b6-109a-f294" primary="false" name="Regular Infantry"/>
+        <categoryLink targetId="7913-acb6-d065-2dab" id="9395-c19d-9f0d-e859" primary="false" name="DRILLED UPGRADE"/>
+        <categoryLink targetId="caab-4ac8-e0ba-d843" id="e40d-ad94-6889-9e1d" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="b4a2-59d3-1ed4-27d3" targetId="ce2e-bc0f-be9b-9221"/>
+        <entryLink targetId="551d-34fe-3832-416d" id="362f-c434-fdb3-5a45" type="selectionEntry" name="Detachment" hidden="false"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Free Company Militia" hidden="false" id="bd9f-3c86-c12a-fbb1">
       <profiles>
@@ -1562,8 +1749,15 @@ After determining the number of shots, roll To hit for each as normal, using the
             <infoLink name="Base (25x25)" hidden="false" type="profile" id="f1fd-b0b8-6587-7b84" targetId="193c-4d0d-de6b-bbb1"/>
           </infoLinks>
           <costs>
-            <cost name="pts" typeId="points" value="5"/>
+            <cost name="pts" typeId="points" value="7"/>
           </costs>
+          <modifiers>
+            <modifier type="set" value="5" field="b379-5e42-ead6-c377">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="551d-34fe-3832-416d" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -1606,6 +1800,9 @@ After determining the number of shots, roll To hit for each as normal, using the
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="d615-b6a4-d866-2179" primary="true" name="Core"/>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="5b56-e2d1-14-34af" primary="false" name="Regular Infantry"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink targetId="551d-34fe-3832-416d" id="711a-1782-4fc3-694" type="selectionEntry" name="Detachment" hidden="false"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Empire Archers" hidden="false" id="9737-2bec-4f15-d7ca">
       <profiles>
@@ -1617,7 +1814,7 @@ After determining the number of shots, roll To hit for each as normal, using the
         </profile>
       </profiles>
       <selectionEntries>
-        <selectionEntry type="model" import="true" name="Archer" hidden="false" id="3468-e5f3-a491-57bd">
+        <selectionEntry type="model" import="true" name="Archer" hidden="false" id="3468-e5f3-a491-57bd" flatten="true">
           <constraints>
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="33dd-a84c-d044-da31"/>
           </constraints>
@@ -1632,6 +1829,34 @@ After determining the number of shots, roll To hit for each as normal, using the
           <costs>
             <cost name="pts" typeId="points" value="5"/>
           </costs>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Options" hidden="false" id="21c0-14ea-1161-74a2" collective="true">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Fire &amp; Flee" hidden="false" id="c443-5ceb-5c7-573" collective="true">
+                  <infoLinks>
+                    <infoLink name="Fire &amp; Flee" hidden="false" type="profile" id="eb49-8bda-bd50-442d" targetId="1a06-31aa-cbfe-1a5"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1c1c-c5cb-19db-9782"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="1"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Scouts" hidden="false" id="fe56-b7a-d183-aa15" collective="true">
+                  <infoLinks>
+                    <infoLink name="Scouts" hidden="false" type="profile" id="98a8-71a5-d6a1-de56" targetId="fe5e-8838-7fbd-a7ec"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bd31-2d60-2484-b6cf"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="1"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -1673,6 +1898,9 @@ After determining the number of shots, roll To hit for each as normal, using the
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="1c2e-494f-4236-8895" primary="true" name="Core"/>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="e5fe-74ec-1621-9e80" primary="false" name="Regular Infantry"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink targetId="551d-34fe-3832-416d" id="cedc-386a-7c18-b9a8" type="selectionEntry" name="Detachment" hidden="false"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Empire Greatswords" hidden="false" id="499d-722a-5283-6ca5">
       <profiles>
@@ -1705,12 +1933,12 @@ After determining the number of shots, roll To hit for each as normal, using the
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="890c-e415-a07b-b032">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Count&apos;s Champion" hidden="false" id="46af-5e82-17ad-ec54" subType="crew">
+            <selectionEntry type="model" import="true" name="Count&apos;s Champion" hidden="false" id="46af-5e82-17ad-ec54" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2d42-2320-fa25-363"/>
               </constraints>
               <costs>
-                <cost name="pts" typeId="points" value="6"/>
+                <cost name="pts" typeId="points" value="8"/>
               </costs>
               <infoLinks>
                 <infoLink name="Greatsword" hidden="false" type="profile" id="9ce3-c515-80d7-a797" targetId="10a6-12d6-15a2-3f38">
@@ -1722,8 +1950,15 @@ After determining the number of shots, roll To hit for each as normal, using the
                 <infoLink name="Champion" hidden="false" type="profile" id="e770-12ae-cf15-5b64" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <comment>upgrades: 7e71-cee2-bd77-a14c</comment>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="7138-e966-f30b-b8ae" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="81a-8629-bd35-b718"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="6961-e022-f29f-f23e" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="6961-e022-f29f-f23e" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="dbc6-11b0-5fb0-4e20"/>
               </constraints>
@@ -1734,6 +1969,20 @@ After determining the number of shots, roll To hit for each as normal, using the
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="cbdc-7878-a699-97a5" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="dadf-68ef-12a5-fd94" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="true" id="aee8-8e9f-19a6-f71"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="499d-722a-5283-6ca5" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="a-857d-a97a-f021" subType="crew">
               <constraints>
@@ -1762,7 +2011,13 @@ After determining the number of shots, roll To hit for each as normal, using the
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="9949-2b5f-7a03-20f9" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="68af-217e-8549-3cad" primary="true" name="Special"/>
+        <categoryLink targetId="7913-acb6-d065-2dab" id="aa73-b422-f4a6-1481" primary="false" name="DRILLED UPGRADE"/>
+        <categoryLink targetId="925c-b77-1d36-e3bf" id="e909-c5fd-a43e-ac11" primary="false" name="VETERAN UPGRADE"/>
+        <categoryLink targetId="caab-4ac8-e0ba-d843" id="5db1-f247-568a-622d" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="62b0-9477-7bb3-4210" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Flagellants" hidden="false" id="68ee-4733-e734-10b">
       <profiles>
@@ -1812,6 +2067,18 @@ After determining the number of shots, roll To hit for each as normal, using the
               </infoLinks>
               <comment>upgrades: e935-b56-49e1-f787</comment>
             </selectionEntry>
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="bbcc-35a3-20c9-fda1" subType="crew">
+              <comment>upgrades: e1e3-ae19-b56e-ceb9</comment>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9363-1376-16db-979d"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Standard Bearer" hidden="false" type="profile" id="aaa3-825c-f126-d4e6" targetId="bcf8-d942-102e-b155"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="6"/>
+              </costs>
+            </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -1831,7 +2098,7 @@ After determining the number of shots, roll To hit for each as normal, using the
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="f2b-26e7-6539-6fcf" primary="false" name="Regular Infantry"/>
-        <categoryLink targetId="633f-f67a-1b6a-d203" id="5e14-ce0c-a17b-2279" primary="true" name="Special"/>
+        <categoryLink targetId="2bfe-5863-46fe-d284" id="eb68-c858-9a83-3320" primary="true" name="Rare"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Pistoliers" hidden="false" id="aa4f-ba89-89d4-91d5">
@@ -1850,9 +2117,14 @@ After determining the number of shots, roll To hit for each as normal, using the
           </constraints>
           <entryLinks>
             <entryLink import="true" name="Hand weapon" hidden="false" type="selectionEntry" id="3a12-ce89-5d5-3c0f" targetId="721d-36e3-388a-c0d6"/>
-            <entryLink import="true" name="Brace of Pistols" hidden="false" type="selectionEntry" id="3826-6471-aab0-4332" targetId="d8bb-85b0-3575-6029"/>
+            <entryLink import="true" name="Brace of Pistols" hidden="false" type="selectionEntry" id="3826-6471-aab0-4332" targetId="d8bb-85b0-3575-6029" collective="true"/>
             <entryLink import="true" name="Heavy armour" hidden="false" type="selectionEntry" id="4ec0-72df-8a0c-6779" targetId="62fb-f89d-afc-1cf1"/>
-            <entryLink import="true" name="Empire Warhorse" hidden="false" type="selectionEntry" id="2d55-fd69-ad3a-5c64" targetId="50f2-3c1-5900-c47f"/>
+            <entryLink import="true" name="Empire Warhorse" hidden="false" type="selectionEntry" id="2d55-fd69-ad3a-5c64" targetId="50f2-3c1-5900-c47f" collective="true">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9c4b-3af-684a-d25a"/>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="5fc-adc1-5a7a-56b5"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <infoLinks>
             <infoLink name="Pistolier" hidden="false" type="profile" id="999c-38bc-1bf1-296" targetId="f6d4-139d-9e0a-db30"/>
@@ -1884,6 +2156,48 @@ After determining the number of shots, roll To hit for each as normal, using the
                 <infoLink name="Champion" hidden="false" type="profile" id="c4a-b20b-2ef-1afd" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <comment>upgrades: 3044-842-7d8-1bf9</comment>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Weapon" hidden="false" id="5877-11dd-fb03-931">
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1211-f2c7-2562-8971-min"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1211-f2c7-2562-8971-max"/>
+                  </constraints>
+                  <selectionEntries>
+                    <selectionEntry type="upgrade" import="true" name="Brace of Pistols" hidden="false" id="beb4-987-1017-6c2">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7190-1252-f773-1195"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Brace of pistols" hidden="false" type="profile" id="2af1-e4ce-4c1f-2579" targetId="cdb0-f5d2-68e0-205f"/>
+                      </infoLinks>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Repeater Handgun" hidden="false" id="b0e4-d8ed-146a-9f54">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f5a8-23eb-6223-efcf"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Repeater Handgun" hidden="false" type="profile" id="f6cf-9596-4a87-ae56" targetId="7f58-91d4-ee6c-3cb7"/>
+                      </infoLinks>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Repeater Pistol" hidden="false" id="a0a5-7758-c544-21a1">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b450-d346-da6c-4795"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Repeater Pistol" hidden="false" type="profile" id="cf2e-edd3-5b7f-7203" targetId="f675-db0d-397c-d873"/>
+                      </infoLinks>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Grenade Launching Blunderbuss" hidden="false" id="ddb1-7734-250b-9d7c">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b7a3-590d-ef7b-c1dd"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Grenade Launching Blunderbuss" hidden="false" type="profile" id="ccd9-ec32-9f05-266b" targetId="b8f7-c4e5-2793-bc18"/>
+                      </infoLinks>
+                    </selectionEntry>
+                  </selectionEntries>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="1ce2-4912-b544-23c2" subType="crew">
               <constraints>
@@ -1916,7 +2230,11 @@ After determining the number of shots, roll To hit for each as normal, using the
       <categoryLinks>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="2f33-1993-6f57-a89e" primary="true" name="Special"/>
         <categoryLink targetId="600c-7d08-5be1-fe0c" id="de3b-e36d-c983-52be" primary="false" name="Light Cavalry"/>
+        <categoryLink targetId="871f-ae50-ed04-428a" id="19d2-e78b-8016-5246" primary="false" name="VANGUARD UPGRADE"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="ae5-7a8e-4cd4-29d5" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Outriders" hidden="false" id="8ab0-72be-ce53-8df4">
       <profiles>
@@ -1968,6 +2286,48 @@ After determining the number of shots, roll To hit for each as normal, using the
                 <infoLink name="Champion" hidden="false" type="profile" id="f85b-c0c9-5d10-4593" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <comment>upgrades: 11e7-5a91-f723-a95c</comment>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Weapon" hidden="false" id="4375-a7d4-a5e8-bf7e" defaultSelectionEntryId="2e-2f68-600a-d5de">
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4af4-eb27-3ee-605b-min"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4af4-eb27-3ee-605b-max"/>
+                  </constraints>
+                  <selectionEntries>
+                    <selectionEntry type="upgrade" import="true" name="Repeater Handgun" hidden="false" id="2e-2f68-600a-d5de">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4d3b-6947-ed4-94d"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Repeater Handgun" hidden="false" type="profile" id="d82f-bb1f-5193-8849" targetId="7f58-91d4-ee6c-3cb7"/>
+                      </infoLinks>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Brace of Pistols" hidden="false" id="c971-9a6d-f810-152f">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9ec8-3ee2-6007-9a79"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Brace of pistols" hidden="false" type="profile" id="c877-a2be-b9f4-7b6f" targetId="cdb0-f5d2-68e0-205f"/>
+                      </infoLinks>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Grenade Launching Blunderbuss" hidden="false" id="9029-c051-7197-19af">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b70f-848b-1343-7e95"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Grenade Launching Blunderbuss" hidden="false" type="profile" id="4850-bd8b-c1ff-5be" targetId="b8f7-c4e5-2793-bc18"/>
+                      </infoLinks>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Repeater Pistol" hidden="false" id="937e-b92e-9b2c-cff0">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c3c7-d8b-51a9-7455"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Repeater Pistol" hidden="false" type="profile" id="eb51-1d80-4595-6447" targetId="f675-db0d-397c-d873"/>
+                      </infoLinks>
+                    </selectionEntry>
+                  </selectionEntries>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="1472-e0f6-759e-3877" subType="crew">
               <constraints>
@@ -2017,9 +2377,12 @@ After determining the number of shots, roll To hit for each as normal, using the
           </constraints>
           <entryLinks>
             <entryLink import="true" name="Hand weapon" hidden="false" type="selectionEntry" id="cf8b-64c-8ec0-869a" targetId="721d-36e3-388a-c0d6"/>
-            <entryLink import="true" name="Heavy armour" hidden="false" type="selectionEntry" id="9af3-3a1a-aaf5-5891" targetId="62fb-f89d-afc-1cf1"/>
-            <entryLink import="true" name="Barded Warhorse" hidden="false" type="selectionEntry" id="c8c2-a54-9a33-3057" targetId="e0b3-b528-aa3e-dbbb"/>
-            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="be62-3786-fad7-6c32" targetId="6192-f9f1-5d53-2042"/>
+            <entryLink import="true" name="Barded Warhorse" hidden="false" type="selectionEntry" id="c8c2-a54-9a33-3057" targetId="e0b3-b528-aa3e-dbbb">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8e9a-c4a1-4320-2a9-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8e9a-c4a1-4320-2a9-max"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <infoLinks>
             <infoLink name="Empire Knights" hidden="false" type="profile" id="1a5f-cd74-2bcd-a0c6" targetId="40b-548e-da94-db61"/>
@@ -2028,12 +2391,74 @@ After determining the number of shots, roll To hit for each as normal, using the
           <costs>
             <cost name="pts" typeId="points" value="23"/>
           </costs>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Equipment" hidden="false" id="28e1-722e-843a-ef96">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Shield" hidden="false" id="b0f7-8ed6-12cc-9560" collective="true">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c5a9-e19b-d2ee-e7b2"/>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="da78-231d-937a-3776"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Shield" hidden="false" type="profile" id="feef-52fa-fa5f-7bd5" targetId="8997-c74d-3a8d-ecf9"/>
+                  </infoLinks>
+                  <modifiers>
+                    <modifier type="increment" value="1" field="da78-231d-937a-3776">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="71f9-ed0b-23da-83cf" shared="true"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="set" value="0" field="da78-231d-937a-3776"/>
+                  </modifiers>
+                </selectionEntry>
+              </selectionEntries>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Weapons" hidden="false" id="68d6-6299-21cf-2fd4" flatten="true" collective="true" defaultSelectionEntryId="71f9-ed0b-23da-83cf">
+                  <selectionEntries>
+                    <selectionEntry type="upgrade" import="true" name="Lance" hidden="false" id="71f9-ed0b-23da-83cf" collective="true">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e0d-6094-62d2-db71"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Lance" hidden="false" type="profile" id="edeb-21da-5a93-91a" targetId="3520-64c9-a855-ce9e"/>
+                      </infoLinks>
+                      <costs>
+                        <cost name="pts" typeId="points" value="1"/>
+                      </costs>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Great Weapon" hidden="false" id="1a9a-c197-8562-7533" collective="true">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="87e9-f65a-ba3d-6553"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Great Weapon" hidden="false" type="profile" id="ccfa-d453-8d7e-1204" targetId="88e3-38f0-92d5-b616"/>
+                      </infoLinks>
+                      <costs>
+                        <cost name="pts" typeId="points" value="1"/>
+                      </costs>
+                      <modifiers>
+                        <modifier type="set" value="0" field="points">
+                          <conditions>
+                            <condition type="equalTo" value="0" field="selections" scope="parent" childId="b0f7-8ed6-12cc-9560" shared="true"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
+                    </selectionEntry>
+                  </selectionEntries>
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b0f0-31ca-6ca0-8fcb"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9636-adf7-f331-ccc8"/>
+                  </constraints>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="7843-559a-1b71-af12">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Preceptor" hidden="false" id="58e-442a-9191-4c2" subType="crew">
+            <selectionEntry type="model" import="true" name="Preceptor" hidden="false" id="58e-442a-9191-4c2" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8762-f256-5625-1b14"/>
               </constraints>
@@ -2050,6 +2475,13 @@ After determining the number of shots, roll To hit for each as normal, using the
                 <infoLink name="Champion" hidden="false" type="profile" id="32d8-c965-773-d906" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <comment>upgrades: 99fc-882a-4d6c-8c85</comment>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="9ee0-34a0-e54e-3cb9" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="4c79-db4f-221b-43db"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="665-e97e-cf2c-2450" subType="crew">
               <constraints>
@@ -2063,7 +2495,7 @@ After determining the number of shots, roll To hit for each as normal, using the
                 <infoLink name="Musician" hidden="false" type="profile" id="d005-d4e6-d644-facd" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="2999-1aab-2a74-634e" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="2999-1aab-2a74-634e" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b057-e4db-8a54-365c"/>
               </constraints>
@@ -2074,6 +2506,13 @@ After determining the number of shots, roll To hit for each as normal, using the
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="6b98-8986-1e86-17af" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="db78-5aa8-ab-ef4f" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="6f6c-ae16-1c34-c32"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2092,6 +2531,9 @@ After determining the number of shots, roll To hit for each as normal, using the
         <categoryLink targetId="5165-d052-cfc2-5887" id="b5e4-4db2-9c7f-af4c" primary="false" name="Heavy Cavalry"/>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="1e94-b96a-5fe6-4e2e" primary="true" name="Core"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="4f6-acad-de01-e87a" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Inner Circle Knights" hidden="false" id="3407-96f3-26d4-473f">
       <profiles>
@@ -2110,7 +2552,11 @@ After determining the number of shots, roll To hit for each as normal, using the
           <entryLinks>
             <entryLink import="true" name="Hand weapon" hidden="false" type="selectionEntry" id="517a-61b0-9781-5397" targetId="721d-36e3-388a-c0d6"/>
             <entryLink import="true" name="Full Plate Armour" hidden="false" type="selectionEntry" id="6136-42b7-1b08-474a" targetId="2505-873d-1655-3b0b"/>
-            <entryLink import="true" name="Barded Warhorse" hidden="false" type="selectionEntry" id="793-49a9-acf2-c6ee" targetId="e0b3-b528-aa3e-dbbb"/>
+            <entryLink import="true" name="Barded Warhorse" hidden="false" type="selectionEntry" id="793-49a9-acf2-c6ee" targetId="e0b3-b528-aa3e-dbbb">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="d86b-557a-403f-4923"/>
+              </constraints>
+            </entryLink>
             <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="1bfb-a217-1e87-f4f2" targetId="6192-f9f1-5d53-2042"/>
           </entryLinks>
           <infoLinks>
@@ -2120,12 +2566,87 @@ After determining the number of shots, roll To hit for each as normal, using the
           <costs>
             <cost name="pts" typeId="points" value="29"/>
           </costs>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="false" id="53d7-d3eb-af46-32ac" collective="true">
+              <infoLinks>
+                <infoLink name="Stubborn" hidden="false" type="profile" id="f3c2-9792-c9b1-b82b" targetId="e351-bbd6-f470-b604"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="2"/>
+              </costs>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="99ae-9fc5-ed14-7bc9"/>
+              </constraints>
+            </selectionEntry>
+          </selectionEntries>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Equipment" hidden="false" id="dcd3-f616-c0-3774">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Shield" hidden="false" id="2be0-7df-9ba9-e67f" collective="true">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9c53-16d2-33f2-259b"/>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="15aa-9930-3949-fc5b"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Shield" hidden="false" type="profile" id="5a8-7f0-4143-219f" targetId="8997-c74d-3a8d-ecf9"/>
+                  </infoLinks>
+                  <modifiers>
+                    <modifier type="increment" value="1" field="15aa-9930-3949-fc5b">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="e77d-1ad6-bf46-d316" shared="true"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="set" value="0" field="15aa-9930-3949-fc5b"/>
+                  </modifiers>
+                </selectionEntry>
+              </selectionEntries>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Weapons" hidden="false" id="e8d6-d018-d980-d21" flatten="true" collective="true" defaultSelectionEntryId="71f9-ed0b-23da-83cf">
+                  <selectionEntries>
+                    <selectionEntry type="upgrade" import="true" name="Lance" hidden="false" id="e77d-1ad6-bf46-d316" collective="true">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a5f9-9059-9087-49af"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Lance" hidden="false" type="profile" id="dc68-2c7e-2490-70cd" targetId="3520-64c9-a855-ce9e"/>
+                      </infoLinks>
+                      <costs>
+                        <cost name="pts" typeId="points" value="1"/>
+                      </costs>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Great Weapon" hidden="false" id="6835-c01d-9c9-966e" collective="true">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d014-c790-209b-ffc5"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Great Weapon" hidden="false" type="profile" id="ab7-a412-291e-5a33" targetId="88e3-38f0-92d5-b616"/>
+                      </infoLinks>
+                      <costs>
+                        <cost name="pts" typeId="points" value="1"/>
+                      </costs>
+                      <modifiers>
+                        <modifier type="set" value="0" field="points">
+                          <conditions>
+                            <condition type="equalTo" value="0" field="selections" scope="parent" childId="1bfb-a217-1e87-f4f2" shared="true"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
+                    </selectionEntry>
+                  </selectionEntries>
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a188-9c3c-f865-774b"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="83a4-a035-7cad-bd3b"/>
+                  </constraints>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="46a4-c15-4cd1-de33">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Inner Circle Preceptor" hidden="false" id="166e-d5f8-8207-5407" subType="crew">
+            <selectionEntry type="model" import="true" name="Inner Circle Preceptor" hidden="false" id="166e-d5f8-8207-5407" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2536-55d5-910e-b148"/>
               </constraints>
@@ -2142,6 +2663,13 @@ After determining the number of shots, roll To hit for each as normal, using the
                 <infoLink name="Champion" hidden="false" type="profile" id="9df1-d9fd-c049-376e" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <comment>upgrades: e74f-2c1f-6e75-d2d0</comment>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="541-f189-684d-1a93" targetId="1539-fd78-88f-badd" flatten="false">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="4026-7569-87d0-33ad"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="1714-8ed8-9bbe-3a7e" subType="crew">
               <constraints>
@@ -2155,7 +2683,7 @@ After determining the number of shots, roll To hit for each as normal, using the
                 <infoLink name="Musician" hidden="false" type="profile" id="159a-cc32-a6fd-ddaa" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="bd04-c041-b36f-bcb7" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="bd04-c041-b36f-bcb7" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="27b4-3a8e-86d4-efa4"/>
               </constraints>
@@ -2166,6 +2694,13 @@ After determining the number of shots, roll To hit for each as normal, using the
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="d95a-f494-e369-5a01" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="d8ac-48d3-e5a3-7f16" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="ef91-abe6-56f9-3242"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2185,7 +2720,7 @@ After determining the number of shots, roll To hit for each as normal, using the
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="5165-d052-cfc2-5887" id="26ed-ad38-fb28-38b0" primary="false" name="Heavy Cavalry"/>
-        <categoryLink targetId="f0e3-2e32-8866-ea32" id="d8f3-5819-d011-4f2f" primary="true" name="Core"/>
+        <categoryLink targetId="633f-f67a-1b6a-d203" id="b464-6bd2-7a95-6a48" primary="true" name="Special"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Demigryph Knights" hidden="false" id="b4a9-61e8-2b85-9c99">
@@ -2205,7 +2740,12 @@ After determining the number of shots, roll To hit for each as normal, using the
           <entryLinks>
             <entryLink import="true" name="Hand weapon" hidden="false" type="selectionEntry" id="ac04-d25e-fcf6-3f75" targetId="721d-36e3-388a-c0d6"/>
             <entryLink import="true" name="Heavy armour" hidden="false" type="selectionEntry" id="5a11-16dd-a26e-2e4d" targetId="62fb-f89d-afc-1cf1"/>
-            <entryLink import="true" name="Demigryph" hidden="false" type="selectionEntry" id="a6c0-868b-b8ce-32e5" targetId="69e5-6361-86e7-a713"/>
+            <entryLink import="true" name="Demigryph" hidden="false" type="selectionEntry" id="a6c0-868b-b8ce-32e5" targetId="69e5-6361-86e7-a713" collective="true">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="76e-3e86-934c-b7e3-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="76e-3e86-934c-b7e3-max"/>
+              </constraints>
+            </entryLink>
             <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="c691-52d6-d8c6-e73e" targetId="6192-f9f1-5d53-2042"/>
           </entryLinks>
           <infoLinks>
@@ -2215,14 +2755,67 @@ After determining the number of shots, roll To hit for each as normal, using the
           <costs>
             <cost name="pts" typeId="points" value="58"/>
           </costs>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Equipment" hidden="false" id="5b58-c37f-10a5-c8c0" collective="true">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="5a4b-e950-5388-401-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5a4b-e950-5388-401-max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Lance" hidden="false" id="31bd-d35c-b4f2-e983" collective="true">
+                  <infoLinks>
+                    <infoLink name="Lance" hidden="false" type="profile" id="3c36-3c3e-1444-f520" targetId="3520-64c9-a855-ce9e"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="da32-aade-a1ab-fef5"/>
+                  </constraints>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Halberd" hidden="false" id="1c6b-662e-a124-c2db" collective="true">
+                  <infoLinks>
+                    <infoLink name="Halberd" hidden="false" type="profile" id="7a80-854a-3141-9ec9" targetId="98f8-9d8-94cd-3379"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4222-a648-9b21-3a14"/>
+                  </constraints>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Armour" hidden="false" id="d159-e4b2-2ee0-a67b" defaultSelectionEntryId="e0fb-38f4-f101-9bc8">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c156-fc35-1084-f80b-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c156-fc35-1084-f80b-max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Heavy Armour" hidden="false" id="e0fb-38f4-f101-9bc8" collective="true">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="32d8-66d0-815e-896a"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Heavy Armour" hidden="false" type="profile" id="a1bc-7ad3-9e2a-a774" targetId="c56e-8d1b-bb4-de99"/>
+                  </infoLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Full Plate Armour" hidden="false" id="208-fa3-a8cd-378e" collective="true">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="90d0-6ca-1d6b-5a73"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Full Plate Armour" hidden="false" type="profile" id="d38e-f700-8577-9e90" targetId="9a1d-38b0-7d7-7552"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="5"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="cd4d-e878-24c8-cfec">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Inner Circle Preceptor" hidden="false" id="8f2b-8d5d-6c74-3a2c" subType="crew">
+            <selectionEntry type="model" import="true" name="Demigryph Preceptor" hidden="false" id="8f2b-8d5d-6c74-3a2c" subType="crew" flatten="true">
               <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8f76-e683-a9cd-83b8"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="8f76-e683-a9cd-83b8"/>
               </constraints>
               <costs>
                 <cost name="pts" typeId="points" value="6"/>
@@ -2237,6 +2830,13 @@ After determining the number of shots, roll To hit for each as normal, using the
                 <infoLink name="Champion" hidden="false" type="profile" id="440-664a-96c5-7ed5" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <comment>upgrades: 260f-8e5a-fc63-57a5</comment>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="fae9-6334-7be2-831" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="true" id="1799-ea5c-2784-f744"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="dc73-64ec-24cc-849d" subType="crew">
               <constraints>
@@ -2261,6 +2861,13 @@ After determining the number of shots, roll To hit for each as normal, using the
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="250-1831-a785-baa7" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="5b17-c9fc-4668-4cbd" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="a3ea-e43a-f9d4-12fe"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2278,7 +2885,7 @@ After determining the number of shots, roll To hit for each as normal, using the
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="5165-d052-cfc2-5887" id="e39a-645f-1d35-9e71" primary="false" name="Heavy Cavalry"/>
-        <categoryLink targetId="f0e3-2e32-8866-ea32" id="439f-8ca4-78b4-be79" primary="true" name="Core"/>
+        <categoryLink targetId="633f-f67a-1b6a-d203" id="ef31-64d8-1e2e-7ebc" primary="true" name="Special"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="War Altar of Sigmar" hidden="false" id="4f41-e802-c019-63b4" subType="mount">
@@ -2290,7 +2897,12 @@ After determining the number of shots, roll To hit for each as normal, using the
         <infoLink name="Base (60x100)" hidden="false" type="profile" id="aa89-2c3e-8419-ef95" targetId="5125-89a4-916a-eabd"/>
       </infoLinks>
       <entryLinks>
-        <entryLink import="true" name="Barded Warhorse" hidden="false" type="selectionEntry" id="6052-1b82-328-8c0b" targetId="e0b3-b528-aa3e-dbbb"/>
+        <entryLink import="true" name="Barded Warhorse (Chariot)" hidden="false" type="selectionEntry" id="6052-1b82-328-8c0b" targetId="25d5-37bc-7a3e-a3b1">
+          <constraints>
+            <constraint type="min" value="2" field="selections" scope="parent" shared="true" id="a016-a454-430d-7075-min"/>
+            <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="a016-a454-430d-7075-max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="bebf-33b7-fe0b-bc85">
@@ -2614,6 +3226,48 @@ After determining the number of shots, roll To hit for each as normal, using the
         <categoryLink targetId="2bfe-5863-46fe-d284" id="f9f4-84c2-a400-a664" primary="true" name="Rare"/>
       </categoryLinks>
     </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Hochland Long Rifle" hidden="false" id="451f-4f26-82e2-7f07">
+      <infoLinks>
+        <infoLink name="Hochland Long Rifle" hidden="false" type="profile" id="78b9-4c6-d4c8-d4be" targetId="ec0a-ce53-127c-7c0d"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="da4f-bd1d-5b92-7d8a-min"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="da4f-bd1d-5b92-7d8a-max"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Detachment" hidden="false" id="551d-34fe-3832-416d">
+      <infoLinks>
+        <infoLink name="Detachment" hidden="false" type="profile" id="a34e-650f-d7bc-cbc9" targetId="559-d4c6-b2e8-500f"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f783-f5cb-c86a-b88b"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Barded Warhorse (Chariot)" hidden="false" id="25d5-37bc-7a3e-a3b1" collective="true">
+      <infoLinks>
+        <infoLink name="Barded Warhorse" hidden="false" type="profile" id="2eb-2061-784b-ef7" targetId="20b8-5803-d215-db53"/>
+        <infoLink name="Base (30x60)" hidden="false" type="profile" id="1e1f-57b7-3ba0-d1e5" targetId="3a8b-1dd5-77fb-fdc3"/>
+      </infoLinks>
+      <entryLinks>
+        <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="dc81-edc9-79b7-478b" targetId="721d-36e3-388a-c0d6"/>
+        <entryLink import="true" name="Barding" hidden="false" type="selectionEntry" id="9779-3495-e27a-9258" targetId="718d-9fe8-f8ad-ad3c"/>
+      </entryLinks>
+      <infoGroups>
+        <infoGroup name="Special Rules" hidden="false" id="e0f4-36b6-da5-6bd7">
+          <infoLinks>
+            <infoLink name="Counter Charge" hidden="false" type="profile" id="43b2-d342-c3e6-5200" targetId="5186-798d-69d-6545"/>
+            <infoLink name="First Charge" hidden="false" type="profile" id="547e-ade2-4758-9c8e" targetId="785a-2886-af42-dce9"/>
+            <infoLink name="Swiftstride" hidden="false" type="profile" id="d9cf-9c98-b47a-6630" targetId="dc91-48b3-3696-217"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <categoryLinks>
+        <categoryLink targetId="5165-d052-cfc2-5887" id="4140-a1fe-cfbd-48d0" primary="false" name="Heavy Cavalry"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="Barded Warhorse" field="name"/>
+      </modifiers>
+    </selectionEntry>
   </sharedSelectionEntries>
   <entryLinks>
     <entryLink import="true" name="Captain of the Empire" hidden="false" type="selectionEntry" id="8d44-3c40-3ee-aa2d" targetId="5c21-c5f2-2aa4-a8c"/>
@@ -2647,4 +3301,7 @@ After determining the number of shots, roll To hit for each as normal, using the
     <entryLink import="true" name="Helstorm Rocket Batteries" hidden="false" type="selectionEntry" id="c552-2a8a-b3f1-f2b2" targetId="a-18bf-bb56-9788"/>
   </entryLinks>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
+  <catalogueLinks>
+    <catalogueLink type="catalogue" name="New Catalogue (link)" id="dccf-6e5c-1ff-4918" targetId="6c22-b0e4-7c83-f9ce"/>
+  </catalogueLinks>
 </catalogue>
