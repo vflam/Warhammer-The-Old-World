@@ -88,7 +88,11 @@
     </profile>
     <profile name="Asrai Spear" hidden="false" id="4338-1ef3-1095-9080" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">AP1, Fight in Extra Rank</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">AP1, Fight in Extra Rank
+
+Notes: A model wielding an Asrai spear cannot make a supporting attack during a turn in which it
+charged. During a turn in which it was charged in its front arc, a model wielding an Asrai spear gains a
++1 modifier to its Initiative against the charging unit(s)</characteristic>
       </characteristics>
     </profile>
     <profile name="Wildwood Rangers" hidden="false" id="11e8-9cf0-bee3-4de2" typeId="b070-143a-73f-2772" typeName="Model">
@@ -820,18 +824,18 @@ However, if the Arrow of Kurnous is fired, your opponent adds +1 to their roll w
           </constraints>
           <entryLinks>
             <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="d0ed-786c-586e-d0e8" targetId="721d-36e3-388a-c0d6"/>
-            <entryLink import="true" name="Asrai Spear" hidden="false" type="selectionEntry" id="ecd5-5c93-4d29-90f5" targetId="29c0-707a-8c60-125d"/>
+            <entryLink import="true" name="Asrai Spear" hidden="false" type="selectionEntry" id="ecd5-5c93-4d29-90f5" targetId="29c0-707a-8c60-125d" collective="true"/>
             <entryLink import="true" name="Light armour" hidden="false" type="selectionEntry" id="808c-4dc-82d2-faa5" targetId="7cab-40e6-f134-de78"/>
           </entryLinks>
           <infoLinks>
-            <infoLink name="Glade Guard" hidden="false" type="profile" id="e3ee-1be0-60e8-8ed5" targetId="c620-c9a4-77e5-a99"/>
+            <infoLink name="Eternal Guard" hidden="false" type="profile" id="e3ee-1be0-60e8-8ed5" targetId="9f1a-ef9a-47db-ec"/>
             <infoLink name="Base (25x25)" hidden="false" type="profile" id="2d65-95b7-8f3e-cb7d" targetId="193c-4d0d-de6b-bbb1"/>
           </infoLinks>
           <costs>
             <cost name="pts" typeId="points" value="11"/>
           </costs>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="6c96-8439-b9da-c92d">
+            <selectionEntryGroup name="Equipment" hidden="false" id="6c96-8439-b9da-c92d" collective="false">
               <selectionEntries>
                 <selectionEntry type="upgrade" import="true" name="Shields" hidden="false" id="4d0b-4308-f46a-da57" collective="true">
                   <costs>
@@ -852,7 +856,7 @@ However, if the Arrow of Kurnous is fired, your opponent adds +1 to their roll w
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="3c3c-8841-3cf1-32a4">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Eternal Warden" hidden="false" id="2486-6d3e-ce17-df33" subType="crew">
+            <selectionEntry type="model" import="true" name="Eternal Warden" hidden="false" id="2486-6d3e-ce17-df33" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c16e-21ff-8bf2-a801"/>
               </constraints>
@@ -862,13 +866,20 @@ However, if the Arrow of Kurnous is fired, your opponent adds +1 to their roll w
               <infoLinks>
                 <infoLink name="Eternal Guard" hidden="false" type="profile" id="2fac-95f5-682d-9216" targetId="9f1a-ef9a-47db-ec">
                   <modifiers>
-                    <modifier type="set" value="1" field="dddc-9fbd-b0fd-a480"/>
+                    <modifier type="set" value="2" field="dddc-9fbd-b0fd-a480"/>
                     <modifier type="set" value="Eternal Warden" field="name"/>
                   </modifiers>
                 </infoLink>
                 <infoLink name="Champion" hidden="false" type="profile" id="6cc1-3c9b-8c67-61e3" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <comment>upgrades: 15ae-ee0a-61f9-3342</comment>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="4c-f115-73a0-cb7a" targetId="1539-fd78-88f-badd" flatten="true">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="69f2-87c9-8cb3-1861"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="fe51-e948-c111-7583" subType="crew">
               <constraints>
@@ -881,6 +892,20 @@ However, if the Arrow of Kurnous is fired, your opponent adds +1 to their roll w
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="b26a-1422-f4d6-eec8" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="22d3-c84c-74e0-fa24" targetId="6bbe-8054-19b7-e5d6">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="d3d1-dd14-80c2-840e" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="cf7b-a17a-f112-5032"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="a091-6677-f6c8-c78d" subType="crew">
               <constraints>
@@ -911,7 +936,12 @@ However, if the Arrow of Kurnous is fired, your opponent adds +1 to their roll w
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="564b-be55-d398-fc47" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="c46f-567d-2f4a-9d84" primary="true" name="Core"/>
+        <categoryLink targetId="7913-acb6-d065-2dab" id="24fa-b989-3886-c0c" primary="false" name="DRILLED UPGRADE"/>
+        <categoryLink targetId="925c-b77-1d36-e3bf" id="8420-d774-398d-3c62" primary="false" name="VETERAN UPGRADE"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="3a84-1c9e-e6d4-99d4" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Glade Guard" hidden="false" id="886b-7a97-d451-3f0c">
       <profiles>
