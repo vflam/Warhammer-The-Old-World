@@ -549,6 +549,31 @@ However, if the Arrow of Kurnous is fired, your opponent adds +1 to their roll w
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">S5+1, AP-2 , Armour Bane (1)</characteristic>
       </characteristics>
     </profile>
+    <profile name="Arcane Bodkins" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="fbe7-82b5-e962-7f13">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">???</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Hagbane Tips" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="e225-f313-d494-fd74">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">???</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Moonfire Shot" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="f8d1-e254-62cc-20e8">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">???</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Swiftshiver Shards" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="7239-1d57-a7fd-939e">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">???</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Trueflight Arrows" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="bc20-ac7-f6db-fe64">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">???</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Wildwood Rangers" hidden="false" id="d37c-a95d-615e-71d9">
@@ -894,7 +919,8 @@ However, if the Arrow of Kurnous is fired, your opponent adds +1 to their roll w
           </constraints>
           <entryLinks>
             <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="8080-95ad-ef9-6e82" targetId="721d-36e3-388a-c0d6"/>
-            <entryLink import="true" name="Asrai Longbow" hidden="false" type="selectionEntry" id="f79-75eb-fe93-b2e5" targetId="d0cf-9fa2-aac7-32c7"/>
+            <entryLink import="true" name="Asrai Longbow" hidden="false" type="selectionEntry" id="f79-75eb-fe93-b2e5" targetId="d0cf-9fa2-aac7-32c7" collective="true"/>
+            <entryLink import="true" name="Enchanted Arrows" hidden="false" type="selectionEntryGroup" id="cf0e-af3e-5e2-c5f5" targetId="beb3-2a66-950d-b596"/>
           </entryLinks>
           <infoLinks>
             <infoLink name="Glade Guard" hidden="false" type="profile" id="e042-2d55-7045-d568" targetId="c620-c9a4-77e5-a99"/>
@@ -908,7 +934,7 @@ However, if the Arrow of Kurnous is fired, your opponent adds +1 to their roll w
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="7478-1df-dc2e-82e2">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Lord´s Bowman" hidden="false" id="ea88-6305-4fad-fb8f" subType="crew">
+            <selectionEntry type="model" import="true" name="Lord&apos;s Bowman" hidden="false" id="ea88-6305-4fad-fb8f" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c7f7-b96a-9792-4a6c"/>
               </constraints>
@@ -925,10 +951,17 @@ However, if the Arrow of Kurnous is fired, your opponent adds +1 to their roll w
                 <infoLink name="Champion" hidden="false" type="profile" id="a0e9-693f-ff2-3b89" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <comment>upgrades: f54b-aa4a-8ade-a21b</comment>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="ca23-758f-ab0a-98d8" targetId="1539-fd78-88f-badd" flatten="true">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="b234-eccf-e4f5-2aaf"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="9ae-6b61-d24-2d8c" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="9ae-6b61-d24-2d8c" subType="crew" flatten="true">
               <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="abd6-260b-c45e-2465"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c867-7e24-6b4e-a0c8"/>
               </constraints>
               <costs>
                 <cost name="pts" typeId="points" value="6"/>
@@ -937,6 +970,20 @@ However, if the Arrow of Kurnous is fired, your opponent adds +1 to their roll w
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="96a0-7ab6-42ef-b4d4" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="7155-ffc8-b5ae-d040" targetId="6bbe-8054-19b7-e5d6">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="886b-7a97-d451-3f0c" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="dedf-2c84-dd06-c3ec"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="9130-653a-a70f-597f" subType="crew">
               <constraints>
@@ -965,7 +1012,12 @@ However, if the Arrow of Kurnous is fired, your opponent adds +1 to their roll w
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="93c7-6bb1-fa8a-c9a8" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="63e7-b714-92b6-ebd" primary="true" name="Core"/>
+        <categoryLink targetId="2661-a58f-ff4f-20cb" id="7189-e3d4-1005-5586" primary="false" name="FIRE AND FLEE UPGRADE"/>
+        <categoryLink targetId="1008-a8fa-67f7-3e39" id="3f2c-6811-c73a-18b2" primary="false" name="VANGUARD UPGRADE"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="dfc2-4932-3b35-a4a1" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Ranger´s glaive" hidden="false" id="4c30-5e53-bd12-e3eb">
       <infoLinks>
@@ -2414,4 +2466,56 @@ However, if the Arrow of Kurnous is fired, your opponent adds +1 to their roll w
     <entryLink import="true" name="Great Eagles" hidden="false" type="selectionEntry" id="879a-689f-6804-dce4" targetId="db57-f9aa-42fe-a3bd"/>
   </entryLinks>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
+  <sharedSelectionEntryGroups>
+    <selectionEntryGroup name="Enchanted Arrows" hidden="false" id="beb3-2a66-950d-b596">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="db67-f08d-e598-5c93"/>
+      </constraints>
+      <selectionEntries>
+        <selectionEntry type="upgrade" import="true" name="Arcane Bodkins" hidden="false" id="61b6-7731-b2a7-4134" collective="true">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9a8b-f168-fd93-174b"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="2"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Hagbane Tips" hidden="false" id="e028-5bbe-510d-ef2b" collective="true">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5f4b-e230-a15d-379c"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="2"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Moonfire Shot" hidden="false" id="fcd3-39f1-70df-23e3" collective="true">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="43a0-e56b-4622-68db"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Swiftshiver Shards" hidden="false" id="78e2-1ecf-1b13-7129" collective="true">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bc0f-f938-373f-a69c"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="2"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Trueflight Arrows" hidden="false" id="26e-e06-10d2-c70f" collective="true">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="aa28-a47f-817a-9a90"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+  </sharedSelectionEntryGroups>
+  <catalogueLinks>
+    <catalogueLink type="catalogue" name="New Catalogue (link)" id="e61d-5dec-71dc-50fc" targetId="6c22-b0e4-7c83-f9ce"/>
+  </catalogueLinks>
 </catalogue>
