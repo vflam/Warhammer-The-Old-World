@@ -308,14 +308,14 @@ In addition:
 Loosing Frenzy: Unlike other special rules Frenzy can be lost during a game. Any model that loses a round of combat will immediately lose this special rule.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Armour Bane (X)" hidden="false" id="2af0-975f-bb14-8b8f" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+    <profile name="Armour Bane" hidden="false" id="2af0-975f-bb14-8b8f" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">If a model with this special rule rolls a natural 6 when making a roll To Wound, the Armour Piercing characteristic of its weapon is improved by the amount shown in brackets after the name of this special rule (X).
 
 For example, if a natural 6 is rolled when rolling To Wound with a weapon that has an AP of &quot;-&quot; and the Armour Bane (1) special rule its AP counts as being -1 when making an Armour Save roll against that wound.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Armour Hide (X)" hidden="false" id="5450-cbf1-3e74-254a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+    <profile name="Armour Hide" hidden="false" id="5450-cbf1-3e74-254a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">The hide of some creatures forms natural armour and improves their armour value ( and that of their rider). By how much armour value is improved varies from model to model, as shown in brackets after the name of this special rule (X).
 
@@ -326,7 +326,7 @@ Note that a model that wears no armour is considerer to have an armour value of 
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with a Breath Weapon can use it once per round, during the Shooting phase of its turn. Place the flame template, with its broad end over the intended target and its narrow end touching the model&apos;s base edge anywhere along its front arc. The template must lie entirely within the model&apos;s vision arc. Any model whose base lies underneath the template risks being hit. The Strength and any special rules of the breath weapon will be detailed in the creature&apos;s rules.
 
-Breath weapons cannot be used when making a Stand &amp; Shoot charge reaction, or when the model is engaged in combat.</characteristic>
+Breath weapons cannot be used when making a [Stand &amp; Shoot] charge reaction, or when the model is engaged in combat.</characteristic>
       </characteristics>
     </profile>
     <profile name="Counter Charge" hidden="false" id="5186-798d-69d-6545" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
@@ -367,7 +367,7 @@ Note that any character that joins a Drilled unit is considered to be Drilled as
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Once per turn, when the unit is declared the target during the enemy Shooting phase, it may choose to Fall Back in Good Order and will flee directly away form the enemy unit shooting at it. Once this unit has completed its move, the enemy unit may continue with its shooting as declared.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Extra Attacks (+X)" hidden="false" id="23c7-1aeb-5f02-c9e1" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+    <profile name="Extra Attacks" hidden="false" id="23c7-1aeb-5f02-c9e1" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule has a modifier to its Attacks characteristic, as shown in the brackets after the name of this special rule (+X). If this modifier is determined by the roll of a dice, roll when the model&apos;s combat is chosen during any Choose &amp; Fight sub phase.</characteristic>
       </characteristics>
@@ -424,7 +424,7 @@ Unless otherwise stated, a model with this special rule makes Flaming attacks bo
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule cannot make a Regeneration save against a wound caused by a Flaming attack.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Fly (X)" hidden="false" id="c557-6102-9a35-bbcd" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+    <profile name="Fly" hidden="false" id="c557-6102-9a35-bbcd" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule can Fly. Models that can Fly can choose wither to move normally on the ground (using their Movement characteristic), or to move by flying. How many inches a model can Fly varies from model to model, and will be shown in brackets after the name of this special rule (X). Models tat choose to move by flying:
 
@@ -503,7 +503,7 @@ In combat, each handler adds its attacks to those of the monster. If the monster
         <characteristic name="Description" typeId="9f84-4221-785a-db50">To represent its howdah and crew, a behemoth with this special rule has a split profile and follows both the &apos;Split Profile (Chariots)&apos; and &apos;Firing Platform&apos; rules. In all other respects, this model is a behemoth.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Impact Hits (X)" hidden="false" id="5c2-e9dd-2715-a0c0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+    <profile name="Impact Hits" hidden="false" id="5c2-e9dd-2715-a0c0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">The number of Impact Hits caused varies from model to model, and will be shown in brackets after the name of this special rile (X). Often, this is determined by the roll of a dice.
 
@@ -553,7 +553,7 @@ Casualty Removal: Against enemy shooting, casualty removal should be divided as 
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A weapon with this special rule suffers a To Hit modifier of -2 for Moving and Shooting, rather than the usual -1.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Multiple Wounds (X)" hidden="false" id="e3d3-a090-9e2-b276" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+    <profile name="Multiple Wounds" hidden="false" id="e3d3-a090-9e2-b276" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Each unsaved wound inflicted by an attack with this special rule is multiplied by the number shown in brackets after the name of this special rule (X). For example, Multiple Wounds (2) would mean that each unsaved wound would cause the target to lose two Wounds. Where the number of Multiple Wounds is generated by a dice roll, roll separately for each unsaved wound.
 
@@ -1000,7 +1000,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4d0a-3a4a-44b7-6d6"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Light armour" hidden="false" id="7cab-40e6-f134-de78" collective="true">
+    <selectionEntry type="upgrade" import="true" name="Light Armour" hidden="false" id="7cab-40e6-f134-de78" collective="true">
       <infoLinks>
         <infoLink name="Light Armour" hidden="false" type="profile" id="95b2-9d59-c3c8-393b" targetId="dbb2-4d85-84c2-528c"/>
       </infoLinks>
@@ -1310,4 +1310,5 @@ Note that models in rear ranks use the line of sight of the model at the front o
       </categoryLinks>
     </selectionEntry>
   </selectionEntries>
+  <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
 </gameSystem>
