@@ -939,6 +939,26 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <characteristic name="Description" typeId="9f84-4221-785a-db50">the general...</characteristic>
       </characteristics>
     </profile>
+    <profile name="Wizard Level 1" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c3c-9624-c39-e86a">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">???</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Wizard Level 2" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="f40c-d76a-fd42-fb9a">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">???</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Wizard Level 3" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1acd-4208-ba07-175b">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">???</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Wizard Level 4" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="5cee-9c31-3cc4-5c9f">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">???</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -1290,6 +1310,38 @@ Note that models in rear ranks use the line of sight of the model at the front o
       </constraints>
       <infoLinks>
         <infoLink name="General" hidden="false" type="profile" id="32de-47ba-5fe9-7fb6" targetId="609a-2943-a6e1-e002"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Wizard Level 1" hidden="false" id="7d84-39e9-a5f-947e">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7888-6128-a030-93db"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Wizard Level 1" hidden="false" type="profile" id="fd84-35e9-15db-2670" targetId="c3c-9624-c39-e86a"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Wizard Level 2" hidden="false" id="8e47-73e8-f7f9-808">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="66da-479a-dbd-e647"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Wizard Level 2" hidden="false" type="profile" id="683-c3d4-4dd-5e83" targetId="f40c-d76a-fd42-fb9a"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Wizard Level 3" hidden="false" id="59f1-ac46-8123-3f8d">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e89-9137-1448-c6a6"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Wizard Level 3" hidden="false" type="profile" id="5128-eda0-c7a5-7933" targetId="1acd-4208-ba07-175b"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Wizard Level 4" hidden="false" id="50bd-b918-574a-60c3">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8eac-d4f1-b008-4cc"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Wizard Level 4" hidden="false" type="profile" id="4cf7-4c87-381e-e310" targetId="5cee-9c31-3cc4-5c9f"/>
       </infoLinks>
     </selectionEntry>
   </sharedSelectionEntries>
