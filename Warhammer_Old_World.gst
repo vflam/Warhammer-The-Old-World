@@ -946,7 +946,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Hand Weapon" hidden="false" type="profile" id="c4fd-6287-4ab1-bb65" targetId="ef45-edcd-18bf-fe1d"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9935-ed77-1e72-9842-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9935-ed77-1e72-9842-max"/>
       </constraints>
     </selectionEntry>
@@ -955,7 +954,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Great Weapon" hidden="false" type="profile" id="4465-7e60-819e-a74f" targetId="88e3-38f0-92d5-b616"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6e03-7cfb-4459-9b9a-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e03-7cfb-4459-9b9a-max"/>
       </constraints>
     </selectionEntry>
@@ -964,25 +962,29 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Shield" hidden="false" type="profile" id="5300-a336-be3f-860e" targetId="8997-c74d-3a8d-ecf9"/>
       </infoLinks>
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9cb6-6690-ad82-be24-max"/>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="790c-164-ceb-9758"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="790c-164-ceb-9758"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Lance" hidden="false" id="906a-c09d-9f34-a31f" collective="true">
+    <selectionEntry type="upgrade" import="true" name="Lance" hidden="true" id="906a-c09d-9f34-a31f" collective="true">
       <infoLinks>
         <infoLink name="Lance" hidden="false" type="profile" id="4bb4-37af-dd08-93dd" targetId="3520-64c9-a855-ce9e"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="43c1-42a1-9a0a-326e-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="43c1-42a1-9a0a-326e-max"/>
       </constraints>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="mount" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Heavy Armour" hidden="false" id="62fb-f89d-afc-1cf1" collective="true">
       <infoLinks>
         <infoLink name="Heavy Armour" hidden="false" type="profile" id="38dd-cfd4-ea64-fa1b" targetId="c56e-8d1b-bb4-de99"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="45e-be05-779d-ba20-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="45e-be05-779d-ba20-max"/>
       </constraints>
     </selectionEntry>
@@ -991,7 +993,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Barding" hidden="false" type="profile" id="eaf9-36e4-c4fb-f18c" targetId="eb5d-bd8a-c75c-66d7"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4973-bc30-67f5-cb08-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4973-bc30-67f5-cb08-max"/>
       </constraints>
     </selectionEntry>
@@ -1000,14 +1001,12 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Crossbow" hidden="false" type="profile" id="5eba-daec-5c9f-719b" targetId="1ef1-8579-c310-4fb5"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="cf85-256a-d8a8-b011-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cf85-256a-d8a8-b011-max"/>
       </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Throwing Spear" hidden="false" id="9113-238a-ef75-aa23" collective="true">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2b55-9fe1-4d8d-e594-max"/>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="282c-b465-9e8-641e"/>
       </constraints>
       <infoLinks>
         <infoLink name="Throwing Spear" hidden="false" type="profile" id="1c94-5f0a-c42a-26aa" targetId="8a6-cc93-b5fd-6636"/>
@@ -1018,7 +1017,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Full Plate Armour" hidden="false" type="profile" id="5e28-a07e-24ed-aed0" targetId="9a1d-38b0-7d7-7552"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="12e6-599e-626f-e64"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e78c-1462-8bdf-29fd"/>
       </constraints>
     </selectionEntry>
@@ -1027,7 +1025,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Handgun" hidden="false" type="profile" id="53c8-39c-1947-edf7" targetId="4035-287b-e117-6b9b"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="94d3-f30-8056-9665"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4d0a-3a4a-44b7-6d6"/>
       </constraints>
     </selectionEntry>
@@ -1036,14 +1033,12 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Light Armour" hidden="false" type="profile" id="95b2-9d59-c3c8-393b" targetId="dbb2-4d85-84c2-528c"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a829-a78-b8ef-e57a"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d469-faaa-5523-f75f"/>
       </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Thrusting Spear" hidden="false" id="99d2-7f59-5c14-3bf7" collective="true">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="386b-19fa-4c1c-3d68"/>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6fbd-bc3a-3e5b-763c"/>
       </constraints>
       <infoLinks>
         <infoLink name="Thrusting Spear" hidden="false" type="profile" id="dd54-5e8e-6a0d-7ac3" targetId="85-9154-7dc1-ddc6"/>
@@ -1052,7 +1047,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
     <selectionEntry type="upgrade" import="true" name="Warbow" hidden="false" id="244d-ff04-bdc1-56b8" collective="true">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f0af-c3d3-876d-5263"/>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b13e-7861-d367-906"/>
       </constraints>
       <infoLinks>
         <infoLink name="Warbow" hidden="false" type="profile" id="7988-5456-f37-1645" targetId="20c1-9325-e604-a558"/>
@@ -1061,7 +1055,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
     <selectionEntry type="upgrade" import="true" name="Additional Hand Weapon" hidden="false" id="8943-3e16-db2a-b7f3" collective="true">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="12df-72d-f5b3-d569"/>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1f1b-ad73-81d9-760e"/>
       </constraints>
       <infoLinks>
         <infoLink name="Additional Hand Weapon" hidden="false" type="profile" id="1a2d-de59-94a9-b97d" targetId="300e-9667-fc8c-c763"/>
@@ -1069,7 +1062,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Pistol" hidden="false" id="d3c7-5222-61e8-9920">
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="618f-5e83-63ef-f591-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="618f-5e83-63ef-f591-max"/>
       </constraints>
       <infoLinks>
@@ -1081,7 +1073,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Brace of pistols" hidden="false" type="profile" id="da9a-ae92-f6bf-6372" targetId="cdb0-f5d2-68e0-205f"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="bb24-f518-d872-575c-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bb24-f518-d872-575c-max"/>
       </constraints>
     </selectionEntry>
@@ -1090,7 +1081,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Bolt Thrower" hidden="false" type="profile" id="3f4-cc6e-a6e8-be2" targetId="36e4-28b4-31ff-39dc"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c953-924d-1fd3-bbc3"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8718-287f-7f31-316d"/>
       </constraints>
     </selectionEntry>
@@ -1099,7 +1089,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Cannon" hidden="false" type="profile" id="3e4c-9708-eee8-14cd" targetId="8ef5-8512-e1c2-6474"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c28e-3590-5aa7-efa9"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ae72-ea17-e2b-8ca6"/>
       </constraints>
     </selectionEntry>
@@ -1108,7 +1097,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Organ Gun" hidden="false" type="profile" id="93f0-c7ec-3e3-360e" targetId="5635-efd8-13b6-c841"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="3f09-f410-d712-580c"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="df7e-515b-6c02-41c0"/>
       </constraints>
     </selectionEntry>
@@ -1117,7 +1105,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Stone Thrower" hidden="false" type="profile" id="a8ac-b1de-da49-351" targetId="3142-ada8-328d-1615"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1afd-d20-c884-a887"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e6a-f8b9-767b-e92c"/>
       </constraints>
     </selectionEntry>
@@ -1126,7 +1113,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Fire Thrower" hidden="false" type="profile" id="4c01-ea2c-2a89-b87b" targetId="2694-34f1-f146-6351"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b309-7f5e-d2cc-c9bc"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="890b-e8c0-76c1-6024"/>
       </constraints>
     </selectionEntry>
@@ -1135,7 +1121,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Repeater Crossbow" hidden="false" type="profile" id="90ea-8330-2e5a-5af9" targetId="e240-f607-2c57-b181"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a195-46bc-fb4-587d"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a3fd-a9c9-b05d-acf"/>
       </constraints>
     </selectionEntry>
@@ -1144,7 +1129,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Longbow" hidden="false" type="profile" id="90a9-4cb0-3fe3-caa" targetId="c84c-99b6-75eb-4f40"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="eaf6-74a6-c1e5-2074"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="333a-deff-559d-c446"/>
       </constraints>
     </selectionEntry>
@@ -1153,22 +1137,19 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Shortbow" hidden="false" type="profile" id="bf02-c24f-a557-1323" targetId="1b65-71ef-52a3-93d0"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a5b7-a12c-f78c-6d67"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7efc-2607-1899-ffd5"/>
       </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Two Hand Weapon" hidden="false" id="a5bd-e584-3c96-550f" collective="true">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cf5f-459a-36b3-81a4"/>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6d08-ab80-3f68-3882"/>
       </constraints>
       <infoLinks>
         <infoLink name="Two Hand Weapon" hidden="false" type="profile" id="1914-5906-5a1a-2ec5" targetId="1f58-a56f-e54c-ddc5"/>
       </infoLinks>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Flail" hidden="false" id="308a-2562-9266-2151">
+    <selectionEntry type="upgrade" import="true" name="Flail" hidden="false" id="308a-2562-9266-2151" collective="true">
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b30c-6277-ff6b-2266"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a677-3b60-ae2b-abf1"/>
       </constraints>
       <infoLinks>
@@ -1180,7 +1161,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Halberd" hidden="false" type="profile" id="4a05-1d6f-d6ae-cbd4" targetId="98f8-9d8-94cd-3379"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8a02-5303-825a-3c77"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c8c1-1e74-a2de-b637"/>
       </constraints>
     </selectionEntry>
@@ -1189,7 +1169,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Morning Star" hidden="false" type="profile" id="e93d-cd2f-69d2-6fda" targetId="caad-2fc0-e82a-18fd"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ec77-5a8d-9b92-e39b"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7b10-be97-2cf2-6271"/>
       </constraints>
     </selectionEntry>
@@ -1198,7 +1177,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Whip" hidden="false" type="profile" id="5abd-ceb0-f68c-9111" targetId="7505-7edf-c3de-57a6"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="966b-b6b8-2ce4-a3cb"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d141-58b9-3a44-e76f"/>
       </constraints>
     </selectionEntry>
@@ -1207,7 +1185,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Cavalry Spear" hidden="false" type="profile" id="e62-14df-8b5f-255c" targetId="ee75-c1a8-2f0c-c264"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4c98-2e07-9e57-53eb"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e98e-d127-3c6f-9935"/>
       </constraints>
     </selectionEntry>
@@ -1216,7 +1193,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Repeater Handgun" hidden="false" type="profile" id="4d44-a8-e692-4d40" targetId="7f58-91d4-ee6c-3cb7"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7d4d-107-4fe4-78cb"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2cda-64ce-b498-7429"/>
       </constraints>
     </selectionEntry>
@@ -1225,7 +1201,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Repeater Pistol" hidden="false" type="profile" id="d6c2-8220-bca4-c141" targetId="f675-db0d-397c-d873"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="62e4-16b-4710-503d"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7b22-afdc-1c29-745c"/>
       </constraints>
     </selectionEntry>
@@ -1234,7 +1209,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Crossbow" hidden="false" type="profile" id="dc96-7ebd-c388-3fda" targetId="fca0-3c32-72da-53b9"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f60-2250-21b6-624"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bebc-8aba-b2a3-e7a8"/>
       </constraints>
     </selectionEntry>
@@ -1243,14 +1217,12 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Repeater Handbow" hidden="false" type="profile" id="463-758b-a4dd-f4de" targetId="f187-983f-99f2-5ecd"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="730f-b491-caed-3d36"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="32d-bf74-9c21-f919"/>
       </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Sling" hidden="false" id="d477-7d43-aa1b-5418" collective="true">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8bde-982b-2ff6-e384"/>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c9d7-1526-33b9-2e32"/>
       </constraints>
       <infoLinks>
         <infoLink name="Sling" hidden="false" type="profile" id="3a06-5a9d-48d7-772c" targetId="eee6-7b1-58de-6ad2"/>
@@ -1259,7 +1231,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
     <selectionEntry type="upgrade" import="true" name="Throwing Weapon" hidden="false" id="9acb-1a87-176-5a2f" collective="true">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6a65-c8b6-bdec-5ca3"/>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6064-a28d-a683-63a6"/>
       </constraints>
       <infoLinks>
         <infoLink name="Throwing Weapon" hidden="false" type="profile" id="1324-31d9-ec77-6d2" targetId="eee5-db12-1271-f2c5"/>
@@ -1267,7 +1238,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Javelin" hidden="false" id="e1f2-f9a2-c311-123c" collective="true">
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b87a-ecdb-f337-2556"/>
         <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8867-1895-efa0-ab16"/>
       </constraints>
       <infoLinks>
@@ -1277,7 +1247,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
     <selectionEntry type="upgrade" import="true" name="Throwing Axe" hidden="false" id="ac7b-2b4f-83e-b527" collective="true">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="45f1-5aeb-11f3-d308"/>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="646c-e2ea-cc51-20a7"/>
       </constraints>
       <infoLinks>
         <infoLink name="Throwing Axe" hidden="false" type="profile" id="bba9-3a55-ccf0-df33" targetId="9914-73b6-65c4-ec44"/>
@@ -1288,13 +1257,11 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Wicked Claws" hidden="false" type="profile" id="4e04-9a9d-41d7-3e12" targetId="14c0-c7a7-dd09-ea49"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7176-9cf6-1eab-c3ff"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f1e2-76b3-2728-2664"/>
       </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Serrated Maw" hidden="false" id="1e93-bd5f-4eab-4521" collective="false">
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4065-1a0a-a80c-4063"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="84e1-3194-eb8f-824c"/>
       </constraints>
       <infoLinks>
@@ -1306,7 +1273,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Mortar" hidden="false" type="profile" id="e0aa-bc2b-9600-b9bf" targetId="11c5-c8bc-6ce3-8932"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1c31-2f01-93ff-fe16"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="74ca-7660-ed4a-7cd6"/>
       </constraints>
     </selectionEntry>
@@ -1315,7 +1281,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <infoLink name="Flame Cannon" hidden="false" type="profile" id="526b-6831-ddf-b22d" targetId="5207-3185-698f-a161"/>
       </infoLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a9af-9404-4702-ee53-min"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a9af-9404-4702-ee53-max"/>
       </constraints>
     </selectionEntry>
