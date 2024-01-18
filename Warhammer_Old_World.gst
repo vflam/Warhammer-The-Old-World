@@ -38,6 +38,9 @@
     <categoryEntry name="SKIRMISHER UPGRADE1" hidden="true" id="9c9-dc8b-eb73-d90b"/>
     <categoryEntry name="AMBUSHERS UPGRADE1" hidden="true" id="144e-409-8908-7fce"/>
     <categoryEntry name="STUBBORN UPGRADE2" hidden="true" id="8b11-b8bd-b9fc-7459"/>
+    <categoryEntry name="DRILLED UPGRADE1" hidden="true" id="ca73-6522-eb84-b481"/>
+    <categoryEntry name="NEHEKHARAN PHALANX UPGRADE1" hidden="true" id="c008-2eab-5394-1224"/>
+    <categoryEntry name="COUNTER CHARGE1" hidden="true" id="b248-98ef-5ad0-5b20"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
@@ -1485,9 +1488,9 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="2"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Skirmisher" hidden="true" id="4559-746e-4b60-16de">
+        <selectionEntry type="upgrade" import="true" name="Counter Charge" hidden="true" id="4559-746e-4b60-16de">
           <infoLinks>
-            <infoLink name="Skirmishers" hidden="false" type="profile" id="dc93-9a69-d417-edd4" targetId="59a5-7eca-ee35-96ac"/>
+            <infoLink name="Counter Charge" hidden="false" type="profile" id="dc93-9a69-d417-edd4" targetId="5186-798d-69d-6545"/>
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ca63-b2ad-9687-de5a"/>
@@ -1495,7 +1498,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="9c9-dc8b-eb73-d90b" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="b248-98ef-5ad0-5b20" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -1627,6 +1630,70 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <modifier type="set" value="false" field="hidden">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="2392-f089-8a93-dfc3" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Drilled" hidden="true" id="3711-b22a-2fd-22ca">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="54e5-8fe1-354b-a4ff"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Drilled" hidden="false" type="profile" id="d693-55c7-1f61-623c" targetId="1f64-3ddc-db58-12fb"/>
+          </infoLinks>
+          <modifiers>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="fb51-7143-69de-c7fa" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="ca73-6522-eb84-b481" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Nehekharan Phalanx" hidden="true" id="22e9-574d-c2bd-9279">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cafc-2e9c-44a4-34ad"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Drilled" hidden="false" type="profile" id="7e8e-4969-4c57-f6bb" targetId="1f64-3ddc-db58-12fb"/>
+          </infoLinks>
+          <modifiers>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="3a76-3b44-7c55-d5ac" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="c008-2eab-5394-1224" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Skirmisher" hidden="true" id="6cad-49c3-6ea7-4add">
+          <infoLinks>
+            <infoLink name="Skirmishers" hidden="false" type="profile" id="561e-4ca6-df12-c4a6" targetId="59a5-7eca-ee35-96ac"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8700-de53-6f2d-6f61"/>
+          </constraints>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="9c9-dc8b-eb73-d90b" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
