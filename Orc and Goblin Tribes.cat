@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="7" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<catalogue library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="8" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Orc Mobs" hidden="false" id="51e8-1471-ce4c-d5dd">
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="dff9-7fba-8673-bb6e" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="89f7-6065-a95e-9e07" primary="true" name="Core"/>
+        <categoryLink targetId="caab-4ac8-e0ba-d843" id="b126-b6a9-e934-48cf" primary="false" name="STANDARD UPGRADE"/>
+        <categoryLink targetId="b442-ef51-d930-9987" id="ddb6-ef4e-e384-d854" primary="false" name="FRENZY UPGRADE1"/>
       </categoryLinks>
       <profiles>
         <profile name="Orc Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="257d-5056-608-2108">
@@ -28,7 +30,7 @@
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="a374-7f93-4857-38c5">
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Boss" hidden="false" id="9601-28c5-b717-6ebd">
+            <selectionEntry type="upgrade" import="true" name="Boss" hidden="false" id="9601-28c5-b717-6ebd" flatten="true">
               <infoLinks>
                 <infoLink name="Orc Boy" hidden="false" type="profile" id="4b99-41f8-7f54-2784" targetId="5f5d-e3ae-fd89-7005">
                   <modifiers>
@@ -49,6 +51,13 @@
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="f4a2-970d-fdb8-bb4f" primary="false" name="CHAMPION"/>
               </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="a059-20a6-b3e3-9d8" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="da04-41b7-17ac-e976"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Musician" hidden="false" id="2dc5-4d59-bfda-e453">
               <infoLinks>
@@ -62,7 +71,7 @@
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4614-7e3a-abc5-4161"/>
               </constraints>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Standard bearer" hidden="false" id="44b5-5969-34f5-f4e0">
+            <selectionEntry type="upgrade" import="true" name="Standard bearer" hidden="false" id="44b5-5969-34f5-f4e0" flatten="true">
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="e076-7bfb-dd2-4961" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
@@ -73,6 +82,23 @@
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c17d-6c3a-9fa4-3798"/>
               </constraints>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="2a42-b365-b928-121b" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="e677-f456-e76e-5280"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="51e8-1471-ce4c-d5dd" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <entryLinks>
+                    <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="a168-1048-d501-c4c1" targetId="ce2e-bc0f-be9b-9221"/>
+                  </entryLinks>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -185,6 +211,9 @@
           </selectionEntries>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="2225-7c57-aa17-4f99" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Big Un&apos;s" hidden="false" id="e06e-f7ee-cc7f-ec67">
       <costs>
@@ -246,6 +275,13 @@
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="abef-9eb1-c66b-a705" primary="false" name="CHAMPION"/>
               </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="8a27-d819-4bb5-8c43" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="1a2-e0a6-35bb-ad70"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Musician" hidden="false" id="2530-aaae-6820-fdce">
               <infoLinks>
@@ -270,6 +306,13 @@
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d9e4-53ad-f49a-830f"/>
               </constraints>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="c1be-fb44-5cfb-4c37" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="5ad6-80b-c94c-7f0a"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -369,6 +412,8 @@
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="f6fa-e130-9ee8-4298" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="fb7f-39e3-bb92-67e7" primary="true" name="Core"/>
+        <categoryLink targetId="caab-4ac8-e0ba-d843" id="2fe1-1491-50f6-a388" primary="false" name="STANDARD UPGRADE"/>
+        <categoryLink targetId="5deb-f246-715f-2a08" id="3900-ad33-1d62-6310" primary="false" name="SKIRMISHERS UPGRADE"/>
       </categoryLinks>
       <profiles>
         <profile name="Goblin Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="6b30-f6b9-24f2-870d">
@@ -436,6 +481,23 @@
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f6d3-8e6f-309e-fd1b"/>
               </constraints>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="278b-4d43-d0c7-9fdd" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="eb66-4496-e7ee-d6fa"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="6ce4-96c1-6e66-4e65" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <entryLinks>
+                    <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="6987-c175-54f1-118f" targetId="ce2e-bc0f-be9b-9221"/>
+                  </entryLinks>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -533,11 +595,15 @@
           </selectionEntries>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="ab7d-1311-693c-406a" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Night Goblin Mobs" hidden="false" id="399b-6e05-9a74-e18f">
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="12bf-a0bc-b419-1e96" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="ce9b-159b-4364-ea61" primary="true" name="Core"/>
+        <categoryLink targetId="caab-4ac8-e0ba-d843" id="a37c-ad04-80c8-9635" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
       <profiles>
         <profile name="Night Goblin Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="d71d-b44f-ed1c-5871">
@@ -606,6 +672,23 @@
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="33ff-92f1-9c06-2cda"/>
               </constraints>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="8861-3f57-98eb-b86a" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="e250-5ee6-7648-e290"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="399b-6e05-9a74-e18f" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <entryLinks>
+                    <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="2861-fdd9-d907-ba03" targetId="ce2e-bc0f-be9b-9221"/>
+                  </entryLinks>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -675,6 +758,9 @@
           </constraints>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="9bcf-ea90-3865-4e28" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Snotling Mobs" hidden="false" id="42b6-c48e-b345-102a">
       <categoryLinks>
@@ -1007,6 +1093,8 @@
       <categoryLinks>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="15fa-9033-4ccb-ddec" primary="true" name="Special"/>
         <categoryLink targetId="ca7e-d004-ccde-caf3" id="de75-de1-e263-ef4b" primary="false" name="Heavy Infantry"/>
+        <categoryLink targetId="b442-ef51-d930-9987" id="164-ff05-8e8e-331d" primary="false" name="FRENZY UPGRADE1"/>
+        <categoryLink targetId="caab-4ac8-e0ba-d843" id="b618-1322-7190-aeb8" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
       <profiles>
         <profile name="Orc Boar Boy Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="fa03-b035-5b14-4c5a">
@@ -1047,7 +1135,7 @@
                 <infoLink name="Champion" hidden="false" type="profile" id="5d36-341f-7d15-a503" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
               <costs>
-                <cost name="pts" typeId="points" value="6"/>
+                <cost name="pts" typeId="points" value="8"/>
               </costs>
               <comment>upgrades: f5d0-bbda-d0bc-bfc7</comment>
               <constraints>
@@ -1056,6 +1144,13 @@
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="b6f9-8713-ba07-f420" primary="false" name="CHAMPION"/>
               </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="fe99-d233-ec61-fd5a" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="1310-95a4-f2d3-3523"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Musician" hidden="false" id="c881-ff4f-1cfe-f494">
               <infoLinks>
@@ -1080,6 +1175,23 @@
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8c81-5ad1-5edf-9a33"/>
               </constraints>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="1341-5760-f86b-6e78" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="2257-117b-c306-df14"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="5b90-17e7-7f9c-f674" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <entryLinks>
+                    <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="7ae8-1bf-488f-3f70" targetId="ce2e-bc0f-be9b-9221"/>
+                  </entryLinks>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1139,11 +1251,15 @@
           </selectionEntries>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="38fa-51a6-2b9d-fff8" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Goblin Spider Rider Mobs" hidden="false" id="f8e2-1ac4-c646-af1c">
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="f899-facb-468-32b2" primary="true" name="Core"/>
         <categoryLink targetId="600c-7d08-5be1-fe0c" id="2f4a-3cb4-da9-6283" primary="false" name="Light Cavalry"/>
+        <categoryLink targetId="caab-4ac8-e0ba-d843" id="dff3-6607-9122-ff38" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
       <profiles>
         <profile name="Goblin Spider Rider Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="71c3-3b22-2e42-478b">
@@ -1215,6 +1331,23 @@
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="aa44-2dcc-3e4c-b96"/>
               </constraints>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="deb5-58c2-eaa3-edfa" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="4ac4-ed27-19be-b98e"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="f8e2-1ac4-c646-af1c" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <entryLinks>
+                    <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="cfc1-deac-49b8-aad4" targetId="ce2e-bc0f-be9b-9221"/>
+                  </entryLinks>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1276,11 +1409,17 @@
           </selectionEntries>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="b512-7a7a-d2fd-200b" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Goblin Wolf Rider Mobs" hidden="false" id="e36d-11d8-5d9a-1198">
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="d253-caa6-6f06-9730" primary="true" name="Core"/>
         <categoryLink targetId="600c-7d08-5be1-fe0c" id="382d-37ba-4b57-c336" primary="false" name="Light Cavalry"/>
+        <categoryLink targetId="8b11-b8bd-b9fc-7459" id="372f-f1da-ac5e-5774" primary="false" name="RESERVE MOVE UPGRADE1"/>
+        <categoryLink targetId="b6b1-37fc-a1ec-3464" id="de70-d6c3-9095-2349" primary="false" name="FEIGNED FLIGHT UPGRADE2"/>
+        <categoryLink targetId="caab-4ac8-e0ba-d843" id="e733-2e68-5833-9e63" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
       <profiles>
         <profile name="Goblin Wolf Rider Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="ff2b-1c5c-b2d5-7717">
@@ -1352,6 +1491,23 @@
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b89f-ec74-e7a5-f4d5"/>
               </constraints>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="33ac-8a7b-ea6-bfe4" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="a7c0-8403-7179-e863"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="e36d-11d8-5d9a-1198" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <entryLinks>
+                    <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="2557-976f-dd47-81dd" targetId="ce2e-bc0f-be9b-9221"/>
+                  </entryLinks>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1422,8 +1578,11 @@
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="df9c-1e3f-a2c7-8c79" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Night Goblin Hopper Mobs" hidden="false" id="6949-f50f-89e4-99c8">
+    <selectionEntry type="unit" import="true" name="Night Goblin Squig Hopper Mobs" hidden="false" id="6949-f50f-89e4-99c8">
       <categoryLinks>
         <categoryLink targetId="600c-7d08-5be1-fe0c" id="dd98-6fc0-6924-3e27" primary="false" name="Light Cavalry"/>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="7ef7-87f-9ee-f7b0" primary="true" name="Special"/>
@@ -1474,6 +1633,13 @@
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="f56c-1ddf-a50c-6eb2" primary="false" name="CHAMPION"/>
               </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="284a-5e5d-695a-9d8d" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="ff6e-d8c-11d0-ff0e"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1608,6 +1774,7 @@
       <categoryLinks>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="1619-323-bae-1890" primary="true" name="Special"/>
         <categoryLink targetId="d768-7cf0-de0a-c249" id="d56a-8377-7649-1a6" primary="false" name="Heavy Chariot"/>
+        <categoryLink targetId="a708-6cc7-6c0f-ad82" id="48f1-6351-be59-7fe1" primary="false" name="FRENZY UPGRADE2"/>
       </categoryLinks>
       <profiles>
         <profile name="Orc Boar Chariots" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="97e3-a161-b8b3-b3c">
@@ -1681,6 +1848,9 @@
           </selectionEntries>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="eb22-d7d2-a18-dd10" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Orc Crew" hidden="false" id="e605-29cc-37c9-8195" subType="crew">
       <entryLinks>
@@ -3888,4 +4058,8 @@
     <entryLink import="true" name="Goblin Oddgit" hidden="false" type="selectionEntry" id="c93d-3bcf-ffd9-89ee" targetId="32a5-e82a-ec0e-2994"/>
   </entryLinks>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
+  <catalogueLinks>
+    <catalogueLink type="catalogue" name="Magic Items" id="754b-6591-c52e-78c5" targetId="6c22-b0e4-7c83-f9ce"/>
+    <catalogueLink type="catalogue" name="The Lores of Magic" id="be75-580e-8435-6807" targetId="f3c5-af11-649d-5dbb"/>
+  </catalogueLinks>
 </catalogue>
