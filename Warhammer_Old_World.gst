@@ -32,8 +32,12 @@
     <categoryEntry name="VANGUARD UPGRADE2" hidden="true" id="871f-ae50-ed04-428a"/>
     <categoryEntry name="FIRE AND FLEE UPGRADE" hidden="true" id="2661-a58f-ff4f-20cb"/>
     <categoryEntry name="VANGUARD UPGRADE" hidden="true" id="1008-a8fa-67f7-3e39"/>
-    <categoryEntry name="STUBBORN UPGRADE2" hidden="true" id="2392-f089-8a93-dfc3"/>
+    <categoryEntry name="STUBBORN UPGRADE1" hidden="true" id="2392-f089-8a93-dfc3"/>
     <categoryEntry name="VETERAN UPGRADE1" hidden="true" id="e35d-fb38-21b-1a66"/>
+    <categoryEntry name="SCOUTS UPGRADE2" hidden="true" id="a2e3-9206-f023-b4c8"/>
+    <categoryEntry name="SKIRMISHER UPGRADE1" hidden="true" id="9c9-dc8b-eb73-d90b"/>
+    <categoryEntry name="AMBUSHERS UPGRADE1" hidden="true" id="144e-409-8908-7fce"/>
+    <categoryEntry name="STUBBORN UPGRADE2" hidden="true" id="8b11-b8bd-b9fc-7459"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
@@ -1481,9 +1485,9 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="2"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Vanguard" hidden="true" id="4559-746e-4b60-16de">
+        <selectionEntry type="upgrade" import="true" name="Skirmisher" hidden="true" id="4559-746e-4b60-16de">
           <infoLinks>
-            <infoLink name="Vanguard" hidden="false" type="profile" id="dc93-9a69-d417-edd4" targetId="691e-10ec-4f7c-a2c4"/>
+            <infoLink name="Skirmishers" hidden="false" type="profile" id="dc93-9a69-d417-edd4" targetId="59a5-7eca-ee35-96ac"/>
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ca63-b2ad-9687-de5a"/>
@@ -1491,7 +1495,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="1008-a8fa-67f7-3e39" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="9c9-dc8b-eb73-d90b" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -1552,6 +1556,78 @@ Note that models in rear ranks use the line of sight of the model at the front o
               <repeats>
                 <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="6d13-6e03-d408-4f3c"/>
               </repeats>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Scouts" hidden="true" id="9dd8-fa2-ae00-51f">
+          <infoLinks>
+            <infoLink name="Scouts" hidden="false" type="profile" id="39e0-ad51-10e-224f" targetId="fe5e-8838-7fbd-a7ec"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4540-1b50-575f-2838"/>
+          </constraints>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="a2e3-9206-f023-b4c8" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="2"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="true" id="e713-c9bb-54d1-90ae">
+          <infoLinks>
+            <infoLink name="Ambushers" hidden="false" type="profile" id="2954-578d-b9c2-496f" targetId="8c0b-6fe6-dc06-512"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cd24-3783-4289-53bf"/>
+          </constraints>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="144e-409-8908-7fce" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Vanguard" hidden="true" id="6807-4b87-934e-c752">
+          <infoLinks>
+            <infoLink name="Vanguard" hidden="false" type="profile" id="7bb5-9ec1-c8d5-3c5" targetId="691e-10ec-4f7c-a2c4"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8f7f-f87-1a0e-dc9e"/>
+          </constraints>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="1008-a8fa-67f7-3e39" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="true" id="f51d-f3ff-17b7-1588">
+          <infoLinks>
+            <infoLink name="Stubborn" hidden="false" type="profile" id="3cb3-306c-f53b-8253" targetId="e351-bbd6-f470-b604"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="533f-139a-fbb4-477f"/>
+          </constraints>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="2392-f089-8a93-dfc3" shared="true"/>
+              </conditions>
             </modifier>
           </modifiers>
           <costs>
