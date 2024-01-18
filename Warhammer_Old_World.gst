@@ -33,6 +33,7 @@
     <categoryEntry name="FIRE AND FLEE UPGRADE" hidden="true" id="2661-a58f-ff4f-20cb"/>
     <categoryEntry name="VANGUARD UPGRADE" hidden="true" id="1008-a8fa-67f7-3e39"/>
     <categoryEntry name="STUBBORN UPGRADE2" hidden="true" id="2392-f089-8a93-dfc3"/>
+    <categoryEntry name="VETERAN UPGRADE1" hidden="true" id="e35d-fb38-21b-1a66"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
@@ -1516,6 +1517,29 @@ Note that models in rear ranks use the line of sight of the model at the front o
               </conditions>
             </modifier>
           </modifiers>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Veterans" hidden="true" id="69bb-d3c5-3a21-dd06">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1be3-e3de-8b34-5fd9"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Veteran" hidden="false" type="profile" id="9146-bf20-d9de-40a7" targetId="4022-c403-b083-ba83"/>
+          </infoLinks>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="e35d-fb38-21b-1a66" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="6d13-6e03-d408-4f3c"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
         </selectionEntry>
       </selectionEntries>
       <constraints>

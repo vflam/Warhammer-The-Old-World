@@ -750,7 +750,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="c74c-e93a-7521-86a8" targetId="721d-36e3-388a-c0d6"/>
             <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="1d41-4beb-8bc2-efa2" targetId="6192-f9f1-5d53-2042"/>
             <entryLink import="true" name="Light armour" hidden="false" type="selectionEntry" id="6d8a-5f0e-ec6e-6fde" targetId="7cab-40e6-f134-de78"/>
-            <entryLink import="true" name="Thrusting Spear" hidden="false" type="selectionEntry" id="ca01-5e6c-47f7-70f1" targetId="99d2-7f59-5c14-3bf7"/>
           </entryLinks>
           <infoLinks>
             <infoLink name="Elven Spearman" hidden="false" type="profile" id="50a5-7822-f7f4-3973" targetId="1663-cb37-8ab4-de1e"/>
@@ -758,6 +757,49 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           </infoLinks>
           <costs>
             <cost name="pts" typeId="points" value="9"/>
+          </costs>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Equipment" hidden="false" id="4eed-753f-75fe-e931" defaultSelectionEntryId="909f-51fc-1964-3282">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Thrusting Spear" hidden="false" id="909f-51fc-1964-3282" collective="true">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cfd2-2ef-44d1-94be"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Thrusting Spear" hidden="false" type="profile" id="f389-8670-d4dc-2830" targetId="85-9154-7dc1-ddc6"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Great Weapon" hidden="false" id="8b78-6e5c-4f8a-58b2" collective="true">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4602-4051-acfd-d0ef"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Great Weapon" hidden="false" type="profile" id="5635-5bbc-e2dc-e740" targetId="88e3-38f0-92d5-b616"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="2"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="64d6-2dd-dd0d-8673-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="64d6-2dd-dd0d-8673-max"/>
+              </constraints>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Shieldwall" hidden="false" id="2974-9a02-ed37-3647">
+          <infoLinks>
+            <infoLink name="Shieldwall" hidden="false" type="profile" id="bc79-97ed-2e87-74ab" targetId="32f7-8e30-3fe8-b11e"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1fa9-3927-d9d0-17f7"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="10"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
@@ -782,7 +824,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               </infoLinks>
               <comment>upgrades: 7fd0-ec5a-104d-4a6d</comment>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="c3c-b899-960d-d06f" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="c3c-b899-960d-d06f" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ec7-df24-d4b3-a571"/>
               </constraints>
@@ -793,6 +835,20 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="28c7-2c21-cd2a-279e" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="c7ef-5b64-46da-b72b" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="a7f4-8d4-3dbd-11fd"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="93df-6c31-ecb8-bc77" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="c1d7-c15a-3fde-e0bc" subType="crew">
               <constraints>
@@ -823,7 +879,12 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="cae0-3d90-50fe-5f10" primary="true" name="Core"/>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="a741-6217-5d77-cff0" primary="false" name="Regular Infantry"/>
+        <categoryLink targetId="e35d-fb38-21b-1a66" id="84e-dd3b-f31f-c25" primary="false" name="VETERAN UPGRADE1"/>
+        <categoryLink targetId="caab-4ac8-e0ba-d843" id="cdd-28e8-e5a3-cace" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="ca00-e50a-5da6-532d" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Noble" hidden="false" id="37d5-3ec1-ea71-3a6e">
       <profiles>
@@ -2748,6 +2809,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
   </entryLinks>
   <catalogueLinks>
     <catalogueLink type="catalogue" name="The Lores of Magic" id="a889-e4df-86fd-7533" targetId="f3c5-af11-649d-5dbb"/>
+    <catalogueLink type="catalogue" name="Magic Items" id="f49c-6869-8d48-7f14" targetId="6c22-b0e4-7c83-f9ce"/>
   </catalogueLinks>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
 </catalogue>
