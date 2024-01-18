@@ -783,14 +783,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <costs>
             <cost name="pts" typeId="points" value="9"/>
           </costs>
-          <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="4eed-753f-75fe-e931" defaultSelectionEntryId="909f-51fc-1964-3282">
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="64d6-2dd-dd0d-8673-min"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="64d6-2dd-dd0d-8673-max"/>
-              </constraints>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Shieldwall" hidden="false" id="2974-9a02-ed37-3647">
           <infoLinks>
@@ -1245,7 +1237,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Bow of Avelorn" hidden="false" id="21cc-d9b1-b466-e0" collective="false">
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="619c-459d-a54a-b635"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="83dc-8b71-f5b4-c121"/>
       </constraints>
       <infoLinks>
@@ -1261,7 +1252,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
         <infoLink name="Handmaiden&apos;s Spear" hidden="false" type="profile" id="4ea1-b83e-e9e-e4c" targetId="cb8b-78-2f65-59c3"/>
       </infoLinks>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Elven Archer" hidden="false" id="bf06-d67a-9359-a1eb">
+    <selectionEntry type="unit" import="true" name="Elven Archers" hidden="false" id="bf06-d67a-9359-a1eb">
       <profiles>
         <profile name="Elven Archer" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="da8-ef41-8bf8-33f3">
           <characteristics>
@@ -1287,6 +1278,23 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <costs>
             <cost name="pts" typeId="points" value="10"/>
           </costs>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Equipment" hidden="false" id="95f9-42d2-ec61-6daf">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Light Armour" hidden="false" id="721c-16a8-62e2-fd5" collective="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="1"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Light Armour" hidden="false" type="selectionEntry" id="1eef-1ff4-5572-9312" targetId="7cab-40e6-f134-de78"/>
+                  </entryLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="174-367c-d564-956"/>
+                  </constraints>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -1313,7 +1321,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 <categoryLink targetId="83a1-945c-564c-84af" id="9ebc-99b5-dd77-f0db" primary="false" name="CHAMPION"/>
               </categoryLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="9345-387-814-f260" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="9345-387-814-f260" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="49d3-557b-9a6a-af9b"/>
               </constraints>
@@ -1324,6 +1332,20 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="bda-33a5-ce0b-e47d" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="c45c-a094-7645-9d0c" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="b993-1a7e-14-3300"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="bf06-d67a-9359-a1eb" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="1283-b87f-9955-b6d4" subType="crew">
               <constraints>
@@ -1353,7 +1375,12 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="18e6-f1f6-c19c-bcc2" primary="true" name="Core"/>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="ee3f-5822-15-2c29" primary="false" name="Regular Infantry"/>
+        <categoryLink targetId="caab-4ac8-e0ba-d843" id="3461-f0cb-f979-dd5f" primary="false" name="STANDARD UPGRADE"/>
+        <categoryLink targetId="e35d-fb38-21b-1a66" id="bf7a-1a42-245b-cb24" primary="false" name="VETERAN UPGRADE1"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="35c1-dade-6028-1a51" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Lothern Sea Guard" hidden="false" id="12f4-405f-3fb5-75dc">
       <profiles>
@@ -1425,6 +1452,13 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="618d-180-17be-4750" primary="false" name="CHAMPION"/>
               </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="873e-fb43-e63c-d73e" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="a402-6023-676b-7fc2"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="1ccc-9597-2491-44f9" subType="crew">
               <constraints>
@@ -1437,6 +1471,20 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="51c-739d-cb9c-8ab1" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="dbcf-37e6-1c80-7da9" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="567e-6da8-b307-66c7"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="12f4-405f-3fb5-75dc" childId="3ef9-e7ba-25f6-6dd8" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="3b76-3582-64b2-e4b5" subType="crew">
               <constraints>
@@ -1467,7 +1515,12 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="9f17-4cfb-e88-9f01" primary="true" name="Core"/>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="8c1f-bb3f-f527-4ccd" primary="false" name="Regular Infantry"/>
+        <categoryLink targetId="e35d-fb38-21b-1a66" id="5d77-8b8a-c284-c5a8" primary="false" name="VETERAN UPGRADE1"/>
+        <categoryLink targetId="caab-4ac8-e0ba-d843" id="84f0-7d58-606c-958c" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="3ac-53f4-9151-c67" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="White Lions of Chrace" hidden="false" id="24cb-795c-4110-f2d1">
       <profiles>
@@ -1520,6 +1573,13 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="a603-8eab-8fdd-f830" primary="false" name="CHAMPION"/>
               </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="472d-5894-1859-595d" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="cdf5-5ad9-a5cd-c959"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="e19f-6d43-5d4b-50be" subType="crew">
               <constraints>
@@ -1532,6 +1592,13 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="3dd9-63af-8772-c4b8" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="1541-9d3a-a844-b305" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="30e8-8b70-1a9f-1496"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="cea7-dd45-68a7-c3e6" subType="crew">
               <constraints>
@@ -1645,6 +1712,13 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="ca4-3620-4212-564c" primary="false" name="CHAMPION"/>
               </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="137e-9c89-3cda-80b" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="632b-f563-4306-91a0"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="9453-4a57-fd7e-ab79" subType="crew">
               <constraints>
@@ -1657,6 +1731,13 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="60fb-c9b5-f524-57d" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="262b-1ae1-a6ae-652c" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="1f22-1b6a-f30d-4a77"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="41bc-ebd8-5881-7dc9" subType="crew">
               <constraints>
@@ -1743,8 +1824,15 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="a54a-5af4-4dc7-707" primary="false" name="CHAMPION"/>
               </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="f44b-f74e-c2a-af6" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="8526-c381-5dfc-7135"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="b2df-1bea-f237-f758" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="b2df-1bea-f237-f758" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9e93-759a-fbf-c00e"/>
               </constraints>
@@ -1755,6 +1843,13 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="c9e4-1a6f-ff3-e5b7" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="af45-da36-5f77-9c22" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="100" field="points" scope="parent" shared="false" id="1551-e67-a9b9-ce57"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="8475-306d-4be3-435e" subType="crew">
               <constraints>
@@ -1820,7 +1915,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="899e-bfc5-eee0-73fc">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Shadow Walker" hidden="false" id="651-7e2-ecc7-2039" subType="crew">
+            <selectionEntry type="model" import="true" name="Shadow Walker" hidden="false" id="651-7e2-ecc7-2039" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="db43-146f-169b-440a"/>
               </constraints>
@@ -1840,6 +1935,13 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="c12c-80ec-7a5f-c9d3" primary="false" name="CHAMPION"/>
               </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="c3e4-265e-12d8-605f" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="b581-7c3f-a0c1-9c2b"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1879,9 +1981,21 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="5130-71e-4d63-bbed"/>
           </constraints>
           <entryLinks>
-            <entryLink import="true" name="Light armour" hidden="false" type="selectionEntry" id="3a5d-1faf-6b36-ba33" targetId="7cab-40e6-f134-de78"/>
-            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="902e-10f7-caf7-b3b9" targetId="721d-36e3-388a-c0d6"/>
-            <entryLink import="true" name="Bow of Avelorn" hidden="false" type="selectionEntry" id="6ee7-3f8b-4e32-1fb2" targetId="21cc-d9b1-b466-e0"/>
+            <entryLink import="true" name="Light armour" hidden="false" type="selectionEntry" id="3a5d-1faf-6b36-ba33" targetId="7cab-40e6-f134-de78">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4870-47d8-2593-5f"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="902e-10f7-caf7-b3b9" targetId="721d-36e3-388a-c0d6">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="40de-960-c48c-e0c8"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Bow of Avelorn" hidden="false" type="selectionEntry" id="6ee7-3f8b-4e32-1fb2" targetId="21cc-d9b1-b466-e0">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="fe1d-7e52-90b0-7695"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <infoLinks>
             <infoLink name="Sister of Avelorn" hidden="false" type="profile" id="63c1-a6e6-ba4d-186e" targetId="85f0-db25-a82f-16e0"/>
@@ -1895,7 +2009,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="d0eb-3a06-4b0b-111">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="High Sister" hidden="false" id="53b7-9360-52c6-e73b" subType="crew">
+            <selectionEntry type="model" import="true" name="High Sister" hidden="false" id="53b7-9360-52c6-e73b" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d06a-2891-6168-3d4"/>
               </constraints>
@@ -1915,6 +2029,13 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="b4e8-3d5c-f3ab-c94b" primary="false" name="CHAMPION"/>
               </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="3141-4ef-8da3-ed15" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="5041-46b4-4c28-7010"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1997,7 +2118,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="c98b-fbf0-5162-2d5d">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Harbinger" hidden="false" id="1400-f719-2acc-249d" subType="crew">
+            <selectionEntry type="model" import="true" name="Harbinger" hidden="false" id="1400-f719-2acc-249d" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e130-db5c-7902-fe3c"/>
               </constraints>
@@ -2018,8 +2139,15 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="bef2-7511-49b9-331f" primary="false" name="CHAMPION"/>
               </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="1169-2c30-90e4-571d" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="806d-e9a1-a75e-d679"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="3c5c-1d7e-4020-6822" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="3c5c-1d7e-4020-6822" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="429a-3d05-6162-155b"/>
               </constraints>
@@ -2030,6 +2158,20 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="f44-1334-af98-e67b" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="317c-b740-dd3b-46f0" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="6fed-2a84-f73c-c662"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="d02f-84c5-86bf-ff87" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="80f8-275-6551-becc" subType="crew">
               <constraints>
@@ -2060,7 +2202,13 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="ed22-d955-6096-889d" primary="true" name="Core"/>
         <categoryLink targetId="600c-7d08-5be1-fe0c" id="9cad-d94a-228d-4d58" primary="false" name="Light Cavalry"/>
+        <categoryLink targetId="caab-4ac8-e0ba-d843" id="efe7-3b58-8616-2ca3" primary="false" name="STANDARD UPGRADE"/>
+        <categoryLink targetId="a2e3-9206-f023-b4c8" id="8d2b-7bd-1fde-4024" primary="false" name="SCOUTS UPGRADE2"/>
+        <categoryLink targetId="9c9-dc8b-eb73-d90b" id="8697-712e-5e64-93c4" primary="false" name="SKIRMISHER UPGRADE1"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="7077-fc1c-3f63-b158" targetId="ce2e-bc0f-be9b-9221"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Silver Helms" hidden="false" id="e9b1-22cd-7328-5fde">
       <profiles>
@@ -2077,9 +2225,21 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="ea64-7ca3-a31d-bc0d"/>
           </constraints>
           <entryLinks>
-            <entryLink import="true" name="Lance" hidden="false" type="selectionEntry" id="9dad-4574-e17b-65f5" targetId="906a-c09d-9f34-a31f"/>
-            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="cb16-674e-9b9e-c89e" targetId="721d-36e3-388a-c0d6"/>
-            <entryLink import="true" name="Heavy armour" hidden="false" type="selectionEntry" id="61d3-c373-38b9-5bce" targetId="62fb-f89d-afc-1cf1"/>
+            <entryLink import="true" name="Lance" hidden="false" type="selectionEntry" id="9dad-4574-e17b-65f5" targetId="906a-c09d-9f34-a31f">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="fef5-a41d-cdea-f334"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="cb16-674e-9b9e-c89e" targetId="721d-36e3-388a-c0d6">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f470-4a2d-6944-b04b"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Heavy armour" hidden="false" type="selectionEntry" id="61d3-c373-38b9-5bce" targetId="62fb-f89d-afc-1cf1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8cf0-a6a3-2fe5-5183"/>
+              </constraints>
+            </entryLink>
             <entryLink import="true" name="Barded Elven Steed" hidden="false" type="selectionEntry" id="623d-1839-a045-4a0f" targetId="a646-21d4-9265-571d">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="3dcb-8d8-3874-2803-min"/>
@@ -2136,8 +2296,15 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="2d9b-1c5c-c6e4-2a35" primary="false" name="CHAMPION"/>
               </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="8b51-faf6-fbfb-9097" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="3339-b3ce-8fda-bcd8"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="5483-4605-97fc-1a31" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="5483-4605-97fc-1a31" subType="crew" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e33-53d-a9e2-71f0"/>
               </constraints>
@@ -2148,6 +2315,13 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="f142-de10-2b39-7834" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="e5b6-4ef8-bbe2-803c" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="f095-4a67-ee6f-e780"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="bb2b-7adc-9520-83cc" subType="crew">
               <constraints>
@@ -2239,6 +2413,13 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="c0b4-fbb4-e90e-472e" primary="false" name="CHAMPION"/>
               </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="dfe3-6356-fcea-54b7" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="bc21-6922-3978-122a"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="ecba-e234-c8ee-6258" subType="crew">
               <constraints>
@@ -2251,6 +2432,13 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="f51f-885-276b-4c52" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="bd18-a566-edd5-f66b" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="d5fc-6f52-a663-405a"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="7e3d-d59e-96df-d6c8" subType="crew">
               <constraints>
@@ -2310,11 +2498,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f49d-645e-e8c5-6f5a"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Cavalry Spear" hidden="false" type="selectionEntry" id="96f2-cf76-9a32-2928" targetId="a2d0-40e9-83ad-23dc">
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6b34-2543-731-50ae"/>
-              </constraints>
-            </entryLink>
             <entryLink import="true" name="Swiftfeather Roc" hidden="false" type="selectionEntry" id="6710-e196-c049-6439" targetId="431d-a414-632d-97e9">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="5e39-13f2-239f-c7bf-min"/>
@@ -2331,6 +2514,11 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             <entryLink import="true" name="Shortbow" hidden="false" type="selectionEntry" id="509d-5984-857a-f5ae" targetId="f187-20d4-41f3-63cc">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="717b-e739-fb6-8337"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Cavalry Spear" hidden="false" type="selectionEntry" id="3f69-448e-71cf-702" targetId="a2d0-40e9-83ad-23dc">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4932-b470-db96-7cd0"/>
               </constraints>
             </entryLink>
           </entryLinks>
