@@ -35,9 +35,17 @@
     <categoryEntry name="STUBBORN UPGRADE1" hidden="true" id="2392-f089-8a93-dfc3"/>
     <categoryEntry name="VETERAN UPGRADE1" hidden="true" id="e35d-fb38-21b-1a66"/>
     <categoryEntry name="SCOUTS UPGRADE2" hidden="true" id="a2e3-9206-f023-b4c8"/>
-    <categoryEntry name="SKIRMISHER UPGRADE1" hidden="true" id="9c9-dc8b-eb73-d90b"/>
+    <categoryEntry name="SKIRMISHERS UPGRADE1" hidden="true" id="9c9-dc8b-eb73-d90b"/>
     <categoryEntry name="AMBUSHERS UPGRADE1" hidden="true" id="144e-409-8908-7fce"/>
-    <categoryEntry name="STUBBORN UPGRADE2" hidden="true" id="8b11-b8bd-b9fc-7459"/>
+    <categoryEntry name="RESERVE MOVE UPGRADE1" hidden="true" id="8b11-b8bd-b9fc-7459"/>
+    <categoryEntry name="DRILLED UPGRADE1" hidden="true" id="ca73-6522-eb84-b481"/>
+    <categoryEntry name="NEHEKHARAN PHALANX UPGRADE1" hidden="true" id="c008-2eab-5394-1224"/>
+    <categoryEntry name="COUNTER CHARGE1" hidden="true" id="b248-98ef-5ad0-5b20"/>
+    <categoryEntry name="FRENZY UPGRADE1" hidden="true" id="b442-ef51-d930-9987"/>
+    <categoryEntry name="SKIRMISHERS UPGRADE" hidden="true" id="5deb-f246-715f-2a08"/>
+    <categoryEntry name="FEIGNED FLIGHT UPGRADE2" hidden="true" id="b6b1-37fc-a1ec-3464"/>
+    <categoryEntry name="STUBBORN UPGRADE2" hidden="true" id="290f-11de-6a66-410b"/>
+    <categoryEntry name="FRENZY UPGRADE2" hidden="true" id="a708-6cc7-6c0f-ad82"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
@@ -792,7 +800,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">48&quot; S6 AP-3 Cumbersome, Move or Shoot, Multiple Wounds (2), Through or Through</characteristic>
       </characteristics>
     </profile>
-    <profile name="Cannon" hidden="false" id="8ef5-8512-e1c2-6474" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+    <profile name="Great Cannon" hidden="false" id="8ef5-8512-e1c2-6474" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">48&quot; S8 AP-2 Armour Bane(2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
       </characteristics>
@@ -1108,7 +1116,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8718-287f-7f31-316d"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Cannon" hidden="false" id="ca63-2c16-928e-1e45" collective="true">
+    <selectionEntry type="upgrade" import="true" name="Great Cannon" hidden="false" id="ca63-2c16-928e-1e45" collective="true">
       <infoLinks>
         <infoLink name="Cannon" hidden="false" type="profile" id="3e4c-9708-eee8-14cd" targetId="8ef5-8512-e1c2-6474"/>
       </infoLinks>
@@ -1220,7 +1228,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2cda-64ce-b498-7429"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Repeater Pistol" hidden="false" id="6d12-5625-aef5-e25d">
+    <selectionEntry type="upgrade" import="true" name="Repeater Pistol" hidden="false" id="6d12-5625-aef5-e25d" collective="false">
       <infoLinks>
         <infoLink name="Repeater Pistol" hidden="false" type="profile" id="d6c2-8220-bca4-c141" targetId="f675-db0d-397c-d873"/>
       </infoLinks>
@@ -1349,36 +1357,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
       </infoLinks>
     </selectionEntry>
   </sharedSelectionEntries>
-  <selectionEntries>
-    <selectionEntry type="upgrade" import="true" name="Army Organization" hidden="false" id="4420-68ce-1691-5e59">
-      <selectionEntryGroups>
-        <selectionEntryGroup name="Group Units By" hidden="false" id="88cb-1ff2-d783-bd51">
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Unit Type" hidden="false" id="5fd8-d493-6066-41ed">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2b09-19f7-a17f-f7b4"/>
-              </constraints>
-            </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Unit Category" hidden="false" id="7514-84e7-f585-31b">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="80a3-c6c6-75c1-d44c"/>
-              </constraints>
-            </selectionEntry>
-          </selectionEntries>
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="775-9051-442b-b596-min"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="775-9051-442b-b596-max"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink targetId="48b5-1583-6fa3-acda" id="172c-5f01-c18d-d51" primary="false" name="Configuration"/>
-          </categoryLinks>
-        </selectionEntryGroup>
-      </selectionEntryGroups>
-      <categoryLinks>
-        <categoryLink targetId="48b5-1583-6fa3-acda" id="f395-2d94-b885-eff8" primary="true" name="Configuration"/>
-      </categoryLinks>
-    </selectionEntry>
-  </selectionEntries>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup name="Unit Options" hidden="false" id="ce2e-bc0f-be9b-9221">
@@ -1485,9 +1463,9 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="2"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Skirmisher" hidden="true" id="4559-746e-4b60-16de">
+        <selectionEntry type="upgrade" import="true" name="Counter Charge" hidden="true" id="4559-746e-4b60-16de">
           <infoLinks>
-            <infoLink name="Skirmishers" hidden="false" type="profile" id="dc93-9a69-d417-edd4" targetId="59a5-7eca-ee35-96ac"/>
+            <infoLink name="Counter Charge" hidden="false" type="profile" id="dc93-9a69-d417-edd4" targetId="5186-798d-69d-6545"/>
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ca63-b2ad-9687-de5a"/>
@@ -1495,7 +1473,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="9c9-dc8b-eb73-d90b" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="b248-98ef-5ad0-5b20" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -1632,6 +1610,180 @@ Note that models in rear ranks use the line of sight of the model at the front o
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="1"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="3711-b22a-2fd-22ca">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="54e5-8fe1-354b-a4ff"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Frenzy" hidden="false" type="profile" id="d693-55c7-1f61-623c" targetId="3b0c-a477-8823-3a25"/>
+          </infoLinks>
+          <modifiers>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="fb51-7143-69de-c7fa" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="b442-ef51-d930-9987" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Nehekharan Phalanx" hidden="true" id="22e9-574d-c2bd-9279">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cafc-2e9c-44a4-34ad"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Drilled" hidden="false" type="profile" id="7e8e-4969-4c57-f6bb" targetId="1f64-3ddc-db58-12fb"/>
+          </infoLinks>
+          <modifiers>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="3a76-3b44-7c55-d5ac" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="c008-2eab-5394-1224" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="true" id="6cad-49c3-6ea7-4add">
+          <infoLinks>
+            <infoLink name="Skirmishers" hidden="false" type="profile" id="561e-4ca6-df12-c4a6" targetId="59a5-7eca-ee35-96ac"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8700-de53-6f2d-6f61"/>
+          </constraints>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="9c9-dc8b-eb73-d90b" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Drilled" hidden="true" id="a60a-9db3-5719-4a09">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="999-6c4f-13e0-d14e"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Drilled" hidden="false" type="profile" id="fa3b-8405-61e-44a1" targetId="1f64-3ddc-db58-12fb"/>
+          </infoLinks>
+          <modifiers>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="cb2-af12-ccbf-a2ec" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="ca73-6522-eb84-b481" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="true" id="734e-c065-8b35-e514">
+          <infoLinks>
+            <infoLink name="Skirmishers" hidden="false" type="profile" id="1d5d-a341-e252-a925" targetId="59a5-7eca-ee35-96ac"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f094-1b2e-627b-2f06"/>
+          </constraints>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5deb-f246-715f-2a08" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Feigned Flight" hidden="true" id="5dc9-bf8a-241b-6958">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="febd-b5d0-49c2-2648"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Feigned Flight" hidden="false" type="profile" id="39f4-a8bd-f950-7506" targetId="eea7-89d9-a996-403c"/>
+          </infoLinks>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="b6b1-37fc-a1ec-3464" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="b0ef-c009-a5d8-5d15"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Reserve Move" hidden="true" id="5240-54c0-f880-91d7">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8568-6aca-abba-e353"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Reserve Move" hidden="false" type="profile" id="481e-be46-6241-b749" targetId="1f10-d7d-be19-7e8f"/>
+          </infoLinks>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="8b11-b8bd-b9fc-7459" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="611a-af4f-1c90-e012"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="f04b-6597-be1a-d61b">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="75d1-3dbf-2757-c46c"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Frenzy" hidden="false" type="profile" id="e4ab-765f-abeb-ed3c" targetId="3b0c-a477-8823-3a25"/>
+          </infoLinks>
+          <modifiers>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="5ad2-4224-5184-2e0f" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="a708-6cc7-6c0f-ad82" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="2"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
