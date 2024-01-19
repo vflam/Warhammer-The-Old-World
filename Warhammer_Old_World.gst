@@ -47,6 +47,7 @@
     <categoryEntry name="STUBBORN UPGRADE2" hidden="true" id="290f-11de-6a66-410b"/>
     <categoryEntry name="FRENZY UPGRADE2" hidden="true" id="a708-6cc7-6c0f-ad82"/>
     <categoryEntry name="AMBUSHERS UPGRADE10" hidden="true" id="c86a-7a74-e1c8-95a7"/>
+    <categoryEntry name="CHARIOT CREW" hidden="true" id="4cf7-bf85-308d-c29a"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
@@ -623,7 +624,7 @@ Note that if an attack needs a To Hit roll of 7+, or hits automatically, this sp
 If every model in a unit has this special rule, toll once for the entire unit. If two or more models in a unit have different Random Movement characteristics, roll for each and use the lowest result for the entire unit.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Regeneration (X+)" hidden="false" id="2eb0-1ec8-8e04-72d4" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+    <profile name="Regeneration" hidden="false" id="2eb0-1ec8-8e04-72d4" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule can make a &apos;Regeneration&apos; save. The armour value of a Regeneration save is shown in brackets after the name of this special rule (X+). A Regeneration save can never be modified by the AP characteristic of a weapon and can be made in addition to an armour save and  Ward save. However, any wounds saved by a Regeneration save are still counted for the purposes of calculating combat result.
 
@@ -645,7 +646,7 @@ Note that models with this special rule are often vulnerable to the Flaming Atta
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless is charged, marched or fled during the Movement phase of its turn, a unit with this special rule may make a Reserve move at the end of the Shooting phase of its turn, after all shooting has been resolved. A unit making a Reserve move moves as described in the Basic Movement rules. It may manoeuvre but cannot march.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Stomp Attacks (X)" hidden="false" id="72db-24bb-7493-d753" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+    <profile name="Stomp Attacks" hidden="false" id="72db-24bb-7493-d753" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">The number of Stomp Attacks caused varies from model to model and will be shown in brackets after the name of this special rule (X). Often, this is determined by the roll of a dice.
 
@@ -1355,36 +1356,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
       </infoLinks>
     </selectionEntry>
   </sharedSelectionEntries>
-  <selectionEntries>
-    <selectionEntry type="upgrade" import="true" name="Army Organization" hidden="false" id="4420-68ce-1691-5e59">
-      <selectionEntryGroups>
-        <selectionEntryGroup name="Group Units By" hidden="false" id="88cb-1ff2-d783-bd51">
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Unit Type" hidden="false" id="5fd8-d493-6066-41ed">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2b09-19f7-a17f-f7b4"/>
-              </constraints>
-            </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Unit Category" hidden="false" id="7514-84e7-f585-31b">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="80a3-c6c6-75c1-d44c"/>
-              </constraints>
-            </selectionEntry>
-          </selectionEntries>
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="775-9051-442b-b596-min"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="775-9051-442b-b596-max"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink targetId="48b5-1583-6fa3-acda" id="172c-5f01-c18d-d51" primary="false" name="Configuration"/>
-          </categoryLinks>
-        </selectionEntryGroup>
-      </selectionEntryGroups>
-      <categoryLinks>
-        <categoryLink targetId="48b5-1583-6fa3-acda" id="f395-2d94-b885-eff8" primary="true" name="Configuration"/>
-      </categoryLinks>
-    </selectionEntry>
-  </selectionEntries>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup name="Unit Options" hidden="false" id="ce2e-bc0f-be9b-9221">
