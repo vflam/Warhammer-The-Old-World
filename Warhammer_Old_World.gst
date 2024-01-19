@@ -977,6 +977,9 @@ Note that models in rear ranks use the line of sight of the model at the front o
       <infoLinks>
         <infoLink name="Hand Weapon" hidden="false" type="profile" id="c4fd-6287-4ab1-bb65" targetId="ef45-edcd-18bf-fe1d"/>
       </infoLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ca7e-349b-d258-ef9d"/>
+      </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Great Weapon" hidden="false" id="2283-26e9-76c3-6048" collective="true">
       <infoLinks>
