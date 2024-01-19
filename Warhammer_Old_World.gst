@@ -46,6 +46,7 @@
     <categoryEntry name="FEIGNED FLIGHT UPGRADE2" hidden="true" id="b6b1-37fc-a1ec-3464"/>
     <categoryEntry name="STUBBORN UPGRADE2" hidden="true" id="290f-11de-6a66-410b"/>
     <categoryEntry name="FRENZY UPGRADE2" hidden="true" id="a708-6cc7-6c0f-ad82"/>
+    <categoryEntry name="AMBUSHERS UPGRADE10" hidden="true" id="c86a-7a74-e1c8-95a7"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
@@ -1811,6 +1812,24 @@ Note that models in rear ranks use the line of sight of the model at the front o
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="2"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="true" id="efb8-a232-d3f0-7671">
+          <infoLinks>
+            <infoLink name="Ambushers" hidden="false" type="profile" id="28f8-83d6-f68f-efbc" targetId="8c0b-6fe6-dc06-512"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="81b2-99e1-5f9d-f710"/>
+          </constraints>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="c86a-7a74-e1c8-95a7" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="10"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
