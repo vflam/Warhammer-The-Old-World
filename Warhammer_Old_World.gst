@@ -1369,7 +1369,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
   <sharedSelectionEntryGroups>
     <selectionEntryGroup name="Unit Options" hidden="false" id="ce2e-bc0f-be9b-9221">
       <selectionEntries>
-        <selectionEntry type="upgrade" import="true" name="Drilled" hidden="true" id="35f8-72c5-b312-754d">
+        <selectionEntry type="upgrade" import="true" name="Drilled" hidden="true" id="35f8-72c5-b312-754d" sortIndex="3">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="324b-28f9-b5cc-86c3"/>
           </constraints>
@@ -1392,7 +1392,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Veterans" hidden="true" id="b7b9-99f2-db6b-4c88">
+        <selectionEntry type="upgrade" import="true" name="Veterans" hidden="true" id="b7b9-99f2-db6b-4c88" sortIndex="4">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="97f2-8a18-1df2-7e82"/>
           </constraints>
@@ -1415,7 +1415,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="true" id="baa-a804-e903-a730">
+        <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="true" id="baa-a804-e903-a730" sortIndex="1">
           <categoryLinks>
             <categoryLink targetId="49a9-ce63-af1a-18f7" id="991f-2df3-7a32-dd1f" primary="false" name="NO EXPORT"/>
           </categoryLinks>
@@ -1435,7 +1435,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             </modifier>
           </modifiers>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Open Order" hidden="true" id="9e79-880e-3a51-835e">
+        <selectionEntry type="upgrade" import="true" name="Open Order" hidden="true" id="9e79-880e-3a51-835e" sortIndex="5">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cb8f-b04d-5224-d107"/>
           </constraints>
@@ -1453,7 +1453,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Vanguard" hidden="true" id="dd26-3f98-d12c-3b31">
+        <selectionEntry type="upgrade" import="true" name="Vanguard" hidden="true" id="dd26-3f98-d12c-3b31" sortIndex="19">
           <infoLinks>
             <infoLink name="Vanguard" hidden="false" type="profile" id="d511-698c-458b-7389" targetId="691e-10ec-4f7c-a2c4"/>
           </infoLinks>
@@ -1471,7 +1471,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="2"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Counter Charge" hidden="true" id="4559-746e-4b60-16de">
+        <selectionEntry type="upgrade" import="true" name="Counter Charge" hidden="true" id="4559-746e-4b60-16de" sortIndex="9">
           <infoLinks>
             <infoLink name="Counter Charge" hidden="false" type="profile" id="dc93-9a69-d417-edd4" targetId="5186-798d-69d-6545"/>
           </infoLinks>
@@ -1489,7 +1489,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="1"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Fire and Flee" hidden="true" id="d9c5-39fe-3737-e03">
+        <selectionEntry type="upgrade" import="true" name="Fire and Flee" hidden="true" id="d9c5-39fe-3737-e03" sortIndex="10">
           <infoLinks>
             <infoLink name="Fire &amp; Flee" hidden="false" type="profile" id="2864-4bdd-8a95-2309" targetId="1a06-31aa-cbfe-1a5"/>
           </infoLinks>
@@ -1507,7 +1507,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="1"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="true" id="bae9-43d9-f739-2ba6">
+        <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="true" id="bae9-43d9-f739-2ba6" sortIndex="20">
           <costs>
             <cost name="pts" typeId="points" value="2"/>
           </costs>
@@ -1525,7 +1525,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             </modifier>
           </modifiers>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Veterans" hidden="true" id="69bb-d3c5-3a21-dd06">
+        <selectionEntry type="upgrade" import="true" name="Veterans" hidden="true" id="69bb-d3c5-3a21-dd06" sortIndex="11">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1be3-e3de-8b34-5fd9"/>
           </constraints>
@@ -1548,7 +1548,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="1"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Scouts" hidden="true" id="9dd8-fa2-ae00-51f">
+        <selectionEntry type="upgrade" import="true" name="Scouts" hidden="true" id="9dd8-fa2-ae00-51f" sortIndex="21">
           <infoLinks>
             <infoLink name="Scouts" hidden="false" type="profile" id="39e0-ad51-10e-224f" targetId="fe5e-8838-7fbd-a7ec"/>
           </infoLinks>
@@ -1566,7 +1566,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="2"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="true" id="e713-c9bb-54d1-90ae">
+        <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="true" id="e713-c9bb-54d1-90ae" sortIndex="12">
           <infoLinks>
             <infoLink name="Ambushers" hidden="false" type="profile" id="2954-578d-b9c2-496f" targetId="8c0b-6fe6-dc06-512"/>
           </infoLinks>
@@ -1584,7 +1584,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="1"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Vanguard" hidden="true" id="6807-4b87-934e-c752">
+        <selectionEntry type="upgrade" import="true" name="Vanguard" hidden="true" id="6807-4b87-934e-c752" sortIndex="13">
           <infoLinks>
             <infoLink name="Vanguard" hidden="false" type="profile" id="7bb5-9ec1-c8d5-3c5" targetId="691e-10ec-4f7c-a2c4"/>
           </infoLinks>
@@ -1602,7 +1602,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="1"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="true" id="f51d-f3ff-17b7-1588">
+        <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="true" id="f51d-f3ff-17b7-1588" sortIndex="14">
           <infoLinks>
             <infoLink name="Stubborn" hidden="false" type="profile" id="3cb3-306c-f53b-8253" targetId="e351-bbd6-f470-b604"/>
           </infoLinks>
@@ -1620,7 +1620,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="1"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="3711-b22a-2fd-22ca">
+        <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="3711-b22a-2fd-22ca" sortIndex="15">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="54e5-8fe1-354b-a4ff"/>
           </constraints>
@@ -1643,7 +1643,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="1"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Nehekharan Phalanx" hidden="true" id="22e9-574d-c2bd-9279">
+        <selectionEntry type="upgrade" import="true" name="Nehekharan Phalanx" hidden="true" id="22e9-574d-c2bd-9279" sortIndex="16">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cafc-2e9c-44a4-34ad"/>
           </constraints>
@@ -1666,7 +1666,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="1"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="true" id="6cad-49c3-6ea7-4add">
+        <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="true" id="6cad-49c3-6ea7-4add" sortIndex="17">
           <infoLinks>
             <infoLink name="Skirmishers" hidden="false" type="profile" id="561e-4ca6-df12-c4a6" targetId="59a5-7eca-ee35-96ac"/>
           </infoLinks>
@@ -1684,7 +1684,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="1"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Drilled" hidden="true" id="a60a-9db3-5719-4a09">
+        <selectionEntry type="upgrade" import="true" name="Drilled" hidden="true" id="a60a-9db3-5719-4a09" sortIndex="18">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="999-6c4f-13e0-d14e"/>
           </constraints>
@@ -1707,7 +1707,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="1"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="true" id="734e-c065-8b35-e514">
+        <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="true" id="734e-c065-8b35-e514" sortIndex="6">
           <infoLinks>
             <infoLink name="Skirmishers" hidden="false" type="profile" id="1d5d-a341-e252-a925" targetId="59a5-7eca-ee35-96ac"/>
           </infoLinks>
@@ -1725,7 +1725,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Feigned Flight" hidden="true" id="5dc9-bf8a-241b-6958">
+        <selectionEntry type="upgrade" import="true" name="Feigned Flight" hidden="true" id="5dc9-bf8a-241b-6958" sortIndex="7">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="febd-b5d0-49c2-2648"/>
           </constraints>
@@ -1748,7 +1748,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Reserve Move" hidden="true" id="5240-54c0-f880-91d7">
+        <selectionEntry type="upgrade" import="true" name="Reserve Move" hidden="true" id="5240-54c0-f880-91d7" sortIndex="8">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8568-6aca-abba-e353"/>
           </constraints>
@@ -1771,7 +1771,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="f04b-6597-be1a-d61b">
+        <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="f04b-6597-be1a-d61b" sortIndex="22">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="75d1-3dbf-2757-c46c"/>
           </constraints>
@@ -1794,7 +1794,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="2"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="true" id="efb8-a232-d3f0-7671">
+        <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="true" id="efb8-a232-d3f0-7671" sortIndex="24">
           <infoLinks>
             <infoLink name="Ambushers" hidden="false" type="profile" id="28f8-83d6-f68f-efbc" targetId="8c0b-6fe6-dc06-512"/>
           </infoLinks>
@@ -1812,7 +1812,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="10"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="d11e-d8d3-4cf5-c14f">
+        <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="d11e-d8d3-4cf5-c14f" sortIndex="23">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="84b5-d675-b64e-aca7"/>
           </constraints>
@@ -1835,7 +1835,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <cost name="pts" typeId="points" value="3"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="97e-54c7-d200-4de7">
+        <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="97e-54c7-d200-4de7" sortIndex="2">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6d52-2a89-bd62-143f"/>
           </constraints>
