@@ -800,7 +800,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">48&quot; S6 AP-3 Cumbersome, Move or Shoot, Multiple Wounds (2), Through or Through</characteristic>
       </characteristics>
     </profile>
-    <profile name="Great Cannon" hidden="false" id="8ef5-8512-e1c2-6474" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+    <profile name="Cannon" hidden="false" id="8ef5-8512-e1c2-6474" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">48&quot; S8 AP-2 Armour Bane(2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
       </characteristics>
@@ -977,9 +977,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
       <infoLinks>
         <infoLink name="Hand Weapon" hidden="false" type="profile" id="c4fd-6287-4ab1-bb65" targetId="ef45-edcd-18bf-fe1d"/>
       </infoLinks>
-      <constraints>
-        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9935-ed77-1e72-9842-max"/>
-      </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Great Weapon" hidden="false" id="2283-26e9-76c3-6048" collective="true">
       <infoLinks>
@@ -1116,7 +1113,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8718-287f-7f31-316d"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Great Cannon" hidden="false" id="ca63-2c16-928e-1e45" collective="true">
+    <selectionEntry type="upgrade" import="true" name="Cannon" hidden="false" id="ca63-2c16-928e-1e45" collective="true">
       <infoLinks>
         <infoLink name="Cannon" hidden="false" type="profile" id="3e4c-9708-eee8-14cd" targetId="8ef5-8512-e1c2-6474"/>
       </infoLinks>
@@ -1208,9 +1205,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
       <infoLinks>
         <infoLink name="Whip" hidden="false" type="profile" id="5abd-ceb0-f68c-9111" targetId="7505-7edf-c3de-57a6"/>
       </infoLinks>
-      <constraints>
-        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d141-58b9-3a44-e76f"/>
-      </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Cavalry Spear" hidden="false" id="a2d0-40e9-83ad-23dc" collective="true">
       <infoLinks>
@@ -1228,7 +1222,7 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2cda-64ce-b498-7429"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Repeater Pistol" hidden="false" id="6d12-5625-aef5-e25d" collective="false">
+    <selectionEntry type="upgrade" import="true" name="Repeater Pistol" hidden="false" id="6d12-5625-aef5-e25d">
       <infoLinks>
         <infoLink name="Repeater Pistol" hidden="false" type="profile" id="d6c2-8220-bca4-c141" targetId="f675-db0d-397c-d873"/>
       </infoLinks>
@@ -1357,6 +1351,36 @@ Note that models in rear ranks use the line of sight of the model at the front o
       </infoLinks>
     </selectionEntry>
   </sharedSelectionEntries>
+  <selectionEntries>
+    <selectionEntry type="upgrade" import="true" name="Army Organization" hidden="false" id="4420-68ce-1691-5e59">
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Group Units By" hidden="false" id="88cb-1ff2-d783-bd51">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Unit Type" hidden="false" id="5fd8-d493-6066-41ed">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2b09-19f7-a17f-f7b4"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Unit Category" hidden="false" id="7514-84e7-f585-31b">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="80a3-c6c6-75c1-d44c"/>
+              </constraints>
+            </selectionEntry>
+          </selectionEntries>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="775-9051-442b-b596-min"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="775-9051-442b-b596-max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink targetId="48b5-1583-6fa3-acda" id="172c-5f01-c18d-d51" primary="false" name="Configuration"/>
+          </categoryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <categoryLinks>
+        <categoryLink targetId="48b5-1583-6fa3-acda" id="f395-2d94-b885-eff8" primary="true" name="Configuration"/>
+      </categoryLinks>
+    </selectionEntry>
+  </selectionEntries>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup name="Unit Options" hidden="false" id="ce2e-bc0f-be9b-9221">
