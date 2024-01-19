@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="34" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="35" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -47,6 +47,8 @@
     <categoryEntry name="STUBBORN UPGRADE2" hidden="true" id="290f-11de-6a66-410b"/>
     <categoryEntry name="FRENZY UPGRADE2" hidden="true" id="a708-6cc7-6c0f-ad82"/>
     <categoryEntry name="AMBUSHERS UPGRADE10" hidden="true" id="c86a-7a74-e1c8-95a7"/>
+    <categoryEntry name="FRENZY UPGRADE3" hidden="true" id="4e48-1ecf-d4c5-ef0a"/>
+    <categoryEntry name="FRENZY UPGRADE" hidden="true" id="e41e-3817-ab1e-3b59"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
@@ -1831,6 +1833,49 @@ Note that models in rear ranks use the line of sight of the model at the front o
           <costs>
             <cost name="pts" typeId="points" value="10"/>
           </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="d11e-d8d3-4cf5-c14f">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="84b5-d675-b64e-aca7"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Frenzy" hidden="false" type="profile" id="b505-b7a0-637a-e937" targetId="3b0c-a477-8823-3a25"/>
+          </infoLinks>
+          <modifiers>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="9db8-61c8-fce1-aa4b" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="4e48-1ecf-d4c5-ef0a" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <costs>
+            <cost name="pts" typeId="points" value="3"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="97e-54c7-d200-4de7">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6d52-2a89-bd62-143f"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Frenzy" hidden="false" type="profile" id="929d-e1a9-9e80-e453" targetId="3b0c-a477-8823-3a25"/>
+          </infoLinks>
+          <modifiers>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="c5f3-179a-5ad3-cf03" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="e41e-3817-ab1e-3b59" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <constraints>
