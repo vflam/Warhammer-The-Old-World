@@ -1641,7 +1641,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="8e6-f9bc-4d16-f86a" primary="true" name="Characters"/>
       </categoryLinks>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Bow of Avelorn" hidden="false" id="21cc-d9b1-b466-e0" collective="false">
+    <selectionEntry type="upgrade" import="true" name="Bow of Avelorn" hidden="false" id="21cc-d9b1-b466-e0" collective="true">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="83dc-8b71-f5b4-c121"/>
       </constraints>
@@ -2475,7 +2475,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="40de-960-c48c-e0c8"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Bow of Avelorn" hidden="false" type="selectionEntry" id="6ee7-3f8b-4e32-1fb2" targetId="21cc-d9b1-b466-e0" sortIndex="3">
+            <entryLink import="true" name="Bow of Avelorn" hidden="false" type="selectionEntry" id="6ee7-3f8b-4e32-1fb2" targetId="21cc-d9b1-b466-e0" sortIndex="3" collective="true">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="fe1d-7e52-90b0-7695"/>
               </constraints>
@@ -2488,34 +2488,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <costs>
             <cost name="pts" typeId="points" value="15"/>
           </costs>
-          <selectionEntryGroups>
-            <selectionEntryGroup name="Options" hidden="false" id="431b-bc97-9429-252c" sortIndex="4">
-              <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="2ed0-44ce-fd7d-59c1" collective="true" sortIndex="1">
-                  <infoLinks>
-                    <infoLink name="Ambushers" hidden="false" type="profile" id="ea66-9388-97a-7ce6" targetId="8c0b-6fe6-dc06-512"/>
-                  </infoLinks>
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1b9-75dc-4dd4-eaf4"/>
-                  </constraints>
-                  <costs>
-                    <cost name="pts" typeId="points" value="1"/>
-                  </costs>
-                </selectionEntry>
-                <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="false" id="e324-375d-952a-1955" collective="true" sortIndex="2">
-                  <infoLinks>
-                    <infoLink name="Stubborn" hidden="false" type="profile" id="3ed-4092-a5f-6f5d" targetId="e351-bbd6-f470-b604"/>
-                  </infoLinks>
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5ad8-6045-8796-e564"/>
-                  </constraints>
-                  <costs>
-                    <cost name="pts" typeId="points" value="1"/>
-                  </costs>
-                </selectionEntry>
-              </selectionEntries>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -2548,6 +2520,47 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   </constraints>
                 </entryLink>
               </entryLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Options" hidden="false" id="8335-4363-69c9-8b71" sortIndex="4" flatten="true">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="78e2-7de0-c141-6602" collective="true" sortIndex="1">
+              <infoLinks>
+                <infoLink name="Ambushers" hidden="false" type="profile" id="24c6-b1d-8a38-7ac0" targetId="8c0b-6fe6-dc06-512"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d054-8a6c-b5c4-ecfb"/>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="808d-be1f-f6ef-313b" includeChildSelections="true"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="c1ce-19cc-976d-6cd8"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="false" id="324c-6bb8-b00c-9a98" collective="true" sortIndex="2">
+              <infoLinks>
+                <infoLink name="Stubborn" hidden="false" type="profile" id="2262-ff89-6def-a9fb" targetId="e351-bbd6-f470-b604"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1673-9c09-a269-8d59"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="72bc-ec6d-9988-ae8d"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
