@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="36" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="37" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -975,6 +975,11 @@ Note that models in rear ranks use the line of sight of the model at the front o
         <characteristic name="Description" typeId="9f84-4221-785a-db50">???</characteristic>
       </characteristics>
     </profile>
+    <profile name="Nehekharan Phalanx" hidden="false" id="a527-88cc-ddd6-1ea0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit with this special rule that is arrayed in a Close Order formation, and that is equipped with and chooses to use shields, may choose not to Give Ground Should it lose a round in combat. However, if the winning side significantly outnumbers the losing side, it will overwhelm the loser. If the Unit Strength of the winning side is more than twice that of the losing side, the unit cannot use this special rule and must Give Ground as normal.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -1220,13 +1225,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e98e-d127-3c6f-9935"/>
       </constraints>
-      <modifiers>
-        <modifier type="set" value="false" field="hidden">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="parent" childId="mount" shared="true" includeChildSelections="true"/>
-          </conditions>
-        </modifier>
-      </modifiers>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Repeater Handgun" hidden="false" id="1748-87d-961c-9278">
       <infoLinks>
@@ -1645,18 +1643,18 @@ Note that models in rear ranks use the line of sight of the model at the front o
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cafc-2e9c-44a4-34ad"/>
           </constraints>
           <infoLinks>
-            <infoLink name="Drilled" hidden="false" type="profile" id="7e8e-4969-4c57-f6bb" targetId="1f64-3ddc-db58-12fb"/>
+            <infoLink name="Nehekharan Phalanx" hidden="false" type="profile" id="7e8e-4969-4c57-f6bb" targetId="a527-88cc-ddd6-1ea0"/>
           </infoLinks>
           <modifiers>
-            <modifier type="increment" value="1" field="points">
-              <repeats>
-                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="3a76-3b44-7c55-d5ac" includeChildSelections="true"/>
-              </repeats>
-            </modifier>
             <modifier type="set" value="false" field="hidden">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="c008-2eab-5394-1224" shared="true"/>
               </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="f444-a14e-7ae8-57db" includeChildSelections="true"/>
+              </repeats>
             </modifier>
           </modifiers>
           <costs>
