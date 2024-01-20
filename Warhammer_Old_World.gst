@@ -1277,9 +1277,6 @@ Note that models in rear ranks use the line of sight of the model at the front o
       </infoLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Javelin" hidden="false" id="e1f2-f9a2-c311-123c" collective="true">
-      <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8867-1895-efa0-ab16"/>
-      </constraints>
       <infoLinks>
         <infoLink name="Javelin" hidden="false" type="profile" id="db1b-f777-1f1e-5546" targetId="f3f8-7476-d165-1a5d"/>
       </infoLinks>
