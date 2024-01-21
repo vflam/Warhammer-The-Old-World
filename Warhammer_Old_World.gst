@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="37" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<gameSystem id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="38" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -1863,4 +1863,9 @@ Note that models in rear ranks use the line of sight of the model at the front o
       </modifiers>
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
+  <publications>
+    <publication name="Core Rulebook" hidden="false" id="768b-3da1-a182-a1d8"/>
+    <publication name="Forces of Fantasy" hidden="false" id="8b8d-8fc4-559e-87b1"/>
+    <publication name="Ravening Hordes" hidden="false" id="7c89-736c-3139-24a0"/>
+  </publications>
 </gameSystem>
