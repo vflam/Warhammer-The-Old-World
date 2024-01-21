@@ -1,3 +1,10 @@
+/** 
+* This file is a script to automatically fill the `sortIndex` field in selection entries so that they are correctly sorted in New Recruit.
+* USAGE:
+*   1. Open a catalogue of the system you want to use this script on in the NewRecruit Data Edtiro
+*   2. Open the Devtools and naviguate to the Console Tab
+*   3. Copy and Paste this script in the Console and press enter.
+**/
 
 check = (cats) => {
     function sortByAscending(array, getKey) {
