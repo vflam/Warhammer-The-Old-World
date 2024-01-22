@@ -112,7 +112,7 @@
     </profileType>
     <profileType name="Weapon" hidden="false" id="cc88-6a7d-41c9-d63e" sortIndex="2">
       <characteristicTypes>
-        <characteristicType id="47f2-ecee-cae0-9ef9" name="Description"/>
+        <characteristicType id="47f2-ecee-cae0-9ef9" name="Free-Text Description"/>
         <characteristicType id="b3d5-9c7e-fbc8-bd67" name="R"/>
         <characteristicType id="4a75-6e2c-f91d-326c" name="S"/>
         <characteristicType id="dda4-3a19-9dfd-2c67" name="AP"/>
