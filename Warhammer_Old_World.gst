@@ -679,7 +679,7 @@ A unit or mount that does not have this special rule becomes subject to it when 
     </profile>
     <profile name="Swiftstride" hidden="false" id="dc91-48b3-3696-217" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="178" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">???</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit with this special rule increases its maximum possible charge range by 3&quot; and, when it makes a Charge, Flee or pursuit roll, may apply a +D6 modifier to the result.</characteristic>
       </characteristics>
     </profile>
     <profile name="Terror" hidden="false" id="c7a2-35bf-4313-f4f0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="179" publicationId="768b-3da1-a182-a1d8">
