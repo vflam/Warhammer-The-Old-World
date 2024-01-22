@@ -324,13 +324,13 @@ Note that unless a character also has this special rule, their Leadership cannot
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Extra Atacks (+1), Require Two Hands</characteristic>
       </characteristics>
     </profile>
-    <profile name="Throwing spear" hidden="false" id="8a6-cc93-b5fd-6636" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Throwing Spear" hidden="false" id="8a6-cc93-b5fd-6636" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat	S: S	AP: -	
 Notes: A throwing spear can only be used during a turn in which the wielder charged. In subsequent turns (or if the wielder did not charge) the model must use its hand weapon instead.	Special Rules: Fight in Extra Rank</characteristic>
       </characteristics>
     </profile>
-    <profile name="Thrusting spear" hidden="false" id="85-9154-7dc1-ddc6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Thrusting Spear" hidden="false" id="85-9154-7dc1-ddc6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat	S: S	AP: -	
 Notes: Models whose troop type is ‘infantry’ only. A model wielding a thrusting spear cannot make a supporting attack during a turn in which it charged. During a turn in which it was charged in its front arc, a model wielding a thrusting spear gains a +1 modifier to its Initiative against the charging unit(s).	Special Rules: Fight in Extra Rank</characteristic>
@@ -888,12 +888,12 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 18&quot;	S: 3	AP: -	Special Rules: Multiple Shots (2)</characteristic>
       </characteristics>
     </profile>
-    <profile name="Throwing axe" hidden="false" id="9914-73b6-65c4-ec44" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Throwing Axe" hidden="false" id="9914-73b6-65c4-ec44" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 9&quot;	S: S+1	AP: -	Special Rules: Quick Shot</characteristic>
       </characteristics>
     </profile>
-    <profile name="Throwing weapon" hidden="false" id="eee5-db12-1271-f2c5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Throwing Weapon" hidden="false" id="eee5-db12-1271-f2c5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 9&quot;	S: S	AP: -	Special Rules: Multiple Shots (2), Move &amp; Shoot, Quick Shot</characteristic>
       </characteristics>
