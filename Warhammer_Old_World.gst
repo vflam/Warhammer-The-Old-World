@@ -177,6 +177,7 @@
         <characteristic name="S" typeId="4a75-6e2c-f91d-326c">S</characteristic>
         <characteristic name="AP" typeId="dda4-3a19-9dfd-2c67">-</characteristic>
         <characteristic name="Special Rules" typeId="21d6-681a-a3ec-cce4">-</characteristic>
+        <characteristic name="Notes" typeId="1f46-f4c3-16e1-c349">Unless specified otherwise, all models are assumed to be equipped with a hand weapon.</characteristic>
       </characteristics>
     </profile>
     <profile name="Shield" hidden="false" id="8997-c74d-3a8d-ecf9" typeId="c14f-740-8107-d34b" typeName="Armour">
@@ -354,6 +355,7 @@ Note that unless a character also has this special rule, their Leadership cannot
         <characteristic name="S" typeId="4a75-6e2c-f91d-326c">S</characteristic>
         <characteristic name="AP" typeId="dda4-3a19-9dfd-2c67">-</characteristic>
         <characteristic name="Special Rules" typeId="21d6-681a-a3ec-cce4">Fight in Extra Rank</characteristic>
+        <characteristic name="Notes" typeId="1f46-f4c3-16e1-c349">A throwing spear can only be used during a turn in which the wielder charged. In subsequent turns (or if the wielder did not charge) the model must use its hand weapon instead.</characteristic>
       </characteristics>
     </profile>
     <profile name="Thrusting spear" hidden="false" id="85-9154-7dc1-ddc6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
@@ -363,6 +365,7 @@ Note that unless a character also has this special rule, their Leadership cannot
         <characteristic name="S" typeId="4a75-6e2c-f91d-326c">S</characteristic>
         <characteristic name="AP" typeId="dda4-3a19-9dfd-2c67">-</characteristic>
         <characteristic name="Special Rules" typeId="21d6-681a-a3ec-cce4">Fight in Extra Rank</characteristic>
+        <characteristic name="Notes" typeId="1f46-f4c3-16e1-c349">Models whose troop type is ‘infantry’ only. A model wielding a thrusting spear cannot make a supporting attack during a turn in which it charged. During a turn in which it was charged in its front arc, a model wielding a thrusting spear gains a +1 modifier to its Initiative against the charging unit(s).</characteristic>
       </characteristics>
     </profile>
     <profile name="Frenzy" hidden="false" id="3b0c-a477-8823-3a25" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="170" publicationId="768b-3da1-a182-a1d8">
@@ -821,6 +824,7 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
         <characteristic name="S" typeId="4a75-6e2c-f91d-326c">8</characteristic>
         <characteristic name="AP" typeId="dda4-3a19-9dfd-2c67">-2</characteristic>
         <characteristic name="Special Rules" typeId="21d6-681a-a3ec-cce4">Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
+        <characteristic name="Notes" typeId="1f46-f4c3-16e1-c349">Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Cannon Fire’ special rule. This weapon uses the Black Powder Misfire table.</characteristic>
       </characteristics>
     </profile>
     <profile name="Stone Thrower" hidden="false" id="3142-ada8-328d-1615" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
@@ -835,6 +839,7 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
         <characteristic name="S" typeId="4a75-6e2c-f91d-326c">5</characteristic>
         <characteristic name="AP" typeId="dda4-3a19-9dfd-2c67">-1</characteristic>
         <characteristic name="Special Rules" typeId="21d6-681a-a3ec-cce4">Armour Bane (2), Cumbersome, Move or Shoot, Multi-Barrelled</characteristic>
+        <characteristic name="Notes" typeId="1f46-f4c3-16e1-c349">This weapon uses the Black Powder Misfire table.</characteristic>
       </characteristics>
     </profile>
     <profile name="Fire thrower" hidden="false" id="2694-34f1-f146-6351" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="229" publicationId="768b-3da1-a182-a1d8">
@@ -844,6 +849,7 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
         <characteristic name="S" typeId="4a75-6e2c-f91d-326c">5</characteristic>
         <characteristic name="AP" typeId="dda4-3a19-9dfd-2c67">-1</characteristic>
         <characteristic name="Special Rules" typeId="21d6-681a-a3ec-cce4">Column of Fire, Cumbersome, Flaming Attacks, Move or Shoot</characteristic>
+        <characteristic name="Notes" typeId="1f46-f4c3-16e1-c349">Fire throwers do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Column of Fire’ special rule. This weapon uses the Black Powder Misfire table.</characteristic>
       </characteristics>
     </profile>
     <profile name="Javelin" hidden="false" id="f3f8-7476-d165-1a5d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
@@ -862,6 +868,7 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
         <characteristic name="S" typeId="4a75-6e2c-f91d-326c">S+1</characteristic>
         <characteristic name="AP" typeId="dda4-3a19-9dfd-2c67">-1</characteristic>
         <characteristic name="Special Rules" typeId="21d6-681a-a3ec-cce4">Fight in Extra Rank</characteristic>
+        <characteristic name="Notes" typeId="1f46-f4c3-16e1-c349">Models whose troop type is ‘cavalry’, ‘monster’ or ‘chariot’ only. A cavalry spear’s Strength and Armour Piercing modifiers apply only during a turn in which the wielder charged. A model wielding a cavalry spear cannot make a supporting attack during a turn in which it charged.</characteristic>
       </characteristics>
     </profile>
     <profile name="Morning star" hidden="false" id="caad-2fc0-e82a-18fd" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
@@ -871,6 +878,7 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
         <characteristic name="S" typeId="4a75-6e2c-f91d-326c">S+1</characteristic>
         <characteristic name="AP" typeId="dda4-3a19-9dfd-2c67">-1</characteristic>
         <characteristic name="Special Rules" typeId="21d6-681a-a3ec-cce4">-</characteristic>
+        <characteristic name="Notes" typeId="1f46-f4c3-16e1-c349">A morning star’s Strength modifier applies only during the first round of combat.</characteristic>
       </characteristics>
     </profile>
     <profile name="Halberd" hidden="false" id="98f8-9d8-94cd-3379" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
@@ -889,6 +897,7 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
         <characteristic name="S" typeId="4a75-6e2c-f91d-326c">S+2</characteristic>
         <characteristic name="AP" typeId="dda4-3a19-9dfd-2c67">-2</characteristic>
         <characteristic name="Special Rules" typeId="21d6-681a-a3ec-cce4">Requires Two Hands</characteristic>
+        <characteristic name="Notes" typeId="1f46-f4c3-16e1-c349">A flail’s Strength modifier applies only during the first round of combat.</characteristic>
       </characteristics>
     </profile>
     <profile name="Whip" hidden="false" id="7505-7edf-c3de-57a6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
@@ -907,6 +916,7 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
         <characteristic name="S" typeId="4a75-6e2c-f91d-326c">S+2</characteristic>
         <characteristic name="AP" typeId="dda4-3a19-9dfd-2c67">-2</characteristic>
         <characteristic name="Special Rules" typeId="21d6-681a-a3ec-cce4">Armour Bane (1)</characteristic>
+        <characteristic name="Notes" typeId="1f46-f4c3-16e1-c349">Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance can only be used during a turn in which the wielder charged. In subsequent turns (or if the wielder did not charge) the model must use its hand weapon instead.</characteristic>
       </characteristics>
     </profile>
     <profile name="Shortbow" hidden="false" id="1b65-71ef-52a3-93d0" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="216" publicationId="768b-3da1-a182-a1d8">
