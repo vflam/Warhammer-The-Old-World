@@ -56,7 +56,7 @@
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="a936-639f-e214-e9d" targetId="a4cc-15c9-cfae-1b3b" type="category">
           <constraints>
-            <constraint type="max" value="50" field="limit::points" scope="roster" shared="true" id="abe-35b3-cb6f-604d" percentValue="true"/>
+            <constraint type="max" value="50" field="limit::points" scope="roster" shared="true" id="abe-35b3-cb6f-604d" percentValue="true" includeChildSelections="true"/>
           </constraints>
         </categoryLink>
         <categoryLink id="ab07-e23d-ab54-8822" targetId="f0e3-2e32-8866-ea32" name="Core" type="category">
@@ -66,17 +66,17 @@
         </categoryLink>
         <categoryLink name="Special" hidden="false" id="c64f-52a4-9d57-2c86" targetId="633f-f67a-1b6a-d203" type="category">
           <constraints>
-            <constraint type="max" value="50" field="selections" scope="roster" shared="true" id="2212-630f-3cec-36df" percentValue="true" includeChildSelections="true"/>
+            <constraint type="max" value="50" field="limit::points" scope="roster" shared="true" id="2212-630f-3cec-36df" percentValue="true" includeChildSelections="true"/>
           </constraints>
         </categoryLink>
         <categoryLink name="Rare" hidden="false" id="e603-b373-46b1-4237" targetId="2bfe-5863-46fe-d284" type="category">
           <constraints>
-            <constraint type="max" value="25" field="selections" scope="roster" shared="true" id="f0f7-32b6-d076-214a" percentValue="true" includeChildSelections="true"/>
+            <constraint type="max" value="25" field="limit::points" scope="roster" shared="true" id="f0f7-32b6-d076-214a" percentValue="true" includeChildSelections="true"/>
           </constraints>
         </categoryLink>
         <categoryLink name="Mercenaries" hidden="false" id="6032-af52-ae71-e755" targetId="5b84-2c3c-869d-3522" type="category">
           <constraints>
-            <constraint type="max" value="20" field="selections" scope="roster" shared="true" id="4bbb-90a8-3513-cbec" percentValue="true" includeChildSelections="true"/>
+            <constraint type="max" value="20" field="limit::points" scope="roster" shared="true" id="4bbb-90a8-3513-cbec" percentValue="true" includeChildSelections="true"/>
           </constraints>
         </categoryLink>
       </categoryLinks>
