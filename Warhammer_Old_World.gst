@@ -50,6 +50,7 @@
     <categoryEntry name="CHARIOT CREW" hidden="true" id="4cf7-bf85-308d-c29a"/>
     <categoryEntry name="FRENZY UPGRADE3" hidden="true" id="4e48-1ecf-d4c5-ef0a"/>
     <categoryEntry name="FRENZY UPGRADE" hidden="true" id="e41e-3817-ab1e-3b59"/>
+    <categoryEntry name="MOUNT" hidden="true" id="c96a-608-5de4-b943"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
