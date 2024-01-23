@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c908-5f26-5bdf-2a48" name="Warriors of Chaos" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="23" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
-    <profile name="Chaos Armour (X+)" hidden="false" id="5073-af52-fe26-36ff" typeId="c14f-740-8107-d34b" typeName="Armour">
+    <profile name="Chaos Armour" hidden="false" id="5073-af52-fe26-36ff" typeId="c14f-740-8107-d34b" typeName="Armour">
       <characteristics>
         <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">A model with this special rule has a Ward save against any wound suffered. The armour value of this Ward save is shown in brackets after the name of this special rule (X+). In addition, a Wizard with this special rile may wear armour without penalty.</characteristic>
       </characteristics>
@@ -733,6 +733,12 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="3c19-6006-5a1c-9b06"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="Mark of Chaos" hidden="false" type="selectionEntryGroup" id="3d07-be8b-d0e7-c6ca" targetId="4761-327a-7529-fc41">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="d5e2-adca-c81e-5ba4-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d5e2-adca-c81e-5ba4-max"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <infoLinks>
             <infoLink name="Aspiring Champion" hidden="false" type="profile" id="c7df-1e01-1b9f-6de4" targetId="e0d5-5c58-e490-6f45"/>
@@ -774,35 +780,6 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mark" hidden="false" id="1a21-f0d0-579b-7cf0" defaultSelectionEntryId="bef-9a63-773c-c718" sortIndex="7">
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="de21-ca2d-b0b0-e9b1"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1aa5-be28-7bdf-a9d"/>
-              </constraints>
-              <entryLinks>
-                <entryLink import="true" name="Mark of Chaos Undivided" hidden="false" type="selectionEntry" id="bef-9a63-773c-c718" targetId="ad1d-818d-48e-9457" sortIndex="1"/>
-                <entryLink import="true" name="Mark of Khorne" hidden="false" type="selectionEntry" id="7e37-3896-2c5-df5f" targetId="dbfd-c8b3-5688-4550" sortIndex="2">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Tzeentch" hidden="false" type="selectionEntry" id="9534-9111-699e-1fcc" targetId="5769-43d9-7b87-ed75" sortIndex="3">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Nurgle" hidden="false" type="selectionEntry" id="efe5-7b0c-6c40-2768" targetId="f69c-c9ca-68f1-eebf" sortIndex="4">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Slaneesh" hidden="false" type="selectionEntry" id="bdde-3234-4911-b376" targetId="3a04-dd84-1ba5-187c" sortIndex="5">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-              </entryLinks>
-            </selectionEntryGroup>
             <selectionEntryGroup name="Mount" hidden="false" id="c230-aa46-d826-e6f5" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4eb-301d-2a72-aa82"/>
@@ -812,6 +789,9 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                   <costs>
                     <cost name="pts" typeId="points" value="110"/>
                   </costs>
+                  <categoryLinks>
+                    <categoryLink targetId="c96a-608-5de4-b943" id="7dd9-5410-aed9-e67e" primary="false" name="MOUNT"/>
+                  </categoryLinks>
                 </entryLink>
                 <entryLink import="true" name="Chaos Steed" hidden="false" type="selectionEntry" id="62f4-6eac-b5f1-bcc2" targetId="835b-6425-1413-dfda" sortIndex="1">
                   <costs>
@@ -822,6 +802,9 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                   <costs>
                     <cost name="pts" typeId="points" value="135"/>
                   </costs>
+                  <categoryLinks>
+                    <categoryLink targetId="c96a-608-5de4-b943" id="6327-7d3d-fb2-c26e" primary="false" name="MOUNT"/>
+                  </categoryLinks>
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
@@ -831,7 +814,11 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="1e8c-8ad3-bc2b-68c1">
           <infoLinks>
-            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="29fa-4e72-e901-d1d1" targetId="5073-af52-fe26-36ff"/>
+            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="29fa-4e72-e901-d1d1" targetId="5073-af52-fe26-36ff">
+              <modifiers>
+                <modifier type="append" value=" (5+)" field="name"/>
+              </modifiers>
+            </infoLink>
             <infoLink name="Encorcelled Weapons" hidden="false" type="profile" id="b2fe-bfda-308-93fd" targetId="68ed-9275-f95a-a3f5"/>
             <infoLink name="Gaze of the Gods" hidden="false" type="profile" id="674a-cee6-9f3b-34be" targetId="1650-86f-8212-566d"/>
             <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="1a7b-1a26-2356-98cb" targetId="fcf3-41f3-60c8-7deb"/>
@@ -875,6 +862,12 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="ba14-6ae0-a1d5-9783"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="Mark of Chaos" hidden="false" type="selectionEntryGroup" id="e42a-e57e-1c05-502c" targetId="4761-327a-7529-fc41">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="95a-f19a-723c-a972-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="95a-f19a-723c-a972-max"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <infoLinks>
             <infoLink name="Daemon Pince" hidden="false" type="profile" id="6973-9cee-8a41-8171" targetId="5921-f0ca-923-d2a"/>
@@ -914,35 +907,6 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7a85-9914-d7d-d174"/>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="de0f-265c-592b-be4b"/>
               </constraints>
-            </selectionEntryGroup>
-            <selectionEntryGroup name="Mark" hidden="false" id="48cb-6a79-a1be-826f" defaultSelectionEntryId="bef-9a63-773c-c718" sortIndex="5">
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f5f5-3b74-c4cd-6efb"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e767-f705-e68e-d5d8"/>
-              </constraints>
-              <entryLinks>
-                <entryLink import="true" name="Mark of Chaos Undivided" hidden="false" type="selectionEntry" id="97c-3864-bb8e-ee92" targetId="ad1d-818d-48e-9457" sortIndex="1"/>
-                <entryLink import="true" name="Mark of Khorne" hidden="false" type="selectionEntry" id="7582-6b81-4f06-ba09" targetId="dbfd-c8b3-5688-4550" sortIndex="2">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Tzeentch" hidden="false" type="selectionEntry" id="b94b-5bc1-248d-764c" targetId="5769-43d9-7b87-ed75" sortIndex="3">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Nurgle" hidden="false" type="selectionEntry" id="ceec-fc47-f6ff-ba0e" targetId="f69c-c9ca-68f1-eebf" sortIndex="4">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Slaneesh" hidden="false" type="selectionEntry" id="7f0f-bad0-d16e-c634" targetId="3a04-dd84-1ba5-187c" sortIndex="5">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-              </entryLinks>
             </selectionEntryGroup>
             <selectionEntryGroup name="Lores of Magic" hidden="false" id="6b2d-1008-5651-76c3" sortIndex="6">
               <entryLinks>
@@ -984,7 +948,7 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
               <modifiers>
                 <modifier type="set" value="true" field="hidden">
                   <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="7582-6b81-4f06-ba09" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="6aff-f11c-2c0f-de3a" shared="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
@@ -995,10 +959,13 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="29a4-403-2c7f-6a96">
           <infoLinks>
-            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="25e3-d56f-341c-6034" targetId="5073-af52-fe26-36ff"/>
+            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="25e3-d56f-341c-6034" targetId="5073-af52-fe26-36ff">
+              <modifiers>
+                <modifier type="append" value="(4+)" field="name"/>
+              </modifiers>
+            </infoLink>
             <infoLink name="Encorcelled Weapons" hidden="false" type="profile" id="8d75-cc1c-7033-acad" targetId="68ed-9275-f95a-a3f5"/>
             <infoLink name="Gaze of the Gods" hidden="false" type="profile" id="4f93-b067-7b6-4303" targetId="1650-86f-8212-566d"/>
-            <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="22e5-9c35-520c-3859" targetId="fcf3-41f3-60c8-7deb"/>
             <infoLink name="Fear" hidden="false" type="profile" id="cd5-e221-8300-a7b5" targetId="5ec9-a98-d8c5-e18b"/>
             <infoLink name="Immune to Psychology" hidden="false" type="profile" id="f5d8-ef81-7ab1-8b01" targetId="93d9-c75b-f655-30ac"/>
             <infoLink name="Regeneration (X+)" hidden="false" type="profile" id="9377-3f2-d593-c8f" targetId="2eb0-1ec8-8e04-72d4"/>
@@ -1055,6 +1022,12 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 <constraint type="max" value="75" field="points" scope="parent" shared="false" id="aa15-d723-fe3b-d48d"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="Mark of Chaos" hidden="false" type="selectionEntryGroup" id="3018-20ea-b40b-85e9" targetId="4761-327a-7529-fc41">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="d4e2-359-6db9-3609-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d4e2-359-6db9-3609-max"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <infoLinks>
             <infoLink name="Exalted Champion" hidden="false" type="profile" id="4249-93e7-c933-b7dd" targetId="5a46-f5d0-ffd5-609e"/>
@@ -1096,35 +1069,6 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mark" hidden="false" id="b455-8711-f714-175b" defaultSelectionEntryId="bef-9a63-773c-c718" sortIndex="7">
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4b09-641b-512f-5a19"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3122-3b76-5711-1be0"/>
-              </constraints>
-              <entryLinks>
-                <entryLink import="true" name="Mark of Chaos Undivided" hidden="false" type="selectionEntry" id="79c0-ee16-727-c3eb" targetId="ad1d-818d-48e-9457" sortIndex="1"/>
-                <entryLink import="true" name="Mark of Khorne" hidden="false" type="selectionEntry" id="6703-3621-b92-ce61" targetId="dbfd-c8b3-5688-4550" sortIndex="2">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Tzeentch" hidden="false" type="selectionEntry" id="ef3c-63b7-97c5-fc0b" targetId="5769-43d9-7b87-ed75" sortIndex="3">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Nurgle" hidden="false" type="selectionEntry" id="fc73-a93b-7e14-6309" targetId="f69c-c9ca-68f1-eebf" sortIndex="4">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Slaneesh" hidden="false" type="selectionEntry" id="8cc9-d22e-5bfc-9a8c" targetId="3a04-dd84-1ba5-187c" sortIndex="5">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-              </entryLinks>
-            </selectionEntryGroup>
             <selectionEntryGroup name="Mount" hidden="false" id="b88b-7b11-fa2a-c178" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bfa0-79e4-81b0-895f"/>
@@ -1134,6 +1078,9 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                   <costs>
                     <cost name="pts" typeId="points" value="110"/>
                   </costs>
+                  <categoryLinks>
+                    <categoryLink targetId="c96a-608-5de4-b943" id="d2ea-c069-20a4-2884" primary="false" name="MOUNT"/>
+                  </categoryLinks>
                 </entryLink>
                 <entryLink import="true" name="Chaos Steed" hidden="false" type="selectionEntry" id="3a0f-da1a-d349-284b" targetId="835b-6425-1413-dfda" sortIndex="1">
                   <costs>
@@ -1149,6 +1096,9 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                   <costs>
                     <cost name="pts" typeId="points" value="135"/>
                   </costs>
+                  <categoryLinks>
+                    <categoryLink targetId="c96a-608-5de4-b943" id="6ab3-b093-7d0f-1d29" primary="false" name="MOUNT"/>
+                  </categoryLinks>
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
@@ -1158,10 +1108,13 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="3e7d-efce-ea1c-c22b">
           <infoLinks>
-            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="71ec-ad5-4cf7-4f43" targetId="5073-af52-fe26-36ff"/>
+            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="71ec-ad5-4cf7-4f43" targetId="5073-af52-fe26-36ff">
+              <modifiers>
+                <modifier type="append" value=" (5+)" field="name"/>
+              </modifiers>
+            </infoLink>
             <infoLink name="Encorcelled Weapons" hidden="false" type="profile" id="ff11-48a9-c76f-597e" targetId="68ed-9275-f95a-a3f5"/>
             <infoLink name="Gaze of the Gods" hidden="false" type="profile" id="5686-ac24-dc60-3de9" targetId="1650-86f-8212-566d"/>
-            <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="c2b4-252e-50ed-9e3a" targetId="fcf3-41f3-60c8-7deb"/>
             <infoLink name="Rallying Cry" hidden="false" type="profile" id="2b02-2197-1e23-8271" targetId="23c4-bd19-2422-ad08"/>
           </infoLinks>
         </infoGroup>
@@ -1241,35 +1194,6 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="234b-4c92-8f1-3324"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mark" hidden="false" id="87bc-6878-5605-8be1" defaultSelectionEntryId="bef-9a63-773c-c718" sortIndex="7">
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="cfd5-73ff-b2a7-fcae"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="eccd-8176-1473-14ad"/>
-              </constraints>
-              <entryLinks>
-                <entryLink import="true" name="Mark of Chaos Undivided" hidden="false" type="selectionEntry" id="32cc-63f6-b01d-ca48" targetId="ad1d-818d-48e-9457" sortIndex="1"/>
-                <entryLink import="true" name="Mark of Khorne" hidden="false" type="selectionEntry" id="f547-b7bb-b436-60b8" targetId="dbfd-c8b3-5688-4550" sortIndex="2">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Tzeentch" hidden="false" type="selectionEntry" id="981a-8c8a-30b2-434d" targetId="5769-43d9-7b87-ed75" sortIndex="3">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Nurgle" hidden="false" type="selectionEntry" id="5aec-b10c-790b-6bc7" targetId="f69c-c9ca-68f1-eebf" sortIndex="4">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Slaneesh" hidden="false" type="selectionEntry" id="8f79-6bdb-8d18-5071" targetId="3a04-dd84-1ba5-187c" sortIndex="5">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-              </entryLinks>
-            </selectionEntryGroup>
             <selectionEntryGroup name="Mount" hidden="false" id="a579-5f1e-d942-f510" sortIndex="3">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9686-5ab1-4a9d-f6be"/>
@@ -1279,6 +1203,9 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                   <costs>
                     <cost name="pts" typeId="points" value="110"/>
                   </costs>
+                  <categoryLinks>
+                    <categoryLink targetId="c96a-608-5de4-b943" id="6b07-8827-b37b-ccf1" primary="false" name="MOUNT"/>
+                  </categoryLinks>
                 </entryLink>
                 <entryLink import="true" name="Chaos Steed" hidden="false" type="selectionEntry" id="b48b-eb7b-a70f-ae0b" targetId="835b-6425-1413-dfda" sortIndex="1">
                   <costs>
@@ -1292,16 +1219,68 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Mark of Chaos" hidden="false" id="221d-902f-ae8c-cccc" defaultSelectionEntryId="43c9-f874-45d6-cfce">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="da25-c7fe-dcfb-fdb9-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="da25-c7fe-dcfb-fdb9-max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Mark of Nurgle" hidden="false" id="1ac6-197-580c-bb3c">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1337-627e-b3ab-c1a8"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Mark of Nurgle" hidden="false" type="profile" id="fde6-bc4f-8a75-bc9" targetId="afeb-3bc4-18-88d7"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="10"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Mark of Slaanesh" hidden="false" id="8a4c-a45f-9673-e5de">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="506-2069-6231-f8df"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Mark of Slaanesh" hidden="false" type="profile" id="3ebb-1300-c82f-c595" targetId="3929-a784-2b2b-dfc1"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="10"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Mark of Tzeentch" hidden="false" id="9e26-ab02-beb8-911a">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e24b-fa5a-1c15-a7cf"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Mark of Tzeentch" hidden="false" type="profile" id="5467-18bc-a575-dbd7" targetId="16f2-5d1d-4ae7-c289"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="10"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Mark of Chaos Undivided" hidden="false" id="43c9-f874-45d6-cfce">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2eda-aa2a-31e4-cac9"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="fad3-f347-e383-385e" targetId="fcf3-41f3-60c8-7deb"/>
+                  </infoLinks>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="1b6a-19ad-b129-d3c4">
           <infoLinks>
-            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="b2ac-ee52-6b8c-3731" targetId="5073-af52-fe26-36ff"/>
+            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="b2ac-ee52-6b8c-3731" targetId="5073-af52-fe26-36ff">
+              <modifiers>
+                <modifier type="append" value=" (5+)" field="name"/>
+              </modifiers>
+            </infoLink>
             <infoLink name="Encorcelled Weapons" hidden="false" type="profile" id="f402-15e6-43a2-eb9c" targetId="68ed-9275-f95a-a3f5"/>
             <infoLink name="Gaze of the Gods" hidden="false" type="profile" id="e21a-10e3-f5e6-6f4" targetId="1650-86f-8212-566d"/>
-            <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="7a70-3d91-b29e-49e0" targetId="fcf3-41f3-60c8-7deb"/>
             <infoLink name="Lore of Chaos" hidden="false" type="profile" id="b8dc-a547-2f9d-a13b" targetId="97b3-1cdd-d81b-331a"/>
           </infoLinks>
         </infoGroup>
@@ -1352,6 +1331,12 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 <constraint type="max" value="100" field="points" scope="parent" shared="false" id="f2c0-fa0e-8dc0-cb73"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="Mark of Chaos" hidden="false" type="selectionEntryGroup" id="1966-e82d-487e-6ee7" targetId="4761-327a-7529-fc41">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="5a0a-fd95-48b1-d5b-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5a0a-fd95-48b1-d5b-max"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <infoLinks>
             <infoLink name="Chaos Lord" hidden="false" type="profile" id="69e0-c579-f02-e160" targetId="4e25-202b-ff9b-82a"/>
@@ -1393,35 +1378,6 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mark" hidden="false" id="84fd-71c9-fa35-4918" defaultSelectionEntryId="bef-9a63-773c-c718" sortIndex="7">
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9910-cb4d-7fb2-1f90"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="62c8-54a-ba4b-fa25"/>
-              </constraints>
-              <entryLinks>
-                <entryLink import="true" name="Mark of Chaos Undivided" hidden="false" type="selectionEntry" id="44e4-e6f9-e3a4-f2ff" targetId="ad1d-818d-48e-9457" sortIndex="1"/>
-                <entryLink import="true" name="Mark of Khorne" hidden="false" type="selectionEntry" id="77e1-7492-357d-60ef" targetId="dbfd-c8b3-5688-4550" sortIndex="2">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Tzeentch" hidden="false" type="selectionEntry" id="9bc1-8ba9-9130-3692" targetId="5769-43d9-7b87-ed75" sortIndex="3">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Nurgle" hidden="false" type="selectionEntry" id="989b-391b-a9d1-ffc2" targetId="f69c-c9ca-68f1-eebf" sortIndex="4">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Mark of Slaneesh" hidden="false" type="selectionEntry" id="2673-3a61-b5de-f675" targetId="3a04-dd84-1ba5-187c" sortIndex="5">
-                  <costs>
-                    <cost name="pts" typeId="points" value="10"/>
-                  </costs>
-                </entryLink>
-              </entryLinks>
-            </selectionEntryGroup>
             <selectionEntryGroup name="Mount" hidden="false" id="823a-4c75-69e7-f454" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6634-71f-8817-38b9"/>
@@ -1431,6 +1387,9 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                   <costs>
                     <cost name="pts" typeId="points" value="110"/>
                   </costs>
+                  <categoryLinks>
+                    <categoryLink targetId="c96a-608-5de4-b943" id="a8ca-1ba6-2c5b-8e3e" primary="false" name="MOUNT"/>
+                  </categoryLinks>
                 </entryLink>
                 <entryLink import="true" name="Chaos Steed" hidden="false" type="selectionEntry" id="82d0-595-860-b906" targetId="835b-6425-1413-dfda" sortIndex="1">
                   <costs>
@@ -1451,6 +1410,9 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                   <costs>
                     <cost name="pts" typeId="points" value="135"/>
                   </costs>
+                  <categoryLinks>
+                    <categoryLink targetId="c96a-608-5de4-b943" id="7aa1-616a-1984-d133" primary="false" name="MOUNT"/>
+                  </categoryLinks>
                 </entryLink>
                 <entryLink import="true" name="Chaos Dragon" hidden="false" type="selectionEntry" id="b5db-347f-53ef-3753" targetId="9f7c-82e5-30ea-5287" sortIndex="6">
                   <costs>
@@ -1465,10 +1427,13 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="77b0-800c-d149-a7bd">
           <infoLinks>
-            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="4796-63-6a64-8436" targetId="5073-af52-fe26-36ff"/>
+            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="4796-63-6a64-8436" targetId="5073-af52-fe26-36ff">
+              <modifiers>
+                <modifier type="append" value=" (5+)" field="name"/>
+              </modifiers>
+            </infoLink>
             <infoLink name="Encorcelled Weapons" hidden="false" type="profile" id="76ce-db2b-d659-99bd" targetId="68ed-9275-f95a-a3f5"/>
             <infoLink name="Gaze of the Gods" hidden="false" type="profile" id="1a3-2e14-bcce-8021" targetId="1650-86f-8212-566d"/>
-            <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="c08d-ba5d-79df-c6ec" targetId="fcf3-41f3-60c8-7deb"/>
             <infoLink name="Rallying Cry" hidden="false" type="profile" id="109f-a3cb-481d-221" targetId="23c4-bd19-2422-ad08"/>
           </infoLinks>
         </infoGroup>
@@ -1548,7 +1513,7 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a615-6231-349a-adc9"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mark" hidden="false" id="d7db-c1f8-12b0-7a18" defaultSelectionEntryId="bef-9a63-773c-c718" sortIndex="7">
+            <selectionEntryGroup name="Mark of Chaos" hidden="false" id="d7db-c1f8-12b0-7a18" defaultSelectionEntryId="299e-22a2-796d-5a96" sortIndex="7">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9948-4ac2-2f84-9d8c"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="90a5-eccc-48f6-ba61"/>
@@ -1586,6 +1551,9 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                   <costs>
                     <cost name="pts" typeId="points" value="110"/>
                   </costs>
+                  <categoryLinks>
+                    <categoryLink targetId="c96a-608-5de4-b943" id="c962-d3d-2a3c-fb88" primary="false" name="MOUNT"/>
+                  </categoryLinks>
                 </entryLink>
                 <entryLink import="true" name="Chaos Steed" hidden="false" type="selectionEntry" id="4dee-9446-e965-40c1" targetId="835b-6425-1413-dfda" sortIndex="1">
                   <costs>
@@ -1615,10 +1583,13 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="4649-65de-f5a8-6300">
           <infoLinks>
-            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="d207-561a-e04-3e3c" targetId="5073-af52-fe26-36ff"/>
+            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="d207-561a-e04-3e3c" targetId="5073-af52-fe26-36ff">
+              <modifiers>
+                <modifier type="append" value=" (5+)" field="name"/>
+              </modifiers>
+            </infoLink>
             <infoLink name="Encorcelled Weapons" hidden="false" type="profile" id="e7b6-7d19-fded-27ff" targetId="68ed-9275-f95a-a3f5"/>
             <infoLink name="Gaze of the Gods" hidden="false" type="profile" id="4c34-1906-467b-d65f" targetId="1650-86f-8212-566d"/>
-            <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="a0f4-7924-544b-3b1d" targetId="fcf3-41f3-60c8-7deb"/>
             <infoLink name="Lore of Chaos" hidden="false" type="profile" id="e783-2c07-d379-dabf" targetId="97b3-1cdd-d81b-331a"/>
           </infoLinks>
         </infoGroup>
@@ -1655,7 +1626,7 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Mark" hidden="false" id="c451-8d86-e6a0-8e91" defaultSelectionEntryId="bef-9a63-773c-c718" sortIndex="6">
+            <selectionEntryGroup name="Mark of Chaos" hidden="false" id="c451-8d86-e6a0-8e91" defaultSelectionEntryId="311c-446f-f8de-d589" sortIndex="6">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="eda6-a3e0-9cb2-1797"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="63cb-ea6-b135-769c"/>
@@ -1816,10 +1787,13 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
         <infoGroup name="Special Rules" hidden="false" id="cc35-75f4-6172-a31e">
           <infoLinks>
             <infoLink name="Close Order" hidden="false" type="profile" id="caff-6bfe-a4ee-4c75" targetId="883e-e1b1-4fe9-5912"/>
-            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="6277-801b-51be-2055" targetId="5073-af52-fe26-36ff"/>
+            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="6277-801b-51be-2055" targetId="5073-af52-fe26-36ff">
+              <modifiers>
+                <modifier type="append" value=" (6+)" field="name"/>
+              </modifiers>
+            </infoLink>
             <infoLink name="Encorcelled Weapons" hidden="false" type="profile" id="a6f-f56a-75b-4d5a" targetId="68ed-9275-f95a-a3f5"/>
             <infoLink name="Stubborn" hidden="false" type="profile" id="152-d207-fa85-d229" targetId="e351-bbd6-f470-b604"/>
-            <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="f0df-5f98-2e8a-dd5" targetId="fcf3-41f3-60c8-7deb"/>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -1882,7 +1856,7 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fad9-a741-d839-4457"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mark" hidden="false" id="7e25-4a20-d151-6d9e" defaultSelectionEntryId="bef-9a63-773c-c718" sortIndex="5">
+            <selectionEntryGroup name="Mark of Chaos" hidden="false" id="7e25-4a20-d151-6d9e" defaultSelectionEntryId="7a30-c6d1-4ed7-f6ca" sortIndex="5">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="74c-c61d-6be4-2343"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4bde-9a66-14c0-4ac1"/>
@@ -2053,7 +2027,7 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="330d-46c4-5b1e-9967"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mark" hidden="false" id="b355-d4be-ddc0-2199" defaultSelectionEntryId="bef-9a63-773c-c718" sortIndex="4">
+            <selectionEntryGroup name="Mark of Chaos" hidden="false" id="b355-d4be-ddc0-2199" defaultSelectionEntryId="5492-cf90-53ac-95c1" sortIndex="4">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="34c9-3f1d-63de-1197"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="91f6-a743-d12d-55cf"/>
@@ -2143,13 +2117,46 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup name="Formation" hidden="false" id="ab88-208e-e0d8-120e" defaultSelectionEntryId="d3dd-3d17-1f10-fcd0">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Close Order" hidden="false" id="d3dd-3d17-1f10-fcd0">
+              <infoLinks>
+                <infoLink name="Close Order" hidden="false" type="profile" id="3598-d816-4fe3-1fa5" targetId="883e-e1b1-4fe9-5912"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2333-4aec-a9-656f"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="false" id="ef16-f207-2fde-9ab0">
+              <infoLinks>
+                <infoLink name="Skirmishers" hidden="false" type="profile" id="f1eb-caf4-4853-85ec" targetId="59a5-7eca-ee35-96ac"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9590-1c72-8d3e-5df4"/>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="663d-c68c-3936-b9fb" includeChildSelections="true"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Open Order" hidden="false" id="e2fe-5cbf-8a2b-7847">
+              <infoLinks>
+                <infoLink name="Open Order" hidden="false" type="profile" id="5323-2406-c8b4-ee3f" targetId="5b67-8535-146c-7cea"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d2ff-d48-327d-d9b8"/>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="f6f8-4c5b-223a-5c9b" includeChildSelections="true"/>
+              </constraints>
+            </selectionEntry>
+          </selectionEntries>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7235-36fd-1ec7-7360-min"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7235-36fd-1ec7-7360-max"/>
+          </constraints>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="b1b7-af29-34fd-362f">
           <infoLinks>
             <infoLink name="Close Order" hidden="false" type="profile" id="f13b-5cfe-9f8b-3df0" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Warband" hidden="false" type="profile" id="7ff-1da-cd1d-f6f9" targetId="505f-e12d-2e36-31d0"/>
-            <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="172a-be1b-d191-c039" targetId="fcf3-41f3-60c8-7deb"/>
             <infoLink name="Shieldwall" hidden="false" type="profile" id="f106-25a2-dc68-a0c6" targetId="32f7-8e30-3fe8-b11e"/>
           </infoLinks>
         </infoGroup>
@@ -2229,7 +2236,11 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
           <infoLinks>
             <infoLink name="Open Order" hidden="false" type="profile" id="e23e-2e4e-5e3d-a222" targetId="5b67-8535-146c-7cea"/>
             <infoLink name="Encorcelled Weapons" hidden="false" type="profile" id="e022-6167-af25-c947" targetId="68ed-9275-f95a-a3f5"/>
-            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="5186-7640-4764-a11" targetId="5073-af52-fe26-36ff"/>
+            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="5186-7640-4764-a11" targetId="5073-af52-fe26-36ff">
+              <modifiers>
+                <modifier type="append" value=" (5+)" field="name"/>
+              </modifiers>
+            </infoLink>
             <infoLink name="Furious Charge" hidden="false" type="profile" id="77d1-a41d-5006-486c" targetId="eaca-69a2-8b6a-81c6"/>
             <infoLink name="Immune to Psychology" hidden="false" type="profile" id="4e09-4e2f-18b2-25e7" targetId="93d9-c75b-f655-30ac"/>
             <infoLink name="Impetuous" hidden="false" type="profile" id="1b78-5b2-ae30-c966" targetId="b664-8530-a988-7ba9"/>
@@ -2293,7 +2304,7 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Mark" hidden="false" id="ced4-b221-eade-9cfe" defaultSelectionEntryId="bef-9a63-773c-c718" sortIndex="6">
+            <selectionEntryGroup name="Mark of Chaos" hidden="false" id="ced4-b221-eade-9cfe" defaultSelectionEntryId="884d-cb9f-242a-7c34" sortIndex="6">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8fda-870c-c41-5d32"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6b3e-b746-6892-9b35"/>
@@ -2404,7 +2415,6 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
             <infoLink name="Close Order" hidden="false" type="profile" id="7048-7125-29ff-a04c" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Ensorcelled Weapons" hidden="false" type="profile" id="9ac9-5da2-bcd7-36c3" targetId="68ed-9275-f95a-a3f5"/>
             <infoLink name="First Charge" hidden="false" type="profile" id="ff01-2d3-5029-e4aa" targetId="785a-2886-af42-dce9"/>
-            <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="4a38-10a3-ded3-6618" targetId="fcf3-41f3-60c8-7deb"/>
             <infoLink name="Swiftstride" hidden="false" type="profile" id="624-f70e-8e42-a1dd" targetId="dc91-48b3-3696-217"/>
           </infoLinks>
         </infoGroup>
@@ -2487,7 +2497,7 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6fcf-896c-ecd1-89c4"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mark" hidden="false" id="1509-cf7d-75d4-c517" defaultSelectionEntryId="bef-9a63-773c-c718" sortIndex="7">
+            <selectionEntryGroup name="Mark of Chaos" hidden="false" id="1509-cf7d-75d4-c517" defaultSelectionEntryId="7082-6cc5-935c-c9d7" sortIndex="7">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="859a-dd80-1a3e-2b61"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="433b-105-9fe8-ef15"/>
@@ -2595,10 +2605,13 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="e136-8019-7ba3-4d91">
           <infoLinks>
-            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="479a-96cf-907-2efe" targetId="5073-af52-fe26-36ff"/>
+            <infoLink name="Chaos Armour (X+)" hidden="false" type="profile" id="479a-96cf-907-2efe" targetId="5073-af52-fe26-36ff">
+              <modifiers>
+                <modifier type="append" value=" (6+)" field="name"/>
+              </modifiers>
+            </infoLink>
             <infoLink name="Ensorcelled Weapons" hidden="false" type="profile" id="697d-77d6-2cd-7607" targetId="68ed-9275-f95a-a3f5"/>
             <infoLink name="First Charge" hidden="false" type="profile" id="496f-3d23-434d-3b2d" targetId="785a-2886-af42-dce9"/>
-            <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="f02-d81b-405a-10a8" targetId="fcf3-41f3-60c8-7deb"/>
             <infoLink name="Swiftstride" hidden="false" type="profile" id="b235-fc0e-6966-c4c3" targetId="dc91-48b3-3696-217"/>
             <infoLink name="Close Order" hidden="false" type="profile" id="428-c588-c562-aba7" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Counter Charge" hidden="false" type="profile" id="c09a-7571-cae4-c9b" targetId="5186-798d-69d-6545"/>
@@ -2659,7 +2672,7 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9802-f499-e693-4ce5"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mark" hidden="false" id="4d03-bead-f4a1-c948" defaultSelectionEntryId="bef-9a63-773c-c718" sortIndex="4">
+            <selectionEntryGroup name="Mark of Chaos" hidden="false" id="4d03-bead-f4a1-c948" defaultSelectionEntryId="895c-7973-3827-7ca8" sortIndex="4">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="68b5-27f3-e280-ffa4"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="714b-3e47-d2f4-53fa"/>
@@ -2747,7 +2760,6 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
           <infoLinks>
             <infoLink name="Armour Bane (X)" hidden="false" type="profile" id="ad28-8db5-ae19-b633" targetId="2af0-975f-bb14-8b8f"/>
             <infoLink name="Close Order" hidden="false" type="profile" id="c77d-8f31-a74d-36a0" targetId="883e-e1b1-4fe9-5912"/>
-            <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="3deb-2f89-9eb0-17b8" targetId="fcf3-41f3-60c8-7deb"/>
             <infoLink name="Fear" hidden="false" type="profile" id="846b-fdb8-9aef-ef0f" targetId="5ec9-a98-d8c5-e18b"/>
             <infoLink name="Ogre Charge" hidden="false" type="profile" id="8291-ae24-510e-d660" targetId="d256-85be-6fcc-1cb"/>
             <infoLink name="Impact Hits (X)" hidden="false" type="profile" id="1d90-3069-14b3-1389" targetId="5c2-e9dd-2715-a0c0"/>
@@ -2815,7 +2827,11 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bbaa-f9d9-aac6-2ec3"/>
                   </constraints>
                   <infoLinks>
-                    <infoLink name="Regeneration (X+)" hidden="false" type="profile" id="14f9-1702-f84e-cb4a" targetId="2eb0-1ec8-8e04-72d4"/>
+                    <infoLink name="Regeneration (X+)" hidden="false" type="profile" id="14f9-1702-f84e-cb4a" targetId="2eb0-1ec8-8e04-72d4">
+                      <modifiers>
+                        <modifier type="append" value=" (5+)" field="name"/>
+                      </modifiers>
+                    </infoLink>
                   </infoLinks>
                 </selectionEntry>
               </selectionEntries>
@@ -3089,59 +3105,18 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
           </characteristics>
         </profile>
       </profiles>
-      <selectionEntries>
-        <selectionEntry type="model" import="true" name="Chariot" hidden="false" id="5608-a552-a652-fbbf" flatten="true">
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4a93-774a-e5f2-76fa"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e8ba-70e8-3cda-e6fe"/>
-          </constraints>
-          <entryLinks>
-            <entryLink import="true" name="Chaos Steed" hidden="false" type="selectionEntry" id="bc97-56b4-ae5c-1130" targetId="835b-6425-1413-dfda" sortIndex="1">
-              <constraints>
-                <constraint type="min" value="2" field="selections" scope="parent" shared="true" id="2a4-a16b-7c9e-2c2f"/>
-                <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="d05a-4e5b-aff9-99c4"/>
-              </constraints>
-              <modifiers>
-                <modifier type="add" value="4cf7-bf85-308d-c29a" field="category"/>
-              </modifiers>
-              <categoryLinks>
-                <categoryLink targetId="4cf7-bf85-308d-c29a" id="9eda-ec20-4d43-12a0" primary="false" name="CHARIOT CREW"/>
-              </categoryLinks>
-            </entryLink>
-            <entryLink import="true" name="Chaos Charioteer" hidden="false" type="selectionEntry" id="e3de-17bd-b5bf-9961" targetId="c1e8-187c-15e1-6723" sortIndex="2">
-              <constraints>
-                <constraint type="min" value="2" field="selections" scope="parent" shared="true" id="a0fc-1d9-6c9-162a"/>
-                <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="e853-a8a0-8c1b-192"/>
-              </constraints>
-              <categoryLinks>
-                <categoryLink targetId="4cf7-bf85-308d-c29a" id="2549-ec66-8da0-b2f2" primary="false" name="CHARIOT CREW"/>
-              </categoryLinks>
-            </entryLink>
-          </entryLinks>
-          <infoLinks>
-            <infoLink name="Chariot" hidden="false" type="profile" id="d78c-384e-2d2b-825a" targetId="c2fa-6fa9-57aa-9305"/>
-            <infoLink name="Base (60x100)" hidden="false" type="profile" id="7704-7094-1932-68b5" targetId="5125-89a4-916a-eabd"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="110"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
-      <infoGroups>
-        <infoGroup name="Special Rules" hidden="false" id="f7ed-68e3-2fec-408b">
-          <infoLinks>
-            <infoLink name="Close Order" hidden="false" type="profile" id="a871-3fbb-1bdf-fe38" targetId="883e-e1b1-4fe9-5912"/>
-            <infoLink name="Impact Hits (X)" hidden="false" type="profile" id="7e05-e22-7b93-59b3" targetId="5c2-e9dd-2715-a0c0"/>
-            <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="a5d1-189f-4a50-c6f9" targetId="fcf3-41f3-60c8-7deb"/>
-            <infoLink name="Ensorcelled Weapons" hidden="false" type="profile" id="bd91-7c09-22cb-2d27" targetId="68ed-9275-f95a-a3f5"/>
-            <infoLink name="First Charge" hidden="false" type="profile" id="8065-d7d3-bac3-6c8d" targetId="785a-2886-af42-dce9"/>
-          </infoLinks>
-        </infoGroup>
-      </infoGroups>
       <categoryLinks>
         <categoryLink targetId="d768-7cf0-de0a-c249" id="8126-3dbc-ad3b-467c" primary="false" name="Heavy Chariot"/>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="6052-5f58-711e-8bb5" primary="true" name="Special"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Chaos Chariot" hidden="false" type="selectionEntry" id="43d7-144-9941-b840" targetId="6cfb-92ff-9f22-de1a">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9b50-d032-2b7d-d4a-min"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9b50-d032-2b7d-d4a-max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Chaos Charioteer" hidden="false" id="c1e8-187c-15e1-6723" subType="crew">
       <costs>
@@ -3172,41 +3147,6 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
           </characteristics>
         </profile>
       </profiles>
-      <selectionEntries>
-        <selectionEntry type="model" import="true" name="Chariot" hidden="false" id="f5fc-c592-fc76-7550" flatten="true">
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="cc6f-d831-4b88-dbcc"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6c2f-75d1-73e6-a720"/>
-          </constraints>
-          <entryLinks>
-            <entryLink import="true" name="Chaos Charioteer" hidden="false" type="selectionEntry" id="6b1e-6a7f-bff6-c928" targetId="c1e8-187c-15e1-6723" sortIndex="2">
-              <constraints>
-                <constraint type="min" value="2" field="selections" scope="parent" shared="true" id="bb0f-173d-ff13-cd7d-min"/>
-                <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="bb0f-173d-ff13-cd7d-max"/>
-              </constraints>
-              <categoryLinks>
-                <categoryLink targetId="4cf7-bf85-308d-c29a" id="cd74-5f30-4e63-1a49" primary="false" name="CHARIOT CREW"/>
-              </categoryLinks>
-            </entryLink>
-            <entryLink import="true" name="Gorebeast" hidden="false" type="selectionEntry" id="100d-7c2b-d481-91bd" targetId="d06-d0a1-b86a-94e2" sortIndex="1">
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="5a72-9213-c357-ed8d"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9016-de34-8e1-ecf8"/>
-              </constraints>
-              <categoryLinks>
-                <categoryLink targetId="4cf7-bf85-308d-c29a" id="663-82c5-c15-49aa" primary="false" name="CHARIOT CREW"/>
-              </categoryLinks>
-            </entryLink>
-          </entryLinks>
-          <infoLinks>
-            <infoLink name="Chariot" hidden="false" type="profile" id="7426-ec80-e182-cac3" targetId="c2fa-6fa9-57aa-9305"/>
-            <infoLink name="Base (60x100)" hidden="false" type="profile" id="3e14-f4be-b60c-1666" targetId="5125-89a4-916a-eabd"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="135"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="b34d-b60b-e1d1-430d">
           <infoLinks>
@@ -3224,6 +3164,22 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
         <categoryLink targetId="d768-7cf0-de0a-c249" id="84a9-9c4a-9273-650a" primary="false" name="Heavy Chariot"/>
         <categoryLink targetId="2bfe-5863-46fe-d284" id="95d0-3c33-42f-49cb" primary="true" name="Rare"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Gorebeast Chariot" hidden="false" type="selectionEntry" id="ecf3-795b-e5d8-e930" targetId="bfb0-f4f1-e205-50e1">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ee60-83f5-f80b-33c4-min"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ee60-83f5-f80b-33c4-max"/>
+          </constraints>
+          <entryLinks>
+            <entryLink import="true" name="Mark of Chaos" hidden="false" type="selectionEntryGroup" id="c492-25fe-773c-2e04" targetId="4761-327a-7529-fc41">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9420-be6-2a47-b327-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9420-be6-2a47-b327-max"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Gorebeast" hidden="false" id="d06-d0a1-b86a-94e2" subType="mount">
       <infoLinks>
@@ -3399,7 +3355,11 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
           <infoLinks>
             <infoLink name="Armour Bane (X)" hidden="false" type="profile" id="60a4-c81c-569-6946" targetId="2af0-975f-bb14-8b8f"/>
             <infoLink name="Close Order" hidden="false" type="profile" id="c55d-f200-ad4-638a" targetId="883e-e1b1-4fe9-5912"/>
-            <infoLink name="Regeneration (X+)" hidden="false" type="profile" id="d50e-90d9-f907-d8bf" targetId="2eb0-1ec8-8e04-72d4"/>
+            <infoLink name="Regeneration" hidden="false" type="profile" id="d50e-90d9-f907-d8bf" targetId="2eb0-1ec8-8e04-72d4">
+              <modifiers>
+                <modifier type="append" value=" (5+)" field="name"/>
+              </modifiers>
+            </infoLink>
             <infoLink name="Fear" hidden="false" type="profile" id="4c88-5b67-f244-414a" targetId="5ec9-a98-d8c5-e18b"/>
             <infoLink name="Stupidity" hidden="false" type="profile" id="9853-32ca-dd4f-ee2f" targetId="f7af-e016-1f9c-54c0"/>
             <infoLink name="Flammable" hidden="false" type="profile" id="2e82-9cfd-96aa-4924" targetId="8f64-6d4c-466b-1b94"/>
@@ -3458,7 +3418,11 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="6fb8-52a-a7be-de94">
           <infoLinks>
-            <infoLink name="Armour Bane (X)" hidden="false" type="profile" id="9d64-e43c-c259-14ef" targetId="2af0-975f-bb14-8b8f"/>
+            <infoLink name="Armour Bane" hidden="false" type="profile" id="9d64-e43c-c259-14ef" targetId="2af0-975f-bb14-8b8f">
+              <modifiers>
+                <modifier type="append" value=" (1)" field="name"/>
+              </modifiers>
+            </infoLink>
             <infoLink name="Ensorcelled Weapons" hidden="false" type="profile" id="3dfe-917a-68e0-3240" targetId="68ed-9275-f95a-a3f5"/>
             <infoLink name="Immune to Psychology" hidden="false" type="profile" id="e0f7-30da-df97-f38c" targetId="93d9-c75b-f655-30ac"/>
             <infoLink name="Monster Handlers" hidden="false" type="profile" id="2b74-c66b-853b-f4ed" targetId="1084-a4e9-79f-3462"/>
@@ -3470,6 +3434,11 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
             <infoLink name="Regeneration (X+)" hidden="false" type="profile" id="ea3b-436-2397-9730" targetId="2eb0-1ec8-8e04-72d4"/>
             <infoLink name="Terror" hidden="false" type="profile" id="3002-c479-b0b1-a889" targetId="c7a2-35bf-4313-f4f0"/>
             <infoLink name="Unbreakable" hidden="false" type="profile" id="35f4-ee90-5e66-74c6" targetId="d3eb-1fa0-bb19-f390"/>
+            <infoLink name="Armor Value" hidden="false" type="profile" id="4f53-f00c-2507-ba6d" targetId="e099-1ebb-9e85-34c8">
+              <modifiers>
+                <modifier type="append" value=": 4+" field="name"/>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3602,7 +3571,7 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="dc6e-4230-4797-37c5"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mark" hidden="false" id="8a59-148c-3fc9-384f" defaultSelectionEntryId="bef-9a63-773c-c718" sortIndex="7">
+            <selectionEntryGroup name="Mark of Chaos" hidden="false" id="8a59-148c-3fc9-384f" defaultSelectionEntryId="beb-9eaa-7384-faec" sortIndex="7">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="afeb-f970-2344-ca44"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="31a1-24b3-39a0-cfa0"/>
@@ -3711,7 +3680,7 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="94b6-1eac-f6a1-bad5" primary="true" name="Core"/>
       </categoryLinks>
     </selectionEntry>
-    <selectionEntry type="model" import="true" name="Chaos Chariot" hidden="false" id="6cfb-92ff-9f22-de1a" flatten="true" subType="mount">
+    <selectionEntry type="model" import="true" name="Chaos Chariot" hidden="false" id="6cfb-92ff-9f22-de1a" flatten="true">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e6a2-b57f-e7e4-477b"/>
       </constraints>
@@ -3737,6 +3706,12 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
             <categoryLink targetId="4cf7-bf85-308d-c29a" id="64d3-b70a-c1be-adff" primary="false" name="CHARIOT CREW"/>
           </categoryLinks>
         </entryLink>
+        <entryLink import="true" name="Mark of Chaos" hidden="false" type="selectionEntryGroup" id="15af-d20a-8828-217c" targetId="4761-327a-7529-fc41">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6ce0-e37-f46d-a892-min"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6ce0-e37-f46d-a892-max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <infoLinks>
         <infoLink name="Chariot" hidden="false" type="profile" id="1eeb-af08-525d-405" targetId="c2fa-6fa9-57aa-9305"/>
@@ -3750,14 +3725,18 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
           <infoLinks>
             <infoLink name="Close Order" hidden="false" type="profile" id="c2bb-bde1-13e7-6e6f" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Impact Hits (X)" hidden="false" type="profile" id="6398-12a9-d7c9-9866" targetId="5c2-e9dd-2715-a0c0"/>
-            <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="f206-25db-766f-353d" targetId="fcf3-41f3-60c8-7deb"/>
             <infoLink name="Ensorcelled Weapons" hidden="false" type="profile" id="820e-f730-d02a-ebb6" targetId="68ed-9275-f95a-a3f5"/>
             <infoLink name="First Charge" hidden="false" type="profile" id="47e1-f996-8686-351b" targetId="785a-2886-af42-dce9"/>
+            <infoLink name="Armor Value" hidden="false" type="profile" id="159d-590a-4680-7e9c" targetId="e099-1ebb-9e85-34c8">
+              <modifiers>
+                <modifier type="append" value=": 3+" field="name"/>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
     </selectionEntry>
-    <selectionEntry type="model" import="true" name="Gorebeast Chariot" hidden="false" id="bfb0-f4f1-e205-50e1" flatten="true" subType="mount">
+    <selectionEntry type="model" import="true" name="Gorebeast Chariot" hidden="false" id="bfb0-f4f1-e205-50e1" flatten="true">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f37-12f8-b7aa-5c56"/>
       </constraints>
@@ -3798,6 +3777,11 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
             <infoLink name="First Charge" hidden="false" type="profile" id="dcd3-8708-86d3-1cdd" targetId="785a-2886-af42-dce9"/>
             <infoLink name="Close Order" hidden="false" type="profile" id="9e7f-e9a7-96b2-7d05" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Killing Blow" hidden="false" type="profile" id="2d2e-ba39-2df5-8da7" targetId="860b-e13a-4710-9bf0"/>
+            <infoLink name="Armor Value" hidden="false" type="profile" id="c154-2953-ef56-632" targetId="e099-1ebb-9e85-34c8">
+              <modifiers>
+                <modifier type="append" value=": 3+" field="name"/>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3932,6 +3916,234 @@ Note that this model’s rider does not gain a +1 modifier to their Attacks char
           <costs>
             <cost name="pts" typeId="points" value="15"/>
           </costs>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup name="Mark of Chaos" hidden="false" id="4761-327a-7529-fc41" defaultSelectionEntryId="ef0f-7b45-4839-d1">
+      <selectionEntries>
+        <selectionEntry type="upgrade" import="true" name="Mark of Khorne" hidden="false" id="6aff-f11c-2c0f-de3a">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a7fd-4a04-ed11-26c7"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Mark of Khorne" hidden="false" type="profile" id="1114-581-4afc-2632" targetId="47ce-619-7fe2-fd08"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="10"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Mark of Nurgle" hidden="false" id="6c0e-38e3-a320-2aa7">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2d63-e63c-8412-efea"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Mark of Nurgle" hidden="false" type="profile" id="6440-1aae-f008-b922" targetId="afeb-3bc4-18-88d7"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="10"/>
+          </costs>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Mark of Nurgle" hidden="false" id="fbbb-9d41-33ea-3e7c">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e072-4da3-f631-dfa7"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Nurgle" hidden="false" type="profile" id="2772-8be2-9cd5-c075" targetId="afeb-3bc4-18-88d7"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Mark of Slaanesh" hidden="false" id="4b0f-bed-b53c-fd0c">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="30b1-5254-91ba-9465"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Slaanesh" hidden="false" type="profile" id="a0a9-9ea0-481d-60a2" targetId="3929-a784-2b2b-dfc1"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Mark of Tzeentch" hidden="false" id="aeef-6e8e-4b4d-f902">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3fa5-8fb0-fe03-bf42"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Tzeentch" hidden="false" type="profile" id="954-5fa8-2a1d-e942" targetId="16f2-5d1d-4ae7-c289"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Mark of Chaos Undivided" hidden="false" id="faad-47db-5caf-b805">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="84a2-7d22-f03e-823"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="531d-abbc-552b-34b4" targetId="fcf3-41f3-60c8-7deb"/>
+              </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Mark of Slaanesh" hidden="false" id="f6db-2b0e-a89e-e155">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9a04-57cd-8a73-4478"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Mark of Slaanesh" hidden="false" type="profile" id="5b0f-4a0e-df55-70f9" targetId="3929-a784-2b2b-dfc1"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="10"/>
+          </costs>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Mark of Nurgle" hidden="false" id="927d-219f-dd51-6b08">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="18d1-56f5-f537-e8f7"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Nurgle" hidden="false" type="profile" id="c266-22fc-4b26-aae2" targetId="afeb-3bc4-18-88d7"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Mark of Slaanesh" hidden="false" id="a298-799d-bbcb-fa9f">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5093-ec22-baa4-1eb8"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Slaanesh" hidden="false" type="profile" id="9a0e-dfb3-7934-a54e" targetId="3929-a784-2b2b-dfc1"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Mark of Tzeentch" hidden="false" id="5541-f47e-a39c-ae00">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c953-214e-562a-6089"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Tzeentch" hidden="false" type="profile" id="ae36-5307-753a-502a" targetId="16f2-5d1d-4ae7-c289"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Mark of Chaos Undivided" hidden="false" id="6fa5-82f1-dc6c-9ff0">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="be1c-70bb-4a18-7799"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="d401-ed9c-ddd7-5fec" targetId="fcf3-41f3-60c8-7deb"/>
+              </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Mark of Tzeentch" hidden="false" id="cc58-8ef4-aebe-bb3a">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="63f8-6aad-4ce6-5d08"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Mark of Tzeentch" hidden="false" type="profile" id="286d-9596-d0b6-aed6" targetId="16f2-5d1d-4ae7-c289"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="10"/>
+          </costs>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Mark of Nurgle" hidden="false" id="d2a3-51bb-278e-a69">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d858-b7e8-d3f7-9c2"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Nurgle" hidden="false" type="profile" id="73eb-7eba-1a83-aea" targetId="afeb-3bc4-18-88d7"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Mark of Slaanesh" hidden="false" id="8213-9135-bab3-ecb6">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="31a2-539c-982d-2936"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Slaanesh" hidden="false" type="profile" id="6a40-a447-e1fd-d180" targetId="3929-a784-2b2b-dfc1"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Mark of Tzeentch" hidden="false" id="3dc6-cc56-cf5b-7fb9">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5d97-74c4-f731-7e4c"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Tzeentch" hidden="false" type="profile" id="d83a-2324-5e87-a18c" targetId="16f2-5d1d-4ae7-c289"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Mark of Chaos Undivided" hidden="false" id="441a-9d31-9198-6895">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="98cc-fe73-8797-64c0"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="48a7-2c8a-d3f8-26af" targetId="fcf3-41f3-60c8-7deb"/>
+              </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Mark of Chaos Undivided" hidden="false" id="ef0f-7b45-4839-d1">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d0bd-109d-6a83-281c"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="b66d-4e90-211a-1e78" targetId="fcf3-41f3-60c8-7deb"/>
+          </infoLinks>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Mark of Nurgle" hidden="false" id="7e19-6c0f-d36-c44e">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d558-b64c-f5e2-e20f"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Nurgle" hidden="false" type="profile" id="551d-c555-3891-667a" targetId="afeb-3bc4-18-88d7"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Mark of Slaanesh" hidden="false" id="b59c-969f-e01a-19d2">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="410b-297c-ee21-ead9"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Slaanesh" hidden="false" type="profile" id="ba52-ec3f-c335-62b1" targetId="3929-a784-2b2b-dfc1"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Mark of Tzeentch" hidden="false" id="8745-4ba8-38c6-233">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bce6-6db5-293c-d35d"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Tzeentch" hidden="false" type="profile" id="3ccb-6b2e-b94a-b3e" targetId="16f2-5d1d-4ae7-c289"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Mark of Chaos Undivided" hidden="false" id="8745-2887-e39c-68ac">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f941-8a51-fff6-a686"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="4b1b-8d55-ce56-4ca0" targetId="fcf3-41f3-60c8-7deb"/>
+              </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
