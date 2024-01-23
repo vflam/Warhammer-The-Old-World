@@ -1202,7 +1202,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
         <infoLink name="Whip" hidden="false" type="profile" id="5abd-ceb0-f68c-9111" targetId="7505-7edf-c3de-57a6"/>
       </infoLinks>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Cavalry Spear" hidden="true" id="a2d0-40e9-83ad-23dc" collective="true">
+    <selectionEntry type="upgrade" import="true" name="Cavalry Spear" hidden="false" id="a2d0-40e9-83ad-23dc" collective="true">
       <infoLinks>
         <infoLink name="Cavalry Spear" hidden="false" type="profile" id="e62-14df-8b5f-255c" targetId="ee75-c1a8-2f0c-c264"/>
       </infoLinks>
@@ -1351,6 +1351,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
         <selectionEntry type="upgrade" import="true" name="Drilled" hidden="true" id="35f8-72c5-b312-754d" sortIndex="3">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="324b-28f9-b5cc-86c3"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="b0fe-3ba1-c821-a1c5" includeChildSelections="true"/>
           </constraints>
           <infoLinks>
             <infoLink name="Drilled" hidden="false" type="profile" id="7560-2384-e11b-4b6a" targetId="1f64-3ddc-db58-12fb"/>
@@ -1366,6 +1367,11 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="7913-acb6-d065-2dab" shared="true"/>
               </conditions>
             </modifier>
+            <modifier type="increment" value="1" field="b0fe-3ba1-c821-a1c5">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="21c2-7544-d394-7f8c" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="0"/>
@@ -1374,6 +1380,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
         <selectionEntry type="upgrade" import="true" name="Veterans" hidden="true" id="b7b9-99f2-db6b-4c88" sortIndex="4">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="97f2-8a18-1df2-7e82"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="ad25-5582-c2df-91c6" includeChildSelections="true"/>
           </constraints>
           <infoLinks>
             <infoLink name="Veteran" hidden="false" type="profile" id="8826-bf00-e432-f316" targetId="4022-c403-b083-ba83"/>
@@ -1389,6 +1396,11 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
                 <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="7c68-4965-48a1-29ed"/>
               </repeats>
             </modifier>
+            <modifier type="increment" value="1" field="ad25-5582-c2df-91c6">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="67c2-268d-bd3f-a4b8" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="0"/>
@@ -1400,6 +1412,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
           </categoryLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="601a-2cc-22b3-2d51"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="54af-37ff-ba0e-6cee" includeChildSelections="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="false" field="hidden">
@@ -1412,11 +1425,17 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
               </conditions>
             </modifier>
+            <modifier type="increment" value="1" field="54af-37ff-ba0e-6cee">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="a169-7c99-bc6c-a5db" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
           </modifiers>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Open Order" hidden="true" id="9e79-880e-3a51-835e" sortIndex="5">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cb8f-b04d-5224-d107"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="6c3a-8826-3483-d3d0" includeChildSelections="true"/>
           </constraints>
           <infoLinks>
             <infoLink name="Open Order" hidden="false" type="profile" id="1e8c-a401-44b8-ddf4" targetId="5b67-8535-146c-7cea"/>
@@ -1426,6 +1445,11 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="c2e6-2e17-855-2eb3" shared="true"/>
               </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="6c3a-8826-3483-d3d0">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="4e3d-a71a-1fc3-3539" includeChildSelections="true"/>
+              </repeats>
             </modifier>
           </modifiers>
           <costs>
@@ -1438,12 +1462,18 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8402-e52b-af31-2eed"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="97f7-4fe8-85a4-caa8" includeChildSelections="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="871f-ae50-ed04-428a" shared="true"/>
               </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="97f7-4fe8-85a4-caa8">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="df2f-4eff-7864-45e7" includeChildSelections="true"/>
+              </repeats>
             </modifier>
           </modifiers>
           <costs>
@@ -1456,12 +1486,18 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ca63-b2ad-9687-de5a"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="4e86-e7d6-3dda-286e" includeChildSelections="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="b248-98ef-5ad0-5b20" shared="true"/>
               </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="4e86-e7d6-3dda-286e">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="848d-c5c1-63d7-fadf" includeChildSelections="true"/>
+              </repeats>
             </modifier>
           </modifiers>
           <costs>
@@ -1474,12 +1510,18 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e6a-8265-9907-fd53"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="3411-d8ad-d5cd-b309" includeChildSelections="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="2661-a58f-ff4f-20cb" shared="true"/>
               </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="3411-d8ad-d5cd-b309">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="efdc-5891-c940-13ff" includeChildSelections="true"/>
+              </repeats>
             </modifier>
           </modifiers>
           <costs>
@@ -1495,6 +1537,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e47-3d8-cc76-3f1f"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="af4c-6ea0-cd3e-8fff" includeChildSelections="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="false" field="hidden">
@@ -1502,11 +1545,17 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="2392-f089-8a93-dfc3" shared="true"/>
               </conditions>
             </modifier>
+            <modifier type="increment" value="1" field="af4c-6ea0-cd3e-8fff">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="7b48-7874-ee44-e5a4" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
           </modifiers>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Veterans" hidden="true" id="69bb-d3c5-3a21-dd06" sortIndex="11">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1be3-e3de-8b34-5fd9"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="39ac-9c0f-6357-4fc6" includeChildSelections="true"/>
           </constraints>
           <infoLinks>
             <infoLink name="Veteran" hidden="false" type="profile" id="9146-bf20-d9de-40a7" targetId="4022-c403-b083-ba83"/>
@@ -1522,6 +1571,11 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
                 <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="6d13-6e03-d408-4f3c"/>
               </repeats>
             </modifier>
+            <modifier type="increment" value="1" field="39ac-9c0f-6357-4fc6">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="f97d-3a03-91da-6833" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="1"/>
@@ -1533,12 +1587,18 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4540-1b50-575f-2838"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="9b98-90cb-d13d-30b6" includeChildSelections="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="a2e3-9206-f023-b4c8" shared="true"/>
               </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="9b98-90cb-d13d-30b6">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="6b4f-d3ef-ca8e-8207" includeChildSelections="true"/>
+              </repeats>
             </modifier>
           </modifiers>
           <costs>
@@ -1551,12 +1611,18 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cd24-3783-4289-53bf"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="e23a-f73a-9417-cb14" includeChildSelections="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="144e-409-8908-7fce" shared="true"/>
               </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="e23a-f73a-9417-cb14">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="40d6-7027-5c88-a23c" includeChildSelections="true"/>
+              </repeats>
             </modifier>
           </modifiers>
           <costs>
@@ -1569,12 +1635,18 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8f7f-f87-1a0e-dc9e"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="b795-34d5-9126-2296" includeChildSelections="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="1008-a8fa-67f7-3e39" shared="true"/>
               </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="b795-34d5-9126-2296">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="21e1-1034-b862-e5bd" includeChildSelections="true"/>
+              </repeats>
             </modifier>
           </modifiers>
           <costs>
@@ -1587,12 +1659,18 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="533f-139a-fbb4-477f"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="b3e-2fa7-d31c-9dee" includeChildSelections="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="2392-f089-8a93-dfc3" shared="true"/>
               </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="b3e-2fa7-d31c-9dee">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="d8fc-215e-4135-6a2c" includeChildSelections="true"/>
+              </repeats>
             </modifier>
           </modifiers>
           <costs>
@@ -1602,6 +1680,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
         <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="3711-b22a-2fd-22ca" sortIndex="15">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="54e5-8fe1-354b-a4ff"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="2cdc-e8f-ac4-cf64" includeChildSelections="true"/>
           </constraints>
           <infoLinks>
             <infoLink name="Frenzy" hidden="false" type="profile" id="d693-55c7-1f61-623c" targetId="3b0c-a477-8823-3a25"/>
@@ -1617,6 +1696,11 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="b442-ef51-d930-9987" shared="true"/>
               </conditions>
             </modifier>
+            <modifier type="increment" value="1" field="2cdc-e8f-ac4-cf64">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="873f-9d75-31ed-15e6" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="1"/>
@@ -1625,6 +1709,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
         <selectionEntry type="upgrade" import="true" name="Nehekharan Phalanx" hidden="true" id="22e9-574d-c2bd-9279" sortIndex="16">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cafc-2e9c-44a4-34ad"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="2b30-6c24-c331-707e" includeChildSelections="true"/>
           </constraints>
           <infoLinks>
             <infoLink name="Nehekharan Phalanx" hidden="false" type="profile" id="7e8e-4969-4c57-f6bb" targetId="a527-88cc-ddd6-1ea0"/>
@@ -1640,6 +1725,11 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
                 <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="f444-a14e-7ae8-57db" includeChildSelections="true"/>
               </repeats>
             </modifier>
+            <modifier type="increment" value="1" field="2b30-6c24-c331-707e">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="3cf1-81fa-4919-552e" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="1"/>
@@ -1651,12 +1741,18 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8700-de53-6f2d-6f61"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="68e9-63b7-c84d-4567" includeChildSelections="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="9c9-dc8b-eb73-d90b" shared="true"/>
               </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="68e9-63b7-c84d-4567">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="b9c6-8b44-91a1-6b89"/>
+              </repeats>
             </modifier>
           </modifiers>
           <costs>
@@ -1666,6 +1762,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
         <selectionEntry type="upgrade" import="true" name="Drilled" hidden="true" id="a60a-9db3-5719-4a09" sortIndex="18">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="999-6c4f-13e0-d14e"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="b5fa-648c-b323-5cb" includeChildSelections="true"/>
           </constraints>
           <infoLinks>
             <infoLink name="Drilled" hidden="false" type="profile" id="fa3b-8405-61e-44a1" targetId="1f64-3ddc-db58-12fb"/>
@@ -1681,6 +1778,11 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="ca73-6522-eb84-b481" shared="true"/>
               </conditions>
             </modifier>
+            <modifier type="increment" value="1" field="b5fa-648c-b323-5cb">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="be27-3753-cef0-47d4" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="1"/>
@@ -1692,12 +1794,18 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f094-1b2e-627b-2f06"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="f36f-3d48-6937-c13c" includeChildSelections="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5deb-f246-715f-2a08" shared="true"/>
               </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="f36f-3d48-6937-c13c">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="9e05-6983-8570-4778" includeChildSelections="true"/>
+              </repeats>
             </modifier>
           </modifiers>
           <costs>
@@ -1707,6 +1815,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
         <selectionEntry type="upgrade" import="true" name="Feigned Flight" hidden="true" id="5dc9-bf8a-241b-6958" sortIndex="7">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="febd-b5d0-49c2-2648"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="9e45-3037-8e54-9021" includeChildSelections="true"/>
           </constraints>
           <infoLinks>
             <infoLink name="Feigned Flight" hidden="false" type="profile" id="39f4-a8bd-f950-7506" targetId="eea7-89d9-a996-403c"/>
@@ -1722,6 +1831,11 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
                 <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="b0ef-c009-a5d8-5d15"/>
               </repeats>
             </modifier>
+            <modifier type="increment" value="1" field="9e45-3037-8e54-9021">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="7475-c808-eda6-3da4" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="0"/>
@@ -1730,6 +1844,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
         <selectionEntry type="upgrade" import="true" name="Reserve Move" hidden="true" id="5240-54c0-f880-91d7" sortIndex="8">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8568-6aca-abba-e353"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="c4a4-ff3c-1278-bd6c" includeChildSelections="true"/>
           </constraints>
           <infoLinks>
             <infoLink name="Reserve Move" hidden="false" type="profile" id="481e-be46-6241-b749" targetId="1f10-d7d-be19-7e8f"/>
@@ -1745,6 +1860,11 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
                 <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="611a-af4f-1c90-e012"/>
               </repeats>
             </modifier>
+            <modifier type="increment" value="1" field="c4a4-ff3c-1278-bd6c">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="4a80-6798-a461-9fdd" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="0"/>
@@ -1753,6 +1873,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
         <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="f04b-6597-be1a-d61b" sortIndex="22">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="75d1-3dbf-2757-c46c"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="58b8-ad11-e443-bba9" includeChildSelections="true"/>
           </constraints>
           <infoLinks>
             <infoLink name="Frenzy" hidden="false" type="profile" id="e4ab-765f-abeb-ed3c" targetId="3b0c-a477-8823-3a25"/>
@@ -1768,6 +1889,11 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="a708-6cc7-6c0f-ad82" shared="true"/>
               </conditions>
             </modifier>
+            <modifier type="increment" value="1" field="58b8-ad11-e443-bba9">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="e88e-96fe-e3f9-bc38" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="2"/>
@@ -1779,12 +1905,18 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="81b2-99e1-5f9d-f710"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="f8e5-c0f4-8606-5bb8" includeChildSelections="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="c86a-7a74-e1c8-95a7" shared="true"/>
               </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="f8e5-c0f4-8606-5bb8">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="78e2-3523-2371-af73" includeChildSelections="true"/>
+              </repeats>
             </modifier>
           </modifiers>
           <costs>
@@ -1794,6 +1926,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
         <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="d11e-d8d3-4cf5-c14f" sortIndex="23">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="84b5-d675-b64e-aca7"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="2bb8-c213-4d5b-e60" includeChildSelections="true"/>
           </constraints>
           <infoLinks>
             <infoLink name="Frenzy" hidden="false" type="profile" id="b505-b7a0-637a-e937" targetId="3b0c-a477-8823-3a25"/>
@@ -1809,6 +1942,11 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="4e48-1ecf-d4c5-ef0a" shared="true"/>
               </conditions>
             </modifier>
+            <modifier type="increment" value="1" field="2bb8-c213-4d5b-e60">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="85fb-3abe-dbf3-5014" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="3"/>
@@ -1817,6 +1955,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
         <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="97e-54c7-d200-4de7" sortIndex="2">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6d52-2a89-bd62-143f"/>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="6146-eef1-f60-85ac" includeChildSelections="true"/>
           </constraints>
           <infoLinks>
             <infoLink name="Frenzy" hidden="false" type="profile" id="929d-e1a9-9e80-e453" targetId="3b0c-a477-8823-3a25"/>
@@ -1832,19 +1971,14 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
                 <condition type="instanceOf" value="1" field="selections" scope="parent" childId="e41e-3817-ab1e-3b59" shared="true"/>
               </conditions>
             </modifier>
+            <modifier type="increment" value="1" field="6146-eef1-f60-85ac">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="3618-6295-304f-7533" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
           </modifiers>
         </selectionEntry>
       </selectionEntries>
-      <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="3d01-64be-78c5-3fff" includeChildSelections="true"/>
-      </constraints>
-      <modifiers>
-        <modifier type="increment" value="1" field="3d01-64be-78c5-3fff">
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" shared="true" roundUp="false" id="cc5a-af60-a1c7-b52d" childId="any" includeChildSelections="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <publications>
