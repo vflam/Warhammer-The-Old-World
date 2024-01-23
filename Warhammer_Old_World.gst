@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="43" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="44" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -51,6 +51,18 @@
     <categoryEntry name="FRENZY UPGRADE3" hidden="true" id="4e48-1ecf-d4c5-ef0a"/>
     <categoryEntry name="FRENZY UPGRADE" hidden="true" id="e41e-3817-ab1e-3b59"/>
     <categoryEntry name="MOUNT" hidden="false" id="c96a-608-5de4-b943"/>
+    <categoryEntry name="Lord" hidden="false" id="331e-3a37-38cb-23d2">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="1890-4637-17c9-3a7c" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="1890-4637-17c9-3a7c">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="d3d0-3394-166c-7a1c"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
@@ -81,6 +93,16 @@
           </constraints>
         </categoryLink>
       </categoryLinks>
+      <constraints>
+        <constraint type="max" value="0" field="5764-5655-4713-61d5" scope="roster" shared="true" id="24bb-c279-4294-733a"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="3" field="24bb-c279-4294-733a">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="ab7c-c987-c420-daa0" includeChildSelections="false"/>
+          </repeats>
+        </modifier>
+      </modifiers>
     </forceEntry>
   </forceEntries>
   <costTypes>
@@ -936,7 +958,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
     </profile>
     <profile name="General" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="609a-2943-a6e1-e002">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">the general...</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Inspiring Presence: Warriors fight all the better under the stern gaze of their General. Unless your General is fleeing, all friendly units within their Command range can use their Leadership characteristic instead of their own (so rally your General first!).</characteristic>
       </characteristics>
     </profile>
     <profile name="Wizard Level 1" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c3c-9624-c39-e86a">
@@ -967,6 +989,14 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
     <profile name="Armour Value" typeId="c14f-740-8107-d34b" typeName="Armour" hidden="false" id="e099-1ebb-9e85-34c8">
       <characteristics>
         <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">Base Armour value</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Battle Standard Bearer" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="da9a-f205-577f-debb">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Combat Result Bonus: A Battle Standard grants a bonus of +1 combat result point. Unlike other standards, a Battle Standard grants this bonus even if another standard is present. If, by some unusual circumstance, there are two Battle Standards on the same side in the combat, you can only count the bonus for one.
+
+
+“Hold Your Ground”: To represent the Battle Standard’s steadying presence, unless your Battle Standard Bearer is fleeing, friendly units within the Battle Standard Bearer’s Command range may re-roll any failed Panic or Rally test. In addition, friendly units within the Battle Standard Bearer’s Command range may re-roll the 2D6 when making a Break test. However, you must accept the result of the second roll, even if it is worse than the first.</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
@@ -1308,7 +1338,7 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a9af-9404-4702-ee53-max"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="General" hidden="false" id="7d76-b1a1-1535-a04c">
+    <selectionEntry type="upgrade" import="true" name="General" hidden="false" id="7d76-b1a1-1535-a04c" publicationId="768b-3da1-a182-a1d8" page="203">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d7d2-b39d-2dc7-e2a0"/>
         <constraint type="min" value="1" field="selections" scope="roster" shared="true" id="b0f0-92cc-86ec-f504-min" includeChildSelections="true"/>
@@ -1348,6 +1378,15 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
       </constraints>
       <infoLinks>
         <infoLink name="Wizard Level 4" hidden="false" type="profile" id="4cf7-4c87-381e-e310" targetId="5cee-9c31-3cc4-5c9f"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Battle Standard Bearer" hidden="false" id="5b87-9cf5-953d-3829" publicationId="768b-3da1-a182-a1d8" page="203">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a066-d20c-3b09-66ff"/>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="4c2c-9d24-8171-ff3" includeChildSelections="true"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Battle Standard Bearer" hidden="false" type="profile" id="8b9c-a19b-3dae-69a9" targetId="da9a-f205-577f-debb"/>
       </infoLinks>
     </selectionEntry>
   </sharedSelectionEntries>
