@@ -1311,6 +1311,8 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
     <selectionEntry type="upgrade" import="true" name="General" hidden="false" id="7d76-b1a1-1535-a04c">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d7d2-b39d-2dc7-e2a0"/>
+        <constraint type="min" value="1" field="selections" scope="roster" shared="true" id="b0f0-92cc-86ec-f504-min" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="b0f0-92cc-86ec-f504-max" includeChildSelections="true"/>
       </constraints>
       <infoLinks>
         <infoLink name="General" hidden="false" type="profile" id="32de-47ba-5fe9-7fb6" targetId="609a-2943-a6e1-e002"/>
