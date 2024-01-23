@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="1ddf-26c6-1d88-2b8c" name="Dwarfen Mountain Holds" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="8" revision="32" battleScribeVersion="2.03" type="catalogue" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="1ddf-26c6-1d88-2b8c" name="Dwarfen Mountain Holds" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="8" revision="33" battleScribeVersion="2.03" type="catalogue" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedProfiles>
     <profile name="Longbeard" hidden="false" id="fbc8-de41-190b-8903" typeId="b070-143a-73f-2772" typeName="Model">
       <characteristics>
@@ -1475,7 +1475,7 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
         </modifierGroup>
       </modifierGroups>
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="32d6-ad05-1a3b-76ab"/>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="32d6-ad05-1a3b-76ab"/>
       </constraints>
     </entryLink>
   </entryLinks>
@@ -1761,7 +1761,7 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="b969-2677-1d5a-8449" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="b969-2677-1d5a-8449" childId="8ec3-c185-e566-d231" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
@@ -1788,6 +1788,74 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="e47e-51ff-757a-ff26">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="670e-579e-29ad-b08a" sortIndex="3">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ed12-f4db-2eb4-6bcb"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="2dfc-4496-72ad-6de7" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Drilled" hidden="false" type="profile" id="aa1-e04e-b177-bff1" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="fa41-59a7-c0d2-b6bc" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="2dfc-4496-72ad-6de7">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="790f-a569-8f1b-3985" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="cbf8-d813-fe54-84ad" sortIndex="4">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="436a-aad9-c77-9ff0"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="7f2b-7abd-e6f0-fd0a" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Veteran" hidden="false" type="profile" id="4584-9b5f-855a-9995" targetId="4022-c403-b083-ba83"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="73cf-fbed-5f26-e52d"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="7f2b-7abd-e6f0-fd0a">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="7a82-fe14-46ac-7d0a" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Standard Runes" hidden="false" id="8ec3-c185-e566-d231" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="60bd-faa7-d59-b514" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="baa7-be8-da95-2e1"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="b342-a5f0-8682-b36a" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="1" field="b342-a5f0-8682-b36a">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="4bd0-2d95-74ac-febb" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="ca24-970b-2580-a3d7">
@@ -1811,13 +1879,7 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="ca57-f5e4-6592-6cb5" primary="true" name="Core"/>
         <categoryLink targetId="ca7e-d004-ccde-caf3" id="c8a6-a38b-d0db-81d0" primary="false" name="Heavy infantry"/>
-        <categoryLink targetId="7913-acb6-d065-2dab" id="1869-176a-c1e1-8b3e" primary="false" name="DRILLED UPGRADE"/>
-        <categoryLink targetId="925c-b77-1d36-e3bf" id="937b-9acf-3128-75e9" primary="false" name="VETERAN UPGRADE"/>
-        <categoryLink targetId="caab-4ac8-e0ba-d843" id="baf7-4b91-1d1f-4ceb" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
-      <entryLinks>
-        <entryLink import="true" name="Options" hidden="false" type="selectionEntryGroup" id="fa76-a7e7-2215-77a6" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Quarrellers" hidden="false" id="c4a9-d38a-2612-4a9a">
       <categoryLinks>
@@ -2073,7 +2135,7 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="ed17-90ba-6e91-d0d6" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="ed17-90ba-6e91-d0d6" childId="d63f-dfd8-e6ee-3088" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
@@ -2094,6 +2156,55 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="b157-e5e2-ae77-95e2" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="65d5-9e0d-b546-ef64">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="cc9c-2c08-cf1e-2df7" sortIndex="3">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="10d3-bb34-e611-5def"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="b99d-19ba-c2a9-1712" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Drilled" hidden="false" type="profile" id="4c85-f31-b5bf-5a42" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="ad9e-4db8-af33-ff0b" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="b99d-19ba-c2a9-1712">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="5c5f-c7ac-ed90-2c53" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="d63f-dfd8-e6ee-3088" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="1b9c-d15b-c704-d504" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1871-c646-e492-6fb4"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="9cd1-ffca-e504-72cb" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="9cd1-ffca-e504-72cb">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="a7b0-d8c1-1e56-1e9d" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2127,9 +2238,6 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
         <categoryLink targetId="7913-acb6-d065-2dab" id="4f1e-1578-6745-12e2" primary="false" name="DRILLED UPGRADE"/>
         <categoryLink targetId="caab-4ac8-e0ba-d843" id="9371-203c-2a3f-2afd" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
-      <entryLinks>
-        <entryLink import="true" name="Options" hidden="false" type="selectionEntryGroup" id="142e-292a-c146-689b" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry id="a663-69e2-1593-4ae9" name="Long Beards" type="unit" collective="false" hidden="false" page="0">
       <categoryLinks>
@@ -2251,6 +2359,34 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="638f-ff19-2bea-bf3b">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="b80-f337-6555-48fc" sortIndex="3">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f8aa-c76a-7ab0-84fc"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="9862-c641-5bc3-b483" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Drilled" hidden="false" type="profile" id="50cf-43a0-2598-2e3b" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="fb54-110d-65d7-33c1" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="9862-c641-5bc3-b483">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="4eb3-1914-3491-e55f" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <profiles>
         <profile name="Longbeards" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="30b2-94ea-4dc2-41b2">
@@ -2274,13 +2410,6 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <entryLinks>
-        <entryLink import="true" name="Options" hidden="false" type="selectionEntryGroup" id="70c2-a9cc-7728-8da" targetId="ce2e-bc0f-be9b-9221" sortIndex="2">
-          <categoryLinks>
-            <categoryLink targetId="7913-acb6-d065-2dab" id="4b5d-50b1-cefe-11e6" primary="false" name="DRILLED UPGRADE"/>
-          </categoryLinks>
-        </entryLink>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Thunderers" hidden="false" id="dd27-431-f28d-8698">
       <categoryLinks>
@@ -2714,7 +2843,7 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="65a7-9001-2425-683f" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="65a7-9001-2425-683f" childId="645f-2942-e14c-1642" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
@@ -2738,6 +2867,55 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="6aa-d8ab-1a72-47a">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="a241-9261-e402-a103" sortIndex="3">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7dfa-8aad-7165-a5f8"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="4cda-fc50-1475-ae83" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Drilled" hidden="false" type="profile" id="34cf-ab9d-dabd-1dcd" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="28de-9cb5-907b-cf53" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="4cda-fc50-1475-ae83">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="59af-f493-2797-2243" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="645f-2942-e14c-1642" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="6a73-5578-e71e-f917" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="805c-9077-21d5-3b72"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="5835-57a5-58fc-62f6" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="5835-57a5-58fc-62f6">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="1b0-f8b5-99a3-50f4" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="bb51-7362-c0c-6432">
@@ -2758,12 +2936,7 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
       <categoryLinks>
         <categoryLink targetId="ca7e-d004-ccde-caf3" id="d462-fe6e-7988-5b52" primary="false" name="Heavy infantry"/>
         <categoryLink targetId="2bfe-5863-46fe-d284" id="3c17-a6ca-9996-b856" primary="true" name="Rare"/>
-        <categoryLink targetId="7913-acb6-d065-2dab" id="5349-75a5-6b19-4129" primary="false" name="DRILLED UPGRADE"/>
-        <categoryLink targetId="caab-4ac8-e0ba-d843" id="476b-eece-e9fa-d298" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
-      <entryLinks>
-        <entryLink import="true" name="Options" hidden="false" type="selectionEntryGroup" id="ebdd-67ed-7382-247e" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Drakegun" hidden="false" id="dec9-b9dc-6f2e-c905" collective="true">
       <constraints>
@@ -2839,22 +3012,13 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
               <modifiers>
                 <modifier type="set" value="true" field="hidden">
                   <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="any" shared="true" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="fc5f-1b63-798c-a84c" shared="true" includeChildSelections="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
             </infoLink>
             <infoLink name="Hatred" hidden="false" type="profile" id="79ed-5e08-4501-89fa" targetId="f4b3-18af-16bf-78dd"/>
             <infoLink name="Magic Resistance" hidden="false" type="profile" id="2c82-9d21-673-6b1a" targetId="90ed-c9be-a611-79cc"/>
-            <infoLink name="Open Order" hidden="true" type="profile" id="90ac-a4bc-ecea-3252" targetId="5b67-8535-146c-7cea">
-              <modifiers>
-                <modifier type="set" value="false" field="hidden">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="9e79-880e-3a51-835e" shared="true" includeChildSelections="true"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </infoLink>
             <infoLink name="Resolute" hidden="false" type="profile" id="22f4-3086-9d18-817e" targetId="a230-c540-6a65-4974"/>
             <infoLink name="Ambushers" hidden="false" type="profile" id="86dd-873b-c59a-eefd" targetId="8c0b-6fe6-dc06-512"/>
             <infoLink name="Vanguard" hidden="false" type="profile" id="275-355c-6ec9-ff46" targetId="691e-10ec-4f7c-a2c4"/>
@@ -2895,7 +3059,7 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="9eec-40b7-179-c6bf" childId="baa-a804-e903-a730" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="9eec-40b7-179-c6bf" childId="4f8f-a549-eaff-5a82" shared="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
@@ -2935,10 +3099,75 @@ Notes: A unit hit by a cinderblast bomb suffers D6+1 hits (rather than the usual
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="1303-b574-3048-ae01">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="b37f-74b2-e180-2a8d" sortIndex="4">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9c0f-c38a-cdc7-ffb6"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="9c53-ed78-c840-5bfc" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Veteran" hidden="false" type="profile" id="4185-edb6-be09-1f8e" targetId="4022-c403-b083-ba83"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="ba48-178b-a450-77a0"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="9c53-ed78-c840-5bfc">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="3ae5-148c-bff1-8206" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="4f8f-a549-eaff-5a82" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="9246-6bc6-c197-4ce5" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="690b-cb65-b273-ce1e"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="8ac2-fcca-8953-72f" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="8ac2-fcca-8953-72f">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="c680-d0d0-7987-8ac5" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Open Order" hidden="false" id="fc5f-1b63-798c-a84c" sortIndex="5">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d195-ae19-34ed-3d2d"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="f-84fc-8c33-e87a" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Open Order" hidden="false" type="profile" id="3048-1514-5267-a2d7" targetId="5b67-8535-146c-7cea"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="f-84fc-8c33-e87a">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="f26a-916f-e7f8-9b39" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
-      <entryLinks>
-        <entryLink import="true" name="Options" hidden="false" type="selectionEntryGroup" id="205e-aafd-a99f-1441" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Brace of Drakefire Pistols" hidden="false" id="c30d-ef4-6f9d-ef24">
       <constraints>

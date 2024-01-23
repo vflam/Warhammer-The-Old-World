@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="28" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="27" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Orc Mobs" hidden="false" id="51e8-1471-ce4c-d5dd">
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="dff9-7fba-8673-bb6e" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="89f7-6065-a95e-9e07" primary="true" name="Core"/>
-        <categoryLink targetId="caab-4ac8-e0ba-d843" id="b126-b6a9-e934-48cf" primary="false" name="STANDARD UPGRADE"/>
-        <categoryLink targetId="b442-ef51-d930-9987" id="ddb6-ef4e-e384-d854" primary="false" name="FRENZY UPGRADE1"/>
       </categoryLinks>
       <profiles>
         <profile name="Orc Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="257d-5056-608-2108">
@@ -89,13 +87,10 @@
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="51e8-1471-ce4c-d5dd" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="51e8-1471-ce4c-d5dd" childId="3774-b8cd-51a1-7893" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
-                  <entryLinks>
-                    <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="a168-1048-d501-c4c1" targetId="ce2e-bc0f-be9b-9221" sortIndex="42"/>
-                  </entryLinks>
                 </entryLink>
               </entryLinks>
             </selectionEntry>
@@ -138,6 +133,55 @@
               <infoLinks>
                 <infoLink name="Big Stabass" hidden="false" type="profile" id="1ce7-6b32-87e5-c89a" targetId="ab77-45c5-d8b5-8ae0"/>
               </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="95eb-aaa2-f42f-1aeb">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="3774-b8cd-51a1-7893" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="23bf-68bb-3b5c-1716" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="eaa7-b95e-54af-9f25"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="13eb-9839-cf4c-d13e" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="13eb-9839-cf4c-d13e">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="4102-a811-ad53-c69e" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="false" id="2be6-9b3b-6b23-5a4b" sortIndex="15">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4366-c7d8-7deb-6aaf"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="2919-c641-16cb-8689" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Frenzy" hidden="false" type="profile" id="a19e-4a1a-3597-56bb" targetId="3b0c-a477-8823-3a25"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="e932-e748-5545-4e6" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="2919-c641-16cb-8689">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="2acf-90af-816a-ba12" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -244,9 +288,6 @@
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="2225-7c57-aa17-4f99" targetId="ce2e-bc0f-be9b-9221" sortIndex="3"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Big Un&apos;s" hidden="false" id="e06e-f7ee-cc7f-ec67">
       <costs>
@@ -431,8 +472,6 @@
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="f6fa-e130-9ee8-4298" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="fb7f-39e3-bb92-67e7" primary="true" name="Core"/>
-        <categoryLink targetId="caab-4ac8-e0ba-d843" id="2fe1-1491-50f6-a388" primary="false" name="STANDARD UPGRADE"/>
-        <categoryLink targetId="5deb-f246-715f-2a08" id="3900-ad33-1d62-6310" primary="false" name="SKIRMISHERS UPGRADE"/>
       </categoryLinks>
       <profiles>
         <profile name="Goblin Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="6b30-f6b9-24f2-870d">
@@ -508,15 +547,56 @@
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="6ce4-96c1-6e66-4e65" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="6ce4-96c1-6e66-4e65" childId="e86d-2ae7-e493-5942" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
-                  <entryLinks>
-                    <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="6987-c175-54f1-118f" targetId="ce2e-bc0f-be9b-9221" sortIndex="42"/>
-                  </entryLinks>
                 </entryLink>
               </entryLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="d59a-9b87-1fdd-ab7d">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="e86d-2ae7-e493-5942" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="5513-3a40-4b15-6865" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d6b3-f1e0-a20e-23ac"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="411c-de2a-f64c-bdac" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="411c-de2a-f64c-bdac">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="22a4-9f09-c8f5-617c" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="false" id="7062-dff1-ac19-8a7c" sortIndex="17">
+              <infoLinks>
+                <infoLink name="Skirmishers" hidden="false" type="profile" id="6488-3191-9d7d-e67c" targetId="59a5-7eca-ee35-96ac"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="dbc0-be97-b74d-595"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="1893-1860-4956-b421" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="1" field="1893-1860-4956-b421">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="3468-30e5-51cd-eda0"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -586,7 +666,6 @@
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="ab7d-1311-693c-406a" targetId="ce2e-bc0f-be9b-9221" sortIndex="3"/>
         <entryLink import="true" name="Nasty Skulker" hidden="false" type="selectionEntry" id="fec-e289-176b-1a7c" targetId="3b8a-560d-4cf6-338f" sortIndex="2">
           <costs>
             <cost name="pts" typeId="points" value="10"/>
@@ -601,7 +680,6 @@
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="12bf-a0bc-b419-1e96" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="ce9b-159b-4364-ea61" primary="true" name="Core"/>
-        <categoryLink targetId="caab-4ac8-e0ba-d843" id="a37c-ad04-80c8-9635" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
       <profiles>
         <profile name="Night Goblin Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="d71d-b44f-ed1c-5871">
@@ -678,15 +756,37 @@
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="399b-6e05-9a74-e18f" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="399b-6e05-9a74-e18f" childId="2292-1aed-3585-544a" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
-                  <entryLinks>
-                    <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="2861-fdd9-d907-ba03" targetId="ce2e-bc0f-be9b-9221" sortIndex="42"/>
-                  </entryLinks>
                 </entryLink>
               </entryLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="f1c8-4d27-da50-e95">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="2292-1aed-3585-544a" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="b18c-a320-a40c-eb38" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e905-e892-dc1a-f10d"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="ca55-db65-af07-5342" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="ca55-db65-af07-5342">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="5387-9752-2d03-dec7" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -762,7 +862,6 @@
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="9bcf-ea90-3865-4e28" targetId="ce2e-bc0f-be9b-9221" sortIndex="4"/>
         <entryLink import="true" name="Fanatic" hidden="false" type="selectionEntry" id="3520-c4ca-56bb-18d5" targetId="fc7e-38b1-6c78-d8ac" sortIndex="2">
           <costs>
             <cost name="pts" typeId="points" value="25"/>
@@ -845,11 +944,7 @@
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="d53e-e86c-2276-2837">
           <infoLinks>
-            <infoLink name="Armour Bane (X)" hidden="false" type="profile" id="c919-fc26-3416-c03a" targetId="2af0-975f-bb14-8b8f">
-              <modifiers>
-                <modifier type="append" value="(1)" field="name"/>
-              </modifiers>
-            </infoLink>
+            <infoLink name="Armour Bane (X)" hidden="false" type="profile" id="c919-fc26-3416-c03a" targetId="2af0-975f-bb14-8b8f"/>
             <infoLink name="Fear" hidden="false" type="profile" id="bb2-59d9-a44-8d6e" targetId="5ec9-a98-d8c5-e18b"/>
             <infoLink name="Close Order" hidden="false" type="profile" id="50b8-51c9-c85f-1f55" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Stupidity" hidden="false" type="profile" id="a571-b931-7428-8c2e" targetId="f7af-e016-1f9c-54c0"/>
@@ -948,11 +1043,7 @@
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="3e6d-2a61-e1d8-6f33">
           <infoLinks>
-            <infoLink name="Armour Bane (X)" hidden="false" type="profile" id="5efd-2582-831-91fb" targetId="2af0-975f-bb14-8b8f">
-              <modifiers>
-                <modifier type="append" value="(1)" field="name"/>
-              </modifiers>
-            </infoLink>
+            <infoLink name="Armour Bane (X)" hidden="false" type="profile" id="5efd-2582-831-91fb" targetId="2af0-975f-bb14-8b8f"/>
             <infoLink name="Fear" hidden="false" type="profile" id="6107-8dda-a4-e035" targetId="5ec9-a98-d8c5-e18b"/>
             <infoLink name="Close Order" hidden="false" type="profile" id="7477-a184-d628-d3f5" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Stupidity" hidden="false" type="profile" id="6b54-69e-58be-f2f4" targetId="f7af-e016-1f9c-54c0"/>
@@ -1033,11 +1124,7 @@
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="f895-59c5-da75-5f72">
           <infoLinks>
-            <infoLink name="Armour Bane (X)" hidden="false" type="profile" id="28ce-eacf-5453-b8cf" targetId="2af0-975f-bb14-8b8f">
-              <modifiers>
-                <modifier type="append" value="(1)" field="name"/>
-              </modifiers>
-            </infoLink>
+            <infoLink name="Armour Bane (X)" hidden="false" type="profile" id="28ce-eacf-5453-b8cf" targetId="2af0-975f-bb14-8b8f"/>
             <infoLink name="Fear" hidden="false" type="profile" id="b559-88f9-2bb5-f820" targetId="5ec9-a98-d8c5-e18b"/>
             <infoLink name="Close Order" hidden="false" type="profile" id="5ad9-2475-a802-9bb4" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Stupidity" hidden="false" type="profile" id="6c32-e5d6-3fe5-c7d0" targetId="f7af-e016-1f9c-54c0"/>
@@ -1108,8 +1195,6 @@
       <categoryLinks>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="15fa-9033-4ccb-ddec" primary="true" name="Special"/>
         <categoryLink targetId="ca7e-d004-ccde-caf3" id="de75-de1-e263-ef4b" primary="false" name="Heavy Infantry"/>
-        <categoryLink targetId="b442-ef51-d930-9987" id="164-ff05-8e8e-331d" primary="false" name="FRENZY UPGRADE1"/>
-        <categoryLink targetId="caab-4ac8-e0ba-d843" id="b618-1322-7190-aeb8" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
       <profiles>
         <profile name="Orc Boar Boy Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="fa03-b035-5b14-4c5a">
@@ -1198,15 +1283,61 @@
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="5b90-17e7-7f9c-f674" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="5b90-17e7-7f9c-f674" childId="82da-88c5-74bc-3dbb" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
-                  <entryLinks>
-                    <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="7ae8-1bf-488f-3f70" targetId="ce2e-bc0f-be9b-9221" sortIndex="42"/>
-                  </entryLinks>
                 </entryLink>
               </entryLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="14f-de06-789f-898e">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="82da-88c5-74bc-3dbb" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="47ba-fe8-a45c-7a45" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="833f-4e41-3952-94a"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="9af0-3078-398a-ca04" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="9af0-3078-398a-ca04">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="6ea1-5242-4db3-5b28" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="false" id="df85-63b9-4d19-d873" sortIndex="15">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a275-5706-99a2-23a5"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="2732-9880-515a-5561" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Frenzy" hidden="false" type="profile" id="501b-dbfa-49c7-24e9" targetId="3b0c-a477-8823-3a25"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="fd4c-5b06-e10f-1001" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="2732-9880-515a-5561">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="4e-bef3-92ba-65a2" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1278,15 +1409,11 @@
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="38fa-51a6-2b9d-fff8" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Goblin Spider Rider Mobs" hidden="false" id="f8e2-1ac4-c646-af1c">
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="f899-facb-468-32b2" primary="true" name="Core"/>
         <categoryLink targetId="600c-7d08-5be1-fe0c" id="2f4a-3cb4-da9-6283" primary="false" name="Light Cavalry"/>
-        <categoryLink targetId="caab-4ac8-e0ba-d843" id="dff3-6607-9122-ff38" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
       <profiles>
         <profile name="Goblin Spider Rider Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="71c3-3b22-2e42-478b">
@@ -1370,11 +1497,33 @@
                       </conditions>
                     </modifier>
                   </modifiers>
-                  <entryLinks>
-                    <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="cfc1-deac-49b8-aad4" targetId="ce2e-bc0f-be9b-9221" sortIndex="42"/>
-                  </entryLinks>
                 </entryLink>
               </entryLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="41d-11e-d005-e7fe">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="d285-1ef0-60a9-f295" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="d40a-884a-92e1-b0a4" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cbbf-fc86-48cc-6aa7"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="29a9-884-5ca-59dd" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="29a9-884-5ca-59dd">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="ee11-cb3d-ae6a-a111" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1428,17 +1577,11 @@
           </entryLinks>
         </selectionEntry>
       </selectionEntries>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="b512-7a7a-d2fd-200b" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Goblin Wolf Rider Mobs" hidden="false" id="e36d-11d8-5d9a-1198">
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="d253-caa6-6f06-9730" primary="true" name="Core"/>
         <categoryLink targetId="600c-7d08-5be1-fe0c" id="382d-37ba-4b57-c336" primary="false" name="Light Cavalry"/>
-        <categoryLink targetId="8b11-b8bd-b9fc-7459" id="372f-f1da-ac5e-5774" primary="false" name="RESERVE MOVE UPGRADE1"/>
-        <categoryLink targetId="b6b1-37fc-a1ec-3464" id="de70-d6c3-9095-2349" primary="false" name="FEIGNED FLIGHT UPGRADE2"/>
-        <categoryLink targetId="caab-4ac8-e0ba-d843" id="e733-2e68-5833-9e63" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
       <profiles>
         <profile name="Goblin Wolf Rider Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="ff2b-1c5c-b2d5-7717">
@@ -1518,15 +1661,85 @@
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="e36d-11d8-5d9a-1198" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="e36d-11d8-5d9a-1198" childId="de1a-9244-e370-108e" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
-                  <entryLinks>
-                    <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="2557-976f-dd47-81dd" targetId="ce2e-bc0f-be9b-9221" sortIndex="42"/>
-                  </entryLinks>
                 </entryLink>
               </entryLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="1d84-9b4f-d6ac-b959">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="de1a-9244-e370-108e" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="5339-f3b7-4714-b498" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cfba-fdaf-b92e-cf40"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="ba04-920c-592c-bd65" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="ba04-920c-592c-bd65">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="70a9-a506-1099-e4b2" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Reserve Move" hidden="false" id="c50b-cede-fd3b-7ab1" sortIndex="8">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="44d2-ed3f-73bf-8fd5"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="da8-aee-360b-528c" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Reserve Move" hidden="false" type="profile" id="fced-8655-c43f-63c3" targetId="1f10-d7d-be19-7e8f"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="cd7e-adb6-e026-307e"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="da8-aee-360b-528c">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="1ae9-7496-4b5b-4d22" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Feigned Flight" hidden="false" id="7e0d-bfc4-ecde-f6b0" sortIndex="7">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="df21-d9f9-2eda-6b2c"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="d62c-a37f-e401-f9fd" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Feigned Flight" hidden="false" type="profile" id="18a8-afa7-35c4-2faa" targetId="eea7-89d9-a996-403c"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="1f22-afb3-560a-49d0"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="d62c-a37f-e401-f9fd">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="752f-7b45-7d43-dfa2" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="2"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1589,9 +1802,6 @@
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="df9c-1e3f-a2c7-8c79" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Night Goblin Squig Hopper Mobs" hidden="false" id="6949-f50f-89e4-99c8">
       <categoryLinks>
@@ -1892,13 +2102,13 @@
         </entryLink>
       </entryLinks>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Goblin Driver Catapults" hidden="false" id="20d9-d374-f5d5-82bc">
+    <selectionEntry type="unit" import="true" name="Doom Diver Catapults" hidden="false" id="20d9-d374-f5d5-82bc">
       <categoryLinks>
         <categoryLink targetId="9fcf-19ad-fe84-9c61" id="758e-5664-a748-bb63" primary="false" name="War Machine"/>
         <categoryLink targetId="2bfe-5863-46fe-d284" id="7c20-180c-6f7c-ef4c" primary="true" name="Rare"/>
       </categoryLinks>
       <profiles>
-        <profile name="Doom Driver Catapult" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="a5d0-a02b-ee2d-4c71">
+        <profile name="Doom Diver Catapult" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="a5d0-a02b-ee2d-4c71">
           <characteristics>
             <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">War Machine</characteristic>
             <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">1</characteristic>
@@ -1915,7 +2125,7 @@
         </infoGroup>
       </infoGroups>
       <selectionEntries>
-        <selectionEntry type="model" import="true" name="Doom Driver Catapult" hidden="false" id="5505-825b-f093-3522" sortIndex="1">
+        <selectionEntry type="model" import="true" name="Doom Diver Catapult" hidden="false" id="5505-825b-f093-3522" sortIndex="1">
           <costs>
             <cost name="pts" typeId="points" value="95"/>
           </costs>
@@ -2057,11 +2267,7 @@
             </infoLink>
             <infoLink name="Random Movement" hidden="false" type="profile" id="87b4-d5cc-c1f3-1a0f" targetId="4924-fc1f-bcd-746a"/>
             <infoLink name="Open Order" hidden="false" type="profile" id="e2c3-19fc-9edf-f39d" targetId="5b67-8535-146c-7cea"/>
-            <infoLink name="Armour Bane (X)" hidden="false" type="profile" id="3b6b-6a92-34b-73cc" targetId="2af0-975f-bb14-8b8f">
-              <modifiers>
-                <modifier type="append" value="(3, Pump Wagon Impact Hits only)" field="name"/>
-              </modifiers>
-            </infoLink>
+            <infoLink name="Armour Bane (X)" hidden="false" type="profile" id="3b6b-6a92-34b-73cc" targetId="2af0-975f-bb14-8b8f"/>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -2261,6 +2467,11 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="9cf1-64d2-4ead-fc63">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="fc43-c2ce-2212-4192" targetId="7d76-b1a1-1535-a04c"/>
+              </entryLinks>
+            </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
@@ -2365,6 +2576,22 @@
                   </costs>
                 </entryLink>
               </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="2565-39a5-4bf9-4ede">
+              <entryLinks>
+                <entryLink import="true" name="Battle Standard Bearer" hidden="false" type="selectionEntry" id="5b43-d18a-36c5-19c7" targetId="5b87-9cf5-953d-3829" flatten="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="25"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="2b29-18b7-cf3b-74c7" targetId="6bbe-8054-19b7-e5d6"/>
+                  </entryLinks>
+                </entryLink>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="9665-6bb6-af9a-7a69" targetId="7d76-b1a1-1535-a04c"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1efa-1417-c693-783a"/>
+              </constraints>
             </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
@@ -2476,6 +2703,11 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="444-624e-8936-fa2a">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="e76f-80cc-456-1183" targetId="7d76-b1a1-1535-a04c"/>
+              </entryLinks>
+            </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
@@ -2484,7 +2716,6 @@
       <categoryLinks>
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="c93b-38e3-ea17-f2f1" primary="true" name="Characters"/>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="4185-a283-8043-3802" primary="false" name="Regular Infantry"/>
-        <categoryLink targetId="4e48-1ecf-d4c5-ef0a" id="9f01-b1b4-bea2-38d9" primary="false" name="FRENZY UPGRADE3"/>
       </categoryLinks>
       <profiles>
         <profile name="Orc Bigboss" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="ba1-f190-825c-7070">
@@ -2625,12 +2856,25 @@
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="adc1-dda5-cc61-4d9d">
+              <entryLinks>
+                <entryLink import="true" name="Battle Standard Bearer" hidden="false" type="selectionEntry" id="e7ad-5e3e-2af5-2c32" targetId="5b87-9cf5-953d-3829" flatten="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="25"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="7e69-27dd-e8e7-b4b7" targetId="6bbe-8054-19b7-e5d6"/>
+                  </entryLinks>
+                </entryLink>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="218d-9f41-a767-926a" targetId="7d76-b1a1-1535-a04c"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="560c-dbc-f9b9-1d73"/>
+              </constraints>
+            </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="3eff-72f6-14b-7838" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Orc Weirdnob" hidden="false" id="4a90-3060-c790-2d98">
       <categoryLinks>
@@ -2756,6 +3000,11 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="305a-55a3-5199-3a85">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="b0bd-98e2-b824-1b39" targetId="7d76-b1a1-1535-a04c"/>
+              </entryLinks>
+            </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
@@ -2764,7 +3013,6 @@
       <categoryLinks>
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="eaf0-c038-cd41-bbcb" primary="true" name="Characters"/>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="79b8-73cb-b14a-4730" primary="false" name="Regular Infantry"/>
-        <categoryLink targetId="e41e-3817-ab1e-3b59" id="4f68-3da3-c63a-ae7f" primary="false" name="FRENZY UPGRADE"/>
       </categoryLinks>
       <profiles>
         <profile name="Orc Weirdboy" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="bd58-e050-5010-2965">
@@ -2849,6 +3097,11 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="4dad-4d3-4d0d-3bab">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="4a8f-ec21-eeb0-b4ab" targetId="7d76-b1a1-1535-a04c"/>
+              </entryLinks>
+            </selectionEntryGroup>
           </selectionEntryGroups>
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="false" id="123c-2d45-fa0-45e" collective="false" flatten="true" sortIndex="2">
@@ -2882,9 +3135,6 @@
           </selectionEntries>
         </selectionEntry>
       </selectionEntries>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="48de-9149-6e43-3405" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Orc Warboss" hidden="false" id="92b4-e584-76ef-ab7">
       <categoryLinks>
@@ -3036,12 +3286,14 @@
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="3c7d-b85f-545a-1158">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="ddf0-8d23-a171-7858" targetId="7d76-b1a1-1535-a04c"/>
+              </entryLinks>
+            </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="8017-40c7-d83a-6b6a" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Goblin Bigboss" hidden="false" id="3c83-df5f-3c4-9bff">
       <categoryLinks>
@@ -3152,6 +3404,22 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="f17e-26ca-e6cd-e1e3">
+              <entryLinks>
+                <entryLink import="true" name="Battle Standard Bearer" hidden="false" type="selectionEntry" id="fadf-529-389-5a8" targetId="5b87-9cf5-953d-3829" flatten="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="25"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="821c-8ea4-8301-c787" targetId="6bbe-8054-19b7-e5d6"/>
+                  </entryLinks>
+                </entryLink>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="10c4-8727-5727-fccc" targetId="7d76-b1a1-1535-a04c"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9852-37cb-e59b-af3e"/>
+              </constraints>
+            </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
@@ -3227,6 +3495,11 @@
                     <cost name="pts" typeId="points" value="30"/>
                   </costs>
                 </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="13af-da42-9c91-8a14">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="5e90-18c2-1a28-4ca9" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
@@ -3325,6 +3598,11 @@
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
                 </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="2f54-21c8-333a-a59d">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="f2ec-9271-8c1f-d6e7" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
@@ -3428,6 +3706,11 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="161d-4ec1-2a6e-46c7">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="e3a9-5634-f23d-384e" targetId="7d76-b1a1-1535-a04c"/>
+              </entryLinks>
+            </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
@@ -3504,6 +3787,11 @@
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="bcbb-636-d889-42aa"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e04a-35bb-6508-4b33"/>
               </constraints>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="185-61ce-409d-b565">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="c971-8073-4c01-fe68" targetId="7d76-b1a1-1535-a04c"/>
+              </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
@@ -3602,6 +3890,11 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="2678-744e-af1b-29ee">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="46bb-bfec-9e29-c30e" targetId="7d76-b1a1-1535-a04c"/>
+              </entryLinks>
+            </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
@@ -3698,6 +3991,22 @@
                   </costs>
                 </entryLink>
               </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Command" hidden="false" id="a0ae-45e8-6530-1d65">
+              <entryLinks>
+                <entryLink import="true" name="Battle Standard Bearer" hidden="false" type="selectionEntry" id="be91-f5c2-818d-ab8a" targetId="5b87-9cf5-953d-3829" flatten="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="25"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="aa8-718-b593-a205" targetId="6bbe-8054-19b7-e5d6"/>
+                  </entryLinks>
+                </entryLink>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="f714-f451-d101-a750" targetId="7d76-b1a1-1535-a04c"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9157-4ee-d00a-54c3"/>
+              </constraints>
             </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
@@ -3861,11 +4170,7 @@
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="6f47-124d-9643-2b76">
           <infoLinks>
-            <infoLink name="Armour Bane" hidden="false" type="profile" id="66e-8014-97ec-f36d" targetId="2af0-975f-bb14-8b8f">
-              <modifiers>
-                <modifier type="append" value="(2)" field="name"/>
-              </modifiers>
-            </infoLink>
+            <infoLink name="Armour Bane" hidden="false" type="profile" id="66e-8014-97ec-f36d" targetId="2af0-975f-bb14-8b8f"/>
             <infoLink name="Skulking Menace" hidden="false" type="profile" id="e349-a142-b11c-6f61" targetId="8186-4d89-630-5b0a"/>
             <infoLink name="Horde" hidden="false" type="profile" id="9baa-49fa-d5-3ca6" targetId="9cba-89a5-1796-5fe4"/>
             <infoLink name="Fear of Elves" hidden="false" type="profile" id="12c6-da56-1918-269e" targetId="6cb0-9d5a-f165-e272"/>
@@ -5172,7 +5477,18 @@ Death of a Fanatic: A Fanatic model cannot be charged, targeted or attacked in a
     </entryLink>
     <entryLink import="true" name="Black Orc Mobs" hidden="false" type="selectionEntry" id="1001-6da0-1c40-3ed8" targetId="7b25-6b08-b644-f26f"/>
     <entryLink import="true" name="Goblin Mobs" hidden="false" type="selectionEntry" id="e9a9-7cea-f6d4-4895" targetId="6ce4-96c1-6e66-4e65"/>
-    <entryLink import="true" name="Night Goblin Mobs" hidden="false" type="selectionEntry" id="f808-e93-8975-59d1" targetId="399b-6e05-9a74-e18f"/>
+    <entryLink import="true" name="Night Goblin Mobs" hidden="false" type="selectionEntry" id="f808-e93-8975-59d1" targetId="399b-6e05-9a74-e18f">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="6059-d846-4ad5-6cf" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="6059-d846-4ad5-6cf">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="roster" childId="597e-96f7-c6fa-40b2" shared="true" roundUp="false" id="688c-7206-df29-b2d0" includeChildSelections="true"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </entryLink>
     <entryLink import="true" name="Snotling Mobs" hidden="false" type="selectionEntry" id="6431-4604-d333-bdcf" targetId="42b6-c48e-b345-102a"/>
     <entryLink import="true" name="Common Troll Mobs" hidden="false" type="selectionEntry" id="5f32-1c6b-3827-e64e" targetId="afd2-472f-d0bd-942f"/>
     <entryLink import="true" name="River Troll Mobs" hidden="false" type="selectionEntry" id="398c-8fd9-5aae-a201" targetId="a6f0-e007-d5e4-318b"/>
@@ -5180,35 +5496,155 @@ Death of a Fanatic: A Fanatic model cannot be charged, targeted or attacked in a
     <entryLink import="true" name="Orc Boar Boy Mobs" hidden="false" type="selectionEntry" id="d532-e092-677f-7f2" targetId="5b90-17e7-7f9c-f674"/>
     <entryLink import="true" name="Goblin Spider Rider Mobs" hidden="false" type="selectionEntry" id="d60f-4d1b-dab8-b3f7" targetId="f8e2-1ac4-c646-af1c"/>
     <entryLink import="true" name="Goblin Wolf Rider Mobs" hidden="false" type="selectionEntry" id="4fa8-d3a0-f10-4eb0" targetId="e36d-11d8-5d9a-1198"/>
-    <entryLink import="true" name="Night Goblin Hopper Mobs" hidden="false" type="selectionEntry" id="f868-35f9-eeef-1aa" targetId="6949-f50f-89e4-99c8"/>
+    <entryLink import="true" name="Night Goblin Hopper Mobs" hidden="false" type="selectionEntry" id="f868-35f9-eeef-1aa" targetId="6949-f50f-89e4-99c8">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="d4d3-1075-e8-b414" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="d4d3-1075-e8-b414">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="roster" childId="597e-96f7-c6fa-40b2" shared="true" roundUp="false" id="b739-a747-2f09-2483" includeChildSelections="true"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </entryLink>
     <entryLink import="true" name="Orc Boar Chariot" hidden="false" type="selectionEntry" id="1429-bb8a-4fc2-e3a9" targetId="7990-59e-8323-b39c"/>
     <entryLink import="true" name="Giants" hidden="false" type="selectionEntry" id="ecad-9b4e-cb1f-9c9e" targetId="2e4e-ec04-8461-5da3"/>
-    <entryLink import="true" name="Goblin Rock Lobbers" hidden="false" type="selectionEntry" id="5aa6-da75-2f87-3abf" targetId="d7f0-af29-e9dc-6eda"/>
-    <entryLink import="true" name="Goblin Driver Catapults" hidden="false" type="selectionEntry" id="ba24-f4c2-236e-9a34" targetId="20d9-d374-f5d5-82bc"/>
+    <entryLink import="true" name="Goblin Rock Lobbers" hidden="false" type="selectionEntry" id="5aa6-da75-2f87-3abf" targetId="d7f0-af29-e9dc-6eda">
+      <modifiers>
+        <modifier type="increment" value="1" field="643-3ec0-8552-41b4">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="bcd5-2e36-8b76-1db3"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="643-3ec0-8552-41b4" includeChildSelections="true"/>
+      </constraints>
+    </entryLink>
+    <entryLink import="true" name="Goblin Driver Catapults" hidden="false" type="selectionEntry" id="ba24-f4c2-236e-9a34" targetId="20d9-d374-f5d5-82bc">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="b138-8f3b-590f-b148" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="b138-8f3b-590f-b148">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="96b7-492a-4714-c0b8"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </entryLink>
     <entryLink import="true" name="Snotling Pump Wagons" hidden="false" type="selectionEntry" id="bf38-92d0-bd32-3aeb" targetId="2f44-19e3-996-656b"/>
     <entryLink import="true" name="Goblin Wolf Chariots" hidden="false" type="selectionEntry" id="b84c-7c69-32ca-d38a" targetId="5f86-179a-d64d-3014"/>
     <entryLink import="true" name="Black Orc Bigboss" hidden="false" type="selectionEntry" id="af2f-a321-e720-9fb1" targetId="3a60-b23d-7e34-aecf"/>
-    <entryLink import="true" name="Black Orc Warboss" hidden="false" type="selectionEntry" id="741c-39d1-4128-aff2" targetId="5f11-e9c2-fece-fff8"/>
-    <entryLink import="true" name="Orc Warboss" hidden="false" type="selectionEntry" id="56ce-4ddc-12a5-ec66" targetId="92b4-e584-76ef-ab7"/>
+    <entryLink import="true" name="Black Orc Warboss" hidden="false" type="selectionEntry" id="741c-39d1-4128-aff2" targetId="5f11-e9c2-fece-fff8">
+      <categoryLinks>
+        <categoryLink targetId="331e-3a37-38cb-23d2" id="85f-a511-1a47-d0e2" primary="false" name="Lord"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Orc Warboss" hidden="false" type="selectionEntry" id="56ce-4ddc-12a5-ec66" targetId="92b4-e584-76ef-ab7">
+      <categoryLinks>
+        <categoryLink targetId="331e-3a37-38cb-23d2" id="e1a2-dbeb-94b4-eb95" primary="false" name="Lord"/>
+      </categoryLinks>
+    </entryLink>
     <entryLink import="true" name="Goblin Warboss" hidden="false" type="selectionEntry" id="67c5-ad15-d01b-195f" targetId="eeb7-9f82-7439-3650"/>
     <entryLink import="true" name="Goblin Bigboss" hidden="false" type="selectionEntry" id="9a7b-bfaf-fc0d-dc40" targetId="3c83-df5f-3c4-9bff"/>
     <entryLink import="true" name="Orc Bigboss" hidden="false" type="selectionEntry" id="875f-3dc0-26a5-659f" targetId="cc13-c8e5-a88a-542a"/>
     <entryLink import="true" name="Orc Weirdboy" hidden="false" type="selectionEntry" id="d5b5-24b7-5a8f-5ff9" targetId="e9f5-b8ba-7d18-f2fc"/>
-    <entryLink import="true" name="Orc Weirdnob" hidden="false" type="selectionEntry" id="7836-506f-79f7-f95a" targetId="4a90-3060-c790-2d98"/>
-    <entryLink import="true" name="Night Goblin Bigboss" hidden="false" type="selectionEntry" id="24cc-92eb-c7db-86f9" targetId="516d-86e7-6eed-f3d1"/>
-    <entryLink import="true" name="Night Goblin Oddgit" hidden="false" type="selectionEntry" id="cc75-997d-1ae6-8f5c" targetId="438c-dab2-28a1-868f"/>
-    <entryLink import="true" name="Night Goblin Oddnob" hidden="false" type="selectionEntry" id="4c0b-b1a5-a7d7-ef2e" targetId="1e80-132e-1771-a31"/>
-    <entryLink import="true" name="Night Goblin Warboss" hidden="false" type="selectionEntry" id="5b92-be0-1dc6-efbf" targetId="5dfc-f215-9ae1-b579"/>
+    <entryLink import="true" name="Orc Weirdnob" hidden="false" type="selectionEntry" id="7836-506f-79f7-f95a" targetId="4a90-3060-c790-2d98">
+      <categoryLinks>
+        <categoryLink targetId="331e-3a37-38cb-23d2" id="1f9e-5c64-b0c4-4c01" primary="false" name="Lord"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Night Goblin Bigboss" hidden="false" type="selectionEntry" id="24cc-92eb-c7db-86f9" targetId="516d-86e7-6eed-f3d1">
+      <categoryLinks>
+        <categoryLink targetId="597e-96f7-c6fa-40b2" id="508a-656b-b245-a77c" primary="false" name="NIGHT GOBLIN HERO"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Night Goblin Oddgit" hidden="false" type="selectionEntry" id="cc75-997d-1ae6-8f5c" targetId="438c-dab2-28a1-868f">
+      <categoryLinks>
+        <categoryLink targetId="597e-96f7-c6fa-40b2" id="724c-7b07-bf44-d613" primary="false" name="NIGHT GOBLIN HERO"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Night Goblin Oddnob" hidden="false" type="selectionEntry" id="4c0b-b1a5-a7d7-ef2e" targetId="1e80-132e-1771-a31">
+      <categoryLinks>
+        <categoryLink targetId="597e-96f7-c6fa-40b2" id="d9f4-6c81-25e5-6aae" primary="false" name="NIGHT GOBLIN HERO"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Night Goblin Warboss" hidden="false" type="selectionEntry" id="5b92-be0-1dc6-efbf" targetId="5dfc-f215-9ae1-b579">
+      <categoryLinks>
+        <categoryLink targetId="597e-96f7-c6fa-40b2" id="b640-6a28-b04b-c1c7" primary="false" name="NIGHT GOBLIN HERO"/>
+      </categoryLinks>
+    </entryLink>
     <entryLink import="true" name="Goblin Oddnob" hidden="false" type="selectionEntry" id="8406-d51f-9ad2-444" targetId="e003-269f-146e-ffa7"/>
     <entryLink import="true" name="Goblin Oddgit" hidden="false" type="selectionEntry" id="c93d-3bcf-ffd9-89ee" targetId="32a5-e82a-ec0e-2994"/>
     <entryLink import="true" name="Arachnarok Spiders" hidden="false" type="selectionEntry" id="7b6d-a954-d75e-43d2" targetId="705b-522c-1c00-2338"/>
-    <entryLink import="true" name="Night Goblin Squig Herds" hidden="false" type="selectionEntry" id="1203-e354-fe18-f5e5" targetId="96e4-22ac-eb93-11e9"/>
-    <entryLink import="true" name="Mangler Squigs" hidden="false" type="selectionEntry" id="c304-da33-8244-17dc" targetId="7cb0-f4e4-57e3-fb07"/>
-    <entryLink import="true" name="Goblin Bolt Throwa2" hidden="false" type="selectionEntry" id="cf52-260a-396c-45f0" targetId="56d8-674d-6520-68eb"/>
+    <entryLink import="true" name="Night Goblin Squig Herds" hidden="false" type="selectionEntry" id="1203-e354-fe18-f5e5" targetId="96e4-22ac-eb93-11e9">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="b52a-37b-d74f-8d5" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="b52a-37b-d74f-8d5">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="roster" childId="597e-96f7-c6fa-40b2" shared="true" roundUp="false" id="bc59-7e62-a961-a3a8" includeChildSelections="true"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Mangler Squigs" hidden="false" type="selectionEntry" id="c304-da33-8244-17dc" targetId="7cb0-f4e4-57e3-fb07">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="7aa8-154a-af33-e191" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="7aa8-154a-af33-e191">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="roster" childId="597e-96f7-c6fa-40b2" shared="true" roundUp="false" id="2001-1a67-854e-56ec" includeChildSelections="true"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Goblin Bolt Throwa2" hidden="false" type="selectionEntry" id="cf52-260a-396c-45f0" targetId="56d8-674d-6520-68eb">
+      <modifiers>
+        <modifier type="increment" value="2" field="8d21-c63b-6f2a-f120">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="af5d-784a-462e-f91"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="8d21-c63b-6f2a-f120" includeChildSelections="true"/>
+      </constraints>
+    </entryLink>
+    <entryLink import="true" name="Black Orc Mobs" hidden="false" type="selectionEntry" id="dfe5-67e3-1f5b-7ba7" targetId="7b25-6b08-b644-f26f">
+      <categoryLinks>
+        <categoryLink targetId="f0e3-2e32-8866-ea32" id="bbd6-8f7d-510c-90a6" primary="true" name="Core"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="remove" value="633f-f67a-1b6a-d203" field="category"/>
+      </modifiers>
+      <modifierGroups>
+        <modifierGroup type="and">
+          <modifiers>
+            <modifier type="set" value="0" field="6e6c-65e5-ddf5-6b0a"/>
+            <modifier type="set" value="true" field="hidden"/>
+            <modifier type="set" value="Black Orcs (Core)" field="name"/>
+          </modifiers>
+          <conditions>
+            <condition type="atMost" value="0" field="selections" scope="roster" childId="fc43-c2ce-2212-4192" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifierGroup>
+      </modifierGroups>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="6e6c-65e5-ddf5-6b0a"/>
+      </constraints>
+    </entryLink>
   </entryLinks>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Magic Items" id="754b-6591-c52e-78c5" targetId="6c22-b0e4-7c83-f9ce"/>
     <catalogueLink type="catalogue" name="The Lores of Magic" id="be75-580e-8435-6807" targetId="f3c5-af11-649d-5dbb"/>
   </catalogueLinks>
+  <categoryEntries>
+    <categoryEntry name="NIGHT GOBLIN HERO" hidden="true" id="597e-96f7-c6fa-40b2"/>
+  </categoryEntries>
 </catalogue>

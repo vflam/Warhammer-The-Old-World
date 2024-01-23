@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="56fb-835b-a377-6639" name="High Elf Realms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="21" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="56fb-835b-a377-6639" name="High Elf Realms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="22" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Sons of Caledor" hidden="false" id="2f86-a9f-38aa-d39a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="170" publicationId="8b8d-8fc4-559e-87b1">
       <characteristics>
@@ -822,9 +822,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <costs>
-        <cost name="pts" typeId="points" value="18"/>
-      </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Elven Spearmen" hidden="false" id="93df-6c31-ecb8-bc77">
       <profiles>
@@ -856,7 +853,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8f17-33fe-cb6-86c8"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Thrusting Spear" hidden="false" type="selectionEntry" id="953c-4b57-7a94-4714" targetId="99d2-7f59-5c14-3bf7" sortIndex="4">
+            <entryLink import="true" name="Throwing Spear" hidden="false" type="selectionEntry" id="953c-4b57-7a94-4714" targetId="9113-238a-ef75-aa23" sortIndex="4">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b9b2-f3e2-d0c8-ca86"/>
               </constraints>
@@ -925,7 +922,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="93df-6c31-ecb8-bc77" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="93df-6c31-ecb8-bc77" childId="b3d8-dfc0-df0d-2916" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
@@ -946,6 +943,55 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="6bd1-48a8-dc46-e751">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="b3d8-dfc0-df0d-2916" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="b9ac-5153-77d0-3b6e" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="29af-5263-4526-6c4b"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="ddef-ab7a-408e-eb2c" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="ddef-ab7a-408e-eb2c">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="2f1a-fed3-7973-4c7c" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="68ee-14ac-c5fd-6a40" sortIndex="11">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a280-69c0-5ed6-c905"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="9e4e-6948-ed46-a9cf" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Veteran" hidden="false" type="profile" id="eaff-e664-6856-1d86" targetId="4022-c403-b083-ba83"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="819c-5353-c967-fd97"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="9e4e-6948-ed46-a9cf">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="b708-985b-585b-ba3b" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="82fb-f854-cead-1d9">
@@ -961,12 +1007,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="cae0-3d90-50fe-5f10" primary="true" name="Core"/>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="a741-6217-5d77-cff0" primary="false" name="Regular Infantry"/>
-        <categoryLink targetId="e35d-fb38-21b-1a66" id="84e-dd3b-f31f-c25" primary="false" name="VETERAN UPGRADE1"/>
-        <categoryLink targetId="caab-4ac8-e0ba-d843" id="cdd-28e8-e5a3-cace" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="ca00-e50a-5da6-532d" targetId="ce2e-bc0f-be9b-9221" sortIndex="3"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Noble" hidden="false" id="37d5-3ec1-ea71-3a6e">
       <profiles>
@@ -1092,7 +1133,11 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                     <categoryLink targetId="c96a-608-5de4-b943" id="1c49-ec24-6d23-e7b" primary="false" name="MOUNT"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Barded Elven Steed" hidden="false" type="selectionEntry" id="698f-eff4-ab8e-a64" targetId="a646-21d4-9265-571d" sortIndex="2"/>
+                <entryLink import="true" name="Barded Elven Steed" hidden="false" type="selectionEntry" id="698f-eff4-ab8e-a64" targetId="a646-21d4-9265-571d" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="18"/>
+                  </costs>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="58ad-9325-8a1f-8fc8">
@@ -1234,7 +1279,11 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                     <categoryLink targetId="c96a-608-5de4-b943" id="c1ef-f8a0-5c21-cf7e" primary="false" name="MOUNT"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Barded Elven Steed" hidden="false" type="selectionEntry" id="d09f-8738-cf8f-307f" targetId="a646-21d4-9265-571d" sortIndex="2"/>
+                <entryLink import="true" name="Barded Elven Steed" hidden="false" type="selectionEntry" id="d09f-8738-cf8f-307f" targetId="a646-21d4-9265-571d" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="18"/>
+                  </costs>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="bdfc-2bc9-9fd7-ab31">
@@ -1387,7 +1436,11 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                     <categoryLink targetId="c96a-608-5de4-b943" id="3632-eb24-5a83-1da5" primary="false" name="MOUNT"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Barded Elven Steed" hidden="false" type="selectionEntry" id="b28c-9e50-e128-9be1" targetId="a646-21d4-9265-571d" sortIndex="2"/>
+                <entryLink import="true" name="Barded Elven Steed" hidden="false" type="selectionEntry" id="b28c-9e50-e128-9be1" targetId="a646-21d4-9265-571d" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="18"/>
+                  </costs>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
@@ -1689,7 +1742,11 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                     <categoryLink targetId="c96a-608-5de4-b943" id="721a-88c2-1538-48bb" primary="false" name="MOUNT"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Barded Elven Steed" hidden="false" type="selectionEntry" id="aa03-18a1-150-4b18" targetId="a646-21d4-9265-571d" sortIndex="2"/>
+                <entryLink import="true" name="Barded Elven Steed" hidden="false" type="selectionEntry" id="aa03-18a1-150-4b18" targetId="a646-21d4-9265-571d" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="18"/>
+                  </costs>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="eae4-7a31-bccc-5115">
@@ -1828,7 +1885,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="bf06-d67a-9359-a1eb" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="bf06-d67a-9359-a1eb" childId="f264-be82-fc97-1f88" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
@@ -1849,6 +1906,55 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="7e2f-30cc-e9f-b4b">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="f264-be82-fc97-1f88" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="5778-edd4-7250-1b68" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1461-b02b-26c7-e51e"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="42e6-9d88-a562-1a38" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="42e6-9d88-a562-1a38">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="c04a-e2a6-e2d5-5298" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="fc44-6fd0-838a-7c8e" sortIndex="11">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6d03-6935-30c2-df3f"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="1b27-1e61-fe11-950f" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Veteran" hidden="false" type="profile" id="bd94-c7bd-3137-8b40" targetId="4022-c403-b083-ba83"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="8aff-1fe9-a79a-b0a8"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="1b27-1e61-fe11-950f">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="ce08-de0c-28d8-8c98" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="4fe4-606d-b8bf-83a0">
@@ -1863,12 +1969,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="18e6-f1f6-c19c-bcc2" primary="true" name="Core"/>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="ee3f-5822-15-2c29" primary="false" name="Regular Infantry"/>
-        <categoryLink targetId="caab-4ac8-e0ba-d843" id="3461-f0cb-f979-dd5f" primary="false" name="STANDARD UPGRADE"/>
-        <categoryLink targetId="e35d-fb38-21b-1a66" id="bf7a-1a42-245b-cb24" primary="false" name="VETERAN UPGRADE1"/>
       </categoryLinks>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="35c1-dade-6028-1a51" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Lothern Sea Guard" hidden="false" id="12f4-405f-3fb5-75dc">
       <profiles>
@@ -1905,11 +2006,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="e189-b2bc-240d-6172"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="d0a0-daea-cf6c-908e" targetId="6192-f9f1-5d53-2042" sortIndex="5">
-              <costs>
-                <cost name="pts" typeId="points" value="1"/>
-              </costs>
-            </entryLink>
           </entryLinks>
           <infoLinks>
             <infoLink name="Lothern Sea Guard" hidden="false" type="profile" id="e45f-f3ee-a3a1-40b2" targetId="2a99-e95c-cf07-476a"/>
@@ -1918,6 +2014,19 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <costs>
             <cost name="pts" typeId="points" value="11"/>
           </costs>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Shields" hidden="false" id="1283-4942-126d-f8a1" collective="true" sortIndex="5">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+              <entryLinks>
+                <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="25b5-fdea-3b4-70fe" targetId="6192-f9f1-5d53-2042"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="161f-7a22-daf3-c453"/>
+              </constraints>
+            </selectionEntry>
+          </selectionEntries>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -1971,7 +2080,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="12f4-405f-3fb5-75dc" childId="3ef9-e7ba-25f6-6dd8" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="12f4-405f-3fb5-75dc" childId="f3c4-20e8-91c5-1412" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
@@ -1989,6 +2098,55 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="41f9-c184-fb6-9366" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="6bc6-9df9-6ca5-965d">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="f3c4-20e8-91c5-1412" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="e2f0-6c88-dc63-f151" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1def-326e-b89e-13db"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="f529-d287-5fde-6b8b" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="f529-d287-5fde-6b8b">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="da8e-5121-cb7-2d3d" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="c3b3-aff6-ddb-9bf9" sortIndex="11">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4bfe-7036-48ee-4672"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="beb-a095-42e-b276" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Veteran" hidden="false" type="profile" id="a1fa-1889-e735-232a" targetId="4022-c403-b083-ba83"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="67a5-6aca-a954-87fe"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="beb-a095-42e-b276">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="70a6-a0f3-da6-3714" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2010,9 +2168,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
         <categoryLink targetId="e35d-fb38-21b-1a66" id="5d77-8b8a-c284-c5a8" primary="false" name="VETERAN UPGRADE1"/>
         <categoryLink targetId="caab-4ac8-e0ba-d843" id="84f0-7d58-606c-958c" primary="false" name="STANDARD UPGRADE"/>
       </categoryLinks>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="3ac-53f4-9151-c67" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="White Lions of Chrace" hidden="false" id="24cb-795c-4110-f2d1">
       <profiles>
@@ -2855,7 +3010,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="d02f-84c5-86bf-ff87" childId="baa-a804-e903-a730" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="d02f-84c5-86bf-ff87" childId="dd27-bea0-98c0-85cf" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
@@ -2876,6 +3031,69 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="ba07-e296-63d9-dc3e">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="dd27-bea0-98c0-85cf" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="7ee8-5648-f242-c830" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="216b-7e2b-d11b-39cf"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="b475-c3a2-f1ba-1912" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="b475-c3a2-f1ba-1912">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="7d02-2101-daee-79aa" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Scouts" hidden="false" id="78b8-9b6e-8397-56e5" sortIndex="21">
+              <infoLinks>
+                <infoLink name="Scouts" hidden="false" type="profile" id="f58f-aeb5-69a0-fdc6" targetId="fe5e-8838-7fbd-a7ec"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="21ee-9764-15d2-40e6"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="a18-372e-fc7a-255b" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="1" field="a18-372e-fc7a-255b">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="cc0c-5b2a-fc80-1446" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="2"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="false" id="ea3e-b8cb-b7e1-12cc" sortIndex="17">
+              <infoLinks>
+                <infoLink name="Skirmishers" hidden="false" type="profile" id="3d41-807e-2886-c78d" targetId="59a5-7eca-ee35-96ac"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fb71-ca86-b3b7-ee57"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="b493-b13f-8e04-b197" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="1" field="b493-b13f-8e04-b197">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="10c5-1dae-1089-a8be"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="9fe7-ac3c-c131-27c6">
@@ -2891,13 +3109,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="ed22-d955-6096-889d" primary="true" name="Core"/>
         <categoryLink targetId="600c-7d08-5be1-fe0c" id="9cad-d94a-228d-4d58" primary="false" name="Light Cavalry"/>
-        <categoryLink targetId="caab-4ac8-e0ba-d843" id="efe7-3b58-8616-2ca3" primary="false" name="STANDARD UPGRADE"/>
         <categoryLink targetId="a2e3-9206-f023-b4c8" id="8d2b-7bd-1fde-4024" primary="false" name="SCOUTS UPGRADE2"/>
         <categoryLink targetId="9c9-dc8b-eb73-d90b" id="8697-712e-5e64-93c4" primary="false" name="SKIRMISHER UPGRADE1"/>
       </categoryLinks>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="7077-fc1c-3f63-b158" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Silver Helms" hidden="false" id="e9b1-22cd-7328-5fde">
       <profiles>
@@ -2945,9 +3159,19 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           </costs>
           <selectionEntryGroups>
             <selectionEntryGroup name="Equipment" hidden="false" id="4447-c197-27ff-89fb" sortIndex="5">
-              <entryLinks>
-                <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="c27a-9627-bfa6-3204" targetId="6192-f9f1-5d53-2042"/>
-              </entryLinks>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Shields" hidden="false" id="b364-82da-d91c-fa44" collective="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="1"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="b345-4d0b-8f52-782b" targetId="6192-f9f1-5d53-2042"/>
+                  </entryLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d0f7-444c-cb64-d030"/>
+                  </constraints>
+                </selectionEntry>
+              </selectionEntries>
             </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
@@ -3073,7 +3297,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             <infoLink name="Base (30x60)" hidden="false" type="profile" id="409d-cd07-8028-157d" targetId="3a8b-1dd5-77fb-fdc3"/>
           </infoLinks>
           <costs>
-            <cost name="pts" typeId="points" value="23"/>
+            <cost name="pts" typeId="points" value="37"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
@@ -3735,7 +3959,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           </constraints>
           <infoLinks>
             <infoLink name="Eagle-Claw Bolt Thrower" hidden="false" type="profile" id="e7cf-3119-efad-9c20" targetId="8321-fd4-8747-83b2"/>
-            <infoLink name="Base (50x50)" hidden="false" type="profile" id="5060-6c1a-5fe-db4e" targetId="7813-4d15-143d-1bf1"/>
+            <infoLink name="Base (round 50)" hidden="false" type="profile" id="5060-6c1a-5fe-db4e" targetId="2c87-b5d6-e13b-4082"/>
           </infoLinks>
           <costs>
             <cost name="pts" typeId="points" value="80"/>
