@@ -36,7 +36,6 @@
     <categoryEntry name="VETERAN UPGRADE1" hidden="true" id="e35d-fb38-21b-1a66"/>
     <categoryEntry name="SCOUTS UPGRADE2" hidden="true" id="a2e3-9206-f023-b4c8"/>
     <categoryEntry name="SKIRMISHERS UPGRADE1" hidden="true" id="9c9-dc8b-eb73-d90b"/>
-    <categoryEntry name="AMBUSHERS UPGRADE1" hidden="true" id="144e-409-8908-7fce"/>
     <categoryEntry name="RESERVE MOVE UPGRADE1" hidden="true" id="8b11-b8bd-b9fc-7459"/>
     <categoryEntry name="DRILLED UPGRADE1" hidden="true" id="ca73-6522-eb84-b481"/>
     <categoryEntry name="NEHEKHARAN PHALANX UPGRADE1" hidden="true" id="c008-2eab-5394-1224"/>
@@ -46,7 +45,6 @@
     <categoryEntry name="FEIGNED FLIGHT UPGRADE2" hidden="true" id="b6b1-37fc-a1ec-3464"/>
     <categoryEntry name="STUBBORN UPGRADE2" hidden="true" id="290f-11de-6a66-410b"/>
     <categoryEntry name="FRENZY UPGRADE2" hidden="true" id="a708-6cc7-6c0f-ad82"/>
-    <categoryEntry name="AMBUSHERS UPGRADE10" hidden="true" id="c86a-7a74-e1c8-95a7"/>
     <categoryEntry name="CHARIOT CREW" hidden="true" id="4cf7-bf85-308d-c29a"/>
     <categoryEntry name="FRENZY UPGRADE3" hidden="true" id="4e48-1ecf-d4c5-ef0a"/>
     <categoryEntry name="FRENZY UPGRADE" hidden="true" id="e41e-3817-ab1e-3b59"/>
@@ -1667,30 +1665,6 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
             <cost name="pts" typeId="points" value="2"/>
           </costs>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="true" id="e713-c9bb-54d1-90ae" sortIndex="12">
-          <infoLinks>
-            <infoLink name="Ambushers" hidden="false" type="profile" id="2954-578d-b9c2-496f" targetId="8c0b-6fe6-dc06-512"/>
-          </infoLinks>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cd24-3783-4289-53bf"/>
-            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="e23a-f73a-9417-cb14" includeChildSelections="true"/>
-          </constraints>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="144e-409-8908-7fce" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="increment" value="1" field="e23a-f73a-9417-cb14">
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="40d6-7027-5c88-a23c" includeChildSelections="true"/>
-              </repeats>
-            </modifier>
-          </modifiers>
-          <costs>
-            <cost name="pts" typeId="points" value="1"/>
-          </costs>
-        </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Vanguard" hidden="true" id="6807-4b87-934e-c752" sortIndex="13">
           <infoLinks>
             <infoLink name="Vanguard" hidden="false" type="profile" id="7bb5-9ec1-c8d5-3c5" targetId="691e-10ec-4f7c-a2c4"/>
@@ -1959,30 +1933,6 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="2"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="true" id="efb8-a232-d3f0-7671" sortIndex="24">
-          <infoLinks>
-            <infoLink name="Ambushers" hidden="false" type="profile" id="28f8-83d6-f68f-efbc" targetId="8c0b-6fe6-dc06-512"/>
-          </infoLinks>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="81b2-99e1-5f9d-f710"/>
-            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="f8e5-c0f4-8606-5bb8" includeChildSelections="true"/>
-          </constraints>
-          <modifiers>
-            <modifier type="set" value="false" field="hidden">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="c86a-7a74-e1c8-95a7" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="increment" value="1" field="f8e5-c0f4-8606-5bb8">
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="78e2-3523-2371-af73" includeChildSelections="true"/>
-              </repeats>
-            </modifier>
-          </modifiers>
-          <costs>
-            <cost name="pts" typeId="points" value="10"/>
           </costs>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="true" id="d11e-d8d3-4cf5-c14f" sortIndex="23">
