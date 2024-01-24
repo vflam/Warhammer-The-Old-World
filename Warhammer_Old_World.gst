@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="45" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="46" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -721,17 +721,21 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
     </profile>
     <profile name="Standard Bearer" hidden="false" id="bcf8-d942-102e-b155" typeId="52d4-d959-fe4d-90fa" typeName="Command">
       <characteristics>
-        <characteristic name="Description" typeId="441a-ef3a-c07e-95f"/>
+        <characteristic name="Description" typeId="441a-ef3a-c07e-95f">If a unit includes a standard bearer, it may claim a bonus of +1 combat result point.
+If a fleeing unit is run down by an enemy unit, or if a unit is destroyed in combat by an enemy unit, its standard is claimed as a trophy. Standards claimed in this way are worth bonus Victory Points at the end of the battle. Once a standard has been lost in this way, it cannot be reclaimed.</characteristic>
       </characteristics>
     </profile>
     <profile name="Musician" hidden="false" id="40f2-dd77-f0ca-3663" typeId="52d4-d959-fe4d-90fa" typeName="Command">
       <characteristics>
-        <characteristic name="Description" typeId="441a-ef3a-c07e-95f"/>
+        <characteristic name="Description" typeId="441a-ef3a-c07e-95f">If, once the combat result has been calculated, both sides have the exact same number of points each, the side that has a musician in the front rank of one or more of its units may claim a bonus of +1 combat result point. If, however, the opposing side has a musician also, the redoubled efforts (and almighty clamour) cancel each other out and neither side may claim this bonus.
+If a fleeing unit contains a musician, it may apply a +1 modifier to its Leadership characteristic whenever it attempts to rally, up to a maximum of Leadership 10.
+Should a unit that contains a musician wish to march whilst within 8&quot; of an enemy unit, it may apply a +1 modifier to its Leadership characteristic, up to a maximum of Leadership10, when making its Leadership test.</characteristic>
       </characteristics>
     </profile>
     <profile name="Champion" hidden="false" id="5f1c-fd04-b0d5-d5e" typeId="52d4-d959-fe4d-90fa" typeName="Command">
       <characteristics>
-        <characteristic name="Description" typeId="441a-ef3a-c07e-95f"/>
+        <characteristic name="Description" typeId="441a-ef3a-c07e-95f">In combat, a champion that is within the fighting rank fights as normal. Enemy models that are in base contact with a champion can direct attacks against that champion if they wish.
+Champions can issue and accept challenges in the same manner as a character.</characteristic>
       </characteristics>
     </profile>
     <profile name="Base (50x50)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="7813-4d15-143d-1bf1">
@@ -868,11 +872,6 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
     <profile name="Shortbow" hidden="false" id="1b65-71ef-52a3-93d0" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="216" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 18&quot;	S: 3	AP: -	Special Rules: Quick Shot, Volley Fire</characteristic>
-      </characteristics>
-    </profile>
-    <profile name="Warbow" hidden="false" id="4ba0-4ae4-3ac2-a173" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">24&quot; S3 Volley Fire</characteristic>
       </characteristics>
     </profile>
     <profile name="Repeater Pistol" hidden="false" id="f675-db0d-397c-d873" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
