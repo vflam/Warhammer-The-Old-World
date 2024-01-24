@@ -838,9 +838,6 @@ with Arcane Bodkins has an AP of -2.</characteristic>
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="b4eb-d624-54b-6a32" primary="false" name="Regular Infantry"/>
-        <categoryLink targetId="f0e3-2e32-8866-ea32" id="40fc-2202-17f8-741c" primary="true" name="Core"/>
-        <categoryLink targetId="2661-a58f-ff4f-20cb" id="a604-b6a4-9fee-3f98" primary="false" name="FIRE AND FLEE UPGRADE"/>
-        <categoryLink targetId="1008-a8fa-67f7-3e39" id="1620-235a-922e-8174" primary="false" name="VANGUARD UPGRADE"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Asrai Spear" hidden="false" id="29c0-707a-8c60-125d">
@@ -966,6 +963,58 @@ with Arcane Bodkins has an AP of -2.</characteristic>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="1cbe-827c-cf13-5c72">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="true" id="7cf8-17f3-662d-5bc2" sortIndex="3">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5243-f25a-a52d-cadb"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="428c-da26-58a4-d48e" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Drilled" hidden="false" type="profile" id="1942-bfcd-4147-26a5" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="99c2-2b3-fe20-f7c6" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="428c-da26-58a4-d48e">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="487a-1060-93cc-70e" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="b30f-4727-d0c5-1bbc" sortIndex="11">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f80e-bca8-78d6-d1f6"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="2b25-a5d6-5742-75d0" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Veteran" hidden="false" type="profile" id="275-9e6b-fd1d-f5cb" targetId="4022-c403-b083-ba83"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="74e6-de3e-b84-a4f8"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="2b25-a5d6-5742-75d0">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="60e9-c044-58e9-13ba" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="aea4-8b36-96e9-8bd5">
@@ -981,12 +1030,7 @@ with Arcane Bodkins has an AP of -2.</characteristic>
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="564b-be55-d398-fc47" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="c46f-567d-2f4a-9d84" primary="true" name="Core"/>
-        <categoryLink targetId="7913-acb6-d065-2dab" id="24fa-b989-3886-c0c" primary="false" name="DRILLED UPGRADE"/>
-        <categoryLink targetId="925c-b77-1d36-e3bf" id="8420-d774-398d-3c62" primary="false" name="VETERAN UPGRADE"/>
       </categoryLinks>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="3a84-1c9e-e6d4-99d4" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Glade Guard" hidden="false" id="886b-7a97-d451-3f0c">
       <profiles>
@@ -1057,7 +1101,7 @@ with Arcane Bodkins has an AP of -2.</characteristic>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="9ae-6b61-d24-2d8c" subType="crew" flatten="true" sortIndex="2">
               <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c867-7e24-6b4e-a0c8"/>
+                <constraint type="max" value="1" field="selections" scope="886b-7a97-d451-3f0c" shared="true" id="c867-7e24-6b4e-a0c8" includeChildSelections="true"/>
               </constraints>
               <costs>
                 <cost name="pts" typeId="points" value="6"/>
@@ -1067,10 +1111,17 @@ with Arcane Bodkins has an AP of -2.</characteristic>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="96a0-7ab6-42ef-b4d4" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
               <entryLinks>
-                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="7155-ffc8-b5ae-d040" targetId="6bbe-8054-19b7-e5d6">
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="7155-ffc8-b5ae-d040" targetId="6bbe-8054-19b7-e5d6">
                   <constraints>
                     <constraint type="max" value="50" field="points" scope="parent" shared="false" id="dedf-2c84-dd06-c3ec"/>
                   </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="886b-7a97-d451-3f0c" childId="d198-1b86-d7dc-b38b" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                 </entryLink>
               </entryLinks>
             </selectionEntry>
@@ -1088,6 +1139,79 @@ with Arcane Bodkins has an AP of -2.</characteristic>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="4295-612b-b820-b670">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Fire and Flee" hidden="false" id="d4f6-4e85-156e-a8ea" sortIndex="10">
+              <infoLinks>
+                <infoLink name="Fire &amp; Flee" hidden="false" type="profile" id="71b1-7e5b-7060-bb13" targetId="1a06-31aa-cbfe-1a5"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4515-2680-def3-75c9"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="d126-6c05-8fc2-d757" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="1" field="d126-6c05-8fc2-d757">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="2e08-6993-c37b-2bf0" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="65ef-bb26-5c73-459d" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Vanguard" hidden="false" id="2b45-4695-ffbe-36e8" sortIndex="19">
+              <infoLinks>
+                <infoLink name="Vanguard" hidden="false" type="profile" id="d942-f005-9202-d07b" targetId="691e-10ec-4f7c-a2c4"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="24cd-dfa8-b1f1-b38"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="6728-df90-879f-702a" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="1" field="6728-df90-879f-702a">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="267-67d6-6a6b-c9ea" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="43a-1179-39af-5895" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="d198-1b86-d7dc-b38b" sortIndex="1">
+              <categoryLinks>
+                <categoryLink targetId="49a9-ce63-af1a-18f7" id="87ef-fd4e-68be-5778" primary="false" name="NO EXPORT"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fa85-5b37-380d-d76e"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="4e02-2011-9f9e-d831" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Standard Runes" field="name">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="4e02-2011-9f9e-d831">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="8629-759a-9f71-a38" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="850c-3c85-45a9-b466">
@@ -1101,12 +1225,7 @@ with Arcane Bodkins has an AP of -2.</characteristic>
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="93c7-6bb1-fa8a-c9a8" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="63e7-b714-92b6-ebd" primary="true" name="Core"/>
-        <categoryLink targetId="2661-a58f-ff4f-20cb" id="7189-e3d4-1005-5586" primary="false" name="FIRE AND FLEE UPGRADE"/>
-        <categoryLink targetId="1008-a8fa-67f7-3e39" id="3f2c-6811-c73a-18b2" primary="false" name="VANGUARD UPGRADE"/>
       </categoryLinks>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="dfc2-4932-3b35-a4a1" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Ranger&apos;s Glaive" hidden="false" id="4c30-5e53-bd12-e3eb">
       <infoLinks>
@@ -1336,6 +1455,82 @@ with Arcane Bodkins has an AP of -2.</characteristic>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="1f14-f6ba-d0ea-79e5">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="95b-b30b-4cf-7c99" sortIndex="2">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e90b-4ac-2649-cfc6"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="890a-d244-b864-9e96" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Ambushers" hidden="false" type="profile" id="6499-4926-d75e-53b1" targetId="8c0b-6fe6-dc06-512"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="4f3b-6c04-419d-bbb2" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="890a-d244-b864-9e96">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="c7f7-6c67-f3d7-be65" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="9687-f432-4183-4f2f" sortIndex="1">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a52-52f0-8c63-ddf4"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="f8f0-6702-e9ab-4ed2" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Drilled" hidden="false" type="profile" id="9b1d-6446-b716-8669" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="54d-d47a-b0ef-9c10" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="f8f0-6702-e9ab-4ed2">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="3a31-6f59-74c3-463c" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Veteran" hidden="false" id="dadc-82bd-d775-b87d" sortIndex="4">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3f15-98c1-1b1d-139a"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="aaf2-9bc1-4201-8f98" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Veteran" hidden="false" type="profile" id="a6e5-c3c7-b673-8d2b" targetId="4022-c403-b083-ba83"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="a1b1-c63a-5238-e634" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="aaf2-9bc1-4201-8f98">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="72e4-2f96-8916-a1c" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="8549-bcd6-4fc3-4ea2">
@@ -1354,12 +1549,7 @@ with Arcane Bodkins has an AP of -2.</characteristic>
       <categoryLinks>
         <categoryLink targetId="f3f7-ca43-674e-115f" id="4d44-c120-6d91-c2e6" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="2bfe-5863-46fe-d284" id="241b-b767-cff5-f734" primary="true" name="Rare"/>
-        <categoryLink targetId="1008-a8fa-67f7-3e39" id="f982-d417-98d-5bd8" primary="false" name="VANGUARD UPGRADE"/>
-        <categoryLink targetId="925c-b77-1d36-e3bf" id="8b29-fb86-e787-b426" primary="false" name="VETERAN UPGRADE"/>
       </categoryLinks>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="bbd9-f07-dd23-77c6" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Dryads" hidden="false" id="1ae5-ebd2-c2f0-74da">
       <profiles>
@@ -1627,9 +1817,9 @@ with Arcane Bodkins has an AP of -2.</characteristic>
         </profile>
       </profiles>
       <selectionEntries>
-        <selectionEntry type="model" import="true" name="Great Eagles" hidden="false" id="26b9-c9a9-c6a9-42dd" collective="true">
+        <selectionEntry type="model" import="true" name="Great Eagle" hidden="false" id="26b9-c9a9-c6a9-42dd" collective="true">
           <infoLinks>
-            <infoLink name="Great Eagles" hidden="false" type="profile" id="45fe-2bfb-c9c9-c4c2" targetId="cab1-94a3-97aa-dde"/>
+            <infoLink name="Great Eagle" hidden="false" type="profile" id="45fe-2bfb-c9c9-c4c2" targetId="cab1-94a3-97aa-dde"/>
             <infoLink name="Base (50x50)" hidden="false" type="profile" id="57e0-224c-8d17-8cbb" targetId="7813-4d15-143d-1bf1"/>
           </infoLinks>
           <entryLinks>
@@ -2809,10 +2999,17 @@ with Arcane Bodkins has an AP of -2.</characteristic>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="a018-8292-584f-a26f" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
               <entryLinks>
-                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="3272-20e4-a44a-b854" targetId="6bbe-8054-19b7-e5d6">
+                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="3272-20e4-a44a-b854" targetId="6bbe-8054-19b7-e5d6">
                   <constraints>
                     <constraint type="max" value="50" field="points" scope="parent" shared="false" id="23bf-718c-480c-4c6b"/>
                   </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="b811-3815-bff1-1680" childId="2d16-7fb3-904d-d563" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                 </entryLink>
               </entryLinks>
             </selectionEntry>
@@ -2827,6 +3024,101 @@ with Arcane Bodkins has an AP of -2.</characteristic>
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="f03c-3550-5dee-7e8b" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="35f5-41cb-1887-d11d">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="f0f9-cf6d-f99b-7a1d" sortIndex="2">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="eba6-1afd-cb17-463d"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="2104-221b-6acd-926c" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Ambushers" hidden="false" type="profile" id="5237-aa83-106d-3fc3" targetId="8c0b-6fe6-dc06-512"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="2" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="bada-7acd-8b7c-7dfd" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="2104-221b-6acd-926c">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="b969-38e8-73a0-ec97" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="7ae8-d6b9-ccad-6b1c" sortIndex="1">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="381a-48c9-3e90-dbcd"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="266d-5a77-7fd5-a9ce" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Drilled" hidden="false" type="profile" id="af24-b571-ddde-29c6" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="2" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="412b-2fc6-ec16-ed21" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="266d-5a77-7fd5-a9ce">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="17f1-87ae-d5f1-2dc" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Reserve Move" hidden="false" id="64e3-a815-1444-65be" sortIndex="4">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8448-1a1b-d8ad-547f"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="268c-1a8d-3e14-3802" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Reserve Move" hidden="false" type="profile" id="58b4-2835-183d-12b9" targetId="1f10-d7d-be19-7e8f"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="d4aa-4abe-43d3-ac35" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="268c-1a8d-3e14-3802">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="95ce-4efa-d69f-73fc" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="2d16-7fb3-904d-d563" sortIndex="3">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5033-c5b-1f-34f4"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="52b-9911-3c81-2da4" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Drilled" hidden="false" type="profile" id="42f7-ef39-1a76-bab8" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="52b-9911-3c81-2da4">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="d07f-d23d-d7b5-a5ee" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2846,11 +3138,7 @@ with Arcane Bodkins has an AP of -2.</characteristic>
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="59bc-5be0-8073-9049" primary="true" name="Core"/>
         <categoryLink targetId="600c-7d08-5be1-fe0c" id="7600-e882-aedc-feae" primary="false" name="Light Cavalry"/>
-        <categoryLink targetId="7913-acb6-d065-2dab" id="abd5-967b-b32a-f525" primary="false" name="DRILLED UPGRADE"/>
       </categoryLinks>
-      <entryLinks>
-        <entryLink import="true" name="Unit Options" hidden="false" type="selectionEntryGroup" id="465c-117b-9337-7124" targetId="ce2e-bc0f-be9b-9221" sortIndex="2"/>
-      </entryLinks>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Elven Steed" hidden="false" id="8000-e257-f686-6aa7" collective="true" subType="mount">
       <infoLinks>
@@ -3424,27 +3712,99 @@ with Arcane Bodkins has an AP of -2.</characteristic>
   </sharedSelectionEntries>
   <entryLinks>
     <entryLink import="true" name="Dryads" hidden="false" type="selectionEntry" id="475-520e-7960-9410" targetId="1ae5-ebd2-c2f0-74da"/>
-    <entryLink import="true" name="Glade Guard" hidden="false" type="selectionEntry" id="4aaa-8b49-81fa-859d" targetId="886b-7a97-d451-3f0c"/>
-    <entryLink import="true" name="Glade Lord" hidden="false" type="selectionEntry" id="6cf2-ab8a-edb5-2fe9" targetId="3923-9999-f3e2-9245"/>
+    <entryLink import="true" name="Glade Guard" hidden="false" type="selectionEntry" id="4aaa-8b49-81fa-859d" targetId="886b-7a97-d451-3f0c">
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="roster" shared="true" id="b9d9-ec20-75d7-185a" includeChildSelections="true"/>
+      </constraints>
+    </entryLink>
+    <entryLink import="true" name="Glade Lord" hidden="false" type="selectionEntry" id="6cf2-ab8a-edb5-2fe9" targetId="3923-9999-f3e2-9245">
+      <categoryLinks>
+        <categoryLink name="Lord" hidden="false" id="d1a2-57d6-b1f0-5d28" targetId="331e-3a37-38cb-23d2" primary="false"/>
+      </categoryLinks>
+    </entryLink>
     <entryLink import="true" name="Eternal Guard" hidden="false" type="selectionEntry" id="8538-cdff-3de9-7a4f" targetId="d3d1-dd14-80c2-840e"/>
     <entryLink import="true" name="Treemen" hidden="false" type="selectionEntry" id="8ec7-c8f2-d94f-2eb5" targetId="226a-c7c5-2a68-5f72"/>
     <entryLink import="true" name="Wardancers" hidden="false" type="selectionEntry" id="c6c1-4fad-5477-e824" targetId="4a01-6b67-783-6d3a"/>
-    <entryLink import="true" name="Tree Kin" hidden="false" type="selectionEntry" id="6d53-f8ec-6498-9f9c" targetId="ff64-94cc-3afd-5333"/>
-    <entryLink import="true" name="Deepwood Scouts" hidden="false" type="selectionEntry" id="fb36-3be-b8a3-1fe3" targetId="9264-289b-db3a-5b8d"/>
+    <entryLink import="true" name="Tree Kin" hidden="false" type="selectionEntry" id="6d53-f8ec-6498-9f9c" targetId="ff64-94cc-3afd-5333">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="1f1a-7edb-564d-25a2" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="2" field="1f1a-7edb-564d-25a2">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="e71a-4edb-767c-a710"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Deepwood Scouts" hidden="false" type="selectionEntry" id="fb36-3be-b8a3-1fe3" targetId="9264-289b-db3a-5b8d">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="4737-63e8-a68f-c7ba" targetId="633f-f67a-1b6a-d203" primary="false"/>
+      </categoryLinks>
+    </entryLink>
     <entryLink import="true" name="Glade Captain" hidden="false" type="selectionEntry" id="cc75-3d13-3683-1c2f" targetId="f957-3ded-9234-666f"/>
     <entryLink import="true" name="Branchwraiths" hidden="false" type="selectionEntry" id="898c-2c5b-4552-5734" targetId="4b26-6fe7-b18f-8392"/>
     <entryLink import="true" name="Spellsinger" hidden="false" type="selectionEntry" id="3260-b29b-a3b4-f5c2" targetId="8192-39b4-a938-caec"/>
-    <entryLink import="true" name="Spellweaver" hidden="false" type="selectionEntry" id="1983-72f1-846f-aede" targetId="2fbc-5442-c332-f043"/>
+    <entryLink import="true" name="Spellweaver" hidden="false" type="selectionEntry" id="1983-72f1-846f-aede" targetId="2fbc-5442-c332-f043">
+      <categoryLinks>
+        <categoryLink name="Lord" hidden="false" id="4382-dbbb-7f3c-f82" targetId="331e-3a37-38cb-23d2" primary="false"/>
+      </categoryLinks>
+    </entryLink>
     <entryLink import="true" name="Shadowdancers" hidden="false" type="selectionEntry" id="9548-175a-d19d-4f24" targetId="96d3-d1a9-ff94-84f6"/>
     <entryLink import="true" name="Waystalkers" hidden="false" type="selectionEntry" id="1983-2db2-a1e9-1a36" targetId="4fdd-d23b-8a59-56db"/>
-    <entryLink import="true" name="Treemen Ancients" hidden="false" type="selectionEntry" id="3722-55f5-d24-2cc2" targetId="2cc9-e0e8-dd72-422a"/>
+    <entryLink import="true" name="Treemen Ancients" hidden="false" type="selectionEntry" id="3722-55f5-d24-2cc2" targetId="2cc9-e0e8-dd72-422a">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="b7ef-9af9-865f-5f12" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="b7ef-9af9-865f-5f12">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="48f2-64b-f5c5-8920"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </entryLink>
     <entryLink import="true" name="Glade Riders" hidden="false" type="selectionEntry" id="c80d-57d7-e7cb-3c2e" targetId="b811-3815-bff1-1680"/>
     <entryLink import="true" name="Warhawk Riders" hidden="false" type="selectionEntry" id="7b51-92f4-72b9-a5c6" targetId="f701-8966-f816-10c8"/>
     <entryLink import="true" name="Wildwood Rangers" hidden="false" type="selectionEntry" id="2f11-1136-9c37-7ffa" targetId="d37c-a95d-615e-71d9"/>
     <entryLink import="true" name="Wild Riders" hidden="false" type="selectionEntry" id="c8ee-228f-f211-54cf" targetId="3f3d-ccd8-ad95-1750"/>
-    <entryLink import="true" name="Waywatchers" hidden="false" type="selectionEntry" id="2aac-1f4-31b8-2c66" targetId="a167-14b-f89a-2f11"/>
+    <entryLink import="true" name="Waywatchers" hidden="false" type="selectionEntry" id="2aac-1f4-31b8-2c66" targetId="a167-14b-f89a-2f11">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="9401-3036-b2d8-1bbc" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="9401-3036-b2d8-1bbc">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="roster" childId="1983-2db2-a1e9-1a36" shared="true" roundUp="false" id="9a1b-6889-4f64-a360" includeChildSelections="true"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </entryLink>
     <entryLink import="true" name="Sisters Of The Thorn" hidden="false" type="selectionEntry" id="ab94-1cf1-ee29-1bd0" targetId="7424-2365-3deb-fb13"/>
-    <entryLink import="true" name="Great Eagles" hidden="false" type="selectionEntry" id="879a-689f-6804-dce4" targetId="db57-f9aa-42fe-a3bd"/>
+    <entryLink import="true" name="Great Eagles" hidden="false" type="selectionEntry" id="879a-689f-6804-dce4" targetId="db57-f9aa-42fe-a3bd">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="9120-62ac-9be0-fd3" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="3" field="9120-62ac-9be0-fd3">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="89c7-3500-e855-c80b"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Deepwood Scouts" hidden="false" type="selectionEntry" id="b940-5b75-2113-ecc1" targetId="9264-289b-db3a-5b8d">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="2a04-3e8b-cce8-5538" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="2a04-3e8b-cce8-5538">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="58ca-403-6cc5-7a5a"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </entryLink>
   </entryLinks>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
   <sharedSelectionEntryGroups>
