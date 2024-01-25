@@ -47,6 +47,7 @@ check = (cats) => {
         if (name === "virtues") return 52;
         if (name === "wizard level") return 53;
         if (name === "lore of magic") return 54;
+        if (name === "lores of magic") return 54;
         if (name.includes("weapon")) return 60;
         if (name.includes("armour")) return 70;
         if (name.includes("equipment")) return 80;
