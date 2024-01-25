@@ -212,7 +212,7 @@ Note that if a model uses a weapon that has the Requires To Hands special rule i
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule may re-roll any failed rolls To Hit made against a hatred enemy during the first round of combat.
 
-Which enemies are hated varies from model to model and will be shown in brackets after the name of this special rule (X). Some models hate &apos;all enemies&apos; meaning they hate all enemy models equally.</characteristic>
+Which enemies are hated varies from model to model and will be shown in brackets after the name of this special rule. Some models hate &apos;all enemies&apos; meaning they hate all enemy models equally.</characteristic>
       </characteristics>
     </profile>
     <profile name="Magic Resistance" hidden="false" id="90ed-c9be-a611-79cc" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
@@ -346,14 +346,14 @@ Losing Frenzy: Unlike other special rules, Frenzy can be lost during a game. Any
     </profile>
     <profile name="Armour Bane" hidden="false" id="2af0-975f-bb14-8b8f" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">If a model with this special rule rolls a natural 6 when making a roll To Wound, the Armour Piercing characteristic of its weapon is improved by the amount shown in brackets after the name of this special rule (X).
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">If a model with this special rule rolls a natural 6 when making a roll To Wound, the Armour Piercing characteristic of its weapon is improved by the amount shown in brackets after the name of this special rule.
 
 For example, if a natural 6 is rolled when rolling To Wound with a weapon that has an AP of &quot;-&quot; and the Armour Bane (1) special rule its AP counts as being -1 when making an Armour Save roll against that wound.</characteristic>
       </characteristics>
     </profile>
     <profile name="Armour Hide" hidden="false" id="5450-cbf1-3e74-254a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">The hide of some creatures forms natural armour and improves their armour value ( and that of their rider). By how much armour value is improved varies from model to model, as shown in brackets after the name of this special rule (X).
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">The hide of some creatures forms natural armour and improves their armour value ( and that of their rider). By how much armour value is improved varies from model to model, as shown in brackets after the name of this special rule.
 
 Note that a model that wears no armour is considerer to have an armour value of 7+ for the purposes of rules that improve armour value.</characteristic>
       </characteristics>
@@ -452,7 +452,7 @@ Unless otherwise stated, a model with this special rule makes Flaming attacks bo
     </profile>
     <profile name="Fly" hidden="false" id="c557-6102-9a35-bbcd" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule can Fly. Models that can Fly can choose wither to move normally on the ground (using their Movement characteristic), or to move by flying. How many inches a model can Fly varies from model to model, and will be shown in brackets after the name of this special rule (X). Models tat choose to move by flying:
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule can Fly. Models that can Fly can choose wither to move normally on the ground (using their Movement characteristic), or to move by flying. How many inches a model can Fly varies from model to model, and will be shown in brackets after the name of this special rule. Models tat choose to move by flying:
 
 - May move as normal (i.e. they may charge, march and manoeuvre as if moving on the ground), except that they are able to pass freely above other models, units and terrain features without any penalty, and they can march whilst within 8&quot; of an enemy unit without first having to make a Leadership test.
 
@@ -527,7 +527,7 @@ In combat, each handler adds its attacks to those of the monster. If the monster
     </profile>
     <profile name="Impact Hits" hidden="false" id="5c2-e9dd-2715-a0c0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">The number of Impact Hits caused varies from model to model, and will be shown in brackets after the name of this special rile (X). Often, this is determined by the roll of a dice.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">The number of Impact Hits caused varies from model to model, and will be shown in brackets after the name of this special rile. Often, this is determined by the roll of a dice.
 
 Resolving Impact Hits: Impact Hits can only be made by a charging model that moved 3&quot; or more and that is in base contact with the enemy. Impact hits are attacks made in combat that always strike at Initiative 10 (regardless of modifiers), and that hit automatically using the unmodified Strength characteristic of the model.</characteristic>
       </characteristics>
@@ -573,7 +573,7 @@ Casualty Removal: Against enemy shooting, casualty removal should be divided as 
     </profile>
     <profile name="Multiple Wounds" hidden="false" id="e3d3-a090-9e2-b276" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Each unsaved wound inflicted by an attack with this special rule is multiplied by the number shown in brackets after the name of this special rule (X). For example, Multiple Wounds (2) would mean that each unsaved wound would cause the target to lose two Wounds. Where the number of Multiple Wounds is generated by a dice roll, roll separately for each unsaved wound.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Each unsaved wound inflicted by an attack with this special rule is multiplied by the number shown in brackets after the name of this special rule. For example, Multiple Wounds (2) would mean that each unsaved wound would cause the target to lose two Wounds. Where the number of Multiple Wounds is generated by a dice roll, roll separately for each unsaved wound.
 
 Note that excess wounds caused to a model will have no additional effect unless that model is a character, in which case this special rule counts for Overkill. Excess wounds do not &apos;spill over&apos; onto other models in the unit.</characteristic>
       </characteristics>
@@ -585,7 +585,7 @@ Note that excess wounds caused to a model will have no additional effect unless 
     </profile>
     <profile name="Multiple Shots" hidden="false" id="11ef-2de2-ef4c-dc56" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A weapon with this special rule can either fire a single shot as normal, or it can be fired a number of times, as shown in brackets after the name of this special rule (X). If multiple shots are fired, each roll To Hit suffers an additional -1 To Hit modifier. All models in a unit equipped with weapons with this special rule must fire either a single or Multiple Shots. Where the number of Multiple Shots is generated by a dice roll, roll separately for each model.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A weapon with this special rule can either fire a single shot as normal, or it can be fired a number of times, as shown in brackets after the name of this special rule. If multiple shots are fired, each roll To Hit suffers an additional -1 To Hit modifier. All models in a unit equipped with weapons with this special rule must fire either a single or Multiple Shots. Where the number of Multiple Shots is generated by a dice roll, roll separately for each model.</characteristic>
       </characteristics>
     </profile>
     <profile name="Poisoned Attacks" hidden="false" id="81f5-4895-4abc-fc39" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="175" publicationId="768b-3da1-a182-a1d8">
@@ -630,7 +630,7 @@ Note that models with this special rule are often vulnerable to the Flaming Atta
     </profile>
     <profile name="Stomp Attacks" hidden="false" id="72db-24bb-7493-d753" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">The number of Stomp Attacks caused varies from model to model and will be shown in brackets after the name of this special rule (X). Often, this is determined by the roll of a dice.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">The number of Stomp Attacks caused varies from model to model and will be shown in brackets after the name of this special rule. Often, this is determined by the roll of a dice.
 
 Resolving Stomp Attacks: Stomp Attacks can only be made by a model that is in base contact with the enemy. Stomp Attacks are attacks made in combat that always strike at Initiative 1 (regardless of modifiers) and that hit automatically using the unmodified Strength characteristic of the model.</characteristic>
       </characteristics>
