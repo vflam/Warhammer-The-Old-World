@@ -985,6 +985,11 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
 Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Cannon Fire’ special rule. This weapon uses the Black Powder Misfire table. Special Rules: Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3=1)</characteristic>
       </characteristics>
     </profile>
+    <profile name="Troll Vomit" hidden="false" id="2007-796b-3c57-ec28" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">S3 AP-2 A Chaos Troll that is in base contact with an enemy model may make one additional attack each turn with this weapon. This attack must be made last, after all other attacks have been made (including Stomp Attacks), but hits automatically.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -1407,6 +1412,11 @@ Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, 
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="da38-15ce-46fb-c2b"/>
       </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Troll Vomit" hidden="false" id="5e23-1f49-abbd-f7a5" collective="true">
+      <infoLinks>
+        <infoLink name="Troll Vomit" hidden="false" type="profile" id="7833-c8ab-bb04-7d5d" targetId="2007-796b-3c57-ec28"/>
+      </infoLinks>
     </selectionEntry>
   </sharedSelectionEntries>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
