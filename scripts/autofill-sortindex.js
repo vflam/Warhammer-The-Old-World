@@ -53,7 +53,7 @@ check = (cats) => {
         if (name.includes("equipment")) return 80;
         if (name.includes("item")) return 90;
         if (name.includes("options")) return 100;
-        return 11;
+        return 20000;
       }
       default:
         return undefined;
