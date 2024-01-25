@@ -778,7 +778,7 @@ Champions can issue and accept challenges in the same manner as a character.</c
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
     </profile>
-    <profile name="Bolt thrower" hidden="false" id="36e4-28b4-31ff-39dc" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="223" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Bolt Thrower" hidden="false" id="36e4-28b4-31ff-39dc" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="223" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot;	S: 6	AP: -3	Special Rules: Cumbersome, Move or Shoot, Multiple Wounds (2), Through &amp; Through</characteristic>
       </characteristics>
@@ -800,7 +800,7 @@ Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, 
 Notes: This weapon uses the Black Powder Misfire table.	Special Rules: Armour Bane (2), Cumbersome, Move or Shoot, Multi-Barrelled</characteristic>
       </characteristics>
     </profile>
-    <profile name="Fire thrower" hidden="false" id="2694-34f1-f146-6351" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="229" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Fire Thrower" hidden="false" id="2694-34f1-f146-6351" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="229" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot;	S: 5	AP: -1	
 Notes: Fire throwers do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Column of Fire’ special rule. This weapon uses the Black Powder Misfire table.	Special Rules: Column of Fire, Cumbersome, Flaming Attacks, Move or Shoot</characteristic>
