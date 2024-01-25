@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="46" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="47" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -974,6 +974,17 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
 “Hold Your Ground”: To represent the Battle Standard’s steadying presence, unless your Battle Standard Bearer is fleeing, friendly units within the Battle Standard Bearer’s Command range may re-roll any failed Panic or Rally test. In addition, friendly units within the Battle Standard Bearer’s Command range may re-roll the 2D6 when making a Break test. However, you must accept the result of the second roll, even if it is worse than the first.</characteristic>
       </characteristics>
     </profile>
+    <profile name="Repeater Bolt Thrower" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" hidden="false" id="3f5c-8185-3494-86c1">
+      <characteristics>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot; S: 4 AP: -1 Special Rules: Armour Bane (1), Cumbersome, Move or Shoot, Multiple Shots(D3+3)</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Great Cannon" hidden="false" id="ae36-d4c3-eaf5-198b" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="226" publicationId="768b-3da1-a182-a1d8">
+      <characteristics>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 60&quot; S: 10 AP: -3
+Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Cannon Fire’ special rule. This weapon uses the Black Powder Misfire table. Special Rules: Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3=1)</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -1380,6 +1391,22 @@ Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance c
       <infoLinks>
         <infoLink name="Battle Standard Bearer" hidden="false" type="profile" id="8b9c-a19b-3dae-69a9" targetId="da9a-f205-577f-debb"/>
       </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Repeater Bolt Thrower" hidden="false" id="acc3-8d86-f430-1a84" collective="true">
+      <infoLinks>
+        <infoLink name="Repeater Bolt Thrower Rapid Fire" hidden="false" type="profile" id="ac2b-8f84-5870-2886" targetId="3f5c-8185-3494-86c1"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="95b-b7e5-5d46-1477"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Great Cannon" hidden="false" id="bf51-36a8-ee12-ad8b" collective="true">
+      <infoLinks>
+        <infoLink name="Great Cannon" hidden="false" type="profile" id="1fcd-59ec-c256-a03a" targetId="ae36-d4c3-eaf5-198b"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="da38-15ce-46fb-c2b"/>
+      </constraints>
     </selectionEntry>
   </sharedSelectionEntries>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
