@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="56fb-835b-a377-6639" name="High Elf Realms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="34" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="56fb-835b-a377-6639" name="High Elf Realms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="35" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Sons of Caledor" hidden="false" id="2f86-a9f-38aa-d39a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="170" publicationId="8b8d-8fc4-559e-87b1">
       <characteristics>
@@ -987,7 +987,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 </modifier>
               </modifiers>
               <costs>
-                <cost name="pts" typeId="points" value="1"/>
+                <cost name="pts" typeId="points" value="0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -1053,11 +1053,30 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   <costs>
                     <cost name="pts" typeId="points" value="3"/>
                   </costs>
+                  <modifiers>
+                    <modifier type="set" value="true" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="9a49-4c39-78c2-84a3" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                 </entryLink>
                 <entryLink import="true" name="Full Plate Armour" hidden="false" type="selectionEntry" id="1af-b0bf-59bb-5998" targetId="2505-873d-1655-3b0b" sortIndex="3">
                   <costs>
                     <cost name="pts" typeId="points" value="6"/>
                   </costs>
+                  <modifiers>
+                    <modifier type="set" value="true" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="9a49-4c39-78c2-84a3" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="set" value="0" field="points">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2a1d-e36c-c97d-d1cc" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                 </entryLink>
                 <entryLink import="true" name="Light armour" hidden="false" type="selectionEntry" id="b66d-91a7-ff1d-39f2" targetId="7cab-40e6-f134-de78" sortIndex="1"/>
               </entryLinks>
@@ -1067,49 +1086,130 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a714-5055-292f-3155"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="9652-95c6-1dcc-5889" targetId="8943-3e16-db2a-b7f3" sortIndex="2">
+                <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="9652-95c6-1dcc-5889" targetId="8943-3e16-db2a-b7f3" sortIndex="5">
                   <costs>
                     <cost name="pts" typeId="points" value="3"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Great Weapon" hidden="false" type="selectionEntry" id="43bd-9843-40e-8254" targetId="2283-26e9-76c3-6048" sortIndex="4">
+                <entryLink import="true" name="Great Weapon" hidden="false" type="selectionEntry" id="43bd-9843-40e-8254" targetId="2283-26e9-76c3-6048" sortIndex="7">
                   <costs>
                     <cost name="pts" typeId="points" value="4"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Cavalry Spear" hidden="false" type="selectionEntry" id="b044-8e24-c186-3840" targetId="a2d0-40e9-83ad-23dc" sortIndex="1">
+                <entryLink import="true" name="Cavalry Spear" hidden="false" type="selectionEntry" id="b044-8e24-c186-3840" targetId="a2d0-40e9-83ad-23dc" sortIndex="4">
                   <costs>
                     <cost name="pts" typeId="points" value="2"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Lance" hidden="false" type="selectionEntry" id="9e1c-6866-166a-bbfd" targetId="906a-c09d-9f34-a31f" sortIndex="5">
+                <entryLink import="true" name="Lance" hidden="false" type="selectionEntry" id="9e1c-6866-166a-bbfd" targetId="906a-c09d-9f34-a31f" sortIndex="8">
                   <costs>
                     <cost name="pts" typeId="points" value="4"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Halberd" hidden="false" type="selectionEntry" id="ca8b-1d2e-e236-82c0" targetId="f0a5-1b2e-3d2b-d540" sortIndex="3">
+                <entryLink import="true" name="Halberd" hidden="false" type="selectionEntry" id="ca8b-1d2e-e236-82c0" targetId="f0a5-1b2e-3d2b-d540" sortIndex="6">
                   <costs>
                     <cost name="pts" typeId="points" value="3"/>
                   </costs>
                 </entryLink>
+                <entryLink import="true" name="Ceremonial Halberd" hidden="true" id="1744-4adf-293c-32c0" type="selectionEntry" targetId="ac5-4cc7-4db-6bf6" sortIndex="1">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="37d5-3ec1-ea71-3a6e" childId="4f8b-a159-2daf-c39" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Sword of Hoeth" hidden="true" id="1b5c-ca55-6cdc-9f31" type="selectionEntry" targetId="bf6c-15a2-f4e5-1e35" sortIndex="3">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="parent" childId="9d73-8b92-a803-60b2" shared="true" includeChildSelections="true"/>
+                            <condition type="atLeast" value="1" field="selections" scope="parent" childId="b627-5afc-99ba-128d" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Chracian Great Blade" hidden="true" id="f370-b157-b508-c509" type="selectionEntry" targetId="b68-de5a-9fec-334e" sortIndex="2">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="b949-39c9-4368-b7cc" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="37d5-3ec1-ea71-3a6e" childId="244d-ff04-bdc1-56b8" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="37d5-3ec1-ea71-3a6e" childId="bf6c-15a2-f4e5-1e35" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="37d5-3ec1-ea71-3a6e" childId="9a49-4c39-78c2-84a3" shared="true" includeChildSelections="true"/>
+                            <condition type="atLeast" value="1" field="selections" scope="37d5-3ec1-ea71-3a6e" childId="a96e-2f87-3c0-682d" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Ranged Weapon" hidden="false" id="69f3-359b-e8c1-948e" sortIndex="9">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e4fd-19c6-3afd-7720"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="Bow of Avelorn" hidden="false" type="selectionEntry" id="19b7-91dd-6476-ff9e" targetId="21cc-d9b1-b466-e0" sortIndex="2">
+                <entryLink import="true" name="Bow of Avelorn" hidden="false" type="selectionEntry" id="19b7-91dd-6476-ff9e" targetId="21cc-d9b1-b466-e0" sortIndex="3">
                   <costs>
                     <cost name="pts" typeId="points" value="12"/>
                   </costs>
+                  <modifiers>
+                    <modifier type="set" value="0" field="points">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="9a49-4c39-78c2-84a3" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                 </entryLink>
-                <entryLink import="true" name="Longbow" hidden="false" type="selectionEntry" id="e911-dcdb-8ff2-96ee" targetId="c0e5-968b-c467-56ba" sortIndex="1">
+                <entryLink import="true" name="Longbow" hidden="false" type="selectionEntry" id="e911-dcdb-8ff2-96ee" targetId="c0e5-968b-c467-56ba" sortIndex="2">
                   <costs>
                     <cost name="pts" typeId="points" value="4"/>
                   </costs>
                 </entryLink>
+                <entryLink import="true" name="Warbow" hidden="true" id="9a86-f80b-423c-3dd6" type="selectionEntry" targetId="244d-ff04-bdc1-56b8" sortIndex="1">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2ddc-3f0f-4cac-7ea6" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="37d5-3ec1-ea71-3a6e" childId="b68-de5a-9fec-334e" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="37d5-3ec1-ea71-3a6e" childId="ac5-4cc7-4db-6bf6" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="37d5-3ec1-ea71-3a6e" childId="bf6c-15a2-f4e5-1e35" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Mount" hidden="false" id="1e5d-8c3b-e9e7-8e03" sortIndex="5">
               <constraints>
@@ -1327,7 +1427,15 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <infoLinks>
             <infoLink name="Ithilmar Weapons" hidden="false" type="profile" id="ff7f-4066-db95-e5ce" targetId="ff10-6f2b-b0a4-9a1a"/>
             <infoLink name="Strike First" hidden="false" type="profile" id="dcc1-1056-efed-f387" targetId="48fd-23c1-c0d5-ae1d"/>
-            <infoLink name="Valour of Ages" hidden="false" type="profile" id="7d51-c4ee-95d3-7825" targetId="6731-240-f75b-dcac"/>
+            <infoLink name="Valour of Ages" hidden="false" type="profile" id="7d51-c4ee-95d3-7825" targetId="6731-240-f75b-dcac">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4f8b-a159-2daf-c39" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -1378,7 +1486,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="26de-4988-a100-c7d4"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="205c-fca6-abe2-d92b" targetId="1539-fd78-88f-badd" sortIndex="6">
+            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="205c-fca6-abe2-d92b" targetId="1539-fd78-88f-badd" sortIndex="8">
               <constraints>
                 <constraint type="max" value="100" field="points" scope="parent" shared="false" id="ce98-1c6c-6a3d-e01e"/>
               </constraints>
@@ -1393,7 +1501,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             <cost name="pts" typeId="points" value="155"/>
           </costs>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Lores of Magic" hidden="false" id="9f42-ee5c-b479-1a08" sortIndex="7">
+            <selectionEntryGroup name="Lores of Magic" hidden="false" id="9f42-ee5c-b479-1a08" sortIndex="9">
               <entryLinks>
                 <entryLink import="true" name="Battle Magic" hidden="false" type="selectionEntry" id="f17a-a513-8b6b-272c" targetId="5b2e-35c6-f987-741e" sortIndex="1"/>
                 <entryLink import="true" name="High Magic" hidden="false" type="selectionEntry" id="fc6c-bc96-6c47-d11b" targetId="4cfb-44af-33d9-1b41" sortIndex="3"/>
@@ -1604,6 +1712,73 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="18b6-87f2-3a89-6b6a" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Weapons" hidden="false" id="44d7-e413-ee76-8154" sortIndex="6">
+              <entryLinks>
+                <entryLink import="true" name="Bow of Avelorn" hidden="true" id="ba41-f4d7-9098-f2e" type="selectionEntry" targetId="21cc-d9b1-b466-e0" sortIndex="1">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="9a49-4c39-78c2-84a3" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Ceremonial Halberd" hidden="true" id="9140-6000-5d92-6b74" type="selectionEntry" targetId="ac5-4cc7-4db-6bf6" sortIndex="2">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="4f8b-a159-2daf-c39" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Chracian Great Blade" hidden="true" id="2d18-89a4-a618-3dcc" type="selectionEntry" targetId="b68-de5a-9fec-334e" sortIndex="3">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="b949-39c9-4368-b7cc" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Sword of Hoeth" hidden="true" id="242e-b429-4b58-9957" type="selectionEntry" targetId="bf6c-15a2-f4e5-1e35" sortIndex="4">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="parent" childId="9d73-8b92-a803-60b2" shared="true" includeChildSelections="true"/>
+                            <condition type="atLeast" value="1" field="selections" scope="parent" childId="b627-5afc-99ba-128d" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Warbow" hidden="true" id="bdce-33d7-8282-7236" type="selectionEntry" targetId="244d-ff04-bdc1-56b8" sortIndex="5">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2ddc-3f0f-4cac-7ea6" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Armour" hidden="false" id="518a-8b3e-a2d5-d8d3" sortIndex="7">
+              <entryLinks>
+                <entryLink import="true" name="Full Plate Armour" hidden="true" id="daf0-45ae-7c27-8dcb" type="selectionEntry" targetId="2505-873d-1655-3b0b">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="c0b9-dfe0-7a7e-167" childId="2a1d-e36c-c97d-d1cc" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
@@ -1613,7 +1788,15 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             <infoLink name="Elven Reflexes" hidden="false" type="profile" id="7968-db7b-7757-17de" targetId="f18f-50f-3108-1486"/>
             <infoLink name="Ithilmar Weapons" hidden="false" type="profile" id="b5c9-6ed4-2d20-74d8" targetId="ff10-6f2b-b0a4-9a1a"/>
             <infoLink name="Lileath&apos;s Blessing" hidden="false" type="profile" id="b8f3-a8df-4f4-7e78" targetId="a7af-d5ea-928a-6134"/>
-            <infoLink name="Valour of Ages" hidden="false" type="profile" id="8c9-cfb5-e667-8124" targetId="6731-240-f75b-dcac"/>
+            <infoLink name="Valour of Ages" hidden="false" type="profile" id="8c9-cfb5-e667-8124" targetId="6731-240-f75b-dcac">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4f8b-a159-2daf-c39" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Lore of Saphery" hidden="false" type="profile" id="46cf-5df7-8b43-13c" targetId="ab46-ca53-931e-a0e1"/>
           </infoLinks>
         </infoGroup>
@@ -1662,58 +1845,130 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="13d2-e6ae-3a76-a5ce"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="864c-8be2-5f32-86d0" targetId="8943-3e16-db2a-b7f3" sortIndex="3">
+                <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="864c-8be2-5f32-86d0" targetId="8943-3e16-db2a-b7f3" sortIndex="5">
                   <costs>
                     <cost name="pts" typeId="points" value="3"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Great Weapon" hidden="false" type="selectionEntry" id="def6-f7bd-7c8c-3739" targetId="2283-26e9-76c3-6048" sortIndex="5">
+                <entryLink import="true" name="Great Weapon" hidden="false" type="selectionEntry" id="def6-f7bd-7c8c-3739" targetId="2283-26e9-76c3-6048" sortIndex="7">
                   <costs>
                     <cost name="pts" typeId="points" value="4"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Cavalry Spear" hidden="false" type="selectionEntry" id="9efd-5a68-54f0-f0cf" targetId="a2d0-40e9-83ad-23dc" sortIndex="2">
+                <entryLink import="true" name="Cavalry Spear" hidden="false" type="selectionEntry" id="9efd-5a68-54f0-f0cf" targetId="a2d0-40e9-83ad-23dc" sortIndex="4">
                   <costs>
                     <cost name="pts" typeId="points" value="2"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Lance" hidden="false" type="selectionEntry" id="32c0-9b24-6dcd-5fe0" targetId="906a-c09d-9f34-a31f" sortIndex="6">
+                <entryLink import="true" name="Lance" hidden="false" type="selectionEntry" id="32c0-9b24-6dcd-5fe0" targetId="906a-c09d-9f34-a31f" sortIndex="8">
                   <costs>
                     <cost name="pts" typeId="points" value="4"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Halberd" hidden="false" type="selectionEntry" id="f037-d4ef-ba62-a16b" targetId="f0a5-1b2e-3d2b-d540" sortIndex="4">
+                <entryLink import="true" name="Halberd" hidden="false" type="selectionEntry" id="f037-d4ef-ba62-a16b" targetId="f0a5-1b2e-3d2b-d540" sortIndex="6">
                   <costs>
                     <cost name="pts" typeId="points" value="3"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Sword of Hoeth" hidden="true" id="66ef-8f39-b2fe-7862" type="selectionEntry" targetId="bf6c-15a2-f4e5-1e35" sortIndex="1">
+                <entryLink import="true" name="Sword of Hoeth" hidden="true" id="66ef-8f39-b2fe-7862" type="selectionEntry" targetId="bf6c-15a2-f4e5-1e35" sortIndex="3">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="917e-4846-1500-c216" childId="9d73-8b92-a803-60b2" shared="true" includeChildSelections="true"/>
+                            <condition type="atLeast" value="1" field="selections" scope="917e-4846-1500-c216" childId="b627-5afc-99ba-128d" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Ceremonial Halberd" hidden="true" id="acb7-78-b0c0-2c0c" type="selectionEntry" targetId="ac5-4cc7-4db-6bf6" sortIndex="1">
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="917e-4846-1500-c216" childId="b627-5afc-99ba-128d" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="917e-4846-1500-c216" childId="4f8b-a159-2daf-c39" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Chracian Great Blade" hidden="true" id="745d-7142-dc99-6234" type="selectionEntry" targetId="b68-de5a-9fec-334e" sortIndex="2">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="b949-39c9-4368-b7cc" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="917e-4846-1500-c216" childId="244d-ff04-bdc1-56b8" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="917e-4846-1500-c216" childId="bf6c-15a2-f4e5-1e35" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="917e-4846-1500-c216" childId="9a49-4c39-78c2-84a3" shared="true" includeChildSelections="true"/>
+                            <condition type="atLeast" value="1" field="selections" scope="917e-4846-1500-c216" childId="9a49-4c39-78c2-84a3" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Ranged Weapon" hidden="false" id="f25f-b99a-9b5d-a977" sortIndex="9">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="57ea-7289-f451-f966"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="Bow of Avelorn" hidden="false" type="selectionEntry" id="a96e-2f87-3c0-682d" targetId="21cc-d9b1-b466-e0" sortIndex="2">
+                <entryLink import="true" name="Bow of Avelorn" hidden="false" type="selectionEntry" id="a96e-2f87-3c0-682d" targetId="21cc-d9b1-b466-e0" sortIndex="3">
                   <costs>
                     <cost name="pts" typeId="points" value="12"/>
                   </costs>
+                  <modifiers>
+                    <modifier type="set" value="0" field="points">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="9a49-4c39-78c2-84a3" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                 </entryLink>
-                <entryLink import="true" name="Longbow" hidden="false" type="selectionEntry" id="6904-a704-d554-9d33" targetId="c0e5-968b-c467-56ba" sortIndex="1">
+                <entryLink import="true" name="Longbow" hidden="false" type="selectionEntry" id="6904-a704-d554-9d33" targetId="c0e5-968b-c467-56ba" sortIndex="2">
                   <costs>
                     <cost name="pts" typeId="points" value="4"/>
                   </costs>
                 </entryLink>
+                <entryLink import="true" name="Warbow" hidden="true" id="19d5-30cd-782a-b8d1" type="selectionEntry" targetId="244d-ff04-bdc1-56b8" sortIndex="1">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2ddc-3f0f-4cac-7ea6" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="917e-4846-1500-c216" childId="b68-de5a-9fec-334e" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="917e-4846-1500-c216" childId="ac5-4cc7-4db-6bf6" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="917e-4846-1500-c216" childId="bf6c-15a2-f4e5-1e35" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Armour" hidden="false" id="4103-a347-7ddb-2779" sortIndex="6" defaultSelectionEntryId="5064-16ed-e507-6914">
               <constraints>
@@ -1725,11 +1980,30 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   <costs>
                     <cost name="pts" typeId="points" value="3"/>
                   </costs>
+                  <modifiers>
+                    <modifier type="set" value="true" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="9a49-4c39-78c2-84a3" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                 </entryLink>
                 <entryLink import="true" name="Full Plate Armour" hidden="false" type="selectionEntry" id="ba28-edc1-6b5d-26a1" targetId="2505-873d-1655-3b0b" sortIndex="3">
                   <costs>
                     <cost name="pts" typeId="points" value="6"/>
                   </costs>
+                  <modifiers>
+                    <modifier type="set" value="true" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="9a49-4c39-78c2-84a3" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="set" value="0" field="points">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2a1d-e36c-c97d-d1cc" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                 </entryLink>
                 <entryLink import="true" name="Light armour" hidden="false" type="selectionEntry" id="5064-16ed-e507-6914" targetId="7cab-40e6-f134-de78" sortIndex="1"/>
               </entryLinks>
@@ -1975,7 +2249,20 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <infoLinks>
             <infoLink name="Ithilmar Weapons" hidden="false" type="profile" id="6c3a-f44-561f-c7f8" targetId="ff10-6f2b-b0a4-9a1a"/>
             <infoLink name="Strike First" hidden="false" type="profile" id="bc8a-2c7b-c95e-e6a1" targetId="48fd-23c1-c0d5-ae1d"/>
-            <infoLink name="Valour of Ages" hidden="false" type="profile" id="b097-4cbe-b714-c768" targetId="6731-240-f75b-dcac"/>
+            <infoLink name="Valour of Ages" hidden="false" type="profile" id="b097-4cbe-b714-c768" targetId="6731-240-f75b-dcac">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4f8b-a159-2daf-c39" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4f8b-a159-2daf-c39" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -2211,7 +2498,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="e286-20a2-649b-3dc9"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="dca9-e49e-bbfe-b9e3" targetId="1539-fd78-88f-badd" sortIndex="6">
+            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="dca9-e49e-bbfe-b9e3" targetId="1539-fd78-88f-badd" sortIndex="8">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="c1dd-9774-5fbb-2f18"/>
               </constraints>
@@ -2226,7 +2513,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             <cost name="pts" typeId="points" value="70"/>
           </costs>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Lores of Magic" hidden="false" id="64b6-24a5-6eee-ee3a" sortIndex="7">
+            <selectionEntryGroup name="Lores of Magic" hidden="false" id="64b6-24a5-6eee-ee3a" sortIndex="9">
               <entryLinks>
                 <entryLink import="true" name="Battle Magic" hidden="false" type="selectionEntry" id="347a-44cc-2cad-6066" targetId="5b2e-35c6-f987-741e" sortIndex="1"/>
                 <entryLink import="true" name="High Magic" hidden="false" type="selectionEntry" id="374e-11ad-2e7a-2cb1" targetId="4cfb-44af-33d9-1b41" sortIndex="3"/>
@@ -2401,6 +2688,73 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="1066-bfe8-904c-ca7b" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Weapons" hidden="false" id="897c-e94b-5b9a-4900" sortIndex="6">
+              <entryLinks>
+                <entryLink import="true" name="Bow of Avelorn" hidden="true" id="a897-b921-9d4c-dd5c" type="selectionEntry" targetId="21cc-d9b1-b466-e0" sortIndex="1">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="9a49-4c39-78c2-84a3" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Ceremonial Halberd" hidden="true" id="28c6-5735-c459-399b" type="selectionEntry" targetId="ac5-4cc7-4db-6bf6" sortIndex="2">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="4f8b-a159-2daf-c39" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Chracian Great Blade" hidden="true" id="4ff6-fc71-f9cc-48da" type="selectionEntry" targetId="b68-de5a-9fec-334e" sortIndex="3">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="b949-39c9-4368-b7cc" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Sword of Hoeth" hidden="true" id="d668-6897-95f2-f9cc" type="selectionEntry" targetId="bf6c-15a2-f4e5-1e35" sortIndex="4">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="parent" childId="9d73-8b92-a803-60b2" shared="true" includeChildSelections="true"/>
+                            <condition type="atLeast" value="1" field="selections" scope="parent" childId="b627-5afc-99ba-128d" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Warbow" hidden="true" id="972c-efbb-c54b-1eea" type="selectionEntry" targetId="244d-ff04-bdc1-56b8" sortIndex="5">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2ddc-3f0f-4cac-7ea6" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Armour" hidden="false" id="7e41-f133-60f0-8a01" sortIndex="7">
+              <entryLinks>
+                <entryLink import="true" name="Full Plate Armour" hidden="true" id="2f47-c437-a3ee-b33f" type="selectionEntry" targetId="2505-873d-1655-3b0b">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="7c6e-11dc-9fb-1702" childId="2a1d-e36c-c97d-d1cc" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
@@ -2410,7 +2764,15 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             <infoLink name="Elven Reflexes" hidden="false" type="profile" id="d8a6-fa2a-a3e5-c91d" targetId="f18f-50f-3108-1486"/>
             <infoLink name="Ithilmar Weapons" hidden="false" type="profile" id="16e3-79cc-d5ba-4a56" targetId="ff10-6f2b-b0a4-9a1a"/>
             <infoLink name="Lileath&apos;s Blessing" hidden="false" type="profile" id="2bd3-62a4-dcd-97bb" targetId="a7af-d5ea-928a-6134"/>
-            <infoLink name="Valour of Ages" hidden="false" type="profile" id="903a-f127-d978-120c" targetId="6731-240-f75b-dcac"/>
+            <infoLink name="Valour of Ages" hidden="false" type="profile" id="903a-f127-d978-120c" targetId="6731-240-f75b-dcac">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="4f8b-a159-2daf-c39" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Lore of Saphery" hidden="false" type="profile" id="54b-bf9d-624b-35b7" targetId="ab46-ca53-931e-a0e1"/>
           </infoLinks>
         </infoGroup>
@@ -2597,7 +2959,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 </modifier>
               </modifiers>
               <costs>
-                <cost name="pts" typeId="points" value="1"/>
+                <cost name="pts" typeId="points" value="0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -2784,7 +3146,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                 </modifier>
               </modifiers>
               <costs>
-                <cost name="pts" typeId="points" value="1"/>
+                <cost name="pts" typeId="points" value="0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -2821,7 +3183,11 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="63a3-ac7f-aa6c-31fe"/>
           </constraints>
           <entryLinks>
-            <entryLink import="true" name="Chracian Great Blade" hidden="false" type="selectionEntry" id="f4e0-46ae-5d80-4462" targetId="b68-de5a-9fec-334e" sortIndex="1" collective="true"/>
+            <entryLink import="true" name="Chracian Great Blade" hidden="false" type="selectionEntry" id="f4e0-46ae-5d80-4462" targetId="b68-de5a-9fec-334e" sortIndex="1" collective="true">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a010-4b59-cdd1-74c9"/>
+              </constraints>
+            </entryLink>
             <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="5276-4674-5d48-b4e5" targetId="721d-36e3-388a-c0d6" sortIndex="2">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="465d-446c-2b4f-a803"/>
@@ -2956,7 +3322,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Chracian Great Blade" hidden="false" id="b68-de5a-9fec-334e" collective="true">
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ca06-acf4-cb3f-163e"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7715-6f30-4fe2-c38b"/>
       </constraints>
       <infoLinks>
@@ -2965,7 +3330,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Ceremonial Halberd" hidden="false" id="ac5-4cc7-4db-6bf6" collective="false">
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="dd56-33b7-44d6-cc79"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="83d9-ac40-2733-5ada"/>
       </constraints>
       <infoLinks>
@@ -3136,7 +3500,11 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="6092-5540-b4d1-253a"/>
           </constraints>
           <entryLinks>
-            <entryLink import="true" name="Ceremonial Halberd" hidden="false" type="selectionEntry" id="3d9e-a8c8-7f52-bdc7" targetId="ac5-4cc7-4db-6bf6" sortIndex="1" collective="true"/>
+            <entryLink import="true" name="Ceremonial Halberd" hidden="false" type="selectionEntry" id="3d9e-a8c8-7f52-bdc7" targetId="ac5-4cc7-4db-6bf6" sortIndex="1" collective="true">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ae8b-6a2b-c1cf-ea67"/>
+              </constraints>
+            </entryLink>
             <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="b092-4856-9ce3-2bce" targetId="721d-36e3-388a-c0d6" sortIndex="3" collective="true">
               <constraints>
                 <constraint type="min" value="1" scope="parent" field="selections" shared="true" id="82b3-1912-47b1-d752"/>
@@ -3715,9 +4083,14 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                     <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="cc0c-5b2a-fc80-1446" includeChildSelections="true"/>
                   </repeats>
                 </modifier>
+                <modifier type="increment" value="2" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="d9aa-7693-f14b-92ef" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
               </modifiers>
               <costs>
-                <cost name="pts" typeId="points" value="2"/>
+                <cost name="pts" typeId="points" value="0"/>
               </costs>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="false" id="ea3e-b8cb-b7e1-12cc" sortIndex="2">
@@ -3734,9 +4107,14 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                     <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="10c5-1dae-1089-a8be"/>
                   </repeats>
                 </modifier>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="5894-9b6-4102-8188" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
               </modifiers>
               <costs>
-                <cost name="pts" typeId="points" value="1"/>
+                <cost name="pts" typeId="points" value="0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -4109,7 +4487,11 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9d71-2cc2-49a0-9a3b"/>
           </constraints>
         </entryLink>
-        <entryLink import="true" name="Chracian Great Blade" hidden="false" type="selectionEntry" id="edf3-d791-da61-a5bb" targetId="b68-de5a-9fec-334e" sortIndex="1"/>
+        <entryLink import="true" name="Chracian Great Blade" hidden="false" type="selectionEntry" id="edf3-d791-da61-a5bb" targetId="b68-de5a-9fec-334e" sortIndex="1">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="124d-d1cc-411c-a89d"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Tiranoc Chariot" hidden="false" id="5df5-4e92-bff2-2cf2">
@@ -5075,6 +5457,17 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f0b7-2ce1-a660-a9fd"/>
           </constraints>
+          <infoGroups>
+            <infoGroup name="Special Rules" hidden="false" id="efb8-68f-d463-d785">
+              <infoLinks>
+                <infoLink name="Scouts" hidden="false" id="e38b-dd3f-b420-356a" type="profile" targetId="fe5e-8838-7fbd-a7ec"/>
+                <infoLink name="Ambushers" hidden="false" id="20c3-75c3-caa6-6451" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+                <infoLink name="Evasive" hidden="false" id="d5be-e960-939e-485e" type="profile" targetId="9fff-999f-6e96-e149"/>
+                <infoLink name="Fire &amp; Flee" hidden="false" id="bdcb-5b83-8aae-121" type="profile" targetId="1a06-31aa-cbfe-1a5"/>
+                <infoLink name="Move Through Cover" hidden="false" id="f570-ee2a-a45a-f8a8" type="profile" targetId="e83e-f127-1904-3858"/>
+              </infoLinks>
+            </infoGroup>
+          </infoGroups>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Anointed of Asuryan" hidden="false" id="4f8b-a159-2daf-c39" sortIndex="6">
           <costs>
@@ -5086,6 +5479,16 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fb3f-1af2-491c-3b56"/>
           </constraints>
+          <infoGroups>
+            <infoGroup name="Special Rules" hidden="false" id="1087-6a02-fee6-f16d">
+              <infoLinks>
+                <infoLink name="Witness to Destiny" hidden="false" id="328a-5c5c-955a-eb72" type="profile" targetId="acf9-cde8-e83c-c583"/>
+                <infoLink name="Veteran" hidden="false" id="e85b-29a9-dc06-f5b5" type="profile" targetId="4022-c403-b083-ba83"/>
+                <infoLink name="Blessings of Asuryan" hidden="false" id="70ab-ebd7-19a6-cfa6" type="profile" targetId="64df-8822-caec-91e8"/>
+                <infoLink name="Fear" hidden="false" id="9a3-9552-71fe-be99" type="profile" targetId="5ec9-a98-d8c5-e18b"/>
+              </infoLinks>
+            </infoGroup>
+          </infoGroups>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Blood of Caledor" hidden="false" id="2a1d-e36c-c97d-d1cc" sortIndex="7">
           <costs>
@@ -5097,6 +5500,14 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2756-222c-547-f499"/>
           </constraints>
+          <infoGroups>
+            <infoGroup name="Special Rules" hidden="false" id="1d4e-4fda-b55e-79ae">
+              <infoLinks>
+                <infoLink name="Dragon Armour" hidden="false" id="ab53-e4c7-e48-25bf" type="profile" targetId="f1fc-eaed-78ef-bc1d"/>
+                <infoLink name="Impetuous" hidden="false" id="bed2-971c-4bad-10ff" type="profile" targetId="b664-8530-a988-7ba9"/>
+              </infoLinks>
+            </infoGroup>
+          </infoGroups>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Chracian Hunter" hidden="false" id="b949-39c9-4368-b7cc" sortIndex="4">
           <costs>
@@ -5108,6 +5519,15 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f581-c83e-3d8b-efbd"/>
           </constraints>
+          <infoGroups>
+            <infoGroup name="Special Rules" hidden="false" id="3d4a-e00c-7dd2-1101">
+              <infoLinks>
+                <infoLink name="Stubborn" hidden="false" id="c278-24b3-8489-5886" type="profile" targetId="e351-bbd6-f470-b604"/>
+                <infoLink name="Lion Cloak" hidden="false" id="a2ba-14ea-90e0-1f6d" type="profile" targetId="4123-3227-347e-3b39"/>
+                <infoLink name="Move Through Cover" hidden="false" id="9158-741d-d043-7a59" type="profile" targetId="e83e-f127-1904-3858"/>
+              </infoLinks>
+            </infoGroup>
+          </infoGroups>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Warden of Saphery" hidden="false" id="9d73-8b92-a803-60b2" sortIndex="5">
           <costs>
@@ -5119,6 +5539,15 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e504-29b1-e3ef-b30f"/>
           </constraints>
+          <infoGroups>
+            <infoGroup name="Special Rules" hidden="false" id="c8bc-5c2f-764b-1125">
+              <infoLinks>
+                <infoLink name="Killing Blow" hidden="false" id="e16d-30ff-2597-4691" type="profile" targetId="860b-e13a-4710-9bf0"/>
+                <infoLink name="Deflect Shots" hidden="false" id="e22e-8244-e97-6c76" type="profile" targetId="42b9-dd12-7ae9-b1ec"/>
+                <infoLink name="Ithilmar Armour" hidden="false" id="2a84-52ce-7f1b-f2d0" type="profile" targetId="aaf8-414a-5ee-daea"/>
+              </infoLinks>
+            </infoGroup>
+          </infoGroups>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Sea Guard" hidden="false" id="2ddc-3f0f-4cac-7ea6" sortIndex="2">
           <costs>
@@ -5130,6 +5559,14 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fe61-a8d2-94a8-da2c"/>
           </constraints>
+          <infoGroups>
+            <infoGroup name="Special Rules" hidden="false" id="73fc-73e3-3fe9-3c1b">
+              <infoLinks>
+                <infoLink name="Rallying Cry" hidden="false" id="ceaa-3543-6c3d-28be" type="profile" targetId="23c4-bd19-2422-ad08"/>
+                <infoLink name="Naval Discipline" hidden="false" id="4caa-6dfb-83e3-4a07" type="profile" targetId="ca28-8a3-989a-4ecc"/>
+              </infoLinks>
+            </infoGroup>
+          </infoGroups>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Pure of Heart" hidden="false" id="48df-9bea-9e02-a4b8" sortIndex="1">
           <costs>
