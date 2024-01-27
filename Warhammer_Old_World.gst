@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="49" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="52" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -136,6 +136,15 @@
         <characteristicType id="d84d-3b8b-654a-9e1a" name="Casting Value"/>
         <characteristicType id="1043-a0ad-2909-dd28" name="Range"/>
         <characteristicType id="64ba-31-acf0-5a" name="Effect"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType name="Weapon" hidden="false" id="a378-c633-912d-11ce">
+      <characteristicTypes>
+        <characteristicType id="2360-c777-5e07-ed58" name="R"/>
+        <characteristicType id="ac19-f99c-72e9-a1a7" name="S"/>
+        <characteristicType id="9429-ffe7-2ce5-e9a5" name="AP"/>
+        <characteristicType id="5f83-3633-336b-93b4" name="Special Rules"/>
+        <characteristicType id="772a-a7ff-f6b3-df71" name="Notes"/>
       </characteristicTypes>
     </profileType>
   </profileTypes>
@@ -351,7 +360,7 @@ Losing Frenzy: Unlike other special rules, Frenzy can be lost during a game. Any
 For example, if a natural 6 is rolled when rolling To Wound with a weapon that has an AP of &quot;-&quot; and the Armour Bane (1) special rule its AP counts as being -1 when making an Armour Save roll against that wound.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Armour Hide" hidden="false" id="5450-cbf1-3e74-254a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
+    <profile name="Armoured Hide" hidden="false" id="5450-cbf1-3e74-254a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">The hide of some creatures forms natural armour and improves their armour value ( and that of their rider). By how much armour value is improved varies from model to model, as shown in brackets after the name of this special rule.
 
