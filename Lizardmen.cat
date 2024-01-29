@@ -1045,28 +1045,24 @@ manner as a character.</characteristic>
             <selectionEntryGroup name="Choose 0-1 options" hidden="false" id="109779264">
               <entryLinks>
                 <entryLink name="Additional hand weapon" id="3054771991" hidden="false" type="selectionEntry" targetId="8943-3e16-db2a-b7f3">
-                  <constraints>
-                    <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="3718160708"/>
-                    <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="3954327302"/>
-                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="3"/>
+                  </costs>
                 </entryLink>
                 <entryLink name="Cavalry spear (if appropriately mounted)" id="2592510333" hidden="false" type="selectionEntry" targetId="Cavalry spear (if appropriately mounted)">
-                  <constraints>
-                    <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="1949303170"/>
-                    <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="1578915624"/>
-                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="4"/>
+                  </costs>
                 </entryLink>
                 <entryLink name="Great weapon" id="848200677" hidden="false" type="selectionEntry" targetId="2283-26e9-76c3-6048">
-                  <constraints>
-                    <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="3240951338"/>
-                    <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="3410007456"/>
-                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="4"/>
+                  </costs>
                 </entryLink>
                 <entryLink name="Halberd" id="3826859351" hidden="false" type="selectionEntry" targetId="f0a5-1b2e-3d2b-d540">
-                  <constraints>
-                    <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="1825657604"/>
-                    <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="2061824198"/>
-                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="3"/>
+                  </costs>
                 </entryLink>
               </entryLinks>
               <constraints>
@@ -1272,28 +1268,24 @@ manner as a character.</characteristic>
             <selectionEntryGroup name="Choose 0-1 options" hidden="false" id="474082161">
               <entryLinks>
                 <entryLink name="Additional hand weapon" id="4264807080" hidden="false" type="selectionEntry" targetId="8943-3e16-db2a-b7f3">
-                  <constraints>
-                    <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="317824279"/>
-                    <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="553990873"/>
-                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="3"/>
+                  </costs>
                 </entryLink>
                 <entryLink name="Cavalry spear (if appropriately mounted)" id="2862554974" hidden="false" type="selectionEntry" targetId="Cavalry spear (if appropriately mounted)">
-                  <constraints>
-                    <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="1727837845"/>
-                    <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="1360010155"/>
-                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="4"/>
+                  </costs>
                 </entryLink>
                 <entryLink name="Blowpipe" id="1137794604" hidden="false" type="selectionEntry" targetId="3860035799">
-                  <constraints>
-                    <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="1243647987"/>
-                    <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="1614035533"/>
-                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="4"/>
+                  </costs>
                 </entryLink>
                 <entryLink name="Javelins" id="2578210172" hidden="false" type="selectionEntry" targetId="53e8-7267-cc26-9419">
-                  <constraints>
-                    <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="81684931"/>
-                    <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="4210259133"/>
-                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="3"/>
+                  </costs>
                 </entryLink>
               </entryLinks>
               <constraints>
@@ -1708,6 +1700,14 @@ manner as a character.</characteristic>
         <selectionEntryGroup name="Equipment" hidden="false" id="401600597">
           <entryLinks>
             <entryLink name="Thrusting Spear" id="3789944433" hidden="false" type="selectionEntry" targetId="99d2-7f59-5c14-3bf7">
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <comment>per model</comment>
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="339150751"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="1599395198"/>
               </constraints>
@@ -1795,6 +1795,7 @@ manner as a character.</characteristic>
               </infoLinks>
               <modifiers>
                 <modifier type="increment" value="1" field="points">
+                  <comment>per model</comment>
                   <repeats>
                     <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="1151186376"/>
                   </repeats>
@@ -1866,16 +1867,22 @@ manner as a character.</characteristic>
         <selectionEntryGroup name="Choose 1 options" hidden="false" id="615722132">
           <entryLinks>
             <entryLink name="Blowpipes" id="2467028848" hidden="false" type="selectionEntry" targetId="3860035799">
-              <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="3645329887"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="3878936625"/>
-              </constraints>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <comment>per model</comment>
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="3956393621"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
             </entryLink>
             <entryLink name="Javelins and shields" id="1853890374" hidden="false" type="selectionEntry" targetId="Javelins and shields">
-              <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="1085768349"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="1252264611"/>
-              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
             </entryLink>
           </entryLinks>
           <constraints>
@@ -1886,6 +1893,9 @@ manner as a character.</characteristic>
         <selectionEntryGroup name="Choose 0-1 options" hidden="false" id="732083134">
           <selectionEntries>
             <selectionEntry name="Scouts " id="3317461418" type="upgrade" import="true" hidden="false">
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
               <infoLinks>
                 <infoLink name="Scouts" hidden="false" id="2659430266" type="profile" targetId="fe5e-8838-7fbd-a7ec"/>
               </infoLinks>
@@ -1894,6 +1904,9 @@ manner as a character.</characteristic>
               </constraints>
             </selectionEntry>
             <selectionEntry name="Vanguard " id="139503834" type="upgrade" import="true" hidden="false">
+              <costs>
+                <cost name="pts" typeId="points" value="5"/>
+              </costs>
               <infoLinks>
                 <infoLink name="Vanguard" hidden="false" id="2337599346" type="profile" targetId="691e-10ec-4f7c-a2c4"/>
               </infoLinks>
@@ -2425,6 +2438,14 @@ manner as a character.</characteristic>
         <selectionEntryGroup name="Equipment" hidden="false" id="1660299253">
           <entryLinks>
             <entryLink name="Cavalry Spear" id="797951721" hidden="false" type="selectionEntry" targetId="a2d0-40e9-83ad-23dc">
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <comment>per model</comment>
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="56883107"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="652615938"/>
               </constraints>
@@ -2501,6 +2522,7 @@ manner as a character.</characteristic>
               </infoLinks>
               <modifiers>
                 <modifier type="increment" value="2" field="points">
+                  <comment>per model</comment>
                   <repeats>
                     <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="640598609"/>
                   </repeats>
@@ -2933,6 +2955,9 @@ manner as a character.</characteristic>
             <selectionEntryGroup name="Choose 1 options" hidden="false" id="1992956890">
               <selectionEntries>
                 <selectionEntry name="Engine of the Gods" id="2811853837" type="upgrade" import="true" hidden="false">
+                  <costs>
+                    <cost name="pts" typeId="points" value="25"/>
+                  </costs>
                   <infoLinks>
                     <infoLink name="Engine of the Gods" hidden="false" id="1856423125" type="profile" targetId="7072-8586-c656-26f5"/>
                   </infoLinks>
@@ -2943,10 +2968,9 @@ manner as a character.</characteristic>
               </selectionEntries>
               <entryLinks>
                 <entryLink name="Giant blowpipes" id="2618400774" hidden="false" type="selectionEntry" targetId="2797408585">
-                  <constraints>
-                    <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="732426973"/>
-                    <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="898923235"/>
-                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="0"/>
+                  </costs>
                 </entryLink>
               </entryLinks>
               <constraints>
