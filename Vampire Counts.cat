@@ -1015,6 +1015,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
         <infoLink name="Note: In combat, this model must make" hidden="false" id="1878005835" type="profile" targetId="2208581714"/>
       </infoLinks>
     </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Vampiric Powers" hidden="false" id="a88c-1e61-583f-2bab"/>
     <selectionEntry type="upgrade" import="true" name="Spectral scythe Combat" hidden="false" id="4098234819">
       <infoLinks>
         <infoLink name="Spectral scythe Combat" hidden="false" id="2994224485" type="profile" targetId="1816943517"/>
@@ -1084,13 +1085,14 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
             <entryLink import="true" name="may be mounted" hidden="false" id="3720943961" type="selectionEntry" targetId="may be mounted"/>
             <entryLink import="true" name="Magic Items" hidden="false" id="2354220658" type="selectionEntryGroup" targetId="1539-fd78-88f-badd">
               <constraints>
-                <constraint type="max" value="100" field="points" scope="parent" shared="false" id="3443037551"/>
+                <constraint type="max" value="100" field="points" scope="parent" shared="false" id="2667814959"/>
               </constraints>
             </entryLink>
           </entryLinks>
           <infoGroups>
             <infoGroup name="Special Rules" hidden="false" id="1741249497">
               <infoLinks>
+                <infoLink name="Dark Vitality" hidden="false" id="3316741928" type="profile" targetId="4190-a061-b7dc-3712"/>
                 <infoLink name="Flammable" hidden="false" id="4056788757" type="profile" targetId="8f64-6d4c-466b-1b94"/>
                 <infoLink name="Indomitable (2)" hidden="false" id="566087395" type="profile" targetId="78b6-d212-caa2-cef1">
                   <modifiers>
@@ -1135,7 +1137,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                 </entryLink>
               </entryLinks>
               <constraints>
-                <constraint type="max" value="0" field="selections" scope="parent" shared="false" id="1725238818"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="false" id="1891735080"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="1725238818"/>
               </constraints>
             </selectionEntryGroup>
@@ -1155,7 +1157,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                 </entryLink>
               </entryLinks>
               <constraints>
-                <constraint type="max" value="0" field="selections" scope="parent" shared="false" id="2539671853"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="false" id="2169284307"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="2539671853"/>
               </constraints>
             </selectionEntryGroup>
@@ -1169,7 +1171,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                     <cost name="pts" typeId="points" value="2"/>
                   </costs>
                 </entryLink>
-                <entryLink name="Vampiric Powers" id="2860817477" hidden="false" type="selectionEntry" targetId="Vampiric Powers">
+                <entryLink name="Vampiric Powers" id="2860817477" hidden="false" type="selectionEntry" targetId="a88c-1e61-583f-2bab">
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="2344234839"/>
                     <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="1319278389"/>
@@ -1193,9 +1195,6 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                   </costs>
                 </entryLink>
               </entryLinks>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="1239635050"/>
-              </constraints>
             </selectionEntryGroup>
             <selectionEntryGroup name="Lores of Magic" hidden="false" id="2012768986">
               <entryLinks>
@@ -1206,6 +1205,17 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="2449118919"/>
               </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <comment>Hide if not a wizard</comment>
+                  <conditions>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="7d84-39e9-a5f-947e" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="8e47-73e8-f7f9-808" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="59f1-ac46-8123-3f8d" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="50bd-b918-574a-60c3" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <constraints>
@@ -1234,7 +1244,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
             </entryLink>
             <entryLink import="true" name="Magic Items" hidden="false" id="2755226426" type="selectionEntryGroup" targetId="1539-fd78-88f-badd">
               <constraints>
-                <constraint type="max" value="50" field="points" scope="parent" shared="false" id="2262312359"/>
+                <constraint type="max" value="50" field="points" scope="parent" shared="false" id="2202346663"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -1268,13 +1278,10 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                   </costs>
                 </entryLink>
               </entryLinks>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="3113510610"/>
-              </constraints>
             </selectionEntryGroup>
             <selectionEntryGroup name="Equipment" hidden="false" id="2907099569">
               <entryLinks>
-                <entryLink name="Vampiric Powers" id="387099117" hidden="false" type="selectionEntry" targetId="Vampiric Powers">
+                <entryLink name="Vampiric Powers" id="387099117" hidden="false" type="selectionEntry" targetId="a88c-1e61-583f-2bab">
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="2486507151"/>
                     <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="1906846301"/>
@@ -1284,6 +1291,27 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                   </costs>
                 </entryLink>
               </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Lores of Magic" hidden="false" id="1962127810">
+              <entryLinks>
+                <entryLink import="true" name="Dark Magic" hidden="false" id="4162168860" type="selectionEntry" targetId="e9f-f0fb-d874-4151"/>
+                <entryLink import="true" name="Illusion" hidden="false" id="4232309836" type="selectionEntry" targetId="af66-671f-5a42-a118"/>
+                <entryLink import="true" name="Necromancy" hidden="false" id="335647488" type="selectionEntry" targetId="3d31-fd64-e074-700a"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="4215742815"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <comment>Hide if not a wizard</comment>
+                  <conditions>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="7d84-39e9-a5f-947e" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="8e47-73e8-f7f9-808" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="59f1-ac46-8123-3f8d" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="50bd-b918-574a-60c3" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
@@ -1323,7 +1351,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
             <entryLink import="true" name="may be mounted" hidden="false" id="1991751704" type="selectionEntry" targetId="may be mounted"/>
             <entryLink import="true" name="Magic Items" hidden="false" id="3952178233" type="selectionEntryGroup" targetId="1539-fd78-88f-badd">
               <constraints>
-                <constraint type="max" value="100" field="points" scope="parent" shared="false" id="375242788"/>
+                <constraint type="max" value="100" field="points" scope="parent" shared="false" id="71120996"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -1343,7 +1371,8 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                 </entryLink>
               </entryLinks>
               <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="3852433853"/>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="42406110"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="343020156"/>
               </constraints>
             </selectionEntryGroup>
             <selectionEntryGroup name="Lores of Magic" hidden="false" id="737343415">
@@ -1355,6 +1384,17 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="4010393190"/>
               </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <comment>Hide if not a wizard</comment>
+                  <conditions>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="7d84-39e9-a5f-947e" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="8e47-73e8-f7f9-808" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="59f1-ac46-8123-3f8d" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="50bd-b918-574a-60c3" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <constraints>
@@ -1383,7 +1423,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
             </entryLink>
             <entryLink import="true" name="Magic Items" hidden="false" id="3629495524" type="selectionEntryGroup" targetId="1539-fd78-88f-badd">
               <constraints>
-                <constraint type="max" value="50" field="points" scope="parent" shared="false" id="3206055509"/>
+                <constraint type="max" value="50" field="points" scope="parent" shared="false" id="282167445"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -1398,8 +1438,30 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                 </entryLink>
               </entryLinks>
               <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="2840207520"/>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="2337863259"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="2168807141"/>
               </constraints>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Lores of Magic" hidden="false" id="1380599112">
+              <entryLinks>
+                <entryLink import="true" name="Dark Magic" hidden="false" id="4211932654" type="selectionEntry" targetId="e9f-f0fb-d874-4151"/>
+                <entryLink import="true" name="Illusion" hidden="false" id="559842322" type="selectionEntry" targetId="af66-671f-5a42-a118"/>
+                <entryLink import="true" name="Necromancy" hidden="false" id="2319813930" type="selectionEntry" targetId="3d31-fd64-e074-700a"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="3303422521"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <comment>Hide if not a wizard</comment>
+                  <conditions>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="7d84-39e9-a5f-947e" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="8e47-73e8-f7f9-808" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="59f1-ac46-8123-3f8d" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="50bd-b918-574a-60c3" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
@@ -1459,7 +1521,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
             <entryLink import="true" name="may be mounted" hidden="false" id="9415096" type="selectionEntry" targetId="may be mounted"/>
             <entryLink import="true" name="Magic Items" hidden="false" id="1851779417" type="selectionEntryGroup" targetId="1539-fd78-88f-badd">
               <constraints>
-                <constraint type="max" value="75" field="points" scope="parent" shared="false" id="3490204484"/>
+                <constraint type="max" value="75" field="points" scope="parent" shared="false" id="889939204"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -1482,9 +1544,6 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                   </costs>
                 </entryLink>
               </entryLinks>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="3135711325"/>
-              </constraints>
             </selectionEntryGroup>
             <selectionEntryGroup name="Equipment" hidden="false" id="770270438">
               <entryLinks>
@@ -1507,6 +1566,17 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="2025767302"/>
               </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <comment>Hide if not a wizard</comment>
+                  <conditions>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="7d84-39e9-a5f-947e" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="8e47-73e8-f7f9-808" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="59f1-ac46-8123-3f8d" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="50bd-b918-574a-60c3" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <constraints>
@@ -1649,7 +1719,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
             <entryLink import="true" name="may be mounted" hidden="false" id="3356140989" type="selectionEntry" targetId="may be mounted"/>
             <entryLink import="true" name="Magic Items" hidden="false" id="2366582094" type="selectionEntryGroup" targetId="1539-fd78-88f-badd">
               <constraints>
-                <constraint type="max" value="100" field="points" scope="parent" shared="false" id="3031532027"/>
+                <constraint type="max" value="100" field="points" scope="parent" shared="false" id="615403515"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -1679,7 +1749,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
             </selectionEntryGroup>
             <selectionEntryGroup name="Choose 0-1 options" hidden="false" id="2684431489">
               <constraints>
-                <constraint type="max" value="0" field="selections" scope="parent" shared="false" id="2322332098"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="false" id="2488725192"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="2322332098"/>
               </constraints>
             </selectionEntryGroup>
@@ -1744,7 +1814,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
             </entryLink>
             <entryLink import="true" name="Magic Items" hidden="false" id="1205439058" type="selectionEntryGroup" targetId="1539-fd78-88f-badd">
               <constraints>
-                <constraint type="max" value="50" field="points" scope="parent" shared="false" id="3486355407"/>
+                <constraint type="max" value="50" field="points" scope="parent" shared="false" id="449871119"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -2058,7 +2128,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                 </entryLink>
                 <entryLink import="true" name="Magic Items" hidden="false" id="2259870490" type="selectionEntryGroup" targetId="1539-fd78-88f-badd">
                   <constraints>
-                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="798520967"/>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="2868807047"/>
                   </constraints>
                 </entryLink>
               </entryLinks>
@@ -3022,7 +3092,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
               <entryLinks>
                 <entryLink import="true" name="Magic Items" hidden="false" id="3308061273" type="selectionEntryGroup" targetId="1539-fd78-88f-badd">
                   <constraints>
-                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="1489892420"/>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="3184594436"/>
                   </constraints>
                 </entryLink>
               </entryLinks>
@@ -3254,7 +3324,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
               <entryLinks>
                 <entryLink import="true" name="Magic Items" hidden="false" id="3487860219" type="selectionEntryGroup" targetId="1539-fd78-88f-badd">
                   <constraints>
-                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="579925594"/>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="2271487130"/>
                   </constraints>
                 </entryLink>
               </entryLinks>
@@ -3820,9 +3890,28 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                 </selectionEntry>
               </selectionEntries>
               <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="2130761843"/>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="2501149389"/>
                 <constraint type="max" field="selections" scope="parent" shared="false" id="2130761843"/>
               </constraints>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Lores of Magic" hidden="false" id="442414558">
+              <entryLinks>
+                <entryLink import="true" name="Necromancy" hidden="false" id="865922172" type="selectionEntry" targetId="3d31-fd64-e074-700a"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="4116618667"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <comment>Hide if not a wizard</comment>
+                  <conditions>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="7d84-39e9-a5f-947e" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="8e47-73e8-f7f9-808" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="59f1-ac46-8123-3f8d" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="50bd-b918-574a-60c3" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <constraints>
@@ -3848,7 +3937,8 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                 <entryLink import="true" name="Wizard Level 1" hidden="false" id="3365567095" type="selectionEntry" targetId="7d84-39e9-a5f-947e"/>
               </entryLinks>
               <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="3495830956"/>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="4188634815"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="127274257"/>
               </constraints>
             </selectionEntryGroup>
             <selectionEntryGroup name="Choose 0-1 options" hidden="false" id="2747593820">
@@ -3867,7 +3957,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                 </entryLink>
               </entryLinks>
               <constraints>
-                <constraint type="max" value="0" field="selections" scope="parent" shared="false" id="3031613293"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="false" id="2661122579"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="3031613293"/>
               </constraints>
             </selectionEntryGroup>
@@ -3878,6 +3968,17 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="164756125"/>
               </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <comment>Hide if not a wizard</comment>
+                  <conditions>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="7d84-39e9-a5f-947e" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="8e47-73e8-f7f9-808" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="59f1-ac46-8123-3f8d" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="50bd-b918-574a-60c3" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
@@ -3901,6 +4002,27 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
               </constraints>
             </entryLink>
           </entryLinks>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Lores of Magic" hidden="false" id="577374568">
+              <entryLinks>
+                <entryLink import="true" name="Necromancy" hidden="false" id="688373514" type="selectionEntry" targetId="3d31-fd64-e074-700a"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="935724505"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <comment>Hide if not a wizard</comment>
+                  <conditions>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="7d84-39e9-a5f-947e" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="8e47-73e8-f7f9-808" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="59f1-ac46-8123-3f8d" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="50bd-b918-574a-60c3" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
