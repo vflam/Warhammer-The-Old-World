@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="52" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="53" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -44,11 +44,11 @@
     <categoryEntry name="NIGHT GOBLIN CHARACTER" hidden="true" id="1000-68d6-8999-b491"/>
   </categoryEntries>
   <forceEntries>
-    <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
+    <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="a936-639f-e214-e9d" targetId="a4cc-15c9-cfae-1b3b" type="category">
           <constraints>
-            <constraint type="max" value="50" field="limit::points" scope="roster" shared="true" id="abe-35b3-cb6f-604d" percentValue="true" includeChildSelections="true"/>
+            <constraint type="max" value="50" field="limit::points" scope="roster" shared="true" id="abe-35b3-cb6f-604d" percentValue="true" includeChildSelections="true" includeChildForces="false"/>
           </constraints>
         </categoryLink>
         <categoryLink id="ab07-e23d-ab54-8822" targetId="f0e3-2e32-8866-ea32" name="Core" type="category">
@@ -72,16 +72,42 @@
           </constraints>
         </categoryLink>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="0" field="5764-5655-4713-61d5" scope="roster" shared="true" id="24bb-c279-4294-733a"/>
-      </constraints>
-      <modifiers>
-        <modifier type="increment" value="3" field="24bb-c279-4294-733a">
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="ab7c-c987-c420-daa0" includeChildSelections="false"/>
-          </repeats>
-        </modifier>
-      </modifiers>
+      <forceEntries>
+        <forceEntry id="8c47-843e-be14-cd05" name="Allies">
+          <categoryLinks>
+            <categoryLink name="Characters" hidden="false" id="fdf6-5bd-a147-7449" targetId="a4cc-15c9-cfae-1b3b">
+              <constraints>
+                <constraint type="max" value="50" field="limit::points" scope="force" shared="true" id="3125-433e-b840-79c1" percentValue="true" includeChildSelections="true"/>
+                <constraint type="min" value="1" field="selections" scope="force" shared="true" id="d0f3-4a75-ec91-35ba" includeChildSelections="true"/>
+              </constraints>
+            </categoryLink>
+            <categoryLink id="9b6a-4372-2aef-60c3" targetId="f0e3-2e32-8866-ea32" name="Core">
+              <constraints>
+                <constraint type="min" value="6.25" field="limit::points" scope="force" shared="true" id="449e-68ab-21ce-cacb" percentValue="true" includeChildSelections="true"/>
+              </constraints>
+            </categoryLink>
+            <categoryLink name="Special" hidden="false" id="380b-dd37-34e7-4267" targetId="633f-f67a-1b6a-d203">
+              <constraints>
+                <constraint type="max" value="12.5" field="limit::points" scope="force" shared="true" id="463c-98a2-3684-5751" percentValue="true" includeChildSelections="true"/>
+              </constraints>
+            </categoryLink>
+            <categoryLink name="Rare" hidden="false" id="713b-4054-5fe8-169a" targetId="2bfe-5863-46fe-d284">
+              <constraints>
+                <constraint type="max" value="6.25" field="limit::points" scope="force" shared="true" id="fc9d-5634-dd61-bbdf" percentValue="true" includeChildSelections="true"/>
+              </constraints>
+            </categoryLink>
+            <categoryLink name="Mercenaries" hidden="false" id="9abf-5426-18d6-e7e4" targetId="5b84-2c3c-869d-3522">
+              <constraints>
+                <constraint type="max" value="5" field="limit::points" scope="force" shared="true" id="4846-e8da-8e23-c6b8" percentValue="true" includeChildSelections="true"/>
+              </constraints>
+            </categoryLink>
+          </categoryLinks>
+          <constraints>
+            <constraint type="max" value="25" field="limit::points" scope="roster" shared="true" id="29b9-7e75-eef-4eaf" percentValue="true" includeChildSelections="true"/>
+            <constraint type="min" value="1" field="forces" scope="roster" shared="true" id="3ed2-b77c-587e-9b77"/>
+          </constraints>
+        </forceEntry>
+      </forceEntries>
     </forceEntry>
   </forceEntries>
   <costTypes>
