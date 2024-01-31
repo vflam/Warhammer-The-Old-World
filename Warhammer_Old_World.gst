@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="54" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="55" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -43,6 +43,7 @@
     <categoryEntry name="GOBLIN HERO" hidden="true" id="1245-a36a-20b8-5d53"/>
     <categoryEntry name="NIGHT GOBLIN CHARACTER" hidden="true" id="1000-68d6-8999-b491"/>
     <categoryEntry name="Wizard" hidden="false" id="f954-b4c0-b835-a048"/>
+    <categoryEntry name="VAMPIRE" hidden="true" id="4813-a63e-57ed-dc4"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
@@ -134,7 +135,7 @@
         <characteristicType id="c435-6b14-f77e-3c72" name="Ld"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Base" hidden="false" id="1ae4-7f34-4055-fd5f" sortIndex="20">
+    <profileType name="Base" hidden="false" id="1ae4-7f34-4055-fd5f" sortIndex="21">
       <characteristicTypes>
         <characteristicType id="1adf-d238-57ca-2226" name="Base Size"/>
       </characteristicTypes>
