@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="54" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="56" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -809,9 +809,9 @@ Champions can issue and accept challenges in the same manner as a character.</c
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
     </profile>
-    <profile name="Base (100x150)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="a35e-8f23-b67-1efe">
+    <profile name="Base (150x100)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="a35e-8f23-b67-1efe">
       <characteristics>
-        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">100x150</characteristic>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">150x100</characteristic>
       </characteristics>
       <modifiers>
         <modifier type="set" value="Base" field="name"/>
@@ -1028,6 +1028,22 @@ Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, 
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">S3 AP-2 A Chaos Troll that is in base contact with an enemy model may make one additional attack each turn with this weapon. This attack must be made last, after all other attacks have been made (including Stomp Attacks), but hits automatically.</characteristic>
       </characteristics>
+    </profile>
+    <profile name="Base (100x150)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="b56f-7f81-4ba1-ed2c">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">100x150</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
+    </profile>
+    <profile name="Base (100x60)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="fe61-e64e-9a73-81e6">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">100x60</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
     </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
