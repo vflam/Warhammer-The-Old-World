@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="53" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="54" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -39,6 +39,7 @@
         </modifier>
       </modifiers>
     </categoryEntry>
+    <categoryEntry name="Wizard" hidden="false" id="f954-b4c0-b835-a048"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Standard">
@@ -1039,6 +1040,7 @@ Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, 
               <conditions>
                 <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="mount" shared="true" includeChildSelections="false"/>
                 <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="c96a-608-5de4-b943" shared="true" includeChildSelections="false"/>
+                <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="4cf7-bf85-308d-c29a" shared="true" includeChildSelections="false"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -1373,6 +1375,9 @@ Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, 
       <infoLinks>
         <infoLink name="Wizard Level 1" hidden="false" type="profile" id="fd84-35e9-15db-2670" targetId="c3c-9624-c39-e86a"/>
       </infoLinks>
+      <categoryLinks>
+        <categoryLink name="Wizard" hidden="false" id="8fc7-740f-3ff4-6cca" targetId="f954-b4c0-b835-a048" primary="false"/>
+      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Wizard Level 2" hidden="false" id="8e47-73e8-f7f9-808">
       <constraints>
@@ -1381,6 +1386,9 @@ Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, 
       <infoLinks>
         <infoLink name="Wizard Level 2" hidden="false" type="profile" id="683-c3d4-4dd-5e83" targetId="f40c-d76a-fd42-fb9a"/>
       </infoLinks>
+      <categoryLinks>
+        <categoryLink name="Wizard" hidden="false" id="1035-aae3-70f1-a9ae" targetId="f954-b4c0-b835-a048" primary="false"/>
+      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Wizard Level 3" hidden="false" id="59f1-ac46-8123-3f8d">
       <constraints>
@@ -1389,6 +1397,9 @@ Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, 
       <infoLinks>
         <infoLink name="Wizard Level 3" hidden="false" type="profile" id="5128-eda0-c7a5-7933" targetId="1acd-4208-ba07-175b"/>
       </infoLinks>
+      <categoryLinks>
+        <categoryLink name="Wizard" hidden="false" id="c160-3c13-5a79-6b97" targetId="f954-b4c0-b835-a048" primary="false"/>
+      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Wizard Level 4" hidden="false" id="50bd-b918-574a-60c3">
       <constraints>
@@ -1397,6 +1408,9 @@ Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, 
       <infoLinks>
         <infoLink name="Wizard Level 4" hidden="false" type="profile" id="4cf7-4c87-381e-e310" targetId="5cee-9c31-3cc4-5c9f"/>
       </infoLinks>
+      <categoryLinks>
+        <categoryLink name="Wizard" hidden="false" id="727a-ca8f-173b-66a9" targetId="f954-b4c0-b835-a048" primary="false"/>
+      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Battle Standard Bearer" hidden="false" id="5b87-9cf5-953d-3829" publicationId="768b-3da1-a182-a1d8" page="203">
       <constraints>
