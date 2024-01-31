@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="ec01-a361-b3bf-78ac" name="Daemons of Chaos" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="6" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Giloushaker#2496">
+<catalogue library="false" id="ec01-a361-b3bf-78ac" name="Daemons of Chaos" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="7" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Giloushaker#2496">
   <sharedProfiles>
     <profile name="Bloodthirster" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="2304-f7d1-ef2a-eb19">
       <characteristics>
@@ -1429,7 +1429,11 @@ Quick Shot</characteristic>
           <selectionEntryGroups>
             <selectionEntryGroup name="Command" hidden="false" id="e873f979-86631acf" sortIndex="3">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" id="48f1fa78-3b5bb262" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="General" hidden="false" id="48f1fa78-3b5bb262" type="selectionEntry" targetId="7d76-b1a1-1535-a04c">
+                  <categoryLinks>
+                    <categoryLink name="General of Khorne" hidden="false" id="237-51fc-5f52-5c20" targetId="6f57-c02b-7bf6-f772" primary="false"/>
+                  </categoryLinks>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
             <selectionEntryGroup name="Weapons" hidden="false" id="bbb9e2ae-eea657b8" sortIndex="5">
@@ -1542,27 +1546,18 @@ Quick Shot</characteristic>
           <selectionEntryGroups>
             <selectionEntryGroup name="Command" hidden="false" id="552c4a5-b889e79b" sortIndex="3">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" id="27d673c5-ee018cbb" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="General" hidden="false" id="27d673c5-ee018cbb" type="selectionEntry" targetId="7d76-b1a1-1535-a04c" sortIndex="1">
+                  <categoryLinks>
+                    <categoryLink name="General of Khorne" hidden="false" id="2dc8-a73-1ca1-d33f" targetId="6f57-c02b-7bf6-f772" primary="false"/>
+                  </categoryLinks>
+                </entryLink>
+                <entryLink import="true" name="Daemonic Locus" hidden="false" id="882d-4047-edcf-939" type="selectionEntry" targetId="231e-a15c-e299-abd1" sortIndex="2"/>
               </entryLinks>
             </selectionEntryGroup>
             <selectionEntryGroup name="Mount" hidden="false" id="cf61ec2-965a4a8c" sortIndex="5">
               <entryLinks>
-                <entryLink name="Juggernaut Of Khorne" id="923bac4-16c27a8e" hidden="false" type="selectionEntry" targetId="a25201fa-b0cb4ae4" sortIndex="2">
-                  <costs>
-                    <cost name="pts" typeId="points" value="50"/>
-                  </costs>
-                  <categoryLinks>
-                    <categoryLink name="MOUNT" hidden="false" id="c8f5-ab29-861b-c478" targetId="c96a-608-5de4-b943" primary="false"/>
-                  </categoryLinks>
-                </entryLink>
-                <entryLink name="Blood Throne Of Khorne" id="796e8640-966db98a" hidden="false" type="selectionEntry" targetId="8b0f0438-cac26e22" sortIndex="1">
-                  <costs>
-                    <cost name="pts" typeId="points" value="0"/>
-                  </costs>
-                  <categoryLinks>
-                    <categoryLink name="MOUNT" hidden="false" id="b3b2-4eb8-1042-49c1" targetId="c96a-608-5de4-b943" primary="false"/>
-                  </categoryLinks>
-                </entryLink>
+                <entryLink name="Juggernaut Of Khorne" id="923bac4-16c27a8e" hidden="false" type="selectionEntry" targetId="a25201fa-b0cb4ae4" sortIndex="2"/>
+                <entryLink name="Blood Throne Of Khorne" id="796e8640-966db98a" hidden="false" type="selectionEntry" targetId="8b0f0438-cac26e22" sortIndex="1"/>
               </entryLinks>
               <constraints>
                 <constraint type="min" value="0" field="selections" scope="parent" shared="false" id="8ff70fb0-9bf9f17a"/>
@@ -1602,6 +1597,23 @@ Quick Shot</characteristic>
       <categoryLinks>
         <categoryLink name="Daemon of Khorne" hidden="false" id="979-46de-bfc-4291" targetId="88d6-6a25-670-e154" primary="false"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="increment" value="1" field="6c41-94d3-2402-75a1">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="88d6-6a25-670-e154" shared="true" roundUp="false" id="451f-6cde-97ab-3e9"/>
+          </repeats>
+          <comment>0-1 Per Unit with same Daemonic Alignement</comment>
+        </modifier>
+        <modifier type="decrement" value="1" field="6c41-94d3-2402-75a1">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="2f514dd1-bb22f527" shared="true" roundUp="false" id="b765-9865-bcda-c3d0"/>
+          </repeats>
+          <comment>0-1 Per Unit with same Daemonic Alignement</comment>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="6c41-94d3-2402-75a1"/>
+      </constraints>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Juggernaut Of Khorne" hidden="false" id="a25201fa-b0cb4ae4" collective="false" subType="mount">
       <profiles>
@@ -1612,38 +1624,6 @@ Quick Shot</characteristic>
           </characteristics>
         </profile>
       </profiles>
-      <selectionEntries>
-        <selectionEntry type="model" name="Juggernaut of Khorne" id="cc05198e-6371ed98" hidden="false">
-          <infoLinks>
-            <infoLink name="Juggernaut of Khorne" hidden="false" type="profile" id="47dbdc9c-d3fcf8a6" targetId="3c26-bf4f-4f92-b23"/>
-            <infoLink name="Base" hidden="false" type="profile" id="fc441bbc-5a3d0a46" targetId="2b6f-489f-3c3c-bf7c"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="50"/>
-          </costs>
-          <entryLinks>
-            <entryLink name="Brass bound hooves" id="2ca3a873-9aa88621" hidden="false" type="selectionEntry" targetId="7a837108-d41a67b2" sortIndex="2">
-              <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="170182e8-20e8ea92"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="d14fae2-2b10ce2c"/>
-              </constraints>
-            </entryLink>
-            <entryLink name="Barding" id="236f6c81-964cf3d7" hidden="false" type="selectionEntry" targetId="718d-9fe8-f8ad-ad3c" sortIndex="1">
-              <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="31d5945e-7658528"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="43c095fc-9383b286"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="67c2174b-6bf1519"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7dad1f35-ab262b"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink name="Daemon of Khorne" hidden="false" id="fafc-5e32-c1ff-b7f9" targetId="88d6-6a25-670-e154" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-      </selectionEntries>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="db14af7e-dc06cac8">
           <infoLinks>
@@ -1667,6 +1647,27 @@ Quick Shot</characteristic>
       <categoryLinks>
         <categoryLink name="Daemon of Khorne" hidden="false" id="1063-324b-2e66-a318" targetId="88d6-6a25-670-e154" primary="false"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink name="Barding" id="236f6c81-964cf3d7" hidden="false" type="selectionEntry" targetId="718d-9fe8-f8ad-ad3c" sortIndex="1">
+          <constraints>
+            <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="31d5945e-7658528"/>
+            <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="43c095fc-9383b286"/>
+          </constraints>
+        </entryLink>
+        <entryLink name="Brass bound hooves" id="2ca3a873-9aa88621" hidden="false" type="selectionEntry" targetId="7a837108-d41a67b2" sortIndex="2">
+          <constraints>
+            <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="170182e8-20e8ea92"/>
+            <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="d14fae2-2b10ce2c"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <infoLinks>
+        <infoLink name="Base" hidden="false" type="profile" id="fc441bbc-5a3d0a46" targetId="2b6f-489f-3c3c-bf7c"/>
+        <infoLink name="Juggernaut of Khorne" hidden="false" type="profile" id="47dbdc9c-d3fcf8a6" targetId="3c26-bf4f-4f92-b23"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="50"/>
+      </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Bloodletters Of Khorne" hidden="false" id="b1564921-d8699af7" collective="false">
       <profiles>
@@ -1998,30 +1999,6 @@ Quick Shot</characteristic>
         </profile>
       </profiles>
       <selectionEntries>
-        <selectionEntry type="model" name="Blood Throne" id="d37a435e-406cbc28" hidden="false" sortIndex="1">
-          <infoLinks>
-            <infoLink name="Blood Throne" hidden="false" type="profile" id="921b2ac-13262df6" targetId="3f23-8c88-75c6-2d24"/>
-            <infoLink name="Base" hidden="false" type="profile" id="ddd16010-6c2d0f5a" targetId="d456-e30e-f85d-14d"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="160"/>
-          </costs>
-          <entryLinks>
-            <entryLink name="Hand Weapon" id="ae279233-773f21e1" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6">
-              <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="4665f028-653fedd2"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="3c796822-6f67d16c"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="76c0f0ef-2317a7fd"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="64ad4ce1-7b6a80b7"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink name="Daemon of Khorne" hidden="false" id="3d2-578f-ea5e-e780" targetId="88d6-6a25-670-e154" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
         <selectionEntry type="model" subType="crew" name="Bloodletter Crew" id="880c7d5-3b0a87cb" hidden="false" sortIndex="2">
           <infoLinks>
             <infoLink name="Bloodletter Crew" hidden="false" type="profile" id="426d53f3-51c8d5a1" targetId="f603-4d52-e54b-697b"/>
@@ -2073,6 +2050,21 @@ Quick Shot</characteristic>
       <categoryLinks>
         <categoryLink name="Daemon of Khorne" hidden="false" id="1695-a6a7-f50e-9a88" targetId="88d6-6a25-670-e154" primary="false"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink name="Hand Weapon" id="e22c-e84f-ab45-25b3" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6">
+          <constraints>
+            <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="e991-132a-37a7-b1b4"/>
+            <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="ee58-146-a0d9-a3ab"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <infoLinks>
+        <infoLink name="Base" hidden="false" type="profile" id="9de8-621c-a6de-2c0c" targetId="d456-e30e-f85d-14d"/>
+        <infoLink name="Blood Throne" hidden="false" type="profile" id="dc36-d49c-2a23-c441" targetId="3f23-8c88-75c6-2d24"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="160"/>
+      </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Skull Cannon Of Khorne" hidden="false" id="3e6f2140-40917c8a" collective="false">
       <profiles>
@@ -2201,7 +2193,11 @@ Quick Shot</characteristic>
           <selectionEntryGroups>
             <selectionEntryGroup name="Command" hidden="false" id="9f0e3239-c6e58d8f" sortIndex="2">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" id="9e71e2a-436504d4" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="General" hidden="false" id="9e71e2a-436504d4" type="selectionEntry" targetId="7d76-b1a1-1535-a04c">
+                  <categoryLinks>
+                    <categoryLink name="General of Nurgle" hidden="false" id="1483-8dbb-2d8b-176b" targetId="a17e-24e9-133a-c6ad" primary="false"/>
+                  </categoryLinks>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
             <selectionEntryGroup name="Wizard Level" hidden="false" id="d15f1a97-c828d6e5" defaultSelectionEntryId="a12b42ac-fe633df6" sortIndex="4">
@@ -2348,7 +2344,12 @@ Quick Shot</characteristic>
           <selectionEntryGroups>
             <selectionEntryGroup name="Command" hidden="false" id="850fa7f3-a4b889a1" sortIndex="2">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" id="d33d7c9-c43c579f" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="General" hidden="false" id="d33d7c9-c43c579f" type="selectionEntry" targetId="7d76-b1a1-1535-a04c" sortIndex="1">
+                  <categoryLinks>
+                    <categoryLink name="General of Nurgle" hidden="false" id="765e-a71d-b4e1-a045" targetId="a17e-24e9-133a-c6ad" primary="false"/>
+                  </categoryLinks>
+                </entryLink>
+                <entryLink import="true" name="Daemonic Locus" hidden="false" id="6ebe-b6b-4ace-676a" type="selectionEntry" targetId="231e-a15c-e299-abd1" sortIndex="2"/>
               </entryLinks>
             </selectionEntryGroup>
             <selectionEntryGroup name="Equipment" hidden="false" id="60f7b27d-f4fe79b3" sortIndex="7">
@@ -2403,7 +2404,6 @@ Quick Shot</characteristic>
               <entryLinks>
                 <entryLink import="true" name="Palanquin Of Nurgle" hidden="false" id="182-ad5a-3bc6-5a4c" type="selectionEntry" targetId="5072d97b-ebb81b09">
                   <categoryLinks>
-                    <categoryLink name="MOUNT" hidden="false" id="55d8-c139-2817-bb53" targetId="c96a-608-5de4-b943" primary="false"/>
                     <categoryLink name="Daemon of Nurgle" hidden="false" id="32ec-f0a2-27ce-dc99" targetId="e20-3c11-13b5-e880" primary="false"/>
                   </categoryLinks>
                 </entryLink>
@@ -2445,6 +2445,23 @@ Quick Shot</characteristic>
       <categoryLinks>
         <categoryLink name="Daemon of Nurgle" hidden="false" id="d064-5659-c7e4-ab4e" targetId="e20-3c11-13b5-e880" primary="false"/>
       </categoryLinks>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="ba53-2894-4081-622f"/>
+      </constraints>
+      <modifiers>
+        <modifier type="decrement" value="1" field="ba53-2894-4081-622f">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="eadf23f3-82c25a1" shared="true" roundUp="false" id="3f51-170d-f404-ac9f"/>
+          </repeats>
+          <comment>0-1 Per Unit with same Daemonic Alignement</comment>
+        </modifier>
+        <modifier type="increment" value="1" field="ba53-2894-4081-622f">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="e20-3c11-13b5-e880" shared="true" roundUp="false" id="84a4-1b2e-464a-74cd"/>
+          </repeats>
+          <comment>0-1 Per Unit with same Daemonic Alignement</comment>
+        </modifier>
+      </modifiers>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Palanquin Of Nurgle" hidden="false" id="5072d97b-ebb81b09" collective="false" subType="mount">
       <profiles>
@@ -2455,32 +2472,6 @@ Quick Shot</characteristic>
           </characteristics>
         </profile>
       </profiles>
-      <selectionEntries>
-        <selectionEntry type="model" name="Palanquin of Nurgle" id="4a161e84-3f83c04e" hidden="false">
-          <infoLinks>
-            <infoLink name="Palanquin of Nurgle" hidden="false" type="profile" id="a4230422-b4e48d6c" targetId="79e0-3434-b670-cf8d"/>
-            <infoLink name="Base" hidden="false" type="profile" id="2d915272-9f2533c" targetId="7813-4d15-143d-1bf1"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="40"/>
-          </costs>
-          <entryLinks>
-            <entryLink name="Hand Weapon" id="f5c40a29-e1f11cff" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6">
-              <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="c4528ae6-ecc69f0"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="d6662ef4-d852cffe"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="78c6efa9-4eb0d67f"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6ab351e7-3fa0bbb5"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink name="Daemon of Nurgle" hidden="false" id="8c0b-8c30-b4cd-e5b5" targetId="e20-3c11-13b5-e880" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-      </selectionEntries>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="1be1aebb-88864649">
           <infoLinks>
@@ -2494,6 +2485,21 @@ Quick Shot</characteristic>
       <categoryLinks>
         <categoryLink name="Daemon of Nurgle" hidden="false" id="c6d2-9d8-72aa-2434" targetId="e20-3c11-13b5-e880" primary="false"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink name="Hand Weapon" id="f5c40a29-e1f11cff" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6">
+          <constraints>
+            <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="c4528ae6-ecc69f0"/>
+            <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="d6662ef4-d852cffe"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <infoLinks>
+        <infoLink name="Base" hidden="false" type="profile" id="2d915272-9f2533c" targetId="7813-4d15-143d-1bf1"/>
+        <infoLink name="Palanquin of Nurgle" hidden="false" type="profile" id="a4230422-b4e48d6c" targetId="79e0-3434-b670-cf8d"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="40"/>
+      </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Plaguebearers Of Nurgle" hidden="false" id="47fcba1a-5b6e0a04" collective="false">
       <profiles>
@@ -2826,7 +2832,7 @@ Quick Shot</characteristic>
         </selectionEntryGroup>
         <selectionEntryGroup name="Equipment" hidden="false" id="b2312bd-484cd7f3" sortIndex="5">
           <entryLinks>
-            <entryLink name="Venom sting" id="3f09475a-a92c2d44" hidden="false" type="selectionEntry" targetId="581be8b9-98d1900f" sortIndex="1">
+            <entryLink name="Venom sting" id="3f09475a-a92c2d44" hidden="false" type="selectionEntry" targetId="581be8b9-98d1900f" sortIndex="2">
               <modifiers>
                 <modifier type="increment" value="2" field="points">
                   <comment>per model</comment>
@@ -2844,7 +2850,7 @@ Quick Shot</characteristic>
             </entryLink>
           </entryLinks>
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Plague Proboscis (+1 Initiative)" hidden="false" id="ddae-4511-27ed-6892">
+            <selectionEntry type="upgrade" import="true" name="Plague Proboscis (+1 Initiative)" hidden="false" id="ddae-4511-27ed-6892" sortIndex="1">
               <profiles>
                 <profile name="Plague Proboscis" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c3c5-aaf4-9bc7-684f">
                   <characteristics>
@@ -2928,7 +2934,11 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
           <selectionEntryGroups>
             <selectionEntryGroup name="Command" hidden="false" id="3b96b3ca-ab1bb6f4" sortIndex="2">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" id="14293cb6-b14ed180" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="General" hidden="false" id="14293cb6-b14ed180" type="selectionEntry" targetId="7d76-b1a1-1535-a04c">
+                  <categoryLinks>
+                    <categoryLink name="General of Slaanesh" hidden="false" id="46ee-f054-d689-1b0d" targetId="efb6-f92e-bd02-dd94" primary="false"/>
+                  </categoryLinks>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
             <selectionEntryGroup name="Wizard Level" hidden="false" id="9f0bd63b-e62331c9" defaultSelectionEntryId="bd19f910-7268e05a" sortIndex="4">
@@ -3047,31 +3057,23 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
           <selectionEntryGroups>
             <selectionEntryGroup name="Command" hidden="false" id="b7ab4305-f835e1fb" sortIndex="2">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" id="cb4db67d-b4845db3" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
-              </entryLinks>
-            </selectionEntryGroup>
-            <selectionEntryGroup name="Mount" hidden="false" id="a6a5283e-57cd7d88" sortIndex="6">
-              <entryLinks>
-                <entryLink name="Steed Of Slaanesh" id="c87ecec0-45b7be0a" hidden="false" type="selectionEntry" targetId="29212401-85b4ef57" sortIndex="3">
-                  <costs>
-                    <cost name="pts" typeId="points" value="16"/>
-                  </costs>
+                <entryLink import="true" name="General" hidden="false" id="cb4db67d-b4845db3" type="selectionEntry" targetId="7d76-b1a1-1535-a04c" sortIndex="1">
                   <categoryLinks>
-                    <categoryLink name="MOUNT" hidden="false" id="60bd-7a55-43ec-9550" targetId="c96a-608-5de4-b943" primary="false"/>
+                    <categoryLink name="General of Slaanesh" hidden="false" id="8e7-9d6c-dbce-d22d" targetId="efb6-f92e-bd02-dd94" primary="false"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink name="Seeker Chariot Of Slaanesh" id="21bdb8a-6eb9a0b4" hidden="false" type="selectionEntry" targetId="a2158237-6c40b105" sortIndex="2">
-                  <costs>
-                    <cost name="pts" typeId="points" value="0"/>
-                  </costs>
+                <entryLink import="true" name="Daemonic Locus" hidden="false" id="3305-195d-1673-7139" type="selectionEntry" targetId="231e-a15c-e299-abd1" sortIndex="2"/>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Mount" hidden="false" id="a6a5283e-57cd7d88" sortIndex="4">
+              <entryLinks>
+                <entryLink name="Steed Of Slaanesh" id="c87ecec0-45b7be0a" hidden="false" type="selectionEntry" targetId="29212401-85b4ef57" sortIndex="3"/>
+                <entryLink name="Seeker Chariot Of Slaanesh" id="21bdb8a-6eb9a0b4" hidden="false" type="selectionEntry" targetId="48dc-9159-4e53-10f9" sortIndex="2">
                   <categoryLinks>
                     <categoryLink name="MOUNT" hidden="false" id="f368-c62-51f3-3fdb" targetId="c96a-608-5de4-b943" primary="false"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink name="Exalted Seeker Chariot Of Slaanesh" id="c9cf30f0-718708ba" hidden="false" type="selectionEntry" targetId="d1e028c6-48aee250" sortIndex="1">
-                  <costs>
-                    <cost name="pts" typeId="points" value="0"/>
-                  </costs>
+                <entryLink name="Exalted Seeker Chariot Of Slaanesh" id="c9cf30f0-718708ba" hidden="false" type="selectionEntry" targetId="582f-cf4f-f493-bb13" sortIndex="1">
                   <categoryLinks>
                     <categoryLink name="MOUNT" hidden="false" id="e2c1-4979-d16b-739e" targetId="c96a-608-5de4-b943" primary="false"/>
                   </categoryLinks>
@@ -3082,7 +3084,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="8224234e-b6caa958" includeChildSelections="false"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Wizard Level" hidden="false" id="d3b3694e-85afbf58" sortIndex="4">
+            <selectionEntryGroup name="Wizard Level" hidden="false" id="d3b3694e-85afbf58" sortIndex="5">
               <entryLinks>
                 <entryLink import="true" name="Wizard Level 1" hidden="false" id="6cb09281-5054e9d7" type="selectionEntry" targetId="7d84-39e9-a5f-947e" sortIndex="1">
                   <costs>
@@ -3096,7 +3098,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Lores of Magic" hidden="false" id="b748cd9a-7cbd8184" sortIndex="5">
+            <selectionEntryGroup name="Lores of Magic" hidden="false" id="b748cd9a-7cbd8184" sortIndex="6">
               <entryLinks>
                 <entryLink import="true" name="Daemonology" hidden="false" id="82ab7879-3ce6a1cf" type="selectionEntry" targetId="c3ec-be1b-91ce-96ed" sortIndex="1"/>
                 <entryLink import="true" name="Dark Magic" hidden="false" id="265991f4-4f931afe" type="selectionEntry" targetId="e9f-f0fb-d874-4151" sortIndex="2"/>
@@ -3145,6 +3147,23 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
       <categoryLinks>
         <categoryLink name="Daemon of Slaanesh" hidden="false" id="4c8e-de54-290e-92da" targetId="2955-25dc-92ce-6e4a" primary="false"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="increment" value="1" field="2a5d-7423-aa2a-3a0c">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="2955-25dc-92ce-6e4a" shared="true" roundUp="false" id="6112-ba9e-9ba5-cf8b"/>
+          </repeats>
+          <comment>0-1 Per Unit with same Daemonic Alignement</comment>
+        </modifier>
+        <modifier type="decrement" value="1" field="2a5d-7423-aa2a-3a0c">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="25b7c975-448e7e6b" shared="true" roundUp="false" id="78dc-477b-5bbf-e46f"/>
+          </repeats>
+          <comment>0-1 Per Unit with same Daemonic Alignement</comment>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="2a5d-7423-aa2a-3a0c"/>
+      </constraints>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Steed Of Slaanesh" hidden="false" id="29212401-85b4ef57" collective="false" subType="mount">
       <profiles>
@@ -3155,38 +3174,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
           </characteristics>
         </profile>
       </profiles>
-      <selectionEntries>
-        <selectionEntry type="model" name="Steed of Slaanesh" id="fdd7c634-6fdad3e" hidden="false">
-          <infoLinks>
-            <infoLink name="Steed of Slaanesh" hidden="false" type="profile" id="e548b192-aebd5cdc" targetId="d277-6b11-bffe-e99"/>
-            <infoLink name="Base" hidden="false" type="profile" id="b366fb6-a85a6c80" targetId="3a8b-1dd5-77fb-fdc3"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="16"/>
-          </costs>
-          <entryLinks>
-            <entryLink name="Claws" id="18ac852-7cb8bd9c" hidden="false" type="selectionEntry" targetId="d391-1b4b-6e99-dd8d" sortIndex="2">
-              <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="c3c42961-3de67937"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="b5d79b0f-835ff9d"/>
-              </constraints>
-            </entryLink>
-            <entryLink name="Hand Weapon" id="20f1a8a5-9811ab9b" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
-              <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="4163bf6a-5729c14"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="4b7756e0-62c049aa"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9db1411d-ade14ed3"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a79dc923-11bdad51"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink name="Daemon of Slaanesh" hidden="false" id="4a06-7842-5870-5e9a" targetId="2955-25dc-92ce-6e4a" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-      </selectionEntries>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="aedcfe65-2a74535b">
           <infoLinks>
@@ -3211,6 +3198,27 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
       <categoryLinks>
         <categoryLink name="Daemon of Slaanesh" hidden="false" id="1915-e6c-31ba-460f" targetId="2955-25dc-92ce-6e4a" primary="false"/>
       </categoryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="16"/>
+      </costs>
+      <entryLinks>
+        <entryLink name="Hand Weapon" id="a72f-4b97-eed6-c999" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+          <constraints>
+            <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="1d69-6ff7-959c-31d5"/>
+            <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="3e8f-930d-cb70-50ad"/>
+          </constraints>
+        </entryLink>
+        <entryLink name="Claws" id="c364-9101-102c-2400" hidden="false" type="selectionEntry" targetId="d391-1b4b-6e99-dd8d" sortIndex="2">
+          <constraints>
+            <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="eb82-2b14-9d0d-c1d"/>
+            <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="b60c-5cfc-f04b-65d5"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <infoLinks>
+        <infoLink name="Steed of Slaanesh" hidden="false" type="profile" id="bd92-b7f2-4614-448a" targetId="d277-6b11-bffe-e99"/>
+        <infoLink name="Base" hidden="false" type="profile" id="3f7d-aa1-f0e3-85c4" targetId="3a8b-1dd5-77fb-fdc3"/>
+      </infoLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Daemonettes Of Slaanesh" hidden="false" id="a2c63511-9b36a267" collective="false">
       <profiles>
@@ -3612,7 +3620,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Daemon of Slaanesh" hidden="false" id="61c4-6e0e-832c-4174" targetId="2955-25dc-92ce-6e4a" primary="false"/>
       </categoryLinks>
     </selectionEntry>
-    <selectionEntry type="model" import="true" name="Seeker Chariot Of Slaanesh" hidden="false" id="a2158237-6c40b105" collective="false" subType="mount">
+    <selectionEntry type="unit" import="true" name="Seeker Chariot Of Slaanesh" hidden="false" id="a2158237-6c40b105" collective="false">
       <profiles>
         <profile name="Seeker Chariot Of Slaanesh" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="9f64c18d-7c6829c3">
           <characteristics>
@@ -3621,197 +3629,39 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
           </characteristics>
         </profile>
       </profiles>
-      <selectionEntries>
-        <selectionEntry type="model" name="Seeker Chariot" id="977334f4-2cc7a5fe" hidden="false" sortIndex="2">
-          <infoLinks>
-            <infoLink name="Seeker Chariot" hidden="false" type="profile" id="8ca47dd2-da58c71c" targetId="7e2a-54ed-785-ebc"/>
-            <infoLink name="Base" hidden="false" type="profile" id="c40d97c2-7eedfb8c" targetId="d456-e30e-f85d-14d"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="100"/>
-          </costs>
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="45cd57b9-d77f870f"/>
-            <constraint type="max" value="3" field="selections" scope="parent" shared="true" id="57b9ec57-bb9f1aa5"/>
-          </constraints>
-        </selectionEntry>
-        <selectionEntry type="model" subType="crew" name="Daemonette Crew" id="8f1d8cea-1ff1fd94" hidden="false" sortIndex="3">
-          <infoLinks>
-            <infoLink name="Daemonette Crew" hidden="false" type="profile" id="530f8250-c7e81f9a" targetId="78c2-dce7-1644-8079"/>
-            <infoLink name="Base" hidden="false" type="profile" id="65161f28-d6f6a4d2" targetId="d456-e30e-f85d-14d"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="0"/>
-          </costs>
-          <entryLinks>
-            <entryLink name="Piercing claws" id="e90fe883-3e91cfb1" hidden="false" type="selectionEntry" targetId="d391-1b4b-6e99-dd8d">
-              <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="4c6348f8-f7ce8ce2"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="6276f352-e6eb909c"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-          <constraints>
-            <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="d86b1999-b5af01ef"/>
-            <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="ea57ae37-29117d05" includeChildSelections="false"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink name="CHARIOT CREW" hidden="false" id="9639a1a8-39ea1352" targetId="4cf7-bf85-308d-c29a" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-        <selectionEntry type="model" name="Steed of Slaanesh" id="2b89168a-b4e503b4" hidden="false" sortIndex="1">
-          <infoLinks>
-            <infoLink name="Steed of Slaanesh" hidden="false" type="profile" id="8fa6ef70-49acd33a" targetId="ea73-fba9-d2f4-269"/>
-            <infoLink name="Base" hidden="false" type="profile" id="9d5b381c-3fa57826" targetId="d456-e30e-f85d-14d"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="0"/>
-          </costs>
-          <constraints>
-            <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="ed2bf8b9-64e1200f"/>
-            <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="ff188d57-4900b3a5" includeChildSelections="false"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink name="CHARIOT CREW" hidden="false" id="be86df34-af6bfe3e" targetId="4cf7-bf85-308d-c29a" primary="false"/>
-            <categoryLink name="Daemon of Slaanesh" hidden="false" id="8eed-73e3-9d0a-f1c" targetId="2955-25dc-92ce-6e4a" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-      </selectionEntries>
-      <infoGroups>
-        <infoGroup name="Special Rules" hidden="false" id="750e9077-a87f4d45">
-          <infoLinks>
-            <infoLink name="Armour Bane (1, Steed of Slaanesh only)" hidden="false" id="98197ebf-b74074cd" type="profile" targetId="2af0-975f-bb14-8b8f">
-              <modifiers>
-                <modifier type="append" value="(1)" field="name"/>
-              </modifiers>
-            </infoLink>
-            <infoLink name="Counter Charge" hidden="false" id="418ee324-717f806e" type="profile" targetId="5186-798d-69d-6545"/>
-            <infoLink name="Daemonic" hidden="false" id="455411b0-6a5ee37a" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon of Slaanesh" hidden="false" id="e2cf6538-f777c722" type="profile" targetId="3341-9239-4961-e8ce"/>
-            <infoLink name="First Charge" hidden="false" id="666db3ae-db33a0b8" type="profile" targetId="785a-2886-af42-dce9"/>
-            <infoLink name="Impact Hits (D3+1)" hidden="false" id="27bf7d98-1e0f0302" type="profile" targetId="5c2-e9dd-2715-a0c0">
-              <modifiers>
-                <modifier type="append" value="(D3+1)" field="name"/>
-              </modifiers>
-            </infoLink>
-            <infoLink name="Open Order" hidden="false" id="5bc80b64-762d66ae" type="profile" targetId="5b67-8535-146c-7cea"/>
-            <infoLink name="Poisoned Attacks (Steed of Slaanesh only)" hidden="false" id="822e0d0a-fdae4634" type="profile" targetId="81f5-4895-4abc-fc39">
-              <modifiers>
-                <modifier type="append" value="(Steed of Slaanesh only)" field="name"/>
-              </modifiers>
-            </infoLink>
-            <infoLink name="Swiftstride" hidden="false" id="4a1045aa-7e08f054" type="profile" targetId="dc91-48b3-3696-217"/>
-            <infoLink name="Armour Value" hidden="false" id="c3acdb86-52ffff10" type="profile" targetId="e099-1ebb-9e85-34c8">
-              <modifiers>
-                <modifier type="append" value=":  5+" field="name"/>
-              </modifiers>
-            </infoLink>
-          </infoLinks>
-        </infoGroup>
-      </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Slaanesh" hidden="false" id="1a6-fdfe-ecd6-def2" targetId="2955-25dc-92ce-6e4a" primary="false"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Seeker Chariot Of Slaanesh" hidden="false" id="80fe-d2c9-1b6d-ff9b" type="selectionEntry" targetId="48dc-9159-4e53-10f9">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ba83-acf-62ef-e02e"/>
+            <constraint type="max" value="3" field="selections" scope="parent" shared="true" id="8802-c4d1-e5fb-2992"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
-    <selectionEntry type="model" import="true" name="Exalted Seeker Chariot Of Slaanesh" hidden="false" id="d1e028c6-48aee250" collective="false" subType="mount">
+    <selectionEntry type="unit" import="true" name="Exalted Seeker Chariot Of Slaanesh" hidden="false" id="d1e028c6-48aee250" collective="false">
       <profiles>
-        <profile name="Exalted Seeker Chariot Of Slaanesh" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="84e35074-6adae57e">
+        <profile name="Exalted Seeker Chariot Of Slaanesh" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="14b-3698-e592-76c3">
           <characteristics>
             <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Heavy Chariot</characteristic>
             <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">1</characteristic>
           </characteristics>
         </profile>
       </profiles>
-      <selectionEntries>
-        <selectionEntry type="model" name="Exalted Seeker Chariot" id="1ca362ea-f6992394" hidden="false" sortIndex="2">
-          <infoLinks>
-            <infoLink name="Exalted Seeker Chariot" hidden="false" type="profile" id="51ba1850-e08e059a" targetId="a603-80c3-9811-6258"/>
-            <infoLink name="Base" hidden="false" type="profile" id="3103d47c-fbb8fd06" targetId="a35e-8f23-b67-1efe"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="185"/>
-          </costs>
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9c62ca0b-9d4431d9"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b24f64f5-ec8d3deb"/>
-          </constraints>
-        </selectionEntry>
-        <selectionEntry type="model" subType="crew" name="Daemonette Crew" id="44d347e9-fd186cbf" hidden="false" sortIndex="3">
-          <infoLinks>
-            <infoLink name="Daemonette Crew" hidden="false" type="profile" id="6cbd6fef-2f382efd" targetId="3d84-a0a3-5d20-56d0"/>
-            <infoLink name="Base" hidden="false" type="profile" id="293e85c1-70594317" targetId="a35e-8f23-b67-1efe"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="0"/>
-          </costs>
-          <entryLinks>
-            <entryLink name="Piercing claws" id="f01c2f9a-3fe5d384" hidden="false" type="selectionEntry" targetId="d391-1b4b-6e99-dd8d">
-              <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="c8e3b7c9-636d379f"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="bad01a07-b4a82255"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-          <constraints>
-            <constraint type="min" value="3" field="selections" scope="parent" shared="false" id="561df526-686a8230"/>
-            <constraint type="max" value="3" field="selections" scope="parent" shared="false" id="68332c34-874de33e" includeChildSelections="false"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink name="CHARIOT CREW" hidden="false" id="b26fa0a9-eb8bff7f" targetId="4cf7-bf85-308d-c29a" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-        <selectionEntry type="model" name="Steed of Slaanesh" id="bba0391d-b49886d3" hidden="false" sortIndex="1">
-          <infoLinks>
-            <infoLink name="Steed of Slaanesh" hidden="false" type="profile" id="bee8189b-2b3eba29" targetId="b2f3-1bd2-52a7-e3fc"/>
-            <infoLink name="Base" hidden="false" type="profile" id="674207a9-932e7f" targetId="a35e-8f23-b67-1efe"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="0"/>
-          </costs>
-          <constraints>
-            <constraint type="min" value="4" field="selections" scope="parent" shared="false" id="576875a2-c37272ec"/>
-            <constraint type="max" value="4" field="selections" scope="parent" shared="false" id="4154cb48-2b0eeff2" includeChildSelections="false"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink name="CHARIOT CREW" hidden="false" id="58ef6361-4be7e337" targetId="4cf7-bf85-308d-c29a" primary="false"/>
-            <categoryLink name="Daemon of Slaanesh" hidden="false" id="285d-af20-3c49-f808" targetId="2955-25dc-92ce-6e4a" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-      </selectionEntries>
-      <infoGroups>
-        <infoGroup name="Special Rules" hidden="false" id="49aee00a-64908134">
-          <infoLinks>
-            <infoLink name="Armour Bane (1, Steed of Slaanesh only)" hidden="false" id="ab56cf5c-d08a5566" type="profile" targetId="2af0-975f-bb14-8b8f">
-              <modifiers>
-                <modifier type="append" value="(1)" field="name"/>
-              </modifiers>
-            </infoLink>
-            <infoLink name="Close Order" hidden="false" id="8bccc6e5-fca1d7db" type="profile" targetId="883e-e1b1-4fe9-5912"/>
-            <infoLink name="Daemonic" hidden="false" id="9733a7c7-30014215" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon of Slaanesh" hidden="false" id="3c154747-35d9e595" type="profile" targetId="3341-9239-4961-e8ce"/>
-            <infoLink name="First Charge" hidden="false" id="369da49-2fae461f" type="profile" targetId="785a-2886-af42-dce9"/>
-            <infoLink name="Impact Hits (D6+1)" hidden="false" id="a4a2909a-b3312c84" type="profile" targetId="5c2-e9dd-2715-a0c0">
-              <modifiers>
-                <modifier type="append" value="(D6+1)" field="name"/>
-              </modifiers>
-            </infoLink>
-            <infoLink name="Poisoned Attacks (Steed of Slaanesh only)" hidden="false" id="86b0030b-f15fa2d9" type="profile" targetId="81f5-4895-4abc-fc39">
-              <modifiers>
-                <modifier type="append" value="(Steed of Slaanesh only)" field="name"/>
-              </modifiers>
-            </infoLink>
-            <infoLink name="Armour Value" hidden="false" id="5d603525-afa7d41b" type="profile" targetId="e099-1ebb-9e85-34c8">
-              <modifiers>
-                <modifier type="append" value=":  4+" field="name"/>
-              </modifiers>
-            </infoLink>
-          </infoLinks>
-        </infoGroup>
-      </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Slaanesh" hidden="false" id="a257-ac05-6416-1ae" targetId="2955-25dc-92ce-6e4a" primary="false"/>
         <categoryLink name="Heavy Chariot" hidden="false" id="dd11-579e-8a51-3001" targetId="d768-7cf0-de0a-c249" primary="false"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Exalted Seeker Chariot Of Slaanesh" hidden="false" id="603f-b261-860f-13f3" type="selectionEntry" targetId="582f-cf4f-f493-bb13">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="14fc-9502-83bf-f63a"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="81ff-f6bc-bbc8-b109"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Lord of Change" hidden="false" id="66c567ab-44d8e5f9" collective="false">
       <profiles>
@@ -3853,7 +3703,11 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
           <selectionEntryGroups>
             <selectionEntryGroup name="Command" hidden="false" id="307ebd50-1205829a" sortIndex="3">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" id="db3aa598-cc70eb02" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="General" hidden="false" id="db3aa598-cc70eb02" type="selectionEntry" targetId="7d76-b1a1-1535-a04c">
+                  <categoryLinks>
+                    <categoryLink name="General of Tzeentch" hidden="false" id="30a8-a084-89fc-763d" targetId="e187-4f54-d986-a47e" primary="false"/>
+                  </categoryLinks>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
             <selectionEntryGroup name="Wizard Level" hidden="false" id="9e6486d-6f960223" defaultSelectionEntryId="9a820adf-e5cb436d" sortIndex="5">
@@ -3993,10 +3847,15 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
           <selectionEntryGroups>
             <selectionEntryGroup name="Command" hidden="false" id="c04dcd23-3ccd9151" sortIndex="3">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" id="2a7a6fe9-ec4654bf" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="General" hidden="false" id="2a7a6fe9-ec4654bf" type="selectionEntry" targetId="7d76-b1a1-1535-a04c" sortIndex="1">
+                  <categoryLinks>
+                    <categoryLink name="General of Tzeentch" hidden="false" id="57e8-1a1-9c69-cfda" targetId="e187-4f54-d986-a47e" primary="false"/>
+                  </categoryLinks>
+                </entryLink>
+                <entryLink import="true" name="Daemonic Locus" hidden="false" id="566f-db17-c41b-818a" type="selectionEntry" targetId="231e-a15c-e299-abd1" sortIndex="2"/>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Wizard Level" hidden="false" id="1f4cd8c2-dc2b348c" defaultSelectionEntryId="e4a4f5d5-889d45cb" sortIndex="5">
+            <selectionEntryGroup name="Wizard Level" hidden="false" id="1f4cd8c2-dc2b348c" defaultSelectionEntryId="e4a4f5d5-889d45cb" sortIndex="6">
               <entryLinks>
                 <entryLink import="true" name="Wizard Level 1" hidden="false" id="e4a4f5d5-889d45cb" type="selectionEntry" targetId="7d84-39e9-a5f-947e" sortIndex="1"/>
                 <entryLink import="true" name="Wizard Level 2" hidden="false" id="e1a4f11c-39d96926" type="selectionEntry" targetId="8e47-73e8-f7f9-808" sortIndex="2">
@@ -4015,30 +3874,14 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="fe425c37-bc36bb05" includeChildSelections="false"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mount" hidden="false" id="19ee279e-619f7e68" sortIndex="7">
+            <selectionEntryGroup name="Mount" hidden="false" id="19ee279e-619f7e68" sortIndex="5">
               <entryLinks>
-                <entryLink name="Disc Of Tzeentch" id="98f3fd86-b0fe1110" hidden="false" type="selectionEntry" targetId="8f2494eb-6454a939" sortIndex="3">
-                  <costs>
-                    <cost name="pts" typeId="points" value="20"/>
-                  </costs>
-                  <categoryLinks>
-                    <categoryLink name="MOUNT" hidden="false" id="e37d-9d1c-5e70-2739" targetId="c96a-608-5de4-b943" primary="false"/>
-                  </categoryLinks>
-                </entryLink>
-                <entryLink name="Chariot Of Tzeentch" id="8751df20-b1048fea" hidden="false" type="selectionEntry" targetId="d3573c4a-5b93fb74" sortIndex="2">
-                  <costs>
-                    <cost name="pts" typeId="points" value="0"/>
-                  </costs>
-                  <categoryLinks>
-                    <categoryLink name="MOUNT" hidden="false" id="a4fa-4f24-72a5-9a5b" targetId="c96a-608-5de4-b943" primary="false"/>
-                  </categoryLinks>
-                </entryLink>
+                <entryLink name="Disc Of Tzeentch" id="98f3fd86-b0fe1110" hidden="false" type="selectionEntry" targetId="8f2494eb-6454a939" sortIndex="3"/>
+                <entryLink name="Chariot Of Tzeentch" id="8751df20-b1048fea" hidden="false" type="selectionEntry" targetId="d3573c4a-5b93fb74" sortIndex="2"/>
                 <entryLink name="Burning Chariot Of Tzeentch" id="7784e690-cb1061da" hidden="false" type="selectionEntry" targetId="c716a1af-a3b9d2bd" sortIndex="1">
-                  <costs>
-                    <cost name="pts" typeId="points" value="0"/>
-                  </costs>
                   <categoryLinks>
                     <categoryLink name="MOUNT" hidden="false" id="8318-4ff9-1163-396d" targetId="c96a-608-5de4-b943" primary="false"/>
+                    <categoryLink name="Heavy Chariot" hidden="false" id="3bd6-7c93-c74e-c070" targetId="d768-7cf0-de0a-c249" primary="false"/>
                   </categoryLinks>
                 </entryLink>
               </entryLinks>
@@ -4047,7 +3890,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="1868e6ee-5b3b39f8" includeChildSelections="false"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Lores of Magic" hidden="false" id="94e052be-41db5408" sortIndex="6">
+            <selectionEntryGroup name="Lores of Magic" hidden="false" id="94e052be-41db5408" sortIndex="7">
               <entryLinks>
                 <entryLink import="true" name="Battle Magic" hidden="false" id="46114f26-79f30c30" type="selectionEntry" targetId="5b2e-35c6-f987-741e" sortIndex="1"/>
                 <entryLink import="true" name="Daemonology" hidden="false" id="1ccc7c05-508552fb" type="selectionEntry" targetId="c3ec-be1b-91ce-96ed" sortIndex="2"/>
@@ -4098,6 +3941,23 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
       <categoryLinks>
         <categoryLink name="Daemon of Tzeentch" hidden="false" id="a39f-98dc-c9db-8fb7" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="increment" value="1" field="b48b-84e0-4639-bfca">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="a3d4-f3d0-3587-e55a" shared="true" roundUp="false" id="c4e2-a7b2-afbd-191a"/>
+          </repeats>
+          <comment>0-1 Per Unit with same Daemonic Alignement</comment>
+        </modifier>
+        <modifier type="decrement" value="1" field="b48b-84e0-4639-bfca">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="251519cb-18660399" shared="true" roundUp="false" id="fe9d-27f0-a03b-f530"/>
+          </repeats>
+          <comment>0-1 Per Unit with same Daemonic Alignement</comment>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="b48b-84e0-4639-bfca"/>
+      </constraints>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Disc Of Tzeentch" hidden="false" id="8f2494eb-6454a939" collective="false" subType="mount">
       <profiles>
@@ -4157,6 +4017,9 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
       <categoryLinks>
         <categoryLink name="Daemon of Tzeentch" hidden="false" id="c6b9-bb90-b6dd-bc27" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
       </categoryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="20"/>
+      </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Pink Horrors Of Tzeentch" hidden="false" id="c04b2a23-8ff80651" collective="false">
       <profiles>
@@ -4382,7 +4245,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="aa1e40f5-970539eb" sortIndex="3">
+        <selectionEntryGroup name="Command" hidden="false" id="aa1e40f5-970539eb" sortIndex="2">
           <selectionEntries>
             <selectionEntry type="model" name="Exalted Flamer" id="15f85ef2-a9bcfbbc" hidden="false" sortIndex="1">
               <infoLinks>
@@ -4462,6 +4325,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="d9943c39-58eb478f" includeChildSelections="false"/>
                 <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="8220-1aaa-26f7-449f"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e44f-37da-ba65-2741"/>
               </constraints>
             </selectionEntry>
             <selectionEntry type="model" subType="crew" name="Pyroclaster" id="155ab54-530b845e" hidden="false" sortIndex="2">
@@ -4475,6 +4339,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
               </costs>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c030-b575-77e5-6a0b"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c024-4354-a1d7-c5af"/>
               </constraints>
             </selectionEntry>
           </selectionEntries>
@@ -4612,53 +4477,29 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Chariot Of Tzeentch" hidden="false" id="d3573c4a-5b93fb74" collective="false" subType="mount">
-      <profiles>
-        <profile name="Chariot Of Tzeentch" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="36efbbb0-dcd3d7a">
-          <characteristics>
-            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Heavy Chariot</characteristic>
-            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">1</characteristic>
-          </characteristics>
-        </profile>
-      </profiles>
       <selectionEntries>
-        <selectionEntry type="model" name="Chariot of Tzeentch" id="2d7f4ad0-ab95a41a" hidden="false" sortIndex="2">
+        <selectionEntry type="model" name="Screamer" id="a911-b357-f2a1-d7d" hidden="false" sortIndex="1">
           <infoLinks>
-            <infoLink name="Chariot of Tzeentch" hidden="false" type="profile" id="2b876-4fe6f40" targetId="8c5-8290-dfcd-96dd"/>
-            <infoLink name="Base" hidden="false" type="profile" id="6464252e-56ea8638" targetId="d456-e30e-f85d-14d"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="90"/>
-          </costs>
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2d337375-4edcd86b"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1746d88b-ff93cc59"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink name="Daemon of Tzeentch" hidden="false" id="4380-de46-ef8-75c2" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-        <selectionEntry type="model" name="Screamer" id="dfbfc7ec-67a99936" hidden="false" sortIndex="1">
-          <infoLinks>
-            <infoLink name="Screamer" hidden="false" type="profile" id="d6cb128a-9e371fb4" targetId="6798-8bea-8da0-6536"/>
-            <infoLink name="Base" hidden="false" type="profile" id="f0c90646-9264d3d0" targetId="d456-e30e-f85d-14d"/>
+            <infoLink name="Screamer" hidden="false" type="profile" id="28dd-81b1-a385-71b2" targetId="6798-8bea-8da0-6536"/>
+            <infoLink name="Base" hidden="false" type="profile" id="8f69-3e77-2abb-3f50" targetId="d456-e30e-f85d-14d"/>
           </infoLinks>
           <costs>
             <cost name="pts" typeId="points" value="0"/>
           </costs>
           <entryLinks>
-            <entryLink name="Lamprey’s bite" id="a32d5eca-92a509f4" hidden="false" type="selectionEntry" targetId="5ae-b405-976f-c8e6">
+            <entryLink name="Lamprey’s bite" id="32af-44bf-4bde-7ed0" hidden="false" type="selectionEntry" targetId="5ae-b405-976f-c8e6">
               <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="c3467479-48c9bdcf"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="d5330917-2ce95165"/>
+                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="5625-4866-be06-4c7c"/>
+                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="6fe8-57c5-58ef-e301"/>
               </constraints>
             </entryLink>
           </entryLinks>
           <constraints>
-            <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="8965c533-a8f3bce1"/>
-            <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="9f796f8d-4a6767c3" includeChildSelections="false"/>
+            <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="c305-11fb-30ba-726e"/>
+            <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="a6a0-e44d-5e69-a61d" includeChildSelections="false"/>
           </constraints>
           <categoryLinks>
-            <categoryLink name="CHARIOT CREW" hidden="false" id="52a54a86-f0bcf610" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="CHARIOT CREW" hidden="false" id="c36-1878-91e7-1a91" targetId="4cf7-bf85-308d-c29a" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -4695,90 +4536,73 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Daemon of Tzeentch" hidden="false" id="1e49-235c-621b-392b" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
         <categoryLink name="Heavy Chariot" hidden="false" id="b46e-2caf-2c0c-18d9" targetId="d768-7cf0-de0a-c249" primary="false"/>
       </categoryLinks>
+      <infoLinks>
+        <infoLink name="Base" hidden="false" type="profile" id="dca-3dda-6e3d-7d06" targetId="d456-e30e-f85d-14d"/>
+        <infoLink name="Chariot of Tzeentch" hidden="false" type="profile" id="255b-f2b1-1bd-625" targetId="8c5-8290-dfcd-96dd"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="90"/>
+      </costs>
     </selectionEntry>
-    <selectionEntry type="model" import="true" name="Burning Chariot Of Tzeentch" hidden="false" id="c716a1af-a3b9d2bd" collective="false" subType="mount">
-      <profiles>
-        <profile name="Burning Chariot Of Tzeentch" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="a61d1de5-fbb776db">
-          <characteristics>
-            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Heavy Chariot</characteristic>
-            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">1</characteristic>
-          </characteristics>
-        </profile>
-      </profiles>
+    <selectionEntry type="model" import="true" name="Burning Chariot Of Tzeentch" hidden="false" id="c716a1af-a3b9d2bd" collective="false">
       <selectionEntries>
-        <selectionEntry type="model" name="Burning Chariot of Tzeentch" id="fb25742c-57ffe376" hidden="false" sortIndex="3">
+        <selectionEntry type="model" name="Exalted Flamer" id="e530-e695-5869-8943" hidden="false" sortIndex="1">
           <infoLinks>
-            <infoLink name="Burning Chariot of Tzeentch" hidden="false" type="profile" id="3f6b0d4a-fe814474" targetId="6778-2565-ba5b-3c9a"/>
-            <infoLink name="Base" hidden="false" type="profile" id="dd7ce22a-a42ca8d4" targetId="d456-e30e-f85d-14d"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="190"/>
-          </costs>
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f5df7341-9986c497"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e7f2e4ef-7319fbfd"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink name="Daemon of Tzeentch" hidden="false" id="35a3-50ab-fb46-d445" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
-          </categoryLinks>
-        </selectionEntry>
-        <selectionEntry type="model" name="Exalted Flamer" id="23d6b173-45fb4721" hidden="false" sortIndex="1">
-          <infoLinks>
-            <infoLink name="Exalted Flamer" hidden="false" type="profile" id="55b6bf61-f945f37" targetId="3197-a13c-cf3-60c4"/>
-            <infoLink name="Base" hidden="false" type="profile" id="169aa8af-b0e5a1bd" targetId="d456-e30e-f85d-14d"/>
+            <infoLink name="Exalted Flamer" hidden="false" type="profile" id="822c-5847-3555-cdec" targetId="3197-a13c-cf3-60c4"/>
+            <infoLink name="Base" hidden="false" type="profile" id="e439-5732-2f20-96db" targetId="d456-e30e-f85d-14d"/>
           </infoLinks>
           <costs>
             <cost name="pts" typeId="points" value="0"/>
           </costs>
           <entryLinks>
-            <entryLink name="Hand weapon" id="c6b2b4ea-619de594" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+            <entryLink name="Hand weapon" id="d2d9-7b06-b47d-ef00" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
               <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="1e2ac199-403169ef"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="30175637-b393e505"/>
+                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="b695-5326-8e47-25b7"/>
+                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="fec1-56b-1aef-a3a0"/>
               </constraints>
             </entryLink>
-            <entryLink name="warpflame" id="34c5d54c-c9e1e796" hidden="false" type="selectionEntry" targetId="922e5f30-86fac4fa" sortIndex="2">
+            <entryLink name="warpflame" id="2360-7b4c-56e8-8b66" hidden="false" type="selectionEntry" targetId="922e5f30-86fac4fa" sortIndex="2">
               <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="7df14b93-92812641"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="940688ed-51b03ea3"/>
+                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="b3e5-520b-8a4d-4bcf"/>
+                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="7767-436b-b873-fb35"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Daemonic Gifts" hidden="false" id="40ccf0d-463cb43" type="selectionEntryGroup" targetId="ce0c-2efd-59ad-f802" sortIndex="3">
+            <entryLink import="true" name="Daemonic Gifts" hidden="false" id="96cb-8cd6-4eb-b1f8" type="selectionEntryGroup" targetId="ce0c-2efd-59ad-f802" sortIndex="3">
               <constraints>
-                <constraint type="max" value="50" field="points" scope="parent" shared="false" id="27bf9fd8-9e7c1342"/>
+                <constraint type="max" value="50" field="points" scope="parent" shared="false" id="7c01-c365-c047-8a9d"/>
               </constraints>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Wizard Level" hidden="false" id="b7f9d407-f6b40c55" defaultSelectionEntryId="e5e07f3c-80da51c6" sortIndex="4">
+            <selectionEntryGroup name="Wizard Level" hidden="false" id="92ff-2bdf-78fb-240e" defaultSelectionEntryId="e5e07f3c-80da51c6" sortIndex="4">
               <entryLinks>
-                <entryLink import="true" name="Wizard Level 1" hidden="false" id="e5e07f3c-80da51c6" type="selectionEntry" targetId="7d84-39e9-a5f-947e" sortIndex="1"/>
-                <entryLink import="true" name="Wizard Level 2" hidden="false" id="e8e083f5-4f9d64eb" type="selectionEntry" targetId="8e47-73e8-f7f9-808" sortIndex="2">
+                <entryLink import="true" name="Wizard Level 1" hidden="false" id="9331-939-cf99-8970" type="selectionEntry" targetId="7d84-39e9-a5f-947e" sortIndex="1"/>
+                <entryLink import="true" name="Wizard Level 2" hidden="false" id="9e6-ccf2-e444-a61b" type="selectionEntry" targetId="8e47-73e8-f7f9-808" sortIndex="2">
                   <costs>
                     <cost name="pts" typeId="points" value="30"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Wizard Level 3" hidden="false" id="e7e08262-584419ac" type="selectionEntry" targetId="59f1-ac46-8123-3f8d" sortIndex="3">
+                <entryLink import="true" name="Wizard Level 3" hidden="false" id="ae42-d203-c0cc-d7ab" type="selectionEntry" targetId="59f1-ac46-8123-3f8d" sortIndex="3">
                   <costs>
                     <cost name="pts" typeId="points" value="60"/>
                   </costs>
                 </entryLink>
               </entryLinks>
               <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="774404ba-3a9737a4"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="6158fcd0-3f11c61a" includeChildSelections="false"/>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="82a7-4f63-e027-39aa"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="635c-392f-6e38-7b6" includeChildSelections="false"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Lores of Magic" hidden="false" id="d30b33e3-52e9c211" sortIndex="5">
+            <selectionEntryGroup name="Lores of Magic" hidden="false" id="efad-b99-97ac-f9ac" sortIndex="5">
               <entryLinks>
-                <entryLink import="true" name="Daemonology" hidden="false" id="ec38ba36-75f66300" type="selectionEntry" targetId="c3ec-be1b-91ce-96ed" sortIndex="1"/>
-                <entryLink import="true" name="Dark Magic" hidden="false" id="a997a391-ff089ce7" type="selectionEntry" targetId="e9f-f0fb-d874-4151" sortIndex="2"/>
-                <entryLink import="true" name="Elementalism" hidden="false" id="50335f22-f9a106c" type="selectionEntry" targetId="2b23-3ae1-f5ad-8e7a" sortIndex="3"/>
-                <entryLink import="true" name="Illusion" hidden="false" id="3a1f9e05-562f64fb" type="selectionEntry" targetId="af66-671f-5a42-a118" sortIndex="4"/>
+                <entryLink import="true" name="Daemonology" hidden="false" id="6b00-c849-c63a-35fa" type="selectionEntry" targetId="c3ec-be1b-91ce-96ed" sortIndex="1"/>
+                <entryLink import="true" name="Dark Magic" hidden="false" id="bf21-b8f9-52b-83b7" type="selectionEntry" targetId="e9f-f0fb-d874-4151" sortIndex="2"/>
+                <entryLink import="true" name="Elementalism" hidden="false" id="ca3f-5b1d-f7df-4ce" type="selectionEntry" targetId="2b23-3ae1-f5ad-8e7a" sortIndex="3"/>
+                <entryLink import="true" name="Illusion" hidden="false" id="1f4c-ec69-498c-9d09" type="selectionEntry" targetId="af66-671f-5a42-a118" sortIndex="4"/>
               </entryLinks>
               <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="a87a4258-db4da1c2"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="be8decb2-ffb81b7c" includeChildSelections="false"/>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="e30f-e860-370b-67b6"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="f438-a36d-1da4-a95c" includeChildSelections="false"/>
               </constraints>
               <modifiers>
                 <modifier type="set" value="true" field="hidden">
@@ -4794,61 +4618,65 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
             </selectionEntryGroup>
           </selectionEntryGroups>
           <categoryLinks>
-            <categoryLink name="CHARIOT CREW" hidden="false" id="cac463bf-eb6c31cd" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="CHARIOT CREW" hidden="false" id="a031-1c81-cdf2-335c" targetId="4cf7-bf85-308d-c29a" primary="false"/>
           </categoryLinks>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ad57-1638-7c4e-b62e"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fceb-885f-3617-dd42"/>
+          </constraints>
         </selectionEntry>
-        <selectionEntry type="model" subType="crew" name="Blue Horror Crew" id="aa7c5fee-66eaeaf8" hidden="false" sortIndex="4">
+        <selectionEntry type="model" name="Screamer" id="9087-bcbf-f03c-2937" hidden="false" sortIndex="2">
           <infoLinks>
-            <infoLink name="Blue Horror Crew" hidden="false" type="profile" id="1d1b347c-c155d06" targetId="6ea4-e519-2340-2ee3"/>
-            <infoLink name="Base" hidden="false" type="profile" id="bd50fc00-360e814a" targetId="d456-e30e-f85d-14d"/>
+            <infoLink name="Screamer" hidden="false" type="profile" id="aaa7-b36e-380-a74b" targetId="31ef-e2d2-2136-48ae"/>
+            <infoLink name="Base" hidden="false" type="profile" id="2481-8a44-3c30-90e0" targetId="d456-e30e-f85d-14d"/>
           </infoLinks>
           <costs>
             <cost name="pts" typeId="points" value="0"/>
           </costs>
           <entryLinks>
-            <entryLink name="Hand weapons" id="9304af90-9249e2da" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="2">
+            <entryLink name="Lamprey’s bite" id="9b21-22d1-a6fd-c650" hidden="false" type="selectionEntry" targetId="5ae-b405-976f-c8e6">
               <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="6a4a897f-c13298d"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="783584d1-152d7427"/>
-              </constraints>
-            </entryLink>
-            <entryLink name="flames of Tzeentch" id="2bce5996-7c754860" hidden="false" type="selectionEntry" targetId="dc53-acb3-26ea-ca9b" sortIndex="1">
-              <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="9211af2d-dfb032e3"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="7bfe04d3-75de1581"/>
+                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="e785-ebe2-3205-a300"/>
+                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="110b-3ff6-fdf-3768"/>
               </constraints>
             </entryLink>
           </entryLinks>
           <constraints>
-            <constraint type="min" value="3" field="selections" scope="parent" shared="false" id="1eef4825-4e264f1b"/>
-            <constraint type="max" value="3" field="selections" scope="parent" shared="false" id="2902df9b-484b4929" includeChildSelections="false"/>
+            <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="ab55-4df1-c456-7dca"/>
+            <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="23a1-e087-26a2-f3b2" includeChildSelections="false"/>
           </constraints>
           <categoryLinks>
-            <categoryLink name="CHARIOT CREW" hidden="false" id="f81e7a50-1cbf579a" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="CHARIOT CREW" hidden="false" id="2570-c90b-5535-db7b" targetId="4cf7-bf85-308d-c29a" primary="false"/>
           </categoryLinks>
         </selectionEntry>
-        <selectionEntry type="model" name="Screamer" id="a28953e5-d711fcdb" hidden="false" sortIndex="2">
+        <selectionEntry type="model" subType="crew" name="Blue Horror Crew" id="1958-627e-db09-dc89" hidden="false" sortIndex="4">
           <infoLinks>
-            <infoLink name="Screamer" hidden="false" type="profile" id="50e3b483-51673bb1" targetId="31ef-e2d2-2136-48ae"/>
-            <infoLink name="Base" hidden="false" type="profile" id="26b9d811-24752d67" targetId="d456-e30e-f85d-14d"/>
+            <infoLink name="Blue Horror Crew" hidden="false" type="profile" id="2ed0-ca9-f4e1-f9a9" targetId="6ea4-e519-2340-2ee3"/>
+            <infoLink name="Base" hidden="false" type="profile" id="bb25-7059-112a-3428" targetId="d456-e30e-f85d-14d"/>
           </infoLinks>
           <costs>
             <cost name="pts" typeId="points" value="0"/>
           </costs>
           <entryLinks>
-            <entryLink name="Lamprey’s bite" id="547164ed-9fe43aa3" hidden="false" type="selectionEntry" targetId="5ae-b405-976f-c8e6">
+            <entryLink name="Hand weapons" id="6203-2459-607f-c655" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="2">
               <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="806bee32-439a10fc"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="8a587638-d0305022"/>
+                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="db51-8469-cfc5-b854"/>
+                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="d60a-1744-dec1-bb29"/>
+              </constraints>
+            </entryLink>
+            <entryLink name="flames of Tzeentch" id="486c-f575-5560-40c4" hidden="false" type="selectionEntry" targetId="dc53-acb3-26ea-ca9b" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="c5c7-82a6-4d31-a8a6"/>
+                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="ed08-b568-b455-27d5"/>
               </constraints>
             </entryLink>
           </entryLinks>
           <constraints>
-            <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="aa04ce2a-151534d4"/>
-            <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="b41865a0-7262e26a" includeChildSelections="false"/>
+            <constraint type="min" value="3" field="selections" scope="parent" shared="false" id="77fc-3662-b87-11f5"/>
+            <constraint type="max" value="3" field="selections" scope="parent" shared="false" id="685b-3089-7927-83a8" includeChildSelections="false"/>
           </constraints>
           <categoryLinks>
-            <categoryLink name="CHARIOT CREW" hidden="false" id="ab107759-46bb71af" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="CHARIOT CREW" hidden="false" id="bbae-5d21-993d-71d2" targetId="4cf7-bf85-308d-c29a" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -4884,7 +4712,16 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Tzeentch" hidden="false" id="17ca-cc8d-b508-26c7" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
+        <categoryLink name="Heavy Chariot" hidden="false" id="7e3c-60bc-9cff-db5d" targetId="d768-7cf0-de0a-c249" primary="false"/>
+        <categoryLink name="MOUNT" hidden="false" id="c5d8-2e76-f89-9197" targetId="c96a-608-5de4-b943" primary="false"/>
       </categoryLinks>
+      <infoLinks>
+        <infoLink name="Base" hidden="false" type="profile" id="fe4c-2ef3-1e6b-2ed0" targetId="d456-e30e-f85d-14d"/>
+        <infoLink name="Burning Chariot of Tzeentch" hidden="false" type="profile" id="e11d-9256-1d89-eaee" targetId="6778-2565-ba5b-3c9a"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="190"/>
+      </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Daemon Prince" hidden="false" id="59912700-60f5544a" collective="false">
       <profiles>
@@ -4926,7 +4763,30 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
           <selectionEntryGroups>
             <selectionEntryGroup name="Command" hidden="false" id="cec87df7-2dfdcec5" sortIndex="3">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" id="90512d1c-3943c526" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="General" hidden="false" id="90512d1c-3943c526" type="selectionEntry" targetId="7d76-b1a1-1535-a04c">
+                  <modifiers>
+                    <modifier type="add" value="6f57-c02b-7bf6-f772" field="category">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="88d6-6a25-670-e154" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="add" value="a3d4-f3d0-3587-e55a" field="category">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="a3d4-f3d0-3587-e55a" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="add" value="a17e-24e9-133a-c6ad" field="category">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="e20-3c11-13b5-e880" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="add" value="efb6-f92e-bd02-dd94" field="category">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2955-25dc-92ce-6e4a" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
             <selectionEntryGroup name="Equipment" hidden="false" id="6fbcb7d4-48d62cde" defaultSelectionEntryId="453573bd-b4c430f3" sortIndex="7">
@@ -4945,21 +4805,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
             </selectionEntryGroup>
             <selectionEntryGroup name="Daemonic Alignment" hidden="false" id="2ebfabe0-771df6aa" sortIndex="8">
               <selectionEntries>
-                <selectionEntry name="Fly (9)" id="89a69b25-8a8b0a1b" type="upgrade" import="true" hidden="false" sortIndex="5">
-                  <costs>
-                    <cost name="pts" typeId="points" value="30"/>
-                  </costs>
-                  <infoLinks>
-                    <infoLink name="Fly" hidden="false" id="96bff084-644f024e" type="profile" targetId="c557-6102-9a35-bbcd">
-                      <modifiers>
-                        <modifier type="append" value="(9)" field="name"/>
-                      </modifiers>
-                    </infoLink>
-                  </infoLinks>
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="5cd4c2d0-47f5c1a" includeChildSelections="false"/>
-                  </constraints>
-                </selectionEntry>
                 <selectionEntry name="Daemon of Khorne" id="f8741ac-c3e744f6" type="upgrade" import="true" hidden="false" sortIndex="1">
                   <costs>
                     <cost name="pts" typeId="points" value="10"/>
@@ -5044,6 +4889,13 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
                   </costs>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="88d6-6a25-670-e154" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Lores of Magic" hidden="false" id="1a312511-9fca1267" sortIndex="6">
               <entryLinks>
@@ -5067,6 +4919,28 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
                 </modifier>
               </modifiers>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Special Rules" hidden="false" id="55c3-f161-22e6-f0e9" sortIndex="9">
+              <selectionEntries>
+                <selectionEntry name="Fly (9)" id="89a69b25-8a8b0a1b" type="upgrade" import="true" hidden="false" sortIndex="5">
+                  <costs>
+                    <cost name="pts" typeId="points" value="30"/>
+                  </costs>
+                  <infoLinks>
+                    <infoLink name="Fly" hidden="false" id="96bff084-644f024e" type="profile" targetId="c557-6102-9a35-bbcd">
+                      <modifiers>
+                        <modifier type="append" value="(9)" field="name"/>
+                      </modifiers>
+                    </infoLink>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="5cd4c2d0-47f5c1a" includeChildSelections="false"/>
+                  </constraints>
+                </selectionEntry>
+              </selectionEntries>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4c9-6730-b880-2f9b"/>
+              </constraints>
+            </selectionEntryGroup>
           </selectionEntryGroups>
           <constraints>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="34c68f48-ccd293f2"/>
@@ -5089,12 +4963,39 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         </infoGroup>
       </infoGroups>
       <modifiers>
+        <modifier type="increment" value="1" field="2d8-2a2f-f067-b732">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="595f-8f49-37a6-5112"/>
+          </repeats>
+        </modifier>
         <modifier type="add" value="88d6-6a25-670-e154" field="category">
+          <comment>for Herald per unit with same Alignment</comment>
           <conditions>
             <condition type="atLeast" value="1" field="selections" scope="self" childId="88d6-6a25-670-e154" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
+        <modifier type="add" value="a3d4-f3d0-3587-e55a" field="category">
+          <comment>for Herald per unit with same Alignment</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="a3d4-f3d0-3587-e55a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="e20-3c11-13b5-e880" field="category">
+          <comment>for Herald per unit with same Alignment</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="e20-3c11-13b5-e880" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="2955-25dc-92ce-6e4a" field="category">
+          <comment>for Herald per unit with same Alignment</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="2955-25dc-92ce-6e4a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="2d8-2a2f-f067-b732"/>
+      </constraints>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Chaos Furies" hidden="false" id="3c1cf41a-28bc7404" collective="false">
       <profiles>
@@ -5238,6 +5139,32 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
           </infoLinks>
         </infoGroup>
       </infoGroups>
+      <modifiers>
+        <modifier type="add" value="2955-25dc-92ce-6e4a" field="category">
+          <comment>for Herald per unit with same Alignment</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="2955-25dc-92ce-6e4a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="88d6-6a25-670-e154" field="category">
+          <comment>for Herald per unit with same Alignment</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="88d6-6a25-670-e154" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="a3d4-f3d0-3587-e55a" field="category">
+          <comment>for Herald per unit with same Alignment</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="a3d4-f3d0-3587-e55a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="e20-3c11-13b5-e880" field="category">
+          <comment>for Herald per unit with same Alignment</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="e20-3c11-13b5-e880" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Soul Grinder" hidden="false" id="c3d3c7a0-1533346a" collective="false">
       <profiles>
@@ -5389,6 +5316,32 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
           </infoLinks>
         </infoGroup>
       </infoGroups>
+      <modifiers>
+        <modifier type="add" value="2955-25dc-92ce-6e4a" field="category">
+          <comment>for Herald per unit with same Alignment</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="2955-25dc-92ce-6e4a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="88d6-6a25-670-e154" field="category">
+          <comment>for Herald per unit with same Alignment</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="88d6-6a25-670-e154" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="a3d4-f3d0-3587-e55a" field="category">
+          <comment>for Herald per unit with same Alignment</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="a3d4-f3d0-3587-e55a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="e20-3c11-13b5-e880" field="category">
+          <comment>for Herald per unit with same Alignment</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="e20-3c11-13b5-e880" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Daemonic Locus" hidden="false" id="231e-a15c-e299-abd1">
       <costs>
@@ -5397,6 +5350,225 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
       <infoLinks>
         <infoLink targetId="e1dc-fbc8-be3-e1b0" id="2d07-9a26-a665-2427" type="profile" name="Daemonic Locus" hidden="false"/>
       </infoLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="669b-e27c-9a97-4f18"/>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="c75d-2935-e475-c09"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="model" import="true" name="Exalted Seeker Chariot Of Slaanesh" hidden="false" id="582f-cf4f-f493-bb13" collective="false">
+      <selectionEntries>
+        <selectionEntry type="model" subType="crew" name="Daemonette Crew" id="844a-974d-b75f-cec1" hidden="false" sortIndex="3">
+          <infoLinks>
+            <infoLink name="Daemonette Crew" hidden="false" type="profile" id="5b86-826e-f01d-3350" targetId="3d84-a0a3-5d20-56d0"/>
+            <infoLink name="Base" hidden="false" type="profile" id="a6d3-b292-bb3b-9ebd" targetId="a35e-8f23-b67-1efe"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="0"/>
+          </costs>
+          <entryLinks>
+            <entryLink name="Piercing claws" id="cd99-e1c7-e19d-8f30" hidden="false" type="selectionEntry" targetId="d391-1b4b-6e99-dd8d">
+              <constraints>
+                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="d289-d6ab-93ac-4bda"/>
+                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="4fa8-25e6-c221-1b48"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <constraints>
+            <constraint type="min" value="3" field="selections" scope="parent" shared="false" id="66e5-918b-5b65-3eac"/>
+            <constraint type="max" value="3" field="selections" scope="parent" shared="false" id="cae3-e6e6-2029-6ce5" includeChildSelections="false"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink name="CHARIOT CREW" hidden="false" id="aadc-87b5-6a98-5ffa" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+          </categoryLinks>
+        </selectionEntry>
+        <selectionEntry type="model" name="Steed of Slaanesh" id="5a13-a24c-7bb2-5e58" hidden="false" sortIndex="1">
+          <infoLinks>
+            <infoLink name="Steed of Slaanesh" hidden="false" type="profile" id="e17c-2630-5a8-fd89" targetId="b2f3-1bd2-52a7-e3fc"/>
+            <infoLink name="Base" hidden="false" type="profile" id="a487-7fe4-8d16-1137" targetId="a35e-8f23-b67-1efe"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="0"/>
+          </costs>
+          <constraints>
+            <constraint type="min" value="4" field="selections" scope="parent" shared="false" id="b8bf-9fe3-4592-5356"/>
+            <constraint type="max" value="4" field="selections" scope="parent" shared="false" id="884e-5373-36fb-7d52" includeChildSelections="false"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink name="CHARIOT CREW" hidden="false" id="b6f6-14b8-3373-6ac0" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="Daemon of Slaanesh" hidden="false" id="738a-4b00-7c4-e366" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+          </categoryLinks>
+        </selectionEntry>
+      </selectionEntries>
+      <infoGroups>
+        <infoGroup name="Special Rules" hidden="false" id="ad55-7ac1-d16c-5cf9">
+          <infoLinks>
+            <infoLink name="Armour Bane (1, Steed of Slaanesh only)" hidden="false" id="ee51-5456-2e44-7a5" type="profile" targetId="2af0-975f-bb14-8b8f">
+              <modifiers>
+                <modifier type="append" value="(1)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Close Order" hidden="false" id="a671-d232-349a-1620" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+            <infoLink name="Daemonic" hidden="false" id="f636-403a-f3c2-234" type="profile" targetId="755a-790d-9ba0-fdd5"/>
+            <infoLink name="Daemon of Slaanesh" hidden="false" id="c4bc-d1c-614f-8017" type="profile" targetId="3341-9239-4961-e8ce"/>
+            <infoLink name="First Charge" hidden="false" id="dfdb-d4d1-169a-b837" type="profile" targetId="785a-2886-af42-dce9"/>
+            <infoLink name="Impact Hits (D6+1)" hidden="false" id="431c-7a7e-2252-c2b" type="profile" targetId="5c2-e9dd-2715-a0c0">
+              <modifiers>
+                <modifier type="append" value="(D6+1)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Poisoned Attacks (Steed of Slaanesh only)" hidden="false" id="4ad4-f997-a81f-b6eb" type="profile" targetId="81f5-4895-4abc-fc39">
+              <modifiers>
+                <modifier type="append" value="(Steed of Slaanesh only)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Armour Value" hidden="false" id="4d5c-1e30-c6d0-1168" type="profile" targetId="e099-1ebb-9e85-34c8">
+              <modifiers>
+                <modifier type="append" value=":  4+" field="name"/>
+              </modifiers>
+            </infoLink>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <categoryLinks>
+        <categoryLink name="Daemon of Slaanesh" hidden="false" id="385a-4aea-2055-369e" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+        <categoryLink name="Heavy Chariot" hidden="false" id="585f-364f-bee0-f7f" targetId="d768-7cf0-de0a-c249" primary="false"/>
+        <categoryLink name="MOUNT" hidden="false" id="ebb-179a-4822-1d4e" targetId="c96a-608-5de4-b943" primary="false"/>
+      </categoryLinks>
+      <infoLinks>
+        <infoLink name="Base" hidden="false" type="profile" id="c99f-b3cf-4aca-3d82" targetId="a35e-8f23-b67-1efe"/>
+        <infoLink name="Exalted Seeker Chariot" hidden="false" type="profile" id="f45c-6b37-12b2-50e3" targetId="a603-80c3-9811-6258"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="185"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry type="model" import="true" name="Seeker Chariot Of Slaanesh" hidden="false" id="48dc-9159-4e53-10f9" collective="false">
+      <selectionEntries>
+        <selectionEntry type="model" subType="crew" name="Daemonette Crew" id="ad4f-580a-3827-c1ac" hidden="false" sortIndex="3">
+          <infoLinks>
+            <infoLink name="Daemonette Crew" hidden="false" type="profile" id="df81-587-efa6-3d8d" targetId="78c2-dce7-1644-8079"/>
+            <infoLink name="Base" hidden="false" type="profile" id="9889-e487-3369-6e88" targetId="d456-e30e-f85d-14d"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="0"/>
+          </costs>
+          <entryLinks>
+            <entryLink name="Piercing claws" id="4159-a8a8-4aeb-4860" hidden="false" type="selectionEntry" targetId="d391-1b4b-6e99-dd8d">
+              <constraints>
+                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="882f-472c-fe0d-95fb"/>
+                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="8648-4464-61d1-45fc"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <constraints>
+            <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="a43a-3926-a331-ba23"/>
+            <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="b2e0-5c34-1c70-6539" includeChildSelections="false"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink name="CHARIOT CREW" hidden="false" id="a56-8789-3c9b-2bf3" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+          </categoryLinks>
+        </selectionEntry>
+        <selectionEntry type="model" name="Steed of Slaanesh" id="a7b-ce0-43e6-7b63" hidden="false" sortIndex="1">
+          <infoLinks>
+            <infoLink name="Steed of Slaanesh" hidden="false" type="profile" id="610c-bb9c-a8fa-bf3d" targetId="ea73-fba9-d2f4-269"/>
+            <infoLink name="Base" hidden="false" type="profile" id="4a0b-e18d-4cd2-6460" targetId="d456-e30e-f85d-14d"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="0"/>
+          </costs>
+          <constraints>
+            <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="b783-8088-204b-6b16"/>
+            <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="ed10-c17b-c9bc-db53" includeChildSelections="false"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink name="CHARIOT CREW" hidden="false" id="9ac5-2ec5-1afa-a20f" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="Daemon of Slaanesh" hidden="false" id="e9a9-d79a-55e-a66" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+          </categoryLinks>
+        </selectionEntry>
+      </selectionEntries>
+      <infoGroups>
+        <infoGroup name="Special Rules" hidden="false" id="981f-3445-35cc-14cd">
+          <infoLinks>
+            <infoLink name="Armour Bane (1, Steed of Slaanesh only)" hidden="false" id="91b6-dea7-b36a-2cd5" type="profile" targetId="2af0-975f-bb14-8b8f">
+              <modifiers>
+                <modifier type="append" value="(1)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Counter Charge" hidden="false" id="9ee8-dba5-6e30-3d62" type="profile" targetId="5186-798d-69d-6545"/>
+            <infoLink name="Daemonic" hidden="false" id="a34b-a3ec-287b-bd3" type="profile" targetId="755a-790d-9ba0-fdd5"/>
+            <infoLink name="Daemon of Slaanesh" hidden="false" id="e73c-a311-8227-5f1f" type="profile" targetId="3341-9239-4961-e8ce"/>
+            <infoLink name="First Charge" hidden="false" id="50b9-2c0f-ea9e-a25b" type="profile" targetId="785a-2886-af42-dce9"/>
+            <infoLink name="Impact Hits (D3+1)" hidden="false" id="d113-7de4-c28b-7772" type="profile" targetId="5c2-e9dd-2715-a0c0">
+              <modifiers>
+                <modifier type="append" value="(D3+1)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Open Order" hidden="false" id="c88c-46f8-3e8a-3298" type="profile" targetId="5b67-8535-146c-7cea"/>
+            <infoLink name="Poisoned Attacks (Steed of Slaanesh only)" hidden="false" id="9060-d129-2e2b-ace3" type="profile" targetId="81f5-4895-4abc-fc39">
+              <modifiers>
+                <modifier type="append" value="(Steed of Slaanesh only)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Swiftstride" hidden="false" id="90c6-d2c2-455f-d70a" type="profile" targetId="dc91-48b3-3696-217"/>
+            <infoLink name="Armour Value" hidden="false" id="806d-fd77-9641-3cdd" type="profile" targetId="e099-1ebb-9e85-34c8">
+              <modifiers>
+                <modifier type="append" value=":  5+" field="name"/>
+              </modifiers>
+            </infoLink>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <categoryLinks>
+        <categoryLink name="Daemon of Slaanesh" hidden="false" id="485e-c300-6739-e09a" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+        <categoryLink name="Light Chariot" hidden="false" id="eb18-afac-16d1-94e4" targetId="7dce-b0f0-2217-2820" primary="false"/>
+        <categoryLink name="MOUNT" hidden="false" id="eb36-5372-47b8-5693" targetId="c96a-608-5de4-b943" primary="false"/>
+      </categoryLinks>
+      <infoLinks>
+        <infoLink name="Base" hidden="false" type="profile" id="2dc5-3355-bde-283b" targetId="d456-e30e-f85d-14d"/>
+        <infoLink name="Seeker Chariot" hidden="false" type="profile" id="55d-743e-32ea-bdd5" targetId="7e2a-54ed-785-ebc"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="100"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Chariot Of Tzeentch" hidden="false" id="6661-32e0-21-edb5" collective="false">
+      <profiles>
+        <profile name="Chariot Of Tzeentch" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="43f9-3ad9-105-7173">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Heavy Chariot</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">1</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <categoryLinks>
+        <categoryLink name="Daemon of Tzeentch" hidden="false" id="272d-3771-4606-c84" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
+        <categoryLink name="Heavy Chariot" hidden="false" id="3531-a6ba-aa60-4c24" targetId="d768-7cf0-de0a-c249" primary="false"/>
+      </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Chariot Of Tzeentch" hidden="false" id="5267-7cea-ffa8-673d" type="selectionEntry" targetId="d3573c4a-5b93fb74"/>
+      </entryLinks>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Burning Chariot Of Tzeentch" hidden="false" id="a3d8-b116-a743-65d3" collective="false">
+      <profiles>
+        <profile name="Burning Chariot Of Tzeentch" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="b79a-33f4-eb-980c">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Heavy Chariot</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">1</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <categoryLinks>
+        <categoryLink name="Daemon of Tzeentch" hidden="false" id="5eaf-c54a-89f8-28f1" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
+        <categoryLink name="Heavy Chariot" hidden="false" id="6901-954a-26f9-3d2b" targetId="d768-7cf0-de0a-c249" primary="false"/>
+      </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Burning Chariot Of Tzeentch" hidden="false" id="c8f1-7172-fdcf-6de4" type="selectionEntry" targetId="c716a1af-a3b9d2bd">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="3e46-8647-5d3c-6497"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ed15-86d1-db4e-61c7"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
   </sharedSelectionEntries>
   <entryLinks>
@@ -5412,11 +5584,18 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Characters" hidden="false" id="696a-e09-a5a8-bbf" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Bloodletters Of Khorne" hidden="false" id="4c6fb947-3bd0c795" type="selectionEntry" targetId="b1564921-d8699af7">
+    <entryLink import="true" name="Bloodletters Of Khorne" hidden="true" id="4c6fb947-3bd0c795" type="selectionEntry" targetId="b1564921-d8699af7">
       <categoryLinks>
         <categoryLink name="Heavy Infantry" hidden="false" id="86d4ee73-1d1f9c21" targetId="ca7e-d004-ccde-caf3" primary="false"/>
         <categoryLink name="Core" hidden="false" id="7975-67d3-c827-6ad6" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="6f57-c02b-7bf6-f772" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Flesh Hounds Of Khorne" hidden="false" id="c215324f-954cdcdd" type="selectionEntry" targetId="daf0d29-e46c07ff">
       <categoryLinks>
@@ -5435,6 +5614,16 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Heavy Chariot" hidden="false" id="7386b899-4f5a8ef" targetId="d768-7cf0-de0a-c249" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="b370-ee2f-6c65-1a" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="b4c1-2c3b-5be1-d37d"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="b4c1-2c3b-5be1-d37d">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="5f47-fa72-76eb-6a42"/>
+          </repeats>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Great Unclean One" hidden="false" id="6bb56c09-ef8f49df" type="selectionEntry" targetId="e2f90838-6b3c5222">
       <categoryLinks>
@@ -5448,29 +5637,57 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Characters" hidden="false" id="d414-f188-a861-8b84" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Plaguebearers Of Nurgle" hidden="false" id="8dfd69a4-1545d2ee" type="selectionEntry" targetId="47fcba1a-5b6e0a04">
+    <entryLink import="true" name="Plaguebearers Of Nurgle" hidden="true" id="8dfd69a4-1545d2ee" type="selectionEntry" targetId="47fcba1a-5b6e0a04">
       <categoryLinks>
         <categoryLink name="Regular Infantry" hidden="false" id="e199d61-81f04d37" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Core" hidden="false" id="bae4-773c-6411-d716" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="a17e-24e9-133a-c6ad" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
-    <entryLink import="true" name="Beasts Of Nurgle" hidden="false" id="5a6a946-d53d5ed0" type="selectionEntry" targetId="53aef174-7c417e7e">
+    <entryLink import="true" name="Beasts Of Nurgle" hidden="true" id="5a6a946-d53d5ed0" type="selectionEntry" targetId="53aef174-7c417e7e">
       <categoryLinks>
         <categoryLink name="Monstrous Infantry" hidden="false" id="2980500d-b8334443" targetId="5c55-f9d6-b181-92f8" primary="false"/>
         <categoryLink name="Special" hidden="false" id="2bc9-c9a1-6e11-13d9" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="a17e-24e9-133a-c6ad" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
-    <entryLink import="true" name="Nurglings" hidden="false" id="48a3e50f-7e4ff99d" type="selectionEntry" targetId="96b828e9-2ece45bf">
+    <entryLink import="true" name="Nurglings" hidden="true" id="48a3e50f-7e4ff99d" type="selectionEntry" targetId="96b828e9-2ece45bf">
       <categoryLinks>
         <categoryLink name="Swarms" hidden="false" id="3d271c82-fb955a4c" targetId="db92-54fd-e023-d69f" primary="false"/>
         <categoryLink name="Core" hidden="false" id="5590-53c1-72e4-30b9" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="a17e-24e9-133a-c6ad" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
-    <entryLink import="true" name="Plague Drones Of Nurgle" hidden="false" id="f7007efb-89ac9489" type="selectionEntry" targetId="30060615-e5f3d40b">
+    <entryLink import="true" name="Plague Drones Of Nurgle" hidden="true" id="f7007efb-89ac9489" type="selectionEntry" targetId="30060615-e5f3d40b">
       <categoryLinks>
         <categoryLink name="Monstrous Cavalry" hidden="false" id="698a6d11-da191a67" targetId="2c85-5f2b-9288-1257" primary="false"/>
         <categoryLink name="Special" hidden="false" id="27ee-b3ff-adc3-3731" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="a17e-24e9-133a-c6ad" childId="6f57-c02b-7bf6-f772" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Keeper of Secrets" hidden="false" id="43df56e8-30381e92" type="selectionEntry" targetId="2b47503b-30b2dbc9">
       <categoryLinks>
@@ -5484,11 +5701,18 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Characters" hidden="false" id="f7b2-2bc1-6ff5-1690" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Daemonettes Of Slaanesh" hidden="false" id="3b653c37-39429b05" type="selectionEntry" targetId="a2c63511-9b36a267">
+    <entryLink import="true" name="Daemonettes Of Slaanesh" hidden="true" id="3b653c37-39429b05" type="selectionEntry" targetId="a2c63511-9b36a267">
       <categoryLinks>
         <categoryLink name="Regular Infantry" hidden="false" id="653ef2e2-c22b062c" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Core" hidden="false" id="d0c4-5293-4b77-1201" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="efb6-f92e-bd02-dd94" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Seekers Of Slaanesh" hidden="false" id="9dc70dfa-3037f6e4" type="selectionEntry" targetId="d9b356b8-38b02ca2">
       <categoryLinks>
@@ -5496,23 +5720,44 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Special" hidden="false" id="22ee-6059-adb-37cc" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Fiends Of Slaanesh" hidden="false" id="9451ae99-6bb8eeef" type="selectionEntry" targetId="25df6e4b-2339b419">
+    <entryLink import="true" name="Fiends Of Slaanesh" hidden="true" id="9451ae99-6bb8eeef" type="selectionEntry" targetId="25df6e4b-2339b419">
       <categoryLinks>
         <categoryLink name="Monstrous Cavalry" hidden="false" id="2b36e023-69d60c51" targetId="2c85-5f2b-9288-1257" primary="false"/>
         <categoryLink name="Special" hidden="false" id="f573-9f5f-d7fa-a281" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="efb6-f92e-bd02-dd94" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
-    <entryLink import="true" name="Hellflayer Of Slaanesh" hidden="false" id="636f9d20-92445dea" type="selectionEntry" targetId="6b44b276-2609940">
+    <entryLink import="true" name="Hellflayer Of Slaanesh" hidden="true" id="636f9d20-92445dea" type="selectionEntry" targetId="6b44b276-2609940">
       <categoryLinks>
         <categoryLink name="Light Chariot" hidden="false" id="cb6c1c8-5aad3272" targetId="7dce-b0f0-2217-2820" primary="false"/>
         <categoryLink name="Special" hidden="false" id="f4e0-32a6-b434-ce0c" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="efb6-f92e-bd02-dd94" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
-    <entryLink import="true" name="Seeker Chariot Of Slaanesh" hidden="false" id="dafb4735-72480e2b" type="selectionEntry" targetId="a2158237-6c40b105">
+    <entryLink import="true" name="Seeker Chariot Of Slaanesh" hidden="true" id="dafb4735-72480e2b" type="selectionEntry" targetId="a2158237-6c40b105">
       <categoryLinks>
         <categoryLink name="Light Chariot" hidden="false" id="a064eecf-563ab55d" targetId="7dce-b0f0-2217-2820" primary="false"/>
         <categoryLink name="Special" hidden="false" id="53d8-5908-f47c-24ae" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="efb6-f92e-bd02-dd94" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Lord of Change" hidden="false" id="3fcfc240-47e5158a" type="selectionEntry" targetId="66c567ab-44d8e5f9">
       <categoryLinks>
@@ -5526,11 +5771,18 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Characters" hidden="false" id="9405-c8fc-569f-8181" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Pink Horrors Of Tzeentch" hidden="false" id="13d45f11-2e837c67" type="selectionEntry" targetId="c04b2a23-8ff80651">
+    <entryLink import="true" name="Pink Horrors Of Tzeentch" hidden="true" id="13d45f11-2e837c67" type="selectionEntry" targetId="c04b2a23-8ff80651">
       <categoryLinks>
         <categoryLink name="Regular Infantry" hidden="false" id="137a8034-d5ba973e" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Core" hidden="false" id="d751-2893-4f48-ffc0" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="e187-4f54-d986-a47e" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Blue Horrors Of Tzeentch" hidden="false" id="a9ea9865-9c451d5b" type="selectionEntry" targetId="71a2a427-36037bf5">
       <categoryLinks>
@@ -5538,11 +5790,18 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Special" hidden="false" id="84b6-51be-1ed2-8261" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Flamers Of Tzeentch" hidden="false" id="c04e0d8c-9ce65dd6" type="selectionEntry" targetId="7cc7c702-7fdcb0cc">
+    <entryLink import="true" name="Flamers Of Tzeentch" hidden="true" id="c04e0d8c-9ce65dd6" type="selectionEntry" targetId="7cc7c702-7fdcb0cc">
       <categoryLinks>
         <categoryLink name="Regular Infantry" hidden="false" id="57a9fdb9-3946fd0f" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Special" hidden="false" id="c890-7c93-da9c-2330" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="e187-4f54-d986-a47e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Brimstone Horrors Of Tzeentch" hidden="false" id="d31ebc92-2f8b0fdc" type="selectionEntry" targetId="ebb5370-c4fe173a">
       <categoryLinks>
@@ -5550,13 +5809,20 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Special" hidden="false" id="f1c5-c50a-6d74-26d7" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Screamers Of Tzeentch" hidden="false" id="acbff7e5-f27380db" type="selectionEntry" targetId="747803a7-8c31df75">
+    <entryLink import="true" name="Screamers Of Tzeentch" hidden="true" id="acbff7e5-f27380db" type="selectionEntry" targetId="747803a7-8c31df75">
       <categoryLinks>
         <categoryLink name="War Beasts" hidden="false" id="7e38a903-8f708c31" targetId="19f9-8dd8-bba4-625b" primary="false"/>
         <categoryLink name="Special" hidden="false" id="15c1-5201-e422-a7a9" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="e187-4f54-d986-a47e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
-    <entryLink import="true" name="Burning Chariot Of Tzeentch" hidden="false" id="1f5d354d-1b7eff83" type="selectionEntry" targetId="c716a1af-a3b9d2bd">
+    <entryLink import="true" name="Burning Chariot Of Tzeentch" hidden="false" id="1f5d354d-1b7eff83" type="selectionEntry" targetId="a3d8-b116-a743-65d3">
       <categoryLinks>
         <categoryLink name="Heavy Chariot" hidden="false" id="834ba24-e3e9f6e" targetId="d768-7cf0-de0a-c249" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="df1b-3094-5e4-c1d7" targetId="2bfe-5863-46fe-d284" primary="true"/>
@@ -5580,17 +5846,24 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Rare" hidden="false" id="a9d-d77d-5cfb-2c7f" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Bloodletters Of Khorne" hidden="false" id="f5ed-1acf-871f-1b0c" type="selectionEntry" targetId="b1564921-d8699af7">
+    <entryLink import="true" name="Bloodletters Of Khorne" hidden="true" id="f5ed-1acf-871f-1b0c" type="selectionEntry" targetId="b1564921-d8699af7">
       <categoryLinks>
         <categoryLink name="Heavy Infantry" hidden="false" id="3783-c6a3-83ac-1ae6" targetId="ca7e-d004-ccde-caf3" primary="false"/>
         <categoryLink name="Special" hidden="false" id="eb61-3b41-5710-5202" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Flesh Hounds Of Khorne" hidden="false" id="b0e-8b62-e32-4365" type="selectionEntry" targetId="daf0d29-e46c07ff">
+    <entryLink import="true" name="Flesh Hounds Of Khorne" hidden="true" id="b0e-8b62-e32-4365" type="selectionEntry" targetId="daf0d29-e46c07ff">
       <categoryLinks>
         <categoryLink name="Heavy Cavalry" hidden="false" id="39d-bd5c-ba7-8d99" targetId="5165-d052-cfc2-5887" primary="false"/>
         <categoryLink name="Core" hidden="false" id="dbab-5747-413e-d375" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="6f57-c02b-7bf6-f772" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Plaguebearers Of Nurgle" hidden="false" id="b355-c9c8-bc60-45d9" type="selectionEntry" targetId="47fcba1a-5b6e0a04">
       <categoryLinks>
@@ -5610,11 +5883,18 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Special" hidden="false" id="4b90-dd86-aef4-374c" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Seekers Of Slaanesh" hidden="false" id="1443-f4cc-ba73-8345" type="selectionEntry" targetId="d9b356b8-38b02ca2">
+    <entryLink import="true" name="Seekers Of Slaanesh" hidden="true" id="1443-f4cc-ba73-8345" type="selectionEntry" targetId="d9b356b8-38b02ca2">
       <categoryLinks>
         <categoryLink name="Light Cavalry" hidden="false" id="a4e0-7bae-deca-e372" targetId="600c-7d08-5be1-fe0c" primary="false"/>
         <categoryLink name="Core" hidden="false" id="69b0-6ddc-80dd-fb60" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="efb6-f92e-bd02-dd94" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Pink Horrors Of Tzeentch" hidden="false" id="b6ec-8672-8fd1-66a0" type="selectionEntry" targetId="c04b2a23-8ff80651">
       <categoryLinks>
@@ -5622,23 +5902,44 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Special" hidden="false" id="9b9c-3fe7-324b-2ef5" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Blue Horrors Of Tzeentch" hidden="false" id="e9df-85bb-d56b-d3f" type="selectionEntry" targetId="71a2a427-36037bf5">
+    <entryLink import="true" name="Blue Horrors Of Tzeentch" hidden="true" id="e9df-85bb-d56b-d3f" type="selectionEntry" targetId="71a2a427-36037bf5">
       <categoryLinks>
         <categoryLink name="Regular Infantry" hidden="false" id="cd13-7c60-7287-57e1" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Core" hidden="false" id="a825-a344-7131-578e" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="e187-4f54-d986-a47e" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
-    <entryLink import="true" name="Brimstone Horrors Of Tzeentch" hidden="false" id="e228-d595-992c-c824" type="selectionEntry" targetId="ebb5370-c4fe173a">
+    <entryLink import="true" name="Brimstone Horrors Of Tzeentch" hidden="true" id="e228-d595-992c-c824" type="selectionEntry" targetId="ebb5370-c4fe173a">
       <categoryLinks>
         <categoryLink name="Swarms" hidden="false" id="883a-26f1-bf33-a31d" targetId="db92-54fd-e023-d69f" primary="false"/>
         <categoryLink name="Core" hidden="false" id="ea2b-ba19-5e07-4663" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="e187-4f54-d986-a47e" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
-    <entryLink import="true" name="Bloodcrushers Of Khorne" hidden="false" id="2ee6-73ea-5a1a-980c" type="selectionEntry" targetId="7de8fe5b-198a71e9">
+    <entryLink import="true" name="Bloodcrushers Of Khorne" hidden="true" id="2ee6-73ea-5a1a-980c" type="selectionEntry" targetId="7de8fe5b-198a71e9">
       <categoryLinks>
         <categoryLink name="Monstrous Cavalry" hidden="false" id="e12e-1509-fb15-bd5a" targetId="2c85-5f2b-9288-1257" primary="false"/>
         <categoryLink name="Special" hidden="false" id="d900-1d6-4b19-f241" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="6f57-c02b-7bf6-f772" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Beasts Of Nurgle" hidden="false" id="ffae-9f79-9d7e-290b" type="selectionEntry" targetId="53aef174-7c417e7e">
       <categoryLinks>
@@ -5664,22 +5965,42 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</ch
         <categoryLink name="Rare" hidden="false" id="8d58-95c-2142-8f88" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Seeker Chariot Of Slaanesh" hidden="false" id="8a2d-9ceb-5f33-7a9e" type="selectionEntry" targetId="a2158237-6c40b105">
+    <entryLink import="true" name="Exalted Seeker Chariot Of Slaanesh" hidden="false" id="8a2d-9ceb-5f33-7a9e" type="selectionEntry" targetId="d1e028c6-48aee250">
       <categoryLinks>
-        <categoryLink name="Light Chariot" hidden="false" id="8913-3b50-62e8-eb23" targetId="7dce-b0f0-2217-2820" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="47cc-56bc-86b3-5eef" targetId="2bfe-5863-46fe-d284" primary="true"/>
+        <categoryLink name="Heavy Chariot" hidden="false" id="b3d6-a7ca-4b47-a266" targetId="d768-7cf0-de0a-c249" primary="false"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Flamers Of Tzeentch" hidden="false" id="b636-9053-f835-d677" type="selectionEntry" targetId="7cc7c702-7fdcb0cc">
       <categoryLinks>
         <categoryLink name="Regular Infantry" hidden="false" id="9a47-f21c-c586-aa11" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="8ea5-5f87-ea0b-62a0" targetId="2bfe-5863-46fe-d284" primary="true"/>
+        <categoryLink name="New Category" hidden="false" id="de00-7c49-706c-ffe3" targetId="4c0b-a2c1-dbea-cc85" primary="false"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Screamers Of Tzeentch" hidden="false" id="9172-7cde-f98b-fa25" type="selectionEntry" targetId="747803a7-8c31df75">
       <categoryLinks>
         <categoryLink name="War Beasts" hidden="false" id="fd76-a5ff-99f1-28f3" targetId="19f9-8dd8-bba4-625b" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="d160-2fd5-51dd-11ed" targetId="2bfe-5863-46fe-d284" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Exalted Seeker Chariot Of Slaanesh" hidden="true" id="a40-cf93-ee94-b560" type="selectionEntry" targetId="d1e028c6-48aee250">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="ca5f-ed7e-59d2-189a" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Heavy Chariot" hidden="false" id="df51-73cc-1463-c5ce" targetId="d768-7cf0-de0a-c249" primary="false"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="efb6-f92e-bd02-dd94" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Seeker Chariot Of Slaanesh" hidden="false" id="e13e-cf71-73a2-4915" type="selectionEntry" targetId="a2158237-6c40b105">
+      <categoryLinks>
+        <categoryLink name="Light Chariot" hidden="false" id="84c4-62b4-f7ca-396e" targetId="7dce-b0f0-2217-2820" primary="false"/>
+        <categoryLink name="Rare" hidden="false" id="793f-42f2-6257-ca1e" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
     </entryLink>
   </entryLinks>
@@ -6534,5 +6855,14 @@ That enemy unit must make a Leadership test. If this test is passed, the unit ma
     <categoryEntry name="Herald" hidden="false" id="b727-9b30-81eb-c25d"/>
     <categoryEntry name="Greater Demon" hidden="false" id="c913-dd76-9dc5-9d1e"/>
     <categoryEntry name="Standard Bearer" hidden="false" id="1c05-7a83-b4e1-ffaa"/>
+    <categoryEntry name="General of Khorne" hidden="false" id="6f57-c02b-7bf6-f772"/>
+    <categoryEntry name="General of Nurgle" hidden="false" id="a17e-24e9-133a-c6ad"/>
+    <categoryEntry name="General of Slaanesh" hidden="false" id="efb6-f92e-bd02-dd94"/>
+    <categoryEntry name="General of Tzeentch" hidden="false" id="e187-4f54-d986-a47e"/>
+    <categoryEntry name="New Category" hidden="false" id="4c0b-a2c1-dbea-cc85">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="80b5-cd20-ea04-2788"/>
+      </constraints>
+    </categoryEntry>
   </categoryEntries>
 </catalogue>
