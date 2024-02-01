@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="62" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="63" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -19,7 +19,7 @@
     <categoryEntry name="Monstrous Creature" hidden="false" id="fb36-5275-617-c895"/>
     <categoryEntry name="Monstrous Infantry" hidden="false" id="5c55-f9d6-b181-92f8"/>
     <categoryEntry name="Heavy Cavalry" hidden="false" id="5165-d052-cfc2-5887"/>
-    <categoryEntry name="War Beasts" hidden="false" id="19f9-8dd8-bba4-625b"/>
+    <categoryEntry name="War Beast" hidden="false" id="19f9-8dd8-bba4-625b"/>
     <categoryEntry name="NO EXPORT" hidden="true" id="49a9-ce63-af1a-18f7"/>
     <categoryEntry name="Monstrous Cavalry" hidden="false" id="2c85-5f2b-9288-1257"/>
     <categoryEntry name="Behemoth" hidden="false" id="3755-6732-99b2-c713"/>
