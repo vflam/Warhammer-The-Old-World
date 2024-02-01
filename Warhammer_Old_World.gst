@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="58" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="59" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -140,7 +140,7 @@
         <characteristicType id="1adf-d238-57ca-2226" name="Base Size"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Weapon (free-text) " hidden="false" id="cc88-6a7d-41c9-d63e" sortIndex="2">
+    <profileType name="Weapon" hidden="false" id="cc88-6a7d-41c9-d63e" sortIndex="2">
       <characteristicTypes>
         <characteristicType id="47f2-ecee-cae0-9ef9" name="Description"/>
       </characteristicTypes>
@@ -204,7 +204,7 @@
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
     </profile>
-    <profile name="Hand Weapon" hidden="false" id="ef45-edcd-18bf-fe1d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="213" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Hand Weapon" hidden="false" id="ef45-edcd-18bf-fe1d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="213" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S AP: -
           Notes: Unless specified otherwise, all models are assumed to be equipped with a hand
@@ -222,13 +222,13 @@
           it cannot also use a shield.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Great weapon" hidden="false" id="88e3-38f0-92d5-b616" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="214" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Great weapon" hidden="false" id="88e3-38f0-92d5-b616" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+2 AP: -2
           Special Rules: Armour Bane (1), Requires Two Hands, Strike Last</characteristic>
       </characteristics>
     </profile>
-    <profile name="Longbow" hidden="false" id="c84c-99b6-75eb-4f40" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="216" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Longbow" hidden="false" id="c84c-99b6-75eb-4f40" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="216" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 30&quot; S: 3 AP: -
           Special Rules: Armour Bane (1), Volley Fire</characteristic>
@@ -253,7 +253,7 @@
       </characteristics>
       <comment>#noscript</comment>
     </profile>
-    <profile name="Brace of Repeater Handbows" hidden="false" id="fca0-3c32-72da-53b9" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) ">
+    <profile name="Brace of Repeater Handbows" hidden="false" id="fca0-3c32-72da-53b9" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12&quot; S3 Multiple Shots
           (4), Quick Shot</characteristic>
@@ -281,13 +281,13 @@
           special rule, use the highest modifier.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Pistol" hidden="false" id="4c62-cdd4-4e0c-4265" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="217" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Pistol" hidden="false" id="4c62-cdd4-4e0c-4265" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: 4 AP: -1
           Special Rules: Armour Bane (1), Quick Shot</characteristic>
       </characteristics>
     </profile>
-    <profile name="Brace of Pistols" hidden="false" id="cdb0-f5d2-68e0-205f" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) ">
+    <profile name="Brace of Pistols" hidden="false" id="cdb0-f5d2-68e0-205f" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12&quot; S4 AP-1 Armour
           Bane(1), Multiple Shots (2), Quick Shot.
@@ -309,7 +309,7 @@
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Once per game, during a turn in which it was charged, a unit with this special rule that is arrayed in a Close Order formation, and that is equipped with and chooses to use shields, may Give Ground rather than Fall Back in Good Order.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Handgun" hidden="false" id="4035-287b-e117-6b9b" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="217" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Handgun" hidden="false" id="4035-287b-e117-6b9b" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 24&quot; S: 4 AP: -1
           Special Rules: Armour Bane (1), Ponderous</characteristic>
@@ -349,7 +349,13 @@ If both armies contain Scouts, a roll-off should determine which player deploys 
     </profile>
     <profile name="Ambushers" hidden="false" id="8c0b-6fe6-dc06-512" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="166" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit with this special rule may be held in reserve rather than be deployed at the start of the game. From the beginning of round two onwards, roll a D6 during each of your Start of Turn sub-phases for each unit of Ambushers in your army that is held in reserve. On a roll of 1-3, the unit is delayed until your next turn at least. On a roll of 4+, the unit arrives, entering the battle as reinforcements during the Compulsory Moves sub-phase. The unit may be placed on any edge of the battlefield, chosen by its controlling player, but cannot be placed within 8&quot; of an enemy model. If any Ambushers are still held in reserve by the start of round five, they arrive automatically.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit with this special rule may be held in reserve rather than be deployed at the start of the game. From the beginning of round two onwards, roll a D6 during each of your Start of Turn sub-phases for each unit of Ambushers in your army that is held in reserve.
+
+
+On a roll of 1-3, the unit is delayed until your next turn at least. 
+
+
+On a roll of 4+, the unit arrives, entering the battle as reinforcements during the Compulsory Moves sub-phase. The unit may be placed on any edge of the battlefield, chosen by its controlling player, but cannot be placed within 8&quot; of an enemy model. If any Ambushers are still held in reserve by the start of round five, they arrive automatically.</characteristic>
       </characteristics>
     </profile>
     <profile name="Vanguard" hidden="false" id="691e-10ec-4f7c-a2c4" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="180" publicationId="768b-3da1-a182-a1d8">
@@ -374,19 +380,19 @@ Note that unless a character also has this special rule, their Leadership cannot
         <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">+1 Armour Save</characteristic>
       </characteristics>
     </profile>
-    <profile name="Warbow" hidden="false" id="20c1-9325-e604-a558" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) ">
+    <profile name="Warbow" hidden="false" id="20c1-9325-e604-a558" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Range 24&quot; S S, Volley
           Fire</characteristic>
       </characteristics>
     </profile>
-    <profile name="Additional Hand Weapon" hidden="false" id="300e-9667-fc8c-c763" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) ">
+    <profile name="Additional Hand Weapon" hidden="false" id="300e-9667-fc8c-c763" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Extra Atacks (+1), Require
           Two Hands</characteristic>
       </characteristics>
     </profile>
-    <profile name="Throwing Spear" hidden="false" id="8a6-cc93-b5fd-6636" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="215" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Throwing Spear" hidden="false" id="8a6-cc93-b5fd-6636" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S AP: -
           Notes: A throwing spear can only be used during a turn in which the wielder charged. In
@@ -394,7 +400,7 @@ Note that unless a character also has this special rule, their Leadership cannot
           instead. Special Rules: Fight in Extra Rank</characteristic>
       </characteristics>
     </profile>
-    <profile name="Thrusting Spear" hidden="false" id="85-9154-7dc1-ddc6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="215" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Thrusting Spear" hidden="false" id="85-9154-7dc1-ddc6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S AP: -
           Notes: Models whose troop type is ‘infantry’ only. A model wielding a thrusting spear
@@ -415,25 +421,16 @@ Losing Frenzy: Unlike other special rules, Frenzy can be lost during a game. Any
     </profile>
     <profile name="Armour Bane" hidden="false" id="2af0-975f-bb14-8b8f" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">If a model with this special
-          rule rolls a natural 6 when making a roll To Wound, the Armour Piercing characteristic of
-          its weapon is improved by the amount shown in brackets after the name of this special
-          rule.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">If a model with this special rule rolls a natural 6 when making a roll To Wound, the Armour Piercing characteristic of its weapon is improved by the amount shown in brackets after the name of this special rule.
 
-          For example, if a natural 6 is rolled when rolling To Wound with a weapon that has an AP
-          of &quot;-&quot; and the Armour Bane (1) special rule its AP counts as being -1 when
-          making an Armour Save roll against that wound.</characteristic>
+For example, if a natural 6 is rolled when rolling To Wound with a weapon that has an AP of &quot;-&quot; and the Armour Bane (1) special rule its AP counts as being -1 when making an Armour Save roll against that wound.</characteristic>
       </characteristics>
     </profile>
     <profile name="Armoured Hide" hidden="false" id="5450-cbf1-3e74-254a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">The hide of some creatures
-          forms natural armour and improves their armour value ( and that of their rider). By how
-          much armour value is improved varies from model to model, as shown in brackets after the
-          name of this special rule.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">The hide of some creatures forms natural armour and improves their armour value ( and that of their rider). By how much armour value is improved varies from model to model, as shown in brackets after the name of this special rule.
 
-          Note that a model that wears no armour is considerer to have an armour value of 7+ for the
-          purposes of rules that improve armour value.</characteristic>
+Note that a model that wears no armour is considerer to have an armour value of 7+ for the purposes of rules that improve armour value.</characteristic>
       </characteristics>
     </profile>
     <profile name="Breath Weapon" hidden="false" id="e049-8b4d-23e9-7505" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="166" publicationId="768b-3da1-a182-a1d8">
@@ -813,35 +810,21 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
     </profile>
     <profile name="Standard Bearer" hidden="false" id="bcf8-d942-102e-b155" typeId="52d4-d959-fe4d-90fa" typeName="Command">
       <characteristics>
-        <characteristic name="Description" typeId="441a-ef3a-c07e-95f">If a unit includes a standard
-          bearer, it may claim a bonus of +1 combat result point.
-          If a fleeing unit is run down by an enemy unit, or if a unit is destroyed in combat by an
-          enemy unit, its standard is claimed as a trophy. Standards claimed in this way are worth
-          bonus Victory Points at the end of the battle. Once a standard has been lost in this way,
-          it cannot be reclaimed.</characteristic>
+        <characteristic name="Description" typeId="441a-ef3a-c07e-95f">If a unit includes a standard bearer, it may claim a bonus of +1 combat result point.
+
+If a fleeing unit is run down by an enemy unit, or if a unit is destroyed in combat by an enemy unit, its standard is claimed as a trophy. Standards claimed in this way are worth bonus Victory Points at the end of the battle. Once a standard has been lost in this way, it cannot be reclaimed.</characteristic>
       </characteristics>
     </profile>
     <profile name="Musician" hidden="false" id="40f2-dd77-f0ca-3663" typeId="52d4-d959-fe4d-90fa" typeName="Command">
       <characteristics>
-        <characteristic name="Description" typeId="441a-ef3a-c07e-95f">If, once the combat result
-          has been calculated, both sides have the exact same number of points each, the side that
-          has a musician in the front rank of one or more of its units may claim a bonus of +1
-          combat result point. If, however, the opposing side has a musician also, the redoubled
-          efforts (and almighty clamour) cancel each other out and neither side may claim this
-          bonus.
-          If a fleeing unit contains a musician, it may apply a +1 modifier to its Leadership
-          characteristic whenever it attempts to rally, up to a maximum of Leadership 10.
-          Should a unit that contains a musician wish to march whilst within 8&quot; of an enemy
-          unit, it may apply a +1 modifier to its Leadership characteristic, up to a maximum of
-          Leadership10, when making its Leadership test.</characteristic>
+        <characteristic name="Description" typeId="441a-ef3a-c07e-95f">If, once the combat result has been calculated, both sides have the exact same number of points each, the side that has a musician in the front rank of one or more of its units may claim a bonus of +1 combat result point. If, however, the opposing side has a musician also, the redoubled efforts (and almighty clamour) cancel each other out and neither side may claim this bonus.
+
+If a fleeing unit contains a musician, it may apply a +1 modifier to its Leadership characteristic whenever it attempts to rally, up to a maximum of Leadership 10. Should a unit that contains a musician wish to march whilst within 8&quot; of an enemy unit, it may apply a +1 modifier to its Leadership characteristic, up to a maximum of Leadership10, when making its Leadership test.</characteristic>
       </characteristics>
     </profile>
     <profile name="Champion" hidden="false" id="5f1c-fd04-b0d5-d5e" typeId="52d4-d959-fe4d-90fa" typeName="Command">
       <characteristics>
-        <characteristic name="Description" typeId="441a-ef3a-c07e-95f">In combat, a champion that is
-          within the fighting rank fights as normal. Enemy models that are in base contact with a
-          champion can direct attacks against that champion if they wish.
-          Champions can issue and accept challenges in the same manner as a character.</characteristic>
+        <characteristic name="Description" typeId="441a-ef3a-c07e-95f">In combat, a champion that is within the fighting rank fights as normal. Enemy models that are in base contact with a champion can direct attacks against that champion if they wish. Champions can issue and accept challenges in the same manner as a character.</characteristic>
       </characteristics>
     </profile>
     <profile name="Base (50x50)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="7813-4d15-143d-1bf1">
@@ -908,13 +891,13 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
     </profile>
-    <profile name="Bolt Thrower" hidden="false" id="36e4-28b4-31ff-39dc" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="223" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Bolt Thrower" hidden="false" id="36e4-28b4-31ff-39dc" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="223" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot; S: 6 AP: -3
           Special Rules: Cumbersome, Move or Shoot, Multiple Wounds (2), Through &amp; Through</characteristic>
       </characteristics>
     </profile>
-    <profile name="Cannon" hidden="false" id="8ef5-8512-e1c2-6474" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="226" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Cannon" hidden="false" id="8ef5-8512-e1c2-6474" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="226" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot; S: 8 AP: -2
           Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot
@@ -923,20 +906,20 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
           (D3)</characteristic>
       </characteristics>
     </profile>
-    <profile name="Stone Thrower" hidden="false" id="3142-ada8-328d-1615" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) ">
+    <profile name="Stone Thrower" hidden="false" id="3142-ada8-328d-1615" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12-60&quot; S4(8) AP-1(-3)
           Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3+1)</characteristic>
       </characteristics>
     </profile>
-    <profile name="Organ gun" hidden="false" id="5635-efd8-13b6-c841" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="228" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Organ gun" hidden="false" id="5635-efd8-13b6-c841" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="228" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 30&quot; S: 5 AP: -1
           Notes: This weapon uses the Black Powder Misfire table. Special Rules: Armour Bane (2),
           Cumbersome, Move or Shoot, Multi-Barrelled</characteristic>
       </characteristics>
     </profile>
-    <profile name="Fire Thrower" hidden="false" id="2694-34f1-f146-6351" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="229" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Fire Thrower" hidden="false" id="2694-34f1-f146-6351" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="229" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: 5 AP: -1
           Notes: Fire throwers do not use their crew’s Ballistic Skill. Instead, they shoot using
@@ -944,13 +927,13 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
           Special Rules: Column of Fire, Cumbersome, Flaming Attacks, Move or Shoot</characteristic>
       </characteristics>
     </profile>
-    <profile name="Javelin" hidden="false" id="f3f8-7476-d165-1a5d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="219" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Javelin" hidden="false" id="f3f8-7476-d165-1a5d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: S AP: -
           Special Rules: Move &amp; Shoot, Quick Shot</characteristic>
       </characteristics>
     </profile>
-    <profile name="Cavalry spear" hidden="false" id="ee75-c1a8-2f0c-c264" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="215" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Cavalry spear" hidden="false" id="ee75-c1a8-2f0c-c264" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+1 AP: -1
           Notes: Models whose troop type is ‘cavalry’, ‘monster’ or ‘chariot’ only. A cavalry
@@ -959,33 +942,33 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
           turn in which it charged. Special Rules: Fight in Extra Rank</characteristic>
       </characteristics>
     </profile>
-    <profile name="Morning star" hidden="false" id="caad-2fc0-e82a-18fd" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="214" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Morning star" hidden="false" id="caad-2fc0-e82a-18fd" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+1 AP: -1
           Notes: A morning star’s Strength modifier applies only during the first round of combat.
           Special Rules: -</characteristic>
       </characteristics>
     </profile>
-    <profile name="Halberd" hidden="false" id="98f8-9d8-94cd-3379" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="214" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Halberd" hidden="false" id="98f8-9d8-94cd-3379" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+1 AP: -1
           Special Rules: Armour Bane (1), Requires Two Hands</characteristic>
       </characteristics>
     </profile>
-    <profile name="Flail" hidden="false" id="b326-5bf3-9b4e-f8ad" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="214" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Flail" hidden="false" id="b326-5bf3-9b4e-f8ad" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+2 AP: -2
           Notes: A flail’s Strength modifier applies only during the first round of combat. Special
           Rules: Requires Two Hands</characteristic>
       </characteristics>
     </profile>
-    <profile name="Whip" hidden="false" id="7505-7edf-c3de-57a6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="214" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Whip" hidden="false" id="7505-7edf-c3de-57a6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S AP: - Special
           Rules: Fight in Extra Rank, Strike First</characteristic>
       </characteristics>
     </profile>
-    <profile name="Lance" hidden="false" id="3520-64c9-a855-ce9e" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="215" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Lance" hidden="false" id="3520-64c9-a855-ce9e" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+2 AP: -2
           Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance can only be used
@@ -993,72 +976,72 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
           charge) the model must use its hand weapon instead. Special Rules: Armour Bane (1)</characteristic>
       </characteristics>
     </profile>
-    <profile name="Shortbow" hidden="false" id="1b65-71ef-52a3-93d0" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="216" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Shortbow" hidden="false" id="1b65-71ef-52a3-93d0" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="216" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 18&quot; S: 3 AP: -
           Special Rules: Quick Shot, Volley Fire</characteristic>
       </characteristics>
     </profile>
-    <profile name="Repeater Pistol" hidden="false" id="f675-db0d-397c-d873" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) ">
+    <profile name="Repeater Pistol" hidden="false" id="f675-db0d-397c-d873" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12&quot; S4 AP-1 Armour Bane
           (1), Multiple Shots (3), Quick Shot</characteristic>
       </characteristics>
     </profile>
-    <profile name="Repeater handgun" hidden="false" id="7f58-91d4-ee6c-3cb7" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="217" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Repeater handgun" hidden="false" id="7f58-91d4-ee6c-3cb7" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 24&quot; S: 4 AP: -1
           Special Rules: Armour Bane (1), Multiple Shots (3), Ponderous</characteristic>
       </characteristics>
     </profile>
-    <profile name="Crossbow" hidden="false" id="1ef1-8579-c310-4fb5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="218" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Crossbow" hidden="false" id="1ef1-8579-c310-4fb5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 30&quot; S: 4 AP: -
           Special Rules: Armour Bane (2), Ponderous</characteristic>
       </characteristics>
     </profile>
-    <profile name="Repeater crossbow" hidden="false" id="e240-f607-2c57-b181" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="218" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Repeater crossbow" hidden="false" id="e240-f607-2c57-b181" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 24&quot; S: 3 AP: -
           Special Rules: Armour Bane (1), Multiple Shots (2)</characteristic>
       </characteristics>
     </profile>
-    <profile name="Repeater handbow" hidden="false" id="f187-983f-99f2-5ecd" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="218" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Repeater handbow" hidden="false" id="f187-983f-99f2-5ecd" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: 3 AP: -
           Special Rules: Multiple Shots (2), Quick Shot</characteristic>
       </characteristics>
     </profile>
-    <profile name="Two Hand Weapon" hidden="false" id="1f58-a56f-e54c-ddc5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) ">
+    <profile name="Two Hand Weapon" hidden="false" id="1f58-a56f-e54c-ddc5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Extra Atacks (+1), Require
           Two Hands</characteristic>
       </characteristics>
     </profile>
-    <profile name="Sling" hidden="false" id="eee6-7b1-58de-6ad2" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="219" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Sling" hidden="false" id="eee6-7b1-58de-6ad2" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 18&quot; S: 3 AP: -
           Special Rules: Multiple Shots (2)</characteristic>
       </characteristics>
     </profile>
-    <profile name="Throwing Axe" hidden="false" id="9914-73b6-65c4-ec44" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="219" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Throwing Axe" hidden="false" id="9914-73b6-65c4-ec44" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 9&quot; S: S+1 AP: -
           Special Rules: Quick Shot</characteristic>
       </characteristics>
     </profile>
-    <profile name="Throwing Weapon" hidden="false" id="eee5-db12-1271-f2c5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="219" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Throwing Weapon" hidden="false" id="eee5-db12-1271-f2c5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 9&quot; S: S AP: -
           Special Rules: Multiple Shots (2), Move &amp; Shoot, Quick Shot</characteristic>
       </characteristics>
     </profile>
-    <profile name="Wicked Claws" hidden="false" id="14c0-c7a7-dd09-ea49" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) ">
+    <profile name="Wicked Claws" hidden="false" id="14c0-c7a7-dd09-ea49" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">AP-2</characteristic>
       </characteristics>
     </profile>
-    <profile name="Serrated Maw" hidden="false" id="2dea-8d5a-633c-cd7d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) ">
+    <profile name="Serrated Maw" hidden="false" id="2dea-8d5a-633c-cd7d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Armour Bane(2), Multiple
           Wounds(2)</characteristic>
@@ -1072,7 +1055,7 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
     </profile>
-    <profile name="Mortar" hidden="false" id="11c5-c8bc-6ce3-8932" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) ">
+    <profile name="Mortar" hidden="false" id="11c5-c8bc-6ce3-8932" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12-48&quot; S2(6) AP-2(-3)
           Armour Bane (1), Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
@@ -1086,7 +1069,7 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
     </profile>
-    <profile name="Flame Cannon" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " hidden="false" id="5207-3185-698f-a161">
+    <profile name="Flame Cannon" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" hidden="false" id="5207-3185-698f-a161">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">description of flame cannon</characteristic>
       </characteristics>
@@ -1139,13 +1122,13 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
         <characteristic name="Description" typeId="9f84-4221-785a-db50">This army list is intended for use alongside the ‘Forming Units’ and ‘Warhammer Armies’ sections of the Warhammer: the Old World rulebook. Over the following pages you will find profiles and rules for each of the models in your army. These pages give you all of the information that you need to shape your collection of models into the units which will in turn form a force ready for battle.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Repeater Bolt Thrower" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " hidden="false" id="3f5c-8185-3494-86c1">
+    <profile name="Repeater Bolt Thrower" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" hidden="false" id="3f5c-8185-3494-86c1">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot; S: 4 AP: -1
           Special Rules: Armour Bane (1), Cumbersome, Move or Shoot, Multiple Shots(D3+3)</characteristic>
       </characteristics>
     </profile>
-    <profile name="Great Cannon" hidden="false" id="ae36-d4c3-eaf5-198b" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) " page="226" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Great Cannon" hidden="false" id="ae36-d4c3-eaf5-198b" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="226" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 60&quot; S: 10 AP: -3
           Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot
@@ -1154,7 +1137,7 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
           (D3=1)</characteristic>
       </characteristics>
     </profile>
-    <profile name="Troll Vomit" hidden="false" id="2007-796b-3c57-ec28" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon (free-text) ">
+    <profile name="Troll Vomit" hidden="false" id="2007-796b-3c57-ec28" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">S3 AP-2 A Chaos Troll that
           is in base contact with an enemy model may make one additional attack each turn with this
