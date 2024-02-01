@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="63" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="64" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -116,7 +116,7 @@
     <costType id="points" name="pts" defaultCostLimit="2000"/>
   </costTypes>
   <profileTypes>
-    <profileType name="Unit" hidden="false" id="2878-9a1f-dd74-48e3" sortIndex="8">
+    <profileType name="Unit" hidden="false" id="2878-9a1f-dd74-48e3" sortIndex="24">
       <characteristicTypes>
         <characteristicType id="5d94-6b94-bd89-1944" name="Troop Type"/>
         <characteristicType id="80a1-bb6f-66e4-4a5b" name="Unit Size"/>
@@ -135,7 +135,7 @@
         <characteristicType id="c435-6b14-f77e-3c72" name="Ld"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Base" hidden="false" id="1ae4-7f34-4055-fd5f" sortIndex="21">
+    <profileType name="Base" hidden="false" id="1ae4-7f34-4055-fd5f" sortIndex="5">
       <characteristicTypes>
         <characteristicType id="1adf-d238-57ca-2226" name="Base Size"/>
       </characteristicTypes>
@@ -145,7 +145,7 @@
         <characteristicType id="47f2-ecee-cae0-9ef9" name="Description"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Special Rule" hidden="false" id="c1ac-c1c8-f9d5-9673" sortIndex="5">
+    <profileType name="Special Rule" hidden="false" id="c1ac-c1c8-f9d5-9673" sortIndex="25">
       <characteristicTypes>
         <characteristicType id="9f84-4221-785a-db50" name="Description"/>
       </characteristicTypes>
@@ -155,7 +155,7 @@
         <characteristicType id="adcd-c649-e6fc-a9f6" name="Description"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Command" hidden="false" id="52d4-d959-fe4d-90fa" sortIndex="9">
+    <profileType name="Command" hidden="false" id="52d4-d959-fe4d-90fa" sortIndex="8">
       <characteristicTypes>
         <characteristicType id="441a-ef3a-c07e-95f" name="Description"/>
       </characteristicTypes>
@@ -1519,9 +1519,6 @@ weapon.</characteristic>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7888-6128-a030-93db"/>
       </constraints>
-      <infoLinks>
-        <infoLink name="Wizard Level 1" hidden="false" type="profile" id="fd84-35e9-15db-2670" targetId="c3c-9624-c39-e86a"/>
-      </infoLinks>
       <categoryLinks>
         <categoryLink name="Wizard" hidden="false" id="8fc7-740f-3ff4-6cca" targetId="f954-b4c0-b835-a048" primary="false"/>
       </categoryLinks>
@@ -1530,9 +1527,6 @@ weapon.</characteristic>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="66da-479a-dbd-e647"/>
       </constraints>
-      <infoLinks>
-        <infoLink name="Wizard Level 2" hidden="false" type="profile" id="683-c3d4-4dd-5e83" targetId="f40c-d76a-fd42-fb9a"/>
-      </infoLinks>
       <categoryLinks>
         <categoryLink name="Wizard" hidden="false" id="1035-aae3-70f1-a9ae" targetId="f954-b4c0-b835-a048" primary="false"/>
       </categoryLinks>
@@ -1541,9 +1535,6 @@ weapon.</characteristic>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e89-9137-1448-c6a6"/>
       </constraints>
-      <infoLinks>
-        <infoLink name="Wizard Level 3" hidden="false" type="profile" id="5128-eda0-c7a5-7933" targetId="1acd-4208-ba07-175b"/>
-      </infoLinks>
       <categoryLinks>
         <categoryLink name="Wizard" hidden="false" id="c160-3c13-5a79-6b97" targetId="f954-b4c0-b835-a048" primary="false"/>
       </categoryLinks>
@@ -1552,9 +1543,6 @@ weapon.</characteristic>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8eac-d4f1-b008-4cc"/>
       </constraints>
-      <infoLinks>
-        <infoLink name="Wizard Level 4" hidden="false" type="profile" id="4cf7-4c87-381e-e310" targetId="5cee-9c31-3cc4-5c9f"/>
-      </infoLinks>
       <categoryLinks>
         <categoryLink name="Wizard" hidden="false" id="727a-ca8f-173b-66a9" targetId="f954-b4c0-b835-a048" primary="false"/>
       </categoryLinks>
