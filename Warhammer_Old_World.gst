@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="60" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="61" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -26,7 +26,7 @@
     <categoryEntry name="25PTSLIMIT" hidden="true" id="9ec3-3046-6db2-dd57"/>
     <categoryEntry name="Swarms" hidden="false" id="db92-54fd-e023-d69f"/>
     <categoryEntry name="CHARIOT CREW" hidden="true" id="4cf7-bf85-308d-c29a"/>
-    <categoryEntry name="MOUNT" hidden="false" id="c96a-608-5de4-b943"/>
+    <categoryEntry name="MOUNT" hidden="true" id="c96a-608-5de4-b943"/>
     <categoryEntry name="Lord" hidden="false" id="331e-3a37-38cb-23d2">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="1890-4637-17c9-3a7c" includeChildSelections="true"/>
