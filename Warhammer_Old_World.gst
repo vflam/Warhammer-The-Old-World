@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="64" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="65" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -155,12 +155,12 @@
         <characteristicType id="adcd-c649-e6fc-a9f6" name="Description"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Command" hidden="false" id="52d4-d959-fe4d-90fa" sortIndex="8">
+    <profileType name="Command" hidden="false" id="52d4-d959-fe4d-90fa" sortIndex="9">
       <characteristicTypes>
         <characteristicType id="441a-ef3a-c07e-95f" name="Description"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Spell" hidden="false" id="8232-ae14-b1f6-b4df" sortIndex="7">
+    <profileType name="Spell" hidden="false" id="8232-ae14-b1f6-b4df" sortIndex="8">
       <characteristicTypes>
         <characteristicType id="8a2b-690b-e552-6aa0" name="Number"/>
         <characteristicType id="c2ca-5fd1-5e9d-bc90" name="Type"/>
