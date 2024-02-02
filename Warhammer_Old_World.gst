@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="65" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="66" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -206,13 +206,9 @@
     </profile>
     <profile name="Shield" hidden="false" id="8997-c74d-3a8d-ecf9" typeId="c14f-740-8107-d34b" typeName="Armour">
       <characteristics>
-        <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">A model that carries a
-          shield improves its armour value by 1. For example, a model equipped with a light armour
-          has an armour value of 6+. Should that model also carry a shield, its armour value would
-          be improved by 1 by lowering the target number from 6+ to 5+.
+        <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">A model that carries a shield improves its armour value by 1. For example, a model equipped with a light armour has an armour value of 6+. Should that model also carry a shield, its armour value would be improved by 1 by lowering the target number from 6+ to 5+.
 
-          Note that if a model uses a weapon that has the Requires To Hands special rule in combat,
-          it cannot also use a shield.</characteristic>
+Note that if a model uses a weapon that has the Requires To Hands special rule in combat, it cannot also use a shield.</characteristic>
       </characteristics>
     </profile>
     <profile name="Great weapon" hidden="false" id="88e3-38f0-92d5-b616" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
@@ -234,10 +230,7 @@
     </profile>
     <profile name="Barding" hidden="false" id="eb5d-bd8a-c75c-66d7" typeId="c14f-740-8107-d34b" typeName="Armour">
       <characteristics>
-        <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">A model that rides a barded
-          mount improves its armour value by 1. For example, a cavalry model equipped with heavy
-          armour has a armour save of 5+. Should that model&apos;s mount be barded, its armour value
-          would be improved by 1 by lowering the target number from 5+ to 4+.</characteristic>
+        <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">A model that rides a barded mount improves its armour value by 1. For example, a cavalry model equipped with heavy armour has a armour save of 5+. Should athat model&apos;s mount be barded, its armour value would be improved by 1 by lowering the target number from 5+ to 4+.</characteristic>
       </characteristics>
     </profile>
     <profile name="Close Order" hidden="false" id="883e-e1b1-4fe9-5912" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="167" publicationId="768b-3da1-a182-a1d8">
@@ -795,6 +788,7 @@ If an Unstable unit contains any Unstable characters, allocate wounds to the uni
     <profile name="Standard Bearer" hidden="false" id="bcf8-d942-102e-b155" typeId="52d4-d959-fe4d-90fa" typeName="Command">
       <characteristics>
         <characteristic name="Description" typeId="441a-ef3a-c07e-95f">If a unit includes a standard bearer, it may claim a bonus of +1 combat result point.
+
 
 If a fleeing unit is run down by an enemy unit, or if a unit is destroyed in combat by an enemy unit, its standard is claimed as a trophy. Standards claimed in this way are worth bonus Victory Points at the end of the battle. Once a standard has been lost in this way, it cannot be reclaimed.</characteristic>
       </characteristics>
