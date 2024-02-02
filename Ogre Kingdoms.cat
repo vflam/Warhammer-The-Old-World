@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="13ed-b3e5-e610-615f" name="Ogre Kingdoms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="8" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="13ed-b3e5-e610-615f" name="Ogre Kingdoms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="11" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorName="Flammy">
   <sharedProfiles>
     <profile name="Tyrant" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="f58e-2d63-3721-5926">
       <characteristics>
@@ -1341,6 +1341,16 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="21df993c-a0109bc6"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fcbf52e-4893d638"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Monstrous Infantry" hidden="false" id="3b3c-9041-d0ef-fce0" targetId="5c55-f9d6-b181-92f8" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="5c55-f9d6-b181-92f8" field="category">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="mount" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -1362,9 +1372,6 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Monstrous Infantry" hidden="false" id="d485-b7a7-af21-e246" targetId="5c55-f9d6-b181-92f8" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Bruiser" hidden="false" id="d996a1d5-10a191cb" collective="false">
       <profiles>
@@ -1416,8 +1423,8 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="f52a-7538-b243-e17a" sortIndex="2">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" id="6d6f-2ee1-2740-47fe" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
-                <entryLink import="true" name="Battle Standard Bearer" hidden="false" id="a932-5700-6712-49f1" type="selectionEntry" targetId="5b87-9cf5-953d-3829">
+                <entryLink import="true" name="General" hidden="false" id="6d6f-2ee1-2740-47fe" type="selectionEntry" targetId="7d76-b1a1-1535-a04c" sortIndex="2"/>
+                <entryLink import="true" name="Battle Standard Bearer" hidden="false" id="a932-5700-6712-49f1" type="selectionEntry" targetId="5b87-9cf5-953d-3829" sortIndex="1">
                   <entryLinks>
                     <entryLink import="true" name="Magic Standards" hidden="false" id="5859-bb21-9030-fbf2" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6"/>
                   </entryLinks>
@@ -1559,7 +1566,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
                 </entryLink>
               </entryLinks>
               <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Butcher&apos;s Cauldron" hidden="false" id="fd7c-a62e-ac99-8a34">
+                <selectionEntry type="upgrade" import="true" name="Butcher&apos;s Cauldron" hidden="false" id="fd7c-a62e-ac99-8a34" sortIndex="2">
                   <costs>
                     <cost name="pts" typeId="points" value="30"/>
                   </costs>
@@ -1705,7 +1712,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
                 </entryLink>
               </entryLinks>
               <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Butcher&apos;s Cauldron" hidden="false" id="a988-1690-4ece-afbe">
+                <selectionEntry type="upgrade" import="true" name="Butcher&apos;s Cauldron" hidden="false" id="a988-1690-4ece-afbe" sortIndex="2">
                   <costs>
                     <cost name="pts" typeId="points" value="30"/>
                   </costs>
@@ -1790,7 +1797,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
                 <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="59ab1a9a-d7a56684"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Big Name" hidden="false" id="1f60dc6f-a45c377d" type="selectionEntryGroup" targetId="b8ce-a2e-453d-d59e" sortIndex="7"/>
+            <entryLink import="true" name="Big Name" hidden="false" id="1f60dc6f-a45c377d" type="selectionEntryGroup" targetId="b8ce-a2e-453d-d59e" sortIndex="8"/>
             <entryLink import="true" name="Magic Items" hidden="false" id="47b67965-82a9f65b" type="selectionEntryGroup" targetId="1539-fd78-88f-badd" sortIndex="6">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="3a526320-1fe0f3ea"/>
@@ -1823,7 +1830,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Special Rules" hidden="false" id="c318e2aa-a7e4a554" sortIndex="8"/>
+            <selectionEntryGroup name="Special Rules" hidden="false" id="c318e2aa-a7e4a554" sortIndex="7"/>
           </selectionEntryGroups>
           <constraints>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1d8018ae-348addb8"/>
@@ -2141,7 +2148,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Special Rules" hidden="false" id="db7c-157a-6a1f-fc29">
+        <selectionEntryGroup name="Special Rules" hidden="false" id="db7c-157a-6a1f-fc29" sortIndex="4">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="573a-2cb2-7dd3-8822">
               <constraints>
@@ -2385,13 +2392,13 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
                 <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="e41dfb00-687b884a"/>
               </constraints>
             </entryLink>
-            <entryLink name="Leadbelcher Gun" id="66cdeb61-a6922b37" hidden="false" type="selectionEntry" targetId="4c5f-584-7f65-d4eb" sortIndex="3">
+            <entryLink name="Leadbelcher Gun" id="66cdeb61-a6922b37" hidden="false" type="selectionEntry" targetId="4c5f-584-7f65-d4eb" sortIndex="2">
               <constraints>
                 <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="279532be-d7e93408"/>
                 <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="3981c75c-e59d8d66"/>
               </constraints>
             </entryLink>
-            <entryLink name="light armour" id="499a6ce1-8feea0b7" hidden="false" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="2">
+            <entryLink name="light armour" id="499a6ce1-8feea0b7" hidden="false" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="3">
               <constraints>
                 <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="cd084c3e-49f78188"/>
                 <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="def4e0dc-57abdae6"/>
@@ -2653,7 +2660,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Special Rules" hidden="false" id="4df9adce-fe9fdfd8" sortIndex="3">
+        <selectionEntryGroup name="Special Rules" hidden="false" id="4df9adce-fe9fdfd8" sortIndex="4">
           <selectionEntries>
             <selectionEntry name="Immune to Psychology" id="8a1a2b7f-1c55bb8d" type="upgrade" import="true" hidden="false" sortIndex="1">
               <infoLinks>
@@ -2774,7 +2781,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Unit Options" hidden="false" id="d64c-9420-c724-9aa1">
+        <selectionEntryGroup name="Unit Options" hidden="false" id="d64c-9420-c724-9aa1" sortIndex="3">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="3d03-ea73-82df-63a9">
               <constraints>
@@ -3312,7 +3319,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Unit Options" hidden="false" id="7baa-6bc2-6388-41c5">
+        <selectionEntryGroup name="Unit Options" hidden="false" id="7baa-6bc2-6388-41c5" sortIndex="5">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="67f4-cfac-dce6-af0a">
               <constraints>
@@ -3364,7 +3371,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
         </profile>
       </profiles>
       <selectionEntries>
-        <selectionEntry type="model" name="Ironblaster" id="7006aef4-a0ef4ffe" hidden="false" sortIndex="4">
+        <selectionEntry type="model" name="Ironblaster" id="7006aef4-a0ef4ffe" hidden="false" sortIndex="1">
           <infoLinks>
             <infoLink name="Ironblaster" hidden="false" type="profile" id="6bed37d2-f58bb11c" targetId="2b52-f2cf-6cd1-1095"/>
             <infoLink name="Base" hidden="false" type="profile" id="5a92a8ee-6a06ebf8" targetId="5125-89a4-916a-eabd"/>
@@ -3385,7 +3392,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="896f9e4b-8c86419"/>
           </constraints>
         </selectionEntry>
-        <selectionEntry type="model" name="Leadbelcher" id="1fd6b9c2-1f5e0d8c" hidden="false" sortIndex="2" subType="crew">
+        <selectionEntry type="model" name="Leadbelcher" id="1fd6b9c2-1f5e0d8c" hidden="false" sortIndex="3" subType="crew">
           <infoLinks>
             <infoLink name="Leadbelcher" hidden="false" type="profile" id="aa3e7e68-af620a12" targetId="8ece-4b92-73f2-acb1"/>
             <infoLink name="Base" hidden="false" type="profile" id="134fced0-36c2081a" targetId="5125-89a4-916a-eabd"/>
@@ -3409,7 +3416,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
             <categoryLink name="CHARIOT CREW" hidden="false" id="b71f4dc0-655c450a" targetId="4cf7-bf85-308d-c29a" primary="false"/>
           </categoryLinks>
         </selectionEntry>
-        <selectionEntry type="model" name="Gnoblar Scrapper" id="3ac6ced4-24d78bde" hidden="false" sortIndex="1" subType="crew">
+        <selectionEntry type="model" name="Gnoblar Scrapper" id="3ac6ced4-24d78bde" hidden="false" sortIndex="2" subType="crew">
           <infoLinks>
             <infoLink name="Gnoblar Scrapper" hidden="false" type="profile" id="2d392bb2-c911627c" targetId="be8c-9fa2-7ea8-2daa"/>
             <infoLink name="Base" hidden="false" type="profile" id="a600d60e-e2abc618" targetId="5125-89a4-916a-eabd"/>
@@ -3439,7 +3446,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
             <categoryLink name="CHARIOT CREW" hidden="false" id="ed07149e-72890368" targetId="4cf7-bf85-308d-c29a" primary="false"/>
           </categoryLinks>
         </selectionEntry>
-        <selectionEntry type="model" name="Rhinox" id="13cee96f-e2f1dc7d" hidden="false" sortIndex="3" subType="crew">
+        <selectionEntry type="model" name="Rhinox" id="13cee96f-e2f1dc7d" hidden="false" sortIndex="4" subType="crew">
           <infoLinks>
             <infoLink name="Rhinox" hidden="false" type="profile" id="9124fe25-a4fe551b" targetId="767a-cea1-4d9-5af6"/>
             <infoLink name="Base" hidden="false" type="profile" id="4abf2387-7dd2dfd5" targetId="5125-89a4-916a-eabd"/>
@@ -4073,8 +4080,8 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
   <entryLinks>
     <entryLink import="true" name="Tyrant" hidden="false" id="d235dc0c-401bb856" type="selectionEntry" targetId="754c4517-2a58ad65">
       <categoryLinks>
-        <categoryLink name="Rare" hidden="false" id="d014-aece-1d47-34a5" targetId="2bfe-5863-46fe-d284" primary="true"/>
         <categoryLink name="Lord" hidden="false" id="c3ad-b833-67b3-b5f0" targetId="331e-3a37-38cb-23d2" primary="false"/>
+        <categoryLink name="Characters" hidden="false" id="2238-cc00-8af8-ef2c" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Bruiser" hidden="false" id="439f7b06-d361a290" type="selectionEntry" targetId="d996a1d5-10a191cb">
@@ -4465,7 +4472,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
             </modifier>
           </modifiers>
         </selectionEntry>
-        <selectionEntry type="model" name="Thundertusk" id="4f261e2c-22ab3d76" hidden="true" sortIndex="2" subType="mount">
+        <selectionEntry type="model" name="Thundertusk" id="4f261e2c-22ab3d76" hidden="true" sortIndex="1" subType="mount">
           <infoLinks>
             <infoLink name="Thundertusk" hidden="false" type="profile" id="bc96f74a-cefdde74" targetId="2a8e-e8bf-3f93-953d"/>
             <infoLink name="Base (100x150)" hidden="false" type="profile" id="713aea06-2a99990" targetId="b56f-7f81-4ba1-ed2c"/>
