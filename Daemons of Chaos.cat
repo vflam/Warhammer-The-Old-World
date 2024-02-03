@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="ec01-a361-b3bf-78ac" name="Daemons of Chaos" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="29" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="ec01-a361-b3bf-78ac" name="Daemons of Chaos" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="30" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
   <sharedProfiles>
     <profile name="Bloodthirster" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="2304-f7d1-ef2a-eb19">
       <characteristics>
@@ -1456,6 +1456,7 @@ Quick Shot</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Khorne" hidden="false" id="782c-237c-1d12-371a" targetId="88d6-6a25-670-e154" primary="false"/>
+            <categoryLink name="Behemoth" hidden="false" id="ebd0-2b29-db22-6bc1" targetId="3755-6732-99b2-c713" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -1494,7 +1495,6 @@ Quick Shot</characteristic>
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Khorne" hidden="false" id="fda6-7d08-5bcf-9d75" targetId="88d6-6a25-670-e154" primary="false"/>
-        <categoryLink name="Behemoth" hidden="false" id="7414-b4fb-aba1-49d7" targetId="3755-6732-99b2-c713" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Herald of Khorne" hidden="false" id="2f514dd1-bb22f527" collective="false">
@@ -1566,7 +1566,21 @@ Quick Shot</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Khorne" hidden="false" id="5c15-8845-4bba-4879" targetId="88d6-6a25-670-e154" primary="false"/>
+            <categoryLink name="Heavy Infantry" hidden="false" id="fb9d-1192-6504-2a9d" targetId="ca7e-d004-ccde-caf3" primary="false"/>
           </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="ca7e-d004-ccde-caf3" field="category" id="6ac3-5497-d547-1b45">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -1595,7 +1609,6 @@ Quick Shot</characteristic>
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Khorne" hidden="false" id="979-46de-bfc-4291" targetId="88d6-6a25-670-e154" primary="false"/>
-        <categoryLink name="Heavy Infantry" hidden="false" id="5ea1-48d6-2127-f2ba" targetId="ca7e-d004-ccde-caf3" primary="false"/>
       </categoryLinks>
       <modifiers>
         <modifier type="increment" value="1" field="6c41-94d3-2402-75a1">
@@ -1708,6 +1721,7 @@ Quick Shot</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Khorne" hidden="false" id="53f2-d0a7-6fb8-88f9" targetId="88d6-6a25-670-e154" primary="false"/>
+            <categoryLink name="Heavy Infantry" hidden="false" id="2e09-e86d-5723-facb" targetId="ca7e-d004-ccde-caf3" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -1727,6 +1741,9 @@ Quick Shot</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="39fdaed5-936836cb" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: 6a56d133-1fc68e1</comment>
+              <categoryLinks>
+                <categoryLink name="Heavy Infantry" hidden="false" id="dfbd-867d-59c7-dbf5" targetId="ca7e-d004-ccde-caf3" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="ff1eae71-2776ab47" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -1741,6 +1758,7 @@ Quick Shot</characteristic>
               </constraints>
               <categoryLinks>
                 <categoryLink name="Standard Bearer" hidden="false" id="5246-aedb-2e36-b7ae" targetId="1c05-7a83-b4e1-ffaa" primary="false"/>
+                <categoryLink name="Heavy Infantry" hidden="false" id="def6-f100-cfc0-f492" targetId="ca7e-d004-ccde-caf3" primary="false"/>
               </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="de75f754-ccc9705e" type="model" import="true" hidden="false" subType="crew" sortIndex="2">
@@ -1754,6 +1772,9 @@ Quick Shot</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="7b669705-fb7695fb" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Heavy Infantry" hidden="false" id="c67a-fb66-dc64-2123" targetId="ca7e-d004-ccde-caf3" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1782,7 +1803,6 @@ Quick Shot</characteristic>
       </entryLinks>
       <categoryLinks>
         <categoryLink name="Daemon of Khorne" hidden="false" id="516f-3715-73fa-f848" targetId="88d6-6a25-670-e154" primary="false"/>
-        <categoryLink name="Heavy Infantry" hidden="false" id="5591-8c60-6826-9f99" targetId="ca7e-d004-ccde-caf3" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Flesh Hounds Of Khorne" hidden="false" id="daf0d29-e46c07ff" collective="false">
@@ -1828,6 +1848,7 @@ Quick Shot</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Khorne" hidden="false" id="3079-9cf9-68da-5424" targetId="88d6-6a25-670-e154" primary="false"/>
+            <categoryLink name="Heavy Cavalry" hidden="false" id="aae2-ea88-c92a-1767" targetId="5165-d052-cfc2-5887" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -1857,7 +1878,6 @@ Quick Shot</characteristic>
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Khorne" hidden="false" id="7f0d-1fcc-bd61-a7da" targetId="88d6-6a25-670-e154" primary="false"/>
-        <categoryLink name="Heavy Cavalry" hidden="false" id="90d1-cc4f-25d-acc3" targetId="5165-d052-cfc2-5887" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Bloodcrushers Of Khorne" hidden="false" id="7de8fe5b-198a71e9" collective="false">
@@ -1895,6 +1915,9 @@ Quick Shot</characteristic>
           <constraints>
             <constraint type="min" value="3" field="selections" scope="parent" shared="true" id="ab0916c-65c816b6"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Monstrous Cavalry" hidden="false" id="b969-1fe7-e6cf-611e" targetId="2c85-5f2b-9288-1257" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" name="Juggernaut of Khorne" id="2ba389a3-f29169d1" hidden="false" sortIndex="1">
           <infoLinks>
@@ -1906,6 +1929,7 @@ Quick Shot</characteristic>
           </costs>
           <categoryLinks>
             <categoryLink name="Daemon of Khorne" hidden="false" id="da24-db3a-6f58-cb6" targetId="88d6-6a25-670-e154" primary="false"/>
+            <categoryLink name="Monstrous Cavalry" hidden="false" id="a0a7-3c-c322-9e7d" targetId="2c85-5f2b-9288-1257" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -1925,6 +1949,9 @@ Quick Shot</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="ad8638cb-3e562a99" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: ed61878d-f84ebfc3</comment>
+              <categoryLinks>
+                <categoryLink name="Monstrous Cavalry" hidden="false" id="b201-d545-71bf-4f51" targetId="2c85-5f2b-9288-1257" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="443b4db3-bbd90161" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -1939,6 +1966,7 @@ Quick Shot</characteristic>
               </constraints>
               <categoryLinks>
                 <categoryLink name="Standard Bearer" hidden="false" id="a835-8894-f725-a2ac" targetId="1c05-7a83-b4e1-ffaa" primary="false"/>
+                <categoryLink name="Monstrous Cavalry" hidden="false" id="ce5a-fa2b-d47b-b266" targetId="2c85-5f2b-9288-1257" primary="false"/>
               </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="28696806-e0742790" type="model" import="true" hidden="false" subType="crew" sortIndex="2">
@@ -1952,6 +1980,9 @@ Quick Shot</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="1b126903-f77c4c31" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Monstrous Cavalry" hidden="false" id="c730-9f12-4b08-2c3f" targetId="2c85-5f2b-9288-1257" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1991,7 +2022,6 @@ Quick Shot</characteristic>
       </entryLinks>
       <categoryLinks>
         <categoryLink name="Daemon of Khorne" hidden="false" id="68bf-c339-4871-970c" targetId="88d6-6a25-670-e154" primary="false"/>
-        <categoryLink name="Monstrous Cavalry" hidden="false" id="8086-5a71-3d54-ced" targetId="2c85-5f2b-9288-1257" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Blood Throne Of Khorne" hidden="false" id="8b0f0438-cac26e22" collective="false" subType="mount">
@@ -2026,6 +2056,7 @@ Quick Shot</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="CHARIOT CREW" hidden="false" id="75c76b89-ee154d5f" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="Heavy Chariot" hidden="false" id="c006-ae33-b467-e55b" targetId="d768-7cf0-de0a-c249" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -2054,7 +2085,6 @@ Quick Shot</characteristic>
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Khorne" hidden="false" id="1695-a6a7-f50e-9a88" targetId="88d6-6a25-670-e154" primary="false"/>
-        <categoryLink name="Heavy Chariot" hidden="false" id="1c3-b281-952e-cb90" targetId="d768-7cf0-de0a-c249" primary="false"/>
       </categoryLinks>
       <entryLinks>
         <entryLink name="Hand Weapon" id="e22c-e84f-ab45-25b3" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="2">
@@ -2108,6 +2138,9 @@ Quick Shot</characteristic>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7c11d2f7-b4547bc5"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8a2570b9-9e4ed80f"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Heavy Chariot" hidden="false" id="ca7c-58b8-6728-ac05" targetId="d768-7cf0-de0a-c249" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" subType="crew" name="Bloodletter Crew" id="56eed0bd-abcaa5f3" hidden="false" sortIndex="2">
           <infoLinks>
@@ -2131,6 +2164,7 @@ Quick Shot</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="CHARIOT CREW" hidden="false" id="84ab72e1-6e4776b7" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="Heavy Chariot" hidden="false" id="74dc-2785-8d0b-5552" targetId="d768-7cf0-de0a-c249" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -2163,7 +2197,6 @@ Quick Shot</characteristic>
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Khorne" hidden="false" id="7904-cae8-343c-a01" targetId="88d6-6a25-670-e154" primary="false"/>
-        <categoryLink name="Heavy Chariot" hidden="false" id="cfed-3017-6a3d-2f0a" targetId="d768-7cf0-de0a-c249" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Great Unclean One" hidden="false" id="e2f90838-6b3c5222" collective="false">
@@ -2286,6 +2319,7 @@ Quick Shot</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Nurgle" hidden="false" id="a3ec-af32-bdf8-5015" targetId="e20-3c11-13b5-e880" primary="false"/>
+            <categoryLink name="Behemoth" hidden="false" id="c5c8-d79d-17bf-2cf0" targetId="3755-6732-99b2-c713" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -2318,7 +2352,6 @@ Quick Shot</characteristic>
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Nurgle" hidden="false" id="f69a-ed9-10d-5a98" targetId="e20-3c11-13b5-e880" primary="false"/>
-        <categoryLink name="Behemoth" hidden="false" id="a6f5-ee1b-afd9-dc19" targetId="3755-6732-99b2-c713" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Herald of Nurgle" hidden="false" id="eadf23f3-82c25a1" collective="false">
@@ -2433,7 +2466,21 @@ Quick Shot</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Nurgle" hidden="false" id="3bcd-455d-3cc-b805" targetId="e20-3c11-13b5-e880" primary="false"/>
+            <categoryLink name="Regular Infantry" hidden="false" id="83dd-69a5-964-b669" targetId="f3f7-ca43-674e-115f" primary="false"/>
           </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="4de9-535-1951-64d9">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -2458,7 +2505,6 @@ Quick Shot</characteristic>
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Nurgle" hidden="false" id="d064-5659-c7e4-ab4e" targetId="e20-3c11-13b5-e880" primary="false"/>
-        <categoryLink name="Regular Infantry" hidden="false" id="220-eb57-cc6d-fc49" targetId="f3f7-ca43-674e-115f" primary="false"/>
       </categoryLinks>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="ba53-2894-4081-622f"/>
@@ -2549,6 +2595,7 @@ Quick Shot</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Nurgle" hidden="false" id="6057-b022-e20f-3d3" targetId="e20-3c11-13b5-e880" primary="false"/>
+            <categoryLink name="Regular Infantry" hidden="false" id="de46-21b0-59f3-2de4" targetId="f3f7-ca43-674e-115f" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -2568,6 +2615,9 @@ Quick Shot</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="ce5a2ba7-75c2c775" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: f54427d-abf689b3</comment>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="88df-d5ea-fda-cead" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="ceed2440-5f07678a" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -2582,6 +2632,7 @@ Quick Shot</characteristic>
               </constraints>
               <categoryLinks>
                 <categoryLink name="Standard Bearer" hidden="false" id="6fd3-b4a-e0c-e0eb" targetId="1c05-7a83-b4e1-ffaa" primary="false"/>
+                <categoryLink name="Regular Infantry" hidden="false" id="fd12-708a-b650-2db1" targetId="f3f7-ca43-674e-115f" primary="false"/>
               </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="c3850e1b-9c4803a9" type="model" import="true" hidden="false" subType="crew" sortIndex="1">
@@ -2595,6 +2646,9 @@ Quick Shot</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="5af6549a-f0c6d084" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="19c5-72b-b1dc-4170" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2623,7 +2677,6 @@ Quick Shot</characteristic>
       </entryLinks>
       <categoryLinks>
         <categoryLink name="Daemon of Nurgle" hidden="false" id="3448-e3ed-cc6-c442" targetId="e20-3c11-13b5-e880" primary="false"/>
-        <categoryLink name="Regular Infantry" hidden="false" id="89e6-8331-b26c-5c74" targetId="f3f7-ca43-674e-115f" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Beasts Of Nurgle" hidden="false" id="53aef174-7c417e7e" collective="false">
@@ -2663,6 +2716,7 @@ Quick Shot</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Nurgle" hidden="false" id="c8f6-1fa2-befd-8396" targetId="e20-3c11-13b5-e880" primary="false"/>
+            <categoryLink name="Monstrous Infantry" hidden="false" id="9ead-d0a3-9727-565c" targetId="5c55-f9d6-b181-92f8" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -2693,7 +2747,6 @@ Quick Shot</characteristic>
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Nurgle" hidden="false" id="a44-ac8c-de1f-a915" targetId="e20-3c11-13b5-e880" primary="false"/>
-        <categoryLink name="Monstrous Infantry" hidden="false" id="f323-3105-128e-8593" targetId="5c55-f9d6-b181-92f8" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Nurglings" hidden="false" id="96b828e9-2ece45bf" collective="false">
@@ -2727,6 +2780,7 @@ Quick Shot</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Nurgle" hidden="false" id="bd13-5993-effd-2e9d" targetId="e20-3c11-13b5-e880" primary="false"/>
+            <categoryLink name="Swarms" hidden="false" id="3946-ffe5-7a45-bb6c" targetId="db92-54fd-e023-d69f" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -2749,7 +2803,6 @@ Quick Shot</characteristic>
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Nurgle" hidden="false" id="7f59-d59f-a148-7dc1" targetId="e20-3c11-13b5-e880" primary="false"/>
-        <categoryLink name="Swarms" hidden="false" id="134b-9a18-9f3-3f18" targetId="db92-54fd-e023-d69f" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Plague Drones Of Nurgle" hidden="false" id="30060615-e5f3d40b" collective="false">
@@ -2789,6 +2842,7 @@ Quick Shot</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Nurgle" hidden="false" id="fb8-fd0a-791f-d156" targetId="e20-3c11-13b5-e880" primary="false"/>
+            <categoryLink name="Monstrous Cavalry" hidden="false" id="49f8-a00d-4-180d" targetId="2c85-5f2b-9288-1257" primary="false"/>
           </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" name="Rot Fly" id="1652177-d3995645" hidden="false" sortIndex="1">
@@ -2801,6 +2855,7 @@ Quick Shot</characteristic>
           </costs>
           <categoryLinks>
             <categoryLink name="Daemon of Nurgle" hidden="false" id="84e2-d652-3178-8d16" targetId="e20-3c11-13b5-e880" primary="false"/>
+            <categoryLink name="Monstrous Cavalry" hidden="false" id="9821-92ca-2015-9343" targetId="2c85-5f2b-9288-1257" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -2820,6 +2875,9 @@ Quick Shot</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="be48bbae-4bf668b8" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: d0c1234a-b876aa74</comment>
+              <categoryLinks>
+                <categoryLink name="Monstrous Cavalry" hidden="false" id="ae0f-e953-fd80-7b99" targetId="2c85-5f2b-9288-1257" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="55440195-6e65f38b" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -2834,6 +2892,7 @@ Quick Shot</characteristic>
               </constraints>
               <categoryLinks>
                 <categoryLink name="Standard Bearer" hidden="false" id="b8e3-7683-df6a-40d5" targetId="1c05-7a83-b4e1-ffaa" primary="false"/>
+                <categoryLink name="Monstrous Cavalry" hidden="false" id="21b8-994a-5657-aff3" targetId="2c85-5f2b-9288-1257" primary="false"/>
               </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="f8009658-b40155c2" type="model" import="true" hidden="false" subType="crew" sortIndex="1">
@@ -2847,6 +2906,9 @@ Quick Shot</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="3bb9b089-204d6a5f" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Monstrous Cavalry" hidden="false" id="e7a1-b41c-f81c-312" targetId="2c85-5f2b-9288-1257" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2918,7 +2980,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </entryLinks>
       <categoryLinks>
         <categoryLink name="Daemon of Nurgle" hidden="false" id="605c-364b-c59d-42e7" targetId="e20-3c11-13b5-e880" primary="false"/>
-        <categoryLink name="Monstrous Cavalry" hidden="false" id="86ca-392a-de6a-b8a1" targetId="2c85-5f2b-9288-1257" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Keeper of Secrets" hidden="false" id="2b47503b-30b2dbc9" collective="false">
@@ -3018,6 +3079,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Slaanesh" hidden="false" id="76d3-9845-7dd4-4449" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+            <categoryLink name="Behemoth" hidden="false" id="422e-3be3-6b94-fcfa" targetId="3755-6732-99b2-c713" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -3045,7 +3107,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Slaanesh" hidden="false" id="e390-4973-73be-4140" targetId="2955-25dc-92ce-6e4a" primary="false"/>
-        <categoryLink name="Behemoth" hidden="false" id="1841-9d67-283-4056" targetId="3755-6732-99b2-c713" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Herald of Slaanesh" hidden="false" id="25b7c975-448e7e6b" collective="false">
@@ -3155,7 +3216,21 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Slaanesh" hidden="false" id="124c-c525-d6d5-85ba" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+            <categoryLink name="Regular Infantry" hidden="false" id="84e9-3e40-15c4-c239" targetId="f3f7-ca43-674e-115f" primary="false"/>
           </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="2f71-2a48-6e04-2118">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -3174,7 +3249,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Slaanesh" hidden="false" id="4c8e-de54-290e-92da" targetId="2955-25dc-92ce-6e4a" primary="false"/>
-        <categoryLink name="Regular Infantry" hidden="false" id="87ca-ef9f-e3f5-52c1" targetId="f3f7-ca43-674e-115f" primary="false"/>
       </categoryLinks>
       <modifiers>
         <modifier type="increment" value="1" field="2a5d-7423-aa2a-3a0c">
@@ -3282,6 +3356,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Slaanesh" hidden="false" id="ee39-b981-e08d-4ebc" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+            <categoryLink name="Regular Infantry" hidden="false" id="9f1f-e483-a146-6304" targetId="f3f7-ca43-674e-115f" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -3301,6 +3376,9 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="145c2315-b4b1090b" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: 9bb0fe07-1f61e655</comment>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="12bc-2afd-c18c-9f82" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="9ce1b061-bbdfc837" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -3315,6 +3393,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
               </constraints>
               <categoryLinks>
                 <categoryLink name="Standard Bearer" hidden="false" id="bd18-a8e3-9e93-a838" targetId="1c05-7a83-b4e1-ffaa" primary="false"/>
+                <categoryLink name="Regular Infantry" hidden="false" id="1ddd-bb2b-43db-df23" targetId="f3f7-ca43-674e-115f" primary="false"/>
               </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="be8cba84-c3657c4e" type="model" import="true" hidden="false" subType="crew" sortIndex="2">
@@ -3328,6 +3407,9 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="d9cd9cd5-a948b4cb" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="8b89-ae6a-6f86-b680" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -3350,7 +3432,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </entryLinks>
       <categoryLinks>
         <categoryLink name="Daemon of Slaanesh" hidden="false" id="9ed6-ea3-fe68-6690" targetId="2955-25dc-92ce-6e4a" primary="false"/>
-        <categoryLink name="Regular Infantry" hidden="false" id="ef44-da63-ef6e-9c16" targetId="f3f7-ca43-674e-115f" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Seekers Of Slaanesh" hidden="false" id="d9b356b8-38b02ca2" collective="false">
@@ -3384,6 +3465,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Slaanesh" hidden="false" id="bbb5-aeba-9abd-7f8a" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+            <categoryLink name="Light Cavalry" hidden="false" id="543b-9b40-62d6-6015" targetId="600c-7d08-5be1-fe0c" primary="false"/>
           </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" name="Steed of Slaanesh" id="26049f7f-7d4c8f8d" hidden="false" sortIndex="1">
@@ -3396,6 +3478,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </costs>
           <categoryLinks>
             <categoryLink name="Daemon of Slaanesh" hidden="false" id="ac36-8b42-afb4-8cd3" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+            <categoryLink name="Light Cavalry" hidden="false" id="d72a-d615-5a92-712a" targetId="600c-7d08-5be1-fe0c" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -3415,6 +3498,9 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="8496e11c-d5bbd926" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: 6e1e0be3-ea5da11</comment>
+              <categoryLinks>
+                <categoryLink name="Light Cavalry" hidden="false" id="4f60-7b4f-15b2-c60d" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="e4e75e76-618de540" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -3429,6 +3515,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
               </constraints>
               <categoryLinks>
                 <categoryLink name="Standard Bearer" hidden="false" id="5d3d-15ae-ef44-92f6" targetId="1c05-7a83-b4e1-ffaa" primary="false"/>
+                <categoryLink name="Light Cavalry" hidden="false" id="b05b-a97e-66a3-9252" targetId="600c-7d08-5be1-fe0c" primary="false"/>
               </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="21e81e09-2a9c6bdf" type="model" import="true" hidden="false" subType="crew" sortIndex="2">
@@ -3442,6 +3529,9 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="fc9b4ef4-e3deeffe" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Light Cavalry" hidden="false" id="6929-8914-33ed-ae10" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -3478,7 +3568,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </entryLinks>
       <categoryLinks>
         <categoryLink name="Daemon of Slaanesh" hidden="false" id="cba4-7a79-7195-3d0b" targetId="2955-25dc-92ce-6e4a" primary="false"/>
-        <categoryLink name="Light Cavalry" hidden="false" id="c400-97eb-b6a6-b980" targetId="600c-7d08-5be1-fe0c" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Fiends Of Slaanesh" hidden="false" id="25df6e4b-2339b419" collective="false">
@@ -3518,6 +3607,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Slaanesh" hidden="false" id="640d-eabe-c301-56ff" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+            <categoryLink name="Monstrous Cavalry" hidden="false" id="6382-42ea-4c84-c1b2" targetId="2c85-5f2b-9288-1257" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -3534,7 +3624,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Slaanesh" hidden="false" id="f6c4-4ab9-640d-c377" targetId="2955-25dc-92ce-6e4a" primary="false"/>
-        <categoryLink name="Monstrous Cavalry" hidden="false" id="e2c6-8d37-2a3f-d317" targetId="2c85-5f2b-9288-1257" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Hellflayer Of Slaanesh" hidden="false" id="6b44b276-2609940" collective="false">
@@ -3553,7 +3642,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Slaanesh" hidden="false" id="7482-6022-6bc6-d188" targetId="2955-25dc-92ce-6e4a" primary="false"/>
-            <categoryLink name="Light Chariot" hidden="false" id="23ef-2cd0-1c49-57da" targetId="7dce-b0f0-2217-2820" primary="false"/>
           </categoryLinks>
           <infoGroups>
             <infoGroup name="Special Rules" hidden="false" id="8893a05a-399bbe44">
@@ -3599,6 +3687,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
               <categoryLinks>
                 <categoryLink name="CHARIOT CREW" hidden="false" id="9040896-8c857f60" targetId="4cf7-bf85-308d-c29a" primary="false"/>
                 <categoryLink name="Daemon of Slaanesh" hidden="false" id="a618-f2b6-edfb-de88" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+                <categoryLink name="Light Chariot" hidden="false" id="8ba4-a579-f560-1ffd" targetId="7dce-b0f0-2217-2820" primary="false"/>
               </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" name="Steed of Slaanesh" id="9136892d-fade3ce3" hidden="false" sortIndex="2">
@@ -3616,6 +3705,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
               <categoryLinks>
                 <categoryLink name="CHARIOT CREW" hidden="false" id="fcdd9e51-c4c8c1a7" targetId="4cf7-bf85-308d-c29a" primary="false"/>
                 <categoryLink name="Daemon of Slaanesh" hidden="false" id="6f4c-4188-acbe-cb53" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+                <categoryLink name="Light Chariot" hidden="false" id="b0ac-7b86-1c1d-f0a6" targetId="7dce-b0f0-2217-2820" primary="false"/>
               </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" subType="crew" name="Daemonette Crew" id="2b3339-8d12868f" hidden="false" sortIndex="3">
@@ -3640,6 +3730,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
               <categoryLinks>
                 <categoryLink name="CHARIOT CREW" hidden="false" id="b6bac819-c30d3c6f" targetId="4cf7-bf85-308d-c29a" primary="false"/>
                 <categoryLink name="Daemon of Slaanesh" hidden="false" id="7c91-dfa5-efde-a7f4" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+                <categoryLink name="Light Chariot" hidden="false" id="fd54-4cb5-ff04-dbd9" targetId="7dce-b0f0-2217-2820" primary="false"/>
               </categoryLinks>
             </selectionEntry>
           </selectionEntries>
@@ -3647,7 +3738,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </selectionEntries>
       <categoryLinks>
         <categoryLink name="Daemon of Slaanesh" hidden="false" id="61c4-6e0e-832c-4174" targetId="2955-25dc-92ce-6e4a" primary="false"/>
-        <categoryLink name="Light Chariot" hidden="false" id="a3bb-52e7-cbf3-e18c" targetId="7dce-b0f0-2217-2820" primary="false"/>
       </categoryLinks>
       <profiles>
         <profile name="Hellflayer Of Slaanesh" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="3f3ff5a4-3013feee">
@@ -3814,6 +3904,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Tzeentch" hidden="false" id="33fa-b41b-9010-ed06" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
+            <categoryLink name="Behemoth" hidden="false" id="c93-d811-e531-3f8e" targetId="3755-6732-99b2-c713" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -3847,7 +3938,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Tzeentch" hidden="false" id="c400-cf72-5931-fa6d" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
-        <categoryLink name="Behemoth" hidden="false" id="850b-d3a8-28a1-addd" targetId="3755-6732-99b2-c713" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Herald of Tzeentch" hidden="false" id="251519cb-18660399" collective="false">
@@ -3975,7 +4065,21 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Tzeentch" hidden="false" id="cfda-e51e-fc5-8f5d" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
+            <categoryLink name="Regular Infantry" hidden="false" id="22eb-5296-f008-7ff3" targetId="f3f7-ca43-674e-115f" primary="false"/>
           </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="85bd-7391-ec7-d549">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -3994,7 +4098,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Tzeentch" hidden="false" id="a39f-98dc-c9db-8fb7" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
-        <categoryLink name="Regular Infantry" hidden="false" id="d12d-9811-77b8-a861" targetId="f3f7-ca43-674e-115f" primary="false"/>
       </categoryLinks>
       <modifiers>
         <modifier type="increment" value="1" field="b48b-84e0-4639-bfca">
@@ -4052,6 +4155,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Tzeentch" hidden="false" id="45d8-a654-e1ad-2a85" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
+            <categoryLink name="Light Cavalry" hidden="false" id="816b-87bd-200f-6a3c" targetId="600c-7d08-5be1-fe0c" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -4072,7 +4176,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       <categoryLinks>
         <categoryLink name="Daemon of Tzeentch" hidden="false" id="c6b9-bb90-b6dd-bc27" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
         <categoryLink name="MOUNT" hidden="false" id="da15-9039-f342-652c" targetId="c96a-608-5de4-b943" primary="false"/>
-        <categoryLink name="Light Cavalry" hidden="false" id="a8ea-90c-691a-ba98" targetId="600c-7d08-5be1-fe0c" primary="false"/>
       </categoryLinks>
       <costs>
         <cost name="pts" typeId="points" value="20"/>
@@ -4115,6 +4218,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Tzeentch" hidden="false" id="c15f-c9de-f024-fe9c" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
+            <categoryLink name="Regular Infantry" hidden="false" id="156e-1c77-eb34-2f81" targetId="f3f7-ca43-674e-115f" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -4134,6 +4238,9 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="7a967f6e-7a380e78" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: 19fb269d-11b00853</comment>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="901a-d933-8f82-2835" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="7d7f65eb-3f50f239" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -4148,6 +4255,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
               </constraints>
               <categoryLinks>
                 <categoryLink name="Standard Bearer" hidden="false" id="e1fc-51bb-b796-e2b7" targetId="1c05-7a83-b4e1-ffaa" primary="false"/>
+                <categoryLink name="Regular Infantry" hidden="false" id="ab10-2ca4-a63-e1e1" targetId="f3f7-ca43-674e-115f" primary="false"/>
               </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="b5abf3e-a41e5c88" type="model" import="true" hidden="false" subType="crew" sortIndex="2">
@@ -4161,6 +4269,9 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="3848d5eb-784ee239" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="58e1-32be-7045-2d2a" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -4184,7 +4295,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </entryLinks>
       <categoryLinks>
         <categoryLink name="Daemon of Tzeentch" hidden="false" id="2374-c6f5-b414-f93b" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
-        <categoryLink name="Regular Infantry" hidden="false" id="2724-bc74-1359-e80c" targetId="f3f7-ca43-674e-115f" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Blue Horrors Of Tzeentch" hidden="false" id="71a2a427-36037bf5" collective="false">
@@ -4224,6 +4334,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Tzeentch" hidden="false" id="37ab-74cd-63a1-7eab" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
+            <categoryLink name="Regular Infantry" hidden="false" id="7812-f1ff-d3bb-2b28" targetId="f3f7-ca43-674e-115f" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -4243,6 +4354,9 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="4a9cb6b8-174e8ca2" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: d6a49f45-52025c3b</comment>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="d0fe-e358-7592-485d" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -4259,7 +4373,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Tzeentch" hidden="false" id="da85-49cd-f175-1728" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
-        <categoryLink name="Regular Infantry" hidden="false" id="84ad-f9d6-d2f7-161b" targetId="f3f7-ca43-674e-115f" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Flamers Of Tzeentch" hidden="false" id="7cc7c702-7fdcb0cc" collective="false">
@@ -4300,6 +4413,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Tzeentch" hidden="false" id="6e6d-46fd-63c7-aa79" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
+            <categoryLink name="Regular Infantry" hidden="false" id="aadc-5711-7c7d-a95" targetId="f3f7-ca43-674e-115f" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -4382,6 +4496,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
               </selectionEntryGroups>
               <categoryLinks>
                 <categoryLink name="Daemon of Tzeentch" hidden="false" id="82c4-a23a-3f5f-e427" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
+                <categoryLink name="Regular Infantry" hidden="false" id="3f3b-ae69-54ce-295e" targetId="f3f7-ca43-674e-115f" primary="false"/>
               </categoryLinks>
               <comment>upgrades: 155ab54-530b845e</comment>
               <constraints>
@@ -4403,6 +4518,9 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c030-b575-77e5-6a0b"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c024-4354-a1d7-c5af"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="5e71-9ce-6c18-74a5" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
           <constraints>
@@ -4433,7 +4551,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Tzeentch" hidden="false" id="1f03-160d-cf5b-c44d" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
-        <categoryLink name="Regular Infantry" hidden="false" id="1fc3-939f-36fb-3cf7" targetId="f3f7-ca43-674e-115f" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Brimstone Horrors Of Tzeentch" hidden="false" id="ebb5370-c4fe173a" collective="false">
@@ -4467,6 +4584,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Tzeentch" hidden="false" id="c5bb-1c78-467d-dfd9" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
+            <categoryLink name="Swarms" hidden="false" id="6437-1947-362b-5668" targetId="db92-54fd-e023-d69f" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -4483,7 +4601,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Tzeentch" hidden="false" id="6038-4b18-3250-3f99" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
-        <categoryLink name="Swarms" hidden="false" id="abe4-4a9e-1ab7-619e" targetId="db92-54fd-e023-d69f" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Screamers Of Tzeentch" hidden="false" id="747803a7-8c31df75" collective="false">
@@ -4517,6 +4634,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Tzeentch" hidden="false" id="e359-313e-c8cc-af25" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
+            <categoryLink name="War Beast" hidden="false" id="60ad-c5d-82f0-efca" targetId="19f9-8dd8-bba4-625b" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -4538,7 +4656,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Tzeentch" hidden="false" id="d5e2-cb1a-ee86-ca25" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
-        <categoryLink name="War Beast" hidden="false" id="5e7f-e08c-841d-21c" targetId="19f9-8dd8-bba4-625b" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Chariot Of Tzeentch" hidden="false" id="d3573c4a-5b93fb74" collective="false">
@@ -5016,6 +5133,9 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="34c68f48-ccd293f2"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2adb9a42-1637ea0c"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Monstrous Infantry" hidden="false" id="a99b-af60-376-b9e4" targetId="5c55-f9d6-b181-92f8" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -5066,9 +5186,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       <constraints>
         <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="2d8-2a2f-f067-b732"/>
       </constraints>
-      <categoryLinks>
-        <categoryLink name="Monstrous Infantry" hidden="false" id="9d3f-3faf-4010-43e1" targetId="5c55-f9d6-b181-92f8" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Chaos Furies" hidden="false" id="3c1cf41a-28bc7404" collective="false">
       <profiles>
@@ -5099,6 +5216,9 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           <constraints>
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="c8057e87-700e62d5"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="676a-335b-5219-e3b9" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -5238,9 +5358,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </conditions>
         </modifier>
       </modifiers>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="d60e-cc89-945d-2925" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Soul Grinder" hidden="false" id="c3d3c7a0-1533346a" collective="false">
       <profiles>
@@ -5372,6 +5489,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </constraints>
           <categoryLinks>
             <categoryLink name="Daemon of Nurgle" hidden="false" id="57e9-e96c-9920-d932" targetId="e20-3c11-13b5-e880" primary="false"/>
+            <categoryLink name="Behemoth" hidden="false" id="d9e-14b0-5865-5bd3" targetId="3755-6732-99b2-c713" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -5418,9 +5536,6 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
           </conditions>
         </modifier>
       </modifiers>
-      <categoryLinks>
-        <categoryLink name="Behemoth" hidden="false" id="7383-5353-3f14-b6c" targetId="3755-6732-99b2-c713" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Daemonic Locus" hidden="false" id="231e-a15c-e299-abd1" collective="true">
       <costs>

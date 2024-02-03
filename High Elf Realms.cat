@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="56fb-835b-a377-6639" name="High Elf Realms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="49" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="56fb-835b-a377-6639" name="High Elf Realms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="50" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Sons of Caledor" hidden="false" id="2f86-a9f-38aa-d39a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="170" publicationId="8b8d-8fc4-559e-87b1">
       <characteristics>
@@ -881,6 +881,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <costs>
             <cost name="pts" typeId="points" value="9"/>
           </costs>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="1375-65ad-9ac5-483e" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Shieldwall" hidden="false" id="2974-9a02-ed37-3647" sortIndex="2">
           <infoLinks>
@@ -916,6 +919,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <comment>upgrades: 7fd0-ec5a-104d-4a6d</comment>
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="5b4e-ee1c-49b9-3fad" primary="false" name="CHAMPION"/>
+                <categoryLink name="Regular Infantry" hidden="false" id="6b22-8074-52b9-8a16" targetId="f3f7-ca43-674e-115f" primary="false"/>
               </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="c3c-b899-960d-d06f" subType="crew" flatten="true" sortIndex="3">
@@ -943,6 +947,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   </modifiers>
                 </entryLink>
               </entryLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="8ad5-1b39-d639-a475" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="c1d7-c15a-3fde-e0bc" subType="crew" sortIndex="1">
               <constraints>
@@ -955,6 +962,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="bfff-91bc-fd18-1749" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="f9d5-4bb5-2d6b-d60c" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -1021,7 +1031,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="cae0-3d90-50fe-5f10" primary="true" name="Core"/>
-        <categoryLink targetId="f3f7-ca43-674e-115f" id="a741-6217-5d77-cff0" primary="false" name="Regular Infantry"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Noble" hidden="false" id="37d5-3ec1-ea71-3a6e">
@@ -1458,9 +1467,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <costs>
             <cost name="pts" typeId="points" value="70"/>
           </costs>
-          <categoryLinks>
-            <categoryLink name="Regular Infantry" hidden="false" id="5f31-418a-9d80-900f" targetId="f3f7-ca43-674e-115f" primary="false"/>
-          </categoryLinks>
           <modifiers>
             <modifier type="remove" value="f3f7-ca43-674e-115f" field="category">
               <conditionGroups>
@@ -1468,6 +1474,17 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   <conditions>
                     <condition type="atLeast" value="1" field="selections" scope="parent" childId="mount" shared="true" includeChildSelections="true"/>
                     <condition type="atLeast" value="1" field="selections" scope="parent" childId="c96a-608-5de4-b943" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="f63b-aff3-1ada-93c3">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -1494,6 +1511,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="1d04-cacd-b00d-d1ca" primary="true" name="Characters"/>
+        <categoryLink name="Regular Infantry" hidden="false" id="be99-a9db-7175-d98" targetId="f3f7-ca43-674e-115f" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Elven Steed" hidden="false" id="c29e-def2-fb14-e28d" collective="true" subType="mount">
@@ -1843,8 +1861,21 @@ Units that are fleeing, that are already engaged in combat when charged, or that
             </selectionEntryGroup>
           </selectionEntryGroups>
           <categoryLinks>
-            <categoryLink name="Heavy Cavalry" hidden="false" id="2c70-8ccc-70be-42bf" targetId="5165-d052-cfc2-5887" primary="false"/>
+            <categoryLink name="Regular Infantry" hidden="false" id="69e8-136d-2970-54fd" targetId="f3f7-ca43-674e-115f" primary="false"/>
           </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="d77d-7ba1-b859-2f00">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -1868,7 +1899,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="e3f1-4d43-387b-e606" primary="true" name="Characters"/>
-        <categoryLink name="Regular Infantry" hidden="false" id="1d8b-da69-41a0-889b" targetId="f3f7-ca43-674e-115f" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Prince" hidden="false" id="917e-4846-1500-c216">
@@ -2330,9 +2360,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <costs>
             <cost name="pts" typeId="points" value="130"/>
           </costs>
-          <categoryLinks>
-            <categoryLink name="Regular Infantry" hidden="false" id="733a-8364-bf4e-66c5" targetId="f3f7-ca43-674e-115f" primary="false"/>
-          </categoryLinks>
           <modifiers>
             <modifier type="remove" value="f3f7-ca43-674e-115f" field="category">
               <conditionGroups>
@@ -2340,6 +2367,17 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   <conditions>
                     <condition type="atLeast" value="1" field="selections" scope="parent" childId="mount" shared="true" includeChildSelections="true"/>
                     <condition type="atLeast" value="1" field="selections" scope="parent" childId="c96a-608-5de4-b943" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="c1d9-f73e-3173-7aa0">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -2371,6 +2409,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="7e31-ffe5-ad58-acae" primary="true" name="Characters"/>
+        <categoryLink name="Regular Infantry" hidden="false" id="5c1f-de11-b76f-939f" targetId="f3f7-ca43-674e-115f" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Dragon Mage" hidden="false" id="aeb6-a2b9-b47d-a1b">
@@ -2456,6 +2495,22 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
+          <categoryLinks>
+            <categoryLink name="Behemoth" hidden="false" id="cce2-822a-c170-9a30" targetId="3755-6732-99b2-c713" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="3755-6732-99b2-c713" field="category" id="5545-cee-77e7-92e4">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -2488,7 +2543,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="952a-e7a6-aab7-c03a" primary="true" name="Characters"/>
-        <categoryLink name="Behemoth" hidden="false" id="30bd-3bcd-44d8-e73a" targetId="3755-6732-99b2-c713" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Handmaiden of the Everqueen" hidden="false" id="9117-2bee-3a99-c73f">
@@ -2566,6 +2620,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               </constraints>
             </selectionEntry>
           </selectionEntries>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="5506-3874-ffe-c18d" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -2583,7 +2640,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="8eff-51dc-840e-6fa9" primary="true" name="Characters"/>
-        <categoryLink name="Regular Infantry" hidden="false" id="1ddd-43ae-3866-7f76" targetId="f3f7-ca43-674e-115f" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Mage" hidden="false" id="7c6e-11dc-9fb-1702">
@@ -2872,6 +2928,22 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="c303-5ac-909f-dd56" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="c994-8765-db30-dfbb">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -2895,7 +2967,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="8e6-f9bc-4d16-f86a" primary="true" name="Characters"/>
-        <categoryLink name="Regular Infantry" hidden="false" id="ba45-9285-d299-1615" targetId="f3f7-ca43-674e-115f" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Bow of Avelorn" hidden="false" id="21cc-d9b1-b466-e0" collective="true">
@@ -2965,6 +3036,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               </selectionEntries>
             </selectionEntryGroup>
           </selectionEntryGroups>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="9eba-ab7c-ed1b-d64c" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -2989,6 +3063,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <comment>upgrades: 45b1-3bee-c8f-38e3</comment>
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="9ebc-99b5-dd77-f0db" primary="false" name="CHAMPION"/>
+                <categoryLink name="Regular Infantry" hidden="false" id="768a-90d8-337b-a652" targetId="f3f7-ca43-674e-115f" primary="false"/>
               </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="9345-387-814-f260" subType="crew" flatten="true" sortIndex="3">
@@ -3016,6 +3091,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   </modifiers>
                 </entryLink>
               </entryLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="dd76-9979-b3a6-6642" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="1283-b87f-9955-b6d4" subType="crew" sortIndex="1">
               <constraints>
@@ -3028,6 +3106,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="a358-1fe2-7b99-e66d" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="b6d9-b29f-ef13-71b1" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -3093,7 +3174,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="18e6-f1f6-c19c-bcc2" primary="true" name="Core"/>
-        <categoryLink targetId="f3f7-ca43-674e-115f" id="ee3f-5822-15-2c29" primary="false" name="Regular Infantry"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Lothern Sea Guard" hidden="false" id="12f4-405f-3fb5-75dc">
@@ -3144,6 +3224,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <costs>
             <cost name="pts" typeId="points" value="11"/>
           </costs>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="5d49-ca59-38f0-7837" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -3169,6 +3252,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <comment>upgrades: 3ef9-e7ba-25f6-6dd8</comment>
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="618d-180-17be-4750" primary="false" name="CHAMPION"/>
+                <categoryLink name="Regular Infantry" hidden="false" id="c77c-1044-b486-bdef" targetId="f3f7-ca43-674e-115f" primary="false"/>
               </categoryLinks>
               <entryLinks>
                 <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="873e-fb43-e63c-d73e" targetId="1539-fd78-88f-badd">
@@ -3203,6 +3287,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   </modifiers>
                 </entryLink>
               </entryLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="7421-3675-880e-82d6" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="3b76-3582-64b2-e4b5" subType="crew" sortIndex="1">
               <constraints>
@@ -3215,6 +3302,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="41f9-c184-fb6-9366" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="4fa9-64a-153b-6f71" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -3281,7 +3371,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="9f17-4cfb-e88-9f01" primary="true" name="Core"/>
-        <categoryLink targetId="f3f7-ca43-674e-115f" id="8c1f-bb3f-f527-4ccd" primary="false" name="Regular Infantry"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="White Lions of Chrace" hidden="false" id="24cb-795c-4110-f2d1">
@@ -3351,6 +3440,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               </constraints>
             </selectionEntryGroup>
           </selectionEntryGroups>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="9591-50d2-fe95-3e6b" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -3375,6 +3467,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <comment>upgrades: 2743-7020-5369-92ab</comment>
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="a603-8eab-8fdd-f830" primary="false" name="CHAMPION"/>
+                <categoryLink name="Regular Infantry" hidden="false" id="3010-f4d6-ac25-a699" targetId="f3f7-ca43-674e-115f" primary="false"/>
               </categoryLinks>
               <entryLinks>
                 <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="472d-5894-1859-595d" targetId="1539-fd78-88f-badd">
@@ -3402,6 +3495,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   </constraints>
                 </entryLink>
               </entryLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="83e4-f23e-521a-5b0f" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="cea7-dd45-68a7-c3e6" subType="crew" sortIndex="2">
               <constraints>
@@ -3414,6 +3510,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="cc86-2cca-6a4a-11cf" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="8534-e07d-f39-a4c7" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -3432,7 +3531,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
         </infoGroup>
       </infoGroups>
       <categoryLinks>
-        <categoryLink targetId="f3f7-ca43-674e-115f" id="c142-b0f2-77af-b1f7" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="6fa5-3751-6d32-1728" primary="true" name="Special"/>
       </categoryLinks>
     </selectionEntry>
@@ -3511,6 +3609,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               </costs>
             </selectionEntry>
           </selectionEntries>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="3775-e96e-b703-6d8b" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -3535,6 +3636,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <comment>upgrades: b9b2-e70c-b197-d3af</comment>
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="ca4-3620-4212-564c" primary="false" name="CHAMPION"/>
+                <categoryLink name="Regular Infantry" hidden="false" id="1ec2-3744-3a74-c9a8" targetId="f3f7-ca43-674e-115f" primary="false"/>
               </categoryLinks>
               <entryLinks>
                 <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="137e-9c89-3cda-80b" targetId="1539-fd78-88f-badd">
@@ -3562,6 +3664,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   </constraints>
                 </entryLink>
               </entryLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="28a5-2b11-75e6-c69a" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="41bc-ebd8-5881-7dc9" subType="crew" sortIndex="2">
               <constraints>
@@ -3574,6 +3679,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="66f9-2566-2f13-68ed" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="2621-dc2-d5a1-ef30" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -3597,7 +3705,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
         </infoGroup>
       </infoGroups>
       <categoryLinks>
-        <categoryLink targetId="f3f7-ca43-674e-115f" id="b9e7-a755-d519-b3cd" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="4743-be2e-a791-c4de" primary="true" name="Special"/>
       </categoryLinks>
     </selectionEntry>
@@ -3652,6 +3759,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               </costs>
             </selectionEntry>
           </selectionEntries>
+          <categoryLinks>
+            <categoryLink name="Heavy Infantry" hidden="false" id="fcb1-ee95-7d7b-128b" targetId="ca7e-d004-ccde-caf3" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -3676,6 +3786,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <comment>upgrades: 1dcd-2699-70e4-b4ac</comment>
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="a54a-5af4-4dc7-707" primary="false" name="CHAMPION"/>
+                <categoryLink name="Heavy Infantry" hidden="false" id="fe3d-d48f-3983-fc9" targetId="ca7e-d004-ccde-caf3" primary="false"/>
               </categoryLinks>
               <entryLinks>
                 <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="f44b-f74e-c2a-af6" targetId="1539-fd78-88f-badd">
@@ -3703,6 +3814,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   </constraints>
                 </entryLink>
               </entryLinks>
+              <categoryLinks>
+                <categoryLink name="Heavy Infantry" hidden="false" id="aa4d-2740-b9bd-118a" targetId="ca7e-d004-ccde-caf3" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="8475-306d-4be3-435e" subType="crew" sortIndex="2">
               <constraints>
@@ -3715,6 +3829,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="b3b7-c72b-bf9c-95b5" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
+              <categoryLinks>
+                <categoryLink name="Heavy Infantry" hidden="false" id="d769-8c40-51d4-6db9" targetId="ca7e-d004-ccde-caf3" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -3734,7 +3851,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="2789-d264-96af-ff30" primary="true" name="Special"/>
-        <categoryLink name="Heavy Infantry" hidden="false" id="f78c-f334-ebfa-266c" targetId="ca7e-d004-ccde-caf3" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Shadow Warriors" hidden="false" id="c62c-5e5-1191-14">
@@ -3775,6 +3891,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <costs>
             <cost name="pts" typeId="points" value="14"/>
           </costs>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="d606-2a7a-6c0d-89e5" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -3799,6 +3918,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <comment>upgrades: c4f6-b393-404d-6fde</comment>
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="c12c-80ec-7a5f-c9d3" primary="false" name="CHAMPION"/>
+                <categoryLink name="Regular Infantry" hidden="false" id="728f-89c9-91ab-264e" targetId="f3f7-ca43-674e-115f" primary="false"/>
               </categoryLinks>
               <entryLinks>
                 <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="c3e4-265e-12d8-605f" targetId="1539-fd78-88f-badd">
@@ -3888,7 +4008,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
         </infoGroup>
       </infoGroups>
       <categoryLinks>
-        <categoryLink targetId="f3f7-ca43-674e-115f" id="1f8b-7a50-55-f615" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="2ea2-833f-a063-15d6" primary="true" name="Special"/>
       </categoryLinks>
     </selectionEntry>
@@ -3930,6 +4049,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <costs>
             <cost name="pts" typeId="points" value="15"/>
           </costs>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="fcd1-6682-d133-e0da" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -3954,6 +4076,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <comment>upgrades: 980c-75b0-a301-a13c</comment>
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="b4e8-3d5c-f3ab-c94b" primary="false" name="CHAMPION"/>
+                <categoryLink name="Regular Infantry" hidden="false" id="cdce-dbf5-8e8e-1f1" targetId="f3f7-ca43-674e-115f" primary="false"/>
               </categoryLinks>
               <entryLinks>
                 <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="3141-4ef-8da3-ed15" targetId="1539-fd78-88f-badd">
@@ -4023,7 +4146,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
         </infoGroup>
       </infoGroups>
       <categoryLinks>
-        <categoryLink targetId="f3f7-ca43-674e-115f" id="cd46-cd5b-c94-45b0" primary="false" name="Regular Infantry"/>
         <categoryLink targetId="2bfe-5863-46fe-d284" id="aea-e695-70ef-2241" primary="true" name="Rare"/>
       </categoryLinks>
     </selectionEntry>
@@ -4092,6 +4214,22 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               </constraints>
             </selectionEntryGroup>
           </selectionEntryGroups>
+          <categoryLinks>
+            <categoryLink name="Light Cavalry" hidden="false" id="df61-e12e-37c6-5abb" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="600c-7d08-5be1-fe0c" field="category" id="a352-c754-521d-9f59">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -4117,6 +4255,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <comment>upgrades: 8705-f7b6-83d2-33b7</comment>
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="bef2-7511-49b9-331f" primary="false" name="CHAMPION"/>
+                <categoryLink name="Light Cavalry" hidden="false" id="412a-bd14-80c3-4fac" targetId="600c-7d08-5be1-fe0c" primary="false"/>
               </categoryLinks>
               <entryLinks>
                 <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="1169-2c30-90e4-571d" targetId="1539-fd78-88f-badd">
@@ -4151,6 +4290,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   </modifiers>
                 </entryLink>
               </entryLinks>
+              <categoryLinks>
+                <categoryLink name="Light Cavalry" hidden="false" id="3869-5782-d337-4abc" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="80f8-275-6551-becc" subType="crew" sortIndex="1">
               <constraints>
@@ -4163,6 +4305,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="b1ce-117-e5db-d83b" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
+              <categoryLinks>
+                <categoryLink name="Light Cavalry" hidden="false" id="568b-e299-c8f4-f29e" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -4253,7 +4398,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="ed22-d955-6096-889d" primary="true" name="Core"/>
-        <categoryLink targetId="600c-7d08-5be1-fe0c" id="9cad-d94a-228d-4d58" primary="false" name="Light Cavalry"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Silver Helms" hidden="false" id="e9b1-22cd-7328-5fde">
@@ -4305,6 +4449,22 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <costs>
             <cost name="pts" typeId="points" value="23"/>
           </costs>
+          <categoryLinks>
+            <categoryLink name="Light Cavalry" hidden="false" id="9185-aece-2539-674" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="600c-7d08-5be1-fe0c" field="category" id="ea22-4d9e-7841-a3d">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -4329,6 +4489,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <comment>upgrades: 86ce-f079-90-884f</comment>
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="2d9b-1c5c-c6e4-2a35" primary="false" name="CHAMPION"/>
+                <categoryLink name="Light Cavalry" hidden="false" id="1502-1f19-1b6b-2bce" targetId="600c-7d08-5be1-fe0c" primary="false"/>
               </categoryLinks>
               <entryLinks>
                 <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="8b51-faf6-fbfb-9097" targetId="1539-fd78-88f-badd">
@@ -4356,6 +4517,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   </constraints>
                 </entryLink>
               </entryLinks>
+              <categoryLinks>
+                <categoryLink name="Light Cavalry" hidden="false" id="cd10-3054-b92f-124" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="bb2b-7adc-9520-83cc" subType="crew" sortIndex="2">
               <constraints>
@@ -4368,6 +4532,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="9c00-c65a-8b2e-4773" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
+              <categoryLinks>
+                <categoryLink name="Light Cavalry" hidden="false" id="c04f-5f43-46e6-5420" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -4386,7 +4553,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="f9e7-5ea1-774f-5bf" primary="true" name="Core"/>
-        <categoryLink name="Light Cavalry" hidden="false" id="2f08-65e8-6da2-da80" targetId="600c-7d08-5be1-fe0c" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Dragon Princes" hidden="false" id="3660-5d1a-17d4-588c">
@@ -4438,6 +4604,22 @@ Units that are fleeing, that are already engaged in combat when charged, or that
           <costs>
             <cost name="pts" typeId="points" value="37"/>
           </costs>
+          <categoryLinks>
+            <categoryLink name="Heavy Cavalry" hidden="false" id="8c56-b994-80ce-e8ae" targetId="5165-d052-cfc2-5887" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="5165-d052-cfc2-5887" field="category" id="8b43-dc0d-d98e-907e">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -4462,6 +4644,7 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <comment>upgrades: a19e-2867-63ce-2aa7</comment>
               <categoryLinks>
                 <categoryLink targetId="83a1-945c-564c-84af" id="c0b4-fbb4-e90e-472e" primary="false" name="CHAMPION"/>
+                <categoryLink name="Heavy Cavalry" hidden="false" id="82e9-90bc-fd94-a4da" targetId="5165-d052-cfc2-5887" primary="false"/>
               </categoryLinks>
               <entryLinks>
                 <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="dfe3-6356-fcea-54b7" targetId="1539-fd78-88f-badd">
@@ -4489,6 +4672,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
                   </constraints>
                 </entryLink>
               </entryLinks>
+              <categoryLinks>
+                <categoryLink name="Heavy Cavalry" hidden="false" id="f785-45e4-aa49-30d2" targetId="5165-d052-cfc2-5887" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="7e3d-d59e-96df-d6c8" subType="crew" sortIndex="2">
               <constraints>
@@ -4501,6 +4687,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="661e-56b-4141-5ad2" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
+              <categoryLinks>
+                <categoryLink name="Heavy Cavalry" hidden="false" id="163b-2930-df6b-9bd9" targetId="5165-d052-cfc2-5887" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -4525,7 +4714,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="e394-cc06-98d4-5761" primary="true" name="Special"/>
-        <categoryLink targetId="5165-d052-cfc2-5887" id="ffcb-622f-6e20-6a06" primary="false" name="Heavy Cavalry"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Lothern Skycutters" hidden="false" id="f791-3799-a489-5626">
@@ -5055,6 +5243,9 @@ Units that are fleeing, that are already engaged in combat when charged, or that
               </constraints>
             </entryLink>
           </entryLinks>
+          <categoryLinks>
+            <categoryLink name="War Machine" hidden="false" id="37d9-1885-bc4-9fe5" targetId="9fcf-19ad-fe84-9c61" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -5068,7 +5259,6 @@ Units that are fleeing, that are already engaged in combat when charged, or that
       </infoGroups>
       <categoryLinks>
         <categoryLink targetId="2bfe-5863-46fe-d284" id="3707-c8ea-3e0c-65f4" primary="true" name="Rare"/>
-        <categoryLink targetId="9fcf-19ad-fe84-9c61" id="5189-d664-17cb-1505" primary="false" name="War Machine"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Sea Guard Crew" hidden="false" id="48e1-f9df-a0dc-8da5" collective="true">
