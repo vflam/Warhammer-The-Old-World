@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="4545-8340-9988-9ea0" name="Vampire Counts" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="9" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Giloushaker#2496">
+<catalogue library="false" id="4545-8340-9988-9ea0" name="Vampire Counts" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="10" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Giloushaker#2496">
   <sharedProfiles>
     <profile name="Vampire Count" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="57d7-6e34-d546-4b92">
       <characteristics>
@@ -1272,6 +1272,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
       </selectionEntries>
       <categoryLinks>
         <categoryLink name="Regular Infantry" hidden="false" id="fc35-744d-e09c-711e" targetId="f3f7-ca43-674e-115f" primary="false"/>
+        <categoryLink name="VAMPIRE" hidden="false" id="2b34-3106-83d5-54a5" targetId="4813-a63e-57ed-dc4" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Vampire Thrall" hidden="false" id="a2837244-8c68760e" collective="false">
@@ -1435,6 +1436,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
       </selectionEntries>
       <categoryLinks>
         <categoryLink name="Regular Infantry" hidden="false" id="7f62-f6bd-a34b-7cd3" targetId="f3f7-ca43-674e-115f" primary="false"/>
+        <categoryLink name="VAMPIRE" hidden="false" id="1239-85e3-39a9-20c1" targetId="4813-a63e-57ed-dc4" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Master Necromancer" hidden="false" id="1ed21202-f13ca3cc" collective="false">
@@ -1516,6 +1518,22 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1a8a005a-c8df1e44"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="49d6570-73f993a"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="7eb9-9994-5179-5d11" targetId="f3f7-ca43-674e-115f" primary="false"/>
+            <categoryLink name="NECROMANCER" hidden="false" id="bd67-b3c8-78b3-5fc3" targetId="bd9e-eec8-c99c-db01" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="c96a-608-5de4-b943" shared="true" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="mount" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -1538,9 +1556,6 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="488a-65f0-ac41-c695" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Necromantic Acolyte" hidden="false" id="824d1325-da3dc21b" collective="false">
       <profiles>
@@ -1621,6 +1636,17 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7a4b-81cc-9e4e-9669-min"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7a4b-81cc-9e4e-9669-max"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="c8b7-e264-e92f-3143" targetId="f3f7-ca43-674e-115f" primary="false"/>
+            <categoryLink name="NECROMANCER" hidden="false" id="733-f2c2-5593-936e" targetId="bd9e-eec8-c99c-db01" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="1d0e-4804-8b2d-bf85" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -1643,9 +1669,6 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="6996-8449-1807-8d86" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Strigoi Ghoul King" hidden="false" id="a2f2f56e-2000d478" collective="false">
       <profiles>
@@ -3902,7 +3925,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
     <selectionEntry type="model" name="Terrorgheist" id="450fb3b2-1df3aa7c" hidden="false">
       <infoLinks>
         <infoLink name="Terrorgheist" hidden="false" type="profile" id="75ff5c58-cfd9ebc2" targetId="20d6-3c33-ed64-2649"/>
-        <infoLink name="Base" hidden="false" type="profile" id="bb2be48c-c1d7cd6" targetId="a35e-8f23-b67-1efe"/>
+        <infoLink name="Base (100x150)" hidden="false" type="profile" id="bb2be48c-c1d7cd6" targetId="b56f-7f81-4ba1-ed2c"/>
       </infoLinks>
       <costs>
         <cost name="pts" typeId="points" value="205"/>
@@ -3979,91 +4002,77 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
   <entryLinks>
     <entryLink import="true" name="Vampire Count" hidden="false" id="2524de59-e6f4a0af" type="selectionEntry" targetId="2c543d28-8753d2d2">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="fdf8f04-567dacce" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="89d3-9734-fa1b-d286" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
         <categoryLink name="Lord" hidden="false" id="7385-da5f-5c42-834b" targetId="331e-3a37-38cb-23d2" primary="false"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Vampire Thrall" hidden="false" id="a906e64d-80532883" type="selectionEntry" targetId="a2837244-8c68760e">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="fdf8f04-567dacce" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="9261-f3ce-184f-e668" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Master Necromancer" hidden="false" id="1ff9c7b7-31d6ca85" type="selectionEntry" targetId="1ed21202-f13ca3cc">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="9f22e11d-d6c5eed3" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="4c04-e39d-c061-bf26" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
         <categoryLink name="Lord" hidden="false" id="c018-d79a-c38f-8fa4" targetId="331e-3a37-38cb-23d2" primary="false"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Necromantic Acolyte" hidden="false" id="758c1ce6-75a96bf0" type="selectionEntry" targetId="824d1325-da3dc21b">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="9f22e11d-d6c5eed3" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="8eb1-67e8-715e-35c4" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Strigoi Ghoul King" hidden="false" id="aba2369b-f537e829" type="selectionEntry" targetId="a2f2f56e-2000d478">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="1b8f3551-1b35a0a7" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="ad06-7ea9-2699-663a" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
         <categoryLink name="Lord" hidden="false" id="e57e-f437-2b2-3a1f" targetId="331e-3a37-38cb-23d2" primary="false"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Cairn Wraith" hidden="false" id="b4e06cfa-ad8e5de4" type="selectionEntry" targetId="27225e11-e1698367">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="79785dae-1c98fab8" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="2d44-9498-42e4-2c70" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Wight King" hidden="false" id="7374098c-2efc79d6" type="selectionEntry" targetId="e74f1cd7-7006c725">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="325ad18f-d5eb821d" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="a28e-f1d8-a491-3285" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
         <categoryLink name="Wight King or Banshee" hidden="false" id="c8ef-c477-8d53-64bc" targetId="87c7-fde5-4261-9b19" primary="false"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Wight Lord" hidden="false" id="45d5318c-d51461d6" type="selectionEntry" targetId="9124461f-fd01a4ad">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="325ad18f-d5eb821d" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="489-c9d5-fed6-3e9c" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Tomb Banshee" hidden="false" id="fca943a-f6d4b24" type="selectionEntry" targetId="43e40e59-363a50af">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="d4295f6e-b033ee78" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="ca9-1ae5-678d-b30c" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
         <categoryLink name="Wight King or Banshee" hidden="false" id="658c-e6c7-296a-fd41" targetId="87c7-fde5-4261-9b19" primary="false"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Grave Guard" hidden="false" id="f0c93292-b031d5dc" type="selectionEntry" targetId="2c65c970-45a4dd3a">
       <categoryLinks>
-        <categoryLink name="Heavy Infantry" hidden="false" id="4fdc3bc2-4f277f8c" targetId="ca7e-d004-ccde-caf3" primary="false"/>
         <categoryLink name="Special" hidden="false" id="2dad-11a6-e759-8e85" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Grave Guard or Black Knight" hidden="false" id="163d-b232-5823-64ea" targetId="9836-1bed-24-6e3f" primary="false"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Skeleton Warriors" hidden="false" id="42f09538-6d0f7722" type="selectionEntry" targetId="c6eca90e-7fa10118">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="de8d0e3d-ad8af773" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Core" hidden="false" id="99ae-e8dd-247d-e3e4" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Zombies" hidden="false" id="3bbbaff-f16ecf0d" type="selectionEntry" targetId="51cffed9-4042bd2f">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="3ed2ae5a-f9725c44" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Core" hidden="false" id="5e1a-2acf-8c64-fea7" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Crypt Ghouls" hidden="false" id="c162f11e-d821fbe8" type="selectionEntry" targetId="efbab8cc-7313af16">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="ca520afb-3e11c089" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Core" hidden="false" id="9c55-2e8f-aed6-88" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Crypt Horrors" hidden="false" id="9dc5b9fd-60204533" type="selectionEntry" targetId="475a2b9f-6b5c5e2d">
       <categoryLinks>
-        <categoryLink name="Monstrous Infantry" hidden="false" id="fb6024a2-5434a9ec" targetId="5c55-f9d6-b181-92f8" primary="false"/>
         <categoryLink name="Crypt Horrors or Fell Bat" hidden="false" id="68d2-e08-63b-14a6" targetId="85c8-1fba-1d5e-bb7c" primary="false"/>
         <categoryLink name="Special" hidden="false" id="f872-896b-6993-a61c" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
@@ -4075,7 +4084,6 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
     </entryLink>
     <entryLink import="true" name="Vargheists" hidden="false" id="e313686c-9e5c35b6" type="selectionEntry" targetId="83c603e2-69f18f2c">
       <categoryLinks>
-        <categoryLink name="Monstrous Infantry" hidden="false" id="38383f0f-8a71839d" targetId="5c55-f9d6-b181-92f8" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="19c2-e7ac-4a76-3db8" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
       <constraints>
@@ -4091,14 +4099,12 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
     </entryLink>
     <entryLink import="true" name="Fell Bats" hidden="false" id="21ce4bcb-31c5a599" type="selectionEntry" targetId="95bea3a5-509ece9b">
       <categoryLinks>
-        <categoryLink name="Monstrous Infantry" hidden="false" id="36e62b54-5818045e" targetId="5c55-f9d6-b181-92f8" primary="false"/>
         <categoryLink name="Special" hidden="false" id="acc9-534f-3c9e-a9db" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Crypt Horrors or Fell Bat" hidden="false" id="6e3b-4476-8977-4341" targetId="85c8-1fba-1d5e-bb7c" primary="false"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Spirit Hosts" hidden="false" id="8070332a-cafd71d4" type="selectionEntry" targetId="f6a7e8e8-142c2092">
       <categoryLinks>
-        <categoryLink name="Swarms" hidden="false" id="5ce6702b-5cadaa79" targetId="db92-54fd-e023-d69f" primary="false"/>
         <categoryLink name="Special" hidden="false" id="8e88-a058-76f4-41b1" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
       <constraints>
@@ -4115,7 +4121,6 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
     </entryLink>
     <entryLink import="true" name="Blood Knights" hidden="false" id="b9d23654-154bb75e" type="selectionEntry" targetId="73d186ca-2ce7f1f4">
       <categoryLinks>
-        <categoryLink name="Heavy Cavalry" hidden="false" id="be9e49c9-e2c3399f" targetId="5165-d052-cfc2-5887" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="7904-d0d9-5a1d-ee1c" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
       <constraints>
@@ -4131,7 +4136,6 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
     </entryLink>
     <entryLink import="true" name="Black Knights" hidden="false" id="9fad3859-866a2aaf" type="selectionEntry" targetId="3139650b-e88df4d9">
       <categoryLinks>
-        <categoryLink name="Heavy Cavalry" hidden="false" id="ae1935e6-e705bcf0" targetId="5165-d052-cfc2-5887" primary="false"/>
         <categoryLink name="Special" hidden="false" id="d2ec-e508-da-b4f9" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Grave Guard or Black Knight" hidden="false" id="195d-248a-da39-494b" targetId="9836-1bed-24-6e3f" primary="false"/>
       </categoryLinks>
@@ -4144,7 +4148,6 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
     </entryLink>
     <entryLink import="true" name="Hexwraiths" hidden="false" id="91194d99-af4b95ef" type="selectionEntry" targetId="22a70d4b-66cc5b19">
       <categoryLinks>
-        <categoryLink name="Light Cavalry" hidden="false" id="543a43e9-16788bf" targetId="600c-7d08-5be1-fe0c" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="5537-dc2a-9019-2054" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
       <constraints>
@@ -4161,7 +4164,6 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
     </entryLink>
     <entryLink import="true" name="Corpse Cart" hidden="false" id="2d22ab3c-44ab1dc6" type="selectionEntry" targetId="cdd546b2-95f4a57c">
       <categoryLinks>
-        <categoryLink name="Heavy Chariot" hidden="false" id="8b98bdc3-29a9faf1" targetId="d768-7cf0-de0a-c249" primary="false"/>
         <categoryLink name="Special" hidden="false" id="3acd-deac-3e32-a85c" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
       <constraints>
@@ -4170,7 +4172,6 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
     </entryLink>
     <entryLink import="true" name="Black Coach" hidden="false" id="6a0f55-2e6d934b" type="selectionEntry" targetId="c9fd2057-fa28aea5">
       <categoryLinks>
-        <categoryLink name="Heavy Chariot" hidden="false" id="e1991ecc-26cee516" targetId="d768-7cf0-de0a-c249" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="10d7-8845-9f35-4f20" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
       <constraints>
@@ -4179,21 +4180,18 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
     </entryLink>
     <entryLink import="true" name="Terrorgheist" hidden="false" id="edf779b0-a2a70b7a" type="selectionEntry" targetId="fb8a7c6-7dcb6950">
       <categoryLinks>
-        <categoryLink name="Behemoth" hidden="false" id="3b6e7032-be7882fc" targetId="3755-6732-99b2-c713" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="9b97-6e2c-b34f-daa5" targetId="2bfe-5863-46fe-d284" primary="true"/>
         <categoryLink name="Vhargulf or Terrorgeist" hidden="false" id="744a-1956-9f22-1d0" targetId="d41b-d3fa-a08b-a753" primary="false"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Varghulf" hidden="false" id="a8d16245-aeb1073b" type="selectionEntry" targetId="70896e07-29f6d655">
       <categoryLinks>
-        <categoryLink name="Monstrous Creature" hidden="false" id="e14095ae-d45f72b8" targetId="fb36-5275-617-c895" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="e057-242a-9753-ad39" targetId="2bfe-5863-46fe-d284" primary="true"/>
         <categoryLink name="Vhargulf or Terrorgeist" hidden="false" id="bccc-55f-c3e2-2a68" targetId="d41b-d3fa-a08b-a753" primary="false"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Grave Guard" hidden="true" id="26a6-2f5a-d104-e6f1" type="selectionEntry" targetId="2c65c970-45a4dd3a">
       <categoryLinks>
-        <categoryLink name="Heavy Infantry" hidden="false" id="9b62-44eb-eed1-c5f4" targetId="ca7e-d004-ccde-caf3" primary="false"/>
         <categoryLink name="Core" hidden="false" id="7eba-4989-7a4c-5021" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
       <modifiers>
@@ -4217,7 +4215,6 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
     </entryLink>
     <entryLink import="true" name="Black Knights" hidden="true" id="8cff-f4be-796-2234" type="selectionEntry" targetId="3139650b-e88df4d9">
       <categoryLinks>
-        <categoryLink name="Heavy Cavalry" hidden="false" id="13aa-1aa6-7e0c-92a" targetId="5165-d052-cfc2-5887" primary="false"/>
         <categoryLink name="Core" hidden="false" id="ddc5-4900-f4c3-3c22" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
       <modifiers>
@@ -4241,7 +4238,6 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
     </entryLink>
     <entryLink import="true" name="Terrorgheist" hidden="true" id="ccdb-3f83-db2e-bbb5" type="selectionEntry" targetId="fb8a7c6-7dcb6950">
       <categoryLinks>
-        <categoryLink name="Behemoth" hidden="false" id="78a-8224-ed77-e9f6" targetId="3755-6732-99b2-c713" primary="false"/>
         <categoryLink name="Special" hidden="false" id="5d32-6e62-a6ee-b8ce" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
       <modifiers>
@@ -4445,6 +4441,9 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
               </conditionGroups>
             </modifier>
           </modifiers>
+          <categoryLinks>
+            <categoryLink name="Heavy Chariot" hidden="false" id="df37-5848-8610-c4f3" targetId="d768-7cf0-de0a-c249" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" name="Coven Throne" id="3d22ed0c-a1184156" hidden="true" subType="mount" sortIndex="6">
           <infoLinks>
@@ -4563,6 +4562,9 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
               </conditionGroups>
             </modifier>
           </modifiers>
+          <categoryLinks>
+            <categoryLink name="Heavy Chariot" hidden="false" id="93e1-d01e-784d-ad87" targetId="d768-7cf0-de0a-c249" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" name="Abyssal Terror" id="b4a83544-694f210e" hidden="true" subType="mount" sortIndex="4">
           <infoLinks>
@@ -4643,7 +4645,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
         <selectionEntry type="model" name="Zombie Dragon" id="3bf785a4-ea8f0eee" hidden="true" subType="mount" sortIndex="7">
           <infoLinks>
             <infoLink name="Zombie Dragon" hidden="false" type="profile" id="6384442-4d5f440c" targetId="60db-14be-87c2-319d"/>
-            <infoLink name="Base" hidden="false" type="profile" id="bc7b7d4a-af8e3474" targetId="a35e-8f23-b67-1efe"/>
+            <infoLink name="Base (100x150)" hidden="false" type="profile" id="bc7b7d4a-af8e3474" targetId="b56f-7f81-4ba1-ed2c"/>
           </infoLinks>
           <costs>
             <cost name="pts" typeId="points" value="215"/>
@@ -4736,6 +4738,9 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
               </conditionGroups>
             </modifier>
           </modifiers>
+          <categoryLinks>
+            <categoryLink name="Heavy Cavalry" hidden="false" id="a72d-78f4-6d25-e4ef" targetId="5165-d052-cfc2-5887" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" name="Skeletal Steed" id="4dfa7ed6-af9643a0" hidden="true" subType="mount" sortIndex="2">
           <infoLinks>
@@ -4783,6 +4788,9 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
               </conditionGroups>
             </modifier>
           </modifiers>
+          <categoryLinks>
+            <categoryLink name="Heavy Cavalry" hidden="false" id="d8a7-c520-b0f6-62a9" targetId="5165-d052-cfc2-5887" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
@@ -4826,7 +4834,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="22fa-3191-5d61-232a"/>
           </constraints>
           <costs>
-            <cost name="pts" typeId="points" value="35"/>
+            <cost name="pts" typeId="points" value="30"/>
           </costs>
           <infoLinks>
             <infoLink name="Dark Acolyte" hidden="false" id="610f-5f65-1afa-f214" type="profile" targetId="9349-c828-b9e4-8499"/>

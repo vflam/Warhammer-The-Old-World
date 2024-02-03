@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="66" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="67" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -44,6 +44,7 @@
     <categoryEntry name="NIGHT GOBLIN CHARACTER" hidden="true" id="1000-68d6-8999-b491"/>
     <categoryEntry name="Wizard" hidden="false" id="f954-b4c0-b835-a048"/>
     <categoryEntry name="VAMPIRE" hidden="true" id="4813-a63e-57ed-dc4"/>
+    <categoryEntry name="NECROMANCER" hidden="true" id="bd9e-eec8-c99c-db01"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
@@ -211,7 +212,7 @@
 Note that if a model uses a weapon that has the Requires To Hands special rule in combat, it cannot also use a shield.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Great weapon" hidden="false" id="88e3-38f0-92d5-b616" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Great Weapon" hidden="false" id="88e3-38f0-92d5-b616" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+2 AP: -2
           Special Rules: Armour Bane (1), Requires Two Hands, Strike Last</characteristic>
@@ -225,7 +226,7 @@ Note that if a model uses a weapon that has the Requires To Hands special rule i
     </profile>
     <profile name="Heavy Armour" hidden="false" id="c56e-8d1b-bb4-de99" typeId="c14f-740-8107-d34b" typeName="Armour">
       <characteristics>
-        <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">+2 Armour Save</characteristic>
+        <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">Armour Value 5+</characteristic>
       </characteristics>
     </profile>
     <profile name="Barding" hidden="false" id="eb5d-bd8a-c75c-66d7" typeId="c14f-740-8107-d34b" typeName="Armour">
@@ -279,7 +280,7 @@ Note that if a model uses a weapon that has the Requires To Hands special rule i
     </profile>
     <profile name="Full Plate Armour" hidden="false" id="9a1d-38b0-7d7-7552" typeId="c14f-740-8107-d34b" typeName="Armour">
       <characteristics>
-        <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">+3 Armour Save</characteristic>
+        <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">Armour Value 4+</characteristic>
       </characteristics>
     </profile>
     <profile name="Shieldwall" hidden="false" id="32f7-8e30-3fe8-b11e" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="177" publicationId="768b-3da1-a182-a1d8">
@@ -356,7 +357,7 @@ Note that unless a character also has this special rule, their Leadership cannot
     </profile>
     <profile name="Light Armour" hidden="false" id="dbb2-4d85-84c2-528c" typeId="c14f-740-8107-d34b" typeName="Armour">
       <characteristics>
-        <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">+1 Armour Save</characteristic>
+        <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">Armour Value 5+</characteristic>
       </characteristics>
     </profile>
     <profile name="Warbow" hidden="false" id="20c1-9325-e604-a558" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
@@ -1047,11 +1048,6 @@ If a fleeing unit contains a musician, it may apply a +1 modifier to its Leaders
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
     </profile>
-    <profile name="Flame Cannon" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" hidden="false" id="5207-3185-698f-a161">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">description of flame cannon</characteristic>
-      </characteristics>
-    </profile>
     <profile name="General" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="609a-2943-a6e1-e002">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Inspiring Presence: Warriors fight all the better under the stern gaze of their General. Unless your General is fleeing, all friendly units within their Command range can use their Leadership characteristic instead of their own (so rally your General first!).</characteristic>
@@ -1491,9 +1487,9 @@ weapon.</characteristic>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="74ca-7660-ed4a-7cd6"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Flame Cannon" hidden="false" id="b7b6-5993-feab-cc81">
+    <selectionEntry type="upgrade" import="true" name="Fire Thrower" hidden="false" id="b7b6-5993-feab-cc81">
       <infoLinks>
-        <infoLink name="Flame Cannon" hidden="false" type="profile" id="526b-6831-ddf-b22d" targetId="5207-3185-698f-a161"/>
+        <infoLink name="Fire Thrower" hidden="false" type="profile" id="526b-6831-ddf-b22d" targetId="2694-34f1-f146-6351"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a9af-9404-4702-ee53-max"/>
