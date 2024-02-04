@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="67" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="68" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -80,7 +80,7 @@
           <categoryLinks>
             <categoryLink name="Characters" hidden="false" id="fdf6-5bd-a147-7449" targetId="a4cc-15c9-cfae-1b3b">
               <constraints>
-                <constraint type="max" value="50" field="limit::points" scope="force" shared="true" id="3125-433e-b840-79c1" percentValue="true" includeChildSelections="true"/>
+                <constraint type="max" value="12.5" field="limit::points" scope="force" shared="true" id="3125-433e-b840-79c1" percentValue="true" includeChildSelections="true"/>
                 <constraint type="min" value="1" field="selections" scope="force" shared="true" id="d0f3-4a75-ec91-35ba" includeChildSelections="true"/>
               </constraints>
             </categoryLink>
@@ -106,8 +106,8 @@
             </categoryLink>
           </categoryLinks>
           <constraints>
-            <constraint type="max" value="25" field="limit::points" scope="roster" shared="true" id="29b9-7e75-eef-4eaf" percentValue="true" includeChildSelections="true"/>
-            <constraint type="min" value="1" field="forces" scope="roster" shared="true" id="3ed2-b77c-587e-9b77"/>
+            <constraint type="max" value="25" field="limit::points" scope="roster" shared="true" id="29b9-7e75-eef-4eaf" percentValue="true" includeChildSelections="false" includeChildForces="false"/>
+            <constraint type="max" value="1" field="forces" scope="roster" shared="true" id="3ed2-b77c-587e-9b77"/>
           </constraints>
         </forceEntry>
       </forceEntries>
@@ -862,9 +862,9 @@ If a fleeing unit contains a musician, it may apply a +1 modifier to its Leaders
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
     </profile>
-    <profile name="Base (150x100)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="a35e-8f23-b67-1efe">
+    <profile name="Base (100x150)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="a35e-8f23-b67-1efe">
       <characteristics>
-        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">150x100</characteristic>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">100x150</characteristic>
       </characteristics>
       <modifiers>
         <modifier type="set" value="Base" field="name"/>
