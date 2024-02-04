@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="d9b0-fa44-a251-bfea" name="Dark Elves" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="14" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="d9b0-fa44-a251-bfea" name="Dark Elves" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="17" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
   <sharedProfiles>
     <profile name="Dark Elf Dreadlord" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="ee4f-5f57-cc9d-7dbb">
       <characteristics>
@@ -1294,7 +1294,7 @@ their repeater crossbow.</characteristic>
               </entryLinks>
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="8da6424e-bf43d058"/>
-                <constraint type="max" field="selections" scope="parent" shared="false" id="7f92a48c-f74e3cd6" includeChildSelections="false"/>
+                <constraint type="max" field="selections" scope="parent" shared="false" id="7f92a48c-f74e3cd6" includeChildSelections="false" value="1"/>
               </constraints>
             </selectionEntryGroup>
             <selectionEntryGroup name="Equipment" hidden="false" id="13451595-ebbe678b" sortIndex="8">
@@ -1329,9 +1329,19 @@ their repeater crossbow.</characteristic>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8bd8c8dd-890e9893"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="95c550e3-eceaf711"/>
           </constraints>
-          <categoryLinks>
-            <categoryLink name="Regular Infantry" hidden="false" id="e774-f04f-f43e-b8ab" targetId="f3f7-ca43-674e-115f" primary="false"/>
-          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="5ac5-cbe0-2d0c-5ae1">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -1348,9 +1358,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="2259-98a3-a40e-7a5" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Dark Elf Master" hidden="false" id="7aa0790-c7047ada" collective="false">
       <profiles>
@@ -1494,13 +1501,29 @@ their repeater crossbow.</characteristic>
               </entryLinks>
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="af-4580-61b3-c690"/>
-                <constraint type="max" field="selections" scope="parent" shared="false" id="b554-84ba-e547-ab1a" includeChildSelections="false"/>
+                <constraint type="max" field="selections" scope="parent" shared="false" id="b554-84ba-e547-ab1a" includeChildSelections="false" value="1"/>
               </constraints>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <constraints>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9b35-3ccb-efc7-51e1"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="5b4c-b348-d7c9-f87" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="8d87-2eee-4421-c497">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -1517,9 +1540,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="bdaa-80d5-41c6-f4de" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Supreme Sorceress" hidden="false" id="d9292409-23a541df" collective="false">
       <profiles>
@@ -1602,6 +1622,22 @@ their repeater crossbow.</characteristic>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="145c6a5-e8d4d99b"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b595e1b-e2f9d3a9"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="d6bc-c32d-d0bf-96ee" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="629-32dc-cb6b-9c48">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -1620,9 +1656,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="c177-dee5-e9e0-c757" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Sorceress" hidden="false" id="d570962-f7ce68ac" collective="false">
       <profiles>
@@ -1704,6 +1737,22 @@ their repeater crossbow.</characteristic>
           <constraints>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1af7-ec73-81ff-224e"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="5c68-a496-9c12-8c89" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="b34d-f166-f93a-5cac">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -1722,9 +1771,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="d2fa-8d72-9610-8676" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="High Beastmaster" hidden="false" id="b9658fae-bf8c9cb8" collective="false">
       <profiles>
@@ -1832,6 +1878,22 @@ their repeater crossbow.</characteristic>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="e215ec7a-9a1be164"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cc295190-493974da"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="e84c-5293-c9d-cf10" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="1692-6329-2a8d-95f4">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -1849,9 +1911,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="58a1-f4c6-7d92-dad4" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Death Hag" hidden="false" id="1f988b3-6bcd6461" collective="false">
       <profiles>
@@ -1928,6 +1987,22 @@ their repeater crossbow.</characteristic>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a3c98c0a-e075cd34"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="addd2380-85fd6cca"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="816b-b170-13ce-c403" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="a505-319e-7946-9dc4">
+              <comment>if mounted</comment>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -1947,9 +2022,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="2f03-24d6-b11a-a6d1" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Khainite Assassin" hidden="false" id="81263725-312dc61b" collective="false">
       <profiles>
@@ -2049,6 +2121,9 @@ their repeater crossbow.</characteristic>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f00799ae-8cce56b8"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e1f3fbec-2e9c2d36"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="ade9-98c5-787b-8173" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -2067,9 +2142,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="1cd5-f977-28fb-bc4c" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Dark Elf Warriors" hidden="false" id="d975f8f-a6d3a01d" collective="false">
       <profiles>
@@ -2126,6 +2198,9 @@ their repeater crossbow.</characteristic>
           <constraints>
             <constraint type="min" value="10" field="selections" scope="parent" shared="true" id="7caa9f29-afb09ff"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="3bbe-14f-6764-4020" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -2144,6 +2219,9 @@ their repeater crossbow.</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="d4e65701-cbb88a57" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: 169810ec-ab779a36</comment>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="5241-4189-76c4-b610" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="9e50f6f7-e37a7fc5" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -2170,6 +2248,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="1b506ca6-954d3db0" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="2311-beab-4c2b-e76d" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="de75379a-a3369b84" type="model" import="true" hidden="false" subType="crew" sortIndex="2">
               <costs>
@@ -2182,6 +2263,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="633dbb27-7c0ddaf5" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="bc95-a08d-485f-aa9a" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2242,9 +2326,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="eb1d-f59f-ae27-22d5" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Black Ark Corsairs" hidden="false" id="52540cc9-acb2e49f" collective="false">
       <profiles>
@@ -2281,6 +2362,9 @@ their repeater crossbow.</characteristic>
           <constraints>
             <constraint type="min" value="10" field="selections" scope="parent" shared="true" id="ac2acf55-f628534b"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="54da-1721-ae84-ccb4" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -2299,7 +2383,7 @@ their repeater crossbow.</characteristic>
           </entryLinks>
           <constraints>
             <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="d15b7051-92c803a7"/>
-            <constraint type="max" field="selections" scope="parent" shared="false" id="e36f145f-b00400ed" includeChildSelections="false"/>
+            <constraint type="max" field="selections" scope="parent" shared="false" id="e36f145f-b00400ed" includeChildSelections="false" value="1"/>
           </constraints>
         </selectionEntryGroup>
         <selectionEntryGroup name="Command" hidden="false" id="182af360-bff3022a" sortIndex="2">
@@ -2317,6 +2401,9 @@ their repeater crossbow.</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="a4d0a2f9-6b8e784f" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: 46cd7ff8-472f0be2</comment>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="fae3-630-a54d-5500" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="54cf4ee9-6fc3bbf" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -2336,6 +2423,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="6f2b93f4-6dc50cfe" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="6b17-3639-4ee9-5810" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="959a8c0c-e2dae856" type="model" import="true" hidden="false" subType="crew" sortIndex="1">
               <costs>
@@ -2348,6 +2438,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="fbacb84d-9b3a6a83" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="473c-edc8-f095-6a78" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2367,9 +2460,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="6fd3-1f80-d5e4-a2af" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Black Guard Of Naggarond" hidden="false" id="ce5cff9e-8bd79668" collective="false">
       <profiles>
@@ -2412,6 +2502,9 @@ their repeater crossbow.</characteristic>
           <constraints>
             <constraint type="min" value="10" field="selections" scope="parent" shared="true" id="5cc9f231-29d107"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="fdf7-cdc2-e43-7ae2" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -2437,6 +2530,9 @@ their repeater crossbow.</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="f2635544-a031410e" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: 22fb8e50-c013cb9a</comment>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="7bf6-42da-900e-8908" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="9c4d8044-1b72140e" type="model" import="true" hidden="false" subType="crew" sortIndex="2">
               <costs>
@@ -2456,6 +2552,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="5ae829b5-a2b9dcab" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="adea-6eb1-fb71-fec5" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="4214043f-163ace4d" type="model" import="true" hidden="false" subType="crew" sortIndex="1">
               <costs>
@@ -2468,6 +2567,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="10b9fa5e-ff6bb28" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="134d-39c4-916-3a79" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2512,9 +2614,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="e3da-157b-640-d636" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Har Ganeth Executioners" hidden="false" id="3436f1de-54cff6a8" collective="false">
       <profiles>
@@ -2557,6 +2656,9 @@ their repeater crossbow.</characteristic>
           <constraints>
             <constraint type="min" value="10" field="selections" scope="parent" shared="true" id="306727ee-973f72f8"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="604c-cae3-3ebb-1ab3" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -2582,6 +2684,9 @@ their repeater crossbow.</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="b9bdb46e-547d9b78" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: 3982c68b-24804a59</comment>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="251b-1eb7-7d67-a14e" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="2c4f1684-9834f84e" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -2601,6 +2706,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="be2f0d75-372ba26b" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="b813-2ca4-73dd-c571" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="520ac7ff-b2dd740d" type="model" import="true" hidden="false" subType="crew" sortIndex="2">
               <costs>
@@ -2613,6 +2721,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="cd0f3e9e-2cffdd68" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="d443-5848-11c5-1f75" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2655,9 +2766,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="59dd-852e-121a-b75e" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Dark Elf Shades" hidden="false" id="2b25ccf3-d6f586a1" collective="false">
       <profiles>
@@ -2694,6 +2802,9 @@ their repeater crossbow.</characteristic>
           <constraints>
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="216cd1fd-9dce9d33"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="667c-e585-76fb-34c5" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -2773,6 +2884,9 @@ their repeater crossbow.</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="bb76bb93-585b1641" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: 17b27bd8-5ff80f42</comment>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="827f-b890-96f3-6587" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2857,9 +2971,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="98ba-7b69-476e-7c78" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Witch Elves" hidden="false" id="564f661a-29cb5604" collective="false">
       <profiles>
@@ -2913,6 +3024,9 @@ their repeater crossbow.</characteristic>
           <constraints>
             <constraint type="min" value="10" field="selections" scope="parent" shared="true" id="8cfec315-133ea90b"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="d36a-eed8-a421-70d3" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -2931,6 +3045,9 @@ their repeater crossbow.</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="9b08f093-77b3a341" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: 5911a73c-414239c6</comment>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="efdb-dbdc-84d6-75dc" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="2d4a8840-7759ab8a" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -2950,6 +3067,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="eb88a6a1-171d0c77" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="9a3a-c52e-3da5-a3fd" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="bc97fa1b-7d638fa9" type="model" import="true" hidden="false" subType="crew" sortIndex="2">
               <costs>
@@ -2962,13 +3082,13 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="1d4c009a-bb0f1c84" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="cc3d-3ab3-63e4-f560" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="9d3c-a746-f19a-de8b" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Harpies" hidden="false" id="6b4eb658-dbde75c2" collective="false">
       <profiles>
@@ -3005,6 +3125,9 @@ their repeater crossbow.</characteristic>
           <constraints>
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="b05a1005-930646fb"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="3c3b-6ec6-5cf3-559a" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -3022,9 +3145,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="e0fc-b415-510f-10af" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Cold One Knights" hidden="false" id="ad37437a-3b7a8064" collective="false">
       <profiles>
@@ -3091,6 +3211,9 @@ their repeater crossbow.</characteristic>
           <constraints>
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="bf3970e4-4be7a02e"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Heavy Cavalry" hidden="false" id="103f-d670-82b8-66a2" targetId="5165-d052-cfc2-5887" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" name="Cold One" id="39903c78-e0f7e462" hidden="false" sortIndex="1">
           <infoLinks>
@@ -3114,6 +3237,9 @@ their repeater crossbow.</characteristic>
               </constraints>
             </entryLink>
           </entryLinks>
+          <categoryLinks>
+            <categoryLink name="Heavy Cavalry" hidden="false" id="654e-a20-2c80-cc89" targetId="5165-d052-cfc2-5887" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -3139,6 +3265,9 @@ their repeater crossbow.</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="6f6f95c0-8ea4d0a" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: 9b62c85-d39d7f7b</comment>
+              <categoryLinks>
+                <categoryLink name="Heavy Cavalry" hidden="false" id="38e1-12be-618a-2c9c" targetId="5165-d052-cfc2-5887" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="203f3a0-a882006a" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -3158,6 +3287,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="6175701-eb618a57" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Heavy Cavalry" hidden="false" id="9913-503e-ed9c-30f2" targetId="5165-d052-cfc2-5887" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="b2f103b-535c9bc9" type="model" import="true" hidden="false" subType="crew" sortIndex="2">
               <costs>
@@ -3170,6 +3302,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="e46228fa-7b2239e4" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Heavy Cavalry" hidden="false" id="5145-355b-ca29-641c" targetId="5165-d052-cfc2-5887" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -3201,9 +3336,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Heavy Cavalry" hidden="false" id="ff4-983a-9cd6-12e4" targetId="5165-d052-cfc2-5887" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Dark Riders" hidden="false" id="4fc633f7-dd5dd4c5" collective="false">
       <profiles>
@@ -3246,6 +3378,9 @@ their repeater crossbow.</characteristic>
           <constraints>
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="42c61d02-73856cc"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Light Cavalry" hidden="false" id="6d34-d1bc-52ba-af2d" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" name="Dark Steed" id="8b8e896c-3ff64eb6" hidden="false" sortIndex="1">
           <infoLinks>
@@ -3263,6 +3398,9 @@ their repeater crossbow.</characteristic>
               </constraints>
             </entryLink>
           </entryLinks>
+          <categoryLinks>
+            <categoryLink name="Light Cavalry" hidden="false" id="8d56-8f06-1f91-1c08" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -3317,6 +3455,9 @@ their repeater crossbow.</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="54ab3a36-6d4e300" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: c99ffa47-23770095</comment>
+              <categoryLinks>
+                <categoryLink name="Light Cavalry" hidden="false" id="faba-8eac-4a9-c8c2" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="964029af-5d571abd" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -3329,6 +3470,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="af43850e-5660fd18" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Light Cavalry" hidden="false" id="87ee-61e7-e2e4-da91" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="be632d12-6827fc5c" type="model" import="true" hidden="false" subType="crew" sortIndex="2">
               <costs>
@@ -3341,6 +3485,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="dc8a82af-486abbd" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Light Cavalry" hidden="false" id="f79-e21a-df03-f1a" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -3415,9 +3562,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Light Cavalry" hidden="false" id="6b03-4a01-2980-41ec" targetId="600c-7d08-5be1-fe0c" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Doomfire Warlocks" hidden="false" id="879a782b-41817279" collective="false">
       <profiles>
@@ -3448,6 +3592,9 @@ their repeater crossbow.</characteristic>
           <constraints>
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="763d532e-848a4438"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Light Cavalry" hidden="false" id="a110-8574-1db1-2369" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" name="Dark Steed" id="897284d0-a1f0e1a" hidden="false" sortIndex="1">
           <infoLinks>
@@ -3465,6 +3612,9 @@ their repeater crossbow.</characteristic>
               </constraints>
             </entryLink>
           </entryLinks>
+          <categoryLinks>
+            <categoryLink name="Light Cavalry" hidden="false" id="925a-fbfb-7af0-708e" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -3490,6 +3640,9 @@ their repeater crossbow.</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="5355e63e-ed084b88" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: c498c8ff-76f36d0d</comment>
+              <categoryLinks>
+                <categoryLink name="Light Cavalry" hidden="false" id="d77e-a93d-3d39-f1e1" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -3512,9 +3665,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Light Cavalry" hidden="false" id="b9db-3e26-f55e-b5a8" targetId="600c-7d08-5be1-fe0c" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Scourgerunner Chariots" hidden="false" id="3cba1c63-12dd6691" collective="false">
       <entryLinks>
@@ -3580,6 +3730,9 @@ their repeater crossbow.</characteristic>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4c2f77ed-4b19b5a3"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="361a3a93-8bea9d41"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Heavy Chariot" hidden="false" id="5556-18c9-c27e-148" targetId="d768-7cf0-de0a-c249" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" name="Shrinekeeper" id="ab9de9c2-336bbd8c" hidden="false" sortIndex="2">
           <infoLinks>
@@ -3603,6 +3756,7 @@ their repeater crossbow.</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="CHARIOT CREW" hidden="false" id="86dd3304-406e30ce" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="Heavy Chariot" hidden="false" id="92a-557-b96f-21d1" targetId="d768-7cf0-de0a-c249" primary="false"/>
           </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" name="Bloodwrack Medusa" id="cfde3ae-ebc250b8" hidden="false" sortIndex="1">
@@ -3629,6 +3783,7 @@ their repeater crossbow.</characteristic>
           </entryLinks>
           <categoryLinks>
             <categoryLink name="CHARIOT CREW" hidden="false" id="da75c628-be2113d2" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="Heavy Chariot" hidden="false" id="3eed-9d38-f66c-9e67" targetId="d768-7cf0-de0a-c249" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -3667,9 +3822,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Heavy Chariot" hidden="false" id="151d-6a7b-2db-f005" targetId="d768-7cf0-de0a-c249" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="War Hydra" hidden="false" id="5d5512d2-aedcb41c" collective="false">
       <profiles>
@@ -3713,6 +3865,9 @@ their repeater crossbow.</characteristic>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="293d13cd-966bea03"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="13296973-f4f83f21"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Behemoth" hidden="false" id="3f2c-6a4e-492e-af4d" targetId="3755-6732-99b2-c713" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" name="Beastmaster Handlers" id="ce08956c-a63ffab6" hidden="false" sortIndex="2" subType="crew">
           <infoLinks>
@@ -3728,6 +3883,7 @@ their repeater crossbow.</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="CHARIOT CREW" hidden="false" id="a73d-acae-c38-f2c0" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="Behemoth" hidden="false" id="635a-edb5-626c-af51" targetId="3755-6732-99b2-c713" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -3762,9 +3918,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Behemoth" hidden="false" id="2e38-c4e3-b927-93ab" targetId="3755-6732-99b2-c713" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Bloodwrack Medusa" hidden="false" id="5c454c8d-ffec5cc3" collective="false">
       <profiles>
@@ -3808,6 +3961,9 @@ their repeater crossbow.</characteristic>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="96989be5-e06704db"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a0ac335b-da8bfee9"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Monstrous Creature" hidden="false" id="7035-56a-4d78-2d35" targetId="fb36-5275-617-c895" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -3833,9 +3989,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Monstrous Creature" hidden="false" id="3553-c99b-b475-a758" targetId="fb36-5275-617-c895" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Kharibdyss" hidden="false" id="48ac8b4-17049bbe" collective="false">
       <profiles>
@@ -3859,6 +4012,9 @@ their repeater crossbow.</characteristic>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="fbc43043-33e5d971"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f1d93b3d-e30dbc73"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Behemoth" hidden="false" id="5c-6b0c-fc16-e59b" targetId="3755-6732-99b2-c713" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" name="Beastmaster Handlers" id="46488c6e-b5f1b378" hidden="false" sortIndex="2" subType="crew">
           <infoLinks>
@@ -3874,6 +4030,7 @@ their repeater crossbow.</characteristic>
           </constraints>
           <categoryLinks>
             <categoryLink name="CHARIOT CREW" hidden="false" id="3a0-84fd-7a03-784d" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="Behemoth" hidden="false" id="ffa7-eddf-8d5f-d222" targetId="3755-6732-99b2-c713" primary="false"/>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
@@ -3899,9 +4056,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Behemoth" hidden="false" id="241b-ca3-f724-120a" targetId="3755-6732-99b2-c713" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Reaper Bolt Thrower" hidden="false" id="b6977ebf-f1ce74cd" collective="false">
       <profiles>
@@ -3945,6 +4099,9 @@ their repeater crossbow.</characteristic>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8ece44f5-2e151deb"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="78e1aa0b-decc11d9"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="War Machine" hidden="false" id="3790-de53-2b21-f033" targetId="9fcf-19ad-fe84-9c61" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
         <selectionEntry type="model" subType="crew" name="Dark Elf Crew" id="58da0ab7-239cf585" hidden="false" sortIndex="2">
           <infoLinks>
@@ -3974,6 +4131,9 @@ their repeater crossbow.</characteristic>
               </constraints>
             </entryLink>
           </entryLinks>
+          <categoryLinks>
+            <categoryLink name="War Machine" hidden="false" id="c713-423a-3b25-63b2" targetId="9fcf-19ad-fe84-9c61" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -3989,9 +4149,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="War Machine" hidden="false" id="7a46-64d4-8523-5baa" targetId="9fcf-19ad-fe84-9c61" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Dark Elf Crossbowmen" hidden="false" id="5fd8-d99b-5288-8da5" collective="false">
       <profiles>
@@ -4047,6 +4204,9 @@ their repeater crossbow.</characteristic>
           <constraints>
             <constraint type="min" value="10" field="selections" scope="parent" shared="true" id="cb70-d68c-b9e0-b30a"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="87c6-fa4-c0aa-1307" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -4065,6 +4225,9 @@ their repeater crossbow.</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="f578-2384-98c6-f4fe" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: f6e6-560d-b3b2-1ece</comment>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="98f7-5203-729-cb83" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="4fd5-4db-fae5-cdb9" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -4091,6 +4254,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="41f9-bc8a-b6d1-9cac" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="a207-6f67-474a-7e70" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="e8bc-e481-39c7-dd74" type="model" import="true" hidden="false" subType="crew" sortIndex="2">
               <costs>
@@ -4103,6 +4269,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="414c-d475-975b-c9c1" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="1a5-2bbf-9477-a44c" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -4163,9 +4332,6 @@ their repeater crossbow.</characteristic>
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="e15-7d3d-b477-5069" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Sisters of Slaughter" hidden="false" id="9db4-727d-d647-9996" collective="false">
       <profiles>
@@ -4200,6 +4366,9 @@ their repeater crossbow.</characteristic>
               </constraints>
             </entryLink>
           </entryLinks>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="b5f9-29df-fded-2d00" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -4218,6 +4387,9 @@ their repeater crossbow.</characteristic>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="c911-6460-4a7d-4e0d" includeChildSelections="false"/>
               </constraints>
               <comment>upgrades: ea1c-b381-5155-6cea</comment>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="c7d5-d607-3cd1-12be" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Standard Bearer" id="df7c-c568-aabf-82d9" type="model" import="true" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -4237,6 +4409,9 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="84da-14ae-3862-2a74" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="129b-dc86-6413-813a" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
             <selectionEntry name="Musician" id="5a5e-f7dd-ffb0-ecf9" type="model" import="true" hidden="false" subType="crew" sortIndex="2">
               <costs>
@@ -4249,13 +4424,13 @@ their repeater crossbow.</characteristic>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="6d17-4eba-8a78-d907" includeChildSelections="false"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="2f6b-eb3e-ced2-3193" targetId="f3f7-ca43-674e-115f" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
-      <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="d8d1-86e4-e6f0-9ff8" targetId="f3f7-ca43-674e-115f" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Lash &amp; Buckler" hidden="false" id="663-86d3-89e3-7e61">
       <constraints>
@@ -4493,56 +4668,47 @@ their repeater crossbow.</characteristic>
     </entryLink>
     <entryLink import="true" name="Dark Elf Master" hidden="false" id="7c7cf571-a1aaba47" type="selectionEntry" targetId="7aa0790-c7047ada">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="34706959-d18bd3af" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="e685-78dd-a31e-bd98" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Supreme Sorceress" hidden="false" id="333a8a0a-c06edb34" type="selectionEntry" targetId="d9292409-23a541df">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="34599adf-5466536d" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Lord" hidden="false" id="d661-a272-de7b-9111" targetId="331e-3a37-38cb-23d2" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="4647-52f8-d981-16d8" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Sorceress" hidden="false" id="8272d67f-fe910e8d" type="selectionEntry" targetId="d570962-f7ce68ac">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="34599adf-5466536d" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="8055-6428-783b-8fc1" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="High Beastmaster" hidden="false" id="cc5f0ff3-264cb1a1" type="selectionEntry" targetId="b9658fae-bf8c9cb8">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="6b9160e9-631dbdbf" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="6079-516-24e7-f5c7" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Death Hag" hidden="false" id="333d0b30-723410fa" type="selectionEntry" targetId="1f988b3-6bcd6461">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="c44adad4-49db37de" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="32f-4238-65a7-ef4c" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Khainite Assassin" hidden="false" id="59af50c6-88c4ca50" type="selectionEntry" targetId="81263725-312dc61b">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="ed24782a-5de78ed4" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="d95b-9b77-adf0-bb" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Dark Elf City Guard" hidden="false" id="65df862d-e05751e3" type="selectionEntry" targetId="d975f8f-a6d3a01d">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="a10210e8-a750892" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Core" hidden="false" id="decc-29fc-fcbf-60b" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Black Ark Corsairs" hidden="false" id="eaf313ef-26a0b2fd" type="selectionEntry" targetId="52540cc9-acb2e49f">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="9f35a68a-86ad13b4" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Core" hidden="false" id="c6e3-3665-484e-8c25" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Black Guard Of Naggarond" hidden="false" id="f77ae08-9d84bcb2" type="selectionEntry" targetId="ce5cff9e-8bd79668">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="51c2978d-91274fc3" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Special" hidden="false" id="43d3-920a-9e5f-58b7" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
       <constraints>
@@ -4559,19 +4725,16 @@ their repeater crossbow.</characteristic>
     </entryLink>
     <entryLink import="true" name="Har Ganeth Executioners" hidden="false" id="77ca7648-727f42f2" type="selectionEntry" targetId="3436f1de-54cff6a8">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="7239a14d-3c180b83" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Special" hidden="false" id="f6fd-692c-9545-533" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Dark Elf Shades" hidden="false" id="b71f69a1-51e5b777" type="selectionEntry" targetId="2b25ccf3-d6f586a1">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="a9c7ee04-c82b13ce" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Special" hidden="false" id="e0d0-ff37-773d-c62c" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Daughters Of Khaine" hidden="true" id="9c5015a4-e3a31eee" type="selectionEntry" targetId="564f661a-29cb5604">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="72c8961-630bd937" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Core" hidden="false" id="2f43-e005-ca7b-ffa" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
       <modifiers>
@@ -4587,13 +4750,11 @@ their repeater crossbow.</characteristic>
     </entryLink>
     <entryLink import="true" name="Harpies" hidden="false" id="2f626d9a-270a2184" type="selectionEntry" targetId="6b4eb658-dbde75c2">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="b6cd554f-e52be7dd" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Special" hidden="false" id="6a12-d34c-f989-20ca" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Cold One Knights" hidden="false" id="f0bd8a04-9293cfce" type="selectionEntry" targetId="ad37437a-3b7a8064">
       <categoryLinks>
-        <categoryLink name="Heavy Cavalry" hidden="false" id="cee569f9-78c5074f" targetId="5165-d052-cfc2-5887" primary="false"/>
         <categoryLink name="Special" hidden="false" id="4750-228d-2ad-767" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
       <constraints>
@@ -4609,13 +4770,11 @@ their repeater crossbow.</characteristic>
     </entryLink>
     <entryLink import="true" name="Dark Riders" hidden="false" id="863322f5-d7630beb" type="selectionEntry" targetId="4fc633f7-dd5dd4c5">
       <categoryLinks>
-        <categoryLink name="Light Cavalry" hidden="false" id="6a7c939d-70be0d53" targetId="600c-7d08-5be1-fe0c" primary="false"/>
         <categoryLink name="Core" hidden="false" id="5efc-50af-9e8a-b041" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Doomfire Warlocks" hidden="false" id="f5b0079-97d9e9cf" type="selectionEntry" targetId="879a782b-41817279">
       <categoryLinks>
-        <categoryLink name="Light Cavalry" hidden="false" id="ffa05a49-9630c61f" targetId="600c-7d08-5be1-fe0c" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="c9c4-7d9d-4649-cb63" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
       <constraints>
@@ -4653,31 +4812,26 @@ their repeater crossbow.</characteristic>
     </entryLink>
     <entryLink import="true" name="Bloodwrack Shrine" hidden="false" id="3fd5ffe5-ec9948db" type="selectionEntry" targetId="78e0ba7-8657a775">
       <categoryLinks>
-        <categoryLink name="Heavy Chariot" hidden="false" id="394fffbc-e7c9ce46" targetId="d768-7cf0-de0a-c249" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="7770-de29-542a-f16a" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="War Hydra" hidden="false" id="a355c25c-b2f9b066" type="selectionEntry" targetId="5d5512d2-aedcb41c">
       <categoryLinks>
-        <categoryLink name="Behemoth" hidden="false" id="fdbefe8e-2634aa98" targetId="3755-6732-99b2-c713" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="e2b2-d7b9-3c3d-9d0d" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Bloodwrack Medusa" hidden="false" id="4ccb9493-9e412741" type="selectionEntry" targetId="5c454c8d-ffec5cc3">
       <categoryLinks>
-        <categoryLink name="Monstrous Creature" hidden="false" id="4e4c5554-9efcde5e" targetId="fb36-5275-617-c895" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="3c6e-7dd2-46a4-9bbf" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Kharibdyss" hidden="false" id="b4068486-b9446010" type="selectionEntry" targetId="48ac8b4-17049bbe">
       <categoryLinks>
-        <categoryLink name="Behemoth" hidden="false" id="ae16e254-a0b035e" targetId="3755-6732-99b2-c713" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="d2df-cf3b-c2a-780e" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Reaper Bolt Thrower" hidden="false" id="f7d761d-fda3dbd3" type="selectionEntry" targetId="b6977ebf-f1ce74cd">
       <categoryLinks>
-        <categoryLink name="War Machine" hidden="false" id="6cb733d4-321cc8de" targetId="9fcf-19ad-fe84-9c61" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="2b97-8d17-14c9-88ff" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
       <constraints>
@@ -4693,25 +4847,21 @@ their repeater crossbow.</characteristic>
     </entryLink>
     <entryLink import="true" name="Dark Elf Crossbowmen" hidden="false" id="a8a9-428d-698-5d0d" type="selectionEntry" targetId="5fd8-d99b-5288-8da5">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="43b9-b507-8f8f-3415" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Core" hidden="false" id="dbae-41ef-1c00-62c3" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Sisters of Slaughter" hidden="false" id="76ef-ebbf-b925-af7b" type="selectionEntry" targetId="9db4-727d-d647-9996">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="490f-cac9-b18a-eb62" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="80a9-fb8d-34db-dc19" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Daughters Of Khaine" hidden="false" id="d8c6-c67f-171c-39f2" type="selectionEntry" targetId="564f661a-29cb5604">
       <categoryLinks>
-        <categoryLink name="Regular Infantry" hidden="false" id="aabc-e98d-9e59-f271" targetId="f3f7-ca43-674e-115f" primary="false"/>
         <categoryLink name="Special" hidden="false" id="1826-11c4-ffad-9dc3" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="War Hydra" hidden="true" id="3d74-f341-8819-f8d2" type="selectionEntry" targetId="5d5512d2-aedcb41c">
       <categoryLinks>
-        <categoryLink name="Behemoth" hidden="false" id="8025-6997-6e07-88ed" targetId="3755-6732-99b2-c713" primary="false"/>
         <categoryLink name="Special" hidden="false" id="cf77-9525-e35b-91cb" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
       <modifiers>
@@ -4732,7 +4882,6 @@ their repeater crossbow.</characteristic>
     </entryLink>
     <entryLink import="true" name="Kharibdyss" hidden="true" id="42bc-f10f-2aa2-4dfa" type="selectionEntry" targetId="48ac8b4-17049bbe">
       <categoryLinks>
-        <categoryLink name="Behemoth" hidden="false" id="67e0-79fc-2a7a-5823" targetId="3755-6732-99b2-c713" primary="false"/>
         <categoryLink name="Special" hidden="false" id="325-8567-99d2-278d" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
       <modifiers>
