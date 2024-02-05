@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="68" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="69" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -106,7 +106,7 @@
             </categoryLink>
           </categoryLinks>
           <constraints>
-            <constraint type="max" value="25" field="limit::points" scope="roster" shared="true" id="29b9-7e75-eef-4eaf" percentValue="true" includeChildSelections="false" includeChildForces="false"/>
+            <constraint type="max" value="25" field="limit::points" scope="roster" shared="true" id="29b9-7e75-eef-4eaf" percentValue="true" includeChildSelections="true" includeChildForces="true"/>
             <constraint type="max" value="1" field="forces" scope="roster" shared="true" id="3ed2-b77c-587e-9b77"/>
           </constraints>
         </forceEntry>
