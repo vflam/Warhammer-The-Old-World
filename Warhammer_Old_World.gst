@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="72" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="73" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -76,7 +76,7 @@
         </categoryLink>
       </categoryLinks>
       <forceEntries>
-        <forceEntry id="c586-b327-4cc4-c4b8" name="Allied Force">
+        <forceEntry id="c586-b327-4cc4-c4b8" name="Allied Force" hidden="false">
           <categoryLinks>
             <categoryLink name="Characters" hidden="false" id="9b2c-aa33-1092-9dde" targetId="a4cc-15c9-cfae-1b3b">
               <constraints>
@@ -109,6 +109,14 @@
             <constraint type="max" value="25" field="limit::points" scope="roster" shared="true" id="f159-1cd6-1202-4722" percentValue="true" includeChildSelections="true" includeChildForces="true"/>
             <constraint type="max" value="1" field="forces" scope="roster" shared="true" id="eaa4-53b9-89fb-1f7"/>
           </constraints>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d9b0-fa44-a251-bfea" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="56fb-835b-a377-6639" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </forceEntry>
       </forceEntries>
     </forceEntry>
