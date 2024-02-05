@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="ab16-38c2-b85a-9197" name="Lizardmen" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="13" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="ab16-38c2-b85a-9197" name="Lizardmen" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="14" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
   <sharedProfiles>
     <profile name="Slann Mage-Priest" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="e2b9-fc0e-f107-4ae">
       <characteristics>
@@ -2152,19 +2152,19 @@ Roll the D3 before armies are deployed.</characteristic>
             <cost name="pts" typeId="points" value="34"/>
           </costs>
           <entryLinks>
-            <entryLink name="Hand weapons" id="1cdcff23-7533351" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="2">
+            <entryLink name="Hand weapons" id="1cdcff23-7533351" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="2" collective="true">
               <constraints>
                 <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="93b79398-cd966902"/>
                 <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="a9cb3df2-f200e2bc"/>
               </constraints>
             </entryLink>
-            <entryLink name="Heavy Armour" id="93a3de6-10de84f0" hidden="false" type="selectionEntry" targetId="62fb-f89d-afc-1cf1" sortIndex="3">
+            <entryLink name="Heavy Armour" id="93a3de6-10de84f0" hidden="false" type="selectionEntry" targetId="62fb-f89d-afc-1cf1" sortIndex="3" collective="true">
               <constraints>
                 <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="12c2e83d-cd420173"/>
                 <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="1caddd43-1e1a1e71"/>
               </constraints>
             </entryLink>
-            <entryLink name="Shield" id="85ad4577-c805a45" hidden="false" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="4">
+            <entryLink name="Shield" id="85ad4577-c805a45" hidden="false" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="4" collective="true">
               <constraints>
                 <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="5c7d7224-4a81976e"/>
                 <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="6a910fe6-3ceec6f0"/>
@@ -2178,7 +2178,7 @@ Roll the D3 before armies are deployed.</characteristic>
             <categoryLink name="Heavy Cavalry" hidden="false" id="b334-644d-75d8-710e" targetId="5165-d052-cfc2-5887" primary="false"/>
           </categoryLinks>
           <selectionEntries>
-            <selectionEntry type="model" name="Cold One" id="3cddfe2b-3478c879" hidden="false" subType="mount" sortIndex="1">
+            <selectionEntry type="model" name="Cold One" id="3cddfe2b-3478c879" hidden="false" subType="mount" sortIndex="1" collective="true">
               <infoLinks>
                 <infoLink name="Cold One" hidden="false" type="profile" id="9a1e77d9-78556e2f" targetId="e2a2-aea5-d9d6-facb"/>
                 <infoLink name="Base" hidden="false" type="profile" id="c81d575f-7f282bed" targetId="3a8b-1dd5-77fb-fdc3"/>
@@ -2200,32 +2200,36 @@ Roll the D3 before armies are deployed.</characteristic>
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="e52e-c3b6-a248-6efa-min" includeChildSelections="false"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e52e-c3b6-a248-6efa-max" includeChildSelections="false"/>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9ad7-f605-5daf-1ea1-min" includeChildSelections="false"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9ad7-f605-5daf-1ea1-max" includeChildSelections="false"/>
               </constraints>
             </selectionEntry>
           </selectionEntries>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Equipment" hidden="false" id="62f627f5-63e5e8eb">
+              <entryLinks>
+                <entryLink name="Cavalry Spear" id="2f8fc6e9-57f8f3bf" hidden="false" type="selectionEntry" targetId="a2d0-40e9-83ad-23dc" collective="true">
+                  <modifiers>
+                    <modifier type="increment" value="1" field="points">
+                      <comment>per model</comment>
+                      <repeats>
+                        <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="363f7a3-fcde67d1"/>
+                      </repeats>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="26e62102-22383acc" includeChildSelections="false"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="0"/>
+                  </costs>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Equipment" hidden="false" id="62f627f5-63e5e8eb" sortIndex="4">
-          <entryLinks>
-            <entryLink name="Cavalry Spear" id="2f8fc6e9-57f8f3bf" hidden="false" type="selectionEntry" targetId="a2d0-40e9-83ad-23dc">
-              <modifiers>
-                <modifier type="increment" value="1" field="points">
-                  <comment>per model</comment>
-                  <repeats>
-                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="363f7a3-fcde67d1"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="26e62102-22383acc" includeChildSelections="false"/>
-              </constraints>
-              <costs>
-                <cost name="pts" typeId="points" value="0"/>
-              </costs>
-            </entryLink>
-          </entryLinks>
-        </selectionEntryGroup>
         <selectionEntryGroup name="Command" hidden="false" id="2000ab5c-39055166" sortIndex="3">
           <selectionEntries>
             <selectionEntry type="model" subType="crew" name="Pack Leader" id="104fec1d-832a1d3" hidden="false" sortIndex="2">
