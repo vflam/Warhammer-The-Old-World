@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="ec01-a361-b3bf-78ac" name="Daemons of Chaos" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="36" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="ec01-a361-b3bf-78ac" name="Daemons of Chaos" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="37" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
   <sharedProfiles>
     <profile name="Bloodthirster" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="2304-f7d1-ef2a-eb19">
       <characteristics>
@@ -1610,6 +1610,7 @@ Quick Shot</characteristic>
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Khorne" hidden="false" id="979-46de-bfc-4291" targetId="88d6-6a25-670-e154" primary="false"/>
+        <categoryLink name="Herald" hidden="false" id="b8f6-8350-cc17-fd96" targetId="b727-9b30-81eb-c25d" primary="false"/>
       </categoryLinks>
       <modifiers>
         <modifier type="increment" value="1" field="6c41-94d3-2402-75a1">
@@ -2501,6 +2502,7 @@ Quick Shot</characteristic>
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Nurgle" hidden="false" id="d064-5659-c7e4-ab4e" targetId="e20-3c11-13b5-e880" primary="false"/>
+        <categoryLink name="Herald" hidden="false" id="2608-12c9-9957-1a21" targetId="b727-9b30-81eb-c25d" primary="false"/>
       </categoryLinks>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="ba53-2894-4081-622f"/>
@@ -3246,6 +3248,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Slaanesh" hidden="false" id="4c8e-de54-290e-92da" targetId="2955-25dc-92ce-6e4a" primary="false"/>
+        <categoryLink name="Herald" hidden="false" id="8ce5-17dc-725a-12b7" targetId="b727-9b30-81eb-c25d" primary="false"/>
       </categoryLinks>
       <modifiers>
         <modifier type="increment" value="1" field="2a5d-7423-aa2a-3a0c">
@@ -4089,6 +4092,7 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
       </infoGroups>
       <categoryLinks>
         <categoryLink name="Daemon of Tzeentch" hidden="false" id="a39f-98dc-c9db-8fb7" targetId="a3d4-f3d0-3587-e55a" primary="false"/>
+        <categoryLink name="Herald" hidden="false" id="1e31-bc52-6040-b868" targetId="b727-9b30-81eb-c25d" primary="false"/>
       </categoryLinks>
       <modifiers>
         <modifier type="increment" value="1" field="b48b-84e0-4639-bfca">
@@ -6536,9 +6540,15 @@ The Initiative modifier applies only to the Rot Flies, not to their riders.</cha
               </constraints>
               <modifiers>
                 <modifier type="set" value="true" field="hidden">
-                  <conditions>
-                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="b727-9b30-81eb-c25d" shared="true"/>
-                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="b727-9b30-81eb-c25d" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="mount" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="c96a-608-5de4-b943" shared="true" includeChildForces="false" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
             </selectionEntry>
@@ -7055,7 +7065,7 @@ Note that this does not increase the Wizard’s Level.</characteristic>
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Herald" hidden="false" id="b727-9b30-81eb-c25d"/>
-    <categoryEntry name="Greater Demon" hidden="false" id="c913-dd76-9dc5-9d1e"/>
+    <categoryEntry name="Greater Daemon" hidden="false" id="c913-dd76-9dc5-9d1e"/>
     <categoryEntry name="Standard Bearer" hidden="false" id="1c05-7a83-b4e1-ffaa"/>
     <categoryEntry name="General of Khorne" hidden="false" id="6f57-c02b-7bf6-f772"/>
     <categoryEntry name="General of Nurgle" hidden="false" id="a17e-24e9-133a-c6ad"/>
