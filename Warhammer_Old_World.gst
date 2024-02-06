@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="75" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="77" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -581,19 +581,7 @@
       <characteristics>
         <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">A model that carries a shield improves its armour value by 1. For example, a model equipped with light armour has an armour value of 6+. Should that model also carry a shield, its armour value would be improved by 1 by lowering the target number from 6+ to 5+.
 
-Note that if a model uses a weapon that has the Requires Two Hands special rule in combat, it cannot also use a shield.</characteristic>
-      </characteristics>
-    </profile>
-    <profile name="Great Weapon" hidden="false" id="88e3-38f0-92d5-b616" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+2 AP: -2
-          Special Rules: Armour Bane (1), Requires Two Hands, Strike Last</characteristic>
-      </characteristics>
-    </profile>
-    <profile name="Longbow" hidden="false" id="c84c-99b6-75eb-4f40" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="216" publicationId="768b-3da1-a182-a1d8">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 30&quot; S: 3 AP: -
-          Special Rules: Armour Bane (1), Volley Fire</characteristic>
+ Note that if a model uses a weapon that has the Requires Two Hands special rule in combat, it cannot also use a shield.</characteristic>
       </characteristics>
     </profile>
     <profile name="Heavy Armour" hidden="false" id="c56e-8d1b-bb4-de99" typeId="c14f-740-8107-d34b" typeName="Armour">
@@ -614,8 +602,7 @@ Note that if a model uses a weapon that has the Requires Two Hands special rule 
     </profile>
     <profile name="Brace of Repeater Handbows" hidden="false" id="fca0-3c32-72da-53b9" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12&quot; S3 Multiple Shots
-          (4), Quick Shot</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12&quot; S3 Multiple Shots (4), Quick Shot</characteristic>
       </characteristics>
     </profile>
     <profile name="Hatred" hidden="false" id="f4b3-18af-16bf-78dd" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
@@ -634,15 +621,14 @@ Note that if a model uses a weapon that has the Requires Two Hands special rule 
     </profile>
     <profile name="Pistol" hidden="false" id="4c62-cdd4-4e0c-4265" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: 4 AP: -1
-          Special Rules: Armour Bane (1), Quick Shot</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: 4 AP: -1 Special Rules: Armour Bane (1), Quick Shot</characteristic>
       </characteristics>
     </profile>
     <profile name="Brace of Pistols" hidden="false" id="cdb0-f5d2-68e0-205f" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12&quot; S4 AP-1 Armour
-          Bane(1), Multiple Shots (2), Quick Shot.
-          In combat: Extra Attacks (+1), Requires To Hands.</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12&quot; S4 AP-1 Armour Bane(1), Multiple Shots (2), Quick Shot.
+
+ In combat: Extra Attacks (+1), Requires To Hands.</characteristic>
       </characteristics>
     </profile>
     <profile name="Stubborn" hidden="false" id="e351-bbd6-f470-b604" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="178" publicationId="768b-3da1-a182-a1d8">
@@ -662,15 +648,14 @@ Note that if a model uses a weapon that has the Requires Two Hands special rule 
     </profile>
     <profile name="Handgun" hidden="false" id="4035-287b-e117-6b9b" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 24&quot; S: 4 AP: -1
-          Special Rules: Armour Bane (1), Ponderous</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 24&quot; S: 4 AP: -1 Special Rules: Armour Bane (1), Ponderous</characteristic>
       </characteristics>
     </profile>
     <profile name="Veteran" hidden="false" id="4022-c403-b083-ba83" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="180" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">If the majority of the models in a unit have this special rule, the unit may re-roll any failed Leadership test.
 
-Note that a Break test is not a Leadership test.</characteristic>
+ Note that a Break test is not a Leadership test.</characteristic>
       </characteristics>
     </profile>
     <profile name="Move Through Cover" hidden="false" id="e83e-f127-1904-3858" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="174" publicationId="768b-3da1-a182-a1d8">
@@ -687,7 +672,7 @@ Note that a Break test is not a Leadership test.</characteristic>
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Units with this special rule may be deployed after all other units from both armies. They can be deployed anywhere on the battlefield that is more than 12&quot; away from an enemy model. If deployed in this way, Scouts cannot declare a charge during their first turn.
 
-If both armies contain Scouts, a roll-off should determine which player deploys Scouts first. The players then alternate deploying their scouting units one at a time, starting with the player who won the roll-off.</characteristic>
+ If both armies contain Scouts, a roll-off should determine which player deploys Scouts first. The players then alternate deploying their scouting units one at a time, starting with the player who won the roll-off.</characteristic>
       </characteristics>
     </profile>
     <profile name="Skirmishers" hidden="false" id="59a5-7eca-ee35-96ac" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="177" publicationId="768b-3da1-a182-a1d8">
@@ -704,22 +689,21 @@ If both armies contain Scouts, a roll-off should determine which player deploys 
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit with this special rule may be held in reserve rather than be deployed at the start of the game. From the beginning of round two onwards, roll a D6 during each of your Start of Turn sub-phases for each unit of Ambushers in your army that is held in reserve.
 
-On a roll of 1-3, the unit is delayed until your next turn at least. 
-On a roll of 4+, the unit arrives, entering the battle as reinforcements during the Compulsory Moves sub-phase. The unit may be placed on any edge of the battlefield, chosen by its controlling player, but cannot be placed within 8&quot; of an enemy model. If any Ambushers are still held in reserve by the start of round five, they arrive automatically.</characteristic>
+ On a roll of 1-3, the unit is delayed until your next turn at least.  On a roll of 4+, the unit arrives, entering the battle as reinforcements during the Compulsory Moves sub-phase. The unit may be placed on any edge of the battlefield, chosen by its controlling player, but cannot be placed within 8&quot; of an enemy model. If any Ambushers are still held in reserve by the start of round five, they arrive automatically.</characteristic>
       </characteristics>
     </profile>
     <profile name="Vanguard" hidden="false" id="691e-10ec-4f7c-a2c4" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="180" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">After deployment, units with this special rule may make a Vanguard move. A unit making a Vanguard move moves as described in the Basic Movement rules. It may manoeuvre normally but cannot march.
 
-If both armies contain Vanguard units, a roll-off determines who moves first. The players then alternate moving their Vanguard units one at a time, starting with the player who won the roll-off.</characteristic>
+ If both armies contain Vanguard units, a roll-off determines who moves first. The players then alternate moving their Vanguard units one at a time, starting with the player who won the roll-off.</characteristic>
       </characteristics>
     </profile>
     <profile name="Warband" hidden="false" id="505f-e12d-2e36-31d0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="180" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless it is fleeing, a Warband gains a positive (+) modifier to its Leadership characteristic equal to its current Rank Bonus, up to a maximum of Leadership 10. However, a Warband cannot use this modifier to its Leadership should it ever choose to make a Restraint test. In addition, if the majority of the models in a unit have this special rule, it may re-roll its Charge roll.
 
-Note that unless a character also has this special rule, their Leadership cannot be modified by this special rule. A Warband can use either its own modified Leadership, the modified Leadership of a Warband character, or the unmodified Leadership of a non-Warband character, whichever is the higher.</characteristic>
+ Note that unless a character also has this special rule, their Leadership cannot be modified by this special rule. A Warband can use either its own modified Leadership, the modified Leadership of a Warband character, or the unmodified Leadership of a non-Warband character, whichever is the higher.</characteristic>
       </characteristics>
     </profile>
     <profile name="Impetuous" hidden="false" id="b664-8530-a988-7ba9" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="172" publicationId="768b-3da1-a182-a1d8">
@@ -734,46 +718,40 @@ Note that unless a character also has this special rule, their Leadership cannot
     </profile>
     <profile name="Warbow" hidden="false" id="20c1-9325-e604-a558" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Range 24&quot; S S, Volley
-          Fire</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Range 24&quot; S S, Volley Fire</characteristic>
       </characteristics>
     </profile>
     <profile name="Additional Hand Weapon" hidden="false" id="300e-9667-fc8c-c763" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Extra Atacks (+1), Require
-          Two Hands</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Extra Atacks (+1), Require Two Hands</characteristic>
       </characteristics>
     </profile>
     <profile name="Throwing Spear" hidden="false" id="8a6-cc93-b5fd-6636" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S AP: -
-          Notes: A throwing spear can only be used during a turn in which the wielder charged. In
-          subsequent turns (or if the wielder did not charge) the model must use its hand weapon
-          instead. Special Rules: Fight in Extra Rank</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S AP: - Notes: A throwing spear can only be used during a turn in which the wielder charged. In subsequent turns (or if the wielder did not charge) the model must use its hand weapon instead. Special Rules: Fight in Extra Rank</characteristic>
       </characteristics>
     </profile>
     <profile name="Thrusting Spear" hidden="false" id="85-9154-7dc1-ddc6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S AP: -
-          Notes: Models whose troop type is ‘infantry’ only. A model wielding a thrusting spear
-          cannot make a supporting attack during a turn in which it charged. During a turn in which
-          it was charged in its front arc, a model wielding a thrusting spear gains a +1 modifier to
-          its Initiative against the charging unit(s). Special Rules: Fight in Extra Rank</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S AP: - Notes: Models whose troop type is ‘infantry’ only. A model wielding a thrusting spear cannot make a supporting attack during a turn in which it charged. During a turn in which it was charged in its front arc, a model wielding a thrusting spear gains a +1 modifier to its Initiative against the charging unit(s). Special Rules: Fight in Extra Rank</characteristic>
       </characteristics>
     </profile>
     <profile name="Frenzy" hidden="false" id="3b0c-a477-8823-3a25" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="170" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A Frenzied model has a +1 modifier to its Attacks characteristic. This modifier does not apply to the model’s mount (in the case of a cavalry model), to the beasts that draw it (in the case of a chariot), or to its rider (in the case of a monster).
 
-In addition:
+ In addition:
 
-•	If the majority of the models in a unit are Frenzied, the unit automatically passes any Fear, Panic or Terror tests it is required to make.
+ 
+• 	If the majority of the models in a unit are Frenzied, the unit automatically passes any Fear, Panic or Terror tests it is required to make.
 
-•	If a unit that includes one or more Frenzied models is able to declare a charge during the Declare Charges &amp; Charge Reactions sub-phase of its turn, it must do so.
+ 
+• 	If a unit that includes one or more Frenzied models is able to declare a charge during the Declare Charges &amp; Charge Reactions sub-phase of its turn, it must do so.
 
-•	If the majority of the models in a unit are Frenzied, it cannot choose to Flee as a charge reaction, nor can it ever choose to make a Restraint test.
+ 
+• 	If the majority of the models in a unit are Frenzied, it cannot choose to Flee as a charge reaction, nor can it ever choose to make a Restraint test.
 
-Losing Frenzy: Unlike other special rules, Frenzy can be lost during a game. Any model that loses a round of combat will immediately lose this special rule.</characteristic>
+ Losing Frenzy: Unlike other special rules, Frenzy can be lost during a game. Any model that loses a round of combat will immediately lose this special rule.</characteristic>
       </characteristics>
     </profile>
     <profile name="Armour Bane" hidden="false" id="2af0-975f-bb14-8b8f" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
@@ -794,20 +772,20 @@ Losing Frenzy: Unlike other special rules, Frenzy can be lost during a game. Any
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with a Breath Weapon can use it once per round, during the Shooting phase of its turn. Place the flame template with its broad end over the intended target and its narrow end touching the model’s base edge anywhere along its front arc. The template must lie entirely within the model’s vision arc. Any model whose base lies underneath the template risks being hit, as described on page 95. The Strength and any special rules of the breath weapon will be detailed in the creature’s rules.
 
-Breath weapons cannot be used when making a Stand &amp; Shoot charge reaction, or when the model is engaged in combat.
+ Breath weapons cannot be used when making a Stand &amp; Shoot charge reaction, or when the model is engaged in combat.
 
-The flame template is placed with the narrow end touching the model’s base edge, within its forward arc, and the broad end over the target unit.</characteristic>
+ The flame template is placed with the narrow end touching the model’s base edge, within its forward arc, and the broad end over the target unit.</characteristic>
       </characteristics>
     </profile>
     <profile name="Counter Charge" hidden="false" id="5186-798d-69d-6545" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="167" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">This special rule can only be used by units that consist entirely of models with this special rule. When a unit with this special rule is charged in its front arc by an enemy unit whose troop type is ‘cavalry,’ ‘chariot’ or ‘monster’, it may declare a ‘Counter Charge’ charge reaction:
 
-Counter Charge: The unit surges forward to meet the enemy charge. Measure the distance between the two units. If the distance is less than the Movement characteristic of the charging unit, the charged unit has not enough time to meet the enemy charge and must either Hold or Flee instead.
+ Counter Charge: The unit surges forward to meet the enemy charge. Measure the distance between the two units. If the distance is less than the Movement characteristic of the charging unit, the charged unit has not enough time to meet the enemy charge and must either Hold or Flee instead.
 
-Otherwise, pivot the unit about its centre so that it is facing directly towards the centre of the charging enemy unit. After pivoting, the unit moves D3+1&quot; directly towards the enemy unit. Both units are considered to have charged during this turn.
+ Otherwise, pivot the unit about its centre so that it is facing directly towards the centre of the charging enemy unit. After pivoting, the unit moves D3+1&quot; directly towards the enemy unit. Both units are considered to have charged during this turn.
 
-Fleeing units and units already engaged in combat when charged cannot Counter Charge. A unit can only Counter Charge in response to one charge per turn, even if charged by multiple units. Once all charges have been declared, the inactive player can choose which charging unit to Counter Charge. The unit will then Hold against the other charging units.</characteristic>
+ Fleeing units and units already engaged in combat when charged cannot Counter Charge. A unit can only Counter Charge in response to one charge per turn, even if charged by multiple units. Once all charges have been declared, the inactive player can choose which charging unit to Counter Charge. The unit will then Hold against the other charging units.</characteristic>
       </characteristics>
     </profile>
     <profile name="Cumbersome" hidden="false" id="9db1-2d1d-b6dd-6ff1" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="167" publicationId="768b-3da1-a182-a1d8">
@@ -824,7 +802,7 @@ Fleeing units and units already engaged in combat when charged cannot Counter Ch
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless it is fleeing, a Drilled unit may perform a free redress the ranks manoeuvre immediately before moving. Once this manoeuvre is complete, the unit moves as normal. In addition, a Drilled unit can march whilst within 8&quot; of an enemy unit without first having to make a Leadership test.
 
-Note that any character that joins a Drilled unit is considered to be Drilled as well.</characteristic>
+ Note that any character that joins a Drilled unit is considered to be Drilled as well.</characteristic>
       </characteristics>
     </profile>
     <profile name="Ethereal" hidden="false" id="6561-8029-dac3-162" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="167" publicationId="768b-3da1-a182-a1d8">
@@ -851,11 +829,13 @@ Note that any character that joins a Drilled unit is considered to be Drilled as
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Models with this special rule cause Fear:
 
-•	If a unit wishes to declare a charge against an enemy unit that both causes Fear and has a higher Unit Strength, it must first make a Leadership test. If this test is failed, the unit cannot charge. It does not move and is considered to have made a failed charge. If this test is passed, the unit can charge as normal.
+ 
+• 	If a unit wishes to declare a charge against an enemy unit that both causes Fear and has a higher Unit Strength, it must first make a Leadership test. If this test is failed, the unit cannot charge. It does not move and is considered to have made a failed charge. If this test is passed, the unit can charge as normal.
 
-•	If a unit is engaged with an enemy unit that both causes Fear and has a higher Unit Strength when its combat is chosen during any Choose &amp; Fight Combat sub-phase, it must make a Leadership test. If this test is failed, any models in the unit that direct their attacks against the Fear-causing enemy suffer a -1 modifier to their rolls To Hit.
+ 
+• 	If a unit is engaged with an enemy unit that both causes Fear and has a higher Unit Strength when its combat is chosen during any Choose &amp; Fight Combat sub-phase, it must make a Leadership test. If this test is failed, any models in the unit that direct their attacks against the Fear-causing enemy suffer a -1 modifier to their rolls To Hit.
 
-A unit only needs to make one Fear test per turn. Models that cause Fear are immune to Fear. A unit that does not cause Fear does not become immune to Fear when joined by a character that does.</characteristic>
+ A unit only needs to make one Fear test per turn. Models that cause Fear are immune to Fear. A unit that does not cause Fear does not become immune to Fear when joined by a character that does.</characteristic>
       </characteristics>
     </profile>
     <profile name="Feigned Flight" hidden="false" id="eea7-89d9-a996-403c" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="168" publicationId="768b-3da1-a182-a1d8">
@@ -872,9 +852,9 @@ A unit only needs to make one Fear test per turn. Models that cause Fear are imm
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit with this special rule that is also armed with missile weapons may declare that it will ‘Fire &amp; Flee’ as a charge reaction:
 
-Fire &amp; Flee: The unit launches a volley of weapons fire before turning to flee from the enemy. If a unit with this special rule is armed with missile weapons and can draw a line of sight to the charging unit, it may declare that it will Fire &amp; Flee. The unit will Stand &amp; Shoot (as described on page 120) before turning tail and fleeing from the charge. However, due to the time spent shooting at the charging foe, when making its Flee roll the unit rolls two D6 and discards the lowest result. If both dice roll the same result, discard either.
+ Fire &amp; Flee: The unit launches a volley of weapons fire before turning to flee from the enemy. If a unit with this special rule is armed with missile weapons and can draw a line of sight to the charging unit, it may declare that it will Fire &amp; Flee. The unit will Stand &amp; Shoot (as described on page 120) before turning tail and fleeing from the charge. However, due to the time spent shooting at the charging foe, when making its Flee roll the unit rolls two D6 and discards the lowest result. If both dice roll the same result, discard either.
 
-Note that, if the distance between this unit and the charging unit is less than the Movement characteristic of the charging unit, this unit must either Hold or Flee.</characteristic>
+ Note that, if the distance between this unit and the charging unit is less than the Movement characteristic of the charging unit, this unit must either Hold or Flee.</characteristic>
       </characteristics>
     </profile>
     <profile name="First Charge" hidden="false" id="785a-2886-af42-dce9" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="169" publicationId="768b-3da1-a182-a1d8">
@@ -886,7 +866,7 @@ Note that, if the distance between this unit and the charging unit is less than 
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Any attack made or hits caused by a model with this special rule, or made using a weapon or spell with this special rule, is a ‘Flaming’ attack. In addition, a model with this special rule causes Fear (as described on page 168) in models whose troop type is ‘war beasts’ or ‘swarms’.
 
-Unless otherwise stated, a model with this special rule makes Flaming attacks both when shooting and in combat (though any spells cast by the model are unaffected, as are any attacks made with magic weapons they might be wielding).</characteristic>
+ Unless otherwise stated, a model with this special rule makes Flaming attacks both when shooting and in combat (though any spells cast by the model are unaffected, as are any attacks made with magic weapons they might be wielding).</characteristic>
       </characteristics>
     </profile>
     <profile name="Flammable" hidden="false" id="8f64-6d4c-466b-1b94" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="169" publicationId="768b-3da1-a182-a1d8">
@@ -924,14 +904,14 @@ Unless otherwise stated, a model with this special rule makes Flaming attacks bo
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">If the majority of the models in a unit are Immune to Psychology, the unit automatically passes any Fear, Panic or Terror tests it is required to make. However, if the majority of the models in a unit have this special rule, the unit cannot choose to Flee as a charge reaction.
 
-Note that this special rule does not make a unit immune to any test made against Leadership not stated here.</characteristic>
+ Note that this special rule does not make a unit immune to any test made against Leadership not stated here.</characteristic>
       </characteristics>
     </profile>
     <profile name="Killing Blow" hidden="false" id="860b-e13a-4710-9bf0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="172" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">If a model with this special rule rolls a natural 6 when making a roll To Wound for an attack made in combat, it has struck a ‘Killing Blow’. Enemy models whose troop type is ‘infantry’ or ‘cavalry’ are not permitted an armour or Regeneration save (see page 176) against a Killing Blow (Ward saves can be attempted as normal). If an enemy model whose troop type is ‘infantry’ or ‘cavalry’ suffers an unsaved wound from a Killing Blow, it loses all of its remaining Wounds.
 
-Note that if an attack wounds automatically, this special rule cannot be used.</characteristic>
+ Note that if an attack wounds automatically, this special rule cannot be used.</characteristic>
       </characteristics>
     </profile>
     <profile name="Levies" hidden="false" id="8cc3-d6f5-da17-6600" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="172" publicationId="768b-3da1-a182-a1d8">
@@ -948,7 +928,7 @@ Note that if an attack wounds automatically, this special rule cannot be used.</
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Any attack made or hit caused by a model with this special rule, or made using a weapon with this special rule, is a ‘Magical’ attack.
 
-Note that all spells are considered to have this special rule, as are any hits caused by magic items.</characteristic>
+ Note that all spells are considered to have this special rule, as are any hits caused by magic items.</characteristic>
       </characteristics>
     </profile>
     <profile name="Mercenaries" hidden="false" id="4d1b-2617-ebdc-4f4d" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="173" publicationId="768b-3da1-a182-a1d8">
@@ -960,7 +940,7 @@ Note that all spells are considered to have this special rule, as are any hits c
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A monster with this special rule is accompanied by one or more models representing its handlers. During deployment, position these models anywhere that is adjacent to, and in base contact with, the monster. If the handlers are found to be blocking movement or line of sight, simply move them aside.
 
-In combat, each handler adds its attacks to those of the monster. If the monster suffers an unsaved wound, roll a D6. On a roll of 1-4 the monster loses a Wound, but on a roll of 5+ a handler model suffers the wound instead. If the monster is removed from play, so are its handlers.</characteristic>
+ In combat, each handler adds its attacks to those of the monster. If the monster suffers an unsaved wound, roll a D6. On a roll of 1-4 the monster loses a Wound, but on a roll of 5+ a handler model suffers the wound instead. If the monster is removed from play, so are its handlers.</characteristic>
       </characteristics>
     </profile>
     <profile name="Chariot Runners" hidden="false" id="afa3-a46a-2608-f62c" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="167" publicationId="768b-3da1-a182-a1d8">
@@ -989,18 +969,18 @@ In combat, each handler adds its attacks to those of the monster. If the monster
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">If a model with this special rule rolls a natural 6 when making a roll To Wound for an attack made in combat, it has struck a ‘Monster Slaying Blow’. Enemy models whose troop type is ‘monster’ are not permitted an armour or Regeneration save (see page 176) against a Monster Slaying Blow (Ward saves can be attempted as normal). If an enemy model whose troop type is ‘monster’ suffers an unsaved wound from a Monster Slaying Blow, it loses all of its remaining Wounds.
 
-Note that if an attack wounds automatically, this special rule cannot be used.</characteristic>
+ Note that if an attack wounds automatically, this special rule cannot be used.</characteristic>
       </characteristics>
     </profile>
     <profile name="Motley Crew" hidden="false" id="6359-4018-5cd4-3720" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="174" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Units with this special rule may include models of the same type that are equipped differently to one another, and/or models of different types that fight together in a single unit. If necessary, the army list entry for such units will be accompanied by a brief explanation of the unit’s composition.
 
-Different Weapons: The fighting rank of a Motley Crew may contain models that are armed with different weapons. In such cases, the controlling player must roll different batches of dice for the different models, making it clear to their opponent which model’s attacks they represent and where they are being directed. These attacks are made in the Initiative order of the individual models, as usual.
+ Different Weapons: The fighting rank of a Motley Crew may contain models that are armed with different weapons. In such cases, the controlling player must roll different batches of dice for the different models, making it clear to their opponent which model’s attacks they represent and where they are being directed. These attacks are made in the Initiative order of the individual models, as usual.
 
-Different Armour: Models within a Motley Crew may have different armour values. In combat, use the armour value of the majority of the models in the fighting rank. Against enemy shooting, use the armour value of the majority of the models in the unit.
+ Different Armour: Models within a Motley Crew may have different armour values. In combat, use the armour value of the majority of the models in the fighting rank. Against enemy shooting, use the armour value of the majority of the models in the unit.
 
-Casualty Removal: Against enemy shooting, casualty removal should be divided as equally as possible between the different models within the unit. In combat, casualties should be removed from among the majority of the models that make up the fighting rank. In either case, available models are brought forward from rear ranks to fill any gaps, as chosen by the controlling player.</characteristic>
+ Casualty Removal: Against enemy shooting, casualty removal should be divided as equally as possible between the different models within the unit. In combat, casualties should be removed from among the majority of the models that make up the fighting rank. In either case, available models are brought forward from rear ranks to fill any gaps, as chosen by the controlling player.</characteristic>
       </characteristics>
     </profile>
     <profile name="Move &amp; Shoot" hidden="false" id="6d4e-d525-ad86-4e4a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="174" publicationId="768b-3da1-a182-a1d8">
@@ -1054,9 +1034,9 @@ Casualty Removal: Against enemy shooting, casualty removal should be divided as 
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Models with this special rule do not have a normal Movement characteristic. Instead, a dice roll is given (2D6, for example). Whenever a model with this special rule moves (for any reason), roll the dice to determine how far it must move.
 
-Models with this special rule move during the Compulsory Moves sub-phase. They cannot march or declare a charge. They can wheel to change direction, but cannot perform any other manoeuvres. If the model is able to make contact with an enemy unit during the Compulsory Moves sub-phase or whilst pursuing, it may do so and counts as having charged. The model aligns against the enemy unit and stops moving. A unit charged in this way must Hold.
+ Models with this special rule move during the Compulsory Moves sub-phase. They cannot march or declare a charge. They can wheel to change direction, but cannot perform any other manoeuvres. If the model is able to make contact with an enemy unit during the Compulsory Moves sub-phase or whilst pursuing, it may do so and counts as having charged. The model aligns against the enemy unit and stops moving. A unit charged in this way must Hold.
 
-If every model in a unit has this special rule, roll once for the entire unit. If two or more models in a unit have different Random Movement characteristics, roll for each and use the lowest result for the entire unit.</characteristic>
+ If every model in a unit has this special rule, roll once for the entire unit. If two or more models in a unit have different Random Movement characteristics, roll for each and use the lowest result for the entire unit.</characteristic>
       </characteristics>
     </profile>
     <profile name="Regeneration" hidden="false" id="2eb0-1ec8-8e04-72d4" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
@@ -1102,13 +1082,16 @@ If every model in a unit has this special rule, roll once for the entire unit. I
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless it is engaged in combat, a unit with this special rule must make a ‘Stupidity’ test during the Start of Turn sub-phase of its turn. To make a Stupidity test, test against the unit’s Leadership characteristic. If this test is failed, the unit becomes Stupid. A Stupid unit:
 
-•	Moves during the Compulsory Moves sub-phase.
+ 
+• 	Moves during the Compulsory Moves sub-phase.
 
-•	Must move straight ahead, without performing any manoeuvres.
+ 
+• 	Must move straight ahead, without performing any manoeuvres.
 
-•	Cannot march or declare a charge.
+ 
+• 	Cannot march or declare a charge.
 
-A unit or mount that does not have this special rule becomes subject to it when joined or ridden by a character that does (Stupidity is contagious).</characteristic>
+ A unit or mount that does not have this special rule becomes subject to it when joined or ridden by a character that does (Stupidity is contagious).</characteristic>
       </characteristics>
     </profile>
     <profile name="Swiftstride" hidden="false" id="dc91-48b3-3696-217" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="178" publicationId="768b-3da1-a182-a1d8">
@@ -1120,13 +1103,15 @@ A unit or mount that does not have this special rule becomes subject to it when 
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Models with this special rule cause Terror. Models that cause Terror also cause Fear, as described on page 168:
 
-•	When a unit that causes Terror declares a charge, the charge target must immediately make a Leadership test. If this test is failed, it must Flee. If this test is passed, it can declare its charge reaction normally.
+ 
+• 	When a unit that causes Terror declares a charge, the charge target must immediately make a Leadership test. If this test is failed, it must Flee. If this test is passed, it can declare its charge reaction normally.
 
-•	If the winning side of a combat includes one or more units that cause Terror, each unit that belongs to the losing side must apply a -1 modifier to its Leadership characteristic when making its Break test.
+ 
+• 	If the winning side of a combat includes one or more units that cause Terror, each unit that belongs to the losing side must apply a -1 modifier to its Leadership characteristic when making its Break test.
 
-Note that if a charged unit cannot choose to Flee, it does not make this Leadership test.
+ Note that if a charged unit cannot choose to Flee, it does not make this Leadership test.
 
-Models with the Fear special rule Fear models that cause Terror. Models that cause Terror are immune to Terror. A unit that does not cause Terror does not become immune to Terror when joined by a character that does.</characteristic>
+ Models with the Fear special rule Fear models that cause Terror. Models that cause Terror are immune to Terror. A unit that does not cause Terror does not become immune to Terror when joined by a character that does.</characteristic>
       </characteristics>
     </profile>
     <profile name="Timmm-Berrr!" hidden="false" id="4f28-3f86-cf88-6b3a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="179" publicationId="768b-3da1-a182-a1d8">
@@ -1148,42 +1133,40 @@ Models with the Fear special rule Fear models that cause Terror. Models that cau
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">When a unit with this special rule makes a shooting attack, half of the models in each rank other than the front rank (or front two ranks if the unit is on a hill), rounding up, can shoot (in addition to the usual models that shoot from the front rank, or front two ranks if the unit is on a hill). A unit cannot Volley Fire if it has moved for any reason during this turn (including reforming), or when making a Stand &amp; Shoot charge reaction.
 
-Note that models in rear ranks use the line of sight of the model at the front of their file.</characteristic>
+ Note that models in rear ranks use the line of sight of the model at the front of their file.</characteristic>
       </characteristics>
     </profile>
     <profile name="Unstable" hidden="false" id="a10e-13b7-e959-ab5" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="180" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">If a unit with this special rule loses a round of combat, it loses one additional Wound for every combat result point by which it lost. These Wounds are lost after combat results have been calculated but before Break tests are made.
 
-If an Unstable unit contains any Unstable characters, allocate wounds to the unit until each model has been allocated one wound. Any remaining wounds are divided as equally as possible between the character(s) and the unit.</characteristic>
+ If an Unstable unit contains any Unstable characters, allocate wounds to the unit until each model has been allocated one wound. Any remaining wounds are divided as equally as possible between the character(s) and the unit.</characteristic>
       </characteristics>
     </profile>
     <profile name="Standard Bearer" hidden="false" id="bcf8-d942-102e-b155" typeId="52d4-d959-fe4d-90fa" typeName="Command">
       <characteristics>
         <characteristic name="Description" typeId="441a-ef3a-c07e-95f">If a unit includes a standard bearer, it may claim a bonus of +1 combat result point.
 
-If a fleeing unit is run down by an enemy unit, or if a unit is destroyed in combat by an enemy unit, its standard is claimed as a trophy. Standards claimed in this way are worth bonus Victory Points at the end of the battle. Once a standard has been lost in this way, it cannot be reclaimed.</characteristic>
+ If a fleeing unit is run down by an enemy unit, or if a unit is destroyed in combat by an enemy unit, its standard is claimed as a trophy. Standards claimed in this way are worth bonus Victory Points at the end of the battle. Once a standard has been lost in this way, it cannot be reclaimed.</characteristic>
       </characteristics>
     </profile>
     <profile name="Musician" hidden="false" id="40f2-dd77-f0ca-3663" typeId="52d4-d959-fe4d-90fa" typeName="Command">
       <characteristics>
-        <characteristic name="Description" typeId="441a-ef3a-c07e-95f">“Onwards To Victory!”
-If, once the combat result has been calculated, both sides have the exact same number of points each, the side that has a musician in the front rank of one or more of its units may claim a bonus of +1 combat result point.
+        <characteristic name="Description" typeId="441a-ef3a-c07e-95f">“Onwards To Victory!” If, once the combat result has been calculated, both sides have the exact same number of points each, the side that has a musician in the front rank of one or more of its units may claim a bonus of +1 combat result point.
 
-
+ 
 If, however, the opposing side has a musician also, the redoubled efforts (and almighty clamour) cancel each other out and neither side may claim this bonus.
 
+ 
+Steadying Rhythm If a fleeing unit contains a musician, it may apply a +1 modifier to its Leadership characteristic whenever it attempts to rally, up to a maximum of Leadership 10.
 
-Steadying Rhythm
-If a fleeing unit contains a musician, it may apply a +1 modifier to its Leadership characteristic whenever it attempts to rally, up to a maximum of Leadership 10.
-
-
+ 
 Quick Time Should a unit that contains a musician wish to march whilst within 8&quot; of an enemy unit, it may apply a +1 modifier to its Leadership characteristic, up to a maximum of Leadership 10, when making its Leadership test.
 
-
+ 
 Musicians As Casualties If a musician model is slain, another rank and file model belonging to the same unit, but that is not a command group model, will retrieve the fallen instrument and take their place. Therefore, a unit cannot lose its musician unless it, the standard bearer and the champion are the only remaining models in the unit. This applies even if the musician is targeted by an attack that allows a specific model within a unit to be targeted, or finds themselves lying underneath a template.
 
-
+ 
 If the only other remaining models in a unit are the champion and standard bearer, the musician must be removed as a casualty before either.</characteristic>
       </characteristics>
     </profile>
@@ -1258,147 +1241,118 @@ If the only other remaining models in a unit are the champion and standard beare
     </profile>
     <profile name="Bolt Thrower" hidden="false" id="36e4-28b4-31ff-39dc" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="223" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot; S: 6 AP: -3
-          Special Rules: Cumbersome, Move or Shoot, Multiple Wounds (2), Through &amp; Through</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot; S: 6 AP: -3 Special Rules: Cumbersome, Move or Shoot, Multiple Wounds (2), Through &amp; Through</characteristic>
       </characteristics>
     </profile>
     <profile name="Cannon" hidden="false" id="8ef5-8512-e1c2-6474" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="226" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot; S: 8 AP: -2
-          Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot
-          using the ‘Cannon Fire’ special rule. This weapon uses the Black Powder Misfire table.
-          Special Rules: Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds
-          (D3)</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot; S: 8 AP: -2 Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Cannon Fire’ special rule. This weapon uses the Black Powder Misfire table.
+
+ Special Rules: Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
       </characteristics>
     </profile>
     <profile name="Stone Thrower" hidden="false" id="3142-ada8-328d-1615" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12-60&quot; S4(8) AP-1(-3)
-          Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3+1)</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12-60&quot; S4(8) AP-1(-3) Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3+1)</characteristic>
       </characteristics>
     </profile>
     <profile name="Organ gun" hidden="false" id="5635-efd8-13b6-c841" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="228" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 30&quot; S: 5 AP: -1
-          Notes: This weapon uses the Black Powder Misfire table. Special Rules: Armour Bane (2),
-          Cumbersome, Move or Shoot, Multi-Barrelled</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 30&quot; S: 5 AP: -1 Notes: This weapon uses the Black Powder Misfire table. Special Rules: Armour Bane (2), Cumbersome, Move or Shoot, Multi-Barrelled</characteristic>
       </characteristics>
     </profile>
     <profile name="Fire Thrower" hidden="false" id="2694-34f1-f146-6351" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="229" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: 5 AP: -1
-          Notes: Fire throwers do not use their crew’s Ballistic Skill. Instead, they shoot using
-          the ‘Column of Fire’ special rule. This weapon uses the Black Powder Misfire table.
-          Special Rules: Column of Fire, Cumbersome, Flaming Attacks, Move or Shoot</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: 5 AP: -1 Notes: Fire throwers do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Column of Fire’ special rule. This weapon uses the Black Powder Misfire table.
+
+ Special Rules: Column of Fire, Cumbersome, Flaming Attacks, Move or Shoot</characteristic>
       </characteristics>
     </profile>
     <profile name="Javelin" hidden="false" id="f3f8-7476-d165-1a5d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: S AP: -
-          Special Rules: Move &amp; Shoot, Quick Shot</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: S AP: - Special Rules: Move &amp; Shoot, Quick Shot</characteristic>
       </characteristics>
     </profile>
     <profile name="Cavalry spear" hidden="false" id="ee75-c1a8-2f0c-c264" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+1 AP: -1
-          Notes: Models whose troop type is ‘cavalry’, ‘monster’ or ‘chariot’ only. A cavalry
-          spear’s Strength and Armour Piercing modifiers apply only during a turn in which the
-          wielder charged. A model wielding a cavalry spear cannot make a supporting attack during a
-          turn in which it charged. Special Rules: Fight in Extra Rank</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+1 AP: -1 Notes: Models whose troop type is ‘cavalry’, ‘monster’ or ‘chariot’ only. A cavalry spear’s Strength and Armour Piercing modifiers apply only during a turn in which the wielder charged. A model wielding a cavalry spear cannot make a supporting attack during a turn in which it charged. Special Rules: Fight in Extra Rank</characteristic>
       </characteristics>
     </profile>
     <profile name="Morning star" hidden="false" id="caad-2fc0-e82a-18fd" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+1 AP: -1
-          Notes: A morning star’s Strength modifier applies only during the first round of combat.
-          Special Rules: -</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+1 AP: -1 Notes: A morning star’s Strength modifier applies only during the first round of combat.
+
+ Special Rules: -</characteristic>
       </characteristics>
     </profile>
     <profile name="Halberd" hidden="false" id="98f8-9d8-94cd-3379" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+1 AP: -1
-          Special Rules: Armour Bane (1), Requires Two Hands</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+1 AP: -1 Special Rules: Armour Bane (1), Requires Two Hands</characteristic>
       </characteristics>
     </profile>
     <profile name="Flail" hidden="false" id="b326-5bf3-9b4e-f8ad" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+2 AP: -2
-          Notes: A flail’s Strength modifier applies only during the first round of combat. Special
-          Rules: Requires Two Hands</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+2 AP: -2 Notes: A flail’s Strength modifier applies only during the first round of combat. Special Rules: Requires Two Hands</characteristic>
       </characteristics>
     </profile>
     <profile name="Whip" hidden="false" id="7505-7edf-c3de-57a6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S AP: - Special
-          Rules: Fight in Extra Rank, Strike First</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S AP: - Special Rules: Fight in Extra Rank, Strike First</characteristic>
       </characteristics>
     </profile>
     <profile name="Lance" hidden="false" id="3520-64c9-a855-ce9e" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+2 AP: -2
-          Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance can only be used
-          during a turn in which the wielder charged. In subsequent turns (or if the wielder did not
-          charge) the model must use its hand weapon instead. Special Rules: Armour Bane (1)</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+2 AP: -2 Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance can only be used during a turn in which the wielder charged. In subsequent turns (or if the wielder did not charge) the model must use its hand weapon instead. Special Rules: Armour Bane (1)</characteristic>
       </characteristics>
     </profile>
     <profile name="Shortbow" hidden="false" id="1b65-71ef-52a3-93d0" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="216" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 18&quot; S: 3 AP: -
-          Special Rules: Quick Shot, Volley Fire</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 18&quot; S: 3 AP: - Special Rules: Quick Shot, Volley Fire</characteristic>
       </characteristics>
     </profile>
     <profile name="Repeater Pistol" hidden="false" id="f675-db0d-397c-d873" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12&quot; S4 AP-1 Armour Bane
-          (1), Multiple Shots (3), Quick Shot</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12&quot; S4 AP-1 Armour Bane (1), Multiple Shots (3), Quick Shot</characteristic>
       </characteristics>
     </profile>
     <profile name="Repeater handgun" hidden="false" id="7f58-91d4-ee6c-3cb7" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 24&quot; S: 4 AP: -1
-          Special Rules: Armour Bane (1), Multiple Shots (3), Ponderous</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 24&quot; S: 4 AP: -1 Special Rules: Armour Bane (1), Multiple Shots (3), Ponderous</characteristic>
       </characteristics>
     </profile>
     <profile name="Crossbow" hidden="false" id="1ef1-8579-c310-4fb5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 30&quot; S: 4 AP: -
-          Special Rules: Armour Bane (2), Ponderous</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 30&quot; S: 4 AP: - Special Rules: Armour Bane (2), Ponderous</characteristic>
       </characteristics>
     </profile>
     <profile name="Repeater crossbow" hidden="false" id="e240-f607-2c57-b181" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 24&quot; S: 3 AP: -
-          Special Rules: Armour Bane (1), Multiple Shots (2)</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 24&quot; S: 3 AP: - Special Rules: Armour Bane (1), Multiple Shots (2)</characteristic>
       </characteristics>
     </profile>
     <profile name="Repeater handbow" hidden="false" id="f187-983f-99f2-5ecd" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: 3 AP: -
-          Special Rules: Multiple Shots (2), Quick Shot</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: 3 AP: - Special Rules: Multiple Shots (2), Quick Shot</characteristic>
       </characteristics>
     </profile>
     <profile name="Two Hand Weapon" hidden="false" id="1f58-a56f-e54c-ddc5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Extra Atacks (+1), Require
-          Two Hands</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Extra Atacks (+1), Require Two Hands</characteristic>
       </characteristics>
     </profile>
     <profile name="Sling" hidden="false" id="eee6-7b1-58de-6ad2" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 18&quot; S: 3 AP: -
-          Special Rules: Multiple Shots (2)</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 18&quot; S: 3 AP: - Special Rules: Multiple Shots (2)</characteristic>
       </characteristics>
     </profile>
     <profile name="Throwing Axe" hidden="false" id="9914-73b6-65c4-ec44" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 9&quot; S: S+1 AP: -
-          Special Rules: Quick Shot</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 9&quot; S: S+1 AP: - Special Rules: Quick Shot</characteristic>
       </characteristics>
     </profile>
     <profile name="Throwing Weapon" hidden="false" id="eee5-db12-1271-f2c5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 9&quot; S: S AP: -
-          Special Rules: Multiple Shots (2), Move &amp; Shoot, Quick Shot</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 9&quot; S: S AP: - Special Rules: Multiple Shots (2), Move &amp; Shoot, Quick Shot</characteristic>
       </characteristics>
     </profile>
     <profile name="Wicked Claws" hidden="false" id="14c0-c7a7-dd09-ea49" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
@@ -1408,8 +1362,7 @@ If the only other remaining models in a unit are the champion and standard beare
     </profile>
     <profile name="Serrated Maw" hidden="false" id="2dea-8d5a-633c-cd7d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Armour Bane(2), Multiple
-          Wounds(2)</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Armour Bane(2), Multiple Wounds(2)</characteristic>
       </characteristics>
     </profile>
     <profile name="Base (round 50)" hidden="false" id="2c87-b5d6-e13b-4082" typeId="1ae4-7f34-4055-fd5f" typeName="Base">
@@ -1422,8 +1375,7 @@ If the only other remaining models in a unit are the champion and standard beare
     </profile>
     <profile name="Mortar" hidden="false" id="11c5-c8bc-6ce3-8932" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12-48&quot; S2(6) AP-2(-3)
-          Armour Bane (1), Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12-48&quot; S2(6) AP-2(-3) Armour Bane (1), Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
       </characteristics>
     </profile>
     <profile name="Base (75x50)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="f4be-ad24-1cc9-a6ac">
@@ -1476,25 +1428,19 @@ If the only other remaining models in a unit are the champion and standard beare
     </profile>
     <profile name="Repeater Bolt Thrower" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" hidden="false" id="3f5c-8185-3494-86c1">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot; S: 4 AP: -1
-          Special Rules: Armour Bane (1), Cumbersome, Move or Shoot, Multiple Shots(D3+3)</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot; S: 4 AP: -1 Special Rules: Armour Bane (1), Cumbersome, Move or Shoot, Multiple Shots(D3+3)</characteristic>
       </characteristics>
     </profile>
     <profile name="Great Cannon" hidden="false" id="ae36-d4c3-eaf5-198b" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="226" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 60&quot; S: 10 AP: -3
-          Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot
-          using the ‘Cannon Fire’ special rule. This weapon uses the Black Powder Misfire table.
-          Special Rules: Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds
-          (D3=1)</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 60&quot; S: 10 AP: -3 Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Cannon Fire’ special rule. This weapon uses the Black Powder Misfire table.
+
+ Special Rules: Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3=1)</characteristic>
       </characteristics>
     </profile>
     <profile name="Troll Vomit" hidden="false" id="2007-796b-3c57-ec28" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">S3 AP-2 A Chaos Troll that
-          is in base contact with an enemy model may make one additional attack each turn with this
-          weapon. This attack must be made last, after all other attacks have been made (including
-          Stomp Attacks), but hits automatically.</characteristic>
+        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">S3 AP-2 A Chaos Troll that is in base contact with an enemy model may make one additional attack each turn with this weapon. This attack must be made last, after all other attacks have been made (including Stomp Attacks), but hits automatically.</characteristic>
       </characteristics>
     </profile>
     <profile name="Base (100x150)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="b56f-7f81-4ba1-ed2c">
@@ -1519,8 +1465,25 @@ If the only other remaining models in a unit are the champion and standard beare
         <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">-</characteristic>
-        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Unless specified otherwise, all models are assumed to be equipped with a hand
-weapon.</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Unless specified otherwise, all models are assumed to be equipped with a hand weapon.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Great Weapon" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="77ca-5e-3d5e-ead5">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S+2</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-2</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Requires Two Hands, Strike Last</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Longbow" hidden="false" id="16e8-23be-ce45-768d" typeId="a378-c633-912d-11ce" typeName="Weapon" page="216" publicationId="768b-3da1-a182-a1d8">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">30&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">3</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Volley Fire</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
@@ -1535,7 +1498,7 @@ weapon.</characteristic>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Great Weapon" hidden="false" id="2283-26e9-76c3-6048" collective="true">
       <infoLinks>
-        <infoLink name="Great Weapon" hidden="false" type="profile" id="4465-7e60-819e-a74f" targetId="88e3-38f0-92d5-b616"/>
+        <infoLink name="Great Weapon" hidden="false" type="profile" id="4465-7e60-819e-a74f" targetId="77ca-5e-3d5e-ead5"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e03-7cfb-4459-9b9a-max"/>
@@ -1716,7 +1679,7 @@ weapon.</characteristic>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Longbow" hidden="false" id="c0e5-968b-c467-56ba" collective="true">
       <infoLinks>
-        <infoLink name="Longbow" hidden="false" type="profile" id="90a9-4cb0-3fe3-caa" targetId="c84c-99b6-75eb-4f40"/>
+        <infoLink name="Longbow" hidden="false" type="profile" id="90a9-4cb0-3fe3-caa" targetId="16e8-23be-ce45-768d"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="333a-deff-559d-c446"/>
