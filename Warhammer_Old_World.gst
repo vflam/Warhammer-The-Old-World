@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="78" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="79" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
@@ -45,6 +45,10 @@
     <categoryEntry name="Wizard" hidden="false" id="f954-b4c0-b835-a048"/>
     <categoryEntry name="VAMPIRE" hidden="true" id="4813-a63e-57ed-dc4"/>
     <categoryEntry name="NECROMANCER" hidden="true" id="bd9e-eec8-c99c-db01"/>
+    <categoryEntry name="MAY_HAVE_SHIELD" hidden="true" id="may-have-shield"/>
+    <categoryEntry name="MAY_HAVE_LIGHT_ARMOUR" hidden="true" id="may-have-light-armour"/>
+    <categoryEntry name="MAY_HAVE_FULL_PLATE_ARMOUR" hidden="true" id="may-have-full-plate-armour"/>
+    <categoryEntry name="MAY_HAVE_HEAVY_ARMOUR" hidden="true" id="may-have-heavy-armour"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
