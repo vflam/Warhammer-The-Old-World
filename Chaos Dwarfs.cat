@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="6f67-505-5647-4c59" name="Chaos Dwarfs" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="16" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Giloushaker#2496">
+<catalogue library="false" id="6f67-505-5647-4c59" name="Chaos Dwarfs" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="17" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Giloushaker#2496">
   <sharedProfiles>
     <profile name="Sorcerer-Prophet" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="a536-85f7-3f51-7de1">
       <characteristics>
@@ -727,6 +727,11 @@ When rolling To Wound, the target number is the same as the armour value of the
 4: Dweomer Leach: The bearer of this weapon gains the Magic Resistance (-1) special rule.
 5: Hell-forged: This weapon has a Strength characteristic of S+1.
 6: Spell-wrought: If the bearer of this weapon is a Wizard, they may apply a +1 modifier to any Casting roll they make. If the bearer of this weapon is not a Wizard, improve the Armour Piercing characteristic of this weapon by 1.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Born of Fire" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="7d45-cf86-c84a-d2e9">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A Bale Taurus or Great Taurus has a 3+ Ward save against any wounds suffered that were caused by an attack that has the Flaming Attacks special rule.</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
@@ -1515,7 +1520,7 @@ When rolling To Wound, the target number is the same as the armour value of the
               </constraints>
             </entryLink>
             <entryLink import="true" name="Mount" hidden="false" id="186a8117-eaa50965" type="selectionEntryGroup" targetId="e704-21be-f833-f2eb" sortIndex="3"/>
-            <entryLink import="true" name="Magic Items" hidden="false" id="8a4fbf44-b16a5b0e" type="selectionEntryGroup" targetId="1539-fd78-88f-badd" sortIndex="6">
+            <entryLink import="true" name="Magic Items" hidden="false" id="8a4fbf44-b16a5b0e" type="selectionEntryGroup" targetId="1539-fd78-88f-badd" sortIndex="7">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="d22223f5-a1d204eb"/>
               </constraints>
@@ -1550,7 +1555,7 @@ When rolling To Wound, the target number is the same as the armour value of the
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="f39c040c-9510a056" includeChildSelections="false"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Equipment" hidden="false" id="dd8b146b-e08b2cb9" defaultSelectionEntryId="f86032a9-8968017f" sortIndex="5">
+            <selectionEntryGroup name="Equipment" hidden="false" id="dd8b146b-e08b2cb9" defaultSelectionEntryId="f86032a9-8968017f" sortIndex="6">
               <entryLinks>
                 <entryLink name="throwing weapons" id="f86032a9-8968017f" hidden="false" type="selectionEntry" targetId="9acb-1a87-176-5a2f" sortIndex="1"/>
                 <entryLink name="Shortbow" id="e5404cfa-9bef3de4" hidden="false" type="selectionEntry" targetId="f187-20d4-41f3-63cc" sortIndex="3">
@@ -1566,7 +1571,15 @@ When rolling To Wound, the target number is the same as the armour value of the
                     <cost name="pts" typeId="points" value="2"/>
                   </costs>
                 </entryLink>
-                <entryLink name="Light Armour" id="e958d784-f4e8b14e" hidden="false" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="4">
+              </entryLinks>
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="132a7fe0-19922aaa"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="29171aca-c360e5f4" includeChildSelections="false"/>
+              </constraints>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Armour" hidden="false" id="3052-16ff-5f46-d27b" sortIndex="5">
+              <entryLinks>
+                <entryLink name="Light Armour" id="e958d784-f4e8b14e" hidden="false" type="selectionEntry" targetId="7cab-40e6-f134-de78">
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="ea60dba8-2f077d52" includeChildSelections="false"/>
                   </constraints>
@@ -1575,10 +1588,6 @@ When rolling To Wound, the target number is the same as the armour value of the
                   </costs>
                 </entryLink>
               </entryLinks>
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="132a7fe0-19922aaa"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="29171aca-c360e5f4" includeChildSelections="false"/>
-              </constraints>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <constraints>
@@ -3093,6 +3102,17 @@ When rolling To Wound, the target number is the same as the armour value of the
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="17531aa1-88f3e077" includeChildSelections="false"/>
                   </constraints>
                 </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Steam Carriage" hidden="false" id="7ddd-6061-f128-3bbb">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d884-e2fe-3612-3592" includeChildSelections="false"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Carriage Hauler" hidden="false" id="12ed-c548-c651-2704" type="profile" targetId="76f2-3f15-7e93-f34b"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="10"/>
+                  </costs>
+                </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
           </selectionEntryGroups>
@@ -3743,6 +3763,31 @@ When rolling To Wound, the target number is the same as the armour value of the
               </conditionGroups>
             </modifier>
           </modifiers>
+          <categoryLinks>
+            <categoryLink name="Behemoth" hidden="false" id="1eb6-83ae-ab3f-8040" targetId="3755-6732-99b2-c713" primary="false"/>
+          </categoryLinks>
+          <infoGroups>
+            <infoGroup name="Special Rules" hidden="false" id="3051-3abd-454b-d894">
+              <infoLinks>
+                <infoLink name="Fly" hidden="false" id="e753-add2-7e9f-45d4" type="profile" targetId="c557-6102-9a35-bbcd">
+                  <modifiers>
+                    <modifier type="append" value=" (9)" field="name"/>
+                  </modifiers>
+                </infoLink>
+                <infoLink name="Blazing Body" hidden="false" id="f638-638d-2490-ec5c" type="profile" targetId="b8-6065-a1f7-2cf2"/>
+                <infoLink name="Stomp Attacks" hidden="false" id="404b-3edd-7205-6fa3" type="profile" targetId="72db-24bb-7493-d753">
+                  <modifiers>
+                    <modifier type="append" value=" (D3+1)" field="name"/>
+                  </modifiers>
+                </infoLink>
+                <infoLink name="Close Order" hidden="false" id="606a-ed9a-62e5-98ff" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+                <infoLink name="Furious Charge" hidden="false" id="4d75-8bb7-43b6-4829" type="profile" targetId="eaca-69a2-8b6a-81c6"/>
+                <infoLink name="Terror" hidden="false" id="cb15-dcf7-121c-d1c6" type="profile" targetId="c7a2-35bf-4313-f4f0"/>
+                <infoLink name="Large Target" hidden="false" id="73e9-ec49-46ec-70d8" type="profile" targetId="c822-7ad0-f24a-e4af"/>
+                <infoLink name="Swiftstride" hidden="false" id="db6a-6542-1e0e-ddce" type="profile" targetId="dc91-48b3-3696-217"/>
+              </infoLinks>
+            </infoGroup>
+          </infoGroups>
         </selectionEntry>
         <selectionEntry type="model" name="Great Taurus" id="bb2a9963-17e1fb91" hidden="true" subType="mount" sortIndex="3">
           <infoLinks>
@@ -3795,6 +3840,31 @@ When rolling To Wound, the target number is the same as the armour value of the
               </conditionGroups>
             </modifier>
           </modifiers>
+          <categoryLinks>
+            <categoryLink name="Behemoth" hidden="false" id="7503-2ea-b955-fc9" targetId="3755-6732-99b2-c713" primary="false"/>
+          </categoryLinks>
+          <infoGroups>
+            <infoGroup name="Special Rules" hidden="false" id="22d0-6d79-286-782e">
+              <infoLinks>
+                <infoLink name="Fly" hidden="false" id="e39b-1912-6a69-da4e" type="profile" targetId="c557-6102-9a35-bbcd">
+                  <modifiers>
+                    <modifier type="append" value=" (9)" field="name"/>
+                  </modifiers>
+                </infoLink>
+                <infoLink name="Blazing Body" hidden="false" id="9d5d-5e31-3cfa-a66c" type="profile" targetId="b8-6065-a1f7-2cf2"/>
+                <infoLink name="Stomp Attacks" hidden="false" id="d83e-5704-7f04-a644" type="profile" targetId="72db-24bb-7493-d753">
+                  <modifiers>
+                    <modifier type="append" value=" (D3)" field="name"/>
+                  </modifiers>
+                </infoLink>
+                <infoLink name="Close Order" hidden="false" id="7882-5985-38b9-e180" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+                <infoLink name="Furious Charge" hidden="false" id="44ad-266-ed2b-497b" type="profile" targetId="eaca-69a2-8b6a-81c6"/>
+                <infoLink name="Terror" hidden="false" id="72d-7efd-cd4f-bd4a" type="profile" targetId="c7a2-35bf-4313-f4f0"/>
+                <infoLink name="Large Target" hidden="false" id="7741-1d9f-25be-5c36" type="profile" targetId="c822-7ad0-f24a-e4af"/>
+                <infoLink name="Swiftstride" hidden="false" id="464d-720d-d564-c558" type="profile" targetId="dc91-48b3-3696-217"/>
+              </infoLinks>
+            </infoGroup>
+          </infoGroups>
         </selectionEntry>
         <selectionEntry type="model" import="true" name="Giant Wolf" hidden="true" id="810c-ee71-47ce-867d" subType="mount" sortIndex="1">
           <costs>
