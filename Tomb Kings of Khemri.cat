@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="be27-8084-f552-1f4" name="Tomb Kings of Khemri" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="33" revision="46" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="be27-8084-f552-1f4" name="Tomb Kings of Khemri" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="33" revision="51" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Dry as Dust" hidden="false" id="ae9b-6cef-787a-da54" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="153" publicationId="7c89-736c-3139-24a0">
       <characteristics>
@@ -765,7 +765,15 @@
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Skeleton Chariot" hidden="false" id="4a24-ffc8-223a-d8d4" collective="true">
       <infoLinks>
-        <infoLink name="Skeletal Chariot" hidden="false" type="profile" id="dfe1-74b6-2872-dc22" targetId="22be-951e-6b32-6af6"/>
+        <infoLink name="Skeletal Chariot" hidden="false" type="profile" id="dfe1-74b6-2872-dc22" targetId="22be-951e-6b32-6af6">
+          <modifiers>
+            <modifier type="set" value="(+3)" field="83ed-7b82-bf1f-e558">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
         <infoLink name="Base (50x100)" hidden="false" type="profile" id="ca57-4e57-ef32-734e" targetId="d456-e30e-f85d-14d"/>
       </infoLinks>
       <infoGroups>
@@ -983,7 +991,7 @@
         </entryLink>
       </entryLinks>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Skeleton Crew" hidden="false" id="497c-ed64-36b0-b581" collective="true">
+    <selectionEntry type="model" import="true" name="Skeleton Crew" hidden="false" id="497c-ed64-36b0-b581" collective="true" subType="crew">
       <infoLinks>
         <infoLink name="Skeleton Crew" hidden="false" type="profile" id="2dbc-2cc1-f7a0-a16d" targetId="9b81-4f72-60e8-a0f8"/>
         <infoLink name="Base (25x25)" hidden="false" type="profile" id="35a5-e4c1-d832-2680" targetId="193c-4d0d-de6b-bbb1"/>
@@ -1005,6 +1013,9 @@
           </constraints>
         </entryLink>
       </entryLinks>
+      <categoryLinks>
+        <categoryLink name="CHARIOT CREW" hidden="false" id="cd1f-bdae-66c8-d1cb" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+      </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Tomb Prince" hidden="false" id="70ec-97fa-8a6a-1443">
       <profiles>
@@ -3283,7 +3294,7 @@
                 </infoLink>
                 <infoLink name="Champion" hidden="false" type="profile" id="b911-ab07-bf1-d62c" targetId="5f1c-fd04-b0d5-d5e"/>
               </infoLinks>
-              <comment>upgrades: ddcd-3ee5-73b4-b87</comment>
+              <comment>upgrades: 4a24-ffc8-223a-d8d4</comment>
               <categoryLinks>
                 <categoryLink targetId="9ec3-3046-6db2-dd57" id="dde-6e5d-7343-e51b" primary="false" name="25PTSLIMIT"/>
                 <categoryLink targetId="83a1-945c-564c-84af" id="36b9-92bf-14fa-f71c" primary="false" name="CHAMPION"/>
@@ -3304,7 +3315,7 @@
               <costs>
                 <cost name="pts" typeId="points" value="6"/>
               </costs>
-              <comment>upgrades: ddcd-3ee5-73b4-b87</comment>
+              <comment>upgrades: 4a24-ffc8-223a-d8d4</comment>
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="710e-a2fc-3656-d017" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
@@ -3326,7 +3337,7 @@
               <costs>
                 <cost name="pts" typeId="points" value="6"/>
               </costs>
-              <comment>upgrades: ddcd-3ee5-73b4-b87</comment>
+              <comment>upgrades: 4a24-ffc8-223a-d8d4</comment>
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="1ab1-ab8d-3056-5555" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
@@ -3335,6 +3346,21 @@
               </categoryLinks>
             </selectionEntry>
           </selectionEntries>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="81b9-9434-d28f-903e"/>
+          </constraints>
+          <modifiers>
+            <modifier type="set" value="2" field="81b9-9434-d28f-903e">
+              <conditions>
+                <condition type="atLeast" value="2" field="selections" scope="parent" childId="364b-9597-19cb-109" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="3" field="81b9-9434-d28f-903e">
+              <conditions>
+                <condition type="atLeast" value="3" field="selections" scope="parent" childId="364b-9597-19cb-109" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
@@ -3813,7 +3839,15 @@
         </entryLink>
       </entryLinks>
       <infoLinks>
-        <infoLink name="Khemrian Warsphinx" hidden="false" type="profile" id="a906-376-a286-36b" targetId="b912-8890-1908-8424"/>
+        <infoLink name="Khemrian Warsphinx" hidden="false" type="profile" id="a906-376-a286-36b" targetId="b912-8890-1908-8424">
+          <modifiers>
+            <modifier type="set" value="(+5)" field="83ed-7b82-bf1f-e558">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
         <infoLink name="Base (60x100)" hidden="false" type="profile" id="d79c-e0cc-6b2d-c3cd" targetId="5125-89a4-916a-eabd"/>
       </infoLinks>
       <costs>

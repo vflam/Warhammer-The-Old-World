@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="4545-8340-9988-9ea0" name="Vampire Counts" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="21" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Giloushaker#2496">
+<catalogue library="false" id="4545-8340-9988-9ea0" name="Vampire Counts" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="22" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Giloushaker#2496">
   <sharedProfiles>
     <profile name="Vampire Count" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="57d7-6e34-d546-4b92">
       <characteristics>
@@ -1431,7 +1431,22 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
             <selectionEntryGroup name="Command" hidden="false" id="d793-fc55-2af5-281c" sortIndex="2">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" id="8d9e-f7de-f79b-5da" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="Battle Standard Bearer" hidden="false" id="a0b8-f9a0-b255-41c5" type="selectionEntry" targetId="5b87-9cf5-953d-3829">
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="false" id="338c-68bb-25d2-a370" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3986-dec4-873-d3d8"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="25"/>
+                  </costs>
+                </entryLink>
               </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="dc4e-e98e-7018-c54b" includeChildSelections="false"/>
+              </constraints>
             </selectionEntryGroup>
             <selectionEntryGroup name="Equipment" hidden="false" id="5c62-c0f8-897c-fe45" sortIndex="9">
               <entryLinks>
@@ -4144,7 +4159,15 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
     </selectionEntry>
     <selectionEntry type="model" name="Terrorgheist" id="450fb3b2-1df3aa7c" hidden="false">
       <infoLinks>
-        <infoLink name="Terrorgheist" hidden="false" type="profile" id="75ff5c58-cfd9ebc2" targetId="20d6-3c33-ed64-2649"/>
+        <infoLink name="Terrorgheist" hidden="false" type="profile" id="75ff5c58-cfd9ebc2" targetId="20d6-3c33-ed64-2649">
+          <modifiers>
+            <modifier type="set" value="(+6)" field="83ed-7b82-bf1f-e558">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
         <infoLink name="Base (100x150)" hidden="false" type="profile" id="bb2be48c-c1d7cd6" targetId="b56f-7f81-4ba1-ed2c"/>
       </infoLinks>
       <costs>
@@ -4501,9 +4524,29 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
         <modifier type="set" value="false" field="hidden">
           <conditions>
             <condition type="atLeast" value="1" field="selections" scope="roster" childId="d2665ea6-30239fb0" shared="true" includeChildSelections="true"/>
+            <condition type="atMost" value="0" field="selections" scope="roster" childId="435b-9749-e6c6-32a5" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
       </modifiers>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="2f4-5c2b-a236-6f79" includeChildSelections="true"/>
+      </constraints>
+    </entryLink>
+    <entryLink import="true" name="Vargheists" hidden="true" id="435b-9749-e6c6-32a5" type="selectionEntry" targetId="83c603e2-69f18f2c">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="97a1-530e-22ab-7a57" targetId="633f-f67a-1b6a-d203" primary="true"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="roster" childId="d2665ea6-30239fb0" shared="true" includeChildSelections="true"/>
+            <condition type="atMost" value="0" field="selections" scope="roster" childId="ccdb-3f83-db2e-bbb5" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="7f37-d048-cbe3-c365" includeChildSelections="true"/>
+      </constraints>
     </entryLink>
   </entryLinks>
   <catalogueLinks>
@@ -4511,7 +4554,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
     <catalogueLink type="catalogue" name="The Lores of Magic" id="e21a-32da-1455-e52e" targetId="f3c5-af11-649d-5dbb"/>
   </catalogueLinks>
   <categoryEntries>
-    <categoryEntry name="Vhargulf or Terrorgeist" hidden="true" id="d41b-d3fa-a08b-a753">
+    <categoryEntry name="Vhargulf or Terrorgheist" hidden="true" id="d41b-d3fa-a08b-a753">
       <modifiers>
         <modifier type="increment" value="1" field="e11c-e3ff-6ea8-f530">
           <repeats>
@@ -4559,6 +4602,11 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
         </modifier>
       </modifiers>
     </categoryEntry>
+    <categoryEntry name="Terrorgheist or Vargheist" hidden="false" id="5cee-e9d4-d77-9e92">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="94d4-a305-e56f-bb9d" includeChildSelections="true"/>
+      </constraints>
+    </categoryEntry>
   </categoryEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup name="Mount" hidden="false" id="1d0e-4804-8b2d-bf85">
@@ -4586,7 +4634,15 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
       <selectionEntries>
         <selectionEntry type="model" name="Mortis Engine" id="680b53e0-f8cc5eaa" hidden="true" subType="mount" sortIndex="5">
           <infoLinks>
-            <infoLink name="Mortis Engine" hidden="false" type="profile" id="f1be7a06-c290a990" targetId="7512-3a1e-a046-58a4"/>
+            <infoLink name="Mortis Engine" hidden="false" type="profile" id="f1be7a06-c290a990" targetId="7512-3a1e-a046-58a4">
+              <modifiers>
+                <modifier type="set" value="(+5)" field="83ed-7b82-bf1f-e558">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base" hidden="false" type="profile" id="e5fb812e-f8e70238" targetId="d456-e30e-f85d-14d"/>
           </infoLinks>
           <costs>
@@ -4704,7 +4760,15 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
         </selectionEntry>
         <selectionEntry type="model" name="Coven Throne" id="3d22ed0c-a1184156" hidden="true" subType="mount" sortIndex="6">
           <infoLinks>
-            <infoLink name="Coven Throne" hidden="false" type="profile" id="b02d4e2a-a5f9b4d4" targetId="43a8-189a-dac9-b9ca"/>
+            <infoLink name="Coven Throne" hidden="false" type="profile" id="b02d4e2a-a5f9b4d4" targetId="43a8-189a-dac9-b9ca">
+              <modifiers>
+                <modifier type="set" value="(+5)" field="83ed-7b82-bf1f-e558">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base" hidden="false" type="profile" id="7dd96116-6aec13e0" targetId="d456-e30e-f85d-14d"/>
           </infoLinks>
           <costs>
@@ -4950,7 +5014,15 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
         </selectionEntry>
         <selectionEntry type="model" name="Nightmare" id="9f83d124-2c5cfe6e" hidden="true" subType="mount" sortIndex="3">
           <infoLinks>
-            <infoLink name="Nightmare" hidden="false" type="profile" id="6d27fc2-744ba38c" targetId="ac5a-4d2f-494f-15b7"/>
+            <infoLink name="Nightmare" hidden="false" type="profile" id="6d27fc2-744ba38c" targetId="ac5a-4d2f-494f-15b7">
+              <modifiers>
+                <modifier type="set" value="(+4)" field="83ed-7b82-bf1f-e558">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base" hidden="false" type="profile" id="dc3d5ea-fd1dfe94" targetId="3a8b-1dd5-77fb-fdc3"/>
           </infoLinks>
           <costs>

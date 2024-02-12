@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="f8cb-e518-1881-292" name="Kingdom of Bretonnia" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="1" revision="77" authorUrl="www.newrecruit.eu" authorContact="newrecruit.eu@gmail.com" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="f8cb-e518-1881-292" name="Kingdom of Bretonnia" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="1" revision="78" authorUrl="www.newrecruit.eu" authorContact="newrecruit.eu@gmail.com" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile typeId="b070-143a-73f-2772" id="cd5f-980c-2da9-31b" name="Grail Knight" hidden="false" publicationId="3a81ff07--pubd1e638" typeName="Model">
       <characteristics>
@@ -889,7 +889,6 @@ Note that when the Green Knight appears within a natural terrain feature, he mus
         <characteristic name="A" typeId="dddc-9fbd-b0fd-a480">3</characteristic>
         <characteristic name="Ld" typeId="c435-6b14-f77e-3c72">7</characteristic>
       </characteristics>
-      <comment>New Entry/Crew</comment>
     </profile>
     <profile name="Bombard" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="2746-8b42-242b-8634">
       <characteristics>
@@ -1125,7 +1124,15 @@ Bombard Misfire Table
     <selectionEntry type="model" import="true" name="Royal Pegasus" hidden="false" id="b064-314f-cf89-2e19" collective="true" subType="mount">
       <infoLinks>
         <infoLink name="Base (50x50)" hidden="false" type="profile" id="83c3-84aa-6207-6ddf" targetId="7813-4d15-143d-1bf1"/>
-        <infoLink name="Royal Pegasus" hidden="false" type="profile" id="ecf4-3cd6-f5a-88bc" targetId="5282-ba6d-c1e0-f1b1"/>
+        <infoLink name="Royal Pegasus" hidden="false" type="profile" id="ecf4-3cd6-f5a-88bc" targetId="5282-ba6d-c1e0-f1b1">
+          <modifiers>
+            <modifier type="set" value="(+1)" field="83ed-7b82-bf1f-e558">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
       </infoLinks>
       <entryLinks>
         <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="7429-9317-1b06-7965" targetId="721d-36e3-388a-c0d6" sortIndex="2">
@@ -1172,7 +1179,15 @@ Bombard Misfire Table
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Barded Pegasus" hidden="false" id="b7b3-cc09-3e53-eac1" collective="true" subType="mount">
       <infoLinks>
-        <infoLink name="Warhorse" hidden="false" type="profile" id="bcf0-f414-d1b8-7c6c" targetId="8502-58cb-c429-6ac2"/>
+        <infoLink name="Warhorse" hidden="false" type="profile" id="bcf0-f414-d1b8-7c6c" targetId="8502-58cb-c429-6ac2">
+          <modifiers>
+            <modifier type="set" value="(+1)" field="83ed-7b82-bf1f-e558">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
         <infoLink name="Base (40x60)" hidden="false" type="profile" id="7342-73d5-f57e-53f8" targetId="edea-5f38-530a-57f1"/>
       </infoLinks>
       <entryLinks>
@@ -3877,7 +3892,7 @@ Bombard Misfire Table
             </entryLink>
           </entryLinks>
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Peasant Crew" hidden="false" id="9f81-8ed3-6f80-3f3f" collective="true" sortIndex="2">
+            <selectionEntry type="model" import="true" name="Peasant Crew" hidden="false" id="9f81-8ed3-6f80-3f3f" collective="true" sortIndex="2" subType="crew">
               <infoLinks>
                 <infoLink name="Peasant Crew" hidden="false" type="profile" id="d24-ea12-2ff2-70cd" targetId="5337-a482-1c22-2420"/>
                 <infoLink name="Base (25x25)" hidden="false" type="profile" id="aecf-1671-a9af-be54" targetId="193c-4d0d-de6b-bbb1"/>
@@ -3893,6 +3908,9 @@ Bombard Misfire Table
                   </constraints>
                 </entryLink>
               </entryLinks>
+              <categoryLinks>
+                <categoryLink name="CHARIOT CREW" hidden="false" id="4369-ae5d-4989-934d" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+              </categoryLinks>
             </selectionEntry>
           </selectionEntries>
           <categoryLinks>
@@ -4954,7 +4972,7 @@ Bombard Misfire Table
     </entryLink>
     <entryLink import="true" name="Sargeants-At-Arms" hidden="false" type="selectionEntry" id="dd19-4940-931a-b91" targetId="d551-f5cd-bc4d-1036">
       <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="1cef-3d99-4ed2-29fa" targetId="a4cc-15c9-cfae-1b3b" primary="false"/>
+        <categoryLink name="Characters" hidden="false" id="1cef-3d99-4ed2-29fa" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Knights of the Realm on Foot" hidden="false" type="selectionEntry" id="c437-f53b-e053-9ca1" targetId="a70a-7cbc-f4ac-ebd8">
@@ -5024,7 +5042,7 @@ Bombard Misfire Table
     </entryLink>
     <entryLink import="true" name="Pegasus Knights" hidden="false" type="selectionEntry" id="4102-335d-7083-d626" targetId="7e94-c1d1-11c2-d811">
       <categoryLinks>
-        <categoryLink name="Special" hidden="false" id="7dac-6858-6685-ed62" targetId="633f-f67a-1b6a-d203" primary="false"/>
+        <categoryLink name="Special" hidden="false" id="7dac-6858-6685-ed62" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Mounted Yeomen" hidden="false" type="selectionEntry" id="82b1-8864-9605-6db7" targetId="f349-7fe2-2170-2f98">
