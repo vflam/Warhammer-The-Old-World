@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="79" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
+    <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
     <categoryEntry id="f0e3-2e32-8866-ea32" name="Core"/>
     <categoryEntry name="Special" hidden="false" id="633f-f67a-1b6a-d203"/>
@@ -53,6 +54,7 @@
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
       <categoryLinks>
+        <categoryLink name="Named Characters" hidden="false" id="e485-d537-e197-203" targetId="3ba8-a41e-b6ae-d4ba" type="category"/>
         <categoryLink name="Characters" hidden="false" id="a936-639f-e214-e9d" targetId="a4cc-15c9-cfae-1b3b">
           <constraints>
             <constraint type="max" value="50" field="limit::points" scope="force" shared="true" id="abe-35b3-cb6f-604d" percentValue="true" includeChildSelections="true" includeChildForces="false"/>
