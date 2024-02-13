@@ -50,6 +50,8 @@
     <categoryEntry name="MAY_HAVE_LIGHT_ARMOUR" hidden="true" id="may-have-light-armour"/>
     <categoryEntry name="MAY_HAVE_FULL_PLATE_ARMOUR" hidden="true" id="may-have-full-plate-armour"/>
     <categoryEntry name="MAY_HAVE_HEAVY_ARMOUR" hidden="true" id="may-have-heavy-armour"/>
+    <categoryEntry name="IMPERIAL_WIZARD" hidden="true" id="e937-86f8-97e5-f70c"/>
+    <categoryEntry name="LICHE PRIEST" hidden="true" id="8c3e-4da8-b8-cedd"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
@@ -64,6 +66,18 @@
           <constraints>
             <constraint type="min" value="25" field="limit::points" scope="force" shared="true" id="563-332d-aa18-dad" percentValue="true" includeChildSelections="true"/>
           </constraints>
+          <modifiers>
+            <modifier type="set" value="33" field="563-332d-aa18-dad">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="708f-d597-bd5f-a586" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="33" field="563-332d-aa18-dad">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </categoryLink>
         <categoryLink name="Special" hidden="false" id="c64f-52a4-9d57-2c86" targetId="633f-f67a-1b6a-d203">
           <constraints>

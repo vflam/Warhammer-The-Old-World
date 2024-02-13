@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="be27-8084-f552-1f4" name="Tomb Kings of Khemri" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="33" revision="56" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="be27-8084-f552-1f4" name="Tomb Kings of Khemri" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="33" revision="57" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Dry as Dust" hidden="false" id="ae9b-6cef-787a-da54" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="153" publicationId="7c89-736c-3139-24a0">
       <characteristics>
@@ -1959,6 +1959,7 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
           </selectionEntryGroups>
           <categoryLinks>
             <categoryLink name="Regular Infantry" hidden="false" id="a7be-f531-8ff9-4d8a" targetId="f3f7-ca43-674e-115f" primary="false"/>
+            <categoryLink name="LICH PRIEST" hidden="false" id="c488-e666-c64a-4cf2" targetId="8c3e-4da8-b8-cedd" primary="false"/>
           </categoryLinks>
           <modifiers>
             <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="96fd-6f84-e18d-8dd5">
@@ -2093,6 +2094,7 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
           </selectionEntryGroups>
           <categoryLinks>
             <categoryLink name="Regular Infantry" hidden="false" id="fcd4-dd5f-1562-c04" targetId="f3f7-ca43-674e-115f" primary="false"/>
+            <categoryLink name="LICH PRIEST" hidden="false" id="b2ea-e5ae-9524-7692" targetId="8c3e-4da8-b8-cedd" primary="false"/>
           </categoryLinks>
           <modifiers>
             <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="b463-f97b-a5b6-fd38">
@@ -4631,7 +4633,7 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
         </infoGroup>
       </infoGroups>
     </selectionEntry>
-    <selectionEntry type="unit" import="true" name="Skeleton Infantry Cohorts" hidden="false" id="d53d-d4a2-33fc-6b5e" collective="false">
+    <selectionEntry type="unit" import="true" name="Skeleton Infantry Cohort" hidden="false" id="d53d-d4a2-33fc-6b5e" collective="false">
       <profiles>
         <profile name="Skeleton Infatry Cohorts" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="de7-bef1-9c39-5e3d">
           <characteristics>
@@ -4643,19 +4645,21 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
       <selectionEntries>
         <selectionEntry type="model" name="Royal Host Warrior" id="b7d1aef7-fb3577c5" hidden="false" sortIndex="2">
           <infoLinks>
-            <infoLink name="Royal Host Warrior" hidden="false" type="profile" id="acc5fecd-a8557d03" targetId="6f60-6a29-29ac-be7f"/>
+            <infoLink name="Royal Host Warrior" hidden="false" type="profile" id="acc5fecd-a8557d03" targetId="6f60-6a29-29ac-be7f">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="5012-52b0-a326-8032" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base" hidden="false" type="profile" id="a50225bb-beeb0549" targetId="193c-4d0d-de6b-bbb1"/>
           </infoLinks>
           <costs>
             <cost name="pts" typeId="points" value="5"/>
           </costs>
           <entryLinks>
-            <entryLink name="Hand weapons" id="d63f1de7-786e27b5" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
-              <constraints>
-                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="da55f294-514f919e"/>
-                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="c86af0f6-4360e3c0"/>
-              </constraints>
-            </entryLink>
             <entryLink name="thrusting spears" id="7f427837-9c55f705" hidden="false" type="selectionEntry" targetId="99d2-7f59-5c14-3bf7" sortIndex="4">
               <constraints>
                 <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="6dc5d664-3be4d9ae"/>
@@ -4674,9 +4678,15 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
                 <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="38452a-17f4f3d4"/>
               </constraints>
             </entryLink>
+            <entryLink name="Hand weapons" id="a6cf-9fa3-aaa9-595a" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="7d16-7d07-21c9-a3f"/>
+                <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="3d63-b36d-e6dc-d763"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Command" hidden="false" id="e328-a4da-54c9-5bf4" sortIndex="5">
+            <selectionEntryGroup name="Command" hidden="false" id="e328-a4da-54c9-5bf4" sortIndex="5" collapsible="true">
               <entryLinks>
                 <entryLink import="true" name="Cohorts Master of Arms" hidden="false" id="5012-52b0-a326-8032" type="selectionEntry" targetId="1666-6f78-9e66-d298">
                   <modifiers>
@@ -4706,6 +4716,13 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="530b-1c3a-d78b-791e" includeChildSelections="false"/>
               </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="equalTo" value="1" field="selections" scope="self" childId="ea7610f4-b8d3a1fe" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <constraints>
@@ -4717,7 +4734,15 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
         </selectionEntry>
         <selectionEntry type="model" name="Royal Host Archer" id="ea7610f4-b8d3a1fe" hidden="false" sortIndex="1">
           <infoLinks>
-            <infoLink name="Royal Host Archer" hidden="false" type="profile" id="aba6d9d2-d668431c" targetId="ed5c-f18b-eb93-771a"/>
+            <infoLink name="Royal Host Archer" hidden="false" type="profile" id="aba6d9d2-d668431c" targetId="ed5c-f18b-eb93-771a">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="f039-29a3-256c-8762" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base" hidden="false" type="profile" id="97387676-8963d40" targetId="193c-4d0d-de6b-bbb1"/>
           </infoLinks>
           <costs>
@@ -4744,7 +4769,7 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Command" hidden="false" id="c822-b8f6-6b66-1c59" sortIndex="4">
+            <selectionEntryGroup name="Command" hidden="false" id="c822-b8f6-6b66-1c59" sortIndex="4" collapsible="true">
               <entryLinks>
                 <entryLink import="true" name="Cohorts Master of Arms" hidden="false" id="f039-29a3-256c-8762" type="selectionEntry" targetId="1666-6f78-9e66-d298">
                   <modifiers>
@@ -4774,6 +4799,13 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d317-b153-e911-52a8" includeChildSelections="false"/>
               </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="equalTo" value="1" field="selections" scope="self" childId="ea7610f4-b8d3a1fe" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <constraints>
@@ -4977,7 +5009,15 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
       <selectionEntries>
         <selectionEntry type="model" name="Royal Host Horseman" id="8ff492c0-fb5f620a" hidden="false">
           <infoLinks>
-            <infoLink name="Royal Host Horseman" hidden="false" type="profile" id="87e4d7e6-1644ef0" targetId="e466-d93e-588c-a7f0"/>
+            <infoLink name="Royal Host Horseman" hidden="false" type="profile" id="87e4d7e6-1644ef0" targetId="e466-d93e-588c-a7f0">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="d362-1eae-8443-84ce" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base" hidden="false" type="profile" id="53f1d90e-9afcb118" targetId="2d9f-e535-9b2e-ca11"/>
           </infoLinks>
           <costs>
@@ -5036,7 +5076,7 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
             </selectionEntry>
           </selectionEntries>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Command" hidden="false" id="1ff81101-ac6c7457" sortIndex="6">
+            <selectionEntryGroup name="Command" hidden="false" id="1ff81101-ac6c7457" sortIndex="6" collapsible="true">
               <entryLinks>
                 <entryLink import="true" name="Cavalry Cohorts Musician" hidden="false" id="27a-7787-c36-df97" type="selectionEntry" targetId="fd68-1ce3-84d9-413f">
                   <modifiers>
@@ -5077,7 +5117,15 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
         </selectionEntry>
         <selectionEntry type="model" name="Royal Host Horse Archer" id="7ccca153-8e53ce01" hidden="false">
           <infoLinks>
-            <infoLink name="Royal Host Horse Archer" hidden="false" type="profile" id="d8efdd41-7cc3de97" targetId="1e62-1655-35f7-786f"/>
+            <infoLink name="Royal Host Horse Archer" hidden="false" type="profile" id="d8efdd41-7cc3de97" targetId="1e62-1655-35f7-786f">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="d362-1eae-8443-84ce" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base" hidden="false" type="profile" id="2f362a7f-6299c28d" targetId="2d9f-e535-9b2e-ca11"/>
           </infoLinks>
           <costs>
@@ -5130,7 +5178,7 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
             </selectionEntry>
           </selectionEntries>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Command" hidden="false" id="9e96-8a9-14fb-9da0" sortIndex="5">
+            <selectionEntryGroup name="Command" hidden="false" id="9e96-8a9-14fb-9da0" sortIndex="5" collapsible="true">
               <entryLinks>
                 <entryLink import="true" name="Cavalry Cohorts Musician" hidden="false" id="4d83-6ee1-739c-2a34" type="selectionEntry" targetId="fd68-1ce3-84d9-413f">
                   <modifiers>
@@ -5173,7 +5221,7 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
       <selectionEntryGroups>
         <selectionEntryGroup name="Special Rules" hidden="false" id="93f6d715-d9d61d0b">
           <selectionEntries>
-            <selectionEntry name="Counter Charge " id="3b8ec521-f4fe36f7" type="upgrade" import="true" hidden="false">
+            <selectionEntry name="Counter Charge" id="3b8ec521-f4fe36f7" type="upgrade" import="true" hidden="false">
               <costs>
                 <cost name="pts" typeId="points" value="0"/>
               </costs>
@@ -5203,7 +5251,7 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
             <infoLink name="Horde" hidden="false" id="b314c5ab-47bd53f9" type="profile" targetId="9cba-89a5-1796-5fe4"/>
             <infoLink name="Motley Crew*" hidden="false" id="52743404-4d4529ce" type="profile" targetId="6359-4018-5cd4-3720"/>
             <infoLink name="Nehekharan Undead" hidden="false" id="42be4ebb-537de649" type="profile" targetId="cc25-1643-8beb-8c64"/>
-            <infoLink name="Regeneration " hidden="false" id="dc7e87e2-90c5f32c" type="profile" targetId="2eb0-1ec8-8e04-72d4">
+            <infoLink name="Regeneration" hidden="false" id="dc7e87e2-90c5f32c" type="profile" targetId="2eb0-1ec8-8e04-72d4">
               <modifiers>
                 <modifier type="append" value="(6+)" field="name"/>
               </modifiers>
@@ -5305,24 +5353,24 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
         <infoGroup name="Special Rules" hidden="false" id="7d74-b767-5b4-bcca">
           <infoLinks>
             <infoLink name="Ambushers" hidden="false" id="fbcbd62d-446121e3" type="profile" targetId="8c0b-6fe6-dc06-512"/>
-            <infoLink name="Armoured Hide " hidden="false" id="2ef6ba0c-43e5a656" type="profile" targetId="5450-cbf1-3e74-254a">
+            <infoLink name="Armoured Hide" hidden="false" id="2ef6ba0c-43e5a656" type="profile" targetId="5450-cbf1-3e74-254a">
               <modifiers>
                 <modifier type="append" value="(1)" field="name"/>
               </modifiers>
             </infoLink>
-            <infoLink name="Impact Hits " hidden="false" id="30952037-9dd35f05" type="profile" targetId="5c2-e9dd-2715-a0c0">
+            <infoLink name="Impact Hits" hidden="false" id="30952037-9dd35f05" type="profile" targetId="5c2-e9dd-2715-a0c0">
               <modifiers>
                 <modifier type="append" value="(1)" field="name"/>
               </modifiers>
             </infoLink>
-            <infoLink name="Indomitable " hidden="false" id="e46a-14c5-ae84-e33c" type="profile" targetId="9e4d-c79a-658d-6900">
+            <infoLink name="Indomitable" hidden="false" id="e46a-14c5-ae84-e33c" type="profile" targetId="9e4d-c79a-658d-6900">
               <modifiers>
                 <modifier type="append" value="(1)" field="name"/>
               </modifiers>
             </infoLink>
             <infoLink name="Move Through Cover" hidden="false" id="925f1e98-4ca99c02" type="profile" targetId="e83e-f127-1904-3858"/>
             <infoLink name="Nehekharan Undead" hidden="false" id="7dce-9616-7773-67dc" type="profile" targetId="cc25-1643-8beb-8c64"/>
-            <infoLink name="Regeneration " hidden="false" id="6b30-2105-289e-4faf" type="profile" targetId="2eb0-1ec8-8e04-72d4">
+            <infoLink name="Regeneration" hidden="false" id="6b30-2105-289e-4faf" type="profile" targetId="2eb0-1ec8-8e04-72d4">
               <modifiers>
                 <modifier type="append" value="(6+)" field="name"/>
               </modifiers>
@@ -5486,18 +5534,18 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="118a-f2fa-c01b-267e">
           <infoLinks>
-            <infoLink name="Cleaving Blow " hidden="false" id="8dfbb9f5-162eeaeb" type="profile" targetId="e8fa-c1b8-3da7-f23d">
+            <infoLink name="Cleaving Blow" hidden="false" id="8dfbb9f5-162eeaeb" type="profile" targetId="e8fa-c1b8-3da7-f23d">
               <modifiers>
                 <modifier type="append" value="(Tomb Guard Crew only)" field="name"/>
               </modifiers>
             </infoLink>
             <infoLink name="Dry as Dust" hidden="false" id="6773b160-2305d02a" type="profile" targetId="ae9b-6cef-787a-da54"/>
-            <infoLink name="Impact Hits " hidden="false" id="8accb213-cc4d58c1" type="profile" targetId="5c2-e9dd-2715-a0c0">
+            <infoLink name="Impact Hits" hidden="false" id="8accb213-cc4d58c1" type="profile" targetId="5c2-e9dd-2715-a0c0">
               <modifiers>
                 <modifier type="append" value="(D3+1)" field="name"/>
               </modifiers>
             </infoLink>
-            <infoLink name="Indomitable " hidden="false" id="27cba910-1a0d105a" type="profile" targetId="9e4d-c79a-658d-6900">
+            <infoLink name="Indomitable" hidden="false" id="27cba910-1a0d105a" type="profile" targetId="9e4d-c79a-658d-6900">
               <modifiers>
                 <modifier type="append" value="(2)" field="name"/>
               </modifiers>
@@ -5505,7 +5553,7 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
             <infoLink name="Khopesh" hidden="false" id="625a-bd78-ac2f-a735" type="profile" targetId="b049-caf4-f185-d3d4"/>
             <infoLink name="Nehekharan Undead" hidden="false" id="f003-6407-5bb4-a819" type="profile" targetId="cc25-1643-8beb-8c64"/>
             <infoLink name="Open Order" hidden="false" id="6c4b-1f0-5dc8-2769" type="profile" targetId="5b67-8535-146c-7cea"/>
-            <infoLink name="Regeneration " hidden="false" id="a296-b3bb-56da-c7b5" type="profile" targetId="2eb0-1ec8-8e04-72d4">
+            <infoLink name="Regeneration" hidden="false" id="a296-b3bb-56da-c7b5" type="profile" targetId="2eb0-1ec8-8e04-72d4">
               <modifiers>
                 <modifier type="append" value="(6+)" field="name"/>
               </modifiers>
@@ -5721,8 +5769,57 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
         </modifier>
       </modifiers>
     </entryLink>
-    <entryLink import="true" name="Skeleton Cavalry Cohort" hidden="false" id="a60b7a00-59050f4a" type="selectionEntry" targetId="c72d4456-2206dd20"/>
-    <entryLink import="true" name="New Entry" hidden="false" id="3d62c558-86da0cc2" type="selectionEntry" targetId="b66d-46bf-9e6c-ea97"/>
+    <entryLink import="true" name="Prince Apophas" hidden="false" type="selectionEntry" id="fb2d-588c-2f49-e25a" targetId="293a61dc-79bd53e6">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="6de7-dd76-8f79-3a7f" targetId="a4cc-15c9-cfae-1b3b" primary="false"/>
+        <categoryLink name="Named Characters" hidden="false" id="d709-8f1-5b4c-67f9" targetId="3ba8-a41e-b6ae-d4ba" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="c069-6c2-a9c5-7386" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="e000-d3b2-404b-5345" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="c069-6c2-a9c5-7386">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="roster" childId="300-f70e-f7b-442d" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Settra the Imperishable" hidden="false" type="selectionEntry" id="e04b-3d83-a607-aaf" targetId="38a76fc0-593570a">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="dbf4-6ff3-5bf-e589" targetId="a4cc-15c9-cfae-1b3b" primary="false"/>
+        <categoryLink name="Named Characters" hidden="false" id="79e7-df91-2bd3-dde1" targetId="3ba8-a41e-b6ae-d4ba" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="8df0-fe45-e629-4ace" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="1fc6-38d3-7017-feea" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="8df0-fe45-e629-4ace">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="roster" childId="300-f70e-f7b-442d" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Nekaph" hidden="false" type="selectionEntry" id="ff18-88fa-12d2-b269" targetId="8677d14e-6f10e758">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="68d9-1c24-b64e-ac2b" targetId="a4cc-15c9-cfae-1b3b" primary="false"/>
+        <categoryLink name="Named Characters" hidden="false" id="5cf7-5196-6129-cc72" targetId="3ba8-a41e-b6ae-d4ba" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="5d0d-4045-7dd1-b256" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="e2e-a707-1df2-f28" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="5d0d-4045-7dd1-b256">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="roster" childId="300-f70e-f7b-442d" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
   </entryLinks>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
   <catalogueLinks>
