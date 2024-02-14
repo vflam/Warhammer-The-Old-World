@@ -47,9 +47,7 @@
     <categoryEntry name="VAMPIRE" hidden="true" id="4813-a63e-57ed-dc4"/>
     <categoryEntry name="NECROMANCER" hidden="true" id="bd9e-eec8-c99c-db01"/>
     <categoryEntry name="MAY_HAVE_SHIELD" hidden="true" id="may-have-shield"/>
-    <categoryEntry name="MAY_HAVE_LIGHT_ARMOUR" hidden="true" id="may-have-light-armour"/>
-    <categoryEntry name="MAY_HAVE_FULL_PLATE_ARMOUR" hidden="true" id="may-have-full-plate-armour"/>
-    <categoryEntry name="MAY_HAVE_HEAVY_ARMOUR" hidden="true" id="may-have-heavy-armour"/>
+    <categoryEntry name="MAY_HAVE_ARMOUR" hidden="true" id="may-have-armour"/>
     <categoryEntry name="IMPERIAL_WIZARD" hidden="true" id="e937-86f8-97e5-f70c"/>
     <categoryEntry name="LICHE PRIEST" hidden="true" id="8c3e-4da8-b8-cedd"/>
   </categoryEntries>
