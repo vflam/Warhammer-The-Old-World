@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="13ed-b3e5-e610-615f" name="Ogre Kingdoms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="28" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorName="Flammy">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="13ed-b3e5-e610-615f" name="Ogre Kingdoms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="29" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorName="Flammy">
   <sharedProfiles>
     <profile name="Tyrant" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="f58e-2d63-3721-5926">
       <characteristics>
@@ -1881,7 +1881,53 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Special Rules" hidden="false" id="c318e2aa-a7e4a554" sortIndex="9"/>
+            <selectionEntryGroup name="Special Rules" hidden="false" id="c318e2aa-a7e4a554" sortIndex="9">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="d153-bb70-61e3-4a91">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4084-9b4-4128-687a" includeChildSelections="false"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Ambushers" hidden="false" id="e59e-b0cd-e398-e6b1" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="10"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Scouts" hidden="false" id="c815-1438-5cff-9a58">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8dcb-4622-a5e4-4da9" includeChildSelections="false"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Scouts" hidden="false" id="afb7-67dc-8b14-db62" type="profile" targetId="fe5e-8838-7fbd-a7ec"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="5"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Vanguard" hidden="false" id="4a0e-c526-aad7-4e7f">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="290e-d780-7386-8c1b" includeChildSelections="false"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Vanguard" hidden="false" id="2ad1-72ea-5c49-1ed8" type="profile" targetId="691e-10ec-4f7c-a2c4"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="3"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b6bf-6705-cb94-8a05" includeChildSelections="false"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="40d1-27f6-4cdb-cb38" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntryGroup>
           </selectionEntryGroups>
           <constraints>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1d8018ae-348addb8"/>
@@ -1918,6 +1964,11 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
             <infoLink name="Impact Hits" hidden="false" id="ca73c2c4-fd52428e/Hunter" type="profile" targetId="5c2-e9dd-2715-a0c0">
               <modifiers>
                 <modifier type="append" value="(1)" field="name"/>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="40d1-27f6-4cdb-cb38" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
               </modifiers>
             </infoLink>
             <infoLink name="Loner" hidden="false" id="a8bf5a8c-956542d6/Hunter" type="profile" targetId="2ecd-c6b3-bd8b-864b"/>

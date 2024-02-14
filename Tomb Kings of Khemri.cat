@@ -1071,6 +1071,11 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
       </characteristics>
       <comment>New Entry/Tomb Captain</comment>
     </profile>
+    <profile name="The Terrors Below" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="92be-d1d2-2f6a-e321">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Any Tomb Scorpion or unit of Necroserpents may have this special rule for +2 points per model. When a unit with this special rule is placed on the battlefield as a result of using the From Beneath the Sands special rule, it may nominate a single enemy unit that is within 8&quot; of it and whose troop type is ‘regular infantry’ or ‘heavy infantry’. The nominated enemy unit must immediately make a number of Initiative tests equal to the Unit Strength of this unit. For each test that is failed, a single model belonging to the nominated unit is removed from play as a casualty.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="model" import="true" name="Skeletal Steed" hidden="false" id="cb60-7835-709e-f0b9" collective="true" subType="mount">
@@ -1951,6 +1956,21 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
             <selectionEntryGroup name="Command" hidden="false" id="640c-6851-ced4-593a" sortIndex="2">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="7ddb-c706-69df-d8b8" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="Battle Standard Bearer" hidden="true" id="3d4-78d3-16c0-3b0a" type="selectionEntry" targetId="5b87-9cf5-953d-3829">
+                  <costs>
+                    <cost name="pts" typeId="points" value="25"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="false" id="cb23-790-b960-e30d" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6"/>
+                  </entryLinks>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a52f-3582-9b47-8fa9"/>
@@ -2095,6 +2115,7 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
           <categoryLinks>
             <categoryLink name="Regular Infantry" hidden="false" id="fcd4-dd5f-1562-c04" targetId="f3f7-ca43-674e-115f" primary="false"/>
             <categoryLink name="LICH PRIEST" hidden="false" id="b2ea-e5ae-9524-7692" targetId="8c3e-4da8-b8-cedd" primary="false"/>
+            <categoryLink name="HIGH PRIEST" hidden="false" id="bdc7-58da-90d8-c59e" targetId="6b0d-1972-a60c-c815" primary="false"/>
           </categoryLinks>
           <modifiers>
             <modifier type="remove" value="f3f7-ca43-674e-115f" field="category" id="b463-f97b-a5b6-fd38">
@@ -3933,6 +3954,24 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a1b1-f8a9-50d7-c941"/>
           </constraints>
         </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="The Terrors Below" hidden="true" id="a0fa-605a-9764-9d61">
+          <infoLinks>
+            <infoLink name="The Terrors Below" hidden="false" id="6317-3daa-4b8-286a" type="profile" targetId="92be-d1d2-2f6a-e321"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="25e4-4443-3823-e2ae" includeChildSelections="false"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="2"/>
+          </costs>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true" includeChildSelections="false"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
       </selectionEntries>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="9e5d-2303-fb09-d041">
@@ -5334,7 +5373,7 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
             <cost name="pts" typeId="points" value="38"/>
           </costs>
           <entryLinks>
-            <entryLink name="Hand Weapon" id="78739bdf-fda84c6d" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6">
+            <entryLink name="Hand Weapon" id="78739bdf-fda84c6d" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
               <constraints>
                 <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="fa2d858c-5c0a15d6"/>
                 <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="81a13de-dc8a08a8"/>
@@ -5347,6 +5386,26 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
           <categoryLinks>
             <categoryLink name="Monstrous Cavalry" hidden="false" id="4e575c5b-8795dfe9" targetId="2c85-5f2b-9288-1257" primary="false"/>
           </categoryLinks>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="The Terrors Below" hidden="true" id="a4bb-dee-263e-336a" sortIndex="2" collective="true">
+              <infoLinks>
+                <infoLink name="The Terrors Below" hidden="false" id="bb89-2113-94d3-8019" type="profile" targetId="92be-d1d2-2f6a-e321"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d6d2-c814-2507-ecb" includeChildSelections="false"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="2"/>
+              </costs>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true" includeChildSelections="false"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -5833,11 +5892,6 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
     <publication name="Arcane Journal - Tomb Kings of Khemri" hidden="false" id="afac-86a8-e0f-2eef"/>
   </publications>
   <categoryEntries>
-    <categoryEntry name="Monarch of Nehekara" hidden="true" id="86f8-37da-1b61-1f32">
-      <constraints>
-        <constraint type="min" value="1" field="selections" scope="roster" shared="true" id="c3cb-fabd-afc3-e03" includeChildSelections="true"/>
-      </constraints>
-    </categoryEntry>
     <categoryEntry name="Liche Priest" hidden="true" id="7022-2b7-1da6-fc53">
       <constraints>
         <constraint type="min" value="1" field="selections" scope="roster" shared="true" id="c9c-9a09-1c69-84d9" includeChildSelections="true"/>
