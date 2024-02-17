@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="f8cb-e518-1881-292" name="Kingdom of Bretonnia" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="1" revision="85" authorUrl="www.newrecruit.eu" authorContact="newrecruit.eu@gmail.com" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="f8cb-e518-1881-292" name="Kingdom of Bretonnia" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="1" revision="86" authorUrl="www.newrecruit.eu" authorContact="newrecruit.eu@gmail.com" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile typeId="b070-143a-73f-2772" id="cd5f-980c-2da9-31b" name="Grail Knight" hidden="false" publicationId="3a81ff07--pubd1e638" typeName="Model">
       <characteristics>
@@ -914,6 +914,19 @@ Bombard Misfire Table
 6 Boom!: The bombard discharges with an ear-splitting boom, the powerful report knocking the gun from its carriage. This weapon shoots this turn, as if a ‘2’ had been rolled on the Artillery dice, rather than a ‘Misfire’. However, it will take some time to right the toppled gun. This weapon cannot shoot during the next round.</characteristic>
       </characteristics>
     </profile>
+    <profile name="Crusader&apos;s Zeal" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c985-857f-beef-dd45">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit with this special rule increases its maximum possible charge range by 1&quot; and, when it makes a Charge roll, may apply a +1 modifier to the result. In addition, a unit with this special rule gains the Impetuous special rule.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="The Crusader&apos;s Vow" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1d1b-44c8-3693-a9e2">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">The Crusader’s Vow is a Chivalrous Vow, as described on page 108 of Forces of Fantasy. A model with this Chivalrous Vow has the Veteran special rule. In addition, a model with this Chivalrous Vow does not have to make a Panic test when a friendly unit with the Peasantry special rule is destroyed whilst within 6&quot; of it, or when it is fled through by a friendly unit with the Peasantry special rule.
+
+
+A unit with this Chivalrous Vow cannot be joined by a character with the Peasantry special rule. A character with this Chivalrous Vow cannot join a unit with the Peasantry special rule.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="model" import="true" name="Bretonnian Warhorse" hidden="false" id="eba7-2f8e-fdde-d7a4" collective="true" subType="mount">
@@ -1108,6 +1121,15 @@ Bombard Misfire Table
             <infoLink name="The Grail Vow" hidden="false" id="205b-be29-d4c6-1569" type="profile" targetId="c4ac-f6a7-2481-db1a"/>
             <infoLink name="First Charge" hidden="false" id="2c44-e97c-f78-17f6" type="profile" targetId="785a-2886-af42-dce9"/>
             <infoLink name="Living Saints" hidden="false" id="9fd2-f24b-173a-e802" type="profile" targetId="1113-147a-4ed6-67ce"/>
+            <infoLink name="Crusader&apos;s Zeal" hidden="true" id="be71-11d7-9a90-c0b1" type="profile" targetId="c985-857f-beef-dd45">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -1538,7 +1560,7 @@ Bombard Misfire Table
             </selectionEntryGroup>
             <selectionEntryGroup name="Vow" hidden="false" id="78cd-1719-23c8-d501" sortIndex="6" defaultSelectionEntryId="a774-44c9-eadb-3e5f">
               <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="The Knight&apos;s Vow" hidden="false" id="a774-44c9-eadb-3e5f" sortIndex="2">
+                <selectionEntry type="upgrade" import="true" name="The Knight&apos;s Vow" hidden="false" id="a774-44c9-eadb-3e5f" sortIndex="3">
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1911-53b3-92ed-ecc0"/>
                   </constraints>
@@ -1546,7 +1568,7 @@ Bombard Misfire Table
                     <infoLink name="The Knight Vow" hidden="false" type="profile" id="acb3-e97b-2f90-df48" targetId="8ce9-c356-89db-b011"/>
                   </infoLinks>
                 </selectionEntry>
-                <selectionEntry type="upgrade" import="true" name="The Questing Vow" hidden="false" id="90e-6680-4c6-c74" sortIndex="3">
+                <selectionEntry type="upgrade" import="true" name="The Questing Vow" hidden="false" id="90e-6680-4c6-c74" sortIndex="4">
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="925-5471-e339-39b2"/>
                   </constraints>
@@ -1557,7 +1579,7 @@ Bombard Misfire Table
                     <cost name="pts" typeId="points" value="15"/>
                   </costs>
                 </selectionEntry>
-                <selectionEntry type="upgrade" import="true" name="The Grail Vow" hidden="false" id="72f3-3d58-34b3-d171" sortIndex="4">
+                <selectionEntry type="upgrade" import="true" name="The Grail Vow" hidden="false" id="72f3-3d58-34b3-d171" sortIndex="5">
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d6d3-9bad-5baa-155a"/>
                   </constraints>
@@ -1578,7 +1600,7 @@ Bombard Misfire Table
                     <categoryLink name="GRAIL VOW" hidden="false" id="e3ff-762a-c3ac-d8fa" targetId="b611-c8d0-2b34-5096" primary="false"/>
                   </categoryLinks>
                 </selectionEntry>
-                <selectionEntry type="upgrade" import="true" name="The Exile&apos;s Vow" hidden="true" id="eeb-a749-b46f-dc26" sortIndex="1">
+                <selectionEntry type="upgrade" import="true" name="The Exile&apos;s Vow" hidden="true" id="eeb-a749-b46f-dc26" sortIndex="2">
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="37eb-38d3-9702-5f02"/>
                   </constraints>
@@ -1592,6 +1614,21 @@ Bombard Misfire Table
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c637-f6be-935d-faae" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="The Crusader&apos;s Vow" hidden="true" id="b02d-420f-302b-1126" sortIndex="1">
+                  <infoLinks>
+                    <infoLink name="The Crusader&apos;s Vow" hidden="false" id="201c-9efa-d48f-1bcc" type="profile" targetId="1d1b-44c8-3693-a9e2"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="efd0-86b2-bf86-e05a" includeChildSelections="false"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
@@ -1633,6 +1670,15 @@ Bombard Misfire Table
           <infoLinks>
             <infoLink name="Blessings of the Lady" hidden="false" type="profile" id="eb00-4a59-d68a-7f" targetId="e8e9-e956-786-d941"/>
             <infoLink name="Rallying Cry" hidden="false" type="profile" id="8cb7-26f3-a197-e5c1" targetId="23c4-bd19-2422-ad08"/>
+            <infoLink name="Crusader&apos;s Zeal" hidden="true" id="9a68-ff1a-f67c-97ad" type="profile" targetId="c985-857f-beef-dd45">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -1741,7 +1787,7 @@ Bombard Misfire Table
             </selectionEntryGroup>
             <selectionEntryGroup name="Vow" hidden="false" id="721-a7f9-8a45-7727" sortIndex="6" defaultSelectionEntryId="8b58-2ccd-2c1a-2029">
               <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="The Knight&apos;s Vow" hidden="false" id="8b58-2ccd-2c1a-2029" sortIndex="2">
+                <selectionEntry type="upgrade" import="true" name="The Knight&apos;s Vow" hidden="false" id="8b58-2ccd-2c1a-2029" sortIndex="3">
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="72f2-847-3937-c35f"/>
                   </constraints>
@@ -1749,7 +1795,7 @@ Bombard Misfire Table
                     <infoLink name="The Knight Vow" hidden="false" type="profile" id="1a5f-7622-7a89-f4a4" targetId="8ce9-c356-89db-b011"/>
                   </infoLinks>
                 </selectionEntry>
-                <selectionEntry type="upgrade" import="true" name="The Questing Vow" hidden="false" id="fcc3-51c9-55eb-a9bf" sortIndex="3">
+                <selectionEntry type="upgrade" import="true" name="The Questing Vow" hidden="false" id="fcc3-51c9-55eb-a9bf" sortIndex="4">
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="43c3-52a6-1db0-7197"/>
                   </constraints>
@@ -1760,7 +1806,7 @@ Bombard Misfire Table
                     <cost name="pts" typeId="points" value="15"/>
                   </costs>
                 </selectionEntry>
-                <selectionEntry type="upgrade" import="true" name="The Grail Vow" hidden="false" id="e6d2-7ad3-a241-93d9" sortIndex="4">
+                <selectionEntry type="upgrade" import="true" name="The Grail Vow" hidden="false" id="e6d2-7ad3-a241-93d9" sortIndex="5">
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ee52-9ce4-1f2f-be49"/>
                   </constraints>
@@ -1781,7 +1827,7 @@ Bombard Misfire Table
                     <categoryLink name="GRAIL VOW" hidden="false" id="53db-cec4-7cbe-aebe" targetId="b611-c8d0-2b34-5096" primary="false"/>
                   </categoryLinks>
                 </selectionEntry>
-                <selectionEntry type="upgrade" import="true" name="The Exile&apos;s Vow" hidden="true" id="c842-692a-22fa-732" sortIndex="1">
+                <selectionEntry type="upgrade" import="true" name="The Exile&apos;s Vow" hidden="true" id="c842-692a-22fa-732" sortIndex="2">
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8fba-caee-e710-1fe5"/>
                   </constraints>
@@ -1795,6 +1841,21 @@ Bombard Misfire Table
                     <modifier type="set" value="false" field="hidden">
                       <conditions>
                         <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c637-f6be-935d-faae" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="The Crusader&apos;s Vow" hidden="true" id="b8c9-ef42-233e-a55" sortIndex="1">
+                  <infoLinks>
+                    <infoLink name="The Crusader&apos;s Vow" hidden="false" id="8375-d6e4-4d89-3bf0" type="profile" targetId="1d1b-44c8-3693-a9e2"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f2b0-fcc4-34a8-a4e8" includeChildSelections="false"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
@@ -1844,6 +1905,15 @@ Bombard Misfire Table
           <infoLinks>
             <infoLink name="Blessings of the Lady" hidden="false" type="profile" id="fae0-e97a-12d5-e97d" targetId="e8e9-e956-786-d941"/>
             <infoLink name="Rallying Cry" hidden="false" type="profile" id="e5a8-b06d-e084-cb6c" targetId="23c4-bd19-2422-ad08"/>
+            <infoLink name="Crusader&apos;s Zeal" hidden="true" id="e8c6-bac6-73e2-a025" type="profile" targetId="c985-857f-beef-dd45">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -2371,7 +2441,7 @@ Bombard Misfire Table
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f778-fa8b-359a-9c4d-max" includeChildSelections="false"/>
           </constraints>
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="The Knight&apos;s Vow" hidden="false" id="991-551-eab5-af7a" sortIndex="2">
+            <selectionEntry type="upgrade" import="true" name="The Knight&apos;s Vow" hidden="false" id="991-551-eab5-af7a" sortIndex="3">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a6-e85-10b-210b"/>
               </constraints>
@@ -2379,7 +2449,7 @@ Bombard Misfire Table
                 <infoLink name="The Knight Vow" hidden="false" type="profile" id="e61e-17af-ce08-3f57" targetId="8ce9-c356-89db-b011"/>
               </infoLinks>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="The Exile&apos;s Vow" hidden="true" id="a5f8-2b11-4bcc-3a10" sortIndex="1">
+            <selectionEntry type="upgrade" import="true" name="The Exile&apos;s Vow" hidden="true" id="a5f8-2b11-4bcc-3a10" sortIndex="2">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f3c3-98a1-1cdb-246c"/>
               </constraints>
@@ -2394,6 +2464,21 @@ Bombard Misfire Table
                 </modifier>
               </modifiers>
             </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="The Crusader&apos;s Vow" hidden="true" id="9083-5403-ea11-1aa5" sortIndex="1">
+              <infoLinks>
+                <infoLink name="The Crusader&apos;s Vow" hidden="false" id="11c0-ba2c-2bc0-6eaf" type="profile" targetId="1d1b-44c8-3693-a9e2"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2384-95d9-e938-4de3" includeChildSelections="false"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -2403,6 +2488,15 @@ Bombard Misfire Table
             <infoLink name="Close Order" hidden="false" type="profile" id="2d71-108d-9603-a420" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Blessings of the Lady" hidden="false" type="profile" id="eef2-153c-1936-f9aa" targetId="e8e9-e956-786-d941"/>
             <infoLink name="Furious Charge" hidden="false" type="profile" id="bd5-87b4-f939-f48" targetId="eaca-69a2-8b6a-81c6"/>
+            <infoLink name="Crusader&apos;s Zeal" hidden="true" id="1c68-f0ae-d8a-6ec1" type="profile" targetId="c985-857f-beef-dd45">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -2678,9 +2772,9 @@ Bombard Misfire Table
                 <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="d6c0-329d-d752-3aed" targetId="may-have-shield"/>
               </categoryLinks>
               <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Blessed Triptyck" hidden="false" id="7d84-ee10-8b62-b890" collective="true">
+                <selectionEntry type="upgrade" import="true" name="Blessed Tryptich" hidden="false" id="7d84-ee10-8b62-b890" collective="true">
                   <infoLinks>
-                    <infoLink name="Blessed Triptych" hidden="false" type="profile" id="8d3c-264b-c4af-a5f8" targetId="dff9-cd97-d1c-ab35"/>
+                    <infoLink name="Blessed Tryptich" hidden="false" type="profile" id="8d3c-264b-c4af-a5f8" targetId="dff9-cd97-d1c-ab35"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f167-777a-1d18-4274"/>
@@ -2972,6 +3066,15 @@ Bombard Misfire Table
             <infoLink name="Peasantry" hidden="false" type="profile" id="8e3b-a25a-66f0-25e" targetId="36a8-2e1e-31ba-afae"/>
             <infoLink name="Levies" hidden="false" type="profile" id="14cc-b8c0-f3d7-a2d6" targetId="8cc3-d6f5-da17-6600"/>
             <infoLink name="Stubborn" hidden="false" type="profile" id="2190-8c26-8acc-48dd" targetId="e351-bbd6-f470-b604"/>
+            <infoLink name="Crusader&apos;s Zeal" hidden="true" id="2c87-1f11-c5e6-f3c1" type="profile" targetId="c985-857f-beef-dd45">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3118,7 +3221,7 @@ Bombard Misfire Table
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="840e-5049-55f5-28e3-max" includeChildSelections="false"/>
           </constraints>
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="The Knight&apos;s Vow" hidden="false" id="5527-971b-7e73-2171" sortIndex="2">
+            <selectionEntry type="upgrade" import="true" name="The Knight&apos;s Vow" hidden="false" id="5527-971b-7e73-2171" sortIndex="3">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="90f9-62da-6708-d573"/>
               </constraints>
@@ -3126,7 +3229,7 @@ Bombard Misfire Table
                 <infoLink name="The Knight Vow" hidden="false" type="profile" id="e98-79fc-b21a-cb2e" targetId="8ce9-c356-89db-b011"/>
               </infoLinks>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="The Exile&apos;s Vow" hidden="true" id="72ed-aadc-d6f8-1226" sortIndex="1">
+            <selectionEntry type="upgrade" import="true" name="The Exile&apos;s Vow" hidden="true" id="72ed-aadc-d6f8-1226" sortIndex="2">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a27a-a735-5608-6ced"/>
               </constraints>
@@ -3137,6 +3240,21 @@ Bombard Misfire Table
                 <modifier type="set" value="false" field="hidden">
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c637-f6be-935d-faae" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="The Crusader&apos;s Vow" hidden="true" id="efec-8e7b-c190-f119" sortIndex="1">
+              <infoLinks>
+                <infoLink name="The Crusader&apos;s Vow" hidden="false" id="a9ca-91da-b1bc-4e5f" type="profile" targetId="1d1b-44c8-3693-a9e2"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8fcb-bdf3-4531-5aeb" includeChildSelections="false"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
@@ -3162,6 +3280,15 @@ Bombard Misfire Table
             <infoLink name="Impetuous" hidden="false" type="profile" id="fc76-f2dd-bb15-c651" targetId="b664-8530-a988-7ba9"/>
             <infoLink name="Swiftstride" hidden="false" type="profile" id="1ea0-dc31-37de-dd3b" targetId="dc91-48b3-3696-217"/>
             <infoLink name="Lance Formation" hidden="false" type="profile" id="7cf9-f62a-2005-1bae" targetId="cc9a-f69f-d2e7-b352"/>
+            <infoLink name="Crusader&apos;s Zeal" hidden="true" id="e721-d209-8da3-9087" type="profile" targetId="c985-857f-beef-dd45">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3315,7 +3442,7 @@ Bombard Misfire Table
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a9d-e58d-b7e4-cc06-max" includeChildSelections="false"/>
           </constraints>
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="The Knight&apos;s Vow" hidden="false" id="c457-5cde-6518-a5af" sortIndex="2">
+            <selectionEntry type="upgrade" import="true" name="The Knight&apos;s Vow" hidden="false" id="c457-5cde-6518-a5af" sortIndex="3">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="95cb-de99-8c7d-b1bd"/>
               </constraints>
@@ -3323,7 +3450,7 @@ Bombard Misfire Table
                 <infoLink name="The Knight Vow" hidden="false" type="profile" id="fffe-737c-f5b4-158a" targetId="8ce9-c356-89db-b011"/>
               </infoLinks>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="The Exile&apos;s Vow" hidden="true" id="c4fd-845a-ba29-96d2" sortIndex="1">
+            <selectionEntry type="upgrade" import="true" name="The Exile&apos;s Vow" hidden="true" id="c4fd-845a-ba29-96d2" sortIndex="2">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="261f-f125-736c-877"/>
               </constraints>
@@ -3334,6 +3461,21 @@ Bombard Misfire Table
                 <modifier type="set" value="false" field="hidden">
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c637-f6be-935d-faae" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="The Crusader&apos;s Vow" hidden="true" id="9103-721-ffb5-f467" sortIndex="1">
+              <infoLinks>
+                <infoLink name="The Crusader&apos;s Vow" hidden="false" id="62a6-ccc0-d6e1-e24f" type="profile" targetId="1d1b-44c8-3693-a9e2"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b7f8-b173-4159-f7e1" includeChildSelections="false"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
@@ -3359,6 +3501,15 @@ Bombard Misfire Table
             <infoLink name="Counter Charge" hidden="false" type="profile" id="a478-201e-67f2-2a69" targetId="5186-798d-69d-6545"/>
             <infoLink name="Swiftstride" hidden="false" type="profile" id="36f-7c83-6478-905b" targetId="dc91-48b3-3696-217"/>
             <infoLink name="Lance Formation" hidden="false" type="profile" id="fac9-4d6e-db0e-e1a8" targetId="cc9a-f69f-d2e7-b352"/>
+            <infoLink name="Crusader&apos;s Zeal" hidden="true" id="5861-4fed-493c-c7ff" type="profile" targetId="c985-857f-beef-dd45">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3526,6 +3677,15 @@ Bombard Misfire Table
             <infoLink name="Swiftstride" hidden="false" type="profile" id="f322-b660-46ff-e60e" targetId="dc91-48b3-3696-217"/>
             <infoLink name="Lance Formation" hidden="false" type="profile" id="9bd7-db39-498-c8c5" targetId="cc9a-f69f-d2e7-b352"/>
             <infoLink name="The Questing Vow" hidden="false" type="profile" id="be49-9d20-b78d-2b0f" targetId="1439-c8b1-9ff8-298a"/>
+            <infoLink name="Crusader&apos;s Zeal" hidden="true" id="3475-2384-aeb8-fb5b" type="profile" targetId="c985-857f-beef-dd45">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3669,7 +3829,7 @@ Bombard Misfire Table
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bb9d-498a-d559-e002-max" includeChildSelections="false"/>
           </constraints>
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="The Knight&apos;s Vow" hidden="false" id="e8ff-9535-4077-29bf" sortIndex="2">
+            <selectionEntry type="upgrade" import="true" name="The Knight&apos;s Vow" hidden="false" id="e8ff-9535-4077-29bf" sortIndex="3">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="568c-d321-117c-6376"/>
               </constraints>
@@ -3677,7 +3837,7 @@ Bombard Misfire Table
                 <infoLink name="The Knight Vow" hidden="false" type="profile" id="a06f-4fca-4080-1a76" targetId="8ce9-c356-89db-b011"/>
               </infoLinks>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="The Exile&apos;s Vow" hidden="true" id="e0d3-7f9b-a7c3-b22" sortIndex="1">
+            <selectionEntry type="upgrade" import="true" name="The Exile&apos;s Vow" hidden="true" id="e0d3-7f9b-a7c3-b22" sortIndex="2">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fd8d-39cd-c4da-8d97"/>
               </constraints>
@@ -3688,6 +3848,21 @@ Bombard Misfire Table
                 <modifier type="set" value="false" field="hidden">
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c637-f6be-935d-faae" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="The Crusader&apos;s Vow" hidden="true" id="ddfc-b977-fca1-9064" sortIndex="1">
+              <infoLinks>
+                <infoLink name="The Crusader&apos;s Vow" hidden="false" id="6cec-8614-b9b8-85d4" type="profile" targetId="1d1b-44c8-3693-a9e2"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9e55-e4d4-a640-b06a" includeChildSelections="false"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
@@ -3719,6 +3894,15 @@ Bombard Misfire Table
             <infoLink name="Skirmishers" hidden="false" type="profile" id="c185-bce5-95c2-e3c8" targetId="59a5-7eca-ee35-96ac"/>
             <infoLink name="Counter Charge" hidden="false" type="profile" id="44eb-b1ec-d7dd-1924" targetId="5186-798d-69d-6545"/>
             <infoLink name="Furious Charge" hidden="false" type="profile" id="fd92-2465-2e40-9110" targetId="eaca-69a2-8b6a-81c6"/>
+            <infoLink name="Crusader&apos;s Zeal" hidden="true" id="8b6c-24b8-8cb9-1af7" type="profile" targetId="c985-857f-beef-dd45">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3893,6 +4077,15 @@ Bombard Misfire Table
             <infoLink name="Skirmishers" hidden="false" type="profile" id="418f-3392-b09a-e804" targetId="59a5-7eca-ee35-96ac"/>
             <infoLink name="Levies" hidden="false" type="profile" id="698b-6fe2-2137-ce0e" targetId="8cc3-d6f5-da17-6600"/>
             <infoLink name="Peasantry" hidden="false" type="profile" id="5977-675e-1efc-e142" targetId="36a8-2e1e-31ba-afae"/>
+            <infoLink name="Crusader&apos;s Zeal" hidden="true" id="6e52-f647-8cd1-fa26" type="profile" targetId="c985-857f-beef-dd45">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -4872,7 +5065,6 @@ Bombard Misfire Table
                 <entryLink name="Blessed Triptych" id="cff03035-5e4daf2b" hidden="false" type="selectionEntry" targetId="72c3-5d93-5286-6897">
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="672b5215-c18ec00b" includeChildSelections="false"/>
-                    <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="5332d683-342d4db1" includeChildSelections="true"/>
                   </constraints>
                   <costs>
                     <cost name="pts" typeId="points" value="25"/>

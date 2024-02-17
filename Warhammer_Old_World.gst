@@ -57,7 +57,7 @@
         <constraint type="min" value="1" field="selections" scope="roster" shared="true" id="c3cb-fabd-afc3-e03" includeChildSelections="true"/>
       </constraints>
     </categoryEntry>
-    <categoryEntry name="REGIMENTAL UNIT" hidden="true" id="5e89-9cfa-f74-43ea"/>
+    <categoryEntry name="Regimental Unit" hidden="false" id="5e89-9cfa-f74-43ea"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
