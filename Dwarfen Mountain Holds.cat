@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="1ddf-26c6-1d88-2b8c" name="Dwarfen Mountain Holds" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="8" revision="77" battleScribeVersion="2.03" type="catalogue" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="1ddf-26c6-1d88-2b8c" name="Dwarfen Mountain Holds" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="8" revision="78" battleScribeVersion="2.03" type="catalogue" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedProfiles>
     <profile name="Longbeard" hidden="false" id="fbc8-de41-190b-8903" typeId="b070-143a-73f-2772" typeName="Model">
       <characteristics>
@@ -187,11 +187,6 @@ An Anvil of Doom counts as a level 3 Wizard A Runelord counts as a Level 2 Wizar
     <profile name="Rune of Confusion" hidden="false" id="f189-f6aa-9492-8fbe" typeId="9c4f-4e8-f3bf-3908" typeName="Standard Runes">
       <characteristics>
         <characteristic name="Description" typeId="e1f9-c2b6-81a4-2d6">Any enemy unit that charges the front arc of a unit carrying a standard inscribed with the Rune of Confusion makes a disordered charge.</characteristic>
-      </characteristics>
-    </profile>
-    <profile name="Brace of Drakefire Pistols" hidden="false" id="76d4-c34d-d3dd-bedd" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">???</characteristic>
       </characteristics>
     </profile>
     <profile name="Blasting Charges" hidden="false" id="c4cd-20ce-ab7a-199e" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="26" publicationId="8b8d-8fc4-559e-87b1">
@@ -822,6 +817,24 @@ Hex, 8+/11+, 24&quot; : If the Bound spell is cast with a casting result of 8 or
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-2</characteristic>
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane(2), Magical Attacks, Requires Two Hands</characteristic>
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71"/>
+      </characteristics>
+    </profile>
+    <profile name="Brace of Drakefire Pistols (Ranged)" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="1dce-dc9f-ee49-42d3">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">12&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">5</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (2), Dwarf Crafted, Flaming Attacks, Multiple Shots (2), Quick Shot</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Notes: A brace of drakefire pistols has two profiles, representing how the weapons are used in combat.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Brace of Drakefire Pistols (Combat)" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="3a22-3992-d49d-77a0">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Extra Attacks (1), Flaming Attacks, Requires Two Hands</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Notes: A brace of drakefire pistols has two profiles, representing how the weapons are used in combat.</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
@@ -2382,9 +2395,13 @@ Hex, 8+/11+, 24&quot; : If the Bound spell is cast with a casting result of 8 or
             <infoLink name="Stubborn" hidden="false" type="profile" id="f9f2-81c0-6467-41ed" targetId="e351-bbd6-f470-b604"/>
             <infoLink name="Shieldwall" hidden="false" type="profile" id="afb4-3078-6790-2122" targetId="32f7-8e30-3fe8-b11e"/>
             <infoLink name="Rune Of Protection" hidden="false" type="profile" id="2ecc-217f-7852-4a69" targetId="d1f1-520-9b27-c144"/>
+            <infoLink name="Regimental Unit" hidden="false" id="13c0-6d5e-c9a3-ff95" type="profile" targetId="7424-ec43-7581-965a"/>
           </infoLinks>
         </infoGroup>
       </infoGroups>
+      <categoryLinks>
+        <categoryLink name="Regimental Unit" hidden="false" id="2e2f-e1e1-65ac-c8fd" targetId="5e89-9cfa-f74-43ea" primary="false"/>
+      </categoryLinks>
     </selectionEntry>
     <selectionEntry id="a663-69e2-1593-4ae9" name="Longbeards" type="unit" collective="false" hidden="false" page="0">
       <costs>
@@ -3085,6 +3102,13 @@ Hex, 8+/11+, 24&quot; : If the Bound spell is cast with a casting result of 8 or
               </categoryLinks>
             </selectionEntry>
           </selectionEntries>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="551d-34fe-3832-416d" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntryGroup>
         <selectionEntryGroup name="Unit Options" hidden="false" id="6aa-d8ab-1a72-47a" sortIndex="3">
           <selectionEntries>
@@ -3134,6 +3158,11 @@ Hex, 8+/11+, 24&quot; : If the Bound spell is cast with a casting result of 8 or
               </modifiers>
             </selectionEntry>
           </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Detachment" hidden="false" id="25d3-5f0e-a9e5-5060" sortIndex="4">
+          <entryLinks>
+            <entryLink import="true" name="Detachment" hidden="false" id="ecb4-afd-6cc1-9f1f" type="selectionEntry" targetId="551d-34fe-3832-416d"/>
+          </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
@@ -3413,7 +3442,8 @@ Hex, 8+/11+, 24&quot; : If the Bound spell is cast with a casting result of 8 or
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="26f8-a122-ab27-7852-max"/>
       </constraints>
       <infoLinks>
-        <infoLink name="Brace of Drakefire Pistols" hidden="false" type="profile" id="efd6-fb16-3668-44f5" targetId="76d4-c34d-d3dd-bedd"/>
+        <infoLink name="Brace of Drakefire Pistols (Ranged)" hidden="false" type="profile" id="efd6-fb16-3668-44f5" targetId="1dce-dc9f-ee49-42d3"/>
+        <infoLink name="Brace of Drakefire Pistols (Combat)" hidden="false" type="profile" id="d50a-4265-2121-9214" targetId="3a22-3992-d49d-77a0"/>
       </infoLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Blasting Charges" hidden="false" id="edff-d70-2c83-1bc4" collective="true">

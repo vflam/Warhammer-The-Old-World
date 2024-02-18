@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="82" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="83" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -57,7 +57,7 @@
         <constraint type="min" value="1" field="selections" scope="roster" shared="true" id="c3cb-fabd-afc3-e03" includeChildSelections="true"/>
       </constraints>
     </categoryEntry>
-    <categoryEntry name="Regimental Unit" hidden="false" id="5e89-9cfa-f74-43ea"/>
+    <categoryEntry name="Regimental Unit" hidden="true" id="5e89-9cfa-f74-43ea"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
@@ -1487,7 +1487,17 @@ If the only other remaining models in a unit are the champion and standard beare
     </profile>
     <profile name="Battle Standard Bearer" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="da9a-f205-577f-debb" page="155" publicationId="8b8d-8fc4-559e-87b1">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">This army list is intended for use alongside the ‘Forming Units’ and ‘Warhammer Armies’ sections of the Warhammer: the Old World rulebook. Over the following pages you will find profiles and rules for each of the models in your army. These pages give you all of the information that you need to shape your collection of models into the units which will in turn form a force ready for battle.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Armies often include a Battle Standard Bearer – a trusted warrior who holds aloft the General’s personal heraldry. A Battle Standard Bearer is a rallying point for the army, from The Battlecan Standard which friendly soldiers take heart and draw strength.
+
+The Battle Standard Bearer Model
+A Battle Standard Bearer is a heroic model carrying a particularly impressive banner, and it will be presented as an option in your chosen army list. The Battle Standard is carried by a character model and, unless specified otherwise, the model that carries the Battle Standard cannot be the General.
+
+Unlike normal standards, the Battle Standard is lost if the bearer is slain – other models cannot pick it up, even if they are in the same unit.
+
+Combat Result Bonus: A Battle Standard grants a bonus of +1 combat result point. Unlike other standards, a Battle Standard grants this bonus even if another standard is present.
+If, by some unusual circumstance, there are two Battle Standards on the same side in the combat, you can only count the bonus for one.
+
+“Hold Your Ground”: To represent the Battle Standard’s steadying presence, unless your Battle Standard Bearer is fleeing, friendly units within the Battle Standard Bearer’s Command range may re-roll any failed Panic or Rally test. In addition, friendly units within the Battle Standard Bearer’s Command range may re-roll the 2D6 when making a Break test. However, you must accept the result of the second roll, even if it is worse than the first.</characteristic>
       </characteristics>
     </profile>
     <profile name="Repeater Bolt Thrower" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" hidden="false" id="3f5c-8185-3494-86c1">
@@ -1979,6 +1989,17 @@ If the only other remaining models in a unit are the champion and standard beare
       <infoLinks>
         <infoLink name="Troll Vomit" hidden="false" type="profile" id="7833-c8ab-bb04-7d5d" targetId="2007-796b-3c57-ec28"/>
       </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Detachment" hidden="false" id="551d-34fe-3832-416d">
+      <infoLinks>
+        <infoLink name="Detachment" hidden="false" type="profile" id="a34e-650f-d7bc-cbc9" targetId="559-d4c6-b2e8-500f"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f783-f5cb-c86a-b88b"/>
+      </constraints>
+      <associations>
+        <association min="1" max="1" scope="force" childId="5e89-9cfa-f74-43ea" name="Regimental Unit" id="8a3-f6f1-b585-dab5" includeChildSelections="true"/>
+      </associations>
     </selectionEntry>
   </sharedSelectionEntries>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
