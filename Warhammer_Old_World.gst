@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="84" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="85" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -1652,6 +1652,15 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
+    <profile name="Serrated Maw" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="c521-1d17-cb12-239e">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (2), Multiple Wounds (2)</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71"> In combat, this model must make one of its attacks each turn with this weapon.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -1991,7 +2000,7 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="84e1-3194-eb8f-824c"/>
       </constraints>
       <infoLinks>
-        <infoLink name="Serrated Maw" hidden="false" type="profile" id="145d-7d5f-52ce-e69f" targetId="2dea-8d5a-633c-cd7d"/>
+        <infoLink name="Serrated Maw" hidden="false" type="profile" id="c86-c73b-ab62-936a" targetId="c521-1d17-cb12-239e"/>
       </infoLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Mortar" hidden="false" id="b4ec-f8f5-83b4-5cd8" collective="true">
