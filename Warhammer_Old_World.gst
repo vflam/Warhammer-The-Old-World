@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="83" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="84" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -683,9 +683,13 @@
  Note that this special rule is not cumulative. If two or more models in a unit have this special rule, use the highest modifier.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Pistol" hidden="false" id="4c62-cdd4-4e0c-4265" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Pistol" hidden="false" id="4c62-cdd4-4e0c-4265" typeId="a378-c633-912d-11ce" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: 4 AP: -1 Special Rules: Armour Bane (1), Quick Shot</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">12&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">4</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Quick Shot</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
     <profile name="Brace of Pistols" hidden="false" id="cdb0-f5d2-68e0-205f" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
@@ -710,9 +714,13 @@
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Once per game, during a turn in which it was charged, a unit with this special rule that is arrayed in a Close Order formation, and that is equipped with and chooses to use shields, may Give Ground rather than Fall Back in Good Order.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Handgun" hidden="false" id="4035-287b-e117-6b9b" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Handgun" hidden="false" id="4035-287b-e117-6b9b" typeId="a378-c633-912d-11ce" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 24&quot; S: 4 AP: -1 Special Rules: Armour Bane (1), Ponderous</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">24&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">4</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Ponderous</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
     <profile name="Veteran" hidden="false" id="4022-c403-b083-ba83" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="180" publicationId="768b-3da1-a182-a1d8">
@@ -790,14 +798,22 @@
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Extra Atacks (+1), Require Two Hands</characteristic>
       </characteristics>
     </profile>
-    <profile name="Throwing Spear" hidden="false" id="8a6-cc93-b5fd-6636" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Throwing Spear" hidden="false" id="8a6-cc93-b5fd-6636" typeId="a378-c633-912d-11ce" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S AP: - Notes: A throwing spear can only be used during a turn in which the wielder charged. In subsequent turns (or if the wielder did not charge) the model must use its hand weapon instead. Special Rules: Fight in Extra Rank</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Fight in Extra Rank</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">A throwing spear can only be used during a turn in which the wielder charged. In subsequent turns (or if the wielder did not charge) the model must use its hand weapon instead.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Thrusting Spear" hidden="false" id="85-9154-7dc1-ddc6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Thrusting Spear" hidden="false" id="85-9154-7dc1-ddc6" typeId="a378-c633-912d-11ce" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S AP: - Notes: Models whose troop type is ‘infantry’ only. A model wielding a thrusting spear cannot make a supporting attack during a turn in which it charged. During a turn in which it was charged in its front arc, a model wielding a thrusting spear gains a +1 modifier to its Initiative against the charging unit(s). Special Rules: Fight in Extra Rank</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Fight in Extra Rank</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Models whose troop type is ‘infantry’ only. A model wielding a thrusting spear cannot make a supporting attack during a turn in which it charged. During a turn in which it was charged in its front arc, a model wielding a thrusting spear gains a +1 modifier to its Initiative against the charging unit(s).</characteristic>
       </characteristics>
     </profile>
     <profile name="Frenzy" hidden="false" id="3b0c-a477-8823-3a25" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="170" publicationId="768b-3da1-a182-a1d8">
@@ -1303,16 +1319,22 @@ If the only other remaining models in a unit are the champion and standard beare
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
     </profile>
-    <profile name="Bolt Thrower" hidden="false" id="36e4-28b4-31ff-39dc" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="223" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Bolt Thrower" hidden="false" id="36e4-28b4-31ff-39dc" typeId="a378-c633-912d-11ce" typeName="Weapon" page="223" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot; S: 6 AP: -3 Special Rules: Cumbersome, Move or Shoot, Multiple Wounds (2), Through &amp; Through</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">48&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">6</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-3</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Cumbersome, Move or Shoot, Multiple Wounds (2), Through &amp; Through</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Cannon" hidden="false" id="8ef5-8512-e1c2-6474" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="226" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Cannon" hidden="false" id="8ef5-8512-e1c2-6474" typeId="a378-c633-912d-11ce" typeName="Weapon" page="226" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot; S: 8 AP: -2 Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Cannon Fire’ special rule. This weapon uses the Black Powder Misfire table.
-
- Special Rules: Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">48&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">8</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-2</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Cannon Fire’ special rule. This weapon uses the Black Powder Misfire table.</characteristic>
       </characteristics>
     </profile>
     <profile name="Stone Thrower" hidden="false" id="3142-ada8-328d-1615" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
@@ -1320,58 +1342,94 @@ If the only other remaining models in a unit are the champion and standard beare
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12-60&quot; S4(8) AP-1(-3) Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3+1)</characteristic>
       </characteristics>
     </profile>
-    <profile name="Organ gun" hidden="false" id="5635-efd8-13b6-c841" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="228" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Organ gun" hidden="false" id="5635-efd8-13b6-c841" typeId="a378-c633-912d-11ce" typeName="Weapon" page="228" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 30&quot; S: 5 AP: -1 Notes: This weapon uses the Black Powder Misfire table. Special Rules: Armour Bane (2), Cumbersome, Move or Shoot, Multi-Barrelled</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">30&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">5</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (2), Cumbersome, Move or Shoot, Multi-Barrelled</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">This weapon uses the Black Powder Misfire table.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Fire Thrower" hidden="false" id="2694-34f1-f146-6351" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="229" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Fire Thrower" hidden="false" id="2694-34f1-f146-6351" typeId="a378-c633-912d-11ce" typeName="Weapon" page="229" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: 5 AP: -1 Notes: Fire throwers do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Column of Fire’ special rule. This weapon uses the Black Powder Misfire table.
-
- Special Rules: Column of Fire, Cumbersome, Flaming Attacks, Move or Shoot</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">12&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">5</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Column of Fire, Cumbersome, Flaming Attacks, Move or Shoot</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Fire throwers do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Column of Fire’ special rule. This weapon uses the Black Powder Misfire table.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Javelin" hidden="false" id="f3f8-7476-d165-1a5d" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Javelin" hidden="false" id="f3f8-7476-d165-1a5d" typeId="a378-c633-912d-11ce" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: S AP: - Special Rules: Move &amp; Shoot, Quick Shot</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">12&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Move &amp; Shoot, Quick Shot</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Cavalry spear" hidden="false" id="ee75-c1a8-2f0c-c264" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Cavalry spear" hidden="false" id="ee75-c1a8-2f0c-c264" typeId="a378-c633-912d-11ce" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+1 AP: -1 Notes: Models whose troop type is ‘cavalry’, ‘monster’ or ‘chariot’ only. A cavalry spear’s Strength and Armour Piercing modifiers apply only during a turn in which the wielder charged. A model wielding a cavalry spear cannot make a supporting attack during a turn in which it charged. Special Rules: Fight in Extra Rank</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S+1</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Fight in Extra Rank</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Models whose troop type is ‘cavalry’, ‘monster’ or ‘chariot’ only. A cavalry spear’s Strength and Armour Piercing modifiers apply only during a turn in which the wielder charged. A model wielding a cavalry spear cannot make a supporting attack during a turn in which it charged.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Morning star" hidden="false" id="caad-2fc0-e82a-18fd" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Morning star" hidden="false" id="caad-2fc0-e82a-18fd" typeId="a378-c633-912d-11ce" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+1 AP: -1 Notes: A morning star’s Strength modifier applies only during the first round of combat.
-
- Special Rules: -</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S+1</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">-</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">A morning star’s Strength modifier applies only during the first round of combat.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Halberd" hidden="false" id="98f8-9d8-94cd-3379" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Halberd" hidden="false" id="98f8-9d8-94cd-3379" typeId="a378-c633-912d-11ce" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+1 AP: -1 Special Rules: Armour Bane (1), Requires Two Hands</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S+1</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Requires Two Hands</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Flail" hidden="false" id="b326-5bf3-9b4e-f8ad" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Flail" hidden="false" id="b326-5bf3-9b4e-f8ad" typeId="a378-c633-912d-11ce" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+2 AP: -2 Notes: A flail’s Strength modifier applies only during the first round of combat. Special Rules: Requires Two Hands</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S+2</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-2</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Requires Two Hands</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">A flail’s Strength modifier applies only during the first round of combat.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Whip" hidden="false" id="7505-7edf-c3de-57a6" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Whip" hidden="false" id="7505-7edf-c3de-57a6" typeId="a378-c633-912d-11ce" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S AP: - Special Rules: Fight in Extra Rank, Strike First</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Fight in Extra Rank, Strike First</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Lance" hidden="false" id="3520-64c9-a855-ce9e" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Lance" hidden="false" id="3520-64c9-a855-ce9e" typeId="a378-c633-912d-11ce" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: Combat S: S+2 AP: -2 Notes: Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance can only be used during a turn in which the wielder charged. In subsequent turns (or if the wielder did not charge) the model must use its hand weapon instead. Special Rules: Armour Bane (1)</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S+2</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-2</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1)</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance can only be used during a turn in which the wielder charged. In subsequent turns (or if the wielder did not charge) the model must use its hand weapon instead.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Shortbow" hidden="false" id="1b65-71ef-52a3-93d0" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="216" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Shortbow" hidden="false" id="1b65-71ef-52a3-93d0" typeId="a378-c633-912d-11ce" typeName="Weapon" page="216" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 18&quot; S: 3 AP: - Special Rules: Quick Shot, Volley Fire</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">18&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">3</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Quick Shot, Volley Fire</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
     <profile name="Repeater Pistol" hidden="false" id="f675-db0d-397c-d873" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
@@ -1379,24 +1437,40 @@ If the only other remaining models in a unit are the champion and standard beare
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12&quot; S4 AP-1 Armour Bane (1), Multiple Shots (3), Quick Shot</characteristic>
       </characteristics>
     </profile>
-    <profile name="Repeater handgun" hidden="false" id="7f58-91d4-ee6c-3cb7" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Repeater handgun" hidden="false" id="7f58-91d4-ee6c-3cb7" typeId="a378-c633-912d-11ce" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 24&quot; S: 4 AP: -1 Special Rules: Armour Bane (1), Multiple Shots (3), Ponderous</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">24&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">4</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Multiple Shots (3), Ponderous</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Crossbow" hidden="false" id="1ef1-8579-c310-4fb5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Crossbow" hidden="false" id="1ef1-8579-c310-4fb5" typeId="a378-c633-912d-11ce" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 30&quot; S: 4 AP: - Special Rules: Armour Bane (2), Ponderous</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">30&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">4</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (2), Ponderous</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Repeater crossbow" hidden="false" id="e240-f607-2c57-b181" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Repeater crossbow" hidden="false" id="e240-f607-2c57-b181" typeId="a378-c633-912d-11ce" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 24&quot; S: 3 AP: - Special Rules: Armour Bane (1), Multiple Shots (2)</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">24&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">3</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Multiple Shots (2)</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Repeater handbow" hidden="false" id="f187-983f-99f2-5ecd" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Repeater handbow" hidden="false" id="f187-983f-99f2-5ecd" typeId="a378-c633-912d-11ce" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 12&quot; S: 3 AP: - Special Rules: Multiple Shots (2), Quick Shot</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">12&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">3</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Multiple Shots (2), Quick Shot</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
     <profile name="Two Hand Weapon" hidden="false" id="1f58-a56f-e54c-ddc5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
@@ -1404,19 +1478,31 @@ If the only other remaining models in a unit are the champion and standard beare
         <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Extra Atacks (+1), Require Two Hands</characteristic>
       </characteristics>
     </profile>
-    <profile name="Sling" hidden="false" id="eee6-7b1-58de-6ad2" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Sling" hidden="false" id="eee6-7b1-58de-6ad2" typeId="a378-c633-912d-11ce" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 18&quot; S: 3 AP: - Special Rules: Multiple Shots (2)</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">18&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">3</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Multiple Shots (2)</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Throwing Axe" hidden="false" id="9914-73b6-65c4-ec44" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Throwing Axe" hidden="false" id="9914-73b6-65c4-ec44" typeId="a378-c633-912d-11ce" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 9&quot; S: S+1 AP: - Special Rules: Quick Shot</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">9&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S+1</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Quick Shot</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Throwing Weapon" hidden="false" id="eee5-db12-1271-f2c5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Throwing Weapon" hidden="false" id="eee5-db12-1271-f2c5" typeId="a378-c633-912d-11ce" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 9&quot; S: S AP: - Special Rules: Multiple Shots (2), Move &amp; Shoot, Quick Shot</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">9&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Multiple Shots (2), Move &amp; Shoot, Quick Shot</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
     <profile name="Wicked Claws" hidden="false" id="14c0-c7a7-dd09-ea49" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
@@ -1500,16 +1586,22 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
 “Hold Your Ground”: To represent the Battle Standard’s steadying presence, unless your Battle Standard Bearer is fleeing, friendly units within the Battle Standard Bearer’s Command range may re-roll any failed Panic or Rally test. In addition, friendly units within the Battle Standard Bearer’s Command range may re-roll the 2D6 when making a Break test. However, you must accept the result of the second roll, even if it is worse than the first.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Repeater Bolt Thrower" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" hidden="false" id="3f5c-8185-3494-86c1">
+    <profile name="Repeater Bolt Thrower" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="3f5c-8185-3494-86c1">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 48&quot; S: 4 AP: -1 Special Rules: Armour Bane (1), Cumbersome, Move or Shoot, Multiple Shots(D3+3)</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">48&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">4</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Cumbersome, Move or Shoot, Multiple Shots(D3+3)</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Great Cannon" hidden="false" id="ae36-d4c3-eaf5-198b" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon" page="226" publicationId="768b-3da1-a182-a1d8">
+    <profile name="Great Cannon" hidden="false" id="ae36-d4c3-eaf5-198b" typeId="a378-c633-912d-11ce" typeName="Weapon" page="226" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">R: 60&quot; S: 10 AP: -3 Notes: Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Cannon Fire’ special rule. This weapon uses the Black Powder Misfire table.
-
- Special Rules: Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3=1)</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">60&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">10</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-3</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3=1)</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Cannon Fire’ special rule. This weapon uses the Black Powder Misfire table.</characteristic>
       </characteristics>
     </profile>
     <profile name="Troll Vomit" hidden="false" id="2007-796b-3c57-ec28" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
