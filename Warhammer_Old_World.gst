@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="85" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="86" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -81,6 +81,11 @@
             <modifier type="set" value="33" field="563-332d-aa18-dad">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="33" field="563-332d-aa18-dad">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -1658,7 +1663,7 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
         <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (2), Multiple Wounds (2)</characteristic>
-        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71"> In combat, this model must make one of its attacks each turn with this weapon.</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">In combat, this model must make one of its attacks each turn with this weapon.</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
