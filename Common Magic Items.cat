@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="true" id="6c22-b0e4-7c83-f9ce" name="Magic Items" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="57" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="true" id="6c22-b0e4-7c83-f9ce" name="Magic Items" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="58" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedSelectionEntryGroups>
     <selectionEntryGroup name="Magic Weapons" hidden="false" id="5b7a-30d2-42ea-4e29">
       <selectionEntryGroups>
@@ -1363,10 +1363,14 @@
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="fb36-5275-617-c895" shared="true" includeChildSelections="false"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="false"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="false"/>
-                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="2c85-5f2b-9288-1257" shared="true" includeChildSelections="false"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="fb36-5275-617-c895" shared="true" includeChildSelections="false"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="false"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="false"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="2c85-5f2b-9288-1257" shared="true" includeChildSelections="false"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2c85-5f2b-9288-1257" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="fb36-5275-617-c895" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -1483,9 +1487,9 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntryGroup>
-    <selectionEntryGroup name="Magic Armour" hidden="false" id="2ade-3285-8d5d-cf4">
+    <selectionEntryGroup name="Magic Armour" hidden="false" id="2ade-3285-8d5d-cf4" collapsible="true">
       <selectionEntryGroups>
-        <selectionEntryGroup name="Other" hidden="false" id="c42b-fa63-c73f-af5d" flatten="true" sortIndex="3">
+        <selectionEntryGroup name="Other" hidden="false" id="c42b-fa63-c73f-af5d" flatten="false" sortIndex="3">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Dragon Helm" hidden="true" id="2d31-b0b3-ee37-f78" sortIndex="1">
               <infoLinks>
@@ -1632,8 +1636,23 @@
               </constraints>
             </selectionEntry>
           </selectionEntries>
+          <modifiers>
+            <modifier type="set" value="0" field="fcd5-32a6-30b6-3bc6">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="2917-37ed-ff8a-2391" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="b77d-a8a8-1f30-779c" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fcd5-32a6-30b6-3bc6"/>
+          </constraints>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Extremely Common Items" hidden="false" id="4cc6-255d-2e37-71b1" flatten="true" sortIndex="2">
+        <selectionEntryGroup name="Extremely Common" hidden="false" id="4cc6-255d-2e37-71b1" flatten="false" sortIndex="4">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Trollhide Trousers" hidden="true" id="e80a-f9f7-ea2f-438b" sortIndex="5">
               <costs>
@@ -1724,7 +1743,7 @@
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Shields" hidden="false" id="2917-37ed-ff8a-2391" flatten="true" sortIndex="4">
+        <selectionEntryGroup name="Shields" hidden="false" id="2917-37ed-ff8a-2391" flatten="false" sortIndex="2">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Ironspike Shield" hidden="true" id="e9c1f40-7b668a8a" collective="true" sortIndex="2">
               <infoLinks>
@@ -1847,8 +1866,20 @@
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5fa9-be-354c-6f4c" includeChildSelections="false"/>
           </constraints>
+          <modifiers>
+            <modifier type="set" value="0" field="5fa9-be-354c-6f4c">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="c42b-fa63-c73f-af5d" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="b77d-a8a8-1f30-779c" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Suits of Armour" hidden="false" id="b77d-a8a8-1f30-779c" flatten="true" sortIndex="1">
+        <selectionEntryGroup name="Suits of Armour" hidden="false" id="b77d-a8a8-1f30-779c" flatten="false" sortIndex="1">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Anointed Armour" hidden="true" id="408c6d07-be9dd55" collective="true" sortIndex="15">
               <infoLinks>
@@ -2427,6 +2458,18 @@
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="863e-2522-ef25-f996" includeChildSelections="false"/>
           </constraints>
+          <modifiers>
+            <modifier type="set" value="0" field="863e-2522-ef25-f996">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="2917-37ed-ff8a-2391" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="c42b-fa63-c73f-af5d" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntryGroup>
@@ -8520,4 +8563,7 @@ Note that this is a modifier to the result of a roll – it does not negate a ro
       </characteristics>
     </profile>
   </sharedProfiles>
+  <categoryEntries>
+    <categoryEntry name="Magic Armour" hidden="false" id="11fb-d317-36f-e21"/>
+  </categoryEntries>
 </catalogue>
