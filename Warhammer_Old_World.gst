@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="86" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="87" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -52,10 +52,17 @@
     <categoryEntry name="LICHE PRIEST" hidden="true" id="8c3e-4da8-b8-cedd"/>
     <categoryEntry name="GRAIL VOW" hidden="true" id="b611-c8d0-2b34-5096"/>
     <categoryEntry name="HIGH PRIEST" hidden="true" id="6b0d-1972-a60c-c815"/>
-    <categoryEntry name="Monarch of Nehekara" hidden="true" id="86f8-37da-1b61-1f32">
+    <categoryEntry name="Monarch of Nehekhara" hidden="false" id="86f8-37da-1b61-1f32">
       <constraints>
         <constraint type="min" value="1" field="selections" scope="roster" shared="true" id="c3cb-fabd-afc3-e03" includeChildSelections="true"/>
       </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="c3cb-fabd-afc3-e03">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </categoryEntry>
     <categoryEntry name="Regimental Unit" hidden="true" id="5e89-9cfa-f74-43ea"/>
   </categoryEntries>
