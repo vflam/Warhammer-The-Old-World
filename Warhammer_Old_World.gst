@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="90" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="91" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -677,7 +677,7 @@
     </profile>
     <profile name="Close Order" hidden="false" id="883e-e1b1-4fe9-5912" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="167" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit consisting of models with this special rule may adopt a Close Order formation, as described on page 100.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit consisting of models with this special rule may adopt a Close Order formation.</characteristic>
       </characteristics>
       <comment>#noscript</comment>
     </profile>
@@ -754,7 +754,7 @@
     </profile>
     <profile name="Open Order" hidden="false" id="5b67-8535-146c-7cea" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="175" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit consisting of models with this special rule may adopt an Open Order formation, as described on page 182.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit consisting of models with this special rule may adopt an Open Order formation.</characteristic>
       </characteristics>
     </profile>
     <profile name="Scouts" hidden="false" id="fe5e-8838-7fbd-a7ec" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="177" publicationId="768b-3da1-a182-a1d8">
@@ -766,7 +766,7 @@
     </profile>
     <profile name="Skirmishers" hidden="false" id="59a5-7eca-ee35-96ac" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="177" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit consisting of models with this special rule may adopt a Skirmish formation, as described on page 184.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit consisting of models with this special rule may adopt a Skirmish formation.</characteristic>
       </characteristics>
     </profile>
     <profile name="Detachment" hidden="false" id="559-d4c6-b2e8-500f" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="167" publicationId="768b-3da1-a182-a1d8">
@@ -867,7 +867,7 @@
     </profile>
     <profile name="Breath Weapon" hidden="false" id="e049-8b4d-23e9-7505" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="166" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with a Breath Weapon can use it once per round, during the Shooting phase of its turn. Place the flame template with its broad end over the intended target and its narrow end touching the model’s base edge anywhere along its front arc. The template must lie entirely within the model’s vision arc. Any model whose base lies underneath the template risks being hit, as described on page 95. The Strength and any special rules of the breath weapon will be detailed in the creature’s rules.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with a Breath Weapon can use it once per round, during the Shooting phase of its turn. Place the flame template with its broad end over the intended target and its narrow end touching the model’s base edge anywhere along its front arc. The template must lie entirely within the model’s vision arc. Any model whose base lies underneath the template risks being hit. The Strength and any special rules of the breath weapon will be detailed in the creature’s rules.
 
  Breath weapons cannot be used when making a Stand &amp; Shoot charge reaction, or when the model is engaged in combat.
 
@@ -937,19 +937,19 @@
     </profile>
     <profile name="Feigned Flight" hidden="false" id="eea7-89d9-a996-403c" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="168" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">If this unit chooses to Flee (or Fire &amp; Flee) as a charge reaction, it automatically rallies at the end of its move, as described on page 117.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">If this unit chooses to Flee (or Fire &amp; Flee) as a charge reaction, it automatically rallies at the end of its move.</characteristic>
       </characteristics>
     </profile>
     <profile name="Fight In Extra Rank" hidden="false" id="b49e-b47f-fb38-596e" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="169" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule may make a supporting attack, as described on page 145.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule may make a supporting attack.</characteristic>
       </characteristics>
     </profile>
     <profile name="Fire &amp; Flee" hidden="false" id="1a06-31aa-cbfe-1a5" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="169" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit with this special rule that is also armed with missile weapons may declare that it will ‘Fire &amp; Flee’ as a charge reaction:
 
- Fire &amp; Flee: The unit launches a volley of weapons fire before turning to flee from the enemy. If a unit with this special rule is armed with missile weapons and can draw a line of sight to the charging unit, it may declare that it will Fire &amp; Flee. The unit will Stand &amp; Shoot (as described on page 120) before turning tail and fleeing from the charge. However, due to the time spent shooting at the charging foe, when making its Flee roll the unit rolls two D6 and discards the lowest result. If both dice roll the same result, discard either.
+ Fire &amp; Flee: The unit launches a volley of weapons fire before turning to flee from the enemy. If a unit with this special rule is armed with missile weapons and can draw a line of sight to the charging unit, it may declare that it will Fire &amp; Flee. The unit will Stand &amp; Shoot before turning tail and fleeing from the charge. However, due to the time spent shooting at the charging foe, when making its Flee roll the unit rolls two D6 and discards the lowest result. If both dice roll the same result, discard either.
 
  Note that, if the distance between this unit and the charging unit is less than the Movement characteristic of the charging unit, this unit must either Hold or Flee.</characteristic>
       </characteristics>
@@ -961,7 +961,7 @@
     </profile>
     <profile name="Flaming Attacks" hidden="false" id="e45d-952-f679-ae2c" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="169" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Any attack made or hits caused by a model with this special rule, or made using a weapon or spell with this special rule, is a ‘Flaming’ attack. In addition, a model with this special rule causes Fear (as described on page 168) in models whose troop type is ‘war beasts’ or ‘swarms’.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Any attack made or hits caused by a model with this special rule, or made using a weapon or spell with this special rule, is a ‘Flaming’ attack. In addition, a model with this special rule causes Fear in models whose troop type is ‘war beasts’ or ‘swarms’.
 
  Unless otherwise stated, a model with this special rule makes Flaming attacks both when shooting and in combat (though any spells cast by the model are unaffected, as are any attacks made with magic weapons they might be wielding).</characteristic>
       </characteristics>
@@ -1198,7 +1198,7 @@
     </profile>
     <profile name="Terror" hidden="false" id="c7a2-35bf-4313-f4f0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="179" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Models with this special rule cause Terror. Models that cause Terror also cause Fear, as described on page 168:
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Models with this special rule cause Terror. Models that cause Terror also cause Fear:
 
  
 • 	When a unit that causes Terror declares a charge, the charge target must immediately make a Leadership test. If this test is failed, it must Flee. If this test is passed, it can declare its charge reaction normally.
