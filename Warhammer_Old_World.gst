@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="91" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="92" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -1823,7 +1823,7 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Brace of Pistols" hidden="false" id="d8bb-85b0-3575-6029">
       <infoLinks>
-        <infoLink name="Brace of pistols" hidden="false" type="profile" id="da9a-ae92-f6bf-6372" targetId="cdb0-f5d2-68e0-205f"/>
+        <infoLink name="Brace of Pistols" hidden="false" type="profile" id="da9a-ae92-f6bf-6372" targetId="cdb0-f5d2-68e0-205f"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bb24-f518-d872-575c-max"/>
@@ -1847,7 +1847,7 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Organ Gun" hidden="false" id="e690-7263-fa52-7192" collective="true">
       <infoLinks>
-        <infoLink name="Organ Gun" hidden="false" type="profile" id="93f0-c7ec-3e3-360e" targetId="5635-efd8-13b6-c841"/>
+        <infoLink name="Organ gun" hidden="false" type="profile" id="93f0-c7ec-3e3-360e" targetId="5635-efd8-13b6-c841"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="df7e-515b-6c02-41c0"/>
@@ -1871,7 +1871,7 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Repeater Crossbow" hidden="false" id="40ad-23e9-f0c7-4c15" collective="true">
       <infoLinks>
-        <infoLink name="Repeater Crossbow" hidden="false" type="profile" id="90ea-8330-2e5a-5af9" targetId="e240-f607-2c57-b181"/>
+        <infoLink name="Repeater crossbow" hidden="false" type="profile" id="90ea-8330-2e5a-5af9" targetId="e240-f607-2c57-b181"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a3fd-a9c9-b05d-acf"/>
@@ -1919,7 +1919,7 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Morning Star" hidden="false" id="7408-2024-917-7f11" collective="true">
       <infoLinks>
-        <infoLink name="Morning Star" hidden="false" type="profile" id="e93d-cd2f-69d2-6fda" targetId="caad-2fc0-e82a-18fd"/>
+        <infoLink name="Morning star" hidden="false" type="profile" id="e93d-cd2f-69d2-6fda" targetId="caad-2fc0-e82a-18fd"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7b10-be97-2cf2-6271"/>
@@ -1932,7 +1932,7 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Cavalry Spear" hidden="false" id="a2d0-40e9-83ad-23dc" collective="true">
       <infoLinks>
-        <infoLink name="Cavalry Spear" hidden="false" type="profile" id="e62-14df-8b5f-255c" targetId="ee75-c1a8-2f0c-c264"/>
+        <infoLink name="Cavalry spear" hidden="false" type="profile" id="e62-14df-8b5f-255c" targetId="ee75-c1a8-2f0c-c264"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e98e-d127-3c6f-9935"/>
@@ -1953,7 +1953,7 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Repeater Handgun" hidden="false" id="1748-87d-961c-9278" collective="true">
       <infoLinks>
-        <infoLink name="Repeater Handgun" hidden="false" type="profile" id="4d44-a8-e692-4d40" targetId="7f58-91d4-ee6c-3cb7"/>
+        <infoLink name="Repeater handgun" hidden="false" type="profile" id="4d44-a8-e692-4d40" targetId="7f58-91d4-ee6c-3cb7"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2cda-64ce-b498-7429"/>
@@ -1969,7 +1969,7 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Brace of Repeater Handbows" hidden="false" id="9f47-81ce-2112-83e1" collective="true">
       <infoLinks>
-        <infoLink name="Crossbow" hidden="false" type="profile" id="dc96-7ebd-c388-3fda" targetId="fca0-3c32-72da-53b9"/>
+        <infoLink name="Brace of Repeater Handbows" hidden="false" type="profile" id="dc96-7ebd-c388-3fda" targetId="fca0-3c32-72da-53b9"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bebc-8aba-b2a3-e7a8"/>
@@ -1977,7 +1977,7 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Repeater Handbow" hidden="false" id="4f02-c0c2-a8f7-1672" collective="true">
       <infoLinks>
-        <infoLink name="Repeater Handbow" hidden="false" type="profile" id="463-758b-a4dd-f4de" targetId="f187-983f-99f2-5ecd"/>
+        <infoLink name="Repeater handbow" hidden="false" type="profile" id="463-758b-a4dd-f4de" targetId="f187-983f-99f2-5ecd"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="32d-bf74-9c21-f919"/>
@@ -2097,7 +2097,7 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Repeater Bolt Thrower" hidden="false" id="acc3-8d86-f430-1a84" collective="true">
       <infoLinks>
-        <infoLink name="Repeater Bolt Thrower Rapid Fire" hidden="false" type="profile" id="ac2b-8f84-5870-2886" targetId="3f5c-8185-3494-86c1"/>
+        <infoLink name="Repeater Bolt Thrower" hidden="false" type="profile" id="ac2b-8f84-5870-2886" targetId="3f5c-8185-3494-86c1"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="95b-b7e5-5d46-1477"/>
