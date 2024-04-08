@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="95" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="97" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -132,6 +132,11 @@
             <modifier type="set" value="33" field="f0f7-32b6-d076-214a">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="33" field="f0f7-32b6-d076-214a">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -5702,7 +5707,9 @@ The Greater the Danger
 The Limits of Endurance</characteristic>
       </characteristics>
       <comment>imported</comment>
-      <alias>Flee</alias>
+      <alias>
+        <undefined>Flee</undefined>
+      </alias>
     </profile>
     <profile name="Fleeing as a Compulsory Move" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="7aaf-163e-d95f-f65">
       <characteristics>
@@ -7590,7 +7597,9 @@ Related: Ark of Sotek</characteristic>
 Related: What are Special Rules?</characteristic>
       </characteristics>
       <comment>imported</comment>
-      <alias>Unique Special Rule</alias>
+      <alias>
+        <undefined>Unique Special Rule</undefined>
+      </alias>
     </profile>
     <profile name="Universal Special Rules" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="87df-ec02-e84f-57ac">
       <characteristics>
@@ -14486,7 +14495,4 @@ Wizards &amp; Armour (Weapons)</characteristic>
     <publication name="Ravening Hordes" hidden="false" id="7c89-736c-3139-24a0"/>
     <publication name="Github" hidden="false" id="930e-92c4-12cd-ee64" publisherUrl="https://github.com/vflam/Warhammer-The-Old-World" shortName="vflam/Warhammer-The-Old-World"/>
   </publications>
-  <sharedInfoGroups>
-    <infoGroup name="New Info Group" id="aabe-fd7b-4b3c-d2fe" hidden="false"/>
-  </sharedInfoGroups>
 </gameSystem>
