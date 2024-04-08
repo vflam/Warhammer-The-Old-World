@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="be27-8084-f552-1f4" name="Tomb Kings of Khemri" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="33" revision="69" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="be27-8084-f552-1f4" name="Tomb Kings of Khemri" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="33" revision="70" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Dry as Dust" hidden="false" id="ae9b-6cef-787a-da54" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="153" publicationId="7c89-736c-3139-24a0">
       <characteristics>
@@ -1066,9 +1066,25 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="7bfe-4f88-55b9-7dcd">
           <infoLinks>
-            <infoLink name="Vanguard" hidden="false" type="profile" id="6359-12fd-e0c4-fa0" targetId="691e-10ec-4f7c-a2c4"/>
+            <infoLink name="Vanguard" hidden="true" type="profile" id="6359-12fd-e0c4-fa0" targetId="691e-10ec-4f7c-a2c4">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Nehekharan Undead" hidden="false" type="profile" id="21e9-ddfc-da46-87aa" targetId="cc25-1643-8beb-8c64"/>
-            <infoLink name="Swiftstride" hidden="false" type="profile" id="ab98-a853-d301-f90e" targetId="dc91-48b3-3696-217"/>
+            <infoLink name="Swiftstride" hidden="true" type="profile" id="ab98-a853-d301-f90e" targetId="dc91-48b3-3696-217">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -2793,20 +2809,6 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
           <costs>
             <cost name="pts" typeId="points" value="4"/>
           </costs>
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="a04a-ba22-6dfc-5412" collective="true" sortIndex="2">
-              <infoLinks>
-                <infoLink name="Ambushers" hidden="false" type="profile" id="86b0-b4be-6a3e-b203" targetId="8c0b-6fe6-dc06-512"/>
-              </infoLinks>
-              <costs>
-                <cost name="pts" typeId="points" value="1"/>
-              </costs>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ad8d-4947-ba95-d0eb"/>
-                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="56aa-f75a-7cdf-effc"/>
-              </constraints>
-            </selectionEntry>
-          </selectionEntries>
           <selectionEntryGroups>
             <selectionEntryGroup name="Equipment" hidden="false" id="6f47-90ec-2e91-cb88" sortIndex="3">
               <entryLinks>
@@ -2848,6 +2850,47 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
           </infoLinks>
         </infoGroup>
       </infoGroups>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Unit Options" hidden="false" id="6b2f-cc9-89bc-4e6a">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="a04a-ba22-6dfc-5412" collective="true">
+              <infoLinks>
+                <infoLink name="Ambushers" hidden="false" id="86b0-b4be-6a3e-b203" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ad8d-4947-ba95-d0eb"/>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="56aa-f75a-7cdf-effc" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="708f-d597-bd5f-a586" shared="true"/>
+                  </conditions>
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false"/>
+                  </repeats>
+                </modifier>
+                <modifier type="set" value="1" field="56aa-f75a-7cdf-effc">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="708f-d597-bd5f-a586" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="56aa-f75a-7cdf-effc">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="708f-d597-bd5f-a586" shared="true"/>
+                  </conditions>
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Ushabti" hidden="false" id="81e7-bf62-d1a1-9693">
       <profiles>
@@ -4515,8 +4558,26 @@ Nekaph must always issue and accept challenges (if possible). However, challenge
           <selectionEntryGroups>
             <selectionEntryGroup name="Command" hidden="false" id="8e20-bc17-737d-a81b" sortIndex="5">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" id="c5ee6ff6-e2d06ac0" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="General" hidden="false" id="c5ee6ff6-e2d06ac0" type="selectionEntry" targetId="7d76-b1a1-1535-a04c" sortIndex="1"/>
+                <entryLink import="true" name="Battle Standard Bearer" hidden="true" id="93e2-6985-6bd9-670a" type="selectionEntry" targetId="5b87-9cf5-953d-3829" sortIndex="2">
+                  <costs>
+                    <cost name="pts" id="7e28-892c-b80a-45c6" hidden="false" typeId="points" value="25"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="false" id="d37-4d31-5f41-d2bb" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6"/>
+                  </entryLinks>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9ddb-fc9d-f027-3527" includeChildSelections="false"/>
+              </constraints>
             </selectionEntryGroup>
             <selectionEntryGroup name="Lores of Magic" hidden="false" id="ea5e-1154-7885-4d74" sortIndex="7">
               <entryLinks>
