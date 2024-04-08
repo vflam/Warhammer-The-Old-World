@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="97" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="98" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -41,7 +41,6 @@
       </modifiers>
     </categoryEntry>
     <categoryEntry name="GOBLIN HERO" hidden="true" id="70ab-75e7-1b17-6f49"/>
-    <categoryEntry name="GOBLIN HERO" hidden="true" id="1245-a36a-20b8-5d53"/>
     <categoryEntry name="NIGHT GOBLIN CHARACTER" hidden="true" id="1000-68d6-8999-b491"/>
     <categoryEntry name="Wizard" hidden="false" id="f954-b4c0-b835-a048"/>
     <categoryEntry name="VAMPIRE" hidden="true" id="4813-a63e-57ed-dc4"/>
@@ -70,6 +69,9 @@
       </modifiers>
     </categoryEntry>
     <categoryEntry name="Regimental Unit" hidden="true" id="5e89-9cfa-f74-43ea"/>
+    <categoryEntry name="ORC BOSS" id="7cec-b7c4-6638-5d34" hidden="true"/>
+    <categoryEntry name="ORC BOSS" id="b060-648a-8c55-c7c6" hidden="true"/>
+    <categoryEntry name="SHAMAN" id="c551-3880-4822-c6c0" hidden="true"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
@@ -635,6 +637,40 @@
         <characteristicType id="9429-ffe7-2ce5-e9a5" name="AP"/>
         <characteristicType id="5f83-3633-336b-93b4" name="Special Rules"/>
         <characteristicType id="772a-a7ff-f6b3-df71" name="Notes"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType name="Magic Standards" hidden="false" id="e3be-1b80-f570-96a1" sortIndex="6">
+      <characteristicTypes>
+        <characteristicType id="a34c-cc25-6cb9-95e1" name="Description"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType name="Arcane Items" hidden="false" id="65d6-7512-2a53-bd6c" sortIndex="7">
+      <characteristicTypes>
+        <characteristicType id="fdd8-b367-1d68-c9cd" name="Description"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType name="Magic Weapons" hidden="false" id="e4d1-790a-ab75-2b57" sortIndex="11">
+      <characteristicTypes>
+        <characteristicType id="51c8-c0d6-94db-264c" name="R"/>
+        <characteristicType id="4f75-25c9-31bd-7074" name="S"/>
+        <characteristicType id="15e2-fff4-477f-ea26" name="AP"/>
+        <characteristicType id="57a7-47c0-8d74-d54c" name="Special Rules"/>
+        <characteristicType id="5e5e-34db-1ee0-86" name="Note"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType name="Magic Armour" hidden="false" id="fefe-6a57-a203-edf9" sortIndex="12">
+      <characteristicTypes>
+        <characteristicType id="d6b2-9b2a-d88e-eec9" name="Description"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType name="Talismans" hidden="false" id="5c1d-13f3-7dd6-e817" sortIndex="13">
+      <characteristicTypes>
+        <characteristicType id="3fa5-c856-b00a-c9f4" name="Description"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType name="Enchanted Items" hidden="false" id="d29c-a3fb-dcdf-29d6" sortIndex="14">
+      <characteristicTypes>
+        <characteristicType id="cea7-7573-475d-cc1d" name="Description"/>
       </characteristicTypes>
     </profileType>
   </profileTypes>
@@ -1688,8 +1724,7 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
     </profile>
     <profile name="Arboreal Gloom" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="77b7-4782-166e-ec77">
       <characteristics>
-        <characteristic name="Description" id="e766-e2f2-3f9-7329" hidden="false" typeId="9f84-4221-785a-db50">Woods of any size are dark places, filled with branches and trailing vines. Seeing clearly through such arboreal gloom is difficult to say the least. If a wood lies between two models and if neither model is within the wood, a line of sight can only be drawn between them if an uninterrupted line can be drawn between their bases without crossing over or through the wood.
-</characteristic>
+        <characteristic name="Description" id="e766-e2f2-3f9-7329" hidden="false" typeId="9f84-4221-785a-db50">Woods of any size are dark places, filled with branches and trailing vines. Seeing clearly through such arboreal gloom is difficult to say the least. If a wood lies between two models and if neither model is within the wood, a line of sight can only be drawn between them if an uninterrupted line can be drawn between their bases without crossing over or through the wood.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -1702,23 +1737,20 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
  # Locus of Power
  Wizards are able to draw upon the power that seeps from the monolith, channelling it into their spells. If the arcane monolith is controlled by a Wizard, that Wizard may re-roll a single dice that rolls a natural 1 when making any Casting roll.
  # Victory Points
- Controlling an important landmark is a significant achievement. To represent this, if either player controls this special feature at the end of the battle, that player is awarded a bonus of 50 Victory Points.
-</characteristic>
+ Controlling an important landmark is a significant achievement. To represent this, if either player controls this special feature at the end of the battle, that player is awarded a bonus of 50 Victory Points.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Battlefield Decoration" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="3171-81a1-e498-5660">
       <characteristics>
         <characteristic name="Description" id="4765-f051-3b88-e9e9" hidden="false" typeId="9f84-4221-785a-db50">Very small decorative elements of terrain less than 2&quot; across at their widest point, such as a stack of barrels or a roadside shrine, are called &apos;battlefield decorations&apos;. Such small features can be added to the battlefield in the same way as terrain and in the same quantities. In addition, some scenarios might specify that a number of battlefield decorations be included as objectives or as part of the narrative element of the scenario.
- Due to their small size, battlefield decorations rarely interfere with a battle. They are ignored for the purposes of both movement and combat, as if they were not there. Should the presence of such a battlefield decoration ever interfere with the positioning of units, simply make note of its position and move it aside, replacing it when it is convenient to do so. However, they may obscure a line of sight.
-</characteristic>
+ Due to their small size, battlefield decorations rarely interfere with a battle. They are ignored for the purposes of both movement and combat, as if they were not there. Should the presence of such a battlefield decoration ever interfere with the positioning of units, simply make note of its position and move it aside, replacing it when it is convenient to do so. However, they may obscure a line of sight.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Benefits of Control" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="598b-ac82-b045-5261">
       <characteristics>
-        <characteristic name="Description" id="9865-c36f-59c6-671" hidden="false" typeId="9f84-4221-785a-db50">Controlling a special feature grants a unit certain benefits which will often extend to other units in the same army. However, the benefits of controlling a special feature last only whilst it is controlled.
-</characteristic>
+        <characteristic name="Description" id="9865-c36f-59c6-671" hidden="false" typeId="9f84-4221-785a-db50">Controlling a special feature grants a unit certain benefits which will often extend to other units in the same army. However, the benefits of controlling a special feature last only whilst it is controlled.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -1743,8 +1775,7 @@ Related: Difficult Terrain, Dangerous Terrain, Low &amp; High Linear Obstacles</
     <profile name="Combining Terrain Categories" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c081-5a1c-9350-6d2a">
       <characteristics>
         <characteristic name="Description" id="9f48-466b-1580-bffd" hidden="false" typeId="9f84-4221-785a-db50">Whilst most terrain features will fall neatly into one category, many will not. A hill may feature an impassable cliff on one side; a wooden fence may run through a forest, and so on.
- Whenever a terrain feature combines two terrain categories, the players should agree upon how to deal with it before the game starts. In most cases, this will be quite simple. If one side of a hill is a steep cliff, for example, it can be agreed that, on that side, the hill counts as impassable terrain.
-</characteristic>
+ Whenever a terrain feature combines two terrain categories, the players should agree upon how to deal with it before the game starts. In most cases, this will be quite simple. If one side of a hill is a steep cliff, for example, it can be agreed that, on that side, the hill counts as impassable terrain.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -1785,15 +1816,13 @@ Related: Categories of Terrain</characteristic>
  # &quot;Incoming!&quot;
  Should dark ruins ever be hit by a cannon whilst occupied, the unit within it suffers D3 Strength 4 hits, each with an AP of -1, as stones and shrapnel explode from the structure. The cannonball then stops immediately.
  # Victory Points
- Controlling an important landmark is a significant achievement. To represent this, if either player controls this special feature at the end of the battle, that player is awarded a bonus of 100 Victory Points.
-</characteristic>
+ Controlling an important landmark is a significant achievement. To represent this, if either player controls this special feature at the end of the battle, that player is awarded a bonus of 100 Victory Points.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Defended Low Linear Obstacles" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="21dd-add4-6c70-1fb5">
       <characteristics>
-        <characteristic name="Description" id="1db4-3264-f75f-f023" hidden="false" typeId="9f84-4221-785a-db50">A unit behind a  low linear obstacle  can defend it by moving its front rank into base contact with the obstacle. Enemies can charge the defenders as normal but do not have to physically cross the obstacle. Instead, the front rank of a charging unit moves into base contact with the opposite side of the obstacle. Unless it has the  Fly (X)  special rule, a unit that charges an enemy behind a defended low linear obstacle makes a  disordered charge .
-</characteristic>
+        <characteristic name="Description" id="1db4-3264-f75f-f023" hidden="false" typeId="9f84-4221-785a-db50">A unit behind a  low linear obstacle  can defend it by moving its front rank into base contact with the obstacle. Enemies can charge the defenders as normal but do not have to physically cross the obstacle. Instead, the front rank of a charging unit moves into base contact with the opposite side of the obstacle. Unless it has the  Fly (X)  special rule, a unit that charges an enemy behind a defended low linear obstacle makes a  disordered charge .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -1811,8 +1840,7 @@ Related: Categories of Terrain</characteristic>
     </profile>
     <profile name="High Linear Obstacles" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="7180-de1a-343-efe4">
       <characteristics>
-        <characteristic name="Description" id="4368-3ee1-502b-24d0" hidden="false" typeId="9f84-4221-785a-db50">For the purposes of movement and combat, high linear obstacles, such as castle walls, are treated as  impassable terrain .
-</characteristic>
+        <characteristic name="Description" id="4368-3ee1-502b-24d0" hidden="false" typeId="9f84-4221-785a-db50">For the purposes of movement and combat, high linear obstacles, such as castle walls, are treated as  impassable terrain .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -1827,8 +1855,7 @@ Related: Vantage Point, Beyond the Crest</characteristic>
     </profile>
     <profile name="How Much Terrain?" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1859-fc8a-39e5-a904">
       <characteristics>
-        <characteristic name="Description" id="ea18-8093-29a1-cafc" hidden="false" typeId="9f84-4221-785a-db50">If there is too much terrain, units will struggle to manoeuvre. If there is too little, the battlefield will be sparse and uninteresting. The best guide is to use one terrain feature per 12&quot; of longest table edge (rounded up to the nearest 12&quot;). For example, if the longest table edge is 72&quot;, six features should suffice.
-</characteristic>
+        <characteristic name="Description" id="ea18-8093-29a1-cafc" hidden="false" typeId="9f84-4221-785a-db50">If there is too much terrain, units will struggle to manoeuvre. If there is too little, the battlefield will be sparse and uninteresting. The best guide is to use one terrain feature per 12&quot; of longest table edge (rounded up to the nearest 12&quot;). For example, if the longest table edge is 72&quot;, six features should suffice.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -1857,8 +1884,7 @@ High Linear Obstacles</characteristic>
     </profile>
     <profile name="Low Linear Obstacles" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="82c-aef8-fd50-3a5f">
       <characteristics>
-        <characteristic name="Description" id="de06-dd29-7044-88f8" hidden="false" typeId="9f84-4221-785a-db50">For the purposes of movement, low linear obstacles are treated as  difficult terrain . Should a unit engaged in combat ever find itself straddling a low linear obstacle, it becomes Disrupted and cannot claim a Rank Bonus.
-</characteristic>
+        <characteristic name="Description" id="de06-dd29-7044-88f8" hidden="false" typeId="9f84-4221-785a-db50">For the purposes of movement, low linear obstacles are treated as  difficult terrain . Should a unit engaged in combat ever find itself straddling a low linear obstacle, it becomes Disrupted and cannot claim a Rank Bonus.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -1871,8 +1897,7 @@ High Linear Obstacles</characteristic>
  # Honour Thy Forebears
  Many warriors are filled with a sense of righteous pride when tasked with the defence of a monument of glory, and will defend it vigorously. The unit controlling the monument of glory gains the Hatred (all enemies) special rule.
  # Victory Points
- Controlling an important landmark is a significant achievement. To represent this, if either player controls this special feature at the end of the battle, that player is awarded a bonus of 50 Victory Points.
-</characteristic>
+ Controlling an important landmark is a significant achievement. To represent this, if either player controls this special feature at the end of the battle, that player is awarded a bonus of 50 Victory Points.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -1903,8 +1928,7 @@ Related: Categories of Terrain</characteristic>
     </profile>
     <profile name="Placing Special Features" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ea94-433d-20f7-1b75">
       <characteristics>
-        <characteristic name="Description" id="e7dc-94e8-1bc2-faa6" hidden="false" typeId="9f84-4221-785a-db50">Special features must be placed within 12&quot; of the centre of the battlefield.
-</characteristic>
+        <characteristic name="Description" id="e7dc-94e8-1bc2-faa6" hidden="false" typeId="9f84-4221-785a-db50">Special features must be placed within 12&quot; of the centre of the battlefield.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -1917,8 +1941,7 @@ Related: Categories of Terrain</characteristic>
  - Players then take turns to place a single terrain feature from all of those chosen until the agreed number of terrain features have been placed. Any unused terrain features are set aside.
 
  Players can place terrain features anywhere on the battlefield, but not within 12&quot; of a terrain feature placed by their opponent, and not within 12&quot; of the centre of the battlefield. The only exception to this are  special features , which must be placed within 12&quot; of the centre of the battlefield.
- Should the players agree, or should the scenario require it, battlefield decorations can be placed in the same manner.
-</characteristic>
+ Should the players agree, or should the scenario require it, battlefield decorations can be placed in the same manner.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -1946,10 +1969,7 @@ Related: Using Special Features, Placing Special Features, Controlling a Special
  To determine how the size of terrain affects how much you should use, follow this simple guide:
  - Between 2&quot; and 8&quot; at its widest point – counts as one terrain feature.
  - Between 8&quot; and 12&quot; at its widest point – counts as two terrain features.
- - More than 12&quot; at its widest point – counts as three terrain features.
-
- 
-</characteristic>
+ - More than 12&quot; at its widest point – counts as three terrain features.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -1970,8 +1990,7 @@ Related: Using Special Features, Placing Special Features, Controlling a Special
  # &quot;Incoming!&quot;
  Should a tower ever be hit by a cannon whilst occupied, the unit within it suffers D3 Strength 4 hits, each with an AP of -1, as stones and shrapnel explode from the structure. The cannonball then stops immediately.
  # Victory Points
- Controlling an important landmark is a significant achievement. To represent this, if either player controls this special feature at the end of the battle, that player is awarded a bonus of 100 Victory Points.
-</characteristic>
+ Controlling an important landmark is a significant achievement. To represent this, if either player controls this special feature at the end of the battle, that player is awarded a bonus of 100 Victory Points.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -1996,8 +2015,7 @@ Related: Hills</characteristic>
     </profile>
     <profile name="Woodland Boundaries" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="5c45-9bcf-4490-83e1">
       <characteristics>
-        <characteristic name="Description" id="c1f4-274e-5d10-a313" hidden="false" typeId="9f84-4221-785a-db50">A woodland terrain feature must have a clearly defined edge. This allows individual trees to be removed and replaced to facilitate the movement of models. Regardless of the position of any individual trees within the terrain feature, any model or unit counts as being behind partial cover as long as up to half of the model, or up to half of the models within the unit, is within the woods (i.e., within the terrain feature&apos;s clearly defined edge).
-</characteristic>
+        <characteristic name="Description" id="c1f4-274e-5d10-a313" hidden="false" typeId="9f84-4221-785a-db50">A woodland terrain feature must have a clearly defined edge. This allows individual trees to be removed and replaced to facilitate the movement of models. Regardless of the position of any individual trees within the terrain feature, any model or unit counts as being behind partial cover as long as up to half of the model, or up to half of the models within the unit, is within the woods (i.e., within the terrain feature&apos;s clearly defined edge).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -2052,9 +2070,7 @@ Tower</characteristic>
     </profile>
     <profile name="Campaign Trees" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="58ed-b525-6ba2-7f6a">
       <characteristics>
-        <characteristic name="Description" id="520c-528b-dd59-a183" hidden="false" typeId="9f84-4221-785a-db50">The most simple type of campaign that two players can enjoy is one that uses a campaign tree, such as the one shown in the example below. In such a campaign, the outcome of each battle determines the scenario that will be used for the next game. Should players wish, they may add a few caveats regarding how their armies might change for each battle with each win or loss.
-  
-</characteristic>
+        <characteristic name="Description" id="520c-528b-dd59-a183" hidden="false" typeId="9f84-4221-785a-db50">The most simple type of campaign that two players can enjoy is one that uses a campaign tree, such as the one shown in the example below. In such a campaign, the outcome of each battle determines the scenario that will be used for the next game. Should players wish, they may add a few caveats regarding how their armies might change for each battle with each win or loss.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -2189,10 +2205,7 @@ Related: Mounted Characters, Split Profile (Chariot Mount)</characteristic>
         <characteristic name="Description" id="b713-daf-cf93-fb53" hidden="false" typeId="9f84-4221-785a-db50">Character models rarely have any formation special rules. Instead:
  - A character that has joined a unit adopts the formation of that unit.
  - A Lone character  is always considered to be in a  Skirmish  formation.
- - A character mounted on a ridden monster or chariot adopts the formation of their mount.
-
- 
-</characteristic>
+ - A character mounted on a ridden monster or chariot adopts the formation of their mount.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -2217,8 +2230,7 @@ Related: Characters &amp; Units, Enemy Shooting (Characters), &quot;Look Out, Si
     </profile>
     <profile name="Characters &amp; Troop Type" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="f87b-bbf6-3658-22dd">
       <characteristics>
-        <characteristic name="Description" id="9a4-398f-efe7-38b1" hidden="false" typeId="9f84-4221-785a-db50">Just like any other model, character models have a  troop type . In most cases, this will be a sub-category of  infantry , although some characters, such as Greater Daemons of Chaos, are so large that their troop type will be a sub-category of  monster . In addition, the majority of characters can be mounted in some way and, if they are, their troop type will change accordingly.
-</characteristic>
+        <characteristic name="Description" id="9a4-398f-efe7-38b1" hidden="false" typeId="9f84-4221-785a-db50">Just like any other model, character models have a  troop type . In most cases, this will be a sub-category of  infantry , although some characters, such as Greater Daemons of Chaos, are so large that their troop type will be a sub-category of  monster . In addition, the majority of characters can be mounted in some way and, if they are, their troop type will change accordingly.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -2299,8 +2311,7 @@ Related: Characters &amp; Shooting</characteristic>
     <profile name="Evade" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="dca7-a15e-3c46-a421">
       <characteristics>
         <characteristic name="Description" id="5bd7-1738-fc3d-78e2" hidden="false" typeId="9f84-4221-785a-db50">Lone characters are able to move quickly out of harm&apos;s way. Unless they are fleeing or engaged in combat, a Lone character that would be contacted by an enemy unit that is making a pursuit move may attempt to &apos;evade&apos;.
- Before moving the enemy unit, make an Initiative test for the character. If this test is passed, the character may move a number of inches up to their Movement characteristic, away from any enemy units (i.e., the character cannot end this movement closer to any enemy unit than they were before moving). Once this move is complete, the enemy unit completes its pursuit move.
-</characteristic>
+ Before moving the enemy unit, make an Initiative test for the character. If this test is passed, the character may move a number of inches up to their Movement characteristic, away from any enemy units (i.e., the character cannot end this movement closer to any enemy unit than they were before moving). Once this move is complete, the enemy unit completes its pursuit move.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -2335,15 +2346,13 @@ Related: Characters &amp; Units</characteristic>
     <profile name="General &amp; Battle Standard" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="9964-d35c-91b7-2c35">
       <characteristics>
         <characteristic name="Description" id="2d44-1cd5-5fba-9546" hidden="false" typeId="9f84-4221-785a-db50">The most important characters in any army are the General and Battle Standard Bearer. Such bold and inspirational leaders are natural commanders, able to hold together their forces even in the worst of situations. To represent their importance, your General and Battle Standard Bearer each have a Command range of 12&quot;, regardless of their Leadership characteristic.
- If your General or Battle Standard Bearer has the  Large Target  special rule or is mounted on a model with this special rule, their  Command range  is increased further; from 12&quot; to 18&quot;.
-</characteristic>
+ If your General or Battle Standard Bearer has the  Large Target  special rule or is mounted on a model with this special rule, their  Command range  is increased further; from 12&quot; to 18&quot;.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="&quot;Hold Your Ground&quot;" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c9e7-1105-1f51-e1ef">
       <characteristics>
-        <characteristic name="Description" id="e2f1-648-6c40-51ed" hidden="false" typeId="9f84-4221-785a-db50">To represent the Battle Standard&apos;s steadying presence, unless your Battle Standard Bearer is fleeing, friendly units within the Battle Standard Bearer&apos;s Command range may re-roll any failed Panic or Rally test. In addition, friendly units within the Battle Standard Bearer&apos;s Command range may re-roll the 2D6 when making a Break test. However, you must accept the result of the second roll, even if it is worse than the first.
-</characteristic>
+        <characteristic name="Description" id="e2f1-648-6c40-51ed" hidden="false" typeId="9f84-4221-785a-db50">To represent the Battle Standard&apos;s steadying presence, unless your Battle Standard Bearer is fleeing, friendly units within the Battle Standard Bearer&apos;s Command range may re-roll any failed Panic or Rally test. In addition, friendly units within the Battle Standard Bearer&apos;s Command range may re-roll the 2D6 when making a Break test. However, you must accept the result of the second roll, even if it is worse than the first.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -2359,8 +2368,7 @@ Related: The General (Characters)</characteristic>
     <profile name="Issuing A Challenge" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="f7ad-e58c-a345-47a4">
       <characteristics>
         <characteristic name="Description" id="17fa-f9a7-6977-e289" hidden="false" typeId="9f84-4221-785a-db50">Challenges are issued when a combat is chosen during Step 1.1 of the Choose Combat &amp; Fight sub-phase. Only one challenge can be issued per combat. The active player has the opportunity to issue a challenge first. If they choose not to, the inactive player can issue a challenge.
- To issue a challenge, a player must nominate an eligible character or champion to be the challenger. To be eligible, the model must be within, or adjacent to, the fighting rank. If a player does not have an eligible model, no challenge can be issued.
-</characteristic>
+ To issue a challenge, a player must nominate an eligible character or champion to be the challenger. To be eligible, the model must be within, or adjacent to, the fighting rank. If a player does not have an eligible model, no challenge can be issued.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -2381,10 +2389,7 @@ Related: Characters &amp; Units</characteristic>
  During the course of a game, a Lone character may join a  friendly unit , bringing their might and leadership to the unit to strengthen its ranks. Upon joining a unit, a character ceases to be a Lone character.
  A Lone character benefits from the following rules:
  - Evade
- - Targeting Lone Characters
-
- 
-</characteristic>
+ - Targeting Lone Characters</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -2560,8 +2565,7 @@ Related: Lone Characters</characteristic>
       <characteristics>
         <characteristic name="Description" id="ee78-a5b2-bfca-6e36" hidden="false" typeId="9f84-4221-785a-db50">A Battle Standard Bearer is a heroic model carrying a particularly impressive banner, and it will be presented as an option in your chosen army list. The Battle Standard is carried by a character model and, unless specified otherwise, the model that carries the Battle Standard cannot be the General. Unlike normal standards, the Battle Standard is lost if the bearer is slain – other models cannot pick it up, even if they are in the same unit.
  # Combat Result Bonus
- A Battle Standard grants a bonus of +1 combat result point. Unlike other standards, a Battle Standard grants this bonus even if another standard is present. If, by some unusual circumstance, there are two Battle Standards on the same side in the combat, you can only count the bonus for one.
-</characteristic>
+ A Battle Standard grants a bonus of +1 combat result point. Unlike other standards, a Battle Standard grants this bonus even if another standard is present. If, by some unusual circumstance, there are two Battle Standards on the same side in the combat, you can only count the bonus for one.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -2585,8 +2589,7 @@ Related: Selecting Your General, Inspiring Presence</characteristic>
     </profile>
     <profile name="To The Death!" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="94ef-9a44-a8f-90b">
       <characteristics>
-        <characteristic name="Description" id="50f7-e941-fb3e-ee24" hidden="false" typeId="9f84-4221-785a-db50">If both participants in a challenge survive the round of combat, and if the combat continues into the next player&apos;s turn, the challenge will also continue. Further challenges cannot be issued in that combat until the existing challenge has been resolved.
-</characteristic>
+        <characteristic name="Description" id="50f7-e941-fb3e-ee24" hidden="false" typeId="9f84-4221-785a-db50">If both participants in a challenge survive the round of combat, and if the combat continues into the next player&apos;s turn, the challenge will also continue. Further challenges cannot be issued in that combat until the existing challenge has been resolved.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -2783,8 +2786,7 @@ Related: Standard Bearers</characteristic>
     </profile>
     <profile name="Equipment (Champions)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="2041-3de-f072-a7c7">
       <characteristics>
-        <characteristic name="Description" id="c8b8-cc4b-9bc5-b7f4" hidden="false" typeId="9f84-4221-785a-db50">Usually, champions count as having the same equipment as the other members of their unit, regardless of the equipment shown on the model. However, some champions do have the option to take equipment that is not available to other members of their unit. Where this is the case, it will be clearly stated.
-</characteristic>
+        <characteristic name="Description" id="c8b8-cc4b-9bc5-b7f4" hidden="false" typeId="9f84-4221-785a-db50">Usually, champions count as having the same equipment as the other members of their unit, regardless of the equipment shown on the model. However, some champions do have the option to take equipment that is not available to other members of their unit. Where this is the case, it will be clearly stated.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -2926,8 +2928,7 @@ Related: Standard Bearers</characteristic>
     <profile name="What&apos;s in a Title?" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="83af-a5e2-a7cc-bba2">
       <characteristics>
         <characteristic name="Description" id="4f96-ff2a-86f6-2f60" hidden="false" typeId="9f84-4221-785a-db50">In most army lists, the term &apos;standard bearer&apos; is used throughout, though the model in question might actually carry an icon, pennant or other such totem. Similarly, a &apos;musician&apos; might bear a drum, flute, horn, zither, hurdy-gurdy or some other weird and wonderful instrument – they will still be described as a musician.
- Champions differ somewhat – they will often be given a rank or name specific to their unit or army. Whatever this may be, they follow all the rules for a unit champion given here.
-</characteristic>
+ Champions differ somewhat – they will often be given a rank or name specific to their unit or army. Whatever this may be, they follow all the rules for a unit champion given here.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -2989,9 +2990,7 @@ Related: Unit Shape (Close Order), Combat Order (Close Order)</characteristic>
 
  Note that this bonus can be claimed for an incomplete rear rank, as long as there are sufficient models in it. However, if your unit has become  Disrupted  it cannot claim a Rank Bonus.
  # Combat Result Bonus
- Whilst in Combat Order, a Close Order formation may claim a bonus of +1  combat result  point.
-  
-</characteristic>
+ Whilst in Combat Order, a Close Order formation may claim a bonus of +1  combat result  point.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3002,8 +3001,7 @@ Related: Unit Shape (Close Order), Combat Order (Close Order)</characteristic>
  - It ends its movement with a quarter (25%) or more of its models within  difficult terrain  or if it is straddling a  low linear obstacle .
 
  A Disrupted unit cannot claim a Rank Bonus.
- Note that enemy  Skirmishers  do not cause Disruption.
-</characteristic>
+ Note that enemy  Skirmishers  do not cause Disruption.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3011,16 +3009,13 @@ Related: Unit Shape (Close Order), Combat Order (Close Order)</characteristic>
       <characteristics>
         <characteristic name="Description" id="3b66-f145-37c-2398" hidden="false" typeId="9f84-4221-785a-db50">All units must adopt a formation. The type of formation a unit adopts will influence how it acts in battle; how it moves, how it fights, and so on. Each type of formation has its own rules.
  The type(s) of formation a unit can adopt are indicated by a special rule of the same name. Models with more than one such special rule may choose their formation during deployment, and may change it and adopt a different formation by  reforming  during the game.
-  Close Order  formations are by far the most usual. Therefore, the core &apos;how to play&apos; rules focus upon such units. Examples of more unusual types of formation include  Skirmish  and  Open Order , the rules for which are covered in the advanced rules section. Additionally, some army lists introduce special formation types unique to them.
-</characteristic>
+  Close Order  formations are by far the most usual. Therefore, the core &apos;how to play&apos; rules focus upon such units. Examples of more unusual types of formation include  Skirmish  and  Open Order , the rules for which are covered in the advanced rules section. Additionally, some army lists introduce special formation types unique to them.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Marching Column" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4663-b3fe-a44e-c0cf">
       <characteristics>
-        <characteristic name="Description" id="9136-687e-58fc-d6a5" hidden="false" typeId="9f84-4221-785a-db50">A unit that is deeper than it is wide (i.e., that has more models per file than per rank, as shown in Fig 101.2) is said to be in Marching Column. A Marching Column cannot claim a  Rank Bonus  and cannot make a charge move, but may triple its Movement characteristic when  Marching .
-  
-</characteristic>
+        <characteristic name="Description" id="9136-687e-58fc-d6a5" hidden="false" typeId="9f84-4221-785a-db50">A unit that is deeper than it is wide (i.e., that has more models per file than per rank, as shown in Fig 101.2) is said to be in Marching Column. A Marching Column cannot claim a  Rank Bonus  and cannot make a charge move, but may triple its Movement characteristic when  Marching .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3051,8 +3046,7 @@ Disrupted Units</characteristic>
     </profile>
     <profile name="Artillery &amp; Scatter Dice" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b46d-309f-b425-aa78">
       <characteristics>
-        <characteristic name="Description" id="b15f-11ef-9f08-c62e" hidden="false" typeId="9f84-4221-785a-db50">Warhammer: the Old World uses two special dice: the Artillery dice (marked 2, 4, 6, 8, 10 and Misfire) and a Scatter dice (marked with arrows and Hit! symbols). These are often used together to represent the effects of war machines. Sometimes, the Scatter dice is used with one or more D6 to determine a random direction and distance.
-</characteristic>
+        <characteristic name="Description" id="b15f-11ef-9f08-c62e" hidden="false" typeId="9f84-4221-785a-db50">Warhammer: the Old World uses two special dice: the Artillery dice (marked 2, 4, 6, 8, 10 and Misfire) and a Scatter dice (marked with arrows and Hit! symbols). These are often used together to represent the effects of war machines. Sometimes, the Scatter dice is used with one or more D6 to determine a random direction and distance.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3060,8 +3054,7 @@ Disrupted Units</characteristic>
       <characteristics>
         <characteristic name="Description" id="f547-9774-d442-241e" hidden="false" typeId="9f84-4221-785a-db50">The most frequently used dice is a regular six-sided dice, marked 1 to 6. It is common for the &apos;6&apos; to be replaced by a logo on many dice.
  # D3
- The rules may call for a D3 to be rolled, but an actual three-sided dice is not necessary. To roll a D3, simply roll a D6 and half the result, rounding fractions up.
-</characteristic>
+ The rules may call for a D3 to be rolled, but an actual three-sided dice is not necessary. To roll a D3, simply roll a D6 and half the result, rounding fractions up.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3073,8 +3066,7 @@ Disrupted Units</characteristic>
  # Target Number Rolls
  The rules will often require you to roll a specific number followed by a &apos;+&apos;. This is a &apos;target number roll&apos;. If you are required to roll a 4+, for example, a roll of 4, 5 or 6 on a D6 would be a success, but a roll of 1, 2 or 3 would not.
  # Multiple Dice Rolls
- The rules may require you to roll 2D6, 3D6 and so forth. In such cases, simply roll the number of D6 indicated and add the results together. This is a multiple dice roll.
-</characteristic>
+ The rules may require you to roll 2D6, 3D6 and so forth. In such cases, simply roll the number of D6 indicated and add the results together. This is a multiple dice roll.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3087,10 +3079,7 @@ Disrupted Units</characteristic>
  - Modifying Dice Rolls
  - Natural Rolls
  - Rolling Off
- - Re-rolls
-
- 
-</characteristic>
+ - Re-rolls</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3117,31 +3106,27 @@ Related: Directly Towards &amp; Directly Away</characteristic>
     </profile>
     <profile name="Modifying Dice Rolls" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="88f-91f0-9b36-53dc">
       <characteristics>
-        <characteristic name="Description" id="d855-db91-d02c-1eb8" hidden="false" typeId="9f84-4221-785a-db50">To modify a dice roll, simply roll the dice and then add or subtract the modifier(s) shown, effectively changing the result of the roll. If the rules ever instruct you to divide a dice roll, any fractions are rounded up, unless the rules state otherwise. Modifiers are applied after division or multiplication.
-</characteristic>
+        <characteristic name="Description" id="d855-db91-d02c-1eb8" hidden="false" typeId="9f84-4221-785a-db50">To modify a dice roll, simply roll the dice and then add or subtract the modifier(s) shown, effectively changing the result of the roll. If the rules ever instruct you to divide a dice roll, any fractions are rounded up, unless the rules state otherwise. Modifiers are applied after division or multiplication.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Moving Through Units" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4eeb-546b-963f-b891">
       <characteristics>
         <characteristic name="Description" id="3171-bd67-f868-9341" hidden="false" typeId="9f84-4221-785a-db50">As a general rule, no unit can move through another unit, though there are exceptions. For example, a fleeing unit may be obliged to move through another unit.
- Alternatively, the corner of a unit may have no choice but to move through another unit during a manoeuvre. In such cases, it is acceptable for one unit to pass through another and the rules will make allowance for this.
-</characteristic>
+ Alternatively, the corner of a unit may have no choice but to move through another unit during a manoeuvre. In such cases, it is acceptable for one unit to pass through another and the rules will make allowance for this.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Natural Rolls" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="23e3-6096-540e-3cd9">
       <characteristics>
-        <characteristic name="Description" id="548d-1c24-c46d-6e45" hidden="false" typeId="9f84-4221-785a-db50">The term &apos;natural&apos; roll describes the actual number shown once a dice has been rolled. In other words, a natural roll is the result before any modifiers are applied.
-</characteristic>
+        <characteristic name="Description" id="548d-1c24-c46d-6e45" hidden="false" typeId="9f84-4221-785a-db50">The term &apos;natural&apos; roll describes the actual number shown once a dice has been rolled. In other words, a natural roll is the result before any modifiers are applied.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Re-rolls" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="2b80-5705-c299-bdb3">
       <characteristics>
         <characteristic name="Description" id="97ec-8a32-7c04-9928" hidden="false" typeId="9f84-4221-785a-db50">In some situations, the rules may allow you to re-roll a dice. This is exactly what it sounds like – pick up the dice and roll it again. You must accept the result of the re-roll, even if it is worse than the first. No single dice can be re-rolled more than once, regardless of the source of the re-roll.
- If you re-roll a multiple dice roll, you must re-roll all of the dice, unless the rule granting the re-roll specifies otherwise.
-</characteristic>
+ If you re-roll a multiple dice roll, you must re-roll all of the dice, unless the rule granting the re-roll specifies otherwise.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3160,8 +3145,7 @@ Related: Templates</characteristic>
     </profile>
     <profile name="Rolling Off" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6f74-5d54-3f0-7534">
       <characteristics>
-        <characteristic name="Description" id="96d4-d803-9e1c-d7fb" hidden="false" typeId="9f84-4221-785a-db50">The rules may call for players to &apos;roll-off&apos;. To do this, each player rolls a dice (usually a D6) and the highest score wins. In the case of a tie, roll again unless otherwise instructed.
-</characteristic>
+        <characteristic name="Description" id="96d4-d803-9e1c-d7fb" hidden="false" typeId="9f84-4221-785a-db50">The rules may call for players to &apos;roll-off&apos;. To do this, each player rolls a dice (usually a D6) and the highest score wins. In the case of a tie, roll again unless otherwise instructed.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3182,8 +3166,7 @@ Related: Templates</characteristic>
     <profile name="Take-backs &amp; Changing One&apos;s Mind" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="55b3-f5d6-1004-94cb">
       <characteristics>
         <characteristic name="Description" id="bfa1-ed6c-89bd-e2d1" hidden="false" typeId="9f84-4221-785a-db50">It is not uncommon for players of any game to occasionally second guess themselves, saying they are about to do something before immediately changing their mind. Players should be tolerant of this in their opponents, as they will likely do it themselves.
- However, once dice have been rolled for any reason, or a move committed to and made, players must abide by their decision; they can no longer go back and change anything that came before the dice roll or the act of moving!
-</characteristic>
+ However, once dice have been rolled for any reason, or a move committed to and made, players must abide by their decision; they can no longer go back and change anything that came before the dice roll or the act of moving!</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3203,8 +3186,7 @@ Related: Risk of Being Hit</characteristic>
     </profile>
     <profile name="The Most Important Rule" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="9ab1-44b-955d-102d">
       <characteristics>
-        <characteristic name="Description" id="6ef8-ce61-c355-432e" hidden="false" typeId="9f84-4221-785a-db50">Warhammer: the Old World is a complex game and, as such, players will occasionally disagree in their interpretation of the rules. Should disagreements arise, players are encouraged to look up the rule(s) in question, reach an agreement and move on. Should this prove impossible, a roll-off should determine whose interpretation will apply for the remainder of the game. What matters more than any rule is that players enjoy their game and that rivalries remain friendly!
-</characteristic>
+        <characteristic name="Description" id="6ef8-ce61-c355-432e" hidden="false" typeId="9f84-4221-785a-db50">Warhammer: the Old World is a complex game and, as such, players will occasionally disagree in their interpretation of the rules. Should disagreements arise, players are encouraged to look up the rule(s) in question, reach an agreement and move on. Should this prove impossible, a roll-off should determine whose interpretation will apply for the remainder of the game. What matters more than any rule is that players enjoy their game and that rivalries remain friendly!</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3214,8 +3196,7 @@ Related: Risk of Being Hit</characteristic>
  Warhammer: the Old World is a complex game of manoeuvre and counter manoeuvre between tightly formed battle lines of densely packed infantry and cavalry. It is to be expected that unusual situations will arise when units get in one another&apos;s way, interfering with movement, shooting, combat and so forth.
  To deal with this, we encourage players to resolve uncertainties in a way that keeps the game flowing, or to seek the opinion of an impartial third party (at an organised event, where such situations can take on greater significance, this is the role of the event organiser or the umpires, and players should always defer to the ruling of such an official, as is right and honourable – only the most dastardly rapscallion would argue with such an exemplar of the hobby).
  For example, if moving fleeing, overrunning or pursuing units becomes too complex, with units blocking the movement of one another, you may decide to nudge one unit aside (by the smallest amount possible) to make space for another, or you may decide to go back and resolve the movement of certain units in a different order.
- If such resolution is impossible, the simplest solution is to rule that the unit cannot do the thing, by which we mean it cannot make the move, cannot take the shot, and so forth. As stated in  The Most Important Rule , what matters more than any rule is that players enjoy their game and that rivalries remain friendly!
-</characteristic>
+ If such resolution is impossible, the simplest solution is to rule that the unit cannot do the thing, by which we mean it cannot make the move, cannot take the shot, and so forth. As stated in  The Most Important Rule , what matters more than any rule is that players enjoy their game and that rivalries remain friendly!</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3257,8 +3238,7 @@ Related: Spell Categories</characteristic>
       <characteristics>
         <characteristic name="Description" id="efcd-f1ab-fb8b-b585" hidden="false" typeId="9f84-4221-785a-db50">Some models have &apos;Bound&apos; spells, which may be contained within a magic item or given by a special rule, and which they can cast in the usual manner. If a &apos;Power Level&apos; is given, this is added to the result of the  Casting roll  to give the casting result. If no Power Level is given, nothing is added – the result of the Casting roll is itself the casting result. When casting a Bound spell, there is no risk of a  miscast  or chance of a  perfect invocation .
  You may attempt to dispel a Bound spell as usual. Magic items that dispel or destroy spells work as normal against Bound spells. When dispelling a Bound spell, there is no risk of being  outclassed in the art .
- A model can only cast a single Bound spell per phase. Possessing a Bound spell does not make a model a  Wizard .
-</characteristic>
+ A model can only cast a single Bound spell per phase. Possessing a Bound spell does not make a model a  Wizard .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3328,8 +3308,7 @@ Related: Spell Categories</characteristic>
  - If the dispel result exceeds the casting result, the spell is successfully dispelled and immediately ends.
  - If the dispel result is equal to or less than the casting result, the dispel attempt has failed. The spell is not dispelled.*
 
- * Admin Note:  This has been flagged by the community as conflicting with the &quot; Dispelling A Spell&quot; section  of the  Quick Reference . Current consensus is this version of the rule is the intended way to play.
-</characteristic>
+ * Admin Note:  This has been flagged by the community as conflicting with the &quot; Dispelling A Spell&quot; section  of the  Quick Reference . Current consensus is this version of the rule is the intended way to play.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3345,8 +3324,7 @@ Related: Types of Dispel, Dispel Roll &amp; Dispel Result, Outclassed in the Art
     <profile name="Dispelling Remains in Play Spells" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6843-d011-d93c-ac71">
       <characteristics>
         <characteristic name="Description" id="459e-8e73-7ad6-d843" hidden="false" typeId="9f84-4221-785a-db50">If not immediately dispelled when cast, you may attempt to dispel a  Remains in Play  spell cast by your opponent during the  Conjuration  sub-phase of any of your subsequent turns. To do so, you may attempt either a Fated dispel or a  Wizardly dispel  (provided the Wizard making the attempt is within Dispel range of the Wizard that cast the spell).
- Remains in Play spells do not retain the energy of their casting, and so you do not need to beat the original casting result if attempting to dispel in subsequent turns, but rather the minimum casting value given in the spell&apos;s description.
-</characteristic>
+ Remains in Play spells do not retain the energy of their casting, and so you do not need to beat the original casting result if attempting to dispel in subsequent turns, but rather the minimum casting value given in the spell&apos;s description.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3384,9 +3362,7 @@ Related: Spell Categories</characteristic>
  - Level 1:  Wizards of the first level are those of humble ability.
  - Level 2:  Wizards of the second level are experienced spellcasters.
  - Level 3:  Wizards of the third level are great sorcerers of a kind rarely seen.
- - Level 4:  Wizards of the fourth level are the mightiest of all Wizards, the very equal of crowned monarchs within the realms of sorcery.
-
-</characteristic>
+ - Level 4:  Wizards of the fourth level are the mightiest of all Wizards, the very equal of crowned monarchs within the realms of sorcery.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3394,8 +3370,7 @@ Related: Spell Categories</characteristic>
       <characteristics>
         <characteristic name="Description" id="6ef8-935f-2285-1c45" hidden="false" typeId="9f84-4221-785a-db50">The Lores of Magic are lists from which Wizards generate their spells. Each Lore of Magic represents a particular approach towards the study and use of magic, giving each its own character reflected by the spells within it. Different Wizards have access to different Lores of Magic.
  Accompanying every Wizard&apos;s profile you will find the Lore(s) of Magic they know. In some cases, it will be stated that they know spells from a single, given Lore of Magic, whilst in others it will be stated that they know spells from one of a number of given Lores of Magic. Where this is the case, you must choose one of these Lores when writing your  muster list .
- The Lores of Magic most commonly seen in the Old World are presented in the  Lores of Magic section.
-</characteristic>
+ The Lores of Magic most commonly seen in the Old World are presented in the  Lores of Magic section.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3411,8 +3386,7 @@ Related: Spell Categories</characteristic>
     <profile name="Magic Resistance (-X) (Magic)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1aea-2856-b63f-9ccd">
       <characteristics>
         <characteristic name="Description" id="35e6-3ac0-4baa-806" hidden="false" typeId="9f84-4221-785a-db50">Some models have the Magic Resistance (-X) special rule, making them resistant to the magic of their enemies. The Casting roll of any spell (including Bound spells) that targets an enemy unit that includes one or more models with this special rule suffers a modifier, as shown in brackets after the name of this special rule (shown here as &apos;-X&apos;).
- Note that this special rule is not cumulative. If two or more models in a unit have this special rule, use the highest modifier.
-</characteristic>
+ Note that this special rule is not cumulative. If two or more models in a unit have this special rule, use the highest modifier.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3428,20 +3402,14 @@ Related: Spell Categories</characteristic>
     </profile>
     <profile name="Miscast Table" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c11-bf60-8cc3-5bc5">
       <characteristics>
-        <characteristic name="Description" id="cbf5-fd-fe39-9a0" hidden="false" typeId="9f84-4221-785a-db50">
-
-|||
+        <characteristic name="Description" id="cbf5-fd-fe39-9a0" hidden="false" typeId="9f84-4221-785a-db50">|||
 |:--|:--|
 |2D6|Result|
 |2-4|Dimensional Cascade:  The summoned magic breaks free, creating an ethereal tornado. Centre a 5&quot; blast  template  over the Wizard. Every model (friend or foe) whose base lies underneath the template risks being hit and suffering a single Strength 10 hit with an  AP  of -4.|
 |5-6|Calamitous Detonation:  Roiling magic explodes from the Wizard in a flash of light. Centre a 3&quot; blast  template  over the Wizard. Every model (friend or foe) whose base lies underneath the template risks being hit and suffering a single Strength 6 hit with an  AP  of -2.|
 |7|Careless Conjuration:  The Wizard mispronounces a syllable, causing the spell to backfire, knocking them to the ground. The Wizard suffers a single Strength 4 hit with an  AP  of -1.|
 |8-9|Barely Controlled Power:  The Wizard manages to control the magic, but at the expense of great power. The spell is cast (at its casting value, for the purpose of dispel attempts). However, you cannot attempt to cast any more spells for the remainder of the current turn.|
-|10-12|Power Drain:  With a deafening boom, the summoned magic is unleashed and an unnatural calm descends. The spell is cast with a perfect invocation. However, you cannot attempt to cast any more spells for the remainder of the current turn.|
-
- 
- 
-</characteristic>
+|10-12|Power Drain:  With a deafening boom, the summoned magic is unleashed and an unnatural calm descends. The spell is cast with a perfect invocation. However, you cannot attempt to cast any more spells for the remainder of the current turn.|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3500,15 +3468,13 @@ Related: Outclassed in the Art &amp; Unbinding</characteristic>
     </profile>
     <profile name="Perfect Invocations (Remains In Play)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="aba5-10a0-c71a-2f45">
       <characteristics>
-        <characteristic name="Description" id="3635-d853-d547-63fc" hidden="false" typeId="9f84-4221-785a-db50">A Remains in Play spell cast with a perfect invocation cannot be dispelled immediately, but may be dispelled in the Conjuration sub-phase of a subsequent turn, as described above.
-</characteristic>
+        <characteristic name="Description" id="3635-d853-d547-63fc" hidden="false" typeId="9f84-4221-785a-db50">A Remains in Play spell cast with a perfect invocation cannot be dispelled immediately, but may be dispelled in the Conjuration sub-phase of a subsequent turn, as described above.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Perfect Invocations" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="aaac-f2d1-c028-84ee">
       <characteristics>
-        <characteristic name="Description" id="97de-3b6f-9a64-81b1" hidden="false" typeId="9f84-4221-785a-db50">If a natural double 6 is rolled when making a Casting roll, the spell is cast regardless of its casting value or of any modifiers that may apply to the Casting roll. A perfect invocation cannot be dispelled.
-</characteristic>
+        <characteristic name="Description" id="97de-3b6f-9a64-81b1" hidden="false" typeId="9f84-4221-785a-db50">If a natural double 6 is rolled when making a Casting roll, the spell is cast regardless of its casting value or of any modifiers that may apply to the Casting roll. A perfect invocation cannot be dispelled.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3570,15 +3536,13 @@ Related: Spell Duration, Remains in Play</characteristic>
         <characteristic name="Description" id="6af6-8016-b285-e396" hidden="false" typeId="9f84-4221-785a-db50">See also:   Spells &amp; Spell Generation 
  Players randomly generate spells for each of their Wizards before armies are deployed. If your army contains more than one Wizard, you may generate spells for each in an order of your choosing.
  Each Lore of Magic contains seven spells: six numbered (1-6) and a seventh &apos;signature&apos; spell. To determine the spells your Wizard knows, roll a number of D6 equal to their Level of Wizardry, re-rolling any duplicate results. The result(s) show which spell(s) your Wizard knows.
- If you wish, your Wizard may then discard one of these randomly generated spells and instead select the signature spell of their chosen Lore of Magic. Any number of Wizards in your army may do this.
-</characteristic>
+ If you wish, your Wizard may then discard one of these randomly generated spells and instead select the signature spell of their chosen Lore of Magic. Any number of Wizards in your army may do this.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Types of Dispel" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="42b6-7040-1f6-fb81">
       <characteristics>
-        <characteristic name="Description" id="1cf8-a61f-4f7-5cdd" hidden="false" typeId="9f84-4221-785a-db50">Before making a dispel attempt, you must first decide if one of your Wizards will attempt a  Wizardly Dispel , or if you will trust to fate and attempt a  Fated Dispel .
-</characteristic>
+        <characteristic name="Description" id="1cf8-a61f-4f7-5cdd" hidden="false" typeId="9f84-4221-785a-db50">Before making a dispel attempt, you must first decide if one of your Wizards will attempt a  Wizardly Dispel , or if you will trust to fate and attempt a  Fated Dispel .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3609,8 +3573,7 @@ Related: Types of Dispel</characteristic>
       <characteristics>
         <characteristic name="Description" id="a305-9395-c013-e03" hidden="false" typeId="9f84-4221-785a-db50">Generally speaking, Wizards dislike armour. Its stifling bulk creates a deadening aura about the Wizard&apos;s physical body that blinds their Mage sight and makes it all but impossible for them to manipulate the Winds of Magic.
  To represent this, a Wizard cannot wear armour or carry a shield. Should a Wizard ever do so, they are unable to make any Casting or Dispel rolls. This penalty applies to all armour and shields, magical or otherwise, but does not include barding (which is worn not by the Wizard, but by their mount).
- Note, however, that there are some exceptions. Certain special rules, such as &apos;Chaos Armour&apos; (found in the Warriors of Chaos army list), make a Wizard exempt from this penalty. Similarly, some suits of magical armour are crafted in such a way as to be exempt from this penalty.
-</characteristic>
+ Note, however, that there are some exceptions. Certain special rules, such as &apos;Chaos Armour&apos; (found in the Warriors of Chaos army list), make a Wizard exempt from this penalty. Similarly, some suits of magical armour are crafted in such a way as to be exempt from this penalty.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3638,9 +3601,7 @@ Feedback Scroll (60 pts)
  - Power Scroll* (20 pts)
  - Dispel Scroll* (20 pts)
  - Arcane Familiar (15 pts)
- - Earthing Rod (5 pts)
- 
-</characteristic>
+ - Earthing Rod (5 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3683,9 +3644,7 @@ Primeval Club (60 pts)
  - Skin of Man (15 pts)
  - The Plague Chalice (40 pts)
  - Hagtree Fetish (30 pts)
- - Jagged Dagger (15 pts)
- 
-</characteristic>
+ - Jagged Dagger (15 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3700,9 +3659,7 @@ Mawseeker (30 pts)
  - Kineater (15 pts)
  - Longstrider (10 pts)
  - Beastkiller (5 pts)
- - Deathcheater (5 pts)
- 
-</characteristic>
+ - Deathcheater (5 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3727,9 +3684,7 @@ Black Hammer of Hashut (60 pts)
  - Obsidian Vambraces (15 pts)
  - Daemon Flask (50 pts)
  - Vial of Lammasu Blood (40 pts)
- - Scroll of Binding* (30 pts)
- 
-</characteristic>
+ - Scroll of Binding* (30 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3746,9 +3701,7 @@ Slug-skin (50 pts)
  - Rune of the Beast Ascendant (25 pts)
  - Many-limbed Fiend (20 pts)
  - Gnarled Hide (15 pts)
- - Uncanny Senses (10 pts)
- 
-</characteristic>
+ - Uncanny Senses (10 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3833,9 +3786,7 @@ Executioner&apos;s Axe (70 pts)
  - The Guiding Eye (25 pts)
  - Black Staff (55 pts)
  - Focus Familiar* (10 pts)
- - Tome of Furion (15 pts)
- 
-</characteristic>
+ - Tome of Furion (15 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3850,9 +3801,7 @@ Higher State of Mind (60 pts)
  - Transcendent Healing (35 pts)
  - Sorcerous Void (30 pts)
  - Harrowing Scrutiny (20 pts)
- - Soul of Stone (10 pts)
- 
-</characteristic>
+ - Soul of Stone (10 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3868,9 +3817,7 @@ Loremaster (35 pts)
  - Chracian Hunter (10 pts)
  - Warden of Saphery (10 pts)
  - Pure of Heart
- - Sea Guard
- 
-</characteristic>
+ - Sea Guard</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3895,9 +3842,7 @@ Armour of Fortune (45 pts)
  - Shroud of Iron (10 pts)
  - Book of Ashur (85 pts)
  - Wizard&apos;s Familiar* (35 pts)
- - Wizard&apos;s Staff* (20 pts)
- 
-</characteristic>
+ - Wizard&apos;s Staff* (20 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3913,9 +3858,7 @@ Wizarding Hat (45 pts)
  - Potion of Strength* (25 pts)
  - Potion of Toughness* (20 pts)
  - Potion of Speed* (10 pts)
- - Potion of Foolhardiness* (5 pts)
- 
-</characteristic>
+ - Potion of Foolhardiness* (5 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3959,9 +3902,7 @@ A Blight of Terrors (50 pts)
  - A Murder of Spites (25 pts)
  - A Lamentation of Despairs (20 pts)
  - An Annoyance of Netlings (15 pts)
- - A Resplendence of Luminescents (10 pts)
- 
-</characteristic>
+ - A Resplendence of Luminescents (10 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3978,9 +3919,7 @@ Dark Majesty (50 pts)
  - Aura of Pain (30 pts)
  - Master of Mortals (25 pts)
  - Acid Ichor (15 pts)
- - Poisonous Slime (15 pts)
- 
-</characteristic>
+ - Poisonous Slime (15 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4069,9 +4008,7 @@ The White Sword (70 pts)
  - Seed of Rebirth* (20 pts)
  - Sigil of Asuryan* (40 pts)
  - Annulian Crystal (30 pts)
- - Silvery Wand (15 pts)
- 
-</characteristic>
+ - Silvery Wand (15 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4170,9 +4107,7 @@ Sword of the Quest (70 pts)
  - Sacrament of the Lady* (30 pts)
  - Diadem of Power (35 pts)
  - Prayer Icon of Quenelles (25 pts)
- - Flamestrike Wand (15 pts)
- 
-</characteristic>
+ - Flamestrike Wand (15 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4194,9 +4129,7 @@ Virtue of Knightly Temper (70 pts)
  - Virtue of Confidence (15 pts)
  - Virtue of Noble Disdain (10 pts)
  - Virtue of Discipline (5 pts)
- - Virtue of Empathy (5 pts)
- 
-</characteristic>
+ - Virtue of Empathy (5 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4231,9 +4164,7 @@ Blade of Revered Tzunki (65 pts)
  - Horned One* (10 pts)
  - Cube of Darkness* (50 pts)
  - Itxi Grub* (30 pts)
- - Cupped Hands of the Old Ones (55 pts)
- 
-</characteristic>
+ - Cupped Hands of the Old Ones (55 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4250,9 +4181,7 @@ Armour of Destiny (70 pts)
  - Spellshield* (25 pts)
  - Armour of Meteoric Iron (20 pts)
  - Enchanted Shield* (10 pts)
- - Charmed Shield* (5 pts)
- 
-</characteristic>
+ - Charmed Shield* (5 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4264,9 +4193,7 @@ Banner of Iron Resolve (50 pts)
  - Razor Standard (40 pts)
  - Rampaging Banner (30 pts)
  - The Blazing Banner (25 pts)
- - War Banner (25 pts)
- 
-</characteristic>
+ - War Banner (25 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4291,9 +4218,7 @@ Ogre Blade (65 pts)
  - Sword of Might* (20 pts)
  - Biting Blade (15 pts)
  - Sword of Striking* (15 pts)
- - Burning Blade* (5 pts)
- 
-</characteristic>
+ - Burning Blade* (5 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4328,9 +4253,7 @@ Thundermace (90 pts)
  - Fistful of Laurels* (15 pts)
  - Halfling Cookbook (30 pts)
  - Hellheart (20 pts)
- - Grut&apos;s Sickle (40 pts)
- 
-</characteristic>
+ - Grut&apos;s Sickle (40 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4355,9 +4278,7 @@ Battleaxe of the Last Big Waaagh! (75 pts)
  - Fungus Wine* (10 pts)
  - Glittering Wotnots (40 pts)
  - Buzgob&apos;s Knobbly Staff (35 pts)
- - Idol of Mork (30 pts)
- 
-</characteristic>
+ - Idol of Mork (30 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4450,9 +4371,7 @@ The Fellblade (100 pts)
  - Skavenbrew* (20 pts)
  - Warp Condenser (50 pts)
  - Storm Daemon (30 pts)
- - Warpstone Tokens* (15 pts)
- 
-</characteristic>
+ - Warpstone Tokens* (15 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4502,9 +4421,7 @@ Dawnstone (35 pts)
  - Talisman of Protection (30 pts)
  - Paymaster&apos;s Coin* (25 pts)
  - Obsidian Lodestone* (20 pts)
- - Luckstone* (15 pts)
- 
-</characteristic>
+ - Luckstone* (15 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4546,9 +4463,7 @@ Destroyer of Eternities (75 pts)
  - Enkhil&apos;s Kanopi (30 pts)
  - Tablets of Tahoth* (20 pts)
  - Hieratic Jar* (25 pts)
- - Scarab Brooch (20 pts)
- 
-</characteristic>
+ - Scarab Brooch (20 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4603,9 +4518,7 @@ Frostblade (60 pts)
  - Cloak of Mist &amp; Shadows (30 pts)
  - Skull Staff (50 pts)
  - Sceptre of De Noirot (35 pts)
- - Spell Familiar* (15 pts)
- 
-</characteristic>
+ - Spell Familiar* (15 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4620,9 +4533,7 @@ Curse of the Revenant (50 pts)
  - Dark Acolyte (30 pts)
  - Master of the Black Arts (30 pts)
  - Supernatural Horror (20 pts)
- - Lord of the Night (15 pts)
- 
-</characteristic>
+ - Lord of the Night (15 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4647,9 +4558,7 @@ Daemonsword (75 pts)
  - Favour of the Gods* (5 pts)
  - Skull of Katam (60 pts)
  - Infernal Puppet (50 pts)
- - Spell Familiar* (15 pts)
- 
-</characteristic>
+ - Spell Familiar* (15 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4711,9 +4620,7 @@ Spear of Twilight (65 pts)
  - Wailing Arrow* (20 pts)
  - Deepwood Sphere (45 pts)
  - Oaken Stave (40 pts)
- - Wand of Wych Elm (30 pts)
- 
-</characteristic>
+ - Wand of Wych Elm (30 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4814,8 +4721,7 @@ Related: Obscured Line Of Sight</characteristic>
  - If up to half of the other model or unit is obscured, they are in  partial cover .
  - If more than half of the other model or unit is obscured, they are in  full cover .
 
- The benefits of partial and full cover are discussed in more detail under the rules for  shooting .
-</characteristic>
+ The benefits of partial and full cover are discussed in more detail under the rules for  shooting .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4884,8 +4790,7 @@ Related: Leadership Tests, Modifying Characteristics</characteristic>
     <profile name="Characteristics of Zero" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ec4d-ed79-f824-b443">
       <characteristics>
         <characteristic name="Description" id="7854-7ac4-c9ed-f3df" hidden="false" typeId="9f84-4221-785a-db50">If a model has a characteristic of &apos;0&apos;, it has no ability whatsoever in what the characteristic represents. This is seen most often with Ballistic Skill, as many models simply lack the ability to make any form of ranged attack.
- If any model or object has a Weapon Skill of 0 then it is unable to defend itself in combat, and any blows struck against it will therefore automatically hit. If at any time a model&apos;s Strength, Toughness or Wounds characteristic is reduced to 0, it is slain and removed from play.
-</characteristic>
+ If any model or object has a Weapon Skill of 0 then it is unable to defend itself in combat, and any blows struck against it will therefore automatically hit. If at any time a model&apos;s Strength, Toughness or Wounds characteristic is reduced to 0, it is slain and removed from play.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -4908,10 +4813,7 @@ Related: Leadership Tests, Modifying Characteristics</characteristic>
  - Wounds (W)
  - Initiative (I)
  - Attacks (A)
- - Leadership (Ld)
-
- 
-</characteristic>
+ - Leadership (Ld)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -5476,8 +5378,7 @@ Warp-spawned</characteristic>
     </profile>
     <profile name="Split Profiles (Model Profiles)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c817-b37-ba97-1adf">
       <characteristics>
-        <characteristic name="Description" id="ad09-57a2-3d95-7024" hidden="false" typeId="9f84-4221-785a-db50">Some models have two or more rows on their characteristics profile, often with gaps in each (shown as a dash &apos; - &apos;). Each row represents a different model, combined together into a single profile. For example, one row might represent a rider, the next their mount. Split profiles are explained in greater detail in the advanced rules.
-</characteristic>
+        <characteristic name="Description" id="ad09-57a2-3d95-7024" hidden="false" typeId="9f84-4221-785a-db50">Some models have two or more rows on their characteristics profile, often with gaps in each (shown as a dash &apos; - &apos;). Each row represents a different model, combined together into a single profile. For example, one row might represent a rider, the next their mount. Split profiles are explained in greater detail in the advanced rules.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -5594,8 +5495,7 @@ Related: Accidental Contact, Halting a Charge, Continuing Ahead</characteristic>
     <profile name="Accidental Contact When Running Down the Foe" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="eccb-a3ba-9818-9f17">
       <characteristics>
         <characteristic name="Description" id="b1ea-adcf-e7e8-1bb9" hidden="false" typeId="9f84-4221-785a-db50">A charging unit that has chosen to run down a fleeing charge target may make accidental contact with another enemy unit. When this happens, the charging unit is considered to have  redirected  its charge against that unit and the fleeing unit escapes.
- If the charging unit makes accidental contact with two or more enemy units, treat it as you would a unit charging multiple charge targets, as described previously.
-</characteristic>
+ If the charging unit makes accidental contact with two or more enemy units, treat it as you would a unit charging multiple charge targets, as described previously.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -5668,9 +5568,7 @@ Related: Unusual Situations (Charging)</characteristic>
       <characteristics>
         <characteristic name="Description" id="23ca-f954-4d5f-9f89" hidden="false" typeId="9f84-4221-785a-db50">If the charging unit chooses to continue ahead, the outcome will depend upon the enemy unit:
  - If a charging unit makes accidental contact with a fleeing enemy unit, it will wheel to align as normal. The fleeing unit is considered to have been run down by the charging unit and is immediately removed from play. The charging unit&apos;s movement comes to an end and, due to the confused circumstances, cannot attempt to reform.
- - If a charging unit makes accidental contact with an enemy unit that is not fleeing, simply treat the charging unit as having redirected its charge into that unit.
-
-</characteristic>
+ - If a charging unit makes accidental contact with an enemy unit that is not fleeing, simply treat the charging unit as having redirected its charge into that unit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -5792,7 +5690,7 @@ The Limits of Endurance</characteristic>
       </characteristics>
       <comment>imported</comment>
       <alias>
-        <undefined>Flee</undefined>
+        <undefined/>
       </alias>
     </profile>
     <profile name="Fleeing as a Compulsory Move" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="7aaf-163e-d95f-f65">
@@ -5846,8 +5744,7 @@ Related: Flee!</characteristic>
     </profile>
     <profile name="Give Ground &amp; Fall Back in Good Order" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="d67f-2925-8d82-c3c5">
       <characteristics>
-        <characteristic name="Description" id="efc-15f1-a0c7-f138" hidden="false" typeId="9f84-4221-785a-db50">The rules will often call for units to  Give Ground  or  Fall Back in Good Order . Most often, they will do this after losing a round of combat or after suffering heavy casualties from enemy shooting.
-</characteristic>
+        <characteristic name="Description" id="efc-15f1-a0c7-f138" hidden="false" typeId="9f84-4221-785a-db50">The rules will often call for units to  Give Ground  or  Fall Back in Good Order . Most often, they will do this after losing a round of combat or after suffering heavy casualties from enemy shooting.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -5863,8 +5760,7 @@ Related: Give Ground &amp; Fall Back in Good Order</characteristic>
     </profile>
     <profile name="Halting a Charge" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="3c48-7bb5-5571-52f5">
       <characteristics>
-        <characteristic name="Description" id="b71a-21c0-5290-7d29" hidden="false" typeId="9f84-4221-785a-db50">If the charging unit wishes to halt its charge, it is moved towards its charge target as normal, stopping 1&quot; away from the unit that has blocked its path. A halted charge is not a failed charge.
-</characteristic>
+        <characteristic name="Description" id="b71a-21c0-5290-7d29" hidden="false" typeId="9f84-4221-785a-db50">If the charging unit wishes to halt its charge, it is moved towards its charge target as normal, stopping 1&quot; away from the unit that has blocked its path. A halted charge is not a failed charge.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -6017,8 +5913,7 @@ Related: Terrain &amp; Movement</characteristic>
     </profile>
     <profile name="Pivoting" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c235-7317-eaee-1f9c">
       <characteristics>
-        <characteristic name="Description" id="7f5b-7046-efe9-abb9" hidden="false" typeId="9f84-4221-785a-db50">Sometimes, the rules will require a unit to &apos;pivot,&apos; usually about its centre. This is exactly as it sounds. The unit is not performing any of the manoeuvres previously described – instead it spins on the spot, using its centre as a pivot point, ignoring the presence of other units or terrain whilst it does so.
-</characteristic>
+        <characteristic name="Description" id="7f5b-7046-efe9-abb9" hidden="false" typeId="9f84-4221-785a-db50">Sometimes, the rules will require a unit to &apos;pivot,&apos; usually about its centre. This is exactly as it sounds. The unit is not performing any of the manoeuvres previously described – instead it spins on the spot, using its centre as a pivot point, ignoring the presence of other units or terrain whilst it does so.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -6051,8 +5946,7 @@ Related: Manoeuvres</characteristic>
     </profile>
     <profile name="Reform" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="a1dc-f82-719b-f105">
       <characteristics>
-        <characteristic name="Description" id="9160-a3b6-cc33-b7df" hidden="false" typeId="9f84-4221-785a-db50">A reform represents the most complex of manoeuvres a unit can perform on the battlefield, but on the tabletop it is quite straightforward. Reforming allows a unit to sacrifice its entire movement in order to both pivot about its centre to change its facing by up to 180°, and to rearrange its ranks and files as required to either change its formation, or to adopt a different formation.
-</characteristic>
+        <characteristic name="Description" id="9160-a3b6-cc33-b7df" hidden="false" typeId="9f84-4221-785a-db50">A reform represents the most complex of manoeuvres a unit can perform on the battlefield, but on the tabletop it is quite straightforward. Reforming allows a unit to sacrifice its entire movement in order to both pivot about its centre to change its facing by up to 180°, and to rearrange its ranks and files as required to either change its formation, or to adopt a different formation.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -6286,8 +6180,7 @@ Battlefield Decoration (Movement)</characteristic>
     <profile name="Armies of Imagination" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="83bf-6c61-e541-a287">
       <characteristics>
         <characteristic name="Description" id="a69f-60b7-e869-7ab0" hidden="false" typeId="9f84-4221-785a-db50">One key aspect of open play is that it grants the freedom to forego certain army composition rules in pursuit of the narrative. At its most simple, players will often ignore percentages and other restrictions when creating their armies, choosing instead to write a muster list that best fits the narrative. Taking it further, some players will ignore points values altogether, and instead field opposing armies created purely to fit into their story.
- Of course, ignoring such rules can lead to an imbalanced match-up, and this thought may be unappealing to some players. This is perfectly acceptable and any group of players is encouraged to use the suggestions given here, or not, as they see fit. However, these imbalances can often prove part of the charm of a narrative battle, and can invariably be countered by special rules and objectives. Ignoring points values might lead to an army being outnumbered ten to one, for example, and that army might reasonably be expected to suffer a crushing defeat and terrible losses. But the challenge of the game might be to hold out until turn four – perhaps that will grant a vital messenger sufficient time to escape, carrying word of the size of the invading army, and thus the terrible defeat can be claimed as a victory (of sorts).
-</characteristic>
+ Of course, ignoring such rules can lead to an imbalanced match-up, and this thought may be unappealing to some players. This is perfectly acceptable and any group of players is encouraged to use the suggestions given here, or not, as they see fit. However, these imbalances can often prove part of the charm of a narrative battle, and can invariably be countered by special rules and objectives. Ignoring points values might lead to an army being outnumbered ten to one, for example, and that army might reasonably be expected to suffer a crushing defeat and terrible losses. But the challenge of the game might be to hold out until turn four – perhaps that will grant a vital messenger sufficient time to escape, carrying word of the size of the invading army, and thus the terrible defeat can be claimed as a victory (of sorts).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -6323,8 +6216,7 @@ Related: Linked Battles</characteristic>
  # Victory!
  Once the battle has ended, use  Victory Points  to determine which player is the winner, as described in  the Warhammer: the Old World  rulebook. In addition:
  Should the Orc Warboss be slain, place a marker where he fell to represent the Warboss&apos; body. At the end of the game, whichever force has the highest total  Unit Strength  within 6&quot; of the marker (not counting fleeing models) wins a bonus 200 Victory Points.
- Should High Priest Ashurtak be slain, place a marker where he fell to represent the Liche Priest&apos;s body. At the end of the game, whichever force has the highest total Unit Strength within 6&quot; of the marker (not counting fleeing models) wins a bonus 200 Victory Points.
-</characteristic>
+ Should High Priest Ashurtak be slain, place a marker where he fell to represent the Liche Priest&apos;s body. At the end of the game, whichever force has the highest total Unit Strength within 6&quot; of the marker (not counting fleeing models) wins a bonus 200 Victory Points.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -6359,8 +6251,7 @@ Related: What is a Narrative Battle?</characteristic>
  Surprise Battle:  Due to the surprise of encountering an unexpected enemy, any unit that wishes to declare a charge during the first round must first pass a Leadership test. If this test is failed, the unit does not count as having declared a charge.
  Reserves: Reserves are not deployed at the start of the battle. Instead they can enter play during the Compulsory Moves sub-phase of any turn – including the first – of their controlling player&apos;s choosing. When they arrive, reserves will enter the battlefield from any point on the battlefield edge that is completely within one of the zones (chosen at random) in which their controlling player deployed a unit at the start of the battle. Roll a D3 to randomly determine which of the three zones reserves arrive within.
  # Victory!
- Once the battle has ended, use  Victory Points  to determine which player is the winner.
-</characteristic>
+ Once the battle has ended, use  Victory Points  to determine which player is the winner.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -6522,10 +6413,7 @@ Related: The Dark Monolith</characteristic>
  # Victory!
  Once the battle has ended, use  Victory Points  to determine which player is the winner, as described in  the Warhammer: the Old World  rulebook. In addition, at the end of the game:
  - The defending player wins a bonus 250 Victory Points if there are no models belonging to the attacking player upon the flat area atop the defensible position.
- - The attacking player wins a bonus 250 Victory Points if they are the only player with models upon the flat area atop the defensible position.
-
- 
-</characteristic>
+ - The attacking player wins a bonus 250 Victory Points if they are the only player with models upon the flat area atop the defensible position.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -6577,8 +6465,7 @@ Related: The Games Master</characteristic>
       <characteristics>
         <characteristic name="Description" id="a495-c768-82cd-9077" hidden="false" typeId="9f84-4221-785a-db50">Another key aspect of open play is that it gives players permission to change a rule if doing so will improve the experience in the moment. For example, a vital unit might unexpectedly lose combat and Break, causing the game to end suddenly and unsatisfyingly. Of course, such is the way of things and there is no altering that. However, sometimes players encountering such an event might agree to alter the outcome of the Break test, perhaps allowing the defeated unit to instead Fall Back in Good Order. Doing so might extend the game and, more importantly, might feel like the more correct outcome in the circumstances.
  By way of another example, imagine a battle fought under the gloom of twilight. In such conditions, shooting may reasonably be expected to be less effective. To evoke this, players may add a rule, perhaps agreeing that all long range shooting suffers an additional -1 To Hit modifier, or perhaps agreeing that the Range characteristic of all missile weapons should be reduced.
- Whatever the case, players – especially good friends who know one another well – are encouraged to make amendments to the rules before or during a game if doing so will help to enforce the narrative. Provided both players are having fun and are in agreement, such amendments and alterations can lead to some truly memorable moments.
-</characteristic>
+ Whatever the case, players – especially good friends who know one another well – are encouraged to make amendments to the rules before or during a game if doing so will help to enforce the narrative. Provided both players are having fun and are in agreement, such amendments and alterations can lead to some truly memorable moments.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -6666,43 +6553,37 @@ Third Linked Battle</characteristic>
     </profile>
     <profile name="Aftermath" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="53d4-e7a-3b0d-fbf4">
       <characteristics>
-        <characteristic name="Description" id="6236-77b6-5480-70a4" hidden="false" typeId="9f84-4221-785a-db50">In the aftermath of the battle, the players must work out which side stands victorious. Each pitched battle explains how to work out who has won the game. In most cases, the victor is the side that has destroyed more of the enemy and so it is often obvious who has won, as the enemy army lies in tatters – dead or fleeing! Other battles are decided by claiming objectives, such as seizing enemy banners or capturing a watchtower. Whatever the outcome, only a rematch will give you the chance for further glory or sweet revenge.
-</characteristic>
+        <characteristic name="Description" id="6236-77b6-5480-70a4" hidden="false" typeId="9f84-4221-785a-db50">In the aftermath of the battle, the players must work out which side stands victorious. Each pitched battle explains how to work out who has won the game. In most cases, the victor is the side that has destroyed more of the enemy and so it is often obvious who has won, as the enemy army lies in tatters – dead or fleeing! Other battles are decided by claiming objectives, such as seizing enemy banners or capturing a watchtower. Whatever the outcome, only a rematch will give you the chance for further glory or sweet revenge.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Choose Scenario" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="72de-8cb4-5405-6a7c">
       <characteristics>
-        <characteristic name="Description" id="7baf-b37c-43b1-8f78" hidden="false" typeId="9f84-4221-785a-db50">The Warhammer Battles  section presents six  pitched battles . Each of these explains how to play a slightly different type of battle, ranging from a straightforward clash of forces to a fight in a mountain pass or the defence of a watchtower. Players can roll a dice to decide which pitched battle they will play or simply choose one.
-</characteristic>
+        <characteristic name="Description" id="7baf-b37c-43b1-8f78" hidden="false" typeId="9f84-4221-785a-db50">The Warhammer Battles  section presents six  pitched battles . Each of these explains how to play a slightly different type of battle, ranging from a straightforward clash of forces to a fight in a mountain pass or the defence of a watchtower. Players can roll a dice to decide which pitched battle they will play or simply choose one.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Deploy Armies" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4866-c991-8981-d23e">
       <characteristics>
-        <characteristic name="Description" id="f3f2-faa1-de-343f" hidden="false" typeId="9f84-4221-785a-db50">The rival armies are deployed facing each other across the battlefield, ready to fight. Details of how to deploy can be found in the Warhammer Battles section. Each of the pitched battle scenarios includes a map showing where on the battlefield each player can place their models, and tells which side will take the first turn of the game.
-</characteristic>
+        <characteristic name="Description" id="f3f2-faa1-de-343f" hidden="false" typeId="9f84-4221-785a-db50">The rival armies are deployed facing each other across the battlefield, ready to fight. Details of how to deploy can be found in the Warhammer Battles section. Each of the pitched battle scenarios includes a map showing where on the battlefield each player can place their models, and tells which side will take the first turn of the game.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Muster Your Forces!" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="87ff-e01-ec2f-60aa">
       <characteristics>
-        <characteristic name="Description" id="fb76-fffb-5156-a3e0" hidden="false" typeId="9f84-4221-785a-db50">To play a game of Warhammer: the Old World, each player will need an army to command, so the first thing to do is assemble your forces. You can simply use all the models in your collection, but most players use points values and army lists to ensure their forces are evenly matched for a closely fought battle. This system is explained in the  Warhammer Armies .
-</characteristic>
+        <characteristic name="Description" id="fb76-fffb-5156-a3e0" hidden="false" typeId="9f84-4221-785a-db50">To play a game of Warhammer: the Old World, each player will need an army to command, so the first thing to do is assemble your forces. You can simply use all the models in your collection, but most players use points values and army lists to ensure their forces are evenly matched for a closely fought battle. This system is explained in the  Warhammer Armies .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Set up the Battlefield" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="97bf-dd04-b530-568e">
       <characteristics>
-        <characteristic name="Description" id="a184-b42c-bd3e-3f7b" hidden="false" typeId="9f84-4221-785a-db50">Next, you will need a battlefield, which can be set up on any flat surface, be it the kitchen table, the floor or a dedicated wargames table. The players set up terrain for their armies to fight over, representing woods, fortified watchtowers and other features that make up the landscape of the Warhammer world. How to do this is covered in the  Warhammer Battles  section.
-</characteristic>
+        <characteristic name="Description" id="a184-b42c-bd3e-3f7b" hidden="false" typeId="9f84-4221-785a-db50">Next, you will need a battlefield, which can be set up on any flat surface, be it the kitchen table, the floor or a dedicated wargames table. The players set up terrain for their armies to fight over, representing woods, fortified watchtowers and other features that make up the landscape of the Warhammer world. How to do this is covered in the  Warhammer Battles  section.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="To Battle!" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="e67d-ed3-cc1e-db4b">
       <characteristics>
-        <characteristic name="Description" id="6c64-655a-f0f-8644" hidden="false" typeId="9f84-4221-785a-db50">The players fight out the battle, each taking turns in which their army will move, shoot, wield mighty magic and fight vicious combat. All of this is done using the rules that follow. These rules start with basic rules that apply to all models and cover the standard sequence of moving, shooting, fighting and more. Each pitched battle also explains how many rounds to play before the game ends.
-</characteristic>
+        <characteristic name="Description" id="6c64-655a-f0f-8644" hidden="false" typeId="9f84-4221-785a-db50">The players fight out the battle, each taking turns in which their army will move, shoot, wield mighty magic and fight vicious combat. All of this is done using the rules that follow. These rules start with basic rules that apply to all models and cover the standard sequence of moving, shooting, fighting and more. Each pitched battle also explains how many rounds to play before the game ends.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -6714,10 +6595,7 @@ Third Linked Battle</characteristic>
  - Set Up The Battlefield
  - Deploy Armies
  - To Battle!
- - Aftermath
-
- 
-</characteristic>
+ - Aftermath</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -6962,16 +6840,14 @@ The active player attempts to rally their fleeing units. Any that fail continue 
  Restrain &amp; Reform:  A unit that wishes to restrain &amp; reform makes a Restraint test by testing against its Leadership. If this test is passed, it remains where it is and may make a free reform. Otherwise, it must follow up or pursue.
  Follow Up:  If the enemy Gives Ground, the winning unit(s) move forwards to engage it once again. Before following up, a unit may perform a free turn manoeuvre (of 90° or 180°).
  Pursuit: If the enemy Falls Back in Good Order or flees, the winning unit(s) can  pursue .
- Overrun: If a unit wiped out its enemy, it may overrun by making a pursuit move directly forwards.
-</characteristic>
+ Overrun: If a unit wiped out its enemy, it may overrun by making a pursuit move directly forwards.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Multiple Wound Models" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="d9f4-5166-f97c-9783">
       <characteristics>
         <characteristic name="Description" id="841d-f1c5-c450-2a" hidden="false" typeId="9f84-4221-785a-db50">Some models have more than one Wound on their profile. Should a unit of such models lose Wounds, you must remove as many whole models as possible. In other words, Wounds are lost by a single model until its Wounds characteristic is reduced to zero. Wounds are then lost by the next model, and so on. You cannot spread the loss of Wounds throughout the unit to avoid casualties.
- For example, a unit of Ogres, each with three Wounds on its profile (W3), loses five Wounds. One Ogre will lose all three of its Wounds and be removed as a casualty, and one Ogre will lose two Wounds, leaving it with only one Wound remaining.
-</characteristic>
+ For example, a unit of Ogres, each with three Wounds on its profile (W3), loses five Wounds. One Ogre will lose all three of its Wounds and be removed as a casualty, and one Ogre will lose two Wounds, leaving it with only one Wound remaining.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -6996,8 +6872,7 @@ Related: Removing Casualties From Units</characteristic>
     </profile>
     <profile name="Single Wound Models" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="d33b-6c42-5559-eb53">
       <characteristics>
-        <characteristic name="Description" id="eb95-832b-237c-1649" hidden="false" typeId="9f84-4221-785a-db50">Most models have only a single Wound on their profile. When this is lost, they are removed from the battlefield as a casualty.
-</characteristic>
+        <characteristic name="Description" id="eb95-832b-237c-1649" hidden="false" typeId="9f84-4221-785a-db50">Most models have only a single Wound on their profile. When this is lost, they are removed from the battlefield as a casualty.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7028,24 +6903,21 @@ Single Rank Units</characteristic>
     </profile>
     <profile name="Arcane Configuration" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6231-d461-6dda-2f90">
       <characteristics>
-        <characteristic name="Description" id="64f3-82cc-39be-ba77" hidden="false" typeId="9f84-4221-785a-db50">If your army contains two or more Engines of the Gods, friendly Wizards may apply a +1 modifier to any  Casting roll  they make whilst within 6&quot; of an Engine of the Gods.
-</characteristic>
+        <characteristic name="Description" id="64f3-82cc-39be-ba77" hidden="false" typeId="9f84-4221-785a-db50">If your army contains two or more Engines of the Gods, friendly Wizards may apply a +1 modifier to any  Casting roll  they make whilst within 6&quot; of an Engine of the Gods.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Armour Bane (X)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="74ea-d296-5fa6-b617">
       <characteristics>
         <characteristic name="Description" id="1b03-ecab-7dba-27d5" hidden="false" typeId="9f84-4221-785a-db50">If a model with this special rule rolls a natural 6 when making a roll To Wound, the  Armour Piercing  characteristic of its weapon is improved by the amount shown in brackets after the name of this special rule (shown here as &apos;X&apos;).
- For example, if a natural 6 is rolled when rolling To Wound with a weapon that has an AP of &apos; - &apos; and the Armour Bane (1) special rule, its AP counts as being -1 when making an  Armour Save  roll against that wound.
-</characteristic>
+ For example, if a natural 6 is rolled when rolling To Wound with a weapon that has an AP of &apos; - &apos; and the Armour Bane (1) special rule, its AP counts as being -1 when making an  Armour Save  roll against that wound.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Armoured Hide (X)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6e7-d26b-db4a-c0d8">
       <characteristics>
         <characteristic name="Description" id="26e7-1641-b93d-8b09" hidden="false" typeId="9f84-4221-785a-db50">The hide of some creatures forms natural armour and improves their  armour value  (and that of their rider). By how much armour value is improved varies from model to model, as shown in brackets after the name of this special rule (shown here as &apos;X&apos;).
- Note that a model that wears no armour is considered to have an armour value of 7+ for the purposes of rules that improve armour value.
-</characteristic>
+ Note that a model that wears no armour is considered to have an armour value of 7+ for the purposes of rules that improve armour value.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7060,8 +6932,7 @@ Related: What are Special Rules?</characteristic>
     </profile>
     <profile name="Authority of the Hierophant" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="a48-e85a-6ced-c124">
       <characteristics>
-        <characteristic name="Description" id="78db-19a9-786d-8e4b" hidden="false" typeId="9f84-4221-785a-db50">A Mortuary Cult  army must include at least one Liche Priest to be its  Hierophant . The Hierophant of a Mortuary Cult army must also be its  General , even if they are not the character with the highest Leadership in your army.
-</characteristic>
+        <characteristic name="Description" id="78db-19a9-786d-8e4b" hidden="false" typeId="9f84-4221-785a-db50">A Mortuary Cult  army must include at least one Liche Priest to be its  Hierophant . The Hierophant of a Mortuary Cult army must also be its  General , even if they are not the character with the highest Leadership in your army.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7076,16 +6947,14 @@ Related: Abominable Attacks</characteristic>
     </profile>
     <profile name="Bellowers &amp; Musicians" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="92d3-e833-fa98-c252">
       <characteristics>
-        <characteristic name="Description" id="294c-2982-ad41-1bff" hidden="false" typeId="9f84-4221-785a-db50">Rather than using instruments, most Ogre  musicians  belong to a special caste known as Bellowers. As their name implies, a Bellower&apos;s instrument is their voice and lungs, with which they can make an incredible noise, even if only another Ogre would find it musical.
-</characteristic>
+        <characteristic name="Description" id="294c-2982-ad41-1bff" hidden="false" typeId="9f84-4221-785a-db50">Rather than using instruments, most Ogre  musicians  belong to a special caste known as Bellowers. As their name implies, a Bellower&apos;s instrument is their voice and lungs, with which they can make an incredible noise, even if only another Ogre would find it musical.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Big Stabbas" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b15b-ce47-eff1-58ad">
       <characteristics>
         <characteristic name="Description" id="4810-7382-2a21-cc02" hidden="false" typeId="9f84-4221-785a-db50">A unit with Big Stabbas has the  Impact Hits (D3)  special rule.
- Note that this special rule applies to the unit as a whole, not to the individual models within it.
-</characteristic>
+ Note that this special rule applies to the unit as a whole, not to the individual models within it.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7112,8 +6981,7 @@ Related: Lance Formation</characteristic>
  - If a Misfire is rolled on one of the Artillery dice, all shots fired from the steam cannonade this turn suffer an additional -1 To Hit modifier (instead of rolling on a Misfire table).
  - If a Misfire is rolled on both of the Artillery dice, no shots are fired and this model loses a single Wound (instead of rolling on a Misfire table).
 
- After determining the number of shots, roll To Hit for each as normal, using the crew&apos;s Ballistic Skill and applying all appropriate modifiers.
-</characteristic>
+ After determining the number of shots, roll To Hit for each as normal, using the crew&apos;s Ballistic Skill and applying all appropriate modifiers.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7128,30 +6996,26 @@ Related: Lance Formation</characteristic>
     </profile>
     <profile name="Chaos Armour (Daemons of Chaos)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="332c-df9a-1a4e-4065">
       <characteristics>
-        <characteristic name="Description" id="ff96-50c2-f2f4-ef41" hidden="false" typeId="9f84-4221-785a-db50">This model has a 4+  Ward save  against any wounds suffered.
-</characteristic>
+        <characteristic name="Description" id="ff96-50c2-f2f4-ef41" hidden="false" typeId="9f84-4221-785a-db50">This model has a 4+  Ward save  against any wounds suffered.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Chaos Armour (Warriors of Chaos)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="afb1-91d0-892a-acfd">
       <characteristics>
-        <characteristic name="Description" id="d3e5-69df-859b-eb32" hidden="false" typeId="9f84-4221-785a-db50">A model with this special rule has a  Ward save  against any wounds suffered. The  armour value  of this Ward save is shown in brackets after the name of this special rule (shown here as &apos;X+&apos;). In addition, a Wizard with this special rule may wear armour without penalty.
-</characteristic>
+        <characteristic name="Description" id="d3e5-69df-859b-eb32" hidden="false" typeId="9f84-4221-785a-db50">A model with this special rule has a  Ward save  against any wounds suffered. The  armour value  of this Ward save is shown in brackets after the name of this special rule (shown here as &apos;X+&apos;). In addition, a Wizard with this special rule may wear armour without penalty.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Characters Joining a Lance" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="bfa0-c558-249f-92a">
       <characteristics>
         <characteristic name="Description" id="c657-9f1-67aa-a028" hidden="false" typeId="9f84-4221-785a-db50">When a character joins a unit in  Lance formation , they are placed on the outside of the Lance, in any rank, displacing one or more rank and file models to the rear rank as usual. Should you wish, a character can take the position of a command group model in the first or second rank of the Lance. In such cases, that command group model must be placed further back, on the outside of the Lance and will in turn displace another model to the rear rank of the unit.
- If a character that has joined a Lance is required to &apos;retire&apos; to the rear of the unit, they may be placed in the middle of any rank (not including the first or second). A character that has retired cannot occupy a position on the outside of the Lance and will no longer be within the fighting rank.
-</characteristic>
+ If a character that has joined a Lance is required to &apos;retire&apos; to the rear of the unit, they may be placed in the middle of any rank (not including the first or second). A character that has retired cannot occupy a position on the outside of the Lance and will no longer be within the fighting rank.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Clouds of Soot &amp; Smoke" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="5132-9edd-da80-e9ad">
       <characteristics>
-        <characteristic name="Description" id="e071-425c-11da-eebc" hidden="false" typeId="9f84-4221-785a-db50">This model is considered to be behind  full cover  whilst it is within 3&quot; of a friendly unit whose troop type is  war machine .
-</characteristic>
+        <characteristic name="Description" id="e071-425c-11da-eebc" hidden="false" typeId="9f84-4221-785a-db50">This model is considered to be behind  full cover  whilst it is within 3&quot; of a friendly unit whose troop type is  war machine .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7166,18 +7030,14 @@ Related: Lance Formation</characteristic>
  - Questing Knights
  - Grail Knights
  - Pegasus Knights
- - Mounted Yeomen
-
- 
-</characteristic>
+ - Mounted Yeomen</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Cumulative Special Rules" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="87ba-1983-3935-ad9e">
       <characteristics>
         <characteristic name="Description" id="68eb-4be3-6b47-c21d" hidden="false" typeId="9f84-4221-785a-db50">Unless noted otherwise, if the effect of a special rule in some way alters a characteristic, the result of a dice roll, or any other value (such as a model&apos;s armour value), that effect is cumulative. This means that the effects of duplicate versions of the same rule combine together, increasing its effect.
- For example, if a model is under the effects of a spell that grants it Armour Bane (2) and carries a weapon that has Armour Bane (1), the model would be considered to have Armour Bane (3).
-</characteristic>
+ For example, if a model is under the effects of a spell that grants it Armour Bane (2) and carries a weapon that has Armour Bane (1), the model would be considered to have Armour Bane (3).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7205,24 +7065,19 @@ Daemon of Tzeentch</characteristic>
         <characteristic name="Description" id="72b0-42db-1d85-78c9" hidden="false" typeId="9f84-4221-785a-db50">A unit of Sisters of the Thorn knows a single spell (chosen by their controlling player before armies are deployed) from either the  Battle Magic  or  Elementalism  Lore of Magic. The unit may cast this spell as a  Bound spell :
  - If the unit includes a Handmaiden of the Thorn, it may cast this Bound spell with a Power Level of 1.
  - If it includes both a Handmaiden of the Thorn and a standard bearer, it may cast this Bound spell with a Power Level of 2.
- - Otherwise, the unit may cast this Bound spell with a Power Level of 0.
-
- 
-</characteristic>
+ - Otherwise, the unit may cast this Bound spell with a Power Level of 0.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Earn Your Spurs" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c1b8-e9b5-13f4-9704">
       <characteristics>
-        <characteristic name="Description" id="51a5-e1c5-1b2e-bb1e" hidden="false" typeId="9f84-4221-785a-db50">Any enemy standard captured by a unit of Knights Errant is worth 100  Victory Points  as a trophy of war. In addition, whilst within 6&quot; of a friendly model with the  Grail Vow , or any Lord of Bretonnia, a unit of Knights Errant may re-roll any rolls To Hit of a natural 1.
-</characteristic>
+        <characteristic name="Description" id="51a5-e1c5-1b2e-bb1e" hidden="false" typeId="9f84-4221-785a-db50">Any enemy standard captured by a unit of Knights Errant is worth 100  Victory Points  as a trophy of war. In addition, whilst within 6&quot; of a friendly model with the  Grail Vow , or any Lord of Bretonnia, a unit of Knights Errant may re-roll any rolls To Hit of a natural 1.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Extra Attacks (+X)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="835b-434b-45f1-f0cc">
       <characteristics>
-        <characteristic name="Description" id="79be-7808-b657-7392" hidden="false" typeId="9f84-4221-785a-db50">A model with this special rule has a modifier to its Attacks characteristic, as shown in brackets after the name of this special rule (shown here as &apos;+X&apos;). If this modifier is determined by the roll of a dice, roll when the model&apos;s combat is chosen during any  Choose &amp; Fight Combat  sub-phase.
-</characteristic>
+        <characteristic name="Description" id="79be-7808-b657-7392" hidden="false" typeId="9f84-4221-785a-db50">A model with this special rule has a modifier to its Attacks characteristic, as shown in brackets after the name of this special rule (shown here as &apos;+X&apos;). If this modifier is determined by the roll of a dice, roll when the model&apos;s combat is chosen during any  Choose &amp; Fight Combat  sub-phase.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7237,8 +7092,7 @@ Related: Abominable Attacks</characteristic>
     </profile>
     <profile name="&quot;Fight Me!&quot;" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b536-128b-6e4a-eb6a">
       <characteristics>
-        <characteristic name="Description" id="96b-6a3a-8b21-2e82" hidden="false" typeId="9f84-4221-785a-db50">Any model with this special rule can issue and accept  challenges  in the same manner as a character.
-</characteristic>
+        <characteristic name="Description" id="96b-6a3a-8b21-2e82" hidden="false" typeId="9f84-4221-785a-db50">Any model with this special rule can issue and accept  challenges  in the same manner as a character.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7248,8 +7102,7 @@ Related: Abominable Attacks</characteristic>
  - May move as normal (i.e., they may  charge ,  march  and  manoeuvre  as if moving on the ground), except that they are able to pass freely above other models, units and terrain features without any penalty, and they can march whilst within 8&quot; of an enemy unit without first having to make a  Leadership test .
  - May end their movement in terrain, but will suffer its effects if they do. They cannot end their movement &apos;on top&apos; of impassable terrain or another unit, or within 1&quot; of an enemy unit.
 
- Models that can Fly must begin and end all of their movement on the ground. A character with this special rule cannot join a unit without this special rule, and vice versa.
-</characteristic>
+ Models that can Fly must begin and end all of their movement on the ground. A character with this special rule cannot join a unit without this special rule, and vice versa.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7259,77 +7112,63 @@ Related: Abominable Attacks</characteristic>
  # Lance Facings
  The front, flank and rear arcs of a unit in Lance formation are determined by the models in the second rank and the last rank, as shown in the diagram.
  # Command Group Models
- Command group models are placed at the front of the unit, in the first and second rank, as shown in Fig 110.1. The standard bearer should take precedence at the front of the unit.
-  
-</characteristic>
+ Command group models are placed at the front of the unit, in the first and second rank, as shown in Fig 110.1. The standard bearer should take precedence at the front of the unit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Forsaken by Slaanesh" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="52e7-e4b7-4470-904e">
       <characteristics>
-        <characteristic name="Description" id="f9f6-30d2-8ab4-c74f" hidden="false" typeId="9f84-4221-785a-db50">The unit has the  Swiftstride  special rule.
-</characteristic>
+        <characteristic name="Description" id="f9f6-30d2-8ab4-c74f" hidden="false" typeId="9f84-4221-785a-db50">The unit has the  Swiftstride  special rule.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="&quot;Grind Them Down!&quot;" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="49-27ec-e5fe-e928">
       <characteristics>
-        <characteristic name="Description" id="4a40-14c1-512e-3b21" hidden="false" typeId="9f84-4221-785a-db50">Whilst within the  General&apos;s   Command range , friendly models whose troop type is  Chariot  may re-roll the dice when rolling to determine the number of  Impact Hits  they cause.
-</characteristic>
+        <characteristic name="Description" id="4a40-14c1-512e-3b21" hidden="false" typeId="9f84-4221-785a-db50">Whilst within the  General&apos;s   Command range , friendly models whose troop type is  Chariot  may re-roll the dice when rolling to determine the number of  Impact Hits  they cause.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Harmonious Incantations" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="d5d9-9991-9379-86e0">
       <characteristics>
-        <characteristic name="Description" id="63a5-2d58-59fb-d853" hidden="false" typeId="9f84-4221-785a-db50">If a Liche Priest within a  Mortuary Cult  army uses the  Arise!  special rule whilst within the  Command range  of one or more other friendly Liche Priests, the number of lost Wounds the chosen unit recovers is increased by 1.
-</characteristic>
+        <characteristic name="Description" id="63a5-2d58-59fb-d853" hidden="false" typeId="9f84-4221-785a-db50">If a Liche Priest within a  Mortuary Cult  army uses the  Arise!  special rule whilst within the  Command range  of one or more other friendly Liche Priests, the number of lost Wounds the chosen unit recovers is increased by 1.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Hatred (X)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="329e-5ef3-6bec-a450">
       <characteristics>
         <characteristic name="Description" id="c4df-8385-402b-3e31" hidden="false" typeId="9f84-4221-785a-db50">A model with this special rule may re-roll any failed rolls To Hit made against a hated enemy during the first round of combat.
- Which enemies are hated varies from model to model and will be shown in brackets after the name of this special rule (shown here as &apos;X&apos;). Some models hate &apos;all enemies&apos;, meaning they hate all enemy models equally.
-</characteristic>
+ Which enemies are hated varies from model to model and will be shown in brackets after the name of this special rule (shown here as &apos;X&apos;). Some models hate &apos;all enemies&apos;, meaning they hate all enemy models equally.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Hekarti&apos;s Blessing" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="3310-93ed-5bc3-2fdf">
       <characteristics>
-        <characteristic name="Description" id="301a-e58b-7b09-d27c" hidden="false" typeId="9f84-4221-785a-db50">Once per game, a model with this special rule may re-roll a single failed  Casting roll .
-</characteristic>
+        <characteristic name="Description" id="301a-e58b-7b09-d27c" hidden="false" typeId="9f84-4221-785a-db50">Once per game, a model with this special rule may re-roll a single failed  Casting roll .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Hellcannon Misfire Table" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4ad-dc65-49ad-3b5d">
       <characteristics>
-        <characteristic name="Description" id="3deb-ba77-73ad-a008" hidden="false" typeId="9f84-4221-785a-db50">
-
-|||
+        <characteristic name="Description" id="3deb-ba77-73ad-a008" hidden="false" typeId="9f84-4221-785a-db50">|||
 |:--|:--|
 |D6|Result|
 |1|Free at Last!  The Daemon breaks loose. Every unit (friend or foe) within 3D6&quot; suffers D6 Strength 5 hits, each with an  AP  of -1. Once these hits are resolved, the Hellcannon is removed from play as a casualty.|
 |2-4|Chomp! The Hellcannon&apos;s handlers are sucked towards the furnace of the ravenous Daemon. Remove one of the Hellcannon&apos;s Chaos Dwarf Handlers.|
-|5-6|Blooood! The Hellcannon breaks its chains, immediately moving 3D6&quot; as if it were subject to the  Random Movement  special rule and as if this were the  Compulsory Moves  sub-phase.|
-
- 
-</characteristic>
+|5-6|Blooood! The Hellcannon breaks its chains, immediately moving 3D6&quot; as if it were subject to the  Random Movement  special rule and as if this were the  Compulsory Moves  sub-phase.|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Hidden (Dark Elves)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="19e9-b99f-c960-d59d">
       <characteristics>
         <characteristic name="Description" id="fd42-7019-d87d-2a2d" hidden="false" typeId="9f84-4221-785a-db50">Khainite Assassins are not placed on the battlefield at the start of the game. Instead, they are &apos;hidden&apos; within a friendly Dark Elf unit whose troop type is  infantry  and that has a  Unit Strength  of ten or more (excluding Harpies). Make a note of which unit each Assassin is hiding within. A hidden Assassin may be revealed during any Start of Turn sub-phase or at the start of any  Combat phase . Position the revealed Assassin as you would a character that has joined the unit.
- If a unit in which a Khainite Assassin is hiding is destroyed or flees the battlefield before the Assassin is revealed, the Assassin is removed as a casualty. A Khainite Assassin cannot be your army  General .
-</characteristic>
+ If a unit in which a Khainite Assassin is hiding is destroyed or flees the battlefield before the Assassin is revealed, the Assassin is removed as a casualty. A Khainite Assassin cannot be your army  General .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Hidden (Skaven)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="efc3-eb7e-2ddc-1fef">
       <characteristics>
         <characteristic name="Description" id="a84e-405a-656-e2cc" hidden="false" typeId="9f84-4221-785a-db50">Master Assassins are not placed on the battlefield at the start of the game. Instead, they are &apos;hidden&apos; within a friendly Skaven unit whose troop type is  infantry  and that has a  Unit Strength  of ten or more. Make a note of which unit each Master Assassin is hiding within. A hidden Master Assassin may be revealed during any  Start of Turn  sub-phase or at the start of any  Combat phase . Position the revealed Master Assassin as you would a character that has joined the unit.
- If a unit in which a Master Assassin is hiding is destroyed or flees the battlefield before the Master Assassin is revealed, the Master Assassin is removed as a casualty. A Master Assassin cannot be your army  General .
-</characteristic>
+ If a unit in which a Master Assassin is hiding is destroyed or flees the battlefield before the Master Assassin is revealed, the Master Assassin is removed as a casualty. A Master Assassin cannot be your army  General .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7337,31 +7176,27 @@ Related: Abominable Attacks</characteristic>
       <characteristics>
         <characteristic name="Description" id="30aa-167d-5528-8d57" hidden="false" typeId="9f84-4221-785a-db50">The number of Impact Hits caused varies from model to model, and will be shown in brackets after the name of this special rule (shown here as &apos;X&apos;). Often, this is determined by the roll of a dice.
  # Resolving Impact Hits
- Impact Hits can only be made by a charging model that moved 3&quot; or more and that is in base contact with the enemy. Impact hits are attacks made in combat that always strike at Initiative 10 (regardless of modifiers), and that hit automatically using the unmodified Strength characteristic of the model.
-</characteristic>
+ Impact Hits can only be made by a charging model that moved 3&quot; or more and that is in base contact with the enemy. Impact hits are attacks made in combat that always strike at Initiative 10 (regardless of modifiers), and that hit automatically using the unmodified Strength characteristic of the model.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Indomitable (X)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6dbb-9bec-43f5-f2e0">
       <characteristics>
         <characteristic name="Description" id="771d-df15-5e4a-131a" hidden="false" typeId="9f84-4221-785a-db50">A unit with this special rule reduces the number of wounds suffered due to the  Unstable  special rule by the number shown in brackets (shown here as &apos;X&apos;).
- Note that this special rule is not cumulative. If two or more models in a unit have this special rule, use the highest value for the entire unit. For example, if a character with Indomitable (2) joins a unit with Indomitable (1), the whole unit uses the character&apos;s Indomitable (2) special rule.
-</characteristic>
+ Note that this special rule is not cumulative. If two or more models in a unit have this special rule, use the highest value for the entire unit. For example, if a character with Indomitable (2) joins a unit with Indomitable (1), the whole unit uses the character&apos;s Indomitable (2) special rule.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Infernal Favour (X)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="cb9f-c79-f837-7dd4">
       <characteristics>
         <characteristic name="Description" id="1637-c816-5201-6a99" hidden="false" typeId="9f84-4221-785a-db50">A unit with this special rule reduces the number of wounds suffered due to the  Daemonic Instability  special rule by the number shown in brackets (shown here as &apos;X&apos;).
- Note that this special rule is not cumulative. If two or more models in a unit have this special rule, use the highest value for the entire unit.
-</characteristic>
+ Note that this special rule is not cumulative. If two or more models in a unit have this special rule, use the highest value for the entire unit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Ithilmar Armour/Ithilmar Barding" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c1e1-da03-222-9b7e">
       <characteristics>
-        <characteristic name="Description" id="caf2-6f36-888b-c67e" hidden="false" typeId="9f84-4221-785a-db50">A model with this special rule may re-roll any rolls of 1 when making  Dangerous Terrain  tests. In addition, a Wizard with this special rule may wear armour without penalty.
-</characteristic>
+        <characteristic name="Description" id="caf2-6f36-888b-c67e" hidden="false" typeId="9f84-4221-785a-db50">A model with this special rule may re-roll any rolls of 1 when making  Dangerous Terrain  tests. In addition, a Wizard with this special rule may wear armour without penalty.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7378,8 +7213,7 @@ Related: Lance Formation</characteristic>
     </profile>
     <profile name="Lay In Wait" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="f850-2a38-a101-8b15">
       <characteristics>
-        <characteristic name="Description" id="5877-5b13-83bf-fa92" hidden="false" typeId="9f84-4221-785a-db50">0-1 unit of Skeleton Skirmishers per 1,000 points may have the  Ambushers  special rule for free.
-</characteristic>
+        <characteristic name="Description" id="5877-5b13-83bf-fa92" hidden="false" typeId="9f84-4221-785a-db50">0-1 unit of Skeleton Skirmishers per 1,000 points may have the  Ambushers  special rule for free.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7393,25 +7227,20 @@ Related: Lance Formation</characteristic>
 |D6|Result|
 |1|Meltdown: The machine and its crew explode in a spectacular green fireball. The model fails to shoot this turn. Instead, it is destroyed and immediately removed from play.|
 |2-4|Energy Overload:  Unfathomable energies spin the war machine around before it unleashes a potent blast of warp lightning. The Warp Lightning Cannon shoots with a Strength of 6 in a random direction, determined by rolling a Scatter dice.|
-|5-6|Fzzzt: With a high-pitched screech, followed by a descending, whirring noise, the energy dissipates harmlessly. The model fails to shoot this turn.|
-
- 
-</characteristic>
+|5-6|Fzzzt: With a high-pitched screech, followed by a descending, whirring noise, the energy dissipates harmlessly. The model fails to shoot this turn.|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Magic Resistance (-X)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="fa47-eaf3-5e7e-f5bc">
       <characteristics>
         <characteristic name="Description" id="9bbd-1983-8960-73f8" hidden="false" typeId="9f84-4221-785a-db50">The Casting roll  of any enemy spell (including  Bound spells ) that targets a unit that includes one or more models with this special rule suffers a modifier, as shown in brackets after the name of this special rule (shown here as &apos;-X&apos;).
- Note that this special rule is not cumulative. If two or more models in a unit have this special rule, use the highest modifier.
-</characteristic>
+ Note that this special rule is not cumulative. If two or more models in a unit have this special rule, use the highest modifier.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Manoeuvring a Lance" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="86a7-93b5-44ca-a73">
       <characteristics>
-        <characteristic name="Description" id="3ff4-3dde-2326-193e" hidden="false" typeId="9f84-4221-785a-db50">A unit in  Lance  formation may not turn or redress the ranks, but may wheel, move backwards, move sideways and reform as normal. When a unit in Lance formation wheels, its movement is measured from its second rank. All other movement is measured from the model at the front of the formation.
-</characteristic>
+        <characteristic name="Description" id="3ff4-3dde-2326-193e" hidden="false" typeId="9f84-4221-785a-db50">A unit in  Lance  formation may not turn or redress the ranks, but may wheel, move backwards, move sideways and reform as normal. When a unit in Lance formation wheels, its movement is measured from its second rank. All other movement is measured from the model at the front of the formation.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7436,81 +7265,70 @@ Mark of Tzeentch</characteristic>
     </profile>
     <profile name="Masterful Outriders" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="fe9-e96-7f27-66d3">
       <characteristics>
-        <characteristic name="Description" id="ca6-1807-dd9b-2870" hidden="false" typeId="9f84-4221-785a-db50">0-1 unit of Skeleton Horse Archers per 1,000 points may have the  Chariot Runners  special rule for free.
-</characteristic>
+        <characteristic name="Description" id="ca6-1807-dd9b-2870" hidden="false" typeId="9f84-4221-785a-db50">0-1 unit of Skeleton Horse Archers per 1,000 points may have the  Chariot Runners  special rule for free.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Multiple Shots (X)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="a8b0-6e69-f325-5783">
       <characteristics>
-        <characteristic name="Description" id="aeb1-ae92-e5e6-76a3" hidden="false" typeId="9f84-4221-785a-db50">A weapon with this special rule can either fire a single shot as normal, or it can be fired a number of times, as shown in brackets after the name of this special rule (shown here as &apos;X&apos;). If multiple shots are fired, each roll To Hit suffers an additional -1 To Hit modifier. All models in a unit equipped with weapons with this special rule must fire either a single or Multiple Shots. Where the number of Multiple Shots is generated by a dice roll, roll separately for each model.
-</characteristic>
+        <characteristic name="Description" id="aeb1-ae92-e5e6-76a3" hidden="false" typeId="9f84-4221-785a-db50">A weapon with this special rule can either fire a single shot as normal, or it can be fired a number of times, as shown in brackets after the name of this special rule (shown here as &apos;X&apos;). If multiple shots are fired, each roll To Hit suffers an additional -1 To Hit modifier. All models in a unit equipped with weapons with this special rule must fire either a single or Multiple Shots. Where the number of Multiple Shots is generated by a dice roll, roll separately for each model.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Multiple Wounds (X)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="85a4-43c5-2bbb-83ca">
       <characteristics>
         <characteristic name="Description" id="7521-b1bf-5019-cf7" hidden="false" typeId="9f84-4221-785a-db50">Each unsaved wound inflicted by an attack with this special rule is multiplied by the number shown in brackets after the name of this special rule (shown here as &apos;X&apos;). For example, Multiple Wounds (2) would mean that each unsaved wound would cause the target to lose two Wounds. Where the number of Multiple Wounds is generated by a dice roll, roll separately for each unsaved wound.
- Note that excess wounds caused to a model will have no additional effect unless that model is a character, in which case this special rule counts for Overkill. Excess wounds do not &apos;spill over&apos; onto other models in the unit.
-</characteristic>
+ Note that excess wounds caused to a model will have no additional effect unless that model is a character, in which case this special rule counts for Overkill. Excess wounds do not &apos;spill over&apos; onto other models in the unit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Quake" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1b0a-dd3-bdd0-945b">
       <characteristics>
-        <characteristic name="Description" id="2225-6d28-2767-9f8c" hidden="false" typeId="9f84-4221-785a-db50">Until your next  Start of Turn  sub-phase, any unit (friend or foe) that was within 2D6&quot; of the central hole of the blast template after scattering suffers a -1 modifier to its Movement characteristic and cannot use the  Swiftstride  special rule.
-</characteristic>
+        <characteristic name="Description" id="2225-6d28-2767-9f8c" hidden="false" typeId="9f84-4221-785a-db50">Until your next  Start of Turn  sub-phase, any unit (friend or foe) that was within 2D6&quot; of the central hole of the blast template after scattering suffers a -1 modifier to its Movement characteristic and cannot use the  Swiftstride  special rule.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Regeneration (X+)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6e39-5258-cf17-3bde">
       <characteristics>
         <characteristic name="Description" id="17ab-c35d-efd8-4a2c" hidden="false" typeId="9f84-4221-785a-db50">A model with this special rule can make a &apos;Regeneration&apos; save. The armour value of a Regeneration save is shown in brackets after the name of this special rule (shown here as &apos;X+&apos;). A Regeneration save can never be modified by the  AP  characteristic of a weapon and can be made in addition to an  armour save  and a  Ward save . However, any wounds saved by a Regeneration save are still counted for the purposes of calculating the  combat result .
- Note that models with this special rule are often vulnerable to the  Flaming Attacks  or  Magical Attacks  special rules.
-</characteristic>
+ Note that models with this special rule are often vulnerable to the  Flaming Attacks  or  Magical Attacks  special rules.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Rule Priority" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="75f4-ab4f-5471-be6d">
       <characteristics>
-        <characteristic name="Description" id="a437-9a52-32f4-f3" hidden="false" typeId="9f84-4221-785a-db50">Sometimes, special rules can seem a bit contradictory. Army special rules take precedence over universal special rules or rules associated with a model&apos;s troop type. Unique special rules take precedence over universal special rules, army special rules or rules associated with a model&apos;s troop type.
-</characteristic>
+        <characteristic name="Description" id="a437-9a52-32f4-f3" hidden="false" typeId="9f84-4221-785a-db50">Sometimes, special rules can seem a bit contradictory. Army special rules take precedence over universal special rules or rules associated with a model&apos;s troop type. Unique special rules take precedence over universal special rules, army special rules or rules associated with a model&apos;s troop type.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Sepulchral Animus" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="e041-c4e4-804-b5dd">
       <characteristics>
         <characteristic name="Description" id="a6d1-e7e0-e73a-63e5" hidden="false" typeId="9f84-4221-785a-db50">Before making a  Casting roll , any Liche Priest within a  Mortuary Cult  army may draw upon the magical animus of any nearby undead constructs. To do so, nominate a friendly unit that has the  Nehekharan Undead  special rule, that is within the Liche Priest&apos;s  Command range  and whose troop type is  swarms ,  monstrous infantry ,  monstrous cavalry ,  monstrous creature  or  behemoth . The nominated unit immediately loses 1-3 Wounds, as chosen by the controlling player. The Liche Priest may then modify their Casting roll by adding the number of Wounds lost by the nominated unit to the result.
- Note that this is a modifier to the result of a roll – it does not negate a roll of a natural double 1.
-</characteristic>
+ Note that this is a modifier to the result of a roll – it does not negate a roll of a natural double 1.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Settra Does Not Kneel!" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="2b40-5e99-e142-f7af">
       <characteristics>
-        <characteristic name="Description" id="c65a-f6c-fc51-bbd3" hidden="false" typeId="9f84-4221-785a-db50">Settra must always accept a  challenge  unless Nekaph, Emissary of Settra is engaged in the same combat. In which case, Nekaph must accept the challenge on Settra&apos;s behalf.
-</characteristic>
+        <characteristic name="Description" id="c65a-f6c-fc51-bbd3" hidden="false" typeId="9f84-4221-785a-db50">Settra must always accept a  challenge  unless Nekaph, Emissary of Settra is engaged in the same combat. In which case, Nekaph must accept the challenge on Settra&apos;s behalf.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Settra&apos;s Champion" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="aeb3-ffb2-7e5d-6385">
       <characteristics>
-        <characteristic name="Description" id="b822-4f13-8d93-e187" hidden="false" typeId="9f84-4221-785a-db50">Nekaph must always issue and accept  challenges  (if possible). However, challenges issued by Nekaph cannot be refused. In addition, whilst engaged in a challenge, Nekaph strikes a  Killing Blow  if he rolls a natural 5 or 6 when making a roll To Wound, rather than the usual 6.
-</characteristic>
+        <characteristic name="Description" id="b822-4f13-8d93-e187" hidden="false" typeId="9f84-4221-785a-db50">Nekaph must always issue and accept  challenges  (if possible). However, challenges issued by Nekaph cannot be refused. In addition, whilst engaged in a challenge, Nekaph strikes a  Killing Blow  if he rolls a natural 5 or 6 when making a roll To Wound, rather than the usual 6.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Slaughterer&apos;s Call" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="50fd-790f-22c4-1305">
       <characteristics>
-        <characteristic name="Description" id="cf6c-c197-de62-743e" hidden="false" typeId="9f84-4221-785a-db50">Whilst this model is  Frenzied , any unit it has joined will also become Frenzied.
-</characteristic>
+        <characteristic name="Description" id="cf6c-c197-de62-743e" hidden="false" typeId="9f84-4221-785a-db50">Whilst this model is  Frenzied , any unit it has joined will also become Frenzied.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Slayer of Daemons" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="f27d-c01d-2a9d-2530">
       <characteristics>
-        <characteristic name="Description" id="9a9b-f056-203b-1fd2" hidden="false" typeId="9f84-4221-785a-db50">When this character makes a roll To Wound, a roll of 4+ is always a success, regardless of the target&apos;s Toughness. In addition, each unsaved wound inflicted by this character against an enemy model with the  Warp-spawned  special rule, or whose troop type is  behemoth , has the  Multiple Wounds (D3)  special rule.
-</characteristic>
+        <characteristic name="Description" id="9a9b-f056-203b-1fd2" hidden="false" typeId="9f84-4221-785a-db50">When this character makes a roll To Wound, a roll of 4+ is always a success, regardless of the target&apos;s Toughness. In addition, each unsaved wound inflicted by this character against an enemy model with the  Warp-spawned  special rule, or whose troop type is  behemoth , has the  Multiple Wounds (D3)  special rule.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7525,22 +7343,19 @@ Related: Ark of Sotek</characteristic>
     </profile>
     <profile name="Slow Reload" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="7b3b-b612-13e7-2f3c">
       <characteristics>
-        <characteristic name="Description" id="2ed7-9fe6-5d2d-39b4" hidden="false" typeId="9f84-4221-785a-db50">If this weapon shot during your previous turn, it may be unable to shoot during this turn. Roll a D6 before shooting with this weapon. On a roll of 1-2, the slow and ponderous reload process has not yet been completed and the weapon does not shoot this turn. If the Dreadquake Mortar has an Ogre Loader, you may apply a +1 modifier to this roll.
-</characteristic>
+        <characteristic name="Description" id="2ed7-9fe6-5d2d-39b4" hidden="false" typeId="9f84-4221-785a-db50">If this weapon shot during your previous turn, it may be unable to shoot during this turn. Roll a D6 before shooting with this weapon. On a roll of 1-2, the slow and ponderous reload process has not yet been completed and the weapon does not shoot this turn. If the Dreadquake Mortar has an Ogre Loader, you may apply a +1 modifier to this roll.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Solar Radiance" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="fef3-83f8-e2f6-94f8">
       <characteristics>
-        <characteristic name="Description" id="8bd9-ad4f-19bf-c7a9" hidden="false" typeId="9f84-4221-785a-db50">Whilst within 6&quot; of one or more Solar Engines, friendly units with the  Cold Blooded  special rule have a +1 modifier to their Initiative characteristic.
-</characteristic>
+        <characteristic name="Description" id="8bd9-ad4f-19bf-c7a9" hidden="false" typeId="9f84-4221-785a-db50">Whilst within 6&quot; of one or more Solar Engines, friendly units with the  Cold Blooded  special rule have a +1 modifier to their Initiative characteristic.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Sorcerer&apos;s Curse" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="146f-f29b-8a95-6e47">
       <characteristics>
-        <characteristic name="Description" id="fe3-7624-345-8a30" hidden="false" typeId="9f84-4221-785a-db50">If this model  miscasts  a spell, it must immediately make a Toughness test. If this test is failed, it loses a single Wound and gains a +1 modifier to its Toughness characteristic instead of rolling on the  Miscast table . If this test is passed, it rolls on the Miscast table as normal.
-</characteristic>
+        <characteristic name="Description" id="fe3-7624-345-8a30" hidden="false" typeId="9f84-4221-785a-db50">If this model  miscasts  a spell, it must immediately make a Toughness test. If this test is failed, it loses a single Wound and gains a +1 modifier to its Toughness characteristic instead of rolling on the  Miscast table . If this test is passed, it rolls on the Miscast table as normal.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7557,8 +7372,7 @@ Related: Ark of Sotek</characteristic>
       <characteristics>
         <characteristic name="Description" id="48c9-633f-de16-193" hidden="false" typeId="9f84-4221-785a-db50">The number of Stomp Attacks caused varies from model to model, and will be shown in brackets after the name of this special rule (shown here as &apos;X&apos;). Often, this is determined by the roll of a dice.
  # Resolving Stomp Attacks
- Stomp Attacks can only be made by a model that is in base contact with the enemy. Stomp Attacks are attacks made in combat that always strike at Initiative 1 (regardless of modifiers), and that hit automatically using the unmodified Strength characteristic of the model.
-</characteristic>
+ Stomp Attacks can only be made by a model that is in base contact with the enemy. Stomp Attacks are attacks made in combat that always strike at Initiative 1 (regardless of modifiers), and that hit automatically using the unmodified Strength characteristic of the model.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7567,15 +7381,13 @@ Related: Ark of Sotek</characteristic>
         <characteristic name="Description" id="ffaa-966c-6285-8d4a" hidden="false" typeId="9f84-4221-785a-db50">Every Vampire Counts army is animated and driven onwards by the sorcery of its  General . To represent this, the General of a Vampire Counts army must also be a Wizard (be they a Vampire, a Necromancer or a Strigoi Ghoul King). If your army includes only a single Wizard, that Wizard must be your General, even if they are not the character with the highest Leadership in your army.
  Should your General be slain, the magical animus of the army starts to dissipate. As soon as your General is removed from play as a casualty, all friendly units with the  Necromantic Undead  special rule lose the  Regeneration (X)  special rule.
  In addition, at the end of the phase in which your General was removed from play as a casualty, and during each of your  Start of Turn   sub-phases for the remainder of the game, all friendly units with the Necromantic Undead special rule that are currently on the battlefield must make a  Leadership test . If this test is failed, the unit loses a number of Wounds equal to the amount by which it failed the test.
- For example, your army&apos;s General is destroyed during your opponent&apos;s Shooting phase. At the end of that phase a unit of Skeleton Warriors (Ld 5) makes a Leadership test and rolls a 7 (failing the test by 2). That unit immediately loses two Wounds. During your next Start of Turn sub-phase, the same unit makes another Leadership test, this time rolling a 6, resulting in the loss of one Wound.
-</characteristic>
+ For example, your army&apos;s General is destroyed during your opponent&apos;s Shooting phase. At the end of that phase a unit of Skeleton Warriors (Ld 5) makes a Leadership test and rolls a 7 (failing the test by 2). That unit immediately loses two Wounds. During your next Start of Turn sub-phase, the same unit makes another Leadership test, this time rolling a 6, resulting in the loss of one Wound.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="The Exile&apos;s Vow" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="3a38-a71a-61d7-31be">
       <characteristics>
-        <characteristic name="Description" id="10a8-c1bd-1227-a973" hidden="false" typeId="9f84-4221-785a-db50">The Exile&apos;s Vow is a Chivalrous Vow. A model with this Chivalrous Vow has the  Stubborn  and  Veteran  special rules. In addition, a model with this Chivalrous Vow does not have to make a  Panic test  when a friendly unit with either the  Levies  or  Peasantry  special rule is destroyed whilst within 6&quot; of it, or when it is fled through by a friendly unit with either the Levies or Peasantry special rule.
-</characteristic>
+        <characteristic name="Description" id="10a8-c1bd-1227-a973" hidden="false" typeId="9f84-4221-785a-db50">The Exile&apos;s Vow is a Chivalrous Vow. A model with this Chivalrous Vow has the  Stubborn  and  Veteran  special rules. In addition, a model with this Chivalrous Vow does not have to make a  Panic test  when a friendly unit with either the  Levies  or  Peasantry  special rule is destroyed whilst within 6&quot; of it, or when it is fled through by a friendly unit with either the Levies or Peasantry special rule.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7587,8 +7399,7 @@ Related: Ark of Sotek</characteristic>
  # Combat Result Bonus
  A unit in Lance formation may claim a bonus of +1 combat result point.
  # Flank Charges
- If a Lance is charged in its flank, align the enemy unit against its widest rank. The Lance then becomes blunted.
-</characteristic>
+ If a Lance is charged in its flank, align the enemy unit against its widest rank. The Lance then becomes blunted.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7601,7 +7412,7 @@ Related: What are Special Rules?</characteristic>
       </characteristics>
       <comment>imported</comment>
       <alias>
-        <undefined>Unique Special Rule</undefined>
+        <undefined/>
       </alias>
     </profile>
     <profile name="Universal Special Rules" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="87df-ec02-e84f-57ac">
@@ -7615,8 +7426,7 @@ Related: What are Special Rules?</characteristic>
     </profile>
     <profile name="Usirian&apos;s Reaper" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1c5d-53e2-e656-3882">
       <characteristics>
-        <characteristic name="Description" id="5998-29bd-17e9-69da" hidden="false" typeId="9f84-4221-785a-db50">After deployment, nominate a single character in your opponent&apos;s  Muster List . Apophas may re-roll any failed rolls To Hit or To Wound made against that character. In addition, any hits inflicted by Apophas against the nominated character gain the  Magical Attacks  special rule.
-</characteristic>
+        <characteristic name="Description" id="5998-29bd-17e9-69da" hidden="false" typeId="9f84-4221-785a-db50">After deployment, nominate a single character in your opponent&apos;s  Muster List . Apophas may re-roll any failed rolls To Hit or To Wound made against that character. In addition, any hits inflicted by Apophas against the nominated character gain the  Magical Attacks  special rule.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7737,8 +7547,7 @@ Related: Follow Up &amp; Pursuit</characteristic>
     </profile>
     <profile name="Change Facing" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1291-32e8-d7e3-2abc">
       <characteristics>
-        <characteristic name="Description" id="899b-823f-6b9a-eabd" hidden="false" typeId="9f84-4221-785a-db50">Before making a follow up move, a unit may &apos;change facing&apos; by performing a free turn manoeuvre (of 90° or 180°).
-</characteristic>
+        <characteristic name="Description" id="899b-823f-6b9a-eabd" hidden="false" typeId="9f84-4221-785a-db50">Before making a follow up move, a unit may &apos;change facing&apos; by performing a free turn manoeuvre (of 90° or 180°).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7768,10 +7577,7 @@ Related: Who Strikes First?</characteristic>
  - Choose Combat &amp; Determine Who Can Fight
  - Roll To Hit
  - Roll To Wound &amp; Make Armour Saves
- - Remove Casualties
-
- 
-</characteristic>
+ - Remove Casualties</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7816,9 +7622,7 @@ Related: Calculate Combat Result</characteristic>
     </profile>
     <profile name="Combat Result Table" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="2c0f-4a97-4b47-1166">
       <characteristics>
-        <characteristic name="Description" id="858e-1308-2780-8e2a" hidden="false" typeId="9f84-4221-785a-db50">
-
-|||
+        <characteristic name="Description" id="858e-1308-2780-8e2a" hidden="false" typeId="9f84-4221-785a-db50">|||
 |:--|:--|
 |Unsaved wounds inflicted|1 point each|
 |Rank Bonus|+1 point/rank|
@@ -8029,8 +7833,7 @@ Related: Follow Up &amp; Pursuit, Change Facing</characteristic>
     </profile>
     <profile name="High Linear Obstacles (Combat)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6313-ae7c-acaa-284e">
       <characteristics>
-        <characteristic name="Description" id="3daa-26ce-9a39-bd0c" hidden="false" typeId="9f84-4221-785a-db50">For the purposes of combat, high linear obstacles (i.e., 2&quot; high or more) are treated as  impassable terrain .
-</characteristic>
+        <characteristic name="Description" id="3daa-26ce-9a39-bd0c" hidden="false" typeId="9f84-4221-785a-db50">For the purposes of combat, high linear obstacles (i.e., 2&quot; high or more) are treated as  impassable terrain .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8090,8 +7893,7 @@ Related: Break Test</characteristic>
       <characteristics>
         <characteristic name="Description" id="ba0-429d-b242-9122" hidden="false" typeId="9f84-4221-785a-db50">The losing unit  Falls Back in Good Order , moving directly away from the winning unit with the highest Unit Strength. If two enemy units have the same  Unit Strength , randomly determine which the unit flees from.
  However, if the winning side significantly outnumbers the losing side, it will overwhelm the loser. If the Unit Strength of the winning side is more than twice that of the losing side, any losing unit that rolled this result when making its  Break test  will Break instead.
- Note that Unit Strength is worked out at the end of the Combat phase, not at the beginning, and that where you have several units engaged in a single combat, you must add together the Unit Strength of each to determine the Unit Strength of your side.
-</characteristic>
+ Note that Unit Strength is worked out at the end of the Combat phase, not at the beginning, and that where you have several units engaged in a single combat, you must add together the Unit Strength of each to determine the Unit Strength of your side.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8134,10 +7936,7 @@ Related: Roll to Wound &amp; Make Armour Saves (Combat)</characteristic>
       <characteristics>
         <characteristic name="Description" id="ec6-ea15-2c38-8dd9" hidden="false" typeId="9f84-4221-785a-db50">A unit may find itself fighting multiple enemies, sometimes even being engaged by enemy units in different arcs. In such cases the models within that unit may have to divide their attacks:
  - Dividing Attacks
- - Fighting On Multiple Fronts
-
- 
-</characteristic>
+ - Fighting On Multiple Fronts</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8455,8 +8254,7 @@ Related: Remove Casualties (Combat)</characteristic>
     </profile>
     <profile name="Still Engaged" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ea2f-ed9f-91b6-7d60">
       <characteristics>
-        <characteristic name="Description" id="ecf5-7359-3132-d16d" hidden="false" typeId="9f84-4221-785a-db50">A unit that is still in base contact with an enemy unit cannot follow up or pursue.
-</characteristic>
+        <characteristic name="Description" id="ecf5-7359-3132-d16d" hidden="false" typeId="9f84-4221-785a-db50">A unit that is still in base contact with an enemy unit cannot follow up or pursue.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8565,8 +8363,7 @@ Related: Follow Up &amp; Pursuit</characteristic>
     </profile>
     <profile name="Unable to Move" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4fa3-f4dd-5a5-8982">
       <characteristics>
-        <characteristic name="Description" id="c35b-67cf-2041-3b84" hidden="false" typeId="9f84-4221-785a-db50">A unit may be unable to complete its chosen move due to the presence of other friendly units or terrain. In such cases, the unit moves as far as possible before halting.
-</characteristic>
+        <characteristic name="Description" id="c35b-67cf-2041-3b84" hidden="false" typeId="9f84-4221-785a-db50">A unit may be unable to complete its chosen move due to the presence of other friendly units or terrain. In such cases, the unit moves as far as possible before halting.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8733,9 +8530,7 @@ Hammerhand
  - Pillar of Fire
  - Arcane Urgency
  - Oaken Shield
- - Curse of Cowardly Flight
- 
-</characteristic>
+ - Curse of Cowardly Flight</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8751,9 +8546,7 @@ The Summoning
  - Daemonic Familiars
  - Daemonic Vessel
  - Vortex of Chaos
- - Daemonic Vigour
- 
-</characteristic>
+ - Daemonic Vigour</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8769,9 +8562,7 @@ Doombolt
  - Infernal Gateway
  - Phantasmagoria
  - Battle Lust
- - Soul Eater
- 
-</characteristic>
+ - Soul Eater</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8787,9 +8578,7 @@ Storm Call
  - Summon Elemental Spirit
  - Earthen Ramparts
  - Wind Blast
- - Travel Mystical Pathway
- 
-</characteristic>
+ - Travel Mystical Pathway</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8805,9 +8594,7 @@ Drain Magic
  - Tempest
  - Corporeal Unmaking
  - Fury of Khaine
- - Shield of Saphery
- 
-</characteristic>
+ - Shield of Saphery</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8823,9 +8610,7 @@ Glittering Robe
  - Column of Crystal
  - Confounding Convocation
  - Spectral Doppelganger
- - Miasmic Mirage
- 
-</characteristic>
+ - Miasmic Mirage</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8841,9 +8626,7 @@ The Dwellers Below
  - Spiritual Vortex
  - Curse of Years
  - Spectral Steed
- - Spirit Leech
- 
-</characteristic>
+ - Spirit Leech</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8855,8 +8638,7 @@ The Dwellers Below
   Conveyance : These spells enable Wizards to enhance movement or transport units from place to place.
   Magic Missiles : These are sorcerous projectiles that the Wizard hurls at the foe. Magic Missiles can only target enemy units.
   Magical Vortex : These are roiling globes of magical energy that travel across the battlefield wreaking all kinds of havoc.
-  Assailment : These spells are deadly attacks that strike the foe without warning.
-</characteristic>
+  Assailment : These spells are deadly attacks that strike the foe without warning.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8865,8 +8647,7 @@ The Dwellers Below
         <characteristic name="Description" id="71e7-877c-c0e8-ba28" hidden="false" typeId="9f84-4221-785a-db50">Each player randomly generates spells for each of their Wizards before armies are deployed. If your army contains more than one Wizard, you may generate spells for each in an order of your choosing.
  Each Lore of Magic contains seven spells: six numbered (1-6) and a seventh &apos;signature&apos; spell. To determine the spells your Wizard knows, roll a number of D6 equal to their Level of Wizardry, re-rolling any duplicate results. The result(s) show which spell(s) your Wizard knows.
  If you wish, your Wizard may discard one of these randomly generated spells and instead select the signature spell of their chosen Lore of Magic. Any number of Wizards in your army may do this.
- Note that Wizards in the same army may know the same spell(s), so individual spells may be duplicated within your army. However, no single Wizard can know the same spell twice.
-</characteristic>
+ Note that Wizards in the same army may know the same spell(s), so individual spells may be duplicated within your army. However, no single Wizard can know the same spell twice.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8882,9 +8663,7 @@ Fist of Gork (or Mork)
  - Bad Moon Rizin&apos;
  - Evil Sun Shinin&apos;
  - &apos;Ere We Go!
- - Foot of Gork (or Mork)
- 
-</characteristic>
+ - Foot of Gork (or Mork)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -9031,8 +8810,7 @@ Related: Charge Reactions</characteristic>
     <profile name="Fleeing Units (Movement)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b22b-ed9f-32f1-764d">
       <characteristics>
         <characteristic name="Description" id="3978-2186-d70b-f393" hidden="false" typeId="9f84-4221-785a-db50">Units that failed to  Rally  during the  Strategy phase  will continue to flee during the Compulsory Moves sub-phase. Fleeing units must be moved at the beginning of this subphase, before moving any other units that are obliged to make a compulsory move.
- Moving a fleeing unit is often a complicated procedure. For this reason,  fleeing  itself is covered in greater detail after the  basics of movement  and  manoeuvre  have been explained in more detail.
-</characteristic>
+ Moving a fleeing unit is often a complicated procedure. For this reason,  fleeing  itself is covered in greater detail after the  basics of movement  and  manoeuvre  have been explained in more detail.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -9058,8 +8836,7 @@ Related: Charge Moves</characteristic>
     <profile name="Other Types of Compulsory Movement" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="dd10-b889-5188-7302">
       <characteristics>
         <characteristic name="Description" id="c65-5a5f-b4bf-7cfd" hidden="false" typeId="9f84-4221-785a-db50">Other units that must move in the Compulsory Moves sub-phase follow the normal movement rules, unless stated otherwise. Any special rules that apply to units that have a compulsory move will be described within their rules. For example, some units have a random Movement characteristic. In other cases, a unit might be obliged to move in a specific direction, or even in a random direction.
- Whatever the case, any compulsory moves are resolved now, after all fleeing units have moved. These compulsory moves can be resolved in any order the controlling player wishes.
-</characteristic>
+ Whatever the case, any compulsory moves are resolved now, after all fleeing units have moved. These compulsory moves can be resolved in any order the controlling player wishes.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -9067,8 +8844,7 @@ Related: Charge Moves</characteristic>
       <characteristics>
         <characteristic name="Description" id="317d-e920-2fe1-a4b0" hidden="false" typeId="9f84-4221-785a-db50">With all charges and compulsory moves attended to, you can now move the rest of your army. While it might lack the drama of charging or the jeopardy of compulsory moves, the Remaining Moves sub-phase is no less important.
  During this sub-phase players manoeuvre their remaining units in order to set up charges for future turns, as well as attempt to deny future charges their opponent will wish to make. This is also the time to manoeuvre missile troops and Wizards so that they have suitable targets, seize important areas of the battlefield, and so on. Finally,  Conveyance  spells can be cast at any point during this sub-phase.
- Note that units which are fleeing, that charged this turn or that moved during the Compulsory Moves sub-phase cannot move again during this sub-phase. Their movement for the turn has already been completed.
-</characteristic>
+ Note that units which are fleeing, that charged this turn or that moved during the Compulsory Moves sub-phase cannot move again during this sub-phase. Their movement for the turn has already been completed.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -9086,8 +8862,7 @@ Related: Charge Reactions</characteristic>
     <profile name="The 1&quot; Rule" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="5085-284a-b3cd-be3a">
       <characteristics>
         <characteristic name="Description" id="b879-c62d-d42d-2540" hidden="false" typeId="9f84-4221-785a-db50">There is one rule of movement that applies throughout the game – the 1&quot; rule. Quite simply, with the exception of units engaged in combat, no unit can end its movement within 1&quot; of an enemy unit.
- Often, a unit will have to move within 1&quot; of another unit during its move. This is perfectly acceptable, provided that, at the end of the movement, there is 1&quot; between it and any enemy units. At times, once movement is complete, players may have to nudge units further apart, by the smallest amount possible, to maintain this rule, and this is also perfectly acceptable. Both players should agree upon how best to do this and ensure neither gain any unfair advantage.
-</characteristic>
+ Often, a unit will have to move within 1&quot; of another unit during its move. This is perfectly acceptable, provided that, at the end of the movement, there is 1&quot; between it and any enemy units. At times, once movement is complete, players may have to nudge units further apart, by the smallest amount possible, to maintain this rule, and this is also perfectly acceptable. Both players should agree upon how best to do this and ensure neither gain any unfair advantage.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -9111,10 +8886,7 @@ Once all charges have been declared and all charge reactions have been resolved,
  - Compulsory Moves 
 Sometimes, a player has no choice over whether or not to move a unit; for example, a fleeing unit is obliged to make a flee move. All compulsory moves are made during this sub-phase.
  - Remaining Moves 
-During this sub-phase, the active player advances their battle line, moving those units that did not move during the Charge Moves or Compulsory Moves sub-phases.
-
- 
-</characteristic>
+During this sub-phase, the active player advances their battle line, moving those units that did not move during the Charge Moves or Compulsory Moves sub-phases.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -9220,10 +8992,7 @@ Related: Common Causes of Panic</characteristic>
  In addition, a unit is not required to make a Panic test if:
  - It is making a Charge move.
  - It is engaged in combat.
- - It is already fleeing and has yet to rally.
-
- 
-</characteristic>
+ - It is already fleeing and has yet to rally.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -9685,10 +9454,7 @@ The active player rolls To Hit for the shooting unit. Sometimes, not all models 
  - Roll To Wound &amp; Make Armour Saves 
 For each successful roll To Hit, the player makes a roll To Wound. For each of these rolls that cause a wound, their opponent may be able to make an Armour Save roll.
  - Remove Casualties &amp; Make Panic Tests 
-For each unsaved wound caused, the target unit loses one Wound. Models reduced to zero Wounds are removed as casualties. If enough casualties are caused, the unit will have to take a Panic test.
-
- 
-</characteristic>
+For each unsaved wound caused, the target unit loses one Wound. Models reduced to zero Wounds are removed as casualties. If enough casualties are caused, the unit will have to take a Panic test.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -9717,8 +9483,7 @@ Related: Roll to Hit (Shooting), Range &amp; Movement Modifiers, Cover Modifiers
     </profile>
     <profile name="Too Tough to Wound" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="829b-d0e4-b9c9-b780">
       <characteristics>
-        <characteristic name="Description" id="b2ab-d0e0-73a5-c028" hidden="false" typeId="9f84-4221-785a-db50">If your Strength is six or more points lower than your target&apos;s Toughness characteristic, you cannot wound them. They are simply too tough!
-</characteristic>
+        <characteristic name="Description" id="b2ab-d0e0-73a5-c028" hidden="false" typeId="9f84-4221-785a-db50">If your Strength is six or more points lower than your target&apos;s Toughness characteristic, you cannot wound them. They are simply too tough!</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -9808,16 +9573,14 @@ Resolving Unusual Attacks</characteristic>
       <characteristics>
         <characteristic name="Description" id="904e-5c6f-501-540a" hidden="false" typeId="9f84-4221-785a-db50">During this sub-phase, powerful abilities, both magical and mundane, are unleashed in the form of special rules.
  The active player chooses one of their models (usually a character) that is not fleeing and that has one or more special rules that can be used during the Command sub-phase. The player states which special rule (if any) they intend to use and, if necessary, which unit(s) will be affected, before making any tests required. The active player then repeats the process for all models in their army that have any special rules that can be used during the Command sub-phase.
- Note that, unless stated otherwise, a model can only use a special rule once per Command sub-phase.
-</characteristic>
+ Note that, unless stated otherwise, a model can only use a special rule once per Command sub-phase.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Conjuration" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4850-a09b-c484-7a6">
       <characteristics>
         <characteristic name="Description" id="8a32-a83e-70f2-5bc2" hidden="false" typeId="9f84-4221-785a-db50">Many Wizards are able to cast  Enchantment  spells to the benefit of friendly units. Other Wizards are able to cast  Hex  spells, hindering the enemy in some way.
- The active player chooses one of their Wizards that is not fleeing. If that Wizard knows any Enchantment or Hex spells, the player may attempt to cast them now. If the spell is cast successfully, the inactive player may then make a dispel attempt. The active player then chooses another Wizard, repeating the process for all of the Wizards in their army.
-</characteristic>
+ The active player chooses one of their Wizards that is not fleeing. If that Wizard knows any Enchantment or Hex spells, the player may attempt to cast them now. If the spell is cast successfully, the inactive player may then make a dispel attempt. The active player then chooses another Wizard, repeating the process for all of the Wizards in their army.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -9868,8 +9631,7 @@ Related: Rallied Units</characteristic>
       <characteristics>
         <characteristic name="Description" id="83fd-bba0-a11d-9925" hidden="false" typeId="9f84-4221-785a-db50">Some units will have special actions they have to perform or tests they have to make at the start of the turn. Such rules are not common, and their details will be clearly stated in the model&apos;s rules. Such actions are performed and tests made during this sub-phase, in an order chosen by the active player.
  Sometimes, a scenario may require you to make a test at the start of each turn, or pause to determine if a victory condition has been achieved before playing on. These things are also done now, before the turn begins in earnest.
- This sub-phase should also be used as a moment in which to think between turns, during which you can remove stray casualties, errant dice and other bits of gaming detritus that have accumulated. Often, players will have questions to ask their opponent, such as how a special rule works or what a magic item does. This is the perfect time to ask such questions, and an opponent should never begrudge giving answers during this natural pause in the action.
-</characteristic>
+ This sub-phase should also be used as a moment in which to think between turns, during which you can remove stray casualties, errant dice and other bits of gaming detritus that have accumulated. Often, players will have questions to ask their opponent, such as how a special rule works or what a magic item does. This is the perfect time to ask such questions, and an opponent should never begrudge giving answers during this natural pause in the action.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -9883,10 +9645,7 @@ Some characters have special rules that may represent bold heroes seeking to ins
  - Conjuration 
 Many Wizards use their magic to aid their allies in battle. Others use it to inflict terrible curses upon their enemies. Known respectively as Enchantment and Hex spells, these spells are cast now.
  - Rally Fleeing Troops 
-As warriors fall, many units turn tail and flee. During this sub-phase, you have a chance to rally any fleeing units. Those that are successful will return to the fray. Those that are not will continue to flee.
-
- 
-</characteristic>
+As warriors fall, many units turn tail and flee. During this sub-phase, you have a chance to rally any fleeing units. Those that are successful will return to the fray. Those that are not will continue to flee.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -9970,8 +9729,7 @@ The Turn Sequence</characteristic>
  # Monsters
   Monsters  are the largest beings in the Warhammer world, creatures so powerful that they usually roam the battlefield alone. In spite of this, due to their size they function as Close Order units, rather than as Skirmishers. This category includes Dragons, Gryphons and so on. Monsters are split into two sub-categories:  Monstrous Creatures  and  Behemoths .
  # War Machines
-  War machines  such as cannon and bolt throwers are powerful units on the field of battle, able to pulverise whole regiments, breach stone walls or even slay fearsome monsters with a single, well-placed shot. This is a broad category with varied rules that cover the many different weapons to be found in the Warhammer world, the most commonly seen of which are dealt with in their own  section .
-</characteristic>
+  War machines  such as cannon and bolt throwers are powerful units on the field of battle, able to pulverise whole regiments, breach stone walls or even slay fearsome monsters with a single, well-placed shot. This is a broad category with varied rules that cover the many different weapons to be found in the Warhammer world, the most commonly seen of which are dealt with in their own  section .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10003,17 +9761,14 @@ The Turn Sequence</characteristic>
 |War Machines|-|-|As Starting Wounds|
 
  *Note that this is the minimum number required to claim a Rank Bonus. Ranks can contain more or fewer models as you wish, but in order for a rank to count towards Rank Bonus, it must contain at least this many models.
- **Note that in some cases the maximum Rank Bonus a unit can claim can be increased by special rules. The maximum Rank Bonus a unit can claim can also be reduced by its formation, by spell effects, or by terrain.
- 
-</characteristic>
+ **Note that in some cases the maximum Rank Bonus a unit can claim can be increased by special rules. The maximum Rank Bonus a unit can claim can also be reduced by its formation, by spell effects, or by terrain.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Unit Strength" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ee3f-2af4-303-2b8e">
       <characteristics>
         <characteristic name="Description" id="b754-2a5a-e083-440a" hidden="false" typeId="9f84-4221-785a-db50">Sometimes, you may be required to work out the &apos;Unit Strength&apos; of a unit. There are a number of reasons you might need to know this, for example, to determine if one of your units is outnumbered by an enemy. Simply counting the number of models does not account for the sheer power of large and ferocious creatures. Unit Strength represents this well.
- To determine Unit Strength, simply count the number of models currently in the unit and multiply this by the Unit Strength per model as shown on the  Troop Type table .
-</characteristic>
+ To determine Unit Strength, simply count the number of models currently in the unit and multiply this by the Unit Strength per model as shown on the  Troop Type table .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10050,8 +9805,7 @@ Related: Monsters</characteristic>
       <characteristics>
         <characteristic name="Description" id="5249-87cd-2702-44d1" hidden="false" typeId="9f84-4221-785a-db50">There are five main categories of troop type, each of which is further divided into sub-categories. For example, particularly large infantry fall into the  monstrous infantry  sub-category of infantry. In such cases, when the rules refer to  infantry  models or units, monstrous infantry must also follow those rules unless an exception is stated for monstrous infantry.
  A model&apos;s troop type also determines the minimum number of such models a rank must contain to claim a  Rank Bonus , the maximum Rank Bonus a unit of such models is able to claim, and the  Unit Strength  of such a model, as shown in the sections that follow.
- In most cases it will be fairly obvious which main category of troop type a model falls into. Sub-categories are more complex and exist to help better understand the exact role of a unit in battle and to better reflect this in games through the use of different rules.
-</characteristic>
+ In most cases it will be fairly obvious which main category of troop type a model falls into. Sub-categories are more complex and exist to help better understand the exact role of a unit in battle and to better reflect this in games through the use of different rules.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10070,17 +9824,13 @@ Related: Light Cavalry</characteristic>
  - Light Cavalry
  - Heavy Cavalry
  - Monstrous Cavalry
- - War Beasts
-
- 
-</characteristic>
+ - War Beasts</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Characters (Troop Types)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="be1b-ede5-6fae-66b1">
       <characteristics>
-        <characteristic name="Description" id="ba46-1c97-2eda-7dca" hidden="false" typeId="9f84-4221-785a-db50">Some models will have the word &apos;Character&apos; in brackets after their troop type, indicating that the model is a character. This section does not cover characters in detail. Instead, and because characters are such a powerful and important part of  Warhammer: the Old World , they have a  section  all to themselves..
-</characteristic>
+        <characteristic name="Description" id="ba46-1c97-2eda-7dca" hidden="false" typeId="9f84-4221-785a-db50">Some models will have the word &apos;Character&apos; in brackets after their troop type, indicating that the model is a character. This section does not cover characters in detail. Instead, and because characters are such a powerful and important part of  Warhammer: the Old World , they have a  section  all to themselves..</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10088,10 +9838,7 @@ Related: Light Cavalry</characteristic>
       <characteristics>
         <characteristic name="Description" id="91e9-cc6b-8eb8-8be2" hidden="false" typeId="9f84-4221-785a-db50">A chariot is usually a wheeled war vehicle drawn into battle by beasts of some kind and crewed by heavily armed and armoured warriors. This category can also include large objects, such as mobile altars, that are pushed along or carried. Chariots are split into two sub-categories:
  - Light Chariots
- - Heavy Chariots
-
- 
-</characteristic>
+ - Heavy Chariots</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10131,11 +9878,7 @@ Related: Light Chariots</characteristic>
 |:--|:--|:--|:--|:--|
 |Troop Type|Models per Rank|Maximum Rank Bonus|Unit Strength per Model|Special Rules|
 |Heavy Cavalry|4|+1|2|Split Profile (Cavalry) 
- Cavalry Support|
-
- 
- 
-</characteristic>
+ Cavalry Support|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10152,11 +9895,7 @@ Related: Light Chariots</characteristic>
  Scythed Wheels 
  Lumbering 
  Iron Shod Wheels 
- Firing Platform|
-
- 
- 
-</characteristic>
+ Firing Platform|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10168,11 +9907,7 @@ Related: Light Chariots</characteristic>
 ||||||
 |:--|:--|:--|:--|:--|
 |Troop Type|Models per Rank|Maximum Rank Bonus|Unit Strength per Model|Special Rules|
-|Heavy Infantry|4|+2|1|Steady in the Ranks|
-
- 
- 
-</characteristic>
+|Heavy Infantry|4|+2|1|Steady in the Ranks|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10182,17 +9917,13 @@ Related: Light Chariots</characteristic>
  - Regular Infantry
  - Heavy Infantry
  - Monstrous Infantry
- - Swarms
-
- 
-</characteristic>
+ - Swarms</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Insignificant" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="17dc-90b0-88a5-12d5">
       <characteristics>
-        <characteristic name="Description" id="5543-2f81-37c4-c086" hidden="false" typeId="9f84-4221-785a-db50">Swarms consist of small and insignificant creatures. As such, a line of sight can be drawn across a swarm as if it wasn&apos;t there. In addition, swarms are ignored when attempting to target enemy characters.
-</characteristic>
+        <characteristic name="Description" id="5543-2f81-37c4-c086" hidden="false" typeId="9f84-4221-785a-db50">Swarms consist of small and insignificant creatures. As such, a line of sight can be drawn across a swarm as if it wasn&apos;t there. In addition, swarms are ignored when attempting to target enemy characters.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10214,11 +9945,7 @@ Related: Light Chariots</characteristic>
 |:--|:--|:--|:--|:--|
 |Troop Type|Models per Rank|Maximum Rank Bonus|Unit Strength per Model|Special Rules|
 |Light Cavalry|5|+1|2|Split Profile (Cavalry) 
- Cavalry Support|
-
- 
- 
-</characteristic>
+ Cavalry Support|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10233,11 +9960,7 @@ Related: Light Chariots</characteristic>
 |Light Chariots|3|+1|3|Split Profile (Chariots) 
  Iron Shod Wheels 
  Churning Wheels 
- Firing Platform|
-
- 
- 
-</characteristic>
+ Firing Platform|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10256,10 +9979,7 @@ Related: Heavy Chariots</characteristic>
       <characteristics>
         <characteristic name="Description" id="c3d2-ebae-2ec5-368a" hidden="false" typeId="9f84-4221-785a-db50">Creatures so large and powerful that they normally do not form into units, but roam the battlefield on their own. In spite of this, due to their size, they function as Close Order units, rather than as Skirmishers. Monsters are split into two sub-categories:
  - Monstrous Creatures
- - Behemoths
-
- 
-</characteristic>
+ - Behemoths</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10272,11 +9992,7 @@ Related: Heavy Chariots</characteristic>
 |:--|:--|:--|:--|:--|
 |Troop Type|Models per Rank|Maximum Rank Bonus|Unit Strength per Model|Special Rules|
 |Monstrous Cavalry|3|+1|3|Split Profile (Cavalry) 
- Clumsy|
-
- 
- 
-</characteristic>
+ Clumsy|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10306,18 +10022,13 @@ Related: Monsters</characteristic>
 ||||||
 |:--|:--|:--|:--|:--|
 |Troop Type|Models per Rank|Maximum Rank Bonus|Unit Strength per Model|Special Rules|
-|Monstrous Infantry|3|+2|3|Clumsy|
-
- 
- 
-</characteristic>
+|Monstrous Infantry|3|+2|3|Clumsy|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="No One Cares" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6f78-4e6a-9c42-94a">
       <characteristics>
-        <characteristic name="Description" id="b393-f100-7b83-1b8f" hidden="false" typeId="9f84-4221-785a-db50">No one really cares about  swarms . Swarms never cause  Panic  in friendly units, regardless of what happens to them.
-</characteristic>
+        <characteristic name="Description" id="b393-f100-7b83-1b8f" hidden="false" typeId="9f84-4221-785a-db50">No one really cares about  swarms . Swarms never cause  Panic  in friendly units, regardless of what happens to them.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10330,18 +10041,13 @@ Related: Monsters</characteristic>
 ||||||
 |:--|:--|:--|:--|:--|
 |Troop Type|Models per Rank|Maximum Rank Bonus|Unit Strength per Model|Special Rules|
-|Regular Infantry|5|+2|1|-|
-
- 
- 
-</characteristic>
+|Regular Infantry|5|+2|1|-|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Scythed Wheels" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="242c-9373-ed37-f5bb">
       <characteristics>
-        <characteristic name="Description" id="9424-2f6d-57cc-d163" hidden="false" typeId="9f84-4221-785a-db50">Built to wreak destruction, heavy chariots are adorned with sharpened spikes and scything blades, the better to cut down the foe. Any Impact Hits caused by a heavy chariot have an Armour Piercing characteristic of -2.
-</characteristic>
+        <characteristic name="Description" id="9424-2f6d-57cc-d163" hidden="false" typeId="9f84-4221-785a-db50">Built to wreak destruction, heavy chariots are adorned with sharpened spikes and scything blades, the better to cut down the foe. Any Impact Hits caused by a heavy chariot have an Armour Piercing characteristic of -2.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10398,8 +10104,7 @@ Related: War Machines</characteristic>
     </profile>
     <profile name="Steady in the Ranks" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="a7bf-31c6-b715-161a">
       <characteristics>
-        <characteristic name="Description" id="7ee2-c74a-e6ac-cda9" hidden="false" typeId="9f84-4221-785a-db50">Due to their solid stature, heavy armour and often elite nature,  heavy infantry  are rarely concerned by inferior numbers. To represent this, a unit of heavy infantry arrayed in either  Close Order  or  Open Order  formation does not become  Disrupted  when engaged in its flank or rear unless the enemy unit has a  Unit Strength  of ten or more.
-</characteristic>
+        <characteristic name="Description" id="7ee2-c74a-e6ac-cda9" hidden="false" typeId="9f84-4221-785a-db50">Due to their solid stature, heavy armour and often elite nature,  heavy infantry  are rarely concerned by inferior numbers. To represent this, a unit of heavy infantry arrayed in either  Close Order  or  Open Order  formation does not become  Disrupted  when engaged in its flank or rear unless the enemy unit has a  Unit Strength  of ten or more.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10441,8 +10146,7 @@ Related: Behemoths</characteristic>
  This is the maximum Rank Bonus a unit can claim. In some cases this can be increased by special rules and other effects.
  # Unit Strength
  Sometimes, you may be required to work out the &apos;Unit Strength&apos; of a unit. There are a number of reasons you might need to know this, for example, to determine if one of your units is outnumbered by an enemy, and if they are, by how much. Simply counting the number of models does not account for the sheer power and destructive ability of large and ferocious creatures. Unit Strength represents this well.
- To determine Unit Strength, simply count the number of models currently in the unit and multiply this by the Unit Strength per model as shown on the Troop Type table.
-</characteristic>
+ To determine Unit Strength, simply count the number of models currently in the unit and multiply this by the Unit Strength per model as shown on the Troop Type table.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10502,8 +10206,7 @@ Black Powder Misfire Table</characteristic>
     <profile name="Weapon of War" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="87ec-e325-f656-c35">
       <characteristics>
         <characteristic name="Description" id="305-50e5-12bb-cc0b" hidden="false" typeId="9f84-4221-785a-db50">War machines are built to be strong and durable rather than for speed and, as such, they are slow and cumbersome to move once erected. To represent this, war machines cannot march, declare a charge or make a pursuit move. Additionally, war machines suffer a -1 modifier to the result of any Flee roll they make (to a minimum of 1).
- However, a war machine can pivot freely at any time during its turn (the better to face the enemy) and may make a follow up move as normal. Should a war machine pivot, it does not count as having moved.
-</characteristic>
+ However, a war machine can pivot freely at any time during its turn (the better to face the enemy) and may make a follow up move as normal. Should a war machine pivot, it does not count as having moved.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10575,14 +10278,13 @@ Related: Coherency</characteristic>
     </profile>
     <profile name="Adopting &amp; Changing Formation" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="2dc-a1a2-d7b9-aef7">
       <characteristics>
-        <characteristic name="Description" id="2b6-7c38-85-7a67" hidden="false" typeId="9f84-4221-785a-db50">All units must adopt a formation. As mentioned previously, the type(s) of formation a unit can adopt are indicated by a special rule of the same name as the formation type. Models with more than one such special rule may choose their formation during  deployment , and may change it and adopt a different formation by  reforming  during the game.
-</characteristic>
+        <characteristic name="Description" id="2b6-7c38-85-7a67" hidden="false" typeId="9f84-4221-785a-db50">All units must adopt a formation. As mentioned previously, the type(s) of formation a unit can adopt are indicated by a special rule of the same name as the formation type. Models with more than one such special rule may choose their formation during  deployment , and may change it and adopt a different formation by  reforming  during the game.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Characters Joining Skirmishers" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="f1ae-3b74-9bc8-1a9d">
       <characteristics>
-        <characteristic name="Description" id="930e-1d25-cb7-b3bf" hidden="false" typeId="9f84-4221-785a-db50"> Characters  may only join a unit of  Skirmishers  if they are of the same sub-category of  troop type . For example, a character whose troop type is light cavalry could join a unit of Skirmishers that are also light cavalry, but could not join a unit of Skirmishers that are heavy cavalry. This is an exception to the normal rules for  characters joining units .
+        <characteristic name="Description" id="930e-1d25-cb7-b3bf" hidden="false" typeId="9f84-4221-785a-db50">Characters  may only join a unit of  Skirmishers  if they are of the same sub-category of  troop type . For example, a character whose troop type is light cavalry could join a unit of Skirmishers that are also light cavalry, but could not join a unit of Skirmishers that are heavy cavalry. This is an exception to the normal rules for  characters joining units .
 
 
 Related: Skirmish Formation</characteristic>
@@ -10607,8 +10309,7 @@ Related: 1&quot; Apart (Skirmishers)</characteristic>
  - How many models a rank must contain to claim a Rank Bonus, as well as the maximum Rank Bonus a unit can claim, is determined by its  troop type .
  - Certain special rules may increase the Rank Bonus a unit can claim beyond the maximum normally allowed by its troop type.
 
- Note that, as normal, this bonus can be claimed for an incomplete rear rank, as long as there are sufficient models in it.
-</characteristic>
+ Note that, as normal, this bonus can be claimed for an incomplete rear rank, as long as there are sufficient models in it.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10633,8 +10334,7 @@ Related: Skirmishers &amp; Shooting</characteristic>
     <profile name="Facing &amp; Line of Sight (Skirmishers)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="2655-bb8a-f68c-b365">
       <characteristics>
         <characteristic name="Description" id="5096-edfc-a2eb-6478" hidden="false" typeId="9f84-4221-785a-db50">Unlike models in tightly ranked units, Skirmishers can see more of the battlefield around them. To represent this, whilst in Skirmish formation, models do not have flank or rear arcs. Instead, every arc is considered to be their front arc, giving Skirmishers a 360° vision arc. Therefore, units in Skirmish formation can declare charges and shoot in any direction – they are not limited by the constraints of a 90° front arc or vision arc.
- Other units can see through units in Skirmish formation if a line of sight can be drawn between the individual models. The individual models block line of sight as normal.
-</characteristic>
+ Other units can see through units in Skirmish formation if a line of sight can be drawn between the individual models. The individual models block line of sight as normal.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10654,17 +10354,13 @@ Related: Skirmish Formation</characteristic>
         <characteristic name="Description" id="7798-9603-7c3-1a9c" hidden="false" typeId="9f84-4221-785a-db50">Open Order units tend to adopt a looser formation. Where the warriors within a Close Order formation will fight shoulder to shoulder, protecting one another with shield and spear, warriors in an Open Order formation fight in a more individual manner, striking and parrying with sword and buckler, or swinging great, double-handed weapons. Whatever the case, Open Order units are far more manoeuvrable than Close Order units.
  To represent this, units arrayed in an Open Order formation have the following abilities:
  - Quick Turn
- - Dispersed Ranks
-
- 
-</characteristic>
+ - Dispersed Ranks</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Marching Column (Unusual Formations)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4eb2-4cce-5784-f59b">
       <characteristics>
-        <characteristic name="Description" id="22d0-a801-4f0b-ec0c" hidden="false" typeId="9f84-4221-785a-db50">A unit that is deeper than it is wide (i.e., that has more models per file than per rank) is said to be in  Marching Column . A Marching Column cannot claim a  Rank Bonus  and cannot make a charge move, but may triple its Movement characteristic when  Marching .
-</characteristic>
+        <characteristic name="Description" id="22d0-a801-4f0b-ec0c" hidden="false" typeId="9f84-4221-785a-db50">A unit that is deeper than it is wide (i.e., that has more models per file than per rank) is said to be in  Marching Column . A Marching Column cannot claim a  Rank Bonus  and cannot make a charge move, but may triple its Movement characteristic when  Marching .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10853,8 +10549,7 @@ Skirmishers Charging Skirmishers</characteristic>
       <characteristics>
         <characteristic name="Description" id="565c-c8ba-491d-bd5a" hidden="false" typeId="9f84-4221-785a-db50">Although war machines and their crew are treated as a  single model , the models that represent the crew are most often based individually, separate to the war machine itself. Accordingly, a war machine’s profile will give a base size for both the war machine and its crew. The benefit of basing a war machine’s crew separately is that, for each Wound the crew loses, you can remove one of the crew models as a reminder.
  During deployment, the models representing a war machine’s crew should be positioned adjacent to and in base contact with it. Once placed, the models must remain in position, adjacent to their war machine. Individual crew models should be ignored for the purposes of measurement or when determining line of sight.
- However, many players like to base their war machines and crew together on a single large base, making of their war machines small dioramas that show the crew hard at work. This is perfectly acceptable.
-</characteristic>
+ However, many players like to base their war machines and crew together on a single large base, making of their war machines small dioramas that show the crew hard at work. This is perfectly acceptable.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10868,11 +10563,7 @@ Skirmishers Charging Skirmishers</characteristic>
 |D6|Result|
 |1|Destroyed: The weapon explodes with a thunderous noise, leaving a hole in the ground and a cloud of black smoke hanging in the air. The model is destroyed and immediately removed from play.|
 |2-4|Malfunction: One of the crew has become caught in the firing mechanism. This problem can be fixed, but only by partially dismantling the weapon, the crew member, or both. The crew immediately loses one Wound, the model fails to shoot this turn and cannot shoot before the end of the next round.|
-|5-6|Pffft: The fuse has gone out. As far as mishaps go, it is not very serious, but one of the crew will be feeling rather foolish! The model fails to shoot this turn.|
-
- 
- 
-</characteristic>
+|5-6|Pffft: The fuse has gone out. As far as mishaps go, it is not very serious, but one of the crew will be feeling rather foolish! The model fails to shoot this turn.|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10892,10 +10583,7 @@ Skirmishers Charging Skirmishers</characteristic>
 ||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Repeater Bolt Thrower (Profile)|48&quot;|6|-3|Cumbersome ,  Move or Shoot ,  Multiple Wounds (2) ,  Rapid Fire ,  Through &amp; Through|
-
- 
-</characteristic>
+|Repeater Bolt Thrower (Profile)|48&quot;|6|-3|Cumbersome ,  Move or Shoot ,  Multiple Wounds (2) ,  Rapid Fire ,  Through &amp; Through|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10940,10 +10628,7 @@ Related: Stone Throwers</characteristic>
 
  5. Crunch:  Sometimes, a bouncing cannonball will encounter something that stops it dead:
  - If the cannonball hits a model whose troop type is  monstrous creature  or  behemoth , it stops immediately. No further models are hit.
- - If the cannonball hits impassable terrain or a high linear obstacle, it stops immediately. No further models are hit.
-
- 
-</characteristic>
+ - If the cannonball hits impassable terrain or a high linear obstacle, it stops immediately. No further models are hit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10964,15 +10649,12 @@ Related: Fire Throwers</characteristic>
     </profile>
     <profile name="Fire Throwers" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="9f8-28e8-6ff8-5249">
       <characteristics>
-        <characteristic name="Description" id="c09f-8e1d-c187-f114" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="c09f-8e1d-c187-f114" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Fire Thrower (Profile)|12&quot;|5|-1|Column of Fire ,  Cumbersome ,  Flaming Attacks ,  Move or Shoot|
 
- Notes: Fire throwers do not use their crew&apos;s Ballistic Skill. Instead, they shoot using the  Column of Fire  special rule. This weapon uses the  Black Powder Misfire table .
-</characteristic>
+ Notes: Fire throwers do not use their crew&apos;s Ballistic Skill. Instead, they shoot using the  Column of Fire  special rule. This weapon uses the  Black Powder Misfire table .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10986,9 +10668,7 @@ Related: Fire Throwers</characteristic>
 |name|range|strength|armourPiercing|specialRules|
 |Grapeshot (Profile)|12&quot;|4|-1|Cumbersome ,  Move or Shoot ,  Needs More Nails|
 
- Notes: Cannon (of any type) do not use their crew’s Ballistic Skill when firing grapeshot. Instead, they shoot using the  Needs More Nails  special rule. This weapon uses the  Black Powder Misfire table .
- 
-</characteristic>
+ Notes: Cannon (of any type) do not use their crew’s Ballistic Skill when firing grapeshot. Instead, they shoot using the  Needs More Nails  special rule. This weapon uses the  Black Powder Misfire table .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11024,24 +10704,18 @@ Related: Organ Guns</characteristic>
       <characteristics>
         <characteristic name="Description" id="b114-deda-947b-b1f6" hidden="false" typeId="9f84-4221-785a-db50">Loading a cannon with shrapnel is not a precise art. When firing grapeshot, check range and declare a target as normal, then roll an Artillery dice:
  - If a &apos;Misfire&apos; is rolled, something has gone horribly wrong. Roll immediately on the appropriate Misfire table to determine exactly what.
- - If a number is rolled, the target unit suffers that many automatic hits.
-
- 
-</characteristic>
+ - If a number is rolled, the target unit suffers that many automatic hits.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Organ Guns" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="f387-cfe9-9b19-bef1">
       <characteristics>
-        <characteristic name="Description" id="56d2-ebe1-336-212" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="56d2-ebe1-336-212" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Organ Gun (Profile)|30&quot;|5|-1|Armour Bane (2) ,  Cumbersome ,  Move or Shoot ,  Multi-Barrelled|
 
- Notes: This weapon uses the  Black Powder Misfire table .
-</characteristic>
+ Notes: This weapon uses the  Black Powder Misfire table .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11064,9 +10738,7 @@ Related: Bolt Throwers</characteristic>
     </profile>
     <profile name="Stone Thrower Misfire Table" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="5ed8-81c3-173e-c229">
       <characteristics>
-        <characteristic name="Description" id="d804-2627-6989-cf2" hidden="false" typeId="9f84-4221-785a-db50">
-
-|||
+        <characteristic name="Description" id="d804-2627-6989-cf2" hidden="false" typeId="9f84-4221-785a-db50">|||
 |:--|:--|
 |D6|Result|
 |1|Destroyed: The weapon cannot take the strain! Bits of wood and metal debris are thrown into the air and the stone tumbles to the ground. The model is destroyed and immediately removed from play.|
@@ -11083,9 +10755,7 @@ Related: Stone Throwers</characteristic>
     </profile>
     <profile name="Stone Throwers" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="90-ddb3-cbd8-781a">
       <characteristics>
-        <characteristic name="Description" id="aadb-1aef-bd3-401a" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="aadb-1aef-bd3-401a" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Stone Thrower (Profile)|12-60&quot;|4(8)|-1(-3)|Bombardment ,  Cumbersome ,  Move or Shoot ,  Multiple Wounds (D3+1)|
@@ -11173,8 +10843,7 @@ Related: Army Composition Lists, Understanding Army Composition Lists</character
     </profile>
     <profile name="Army of Infamy" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="9793-41e9-1321-65d5">
       <characteristics>
-        <characteristic name="Description" id="3d1d-1ea0-4d87-7d86" hidden="false" typeId="9f84-4221-785a-db50">These are supplementary and characterful army composition lists. They differ from the Grand Army in a number of ways, often omitting some of the units available to the Grand Army and instead focussing on a particular type of unit or upon those units favoured by an army drawn from a certain region. Army of Infamy composition lists allow you to create more specialised armies at the expense of a degree of tactical flexibility.
-</characteristic>
+        <characteristic name="Description" id="3d1d-1ea0-4d87-7d86" hidden="false" typeId="9f84-4221-785a-db50">These are supplementary and characterful army composition lists. They differ from the Grand Army in a number of ways, often omitting some of the units available to the Grand Army and instead focussing on a particular type of unit or upon those units favoured by an army drawn from a certain region. Army of Infamy composition lists allow you to create more specialised armies at the expense of a degree of tactical flexibility.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11217,8 +10886,7 @@ Related: Army Composition Lists, Understanding Army Composition Lists</character
  - Tomb Kings of Khemri ( Suspicious )
 
  *Battle Standard Bearer*
- A single Wargor in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
-</characteristic>
+ A single Wargor in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11258,8 +10926,7 @@ Related: Army Composition Lists, Understanding Army Composition Lists</character
  *Battle Standard Bearer*
  A single Paladin in your army may be upgraded to be your  Battle Standard Bearer  for no additional cost. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
  *Magic Items*
- Any models within this army that have the option to purchase magic items may purchase magic items from the Common or Kingdom of Bretonnia magic items lists.
-</characteristic>
+ Any models within this army that have the option to purchase magic items may purchase magic items from the Common or Kingdom of Bretonnia magic items lists.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11303,8 +10970,7 @@ Related: Army Composition Lists, Understanding Army Composition Lists</character
  - Warriors of Chaos
 
  *Battle Standard Bearer*
- A single Infernal Seneschal in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
-</characteristic>
+ A single Infernal Seneschal in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11381,8 +11047,7 @@ Related: Allied Contingents</characteristic>
  - 0-1 Skull Cannon of Khorne per 1,000 points
 
  *Battle Standard Bearer*
- A single Daemonic Herald in your army may be upgraded to be your  Daemonic Locus  for +25 points. A Daemonic Herald that has been upgraded to be your Daemonic Locus gains the Daemonic Locus special rule. In addition to their usual allowance of points to spend on Daemonic Gifts, a Daemonic Locus can purchase a single Daemonic Icon with no points limit.
-</characteristic>
+ A single Daemonic Herald in your army may be upgraded to be your  Daemonic Locus  for +25 points. A Daemonic Herald that has been upgraded to be your Daemonic Locus gains the Daemonic Locus special rule. In addition to their usual allowance of points to spend on Daemonic Gifts, a Daemonic Locus can purchase a single Daemonic Icon with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11422,8 +11087,7 @@ Related: Allied Contingents</characteristic>
  - Warriors of Chaos ( Uneasy )
 
  *Battle Standard Bearer*
- A single Dark Elf Master in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
-</characteristic>
+ A single Dark Elf Master in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11484,8 +11148,7 @@ Related: Regimental Units &amp; Detachments</characteristic>
  - High Elf Realms ( Suspicious )
 
  *Battle Standard Bearer*
- A single Thane in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on Weapon, Armour and Talismanic runes, a Battle Standard Bearer can purchase Standard runes with no points limit.
-</characteristic>
+ A single Thane in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on Weapon, Armour and Talismanic runes, a Battle Standard Bearer can purchase Standard runes with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11533,8 +11196,7 @@ Related: Regimental Units &amp; Detachments</characteristic>
  - Wood Elf Realms ( Suspicious )
 
  *Battle Standard Bearer*
- A single Captain of the Empire in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
-</characteristic>
+ A single Captain of the Empire in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11572,8 +11234,7 @@ Related: Regimental Units &amp; Detachments</characteristic>
  *Battle Standard Bearer*
  A single Paladin in your army may be upgraded to be your  Battle Standard Bearer  for no additional cost. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
  *Magic Items*
- Any models within this army that have the option to purchase magic items may purchase magic items from the Common or Kingdom of Bretonnia magic items lists.
-</characteristic>
+ Any models within this army that have the option to purchase magic items may purchase magic items from the Common or Kingdom of Bretonnia magic items lists.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11626,8 +11287,7 @@ Related: Army Composition Lists</characteristic>
  - Wood Elf Realms
 
  *Battle Standard Bearer*
- A single High Elf Noble in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single Magic Standard with no points limit.
-</characteristic>
+ A single High Elf Noble in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single Magic Standard with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11669,8 +11329,7 @@ Related: Army Composition Lists</characteristic>
  - Wood Elf Realms ( Suspicious )
 
  *Battle Standard Bearer*
- A single Paladin in your army may be upgraded to be your  Battle Standard Bearer  for no additional cost. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
-</characteristic>
+ A single Paladin in your army may be upgraded to be your  Battle Standard Bearer  for no additional cost. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11709,8 +11368,7 @@ Related: Army Composition Lists</characteristic>
  - High Elf Realms
 
  *Battle Standard Bearer*
- A single Slann Mage-Priest, Saurus Scar-Veteran or Skink Chief in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit. A Slann Mage-Priest may be both your army’s Battle Standard Bearer and its General.
-</characteristic>
+ A single Slann Mage-Priest, Saurus Scar-Veteran or Skink Chief in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit. A Slann Mage-Priest may be both your army’s Battle Standard Bearer and its General.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11735,9 +11393,7 @@ Related: Points Values &amp; Size of Game</characteristic>
     </profile>
     <profile name="Misbehaving Mercenaries Table" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ee9a-612a-202f-50c8">
       <characteristics>
-        <characteristic name="Description" id="f71b-5a68-60bf-3448" hidden="false" typeId="9f84-4221-785a-db50">
-
-|||
+        <characteristic name="Description" id="f71b-5a68-60bf-3448" hidden="false" typeId="9f84-4221-785a-db50">|||
 |:--|:--|
 |D6|Result|
 |1|Heavy Night:  The mercenaries spent the night before the battle drinking their way through their pay. They arrive on time, but smelling like a brewery and wincing at loud noises. The mercenaries gain the  Stupidity  special rule. If the unit already has the Stupidity special rule, it must apply a +1 modifier to the dice roll every time it makes a Stupidity test.|
@@ -11809,8 +11465,7 @@ Related: Mercenaries (Warhammer Armies)</characteristic>
  *Battle Standard Bearer*
  A single Mortuary Priest in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit. This model replaces the  &quot;Hold your Ground&quot;  rule given in the  Warhammer: the Old World  rulebook with the version given in the  Banner of the King  special rule.
  *Magic Items*
- Any models within this army that have the option to purchase magic items may purchase magic items from the Common or Tomb Kings of Khemri magic items lists.
-</characteristic>
+ Any models within this army that have the option to purchase magic items may purchase magic items from the Common or Tomb Kings of Khemri magic items lists.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11851,8 +11506,7 @@ Related: Number of Units</characteristic>
  *Battle Standard Bearer*
  A single Royal Herald in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
  *Magic Items*
- Any models within this army that have the option to purchase magic items may purchase magic items from the Common or Tomb Kings of Khemri magic items lists.
-</characteristic>
+ Any models within this army that have the option to purchase magic items may purchase magic items from the Common or Tomb Kings of Khemri magic items lists.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11907,8 +11561,7 @@ Related: Named Characters (Warhammer Armies)</characteristic>
  - Orc &amp; Goblin Tribes
 
  *Battle Standard Bearer*
- A single Bruiser in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
-</characteristic>
+ A single Bruiser in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11952,8 +11605,7 @@ Related: Named Characters (Warhammer Armies)</characteristic>
  - Tomb Kings of Khemri ( Suspicious )
 
  *Battle Standard Bearer*
- A single Bigboss (Orc, Black Orc, Goblin or Night Goblin) in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
-</characteristic>
+ A single Bigboss (Orc, Black Orc, Goblin or Night Goblin) in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -11967,8 +11619,7 @@ Related: Named Characters (Warhammer Armies)</characteristic>
  - Mercenaries (up to 20%)
  - Allies (up to 25% may be spent on a single allied contingent)
 
- This means that, in a 2,000 point army, you would have to spend a minimum of 500 points (25% of 2,000 points) on Core units. By contrast, the most you could spend on Special units would be 1,000 points (50% of 2,000 points).
-</characteristic>
+ This means that, in a 2,000 point army, you would have to spend a minimum of 500 points (25% of 2,000 points) on Core units. By contrast, the most you could spend on Special units would be 1,000 points (50% of 2,000 points).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12072,8 +11723,7 @@ Related: Using Regiments &amp; Detachments, Detachment Special Rules</characteri
  - Warriors of Chaos ( Uneasy )
 
  *Battle Standard Bearer*
- A single Skaven Chieftain in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
-</characteristic>
+ A single Skaven Chieftain in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12137,8 +11787,7 @@ Related: Points Values &amp; Size of Game</characteristic>
         <characteristic name="Description" id="7f12-1905-c952-83d6" hidden="false" typeId="9f84-4221-785a-db50">A muster list is a list, written by the player, of all the units that make up the army they will be using during a game. A muster list should include the size of each unit (i.e., how many models it contains at the start of the battle), the equipment those models carry, and any optional upgrades that have been included, be they equipment, command models, magic items and so forth.
  Most importantly, the muster list should include the total points value of each unit and of the army as a whole, thus ensuring that your army is within the agreed size! Players should share their muster lists with one another before deployment.
  # More Detail
- Many players find it useful to include greater detail in their muster lists – model and weapon profiles, special rules, even spell and magic item descriptions. Including such detail is by no means necessary, but will reduce how much time is spent flicking through the pages of books during a game.
-</characteristic>
+ Many players find it useful to include greater detail in their muster lists – model and weapon profiles, special rules, even spell and magic item descriptions. Including such detail is by no means necessary, but will reduce how much time is spent flicking through the pages of books during a game.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12182,15 +11831,13 @@ Related: Points Values &amp; Size of Game</characteristic>
  - Beastmen Brayherds ( Suspicious )
 
  *Battle Standard Bearer*
- A single Royal Herald in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
-</characteristic>
+ A single Royal Herald in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Types of Alliance" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1a69-9acd-444d-3e03">
       <characteristics>
-        <characteristic name="Description" id="de47-d060-6500-823a" hidden="false" typeId="9f84-4221-785a-db50">The vast majority of alliances between an army and an allied contingent are made between trusted allies. As such, most allied contingents follow the rules already given. However, sometimes an allied contingent may be noted as being  Uneasy  or even  Suspicious . In such cases, the allied contingent represents an alliance between two forces that might not usually be on the best of terms.
-</characteristic>
+        <characteristic name="Description" id="de47-d060-6500-823a" hidden="false" typeId="9f84-4221-785a-db50">The vast majority of alliances between an army and an allied contingent are made between trusted allies. As such, most allied contingents follow the rules already given. However, sometimes an allied contingent may be noted as being  Uneasy  or even  Suspicious . In such cases, the allied contingent represents an alliance between two forces that might not usually be on the best of terms.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12204,10 +11851,7 @@ Related: Points Values &amp; Size of Game</characteristic>
 
  In addition, many army composition lists will include one or both of the following categories:
  - Mercenaries: Some armies can include specific units drawn from other army lists as  mercenaries .
- - Allies: Most armies can include an  allied contingent  drawn from another army list.
-
- 
-</characteristic>
+ - Allies: Most armies can include an  allied contingent  drawn from another army list.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12274,8 +11918,7 @@ Related: Regimental Units &amp; Detachments, Creating a Regimental Unit, Creatin
  - Tomb Kings of Khemri
 
  *Battle Standard Bearer*
- A single Vampire Thrall or Wight Lord in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
-</characteristic>
+ A single Vampire Thrall or Wight Lord in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12318,8 +11961,7 @@ Related: Regimental Units &amp; Detachments, Creating a Regimental Unit, Creatin
  - Tomb Kings of Khemri ( Suspicious )
 
  *Battle Standard Bearer*
- A single Exalted Champion or Aspiring Champion in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.
-</characteristic>
+ A single Exalted Champion or Aspiring Champion in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12361,8 +12003,7 @@ Related: Regimental Units &amp; Detachments, Creating a Regimental Unit, Creatin
  - High Elf Realms
 
  *Battle Standard Bearer*
- A single Glade Captain in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single Magic Banner with no points limit
-</characteristic>
+ A single Glade Captain in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single Magic Banner with no points limit</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12431,8 +12072,7 @@ Supporting Fire</characteristic>
     <profile name="Alternating Units" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="43fd-89c8-9ac6-656f">
       <characteristics>
         <characteristic name="Description" id="9883-d553-ba29-445d" hidden="false" typeId="9f84-4221-785a-db50">If a scenario calls upon players to alternate deployment of units, the winner of a roll-off can choose which player will deploy the first unit. Players then take turns, each deploying a single, non-character unit within their deployment zone, saving characters until last.
- All of the war machines in your army must be deployed at the same time, but can be placed at different locations within your deployment zone. All of the characters in your army are deployed last, and all at the same time, but can be placed at different locations within your deployment zone.
-</characteristic>
+ All of the war machines in your army must be deployed at the same time, but can be placed at different locations within your deployment zone. All of the characters in your army are deployed last, and all at the same time, but can be placed at different locations within your deployment zone.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12456,8 +12096,7 @@ Supporting Fire</characteristic>
  If the game ends with one army having broken, the unbroken army achieves a crushing victory. Should both armies fall below their break point at the same time, use  Victory Points  to determine which player is the winner.
  # Historical Recreation
  The Doom of Odo Todmeyer III took place deep within the Forest of Shadows. To represent this, you should endeavour to include as many woods as possible when setting up the battlefield. The battle was fought between the remnants of the Grand Army of Osterlund (an Empire army) and a much larger force of Beastmen. The Grand Army of Osterlund was led by Odo Todmeyer III, who should be represented by an Empire General mounted on a warhorse.
- The Beastmen far outnumbered the Grand Army of Osterlund. To reflect this, the Beastman player should have at least 25% more points to spend on their army than their opponent. However, much of this army emerged from the dark woods to entrap the Osterlunders. Therefore, at least half of all Beastman units with either the Ambushers or the Beastmen Ambush special rule should be held in reserve.
-</characteristic>
+ The Beastmen far outnumbered the Grand Army of Osterlund. To reflect this, the Beastman player should have at least 25% more points to spend on their army than their opponent. However, much of this army emerged from the dark woods to entrap the Osterlunders. Therefore, at least half of all Beastman units with either the Ambushers or the Beastmen Ambush special rule should be held in reserve.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12506,8 +12145,7 @@ Related: Pitched Battles</characteristic>
  # Historical Recreation
  The battle of the Lonely Reaver&apos;s Point watchtower was by no means a grand affair. It was fought between lowly peasants, eking a meagre existence as fishermen along the hostile coastline of Bretonnia, and a ragtag warband of Goblin raiders, likely forced down from the Pale Sisters by Orc aggression. The armies used to recreate the battle, then, should be equally humble.
  The Bretonnian army should contain no knights of any type – only peasant soldiers. The Goblin army should contain no Orcs of any type – only Goblins. Beyond this, there are no restrictions, and including war machines and Wizards will only add to the chaotic fun and confusion.
- This should be a fun battle to recreate and, more than any other discussed in this section, players are encouraged to abandon army composition rules, and even points values, when recreating the Lonely Tower. The less constrained by such rules the players are, the more fun the game will be.
-</characteristic>
+ This should be a fun battle to recreate and, more than any other discussed in this section, players are encouraged to abandon army composition rules, and even points values, when recreating the Lonely Tower. The less constrained by such rules the players are, the more fun the game will be.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12525,9 +12163,7 @@ Related: Game Length (Warhammer Battles)</characteristic>
         <characteristic name="Description" id="36a8-75f8-9dc3-59f0" hidden="false" typeId="9f84-4221-785a-db50">The most usual way to win Victory Points is by destroying, routing or significantly reducing the fighting strength of enemy units:
  - Each enemy unit that has been destroyed or that has fled off the battlefield is worth a number of Victory Points equal to 100% of its points cost.
  - Each enemy unit that is fleeing at the end of the battle is worth a number of Victory Points equal to 50% of its points cost (rounding fractions up). For example, a unit that cost your opponent 351 points to field would be worth 176 Victory Points to you if it is fleeing when the battle ends.
- - Each enemy unit that has been reduced to less than 25% of its starting Unit Strength at the end of the battle is worth a number of Victory Points equal to 25% of its points cost (rounding fractions up).
-
-</characteristic>
+ - Each enemy unit that has been reduced to less than 25% of its starting Unit Strength at the end of the battle is worth a number of Victory Points equal to 25% of its points cost (rounding fractions up).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12543,14 +12179,13 @@ Related: Reserves</characteristic>
     </profile>
     <profile name="First Turn" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ba54-c3a3-8fbe-5e80">
       <characteristics>
-        <characteristic name="Description" id="b50a-b289-3cd5-3ba0" hidden="false" typeId="9f84-4221-785a-db50">How to determine which player takes the first turn is detailed in each scenario. In most scenarios, the winner of a roll-off chooses who takes the first turn.
-</characteristic>
+        <characteristic name="Description" id="b50a-b289-3cd5-3ba0" hidden="false" typeId="9f84-4221-785a-db50">How to determine which player takes the first turn is detailed in each scenario. In most scenarios, the winner of a roll-off chooses who takes the first turn.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Flank Attack" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="5713-cdfb-fa47-397a">
       <characteristics>
-        <characteristic name="Description" id="6bc0-9e78-658-33e8" hidden="false" typeId="9f84-4221-785a-db50"> Sometimes a cunning general will divide their strength, sending a portion of their army to range wide in order to outflank the enemy. Such tactics are sound and, if all goes well, are likely to deliver a swift victory. But there are times when an equally cunning enemy has the same plan.
+        <characteristic name="Description" id="6bc0-9e78-658-33e8" hidden="false" typeId="9f84-4221-785a-db50">Sometimes a cunning general will divide their strength, sending a portion of their army to range wide in order to outflank the enemy. Such tactics are sound and, if all goes well, are likely to deliver a swift victory. But there are times when an equally cunning enemy has the same plan.
  This scenario represents a battle in which both armies have assigned a number of units the task of outflanking the enemy. As these flanking forces choose their angle of attack in secret, there is as equal a chance that they will deploy facing one another as there is that they will find the unprotected flank of the main enemy force.
  # Set-up
   Place terrain  as described.
@@ -12571,8 +12206,7 @@ Related: Reserves</characteristic>
  Once the battle has ended, use  Victory Points  to determine which player is the winner.
  # Historical Recreation
  The battle of Pine Crags took place within a rocky ravine deep in Athel Loren. To represent this, you should endeavour to include as many woods and areas of rocky terrain (be they difficult, dangerous or impassable) as possible when setting up the battlefield. The battle was fought between a rag-tag army of Dwarf treasure hunters and a (possibly larger) force of Wood Elves. The Dwarf army should contain very few elite troops (such as Hammerers, Ironbreakers or Irondrakes) and no war machines or Runesmiths. Due to their important role, it must contain a unit of Dwarf Rangers in reserve.
- The Wood Elves caught the Dwarf army largely by surprise as it marched through Athel Loren, cutting down trees. To represent this, the Wood Elf player will automatically take the first turn.
-</characteristic>
+ The Wood Elves caught the Dwarf army largely by surprise as it marched through Athel Loren, cutting down trees. To represent this, the Wood Elf player will automatically take the first turn.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12615,8 +12249,7 @@ Related: Pitched Battles</characteristic>
  # Historical Recreation
  The Drakwald Forest incident was a battle fought between two armies of the Empire from rival provinces towards the end of a civil war that had raged for a thousand years. The army of Reikland should include a Witch Hunter, representing the firebrand Dietrich Haslav, whose actions arguably sparked the incident. In addition, the Reikland army should include at least one unit of Greatswords to accompany its General, a captain representing Magda Rassel, and might also include one unit of Flagellants to represent the Witch Hunter&apos;s followers. The army of Talabecland should be led by a captain, representing the famed Leonard van Obelmann.
  Both armies should include plenty of State Troops, the better to represent two forces on patrol. Both armies may include war machines. Ideally, neither should include any knights (of any type) or Wizards as there is no suggestion any were present.
- Finally, to better capture the nature of the battle, units arriving as reserves that are arrayed in Close Order or Open Order formations should be deployed in Marching Columns.
-</characteristic>
+ Finally, to better capture the nature of the battle, units arriving as reserves that are arrayed in Close Order or Open Order formations should be deployed in Marching Columns.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12638,8 +12271,7 @@ Related: Pitched Battles</characteristic>
  Once the battle has ended, use  Victory Points  to determine which player is the winner.
  # Historical Recreation
  The battle of Gisoreux Gap was a brutal affair fought between two elite and well-equipped armies (all that toll money had to go somewhere!). The Bretonnian army should contain a high number of units of Knights. Any units of Men-at-Arms might be given heavy armour to represent the wealth of their lord and their superior position as guards of an important trade route. The Empire army, being an army of Westerland, a province famed for its use of mercenaries, may include any number of units of Veteran State Troops, provided all have the Mercenaries special rule. To help reflect the bitter nature of the battle and the inability of troops to simply turn tail and flee, players may give up to half of their units the Stubborn special rule.
- Both armies should be led by a General mounted on a warhorse, representing Sir Desfleuve and Countess Bergbrech respectively. Historically, there is no evidence that the two fought single combat during the battle, but, as the battle was a matter of honour, players should spare no efforts to ensure a challenge is fought between their Generals.
-</characteristic>
+ Both armies should be led by a General mounted on a warhorse, representing Sir Desfleuve and Countess Bergbrech respectively. Historically, there is no evidence that the two fought single combat during the battle, but, as the battle was a matter of honour, players should spare no efforts to ensure a challenge is fought between their Generals.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12664,8 +12296,7 @@ Related: Pitched Battles</characteristic>
  # Historical Recreation
  The Battle of L&apos;Anguille Plain was fought between a vast horde of Orcs and the glittering splendour of the knights of Bretonnia. Both sides were led by mighty warlords – the Orcs by Warboss Durgath Spine Cracker and the Bretonnians by King Louen Orc-Slayer. To reflect this, each army should be led by an appropriate character acting as the General. Warboss Durgath may fight on foot or may be mounted on a boar. King Louen must be mounted on a warhorse.
  In addition, and to capture a measure of the size and splendour of the armies, a historical recreation should be played with armies of no less than 3,000 points.
- The bulk of Waaagh! Durgath famously broke formation early, displaying a proper Orcish desire to engage the enemy. However, this ill-disciplined charge into heavy bow fire caused the Orcs to lose much of their advantage and, eventually, the battle. To represent this, the Orc player will automatically take the first turn. In addition, any unit with the Impetuous special rule must declare a charge on a roll of 1-4 (rather than the usual 1-3).
-</characteristic>
+ The bulk of Waaagh! Durgath famously broke formation early, displaying a proper Orcish desire to engage the enemy. However, this ill-disciplined charge into heavy bow fire caused the Orcs to lose much of their advantage and, eventually, the battle. To represent this, the Orc player will automatically take the first turn. In addition, any unit with the Impetuous special rule must declare a charge on a roll of 1-4 (rather than the usual 1-3).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12698,8 +12329,7 @@ Related: Setting up your Battlefield</characteristic>
  You will find simple rules and guidelines for linking your games together into a  campaign . Future supplements will present far more in-depth campaign rules, from simple ladder campaigns, to map based campaigns and even unfolding quests and campaigns of conquest in which armies battle to complete objectives and earn rewards.
  # Narrative Battles
  This is a very broad category, often also described as &apos;open play&apos;. Each of the pitched battle scenarios includes rules for playing a historical recreation of a famous battle from the Warhammer world. These introduce the simplest form of narrative battle – one that recreates history. The challenge of such battles is to see if you could have led your forces to a different outcome than your imagined counterpart did in the history books of this fantasy realm.
- You will find guidance on taking your  narrative  games further. This includes suggestions for plots and objectives, as well as more explanation of the role a &apos;games master&apos; can play and how their presence can enhance the experience for everyone involved.
-</characteristic>
+ You will find guidance on taking your  narrative  games further. This includes suggestions for plots and objectives, as well as more explanation of the role a &apos;games master&apos; can play and how their presence can enhance the experience for everyone involved.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12718,8 +12348,7 @@ Related: Deployment</characteristic>
     </profile>
     <profile name="Scenario Objectives" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="23d5-8bba-d6e4-7e0b">
       <characteristics>
-        <characteristic name="Description" id="240c-b2e6-b42f-8d1" hidden="false" typeId="9f84-4221-785a-db50">Some scenario special rules give special objectives to complete. Should you do so, you win a Victory Points bonus, as described in the scenario.
-</characteristic>
+        <characteristic name="Description" id="240c-b2e6-b42f-8d1" hidden="false" typeId="9f84-4221-785a-db50">Some scenario special rules give special objectives to complete. Should you do so, you win a Victory Points bonus, as described in the scenario.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12754,15 +12383,13 @@ Related: Setting up your Battlefield</characteristic>
     </profile>
     <profile name="Special Features (Warhammer Battles)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="5811-186e-ef-bc1f">
       <characteristics>
-        <characteristic name="Description" id="a447-8f90-93c2-9753" hidden="false" typeId="9f84-4221-785a-db50">If the players have agreed to the inclusion of a special feature, or if the scenario specifies one must be included, the player that controls it at the end of the battle will win a Victory Points bonus, as described in the feature&apos;s special rules and/or as described in the scenario.
-</characteristic>
+        <characteristic name="Description" id="a447-8f90-93c2-9753" hidden="false" typeId="9f84-4221-785a-db50">If the players have agreed to the inclusion of a special feature, or if the scenario specifies one must be included, the player that controls it at the end of the battle will win a Victory Points bonus, as described in the feature&apos;s special rules and/or as described in the scenario.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="The King is Dead" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="df09-a298-6fe5-2db2">
       <characteristics>
-        <characteristic name="Description" id="4d6e-42b8-a7ba-eb25" hidden="false" typeId="9f84-4221-785a-db50">If the enemy General is slain, has fled off the battlefield or is fleeing when the game ends, you win a bonus of 100 Victory Points.
-</characteristic>
+        <characteristic name="Description" id="4d6e-42b8-a7ba-eb25" hidden="false" typeId="9f84-4221-785a-db50">If the enemy General is slain, has fled off the battlefield or is fleeing when the game ends, you win a bonus of 100 Victory Points.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12777,8 +12404,7 @@ Related: Game Length (Warhammer Battles)</characteristic>
     </profile>
     <profile name="Trophies of War (Warhammer Battles)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b208-132f-e21f-3e95">
       <characteristics>
-        <characteristic name="Description" id="88fd-14ec-1147-6057" hidden="false" typeId="9f84-4221-785a-db50">You win a bonus of 50  Victory Points  for every  enemy standard  claimed as a trophy. Additionally, if the enemy Battle Standard Bearer is slain, has fled off the battlefield or is fleeing when the game ends, you win another bonus of 50 Victory Points.
-</characteristic>
+        <characteristic name="Description" id="88fd-14ec-1147-6057" hidden="false" typeId="9f84-4221-785a-db50">You win a bonus of 50  Victory Points  for every  enemy standard  claimed as a trophy. Additionally, if the enemy Battle Standard Bearer is slain, has fled off the battlefield or is fleeing when the game ends, you win another bonus of 50 Victory Points.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12855,15 +12481,12 @@ Related: Maximum Armour Value, No Armour</characteristic>
     </profile>
     <profile name="Billowing Death" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="eb23-8ea8-5b2d-f008">
       <characteristics>
-        <characteristic name="Description" id="cf66-b549-5d99-ed8a" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="cf66-b549-5d99-ed8a" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Billowing Death (Profile)|N/A|2|N/A|Breath Weapon ,  Magical Attacks|
 
- Notes: When making a roll To Wound for this weapon, a roll of a natural 6 is always a success, even if the target&apos;s Toughness is so high that the weapon would not normally be able to wound it. In addition, no  armour save  is permitted against wounds caused by this weapon ( Ward  and  Regeneration  saves can be attempted as normal).
-</characteristic>
+ Notes: When making a roll To Wound for this weapon, a roll of a natural 6 is always a success, even if the target&apos;s Toughness is so high that the weapon would not normally be able to wound it. In addition, no  armour save  is permitted against wounds caused by this weapon ( Ward  and  Regeneration  saves can be attempted as normal).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12883,15 +12506,10 @@ Repeater Handgun</characteristic>
     </profile>
     <profile name="Blackbriar Javelin" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6f3a-fa43-29b8-f3c7">
       <characteristics>
-        <characteristic name="Description" id="80d2-bc66-5080-2e24" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="80d2-bc66-5080-2e24" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Blackbriar Javelin (Profile)|12&quot;|S|-1|Move &amp; Shoot ,  Quick Shot|
-
- 
-</characteristic>
+|Blackbriar Javelin (Profile)|12&quot;|S|-1|Move &amp; Shoot ,  Quick Shot|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12910,9 +12528,7 @@ Warbow</characteristic>
     </profile>
     <profile name="Brace of Drakefire Pistols" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="7097-ab9f-c822-cea4">
       <characteristics>
-        <characteristic name="Description" id="3ea-1fda-165-fe64" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="3ea-1fda-165-fe64" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Brace of Drakefire Pistols Ranged (Profile)|12&quot;|5|-1|Armour Bane (2) ,  Dwarf Crafted ,  Flaming Attacks ,  Multiple Shots (2) ,  Quick Shot|
@@ -12924,8 +12540,7 @@ Warbow</characteristic>
 |name|range|strength|armourPiercing|specialRules|
 |Brace of Drakefire Pistols Combat (Profile)|Combat|S|-|Extra Attacks (+1) ,  Flaming Attacks ,  Requires Two Hands|
 
- Notes: A brace of drakefire pistols has two profiles, representing how the weapons are used in combat.
-</characteristic>
+ Notes: A brace of drakefire pistols has two profiles, representing how the weapons are used in combat.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12947,22 +12562,16 @@ Warbow</characteristic>
 |name|range|strength|armourPiercing|specialRules|
 |Brace of Ogre Pistols Combat (Profile)|Combat|S|-|Extra Attacks (+1) ,  Requires Two Hands|
 
- Notes: A brace of Ogre pistols has two profiles, representing how the weapons are used in combat.
-</characteristic>
+ Notes: A brace of Ogre pistols has two profiles, representing how the weapons are used in combat.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Breath of Desiccation" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="fbe2-8d4-a192-7a3">
       <characteristics>
-        <characteristic name="Description" id="3931-7fc6-1597-7442" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="3931-7fc6-1597-7442" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Breath of Desiccation (Profile)|N/A|3|-2|Breath Weapon ,  Magical Attacks ,  Multiple Wounds (2)|
-
- 
-</characteristic>
+|Breath of Desiccation (Profile)|N/A|3|-2|Breath Weapon ,  Magical Attacks ,  Multiple Wounds (2)|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12984,36 +12593,25 @@ Warbow</characteristic>
 |name|range|strength|armourPiercing|specialRules|
 |Cannon of Khorne Scatter Shot (Profile)|N/A|4|-1|Breath Weapon|
 
- Notes: A Cannon of Khorne has two profiles, representing its two modes of firing. When firing solid shot, this weapon shoots like a  cannon , using the  Cannon Fire  special rule. If a &apos;Misfire&apos; is rolled on the Artillery dice during step 2, this model loses a single Wound (instead of rolling on a Misfire table).
-</characteristic>
+ Notes: A Cannon of Khorne has two profiles, representing its two modes of firing. When firing solid shot, this weapon shoots like a  cannon , using the  Cannon Fire  special rule. If a &apos;Misfire&apos; is rolled on the Artillery dice during step 2, this model loses a single Wound (instead of rolling on a Misfire table).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Cleaver-limbs" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="5ac1-786a-831-6b0c">
       <characteristics>
-        <characteristic name="Description" id="6fd2-536a-e845-3eb0" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="6fd2-536a-e845-3eb0" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Cleaver-limbs (Profile)|Combat|S|-2|Killing Blow ,  Monster Slayer|
-
- 
-</characteristic>
+|Cleaver-limbs (Profile)|Combat|S|-2|Killing Blow ,  Monster Slayer|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Colossal Fang-filled Gob" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ad10-1ee7-7cae-c620">
       <characteristics>
-        <characteristic name="Description" id="d0b2-dd8-536-d85b" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="d0b2-dd8-536-d85b" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Colossal Fang-filled Gob (Profile)|Combat|S|-2|Killing Blow|
-
- 
-</characteristic>
+|Colossal Fang-filled Gob (Profile)|Combat|S|-2|Killing Blow|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -13050,23 +12648,17 @@ Related: Missile Weapons, Repeater Crossbow, Repeater Handbow</characteristic>
     </profile>
     <profile name="Death&apos;s Heads" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="12e3-bcc3-330e-c195">
       <characteristics>
-        <characteristic name="Description" id="1cfe-f57-b7a6-7ced" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="1cfe-f57-b7a6-7ced" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Death&apos;s Heads (Profile)|12&quot;|S+1|-1|Move &amp; Shoot ,  Multiple Wounds (D3)|
-
- 
-</characteristic>
+|Death&apos;s Heads (Profile)|12&quot;|S+1|-1|Move &amp; Shoot ,  Multiple Wounds (D3)|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Doom Diver" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6632-3cb6-e349-972d">
       <characteristics>
         <characteristic name="Description" id="56bb-26cd-d1a2-e68" hidden="false" typeId="9f84-4221-785a-db50">When shooting a Doom Diver catapult, follow the  Bombardment  special rule as usual.  Once step 2, Scatter, is complete, you may roll a D3 and move the 3&quot; blast template by that many inches in any direction, representing the Doom Diver wildly flapping its arms to guide its erratic flight.
- Should you choose to fire a Doom Diver catapult indirectly, the skill of the crew has no bearing on the accuracy of the shot. If a &apos;Hit!&apos; is rolled on the Scatter dice, use the small arrow above the Hit! symbol to determine the direction of the Scatter as usual, then move the template a number of inches equal to the roll of the Artillery dice minus D3 (to a minimum of zero), representing the efforts of the Doom Diver to steer its flight.
-</characteristic>
+ Should you choose to fire a Doom Diver catapult indirectly, the skill of the crew has no bearing on the accuracy of the shot. If a &apos;Hit!&apos; is rolled on the Scatter dice, use the small arrow above the Hit! symbol to determine the direction of the Scatter as usual, then move the template a number of inches equal to the roll of the Artillery dice minus D3 (to a minimum of zero), representing the efforts of the Doom Diver to steer its flight.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -13077,37 +12669,27 @@ Related: Missile Weapons, Repeater Crossbow, Repeater Handbow</characteristic>
  Even a scratch from an arrow dipped in Hagbane sap can prove fatal. An  Asrai longbow  with Hagbane Tips has the  Poisoned Attacks  special rule.
  Glowing eerily with pale light, the touch of these arrows brings searing agony. An  Asrai longbow  with Moonfire Shot has the  Flaming Attacks  and  Magical Attacks  special rules.
  These arrows seem to fly from the bow of their own accord. An  Asrai longbow  with Swiftshiver Shards has the  Multiple Shots (2)  special rule.
- These enchanted arrows seek out their targets with unerring accuracy. An  Asrai longbow  with Trueflight Arrows has the  Ignores Cover  and  Quick Shot  special rules.
- 
-</characteristic>
+ These enchanted arrows seek out their targets with unerring accuracy. An  Asrai longbow  with Trueflight Arrows has the  Ignores Cover  and  Quick Shot  special rules.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Fiery Breath (Dark Elves)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="2fd9-82cf-44c8-8c83">
       <characteristics>
-        <characteristic name="Description" id="6e72-8cf9-2521-7161" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="6e72-8cf9-2521-7161" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Fiery Breath (Dark Elves) (Profile)|N/A|*|-1|Breath Weapon ,  Flaming Attacks|
 
- Notes: The Strength characteristic of this weapon is equal to this model&apos;s remaining Wounds.
-</characteristic>
+ Notes: The Strength characteristic of this weapon is equal to this model&apos;s remaining Wounds.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Fiery Breath (Lizardmen)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b9d-c6d2-c157-321d">
       <characteristics>
-        <characteristic name="Description" id="6e7-ab49-bd62-37c" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="6e7-ab49-bd62-37c" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Fiery Breath (Lizardmen) (Profile)|N/A|4|-1|Breath Weapon ,  Flaming Attacks|
-
- 
-</characteristic>
+|Fiery Breath (Lizardmen) (Profile)|N/A|4|-1|Breath Weapon ,  Flaming Attacks|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -13129,64 +12711,47 @@ Related: Missile Weapons, Repeater Crossbow, Repeater Handbow</characteristic>
 |name|range|strength|armourPiercing|specialRules|
 |Fireglaive Combat (Profile)|Combat|S+1|-1|Armour Bane (1) ,  Requires Two Hands|
 
- Notes: A Fireglaive has two profiles, representing its duality of purpose as both a ranged and combat weapon.
-</characteristic>
+ Notes: A Fireglaive has two profiles, representing its duality of purpose as both a ranged and combat weapon.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Flaming Breath (Ogre Kingdoms)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="8b3-6640-b318-d710">
       <characteristics>
-        <characteristic name="Description" id="d5bf-957e-26a-d5c8" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="d5bf-957e-26a-d5c8" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Flaming Breath (Ogre Kingdoms) (Profile)|N/A|4|-1|Breath Weapon ,  Flaming Attacks|
-
- 
-</characteristic>
+|Flaming Breath (Ogre Kingdoms) (Profile)|N/A|4|-1|Breath Weapon ,  Flaming Attacks|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Flaming Breath (Warriors of Chaos)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="684-be76-b0b1-5336">
       <characteristics>
-        <characteristic name="Description" id="8d63-6a02-a45b-5271" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="8d63-6a02-a45b-5271" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Flaming Breath (Warriors of Chaos) (Profile)|N/A|4|-|Breath Weapon ,  Flaming Attacks|
-
- 
-</characteristic>
+|Flaming Breath (Warriors of Chaos) (Profile)|N/A|4|-|Breath Weapon ,  Flaming Attacks|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Hurl Attack" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="dba-a224-abf1-6f20">
       <characteristics>
-        <characteristic name="Description" id="d1fc-314c-4a05-eeb4" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="d1fc-314c-4a05-eeb4" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Hurl Attack (Profile)|12-36&quot;|4(8)|-1(-3)|Bombardment ,  Cumbersome ,  Multiple Wounds (D3+1)|
 
- Notes: This weapon shoots like a stone thrower, using the &apos; Bombardment  special rule and a 3&quot; blast template. If a &apos;Misfire&apos; is rolled on the Artillery dice, this model loses a single Wound (instead of rolling on a Misfire table). The  Multiple Wounds (D3+1)  special rule applies only to a single model whose base lies underneath the central hole of the blast template.
-</characteristic>
+ Notes: This weapon shoots like a stone thrower, using the &apos; Bombardment  special rule and a 3&quot; blast template. If a &apos;Misfire&apos; is rolled on the Artillery dice, this model loses a single Wound (instead of rolling on a Misfire table). The  Multiple Wounds (D3+1)  special rule applies only to a single model whose base lies underneath the central hole of the blast template.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Lamprey&apos;s Bite" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="713d-671d-c344-e644">
       <characteristics>
-        <characteristic name="Description" id="474f-4c83-2b6f-118a" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="474f-4c83-2b6f-118a" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Lamprey&apos;s Bite (Profile)|Combat|S|-1|Multiple Wounds (D3)|
 
- Notes: The  Multiple Wounds (D3)  special rule only applies against enemy models whose troop type is  monster .
-</characteristic>
+ Notes: The  Multiple Wounds (D3)  special rule only applies against enemy models whose troop type is  monster .</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -13208,15 +12773,13 @@ Related: Missile Weapons, Repeater Crossbow, Repeater Handbow</characteristic>
 |name|range|strength|armourPiercing|specialRules|
 |Leadbelcher Gun Scatter Shot (Profile)|18&quot;|3|-|Armour Bane (1)|
 
- Notes: A Leadbelcher gun has two profiles, representing its two modes of firing. If the roll To Hit is successful when firing scatter shot, a leadbelcher gun causes D3 hits to the target enemy unit, rather than the usual one.
-</characteristic>
+ Notes: A Leadbelcher gun has two profiles, representing its two modes of firing. If the roll To Hit is successful when firing scatter shot, a leadbelcher gun causes D3 hits to the target enemy unit, rather than the usual one.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Maximum Armour Value" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="eabd-495b-7898-1d21">
       <characteristics>
-        <characteristic name="Description" id="363c-45a6-2bc0-2cb6" hidden="false" typeId="9f84-4221-785a-db50">Regardless of the armour it wears or the equipment it carries, a model can never have an armour value better than 2+. Any bonuses, be they granted by equipment, special rules, spells or from any other source, that would improve a model&apos;s armour further have no effect.
-</characteristic>
+        <characteristic name="Description" id="363c-45a6-2bc0-2cb6" hidden="false" typeId="9f84-4221-785a-db50">Regardless of the armour it wears or the equipment it carries, a model can never have an armour value better than 2+. Any bonuses, be they granted by equipment, special rules, spells or from any other source, that would improve a model&apos;s armour further have no effect.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -13250,15 +12813,10 @@ Throwing Axe</characteristic>
     </profile>
     <profile name="Monstrous Tusks" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="eaed-1102-81ca-8a4a">
       <characteristics>
-        <characteristic name="Description" id="d1c6-6fb0-eccb-b34a" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="d1c6-6fb0-eccb-b34a" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Monstrous Tusks (Profile)|Combat|S|-1|Armour Bane (1)|
-
- 
-</characteristic>
+|Monstrous Tusks (Profile)|Combat|S|-1|Armour Bane (1)|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -13268,9 +12826,7 @@ Throwing Axe</characteristic>
  - If a unit is equipped with two or more combat weapons, you must choose which it will use when its combat is chosen during Step 1.1 of the Choose &amp; Fight Combat sub-phase.
  - The entire unit, including command, must use the same weapon (with the possible exception of units with the Motley Crew special rule). Characters can always choose separately – they are not obliged to use the same weapon as a unit they have joined.
  - If a unit champion has the option to be equipped differently to the rest of their unit, they can choose which weapon they will use separately.
- - Unless the weapon itself states otherwise (as do lances, for example), a unit cannot change weapons between rounds of combat if it remains locked in place and engaged in combat. The weapon chosen for the first round of a combat (i.e., the first round fought following a charge) must be used for the duration of the combat.
-
-</characteristic>
+ - Unless the weapon itself states otherwise (as do lances, for example), a unit cannot change weapons between rounds of combat if it remains locked in place and engaged in combat. The weapon chosen for the first round of a combat (i.e., the first round fought following a charge) must be used for the duration of the combat.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -13279,30 +12835,24 @@ Throwing Axe</characteristic>
         <characteristic name="Description" id="cbd-8cc0-1820-b974" hidden="false" typeId="9f84-4221-785a-db50">As with combat weapons, some models carry two or more missile weapons:
  - If a unit is equipped with two or more missile weapons, you must choose which it will use when it is chosen to shoot during step 1 of the Shooting phase.
  - The entire unit, including command, must use the same weapon. Characters can always choose separately – they are not obliged to use the same weapon as a unit they have joined.
- - If a unit champion has the option to be equipped differently to the rest of their unit, they can choose which weapon they will use separately.
-
-</characteristic>
+ - If a unit champion has the option to be equipped differently to the rest of their unit, they can choose which weapon they will use separately.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="No Armour" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="fe32-28ff-957-1f77">
       <characteristics>
-        <characteristic name="Description" id="d045-cc16-406e-7d15" hidden="false" typeId="9f84-4221-785a-db50">A model that wears no armour is considered to have an armour value of 7+ for the purposes of Armour Save roll modifiers and any rules that improve armour value. This represents the model&apos;s natural resilience and the protection proffered by the clothing and jewellery it wears, however little this may be. For example, if a model with no armour carries a shield, it would have an armour value of 6+.
-</characteristic>
+        <characteristic name="Description" id="d045-cc16-406e-7d15" hidden="false" typeId="9f84-4221-785a-db50">A model that wears no armour is considered to have an armour value of 7+ for the purposes of Armour Save roll modifiers and any rules that improve armour value. This represents the model&apos;s natural resilience and the protection proffered by the clothing and jewellery it wears, however little this may be. For example, if a model with no armour carries a shield, it would have an armour value of 6+.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Noxious Breath" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="fc-3293-1efc-f1e2">
       <characteristics>
-        <characteristic name="Description" id="fead-9706-2d83-c1a9" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="fead-9706-2d83-c1a9" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Noxious Breath (Profile)|N/A|4|N/A|Breath Weapon|
 
- Notes: Until your next  Start of Turn  sub-phase, every model in a unit that suffers one or more unsaved wounds from this weapon suffers a -1 modifier to its Weapon Skill characteristic (to a minimum of 1). No  armour save  is permitted against wounds caused by this weapon ( Ward  and  Regeneration  saves can be attempted as normal).
-</characteristic>
+ Notes: Until your next  Start of Turn  sub-phase, every model in a unit that suffers one or more unsaved wounds from this weapon suffers a -1 modifier to its Weapon Skill characteristic (to a minimum of 1). No  armour save  is permitted against wounds caused by this weapon ( Ward  and  Regeneration  saves can be attempted as normal).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -13324,72 +12874,55 @@ Throwing Axe</characteristic>
 |name|range|strength|armourPiercing|specialRules|
 |Polearm Double-Handed (Profile)|Combat|S+1|-1|Requires Two Hands|
 
- Notes: A polearm has two profiles. You must choose which the unit will use at the start of the first round of a combat (i.e., the first round fought following a charge). A model wielding a polearm cannot make a supporting attack during a turn in which it charged.
-</characteristic>
+ Notes: A polearm has two profiles. You must choose which the unit will use at the start of the first round of a combat (i.e., the first round fought following a charge). A model wielding a polearm cannot make a supporting attack during a turn in which it charged.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Spectral Scythe (Black Coach)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="7513-972a-178c-801d">
       <characteristics>
-        <characteristic name="Description" id="8e3c-c96-7ca0-1dc6" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="8e3c-c96-7ca0-1dc6" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Spectral Scythe (Black Coach) (Profile)|Combat|S|N/A|Magical Attacks|
 
- Notes: No  armour save  is permitted against wounds caused by this weapon ( Ward  and  Regeneration  saves can be attempted as normal).
-</characteristic>
+ Notes: No  armour save  is permitted against wounds caused by this weapon ( Ward  and  Regeneration  saves can be attempted as normal).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Spectral Scythe (Cairn Wraith)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="70f3-f2b4-c192-300">
       <characteristics>
-        <characteristic name="Description" id="960-abfb-282f-bf89" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="960-abfb-282f-bf89" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Spectral Scythe (Cairn Wraith) (Profile)|Combat|S|N/A|Magical Attacks ,  Multiple Wounds (D3)|
 
- Notes: No  armour save  is permitted against wounds caused by this weapon ( Ward  and  Regeneration  saves can be attempted as normal).
-</characteristic>
+ Notes: No  armour save  is permitted against wounds caused by this weapon ( Ward  and  Regeneration  saves can be attempted as normal).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Steam Gun (Dwarfs)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1d19-28bb-e269-d2f5">
       <characteristics>
-        <characteristic name="Description" id="e0d3-cb19-75fd-127a" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="e0d3-cb19-75fd-127a" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Steam Gun (Dwarfs) (Profile)|N/A|3|-1|Breath Weapon|
-
- 
-</characteristic>
+|Steam Gun (Dwarfs) (Profile)|N/A|3|-1|Breath Weapon|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Steam Gun (Empire)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ec25-2841-75da-ba28">
       <characteristics>
-        <characteristic name="Description" id="c5b7-1931-4c22-f7d2" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="c5b7-1931-4c22-f7d2" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Steam Gun (Empire) (Profile)|N/A|2|N/A|Breath Weapon|
 
- Notes: No  armour save  is permitted against wounds caused by this weapon ( Ward  and  Regeneration  saves can be attempted as normal).
-</characteristic>
+ Notes: No  armour save  is permitted against wounds caused by this weapon ( Ward  and  Regeneration  saves can be attempted as normal).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Throwing Weapons" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1719-16f-831d-3c4b">
       <characteristics>
-        <characteristic name="Description" id="f8e8-d66f-c5dc-704f" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="f8e8-d66f-c5dc-704f" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Throwing Weapon (Profile)|9&quot;|S|-|Move &amp; Shoot ,  Multiple Shots (2) ,  Quick Shot|
@@ -13417,23 +12950,16 @@ Throwing Axe</characteristic>
     </profile>
     <profile name="Trickster&apos;s Blades" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="8c65-6a1f-a849-de28">
       <characteristics>
-        <characteristic name="Description" id="4f6e-bc0a-4a8b-9e80" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="4f6e-bc0a-4a8b-9e80" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Trickster’s Blades (Profile)|Combat|S|-|Extra Attacks (+D3) ,  Requires Two Hands|
-
- 
-</characteristic>
+|Trickster’s Blades (Profile)|Combat|S|-|Extra Attacks (+D3) ,  Requires Two Hands|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Two Hand Weapons/Additional Hand Weapon" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="8766-e6a8-5b80-e73e">
       <characteristics>
-        <characteristic name="Description" id="65ba-3e26-34f9-67cd" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="65ba-3e26-34f9-67cd" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Two Hand Weapons/Additional Hand Weapon (Profile)|Combat|S|-|Extra Attacks (+1) ,  Requires Two Hands|
@@ -13477,8 +13003,7 @@ Related: Additional Equipment, Wizards &amp; Armour (Weapons)</characteristic>
  # Special Rules
  Many weapons confer a universal  special rule  to attacks made by their wielder.
  # Notes
- Some weapons have notes specifying when they can be used (such as during a turn in which the wielder charged), when their modifiers apply (such as only during the first round of combat), or what type of model can wield them (such as &apos;models whose troop type is &apos;cavalry&apos; only&apos;). In addition, some weapons have their own unique rules. Such notes and any unique rules are contained here.
-</characteristic>
+ Some weapons have notes specifying when they can be used (such as during a turn in which the wielder charged), when their modifiers apply (such as only during the first round of combat), or what type of model can wield them (such as &apos;models whose troop type is &apos;cavalry&apos; only&apos;). In addition, some weapons have their own unique rules. Such notes and any unique rules are contained here.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -13493,29 +13018,19 @@ Related: Unusual Armour</characteristic>
     </profile>
     <profile name="Writhing Tentacles (Daemons of Chaos)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="d493-caef-5ddd-4f">
       <characteristics>
-        <characteristic name="Description" id="3261-8131-1719-c96c" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="3261-8131-1719-c96c" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Writhing Tentacles (Daemons of Chaos) (Profile)|Combat|S|-1|Armour Bane (1)|
-
- 
-</characteristic>
+|Writhing Tentacles (Daemons of Chaos) (Profile)|Combat|S|-1|Armour Bane (1)|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
     <profile name="Writhing Tentacles (Dark Elves)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4d93-b1da-edda-1df4">
       <characteristics>
-        <characteristic name="Description" id="9ec0-300b-4601-b402" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="9ec0-300b-4601-b402" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
-|Writhing Tentacles (Dark Elves) (Profile)|Combat|S|-2|Poisoned Attacks|
-
- 
-</characteristic>
+|Writhing Tentacles (Dark Elves) (Profile)|Combat|S|-2|Poisoned Attacks|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -13768,15 +13283,12 @@ Wizards &amp; Armour (Weapons)</characteristic>
     </profile>
     <profile name="Serrated Maws" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ca60-c057-4ddc-2f49">
       <characteristics>
-        <characteristic name="Description" id="7b78-e975-7c61-f8cc" hidden="false" typeId="9f84-4221-785a-db50">
-
-||||||
+        <characteristic name="Description" id="7b78-e975-7c61-f8cc" hidden="false" typeId="9f84-4221-785a-db50">||||||
 |:--|:--|:--|:--|:--|
 |name|range|strength|armourPiercing|specialRules|
 |Serrated Maws (Profile)|Combat|S|-|Armour Bane (1) ,  Multiple Wounds (2)|
 
- Notes: In combat, this model must make each attack granted by the  Extra Attacks (+remaining Wounds)  special rule with this weapon.
-</characteristic>
+ Notes: In combat, this model must make each attack granted by the  Extra Attacks (+remaining Wounds)  special rule with this weapon.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
