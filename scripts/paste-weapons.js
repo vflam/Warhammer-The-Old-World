@@ -46,7 +46,7 @@ export default {
         }
         if (current === "notes") {
           const last = lastItem(weapons);
-          if (last?.Stats.Notes) {
+          if (last?.Stats?.Notes !== undefined) {
             last.Stats.Notes += line;
           }
         }
