@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="101" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="102" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Orc Mobs" hidden="false" id="51e8-1471-ce4c-d5dd">
       <profiles>
@@ -1579,6 +1579,27 @@
                 </modifier>
               </modifiers>
             </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Vanguard" hidden="true" id="592-dd42-954-f62f" sortIndex="2">
+              <infoLinks>
+                <infoLink name="Vanguard" id="1022-e95f-5e82-e3f5" hidden="false" type="profile" targetId="691e-10ec-4f7c-a2c4"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5ae3-5cf8-54cd-9b72" includeChildSelections="false"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="318a-4ec5-b7e0-6e33" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="318a-4ec5-b7e0-6e33">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
         <selectionEntryGroup name="Armour" hidden="false" id="bbbb-a82e-a781-6791" defaultSelectionEntryId="6287-5256-7e76-9a1c" sortIndex="4">
@@ -1904,13 +1925,47 @@
         <infoGroup name="Special Rules" hidden="false" id="7df2-68d1-d5d5-a74">
           <infoLinks>
             <infoLink name="Fear of Elves" hidden="false" type="profile" id="480e-51cf-bca7-3518" targetId="6cb0-9d5a-f165-e272"/>
-            <infoLink name="Skirmishers" hidden="false" type="profile" id="4222-6b71-78ee-a746" targetId="59a5-7eca-ee35-96ac"/>
+            <infoLink name="Skirmishers" hidden="false" type="profile" id="4222-6b71-78ee-a746" targetId="59a5-7eca-ee35-96ac">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="f542-fb5a-9abb-56fe" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Impetuous" hidden="false" type="profile" id="b866-cd86-e93-e8a3" targetId="b664-8530-a988-7ba9"/>
             <infoLink name="Warband" hidden="false" type="profile" id="c9ee-c0c-8d7d-2fc3" targetId="505f-e12d-2e36-31d0"/>
             <infoLink name="Fast Cavalry" hidden="false" type="profile" id="ccbd-9e82-c6ee-ff82" targetId="df-a39-e62-1c57"/>
-            <infoLink name="Open Order" hidden="false" type="profile" id="2828-2343-1e47-310a" targetId="5b67-8535-146c-7cea"/>
+            <infoLink name="Open Order" hidden="false" type="profile" id="2828-2343-1e47-310a" targetId="5b67-8535-146c-7cea">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="f542-fb5a-9abb-56fe" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Chariot Runners" hidden="false" type="profile" id="5fcd-f9f9-af6b-8be9" targetId="afa3-a46a-2608-f62c"/>
             <infoLink name="Swiftstride" hidden="false" type="profile" id="2614-9f99-cb8e-f7f1" targetId="dc91-48b3-3696-217"/>
+            <infoLink name="Close Order" hidden="true" type="profile" id="c56-d163-504b-70e1" targetId="883e-e1b1-4fe9-5912">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="f542-fb5a-9abb-56fe" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Horde" hidden="true" type="profile" id="e5c8-4543-d28b-d90c" targetId="9cba-89a5-1796-5fe4">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="f542-fb5a-9abb-56fe" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -1994,7 +2049,7 @@
         </selectionEntryGroup>
         <selectionEntryGroup name="Unit Options" hidden="false" id="1d84-9b4f-d6ac-b959" sortIndex="3">
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="de1a-9244-e370-108e" sortIndex="2">
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="de1a-9244-e370-108e" sortIndex="4">
               <categoryLinks>
                 <categoryLink targetId="49a9-ce63-af1a-18f7" id="5339-f3b7-4714-b498" primary="false" name="NO EXPORT"/>
               </categoryLinks>
@@ -2015,7 +2070,7 @@
                 </modifier>
               </modifiers>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Reserve Move" hidden="false" id="c50b-cede-fd3b-7ab1" sortIndex="3">
+            <selectionEntry type="upgrade" import="true" name="Reserve Move" hidden="false" id="c50b-cede-fd3b-7ab1" sortIndex="5">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="44d2-ed3f-73bf-8fd5"/>
                 <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="da8-aee-360b-528c" includeChildSelections="true"/>
@@ -2039,7 +2094,7 @@
                 <cost name="pts" typeId="points" value="0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Feigned Flight" hidden="false" id="7e0d-bfc4-ecde-f6b0" sortIndex="1">
+            <selectionEntry type="upgrade" import="true" name="Feigned Flight" hidden="false" id="7e0d-bfc4-ecde-f6b0" sortIndex="3">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="df21-d9f9-2eda-6b2c"/>
                 <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="d62c-a37f-e401-f9fd" includeChildSelections="true"/>
@@ -2062,6 +2117,35 @@
               <costs>
                 <cost name="pts" typeId="points" value="0"/>
               </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Ambush" hidden="true" id="596e-9ded-1295-d855" sortIndex="1">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="57de-8bc8-18da-ec9e" includeChildSelections="false"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Hunting Packs" hidden="true" id="f542-fb5a-9abb-56fe" sortIndex="2">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d09e-ca78-c919-778d" includeChildSelections="false"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -2309,6 +2393,16 @@
                 <modifier type="set" value="true" field="hidden">
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="d199-3d8-1b92-465d" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Impact Hits" id="e56f-620-1f83-d73e" hidden="true" type="profile" targetId="5c2-e9dd-2715-a0c0">
+              <modifiers>
+                <modifier type="append" value="(1)" field="name"/>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
@@ -2802,8 +2896,24 @@
           <infoLinks>
             <infoLink name="Choppas" hidden="false" type="profile" id="4b11-cb8-1bd8-d9d8" targetId="b592-330-5a29-162f"/>
             <infoLink name="Furious Charge" hidden="false" type="profile" id="56cb-e949-4bf-b524" targetId="eaca-69a2-8b6a-81c6"/>
-            <infoLink name="Da Boyz" hidden="false" type="profile" id="ce0b-788f-973a-3d1d" targetId="7a44-b74f-ad39-c2c8"/>
-            <infoLink name="Quell Impetuosity" hidden="false" type="profile" id="7d27-10c1-3a1-3d7b" targetId="2fb3-330c-b6cb-fc2d"/>
+            <infoLink name="Da Boyz" hidden="false" type="profile" id="ce0b-788f-973a-3d1d" targetId="7a44-b74f-ad39-c2c8">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Quell Impetuosity" hidden="false" type="profile" id="7d27-10c1-3a1-3d7b" targetId="2fb3-330c-b6cb-fc2d">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Ignore Panic" hidden="false" type="profile" id="679b-bb0d-6aa7-2a8d" targetId="a097-2e5c-8366-efc1"/>
             <infoLink name="Rallying Cry" hidden="false" type="profile" id="62f5-2162-236-6ce9" targetId="23c4-bd19-2422-ad08"/>
             <infoLink name="Waaagh!" hidden="false" type="profile" id="9e19-a583-50b2-9475" targetId="7711-627f-5ae5-cc7c"/>
@@ -2871,6 +2981,7 @@
             <selectionEntryGroup name="Mount" hidden="false" id="b647-86dc-2f46-39b9" sortIndex="5">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8a9c-fd97-45ff-bb5b"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="61cf-2e63-7078-f82b" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="d2d4-65c2-c34b-1c8a" targetId="3c93-ea7e-4771-ad63" sortIndex="2">
@@ -2886,12 +2997,20 @@
                     <categoryLink targetId="c96a-608-5de4-b943" id="bb3e-7179-8229-8464" primary="false" name="MOUNT"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Wyvern" hidden="false" type="selectionEntry" id="605f-543f-71a3-6697" targetId="84e5-c8c3-3a09-473e" sortIndex="3">
+                <entryLink import="true" name="Wyvern" hidden="false" type="selectionEntry" id="605f-543f-71a3-6697" targetId="84e5-c8c3-3a09-473e" sortIndex="4">
                   <costs>
                     <cost name="pts" typeId="points" value="130"/>
                   </costs>
                 </entryLink>
+                <entryLink import="true" name="Black Orc Chariot" hidden="false" id="8cc4-24dd-49d9-8e17" type="selectionEntry" targetId="5c04-51ef-2af2-53c7" sortIndex="3"/>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="61cf-2e63-7078-f82b">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="9cf1-64d2-4ead-fc63" sortIndex="4">
               <entryLinks>
@@ -2935,8 +3054,24 @@
           <infoLinks>
             <infoLink name="Choppas" hidden="false" type="profile" id="75ca-760-4d08-e5c6" targetId="b592-330-5a29-162f"/>
             <infoLink name="Furious Charge" hidden="false" type="profile" id="c2-e8a6-c898-a5da" targetId="eaca-69a2-8b6a-81c6"/>
-            <infoLink name="Da Boyz" hidden="false" type="profile" id="c4be-e398-9ff0-c51" targetId="7a44-b74f-ad39-c2c8"/>
-            <infoLink name="Quell Impetuosity" hidden="false" type="profile" id="e794-68b-1127-acdc" targetId="2fb3-330c-b6cb-fc2d"/>
+            <infoLink name="Da Boyz" hidden="false" type="profile" id="c4be-e398-9ff0-c51" targetId="7a44-b74f-ad39-c2c8">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Quell Impetuosity" hidden="false" type="profile" id="e794-68b-1127-acdc" targetId="2fb3-330c-b6cb-fc2d">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Ignore Panic" hidden="false" type="profile" id="96e8-8cea-7853-1269" targetId="a097-2e5c-8366-efc1"/>
             <infoLink name="Rallying Cry" hidden="false" type="profile" id="11db-f069-8ab0-4f6" targetId="23c4-bd19-2422-ad08"/>
             <infoLink name="Waaagh!" hidden="false" type="profile" id="831-1fa3-ce14-c758" targetId="7711-627f-5ae5-cc7c"/>
@@ -2985,6 +3120,7 @@
             <selectionEntryGroup name="Mount" hidden="false" id="cb67-c360-2aa7-c5d9" sortIndex="5" flatten="false" collapsible="false">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="95f4-6a6e-d02e-4145"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="5946-2bca-acf8-26d1" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="a55f-46a4-25bd-aca4" targetId="3c93-ea7e-4771-ad63" sortIndex="2">
@@ -3000,7 +3136,15 @@
                     <categoryLink targetId="c96a-608-5de4-b943" id="fdc9-ade2-9dd6-db41" primary="false" name="MOUNT"/>
                   </categoryLinks>
                 </entryLink>
+                <entryLink import="true" name="Black Orc Chariot" hidden="false" id="5f4d-a0c8-894a-b8d1" type="selectionEntry" targetId="5c04-51ef-2af2-53c7" sortIndex="3"/>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="5946-2bca-acf8-26d1">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Equipment" hidden="false" id="4504-2437-3b19-be44" sortIndex="6">
               <entryLinks>
@@ -3140,6 +3284,7 @@
             <selectionEntryGroup name="Mount" hidden="false" id="bb1f-12d7-fbf0-7ab7" sortIndex="5">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bbed-e7df-d4f9-39e8"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="5889-eee8-db13-37b7" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="Goblin Wolf Chariot" hidden="false" type="selectionEntry" id="7ddd-b306-a2a6-db97" targetId="e235-ad57-e069-77d0" sortIndex="1">
@@ -3164,11 +3309,37 @@
                   </categoryLinks>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="5889-eee8-db13-37b7">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="444-624e-8936-fa2a" sortIndex="4">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="e76f-80cc-456-1183" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Options" id="a0dd-816c-3fde-878" hidden="false" sortIndex="8">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Ambush" hidden="true" id="dbec-36ed-694f-b2ae">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1093-2334-91cb-1f5a" includeChildSelections="false"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <costs>
+                    <cost name="pts" typeId="points" value="10"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <categoryLinks>
@@ -3271,6 +3442,7 @@
             <selectionEntryGroup name="Mount" hidden="false" id="8b82-c044-f3fc-a657" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4149-ef4d-1681-cd7c"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="9c0e-746e-b39a-5f05" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="64e6-57ea-773c-9268" targetId="3c93-ea7e-4771-ad63" sortIndex="2">
@@ -3287,6 +3459,13 @@
                   </categoryLinks>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="9c0e-746e-b39a-5f05">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Armour" hidden="false" id="bfd5-a04d-6fef-21b9" sortIndex="5" defaultSelectionEntryId="b1b3-c7ed-e2cd-e9dc">
               <entryLinks>
@@ -3397,8 +3576,17 @@
             <selectionEntryGroup name="Lores of Magic" hidden="false" id="f364-ff41-3fe0-1555" sortIndex="6">
               <entryLinks>
                 <entryLink import="true" name="Battle Magic" hidden="false" type="selectionEntry" id="a00a-3282-b942-cbe9" targetId="5b2e-35c6-f987-741e" sortIndex="1"/>
-                <entryLink import="true" name="Waaagh! Magic" hidden="false" type="selectionEntry" id="f63d-8740-ebc6-d2ee" targetId="bd6f-7c73-9ace-36a0" sortIndex="3"/>
+                <entryLink import="true" name="Waaagh! Magic" hidden="false" type="selectionEntry" id="f63d-8740-ebc6-d2ee" targetId="bd6f-7c73-9ace-36a0" sortIndex="4"/>
                 <entryLink import="true" name="Elementalism" hidden="false" type="selectionEntry" id="b453-dcfd-b2f1-7d03" targetId="2b23-3ae1-f5ad-8e7a" sortIndex="2"/>
+                <entryLink import="true" name="Troll Magic" hidden="true" id="9685-4084-9c34-8b08" type="selectionEntry" targetId="9fc1-a72-4fc9-a1be" sortIndex="3">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="5e58-9ce8-a93c-272d" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ab33-fc1a-37b3-3721"/>
@@ -3429,6 +3617,7 @@
             <selectionEntryGroup name="Mount" hidden="false" id="98ec-a765-62a4-b6dc" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8ab5-4bb6-c107-f805"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="d7ed-8bb1-fd24-9010" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="b25d-df02-87b7-d3f3" targetId="3c93-ea7e-4771-ad63" sortIndex="1">
@@ -3445,6 +3634,13 @@
                   </costs>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="d7ed-8bb1-fd24-9010">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="305a-55a3-5199-3a85" sortIndex="3">
               <entryLinks>
@@ -3523,8 +3719,17 @@
             <selectionEntryGroup name="Lores of Magic" hidden="false" id="84-4b66-998f-9def" sortIndex="6">
               <entryLinks>
                 <entryLink import="true" name="Battle Magic" hidden="false" type="selectionEntry" id="568d-df33-47ea-9ab4" targetId="5b2e-35c6-f987-741e" sortIndex="1"/>
-                <entryLink import="true" name="Waaagh! Magic" hidden="false" type="selectionEntry" id="530f-3c58-56ca-9ed" targetId="bd6f-7c73-9ace-36a0" sortIndex="3"/>
+                <entryLink import="true" name="Waaagh! Magic" hidden="false" type="selectionEntry" id="530f-3c58-56ca-9ed" targetId="bd6f-7c73-9ace-36a0" sortIndex="4"/>
                 <entryLink import="true" name="Elementalism" hidden="false" type="selectionEntry" id="9b3a-1ed-b6f0-57a9" targetId="2b23-3ae1-f5ad-8e7a" sortIndex="2"/>
+                <entryLink import="true" name="Troll Magic" hidden="true" id="821e-77db-d6a5-db4c" type="selectionEntry" targetId="9fc1-a72-4fc9-a1be" sortIndex="3">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="5e58-9ce8-a93c-272d" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="401f-584f-a810-f6f4"/>
@@ -3555,6 +3760,7 @@
             <selectionEntryGroup name="Mount" hidden="false" id="af30-bfed-abf0-3edc" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d033-ba08-ebef-3965"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="b46c-f0ca-c79a-3ff9" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="eb58-b2a9-7fb3-7f13" targetId="3c93-ea7e-4771-ad63" sortIndex="3">
@@ -3566,6 +3772,13 @@
                   </categoryLinks>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="b46c-f0ca-c79a-3ff9">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="4dad-4d3-4d0d-3bab" sortIndex="3">
               <entryLinks>
@@ -3649,6 +3862,7 @@
             <selectionEntryGroup name="Mount" hidden="false" id="e5a1-9377-6078-2c62" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="83ed-2e68-ecca-a583"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="5406-82d1-d3e-97ca" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="d236-db45-f23d-3d3e" targetId="3c93-ea7e-4771-ad63" sortIndex="2">
@@ -3670,6 +3884,13 @@
                   </categoryLinks>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="5406-82d1-d3e-97ca">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Equipment" hidden="false" id="f2cb-13a4-1a39-a7cf" sortIndex="6">
               <entryLinks>
@@ -3798,6 +4019,7 @@
             <selectionEntryGroup name="Mount" hidden="false" id="8705-e2d2-c23e-b7ba" sortIndex="5">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2626-296f-67f9-4c6"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="d0e5-426d-2c69-c97f" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="Goblin Wolf Chariot" hidden="false" type="selectionEntry" id="3f8d-603e-8f9d-3464" targetId="e235-ad57-e069-77d0" sortIndex="1">
@@ -3825,6 +4047,13 @@
                   </categoryLinks>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="d0e5-426d-2c69-c97f">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Equipment" hidden="false" id="bd77-d21c-16d3-f1be" sortIndex="6">
               <constraints>
@@ -3863,6 +4092,25 @@
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9852-37cb-e59b-af3e"/>
               </constraints>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Options" id="1137-6de2-80df-83f6" hidden="false" sortIndex="8">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Ambush" hidden="true" id="83dd-dbcf-ac94-1f0e">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a2da-6749-97aa-35a4" includeChildSelections="false"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <costs>
+                    <cost name="pts" id="be56-bf5b-e240-c174" hidden="false" typeId="points" value="10"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <categoryLinks>
@@ -4031,6 +4279,15 @@
               <entryLinks>
                 <entryLink import="true" name="Waaagh! Magic" hidden="false" type="selectionEntry" id="7bf5-ca7-c81-e6e2" targetId="bd6f-7c73-9ace-36a0" sortIndex="2"/>
                 <entryLink import="true" name="Elementalism" hidden="false" type="selectionEntry" id="b42b-c5f4-f414-47fb" targetId="2b23-3ae1-f5ad-8e7a" sortIndex="1"/>
+                <entryLink import="true" name="Troll Magic" hidden="true" type="selectionEntry" id="b94a-b046-9d1-7f09" targetId="9fc1-a72-4fc9-a1be" sortIndex="2">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="5e58-9ce8-a93c-272d" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="fac4-a24a-a481-3920"/>
@@ -4061,19 +4318,20 @@
             <selectionEntryGroup name="Mount" hidden="false" id="fdf0-b158-26ba-8711" sortIndex="3">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="25e-f3ba-7351-6b76"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="92f4-3316-a01d-b577" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="Goblin Wolf Chariot" hidden="false" type="selectionEntry" id="4afd-1635-feeb-d916" targetId="e235-ad57-e069-77d0" sortIndex="1">
+                <entryLink import="true" name="Goblin Wolf Chariot" hidden="false" type="selectionEntry" id="4afd-1635-feeb-d916" targetId="e235-ad57-e069-77d0" sortIndex="2">
                   <categoryLinks>
                     <categoryLink targetId="c96a-608-5de4-b943" id="1845-2876-a50b-a0c7" primary="false" name="MOUNT"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Arachnarok Spider" hidden="false" type="selectionEntry" id="ac10-a582-4cae-f778" targetId="1472-2eff-b604-c7" sortIndex="2">
+                <entryLink import="true" name="Arachnarok Spider" hidden="false" type="selectionEntry" id="ac10-a582-4cae-f778" targetId="1472-2eff-b604-c7" sortIndex="3">
                   <categoryLinks>
                     <categoryLink targetId="c96a-608-5de4-b943" id="f576-3d74-a970-735d" primary="false" name="MOUNT"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Giant Wolf" hidden="false" type="selectionEntry" id="ef0a-eb10-ca06-e53e" targetId="5d79-54f9-120d-31c9" sortIndex="3">
+                <entryLink import="true" name="Giant Wolf" hidden="false" type="selectionEntry" id="ef0a-eb10-ca06-e53e" targetId="5d79-54f9-120d-31c9" sortIndex="1">
                   <costs>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
@@ -4082,6 +4340,13 @@
                   </categoryLinks>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="92f4-3316-a01d-b577">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="2f54-21c8-333a-a59d" sortIndex="2">
               <entryLinks>
@@ -4155,8 +4420,17 @@
           <selectionEntryGroups>
             <selectionEntryGroup name="Lores of Magic" hidden="false" id="2dee-9d9b-a52d-d007" sortIndex="5">
               <entryLinks>
-                <entryLink import="true" name="Waaagh! Magic" hidden="false" type="selectionEntry" id="18e7-385b-61e8-38ca" targetId="bd6f-7c73-9ace-36a0" sortIndex="2"/>
+                <entryLink import="true" name="Waaagh! Magic" hidden="false" type="selectionEntry" id="18e7-385b-61e8-38ca" targetId="bd6f-7c73-9ace-36a0" sortIndex="3"/>
                 <entryLink import="true" name="Elementalism" hidden="false" type="selectionEntry" id="d20e-fc39-7a79-7c61" targetId="2b23-3ae1-f5ad-8e7a" sortIndex="1"/>
+                <entryLink import="true" name="Troll Magic" hidden="true" id="2726-5c49-1bed-6204" type="selectionEntry" targetId="9fc1-a72-4fc9-a1be" sortIndex="2">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="5e58-9ce8-a93c-272d" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="e54c-c446-f5b3-cfa6"/>
@@ -4187,6 +4461,7 @@
             <selectionEntryGroup name="Mount" hidden="false" id="6f18-f2d9-835-3526" sortIndex="3">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3b95-f7a6-379-58d0"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="3178-1768-28bb-d641" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="Goblin Wolf Chariot" hidden="false" type="selectionEntry" id="a337-18b9-2a45-1270" targetId="e235-ad57-e069-77d0" sortIndex="1">
@@ -4211,6 +4486,13 @@
                   </categoryLinks>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="3178-1768-28bb-d641">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="161d-4ec1-2a6e-46c7" sortIndex="2">
               <entryLinks>
@@ -5795,83 +6077,85 @@
           <categoryLinks>
             <categoryLink name="Heavy Chariot" hidden="false" id="a27dcc78-f5f8f462" targetId="d768-7cf0-de0a-c249" primary="false"/>
           </categoryLinks>
-        </selectionEntry>
-        <selectionEntry type="model" import="true" name="Black Orc Crew" hidden="false" id="5e87cc5c-604b6a66" subType="crew" sortIndex="3">
-          <infoLinks>
-            <infoLink name="Black Orc Crew" id="976a613a-39a6b024" hidden="false" type="profile" targetId="ac13-b382-d8f7-4fe4"/>
-            <infoLink name="Base (50x100)" id="8cc8a36a-66906014" hidden="false" type="profile" targetId="d456-e30e-f85d-14d"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" id="9de9-ddd7-b0ba-e6f8" hidden="false" typeId="points" value="0"/>
-          </costs>
-          <entryLinks>
-            <entryLink import="true" name="Hand Weapon" hidden="false" id="fffe21a6-b4e54ab0" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="c467587d-83c0efb3"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="ce53e083-29f607b1"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-          <constraints>
-            <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="a91b13a3-23fca3d1"/>
-            <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="9f2e8b9d-c0204553" includeChildSelections="false"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink name="Heavy Chariot" hidden="false" id="71ebb7ca-dea89af4" targetId="d768-7cf0-de0a-c249" primary="false"/>
-            <categoryLink name="CHARIOT CREW" hidden="false" id="1bf84c52-af9a219c" targetId="4cf7-bf85-308d-c29a" primary="false"/>
-          </categoryLinks>
-          <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" id="bdbc-e758-c2c8-f73e" hidden="false" sortIndex="2">
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2f60-4b10-add6-4ebb-min" includeChildSelections="false"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2f60-4b10-add6-4ebb-max" includeChildSelections="false"/>
-              </constraints>
-              <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Additional Hand Weapon" hidden="false" id="6451-a389-643e-c122">
-                  <infoLinks>
-                    <infoLink name="Additional Hand Weapon" id="8875-8dd6-4519-450a" hidden="false" type="profile" targetId="300e-9667-fc8c-c763"/>
-                  </infoLinks>
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="faf0-d01b-d051-dd07" includeChildSelections="false"/>
-                  </constraints>
-                  <costs>
-                    <cost name="pts" typeId="points" value="1"/>
-                  </costs>
-                </selectionEntry>
-              </selectionEntries>
+          <selectionEntries>
+            <selectionEntry type="model" import="true" name="War Boar" hidden="false" id="8bb31cd9-a61ceb2f" subType="mount">
+              <infoLinks>
+                <infoLink name="War Boar" id="7b4f419f-baf8c42d" hidden="false" type="profile" targetId="83f0-45fc-8df-78a4"/>
+                <infoLink name="Base (50x100)" id="8c500f15-15a5950b" hidden="false" type="profile" targetId="d456-e30e-f85d-14d"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" id="3bc6-8007-1eb-401e" hidden="false" typeId="points" value="0"/>
+              </costs>
               <entryLinks>
-                <entryLink import="true" name="Great Weapon" hidden="false" id="bfb5-c3f3-9b11-2cf6" type="selectionEntry" targetId="2283-26e9-76c3-6048">
-                  <costs>
-                    <cost name="pts" typeId="points" value="2"/>
-                  </costs>
+                <entryLink import="true" name="Hand Weapon" hidden="false" id="3881-21c9-bca0-993" type="selectionEntry" targetId="721d-36e3-388a-c0d6">
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="e285-a6e7-3824-12af" includeChildSelections="false"/>
+                  </constraints>
                 </entryLink>
               </entryLinks>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
-        </selectionEntry>
-        <selectionEntry type="model" import="true" name="War Boar" hidden="false" id="8bb31cd9-a61ceb2f" subType="mount" sortIndex="2">
-          <infoLinks>
-            <infoLink name="War Boar" id="7b4f419f-baf8c42d" hidden="false" type="profile" targetId="83f0-45fc-8df-78a4"/>
-            <infoLink name="Base (50x100)" id="8c500f15-15a5950b" hidden="false" type="profile" targetId="d456-e30e-f85d-14d"/>
-          </infoLinks>
-          <costs>
-            <cost name="pts" id="3bc6-8007-1eb-401e" hidden="false" typeId="points" value="0"/>
-          </costs>
-          <entryLinks>
-            <entryLink import="true" name="Hand Weapon" hidden="false" id="3881-21c9-bca0-993" type="selectionEntry" targetId="721d-36e3-388a-c0d6">
               <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="e285-a6e7-3824-12af" includeChildSelections="false"/>
+                <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="89294bd6-78e6a8a0"/>
+                <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="7b3e5084-71da624e" includeChildSelections="false"/>
               </constraints>
-            </entryLink>
-          </entryLinks>
-          <constraints>
-            <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="89294bd6-78e6a8a0"/>
-            <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="7b3e5084-71da624e" includeChildSelections="false"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink name="Heavy Chariot" hidden="false" id="f01bbdaf-c3b60ebd" targetId="d768-7cf0-de0a-c249" primary="false"/>
-            <categoryLink name="CHARIOT CREW" hidden="false" id="907a3f25-d5a18e1b" targetId="4cf7-bf85-308d-c29a" primary="false"/>
-          </categoryLinks>
+              <categoryLinks>
+                <categoryLink name="Heavy Chariot" hidden="false" id="f01bbdaf-c3b60ebd" targetId="d768-7cf0-de0a-c249" primary="false"/>
+                <categoryLink name="CHARIOT CREW" hidden="false" id="907a3f25-d5a18e1b" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+              </categoryLinks>
+            </selectionEntry>
+            <selectionEntry type="model" import="true" name="Black Orc Crew" hidden="false" id="5e87cc5c-604b6a66" subType="crew">
+              <infoLinks>
+                <infoLink name="Black Orc Crew" id="976a613a-39a6b024" hidden="false" type="profile" targetId="ac13-b382-d8f7-4fe4"/>
+                <infoLink name="Base (50x100)" id="8cc8a36a-66906014" hidden="false" type="profile" targetId="d456-e30e-f85d-14d"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" id="9de9-ddd7-b0ba-e6f8" hidden="false" typeId="points" value="0"/>
+              </costs>
+              <entryLinks>
+                <entryLink import="true" name="Hand Weapon" hidden="false" id="fffe21a6-b4e54ab0" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="c467587d-83c0efb3"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="ce53e083-29f607b1"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+              <constraints>
+                <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="a91b13a3-23fca3d1"/>
+                <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="9f2e8b9d-c0204553" includeChildSelections="false"/>
+              </constraints>
+              <categoryLinks>
+                <categoryLink name="Heavy Chariot" hidden="false" id="71ebb7ca-dea89af4" targetId="d768-7cf0-de0a-c249" primary="false"/>
+                <categoryLink name="CHARIOT CREW" hidden="false" id="1bf84c52-af9a219c" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+              </categoryLinks>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Equipment" id="bdbc-e758-c2c8-f73e" hidden="false" sortIndex="2">
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2f60-4b10-add6-4ebb-min" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2f60-4b10-add6-4ebb-max" includeChildSelections="false"/>
+                  </constraints>
+                  <selectionEntries>
+                    <selectionEntry type="upgrade" import="true" name="Additional Hand Weapon" hidden="false" id="6451-a389-643e-c122">
+                      <infoLinks>
+                        <infoLink name="Additional Hand Weapon" id="8875-8dd6-4519-450a" hidden="false" type="profile" targetId="300e-9667-fc8c-c763"/>
+                      </infoLinks>
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="faf0-d01b-d051-dd07" includeChildSelections="false"/>
+                      </constraints>
+                      <costs>
+                        <cost name="pts" id="8d7e-5801-b7ea-6bf6" hidden="false" typeId="points" value="1"/>
+                      </costs>
+                    </selectionEntry>
+                  </selectionEntries>
+                  <entryLinks>
+                    <entryLink import="true" name="Great Weapon" hidden="false" id="bfb5-c3f3-9b11-2cf6" type="selectionEntry" targetId="2283-26e9-76c3-6048">
+                      <costs>
+                        <cost name="pts" id="efac-c259-e9c9-1c16" hidden="false" typeId="points" value="2"/>
+                      </costs>
+                    </entryLink>
+                  </entryLinks>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
+            </selectionEntry>
+          </selectionEntries>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Standard Bearer" hidden="false" id="6c28-c057-da04-d170" sortIndex="4">
           <costs>
@@ -5904,6 +6188,127 @@
             </infoLink>
             <infoLink name="Tusker Charge" id="5e677a33-963fc9e1" hidden="false" type="profile" targetId="c392-507a-daf5-126"/>
             <infoLink name="Armour Value" id="52f3-fec7-f5d8-9597" hidden="false" type="profile" targetId="e099-1ebb-9e85-34c8">
+              <modifiers>
+                <modifier type="append" value=": 3+" field="name"/>
+              </modifiers>
+            </infoLink>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+    </selectionEntry>
+    <selectionEntry type="model" import="true" name="Black Orc Chariot" hidden="false" id="5c04-51ef-2af2-53c7" subType="mount">
+      <infoLinks>
+        <infoLink name="Chariot" id="5f6d-1e0a-4314-200d" hidden="false" type="profile" targetId="58fc-fda-ae98-1af2"/>
+        <infoLink name="Base (50x100)" id="efc3-6622-264a-e8d" hidden="false" type="profile" targetId="d456-e30e-f85d-14d"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" id="9696-8e78-829b-67a" hidden="false" typeId="points" value="130"/>
+      </costs>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9a18-2a81-a542-6d40"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink name="Heavy Chariot" hidden="false" id="96ba-18db-4e48-4bc3" targetId="d768-7cf0-de0a-c249" primary="false"/>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="War Boar" hidden="false" id="c9d2-7003-6a38-d2e4" subType="mount">
+          <infoLinks>
+            <infoLink name="War Boar" id="c679-d3c1-606c-aa85" hidden="false" type="profile" targetId="83f0-45fc-8df-78a4"/>
+            <infoLink name="Base (50x100)" id="b44f-8eb6-2f5c-763c" hidden="false" type="profile" targetId="d456-e30e-f85d-14d"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" id="80cf-262d-cc9f-f222" hidden="false" typeId="points" value="0"/>
+          </costs>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="adab-9e1-855c-79e1" type="selectionEntry" targetId="721d-36e3-388a-c0d6">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="dfd5-132a-c07b-ca4c" includeChildSelections="false"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <constraints>
+            <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="8bcf-ddc-ec0a-86d7"/>
+            <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="1f20-fe24-f1ea-ee15" includeChildSelections="false"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink name="Heavy Chariot" hidden="false" id="3ad0-a842-3f64-2141" targetId="d768-7cf0-de0a-c249" primary="false"/>
+            <categoryLink name="CHARIOT CREW" hidden="false" id="d141-1dea-a258-68e0" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+          </categoryLinks>
+        </selectionEntry>
+        <selectionEntry type="model" import="true" name="Black Orc Crew" hidden="false" id="da16-233-57ef-a42d" subType="crew">
+          <infoLinks>
+            <infoLink name="Black Orc Crew" id="247b-fd16-3d02-55fa" hidden="false" type="profile" targetId="ac13-b382-d8f7-4fe4"/>
+            <infoLink name="Base (50x100)" id="2151-d89d-6ad0-4bff" hidden="false" type="profile" targetId="d456-e30e-f85d-14d"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" id="eba5-781b-59b9-4bb7" hidden="false" typeId="points" value="0"/>
+          </costs>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="ea59-f144-dc47-a887" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="87dd-6103-9e98-8a90"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="5b15-8e93-ced1-e029"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <constraints>
+            <constraint type="min" value="2" field="selections" scope="parent" shared="false" id="5a1-2f88-6ffb-6aa2"/>
+            <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="d59-12f5-c1e1-99e8" includeChildSelections="false"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink name="Heavy Chariot" hidden="false" id="e8be-53e4-d558-dc77" targetId="d768-7cf0-de0a-c249" primary="false"/>
+            <categoryLink name="CHARIOT CREW" hidden="false" id="39ca-b960-4e90-8231" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+          </categoryLinks>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Equipment" id="2da7-d08c-737e-e8ad" hidden="false" sortIndex="2">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7503-80c4-a2c6-e5cd" includeChildSelections="false"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ebca-4306-5fbe-f4cd" includeChildSelections="false"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Additional Hand Weapon" hidden="false" id="aa2e-1a6d-d357-8c17">
+                  <infoLinks>
+                    <infoLink name="Additional Hand Weapon" id="52e9-983e-22e4-35db" hidden="false" type="profile" targetId="300e-9667-fc8c-c763"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2f28-9620-7360-6684" includeChildSelections="false"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" id="65fc-5181-20a6-5ac0" hidden="false" typeId="points" value="1"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <entryLinks>
+                <entryLink import="true" name="Great Weapon" hidden="false" id="3b70-9fe8-3c42-d8aa" type="selectionEntry" targetId="2283-26e9-76c3-6048">
+                  <costs>
+                    <cost name="pts" id="275a-8630-f602-2d26" hidden="false" typeId="points" value="2"/>
+                  </costs>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+        </selectionEntry>
+      </selectionEntries>
+      <comment>Mount</comment>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="96ef-17c1-6728-e83b" hidden="false">
+          <infoLinks>
+            <infoLink name="Choppas" id="c5c0-b735-6f88-8e8a" hidden="false" type="profile" targetId="b592-330-5a29-162f"/>
+            <infoLink name="Close Order" id="3eee-7308-9015-eaf5" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+            <infoLink name="First Charge" id="2139-534d-3bed-4693" hidden="false" type="profile" targetId="785a-2886-af42-dce9"/>
+            <infoLink name="Furious Charge" id="66a8-b5cd-6149-7cf6" hidden="false" type="profile" targetId="eaca-69a2-8b6a-81c6">
+              <modifiers>
+                <modifier type="append" value="(Black Orc Crew only)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Ignore Panic" id="3df0-96fa-ec40-ec11" hidden="false" type="profile" targetId="a097-2e5c-8366-efc1"/>
+            <infoLink name="Impact Hits" id="549a-46f-8cf9-206c" hidden="false" type="profile" targetId="5c2-e9dd-2715-a0c0">
+              <modifiers>
+                <modifier type="append" value="(D6+1)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Tusker Charge" id="af06-1bbd-80a9-9a76" hidden="false" type="profile" targetId="c392-507a-daf5-126"/>
+            <infoLink name="Armour Value" id="b0f7-53bc-ef4b-2ba6" hidden="false" type="profile" targetId="e099-1ebb-9e85-34c8">
               <modifiers>
                 <modifier type="append" value=": 3+" field="name"/>
               </modifiers>

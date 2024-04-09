@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="99" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="100" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -571,6 +571,35 @@
           </modifiers>
         </forceEntry>
       </forceEntries>
+      <infoLinks>
+        <infoLink name="Enhanced Regeneration" id="37a3-aa89-b4b8-8095" hidden="true" type="profile" targetId="ce1d-7cad-99ee-ec4f">
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="5e58-9ce8-a93c-272d" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
+        <infoLink name="Oi! Dis Way! " id="9626-6d51-af3b-17f0" hidden="true" type="profile" targetId="b86c-c3e0-2570-2598">
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="5e58-9ce8-a93c-272d" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
+        <infoLink name="Troll Tongue " id="d736-31e4-b311-cd8a" hidden="true" type="profile" targetId="fbb4-47e0-d36f-85a1">
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="5e58-9ce8-a93c-272d" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
+      </infoLinks>
     </forceEntry>
   </forceEntries>
   <costTypes>
@@ -13305,6 +13334,21 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
     <profile name="Ogre Charge" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="9e92-303-8d40-895c">
       <characteristics>
         <characteristic name="Description" id="1582-e7a1-573f-a448" hidden="false" typeId="9f84-4221-785a-db50">The Armour Piercing characteristic of any Impact Hits caused by a model with this special rule (but not its mount) is improved by the current Rank Bonus of its unit (or, in the case of characters, the current Rank Bonus of any unit they have joined).</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Enhanced Regeneration" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ce1d-7cad-99ee-ec4f">
+      <characteristics>
+        <characteristic name="Description" id="7551-96d-6a19-e040" hidden="false" typeId="9f84-4221-785a-db50">Models with the Regeneration (X+) special rule within a Troll Horde army may re-roll any failed Regeneration saves against Wounds caused by non-magical attacks. </characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Oi! Dis Way! " typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b86c-c3e0-2570-2598">
+      <characteristics>
+        <characteristic name="Description" id="8c52-71c9-eef5-f674" hidden="false" typeId="9f84-4221-785a-db50">Unless the character is fleeing, friendly Troll Mobs within a Troll Horde army that are within the Command range of an Orc Shaman, Goblin Shaman or Troll Hag can use the Leadership characteristic of that character instead of their own.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Troll Tongue " typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="fbb4-47e0-d36f-85a1">
+      <characteristics>
+        <characteristic name="Description" id="431e-fec-d87e-6b3c" hidden="false" typeId="9f84-4221-785a-db50">In addition to the Lores of Magic they may normally know spells from, Orc Shamans and Goblin Shamans within a Troll Horde army may know spells from the Lore of Troll Magic.</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
