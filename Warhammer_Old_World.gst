@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="98" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="99" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -1290,21 +1290,16 @@
     </profile>
     <profile name="Musician" hidden="false" id="40f2-dd77-f0ca-3663" typeId="52d4-d959-fe4d-90fa" typeName="Command">
       <characteristics>
-        <characteristic name="Description" typeId="441a-ef3a-c07e-95f">“Onwards To Victory!” If, once the combat result has been calculated, both sides have the exact same number of points each, the side that has a musician in the front rank of one or more of its units may claim a bonus of +1 combat result point.
+        <characteristic name="Description" id="395-680b-f1e9-3d20" hidden="false" typeId="441a-ef3a-c07e-95f">“Onwards To Victory!” If, once the combat result has been calculated, both sides have the exact same number of points each, the side that has a musician in the front rank of one or more of its units may claim a bonus of +1 combat result point.
 
- 
 If, however, the opposing side has a musician also, the redoubled efforts (and almighty clamour) cancel each other out and neither side may claim this bonus.
 
- 
 Steadying Rhythm If a fleeing unit contains a musician, it may apply a +1 modifier to its Leadership characteristic whenever it attempts to rally, up to a maximum of Leadership 10.
 
- 
 Quick Time Should a unit that contains a musician wish to march whilst within 8&quot; of an enemy unit, it may apply a +1 modifier to its Leadership characteristic, up to a maximum of Leadership 10, when making its Leadership test.
 
- 
 Musicians As Casualties If a musician model is slain, another rank and file model belonging to the same unit, but that is not a command group model, will retrieve the fallen instrument and take their place. Therefore, a unit cannot lose its musician unless it, the standard bearer and the champion are the only remaining models in the unit. This applies even if the musician is targeted by an attack that allows a specific model within a unit to be targeted, or finds themselves lying underneath a template.
 
- 
 If the only other remaining models in a unit are the champion and standard bearer, the musician must be removed as a casualty before either.</characteristic>
       </characteristics>
     </profile>
@@ -1655,11 +1650,6 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-3</characteristic>
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3=1)</characteristic>
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Cannon Fire’ special rule. This weapon uses the Black Powder Misfire table.</characteristic>
-      </characteristics>
-    </profile>
-    <profile name="Troll Vomit" hidden="false" id="2007-796b-3c57-ec28" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">S3 AP-2 A Chaos Troll that is in base contact with an enemy model may make one additional attack each turn with this weapon. This attack must be made last, after all other attacks have been made (including Stomp Attacks), but hits automatically.</characteristic>
       </characteristics>
     </profile>
     <profile name="Base (100x150)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="b56f-7f81-4ba1-ed2c">
@@ -13292,6 +13282,31 @@ Wizards &amp; Armour (Weapons)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
+    <profile name="Troll Vomit" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="cdde-5994-8941-787f">
+      <characteristics>
+        <characteristic name="R" id="a56b-a816-bc66-7faf" hidden="false" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" id="5c36-4d2a-a060-406c" hidden="false" typeId="ac19-f99c-72e9-a1a7">3</characteristic>
+        <characteristic name="AP" id="c62b-bd9e-c4ea-294c" hidden="false" typeId="9429-ffe7-2ce5-e9a5">2</characteristic>
+        <characteristic name="Special Rules" id="b390-1a36-215e-4471" hidden="false" typeId="5f83-3633-336b-93b4">-</characteristic>
+        <characteristic name="Notes" id="4155-995e-7efd-27b4" hidden="false" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Ironfist" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="d432-2b40-b9e4-c45c">
+      <characteristics>
+        <characteristic name="R" id="4d87-94b7-49dc-2244" hidden="false" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" id="501b-121d-bdd1-a26d" hidden="false" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
+        <characteristic name="AP" id="3ce5-bb81-aa8c-bd28" hidden="false" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" id="b3fd-2e00-b2c3-4863" hidden="false" typeId="5f83-3633-336b-93b4">Extra Attacks (1), Requires Two Hands</characteristic>
+        <characteristic name="Notes" id="fcf-cc11-e194-b5a7" hidden="false" typeId="772a-a7ff-f6b3-df71">An Ironfist is an additional hand weapon. 
+In addition, a model equipped with an Ironfist improves its armour value by 1. 
+An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or to improve the wielder’s armour value.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Ogre Charge" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="9e92-303-8d40-895c">
+      <characteristics>
+        <characteristic name="Description" id="1582-e7a1-573f-a448" hidden="false" typeId="9f84-4221-785a-db50">The Armour Piercing characteristic of any Impact Hits caused by a model with this special rule (but not its mount) is improved by the current Rank Bonus of its unit (or, in the case of characters, the current Rank Bonus of any unit they have joined).</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -13727,11 +13742,6 @@ Wizards &amp; Armour (Weapons)</characteristic>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="da38-15ce-46fb-c2b"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Troll Vomit" hidden="false" id="5e23-1f49-abbd-f7a5" collective="true">
-      <infoLinks>
-        <infoLink name="Troll Vomit" hidden="false" type="profile" id="7833-c8ab-bb04-7d5d" targetId="2007-796b-3c57-ec28"/>
-      </infoLinks>
-    </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Detachment" hidden="false" id="551d-34fe-3832-416d">
       <infoLinks>
         <infoLink name="Detachment" hidden="false" type="profile" id="a34e-650f-d7bc-cbc9" targetId="559-d4c6-b2e8-500f"/>
@@ -13749,6 +13759,20 @@ Wizards &amp; Armour (Weapons)</characteristic>
       </constraints>
       <infoLinks>
         <infoLink name="Serrated Maw" hidden="false" type="profile" id="fb7e-efa8-d357-b53a" targetId="4b56-5100-6a55-452e"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Troll Vomit" hidden="false" id="b5d4-7050-5328-3003">
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4cd-8d57-154b-5ad5"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="619a-7b28-5439-dece"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Troll Vomit" id="9570-4cc9-59ec-7274" hidden="false" type="profile" targetId="cdde-5994-8941-787f"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Ironfist" hidden="false" id="2139-5be6-d6b0-4321">
+      <infoLinks>
+        <infoLink name="Ironfist" id="59a8-76ed-9e56-b231" hidden="false" targetId="d432-2b40-b9e4-c45c" type="profile"/>
       </infoLinks>
     </selectionEntry>
   </sharedSelectionEntries>
