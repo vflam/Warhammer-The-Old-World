@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="100" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="101" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -72,6 +72,28 @@
     <categoryEntry name="ORC BOSS" id="7cec-b7c4-6638-5d34" hidden="true"/>
     <categoryEntry name="ORC BOSS" id="b060-648a-8c55-c7c6" hidden="true"/>
     <categoryEntry name="SHAMAN" id="c551-3880-4822-c6c0" hidden="true"/>
+    <categoryEntry name="Faction: Beastmen Brayherds" id="a265-1c26-e439-8f2c" hidden="true"/>
+    <categoryEntry name="Faction: Kingdom of Bretonnia" id="31d7-4049-b1ba-f056" hidden="true"/>
+    <categoryEntry name="Faction: The Empire of Man" id="e5f1-f9ee-d533-b2dc" hidden="true"/>
+    <categoryEntry name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" id="c796-bbb0-377c-76b1" hidden="true"/>
+    <categoryEntry name="Faction: Orc and Goblin Tribes" id="96f6-a6de-3328-b74c" hidden="true"/>
+    <categoryEntry name="Faction: Chaos Dwarfs" id="a37d-c797-76ec-1c53" hidden="true"/>
+    <categoryEntry name="Faction: Daemons of Chaos" id="1f7f-18ff-388d-f1f3" hidden="true"/>
+    <categoryEntry name="Faction: Dark Elves" id="f64e-146a-86bd-73da" hidden="true"/>
+    <categoryEntry name="Faction: Dwarfen Mountain Holds" id="f4fd-aa79-6ff3-1ea9" hidden="true"/>
+    <categoryEntry name="Faction: High Elf Realms" id="1c06-7519-6638-3075" hidden="true"/>
+    <categoryEntry name="Faction: Kingdom of Bretonnia - Errantry Crusade" id="6acb-f99a-8d48-1c3d" hidden="true"/>
+    <categoryEntry name="Faction: Lizardmen" id="be26-401b-c3e5-1869" hidden="true"/>
+    <categoryEntry name="Faction: Ogre Kingdoms" id="4c95-8c52-22e7-15dc" hidden="true"/>
+    <categoryEntry name="Faction: Orc and Goblin Tribes - Nomadic Waagh!" id="f89b-a1c3-e6eb-e69a" hidden="true"/>
+    <categoryEntry name="Faction: Orc and Goblin Tribes - Troll Horde" id="f812-7780-6897-718b" hidden="true"/>
+    <categoryEntry name="Faction: Skaven" id="ed3f-1102-3044-59f5" hidden="true"/>
+    <categoryEntry name="Faction: Tomb Kings of Khemri" id="6850-3df1-29ed-581" hidden="true"/>
+    <categoryEntry name="Faction: Tomb Kings: Mortuary Cult" id="22ae-234f-ffd2-6c4f" hidden="true"/>
+    <categoryEntry name="Faction: Tomb Kings - Nehekharan Royal Host" id="fdc8-bc34-f83d-4833" hidden="true"/>
+    <categoryEntry name="Faction: Vampire Counts" id="7345-d692-6f6a-d6f6" hidden="true"/>
+    <categoryEntry name="Faction: Warriors of Chaos" id="75a1-ee95-da32-b765" hidden="true"/>
+    <categoryEntry name="Faction: Wood Elf Realms" id="f9f5-dd21-7903-b9c" hidden="true"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
@@ -581,7 +603,7 @@
             </modifier>
           </modifiers>
         </infoLink>
-        <infoLink name="Oi! Dis Way! " id="9626-6d51-af3b-17f0" hidden="true" type="profile" targetId="b86c-c3e0-2570-2598">
+        <infoLink name="Oi! Dis Way!" id="9626-6d51-af3b-17f0" hidden="true" type="profile" targetId="b86c-c3e0-2570-2598">
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
@@ -590,7 +612,7 @@
             </modifier>
           </modifiers>
         </infoLink>
-        <infoLink name="Troll Tongue " id="d736-31e4-b311-cd8a" hidden="true" type="profile" targetId="fbb4-47e0-d36f-85a1">
+        <infoLink name="Troll Tongue" id="d736-31e4-b311-cd8a" hidden="true" type="profile" targetId="fbb4-47e0-d36f-85a1">
           <modifiers>
             <modifier type="set" value="false" field="hidden">
               <conditions>
@@ -13338,15 +13360,15 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
     </profile>
     <profile name="Enhanced Regeneration" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ce1d-7cad-99ee-ec4f">
       <characteristics>
-        <characteristic name="Description" id="7551-96d-6a19-e040" hidden="false" typeId="9f84-4221-785a-db50">Models with the Regeneration (X+) special rule within a Troll Horde army may re-roll any failed Regeneration saves against Wounds caused by non-magical attacks. </characteristic>
+        <characteristic name="Description" id="7551-96d-6a19-e040" hidden="false" typeId="9f84-4221-785a-db50">Models with the Regeneration (X+) special rule within a Troll Horde army may re-roll any failed Regeneration saves against Wounds caused by non-magical attacks.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Oi! Dis Way! " typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b86c-c3e0-2570-2598">
+    <profile name="Oi! Dis Way!" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b86c-c3e0-2570-2598">
       <characteristics>
         <characteristic name="Description" id="8c52-71c9-eef5-f674" hidden="false" typeId="9f84-4221-785a-db50">Unless the character is fleeing, friendly Troll Mobs within a Troll Horde army that are within the Command range of an Orc Shaman, Goblin Shaman or Troll Hag can use the Leadership characteristic of that character instead of their own.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Troll Tongue " typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="fbb4-47e0-d36f-85a1">
+    <profile name="Troll Tongue" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="fbb4-47e0-d36f-85a1">
       <characteristics>
         <characteristic name="Description" id="431e-fec-d87e-6b3c" hidden="false" typeId="9f84-4221-785a-db50">In addition to the Lores of Magic they may normally know spells from, Orc Shamans and Goblin Shamans within a Troll Horde army may know spells from the Lore of Troll Magic.</characteristic>
       </characteristics>
