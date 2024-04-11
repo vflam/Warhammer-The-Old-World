@@ -32,10 +32,16 @@ export default {
           continue;
         }
         // Arcane Journals dont have shared entries but are allowed magic items from their parent book
-        const entries = cat.sharedSelectionEntries;
+        const entries = cat.sharedSelectionEntries || cat.entryLinks;
         if (entries) {
           for (let unit of entries) {
             if (unit.type === "unit" || unit.target?.type === "unit") {
+              // Already has category, skip
+              if (
+                unit.categoryLinks.find((elt) => elt.targetId === category.id)
+              ) {
+                continue;
+              }
               $store.add_node("categoryLinks", unit, {
                 name: category.name,
                 primary: false,
