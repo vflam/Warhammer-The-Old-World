@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="105" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="107" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Orc Mobs" hidden="false" id="51e8-1471-ce4c-d5dd">
       <profiles>
@@ -1619,10 +1619,18 @@
                 </modifier>
                 <modifier type="increment" value="1" field="318a-4ec5-b7e0-6e33">
                   <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="false"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
                   </repeats>
                 </modifier>
               </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -6096,9 +6104,16 @@
                 <entryLink import="true" name="Battle Magic" hidden="false" id="d7e7-f37-f207-3519" type="selectionEntry" targetId="5b2e-35c6-f987-741e" sortIndex="2" defaultAmount="1"/>
               </entryLinks>
               <constraints>
-                <constraint type="min" value="2" field="selections" scope="parent" shared="true" id="e1f7-5ad6-7136-876a-min" includeChildSelections="false"/>
-                <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="e1f7-5ad6-7136-876a-max" includeChildSelections="false"/>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="e1f7-5ad6-7136-876a-min" includeChildSelections="false"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e1f7-5ad6-7136-876a-max" includeChildSelections="false"/>
               </constraints>
+              <modifiers>
+                <modifier type="set" value="2" field="e1f7-5ad6-7136-876a-max">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="8123-d36e-9442-13a1" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" id="267f-91b0-15b1-b207" hidden="false" sortIndex="4">
               <entryLinks>
@@ -6398,6 +6413,17 @@
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Standard Bearer" hidden="false" id="d209-a69c-75ec-8688">
+          <costs>
+            <cost name="pts" id="b530-1b84-c5b8-a01c" hidden="false" typeId="points" value="10"/>
+          </costs>
+          <infoLinks>
+            <infoLink name="Standard Bearer" id="217c-7695-4d1-937d" hidden="false" type="profile" targetId="bcf8-d942-102e-b155"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d266-8b22-15d1-44ac" includeChildSelections="false"/>
+          </constraints>
         </selectionEntry>
       </selectionEntries>
       <comment>Mount</comment>
@@ -7883,6 +7909,43 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
         <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="7e14-2405-a3b7-2882" includeChildSelections="true"/>
       </constraints>
       <comment>No Warhall</comment>
+    </entryLink>
+    <entryLink import="true" name="Troll Hag" hidden="false" id="6ad8-4621-6ed6-9409" type="selectionEntry" targetId="cc7549d2-1d43331c">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="1e28-838a-c1c8-17f7" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="1" field="1e28-838a-c1c8-17f7">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="7255-5510-3bf2-87a6" shared="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="afd2-472f-d0bd-942f" shared="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="398c-8fd9-5aae-a201" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <modifierGroups>
+        <modifierGroup type="and">
+          <modifiers>
+            <modifier type="set" value="1" field="1e28-838a-c1c8-17f7"/>
+          </modifiers>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="7255-5510-3bf2-87a6" shared="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="afd2-472f-d0bd-942f" shared="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="398c-8fd9-5aae-a201" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifierGroup>
+      </modifierGroups>
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="e5b-53b2-f3ff-f7e" targetId="a4cc-15c9-cfae-1b3b" primary="false"/>
+      </categoryLinks>
     </entryLink>
   </entryLinks>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
