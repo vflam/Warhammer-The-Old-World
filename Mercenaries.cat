@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="true" id="12a0-32cd-11d6-f952" name="Mercenaries" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="99" revision="4" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="true" id="12a0-32cd-11d6-f952" name="Mercenaries" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="99" revision="5" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Badlands Ogre Bulls" hidden="false" id="a4af-ea3a-49ea-d56e" collective="false">
       <profiles>
@@ -23,6 +23,30 @@
               </modifiers>
             </infoLink>
             <infoLink name="Base (40x40)" id="f392d191-93ba5ae7" hidden="false" type="profile" targetId="1b54-27fc-b510-61b8"/>
+            <infoLink name="Light Armour" id="a87f-d977-983d-844" hidden="true" type="profile" targetId="dbb2-4d85-84c2-528c">
+              <modifierGroups>
+                <modifierGroup type="and">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden"/>
+                  </modifiers>
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="a4af-ea3a-49ea-d56e" childId="aa9a-ec9a-f34d-6fcd" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifierGroup>
+              </modifierGroups>
+            </infoLink>
+            <infoLink name="Heavy Armour" id="1168-391d-e12-a0b4" hidden="true" type="profile" targetId="c56e-8d1b-bb4-de99">
+              <modifierGroups>
+                <modifierGroup type="and">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden"/>
+                  </modifiers>
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="a4af-ea3a-49ea-d56e" childId="26b-5fa0-79fd-2fc1" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifierGroup>
+              </modifierGroups>
+            </infoLink>
           </infoLinks>
           <costs>
             <cost name="pts" id="2f56-c7ea-61b5-f2c" hidden="false" typeId="points" value="31"/>
@@ -34,15 +58,9 @@
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="cfe21ffc-e48ec86"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Light Armour" hidden="false" id="7d506cad-240d0463" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="2">
-              <constraints>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="63b9c272-eb57433c"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="6da64a78-77ed8262"/>
-              </constraints>
-            </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Command" id="9a11-1d31-4324-c203" hidden="false" sortIndex="3">
+            <selectionEntryGroup name="Command" id="9a11-1d31-4324-c203" hidden="false" sortIndex="2">
               <selectionEntries>
                 <selectionEntry type="upgrade" import="true" name="Crusher" hidden="false" id="f6d1e456-6f867d20">
                   <infoLinks>
@@ -50,7 +68,7 @@
                     <infoLink name="Base (40x40)" id="b7f781ac-26d584f6" hidden="false" type="profile" targetId="1b54-27fc-b510-61b8"/>
                   </infoLinks>
                   <costs>
-                    <cost name="pts" id="a09-8011-35bb-12c0" hidden="false" typeId="points" value="6"/>
+                    <cost name="pts" typeId="points" value="7"/>
                   </costs>
                   <entryLinks>
                     <entryLink import="true" name="Hand Weapon" hidden="false" id="fd22eb4c-caa64d96" type="selectionEntry" targetId="721d-36e3-388a-c0d6">
@@ -85,6 +103,13 @@
                   <infoLinks>
                     <infoLink name="Standard Bearer" id="392c-14c8-5970-e193" hidden="false" type="profile" targetId="bcf8-d942-102e-b155"/>
                   </infoLinks>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="false" id="ada4-cc76-eaeb-55f5" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6">
+                      <constraints>
+                        <constraint type="max" value="50" field="points" scope="parent" shared="true" id="9606-f7e-5b1e-d0c7"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
                 </selectionEntry>
                 <selectionEntry type="upgrade" import="true" name="Musician" hidden="false" id="87c5-7146-df14-63d3">
                   <costs>
@@ -99,8 +124,11 @@
                   </infoLinks>
                 </selectionEntry>
               </selectionEntries>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e087-920a-e631-67ef" includeChildSelections="false"/>
+              </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Weapons" id="4d7b-6e17-8fb0-2092" hidden="false" sortIndex="4">
+            <selectionEntryGroup name="Weapons" id="4d7b-6e17-8fb0-2092" hidden="false" sortIndex="3">
               <entryLinks>
                 <entryLink import="true" name="Additional Hand Weapon" hidden="false" id="1703-ea43-5dab-841a" type="selectionEntry" targetId="8943-3e16-db2a-b7f3">
                   <costs>
@@ -152,9 +180,33 @@
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Faction: Orc and Goblin Tribes" hidden="false" id="3f4b-2f60-d19-879c" targetId="96f6-a6de-3328-b74c" primary="false"/>
-      </categoryLinks>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Armour" id="4f25-9554-cdd8-b2f6" hidden="false">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="49cd-71a7-c0c1-e224-min" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="49cd-71a7-c0c1-e224-max" includeChildSelections="false"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Light Armour" hidden="false" id="aa9a-ec9a-f34d-6fcd">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2697-bfa9-12af-b2be" includeChildSelections="false"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Heavy Armour" hidden="false" id="26b-5fa0-79fd-2fc1">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="487c-f73e-24f0-3252" includeChildSelections="false"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="4" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Bonegrinder Giant" hidden="false" id="514-eadb-6386-ff1a" collective="false">
       <profiles>
@@ -221,9 +273,6 @@
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <categoryLinks>
-        <categoryLink name="Faction: Orc and Goblin Tribes" hidden="false" id="a9f1-e41-18ad-442e" targetId="96f6-a6de-3328-b74c" primary="false"/>
-      </categoryLinks>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedProfiles>
@@ -355,4 +404,7 @@ Bonegrinder Giant Attacks Table
       <comment>No Warhall</comment>
     </entryLink>
   </entryLinks>
+  <catalogueLinks>
+    <catalogueLink type="catalogue" name="Magic Items" id="d5a5-f7ae-f835-f1c5" targetId="6c22-b0e4-7c83-f9ce"/>
+  </catalogueLinks>
 </catalogue>

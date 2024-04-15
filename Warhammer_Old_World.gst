@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="101" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="102" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -94,6 +94,7 @@
     <categoryEntry name="Faction: Vampire Counts" id="7345-d692-6f6a-d6f6" hidden="true"/>
     <categoryEntry name="Faction: Warriors of Chaos" id="75a1-ee95-da32-b765" hidden="true"/>
     <categoryEntry name="Faction: Wood Elf Realms" id="f9f5-dd21-7903-b9c" hidden="true"/>
+    <categoryEntry name="Commander of the Empire" id="94df-cedb-8070-80ec" hidden="true"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
@@ -122,6 +123,11 @@
             <modifier type="set" value="33" field="563-332d-aa18-dad">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="33" field="563-332d-aa18-dad">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="5e58-9ce8-a93c-272d" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -13475,7 +13481,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Light Armour" hidden="false" id="7cab-40e6-f134-de78" collective="true">
       <infoLinks>
-        <infoLink name="Light Armour" hidden="false" type="profile" id="95b2-9d59-c3c8-393b" targetId="dbb2-4d85-84c2-528c"/>
+        <infoLink name="Light Armour" hidden="true" type="profile" id="95b2-9d59-c3c8-393b" targetId="dbb2-4d85-84c2-528c"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d469-faaa-5523-f75f"/>
