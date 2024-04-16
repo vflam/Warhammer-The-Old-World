@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="110" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="111" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Orc Mobs" hidden="false" id="51e8-1471-ce4c-d5dd">
       <profiles>
@@ -1798,7 +1798,7 @@
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="791-a822-85cc-572c" sortIndex="2">
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Boss" hidden="false" id="853e-7188-7f50-e12f" sortIndex="3">
+            <selectionEntry type="model" import="true" name="Boss" hidden="false" id="853e-7188-7f50-e12f" sortIndex="3" subType="crew">
               <infoLinks>
                 <infoLink name="Spider Rider" hidden="false" type="profile" id="4310-24cd-4e2-5bb3" targetId="1ca5-ad79-2c1-6a48">
                   <modifiers>
@@ -1820,7 +1820,7 @@
                 <categoryLink targetId="83a1-945c-564c-84af" id="a2-c52d-62bd-e34c" primary="false" name="CHAMPION"/>
               </categoryLinks>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Musician" hidden="false" id="c4a-8dd8-74fb-c3f2" sortIndex="1">
+            <selectionEntry type="model" import="true" name="Musician" hidden="false" id="c4a-8dd8-74fb-c3f2" sortIndex="1" subType="crew">
               <infoLinks>
                 <infoLink name="Musician" hidden="false" type="profile" id="3f6b-5a16-3a57-d1ea" targetId="40f2-dd77-f0ca-3663"/>
               </infoLinks>
@@ -1832,7 +1832,7 @@
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="478e-f7e-70d1-c934"/>
               </constraints>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Standard Bearer" hidden="false" id="c6c7-44ba-9c0d-5c50" sortIndex="2">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="c6c7-44ba-9c0d-5c50" sortIndex="2" subType="crew">
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="3aac-d203-7459-eecd" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
@@ -2428,30 +2428,51 @@
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="445f-20d9-23e6-d5f7">
           <infoLinks>
-            <infoLink name="Tusker Charge" hidden="false" id="e964-8954-3518-af2b" type="profile" targetId="c392-507a-daf5-126"/>
-            <infoLink name="Armoured Hide" hidden="false" id="a18c-35d1-d336-e9e5" type="profile" targetId="5450-cbf1-3e74-254a">
+            <infoLink name="Tusker Charge" hidden="true" id="e964-8954-3518-af2b" type="profile" targetId="c392-507a-daf5-126">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7dce-b0f0-2217-2820" shared="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="d768-7cf0-de0a-c249" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Armoured Hide" hidden="true" id="a18c-35d1-d336-e9e5" type="profile" targetId="5450-cbf1-3e74-254a">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7dce-b0f0-2217-2820" shared="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="d768-7cf0-de0a-c249" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Counter Charge" hidden="true" id="edcc-a6aa-d018-4027" type="profile" targetId="5186-798d-69d-6545">
               <modifiers>
                 <modifier type="set" value="true" field="hidden">
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="d199-3d8-1b92-465d" shared="true"/>
                   </conditions>
                 </modifier>
-              </modifiers>
-            </infoLink>
-            <infoLink name="Counter Charge" hidden="false" id="edcc-a6aa-d018-4027" type="profile" targetId="5186-798d-69d-6545">
-              <modifiers>
-                <modifier type="set" value="true" field="hidden">
+                <modifier type="set" value="false" field="hidden">
                   <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="d199-3d8-1b92-465d" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7dce-b0f0-2217-2820" shared="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="d768-7cf0-de0a-c249" shared="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
             </infoLink>
-            <infoLink name="Swiftstride" hidden="false" id="f406-a154-53fe-3539" type="profile" targetId="dc91-48b3-3696-217">
+            <infoLink name="Swiftstride" hidden="true" id="f406-a154-53fe-3539" type="profile" targetId="dc91-48b3-3696-217">
               <modifiers>
-                <modifier type="set" value="true" field="hidden">
+                <modifier type="set" value="false" field="hidden">
                   <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="d199-3d8-1b92-465d" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7dce-b0f0-2217-2820" shared="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="d768-7cf0-de0a-c249" shared="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
@@ -2462,6 +2483,8 @@
                 <modifier type="set" value="false" field="hidden">
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="d03c-d17e-e3f7-d3fd" shared="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="d768-7cf0-de0a-c249" shared="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7dce-b0f0-2217-2820" shared="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
@@ -2931,7 +2954,7 @@
               <costs>
                 <cost name="pts" typeId="points" value="5"/>
               </costs>
-              <comment>upgrades: 954a-9a21-4f58-64ce</comment>
+              <comment>upgrades: e235-ad57-e069-77d0</comment>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="13a9-4637-28ca-be7c"/>
               </constraints>
@@ -5494,8 +5517,8 @@
         </entryLink>
         <entryLink import="true" name="Goblin Crew" hidden="false" id="cd1f-771-5552-b2d6" type="selectionEntry" targetId="e376-11cb-cc71-3671" collective="true" sortIndex="2">
           <constraints>
-            <constraint type="min" value="8" field="selections" scope="parent" shared="true" id="4cf6-ce2c-7ced-1872"/>
-            <constraint type="max" value="8" field="selections" scope="parent" shared="true" id="1fee-e711-edc0-7cad"/>
+            <constraint type="min" value="3" field="selections" scope="parent" shared="true" id="4cf6-ce2c-7ced-1872"/>
+            <constraint type="max" value="3" field="selections" scope="parent" shared="true" id="1fee-e711-edc0-7cad"/>
           </constraints>
           <categoryLinks>
             <categoryLink name="CHARIOT CREW" hidden="false" id="1579-3e53-6179-48d0" targetId="4cf7-bf85-308d-c29a" primary="false"/>
@@ -5538,7 +5561,7 @@
       <modifiers>
         <modifier type="increment" value="5" field="points">
           <conditions>
-            <condition type="atLeast" value="3" field="selections" scope="parent" childId="3b70-4847-3b94-ba3c" shared="true" includeChildSelections="true"/>
+            <condition type="atLeast" value="3" field="selections" scope="self" childId="3b70-4847-3b94-ba3c" shared="true" includeChildSelections="false"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -6511,10 +6534,9 @@
     </profile>
     <profile name="Tusker Charge" hidden="false" id="c392-507a-daf5-126" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="46" publicationId="7c89-736c-3139-24a0">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">During a turn in which it charged, a War Boar’s Tusks (hand weapon) have a Strength characteristic of S+1 and an Armour Piercing characteristic of -1.
+        <characteristic name="Description" id="bf1a-f18e-ffb-dfa2" hidden="false" typeId="9f84-4221-785a-db50">During a turn in which it charged, a War Boar’s Tusks (hand weapon) have a Strength characteristic of S+1 and an Armour Piercing characteristic of -1.
 
- 
- Note that this special rule only applies to attacks made by a War Boar, not to their rider, a chariot or its crew.</characteristic>
+Note that this special rule only applies to attacks made by a War Boar, not to their rider, a chariot or its crew.</characteristic>
       </characteristics>
     </profile>
     <profile name="Waaagh!" hidden="false" id="7711-627f-5ae5-cc7c" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="46" publicationId="7c89-736c-3139-24a0">
@@ -7308,7 +7330,7 @@
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Arachnok Spider" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="9a7a-fe6a-aeab-f49a">
+    <profile name="Arachnorok Spider" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="9a7a-fe6a-aeab-f49a">
       <characteristics>
         <characteristic name="M" typeId="cd3b-a5a4-e185-5a9d">7</characteristic>
         <characteristic name="WS" typeId="b007-7d58-4f14-1e01">4</characteristic>
