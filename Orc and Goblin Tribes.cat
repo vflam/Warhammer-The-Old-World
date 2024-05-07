@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="113" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="114" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Orc Mobs" hidden="false" id="51e8-1471-ce4c-d5dd">
       <profiles>
@@ -706,6 +706,15 @@
             <infoLink name="Impetuous" hidden="false" type="profile" id="c290-dafc-a5de-3137" targetId="b664-8530-a988-7ba9"/>
             <infoLink name="Warband" hidden="false" type="profile" id="1db4-6ef5-82ce-67c5" targetId="505f-e12d-2e36-31d0"/>
             <infoLink name="Horde" hidden="false" type="profile" id="fe34-85be-25f-a950" targetId="9cba-89a5-1796-5fe4"/>
+            <infoLink name="Close Order" id="53b4-e580-54a2-82e0" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="7062-dff1-ac19-8a7c" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -821,12 +830,12 @@
               <modifiers>
                 <modifier type="increment" value="1" field="1893-1860-4956-b421">
                   <repeats>
-                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="3468-30e5-51cd-eda0"/>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="3468-30e5-51cd-eda0"/>
                   </repeats>
                 </modifier>
               </modifiers>
               <costs>
-                <cost name="pts" typeId="points" value="1"/>
+                <cost name="pts" typeId="points" value="0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -4610,11 +4619,6 @@
                     <categoryLink targetId="c96a-608-5de4-b943" id="7530-3f06-9241-1464" primary="false" name="MOUNT"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Arachnarok Spider" hidden="false" type="selectionEntry" id="92ba-3b49-3e2f-7ae6" targetId="1472-2eff-b604-c7" sortIndex="2">
-                  <categoryLinks>
-                    <categoryLink targetId="c96a-608-5de4-b943" id="2420-a279-75aa-1edd" primary="false" name="MOUNT"/>
-                  </categoryLinks>
-                </entryLink>
                 <entryLink import="true" name="Giant Wolf" hidden="false" type="selectionEntry" id="5e3b-5997-392c-f133" targetId="5d79-54f9-120d-31c9" sortIndex="3">
                   <costs>
                     <cost name="pts" typeId="points" value="10"/>
@@ -5583,6 +5587,29 @@
       <categoryLinks>
         <categoryLink name="Light Chariot" hidden="false" id="8b3d-eb05-8c2f-9ad5" targetId="7dce-b0f0-2217-2820" primary="false"/>
       </categoryLinks>
+      <selectionEntries>
+        <selectionEntry type="upgrade" import="true" name="Standard Bearer" hidden="true" id="4949-e884-70b7-4be5">
+          <infoLinks>
+            <infoLink name="Standard Bearer" id="5488-71e4-97a7-1005" hidden="false" type="profile" targetId="bcf8-d942-102e-b155"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="5"/>
+          </costs>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="24b8-1775-81ba-85c1"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink name="Light Chariot" hidden="false" id="6fdd-f816-a022-6009" targetId="7dce-b0f0-2217-2820" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="parent" childId="c96a-608-5de4-b943" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+      </selectionEntries>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Arachnarok Spider" hidden="false" id="1472-2eff-b604-c7">
       <costs>
@@ -5593,7 +5620,7 @@
       </constraints>
       <infoLinks>
         <infoLink name="Base (100x150)" hidden="false" type="profile" id="3dc0-2549-ab73-9924" targetId="a35e-8f23-b67-1efe"/>
-        <infoLink name="Arachnok Spider" hidden="false" type="profile" id="f030-9be7-e0c2-d147" targetId="9a7a-fe6a-aeab-f49a">
+        <infoLink name="Arachnorok Spider" hidden="false" type="profile" id="f030-9be7-e0c2-d147" targetId="9a7a-fe6a-aeab-f49a">
           <modifiers>
             <modifier type="set" value="(+7)" field="83ed-7b82-bf1f-e558">
               <conditions>
@@ -7732,12 +7759,12 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
         </modifier>
       </modifiers>
       <categoryLinks>
-        <categoryLink type="category" name="Special" hidden="false" id="7ef7-87f-9ee-f7b0" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Special" hidden="false" id="7ef7-87f-9ee-f7b0" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Orc Boar Chariots" hidden="false" type="selectionEntry" id="1429-bb8a-4fc2-e3a9" targetId="7990-59e-8323-b39c">
       <categoryLinks>
-        <categoryLink type="category" name="Special" hidden="false" id="1619-323-bae-1890" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Special" hidden="false" id="1619-323-bae-1890" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Giants" hidden="false" type="selectionEntry" id="ecad-9b4e-cb1f-9c9e" targetId="2e4e-ec04-8461-5da3">
@@ -7772,7 +7799,7 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
         </modifier>
       </modifiers>
       <categoryLinks>
-        <categoryLink type="category" name="Rare" hidden="false" id="7c20-180c-6f7c-ef4c" targetId="2bfe-5863-46fe-d284" primary="true"/>
+        <categoryLink name="Rare" hidden="false" id="7c20-180c-6f7c-ef4c" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Snotling Pump Wagons" hidden="false" type="selectionEntry" id="bf38-92d0-bd32-3aeb" targetId="2f44-19e3-996-656b">
@@ -7909,7 +7936,7 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
         <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="8d21-c63b-6f2a-f120" includeChildSelections="true"/>
       </constraints>
       <categoryLinks>
-        <categoryLink type="category" name="Special" hidden="false" id="f9db-465f-c9e1-10af" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Special" hidden="false" id="f9db-465f-c9e1-10af" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Black Orc Mobs" hidden="false" type="selectionEntry" id="dfe5-67e3-1f5b-7ba7" targetId="7b25-6b08-b644-f26f">
