@@ -79,6 +79,8 @@ function fixText(text) {
             result.push("\n", trimmedCurrent)
         } else if (trimmedPrevious === trimmedPrevious.toUpperCase() || trimmedCurrent === trimmedCurrent.toUpperCase()) {
             result.push("\n", trimmedCurrent)
+        } else if (trimmedCurrent.match(/.+:.+/)) {
+            result.push("\n", trimmedCurrent)
         } else {
             result.push(" ", trimmedCurrent)
         }
