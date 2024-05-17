@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="105" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="106" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -12726,8 +12726,13 @@ Related: Missile Weapons, Repeater Crossbow, Repeater Handbow</characteristic>
     </profile>
     <profile name="Doom Diver" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6632-3cb6-e349-972d">
       <characteristics>
-        <characteristic name="Description" id="56bb-26cd-d1a2-e68" hidden="false" typeId="9f84-4221-785a-db50">When shooting a Doom Diver catapult, follow the  Bombardment  special rule as usual.  Once step 2, Scatter, is complete, you may roll a D3 and move the 3&quot; blast template by that many inches in any direction, representing the Doom Diver wildly flapping its arms to guide its erratic flight.
- Should you choose to fire a Doom Diver catapult indirectly, the skill of the crew has no bearing on the accuracy of the shot. If a &apos;Hit!&apos; is rolled on the Scatter dice, use the small arrow above the Hit! symbol to determine the direction of the Scatter as usual, then move the template a number of inches equal to the roll of the Artillery dice minus D3 (to a minimum of zero), representing the efforts of the Doom Diver to steer its flight.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">When shooting a Doom Diver catapult, follow the Bombardment special rule as usual.
+
+
+Once step 2, Scatter, is complete, you may roll a D3 and move the 3&quot; blast template by that many inches in any direction, representing the Doom Diver wildly flapping its arms to guide its erratic flight.
+
+
+ Should you choose to fire a Doom Diver catapult indirectly, the skill of the crew has no bearing on the accuracy of the shot. If a ‘Hit!’ is rolled on the Scatter dice, use the small arrow above the Hit! symbol to determine the direction of the Scatter as usual, then move the template a number of inches equal to the roll of the Artillery dice minus D3 (to a minimum of zero), representing the efforts of the Doom Diver to steer its flight.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
