@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="true" id="6c22-b0e4-7c83-f9ce" name="Magic Items" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="88" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="true" id="6c22-b0e4-7c83-f9ce" name="Magic Items" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="89" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedSelectionEntryGroups>
     <selectionEntryGroup name="Magic Weapons" hidden="false" id="5b7a-30d2-42ea-4e29">
       <selectionEntryGroups>
@@ -1034,6 +1034,15 @@
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="ed3f-1102-3044-59f5" shared="true"/>
                   </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="f3f7-ca43-674e-115f" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="ca7e-d004-ccde-caf3" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5c55-f9d6-b181-92f8" shared="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
             </selectionEntry>
@@ -1897,7 +1906,7 @@
               <profiles>
                 <profile name="Warpstone Armour" typeId="c14f-740-8107-d34b" typeName="Armour" hidden="false" id="8d4c-cebb-935a-e849">
                   <characteristics>
-                    <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">Warpstone Armour is a suit of heavy armour which may be worn by a Wizard without penalty.</characteristic>
+                    <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">Warpstone Armour is a suit of heavy armour which may be purchased and worn by a Wizard, even if they do not have the option to be equipped with armour, a shield or barding, without penalty.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -2227,6 +2236,9 @@
                         <condition type="instanceOf" value="1" field="selections" scope="parent" childId="600c-7d08-5be1-fe0c" shared="true"/>
                         <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5165-d052-cfc2-5887" shared="true"/>
                         <condition type="instanceOf" value="1" field="selections" scope="parent" childId="2c85-5f2b-9288-1257" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2c85-5f2b-9288-1257" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -7904,7 +7916,7 @@ Note that it is possible the Wizard might generate the spell they just forgot, o
     </profile>
     <profile name="The Accursed Armour" typeId="fefe-6a57-a203-edf9" typeName="Magic Armour" hidden="false" id="3c9c-bf4c-328c-785">
       <characteristics>
-        <characteristic name="Description" typeId="d6b2-9b2a-d88e-eec9">Models whose troop type is ‘infantry’ or ‘cavalry’ only. The Accursed Armour is a suit of full plate armour. In addition, its wearer has a +1 modifier to their Toughness characteristic, but suffers a -1 modifier to their Weapon Skill and Initiative characteristics.</characteristic>
+        <characteristic name="Description" typeId="d6b2-9b2a-d88e-eec9">Models whose troop type is ‘infantry’ or ‘cavalry’ only. The Accursed Armour is a suit of full plate armour. In addition, its wearer has a +1 modifier to their Toughness characteristic, but suffers a -1 modifier to their Weapon Skill and Initiative characteristics (to a minimum of 1).</characteristic>
       </characteristics>
     </profile>
     <profile name="Crown Of The Damned" typeId="5c1d-13f3-7dd6-e817" typeName="Talismans" hidden="false" id="7dc1-49c7-8ec0-d734">
@@ -8053,11 +8065,13 @@ R: N/A S: 4 AP: -2 Special Rules: Breath Weapon, Flaming Attacks, Magical Atta
     <profile name="The Fellblade" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="9f59-6293-69e1-71a4">
       <characteristics>
         <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
-        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">10</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S+3</characteristic>
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">N/A</characteristic>
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Magical Attacks, Multiple Wounds (D3)</characteristic>
-        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">No armour, Ward or Regeneration saves are permitted against wounds caused by this weapon.
-However, during the Command sub-phase of their turn, the wielder of the Fellblade must roll a D6. On a roll of 1, they lose a single Wound.</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Characters whose Troop Type is “infantry” only.
+
+No armour, Ward or Regeneration saves are permitted against wounds caused by this weapon.
+However, during the Command sub-phase of their turn, the wielder of the Fellblade must roll a D3. On a roll of 1, they lose a single Wound.</characteristic>
       </characteristics>
     </profile>
     <profile name="Weeping Blade" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="36bb-383b-a9ad-dc12">
@@ -8598,7 +8612,14 @@ Note that this is a modifier to the result of a roll – it does not negate a ro
     </profile>
     <profile id="ab8b0ffc-652a5c86" name="Wyrmbreath Vial" hidden="false" typeId="d29c-a3fb-dcdf-29d6" typeName="Enchanted Items">
       <characteristics>
-        <characteristic name="Description" typeId="cea7-7573-475d-cc1d">A Wyrmbreath Vial may only be taken by a model in a Bretonnian Exiles Army of Infamy. Single Use. The Wyrmbreath Vial is a breath weapon with the following profile:</characteristic>
+        <characteristic name="Description" typeId="cea7-7573-475d-cc1d">A Wyrmbreath Vial may only be taken by a model in a Bretonnian Exiles Army of Infamy. Single Use. The Wyrmbreath Vial is a breath weapon with the following profile:
+
+|||||
+|:--|:--|:--|:--|
+|R|S|AP|Special Rules|
+|N/A|4|-1|Breath Weapon, Flaming Attacks, Magical Attacks|
+
+</characteristic>
       </characteristics>
     </profile>
     <profile id="d6a52bc4-62b0638e" name="Heart Of The Wilds" hidden="false" typeId="65d6-7512-2a53-bd6c" typeName="Arcane Items">

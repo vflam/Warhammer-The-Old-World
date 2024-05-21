@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="106" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="107" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -3815,10 +3815,12 @@ Related: Rune Magic</characteristic>
     </profile>
     <profile name="Daemonic Gifts &amp; Icons" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4941-1995-a74f-1a6f">
       <characteristics>
-        <characteristic name="Description" id="9b76-d17e-cd64-ba8e" hidden="false" typeId="9f84-4221-785a-db50">These sections detail Daemonic Gifts and Icons – unique magic items which can be purchased by models within a Daemons of Chaos army in the same way as Common magic items, as described in the  Warhammer: the Old World  rulebook.
- Some units have the option to carry Daemonic Icons. To do so, the unit must include a standard bearer. The only character that can carry a Daemonic Icon is your army’s Daemonic Locus who, in addition to their usual allowance of points to spend on Daemonic Gifts, can purchase a single Daemonic Icon with no points limit. 
- 
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">The pages that follow detail Daemonic Gifts and Icons – unique magic items which can be purchased only by models within a Daemons of Chaos army. These work like Common magic items, as described in the Warhammer: the Old World rulebook, however, models within a Daemons of Chaos army cannot purchase Common magic items.
 
+
+Daemonic Gifts do not aPect a model’s mount (should it have one).
+
+Some units have the option to carry Daemonic Icons. To do so, the unit must include a standard bearer. The only character that can carry a Daemonic Icon is your army’s Daemonic Locus who, in addition to their usual allowance of points to spend on Daemonic Gifts, can purchase a single Daemonic Icon with no points limit.
 
 Related:
 Chaotic Gifts
@@ -4593,16 +4595,16 @@ Frostblade (60 pts)
     </profile>
     <profile name="Vampiric Powers" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b2f7-a7a3-5bd4-798a">
       <characteristics>
-        <characteristic name="Description" id="c62b-ad8f-8d6a-8b76" hidden="false" typeId="9f84-4221-785a-db50">Though they share the curse of undeath, Vampires are unique creatures with myriad abilities and traits. Some dedicate their existence to mastering warfare, whilst others delve into arcane lore, create nations of Undead through political manipulation, or willingly succumb to their bestial nature.
- To represent their varying attributes, some models may be given Vampiric Powers. Each Vampiric Power may only be chosen once per army.
- 
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Though they share the curse of undeath, Vampires are unique creatures with myriad abilities and traits. Some dedicate their existence to mastering warfare, whilst others delve into arcane lore, create nations of Undead through political manipulation, or willingly succumb to their bestial nature.
+&quot;To represent their varying attributes, some models may be given Vampiric Powers. A Vampiric Power does not aPect a model’s mount (should it have one). Each Vampiric Power may only be chosen once per army.
+
 Curse of the Revenant (50 pts)
- - Beguile (40 pts)
- - Flying Horror (35 pts)
- - Dark Acolyte (30 pts)
- - Master of the Black Arts (30 pts)
- - Supernatural Horror (20 pts)
- - Lord of the Night (15 pts)</characteristic>
+- Beguile (40 pts)
+- Flying Horror (35 pts)
+- Dark Acolyte (30 pts)
+- Master of the Black Arts (30 pts)
+- Supernatural Horror (20 pts)
+- Lord of the Night (15 pts)</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
