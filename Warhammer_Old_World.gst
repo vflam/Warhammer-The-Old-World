@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="108" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="109" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -680,11 +680,6 @@
         <characteristicType id="1adf-d238-57ca-2226" name="Base Size"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Weapon" hidden="false" id="cc88-6a7d-41c9-d63e" sortIndex="2">
-      <characteristicTypes>
-        <characteristicType id="47f2-ecee-cae0-9ef9" name="Description"/>
-      </characteristicTypes>
-    </profileType>
     <profileType name="Special Rule" hidden="false" id="c1ac-c1c8-f9d5-9673" sortIndex="25">
       <characteristicTypes>
         <characteristicType id="9f84-4221-785a-db50" name="Description"/>
@@ -801,11 +796,6 @@
       </characteristics>
       <comment>#noscript</comment>
     </profile>
-    <profile name="Brace of Repeater Handbows" hidden="false" id="fca0-3c32-72da-53b9" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12&quot; S3 Multiple Shots (4), Quick Shot</characteristic>
-      </characteristics>
-    </profile>
     <profile name="Hatred" hidden="false" id="f4b3-18af-16bf-78dd" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule may re-roll any failed rolls To Hit made against a hatred enemy during the first round of combat.
@@ -827,13 +817,6 @@
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Quick Shot</characteristic>
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
-      </characteristics>
-    </profile>
-    <profile name="Brace of Pistols" hidden="false" id="cdb0-f5d2-68e0-205f" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12&quot; S4 AP-1 Armour Bane(1), Multiple Shots (2), Quick Shot.
-
- In combat: Extra Attacks (+1), Requires To Hands.</characteristic>
       </characteristics>
     </profile>
     <profile name="Stubborn" hidden="false" id="e351-bbd6-f470-b604" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="178" publicationId="768b-3da1-a182-a1d8">
@@ -923,16 +906,6 @@
     <profile name="Light Armour" hidden="false" id="dbb2-4d85-84c2-528c" typeId="c14f-740-8107-d34b" typeName="Armour">
       <characteristics>
         <characteristic name="Description" typeId="adcd-c649-e6fc-a9f6">Armour Value 6+</characteristic>
-      </characteristics>
-    </profile>
-    <profile name="Warbow" hidden="false" id="20c1-9325-e604-a558" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Range 24&quot; S S, Volley Fire</characteristic>
-      </characteristics>
-    </profile>
-    <profile name="Additional Hand Weapon" hidden="false" id="300e-9667-fc8c-c763" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Extra Atacks (+1), Require Two Hands</characteristic>
       </characteristics>
     </profile>
     <profile name="Throwing Spear" hidden="false" id="8a6-cc93-b5fd-6636" typeId="a378-c633-912d-11ce" typeName="Weapon" page="215" publicationId="768b-3da1-a182-a1d8">
@@ -1469,11 +1442,6 @@ If the only other remaining models in a unit are the champion and standard beare
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Cannon (of any type) do not use their crew’s Ballistic Skill. Instead, they shoot using the ‘Cannon Fire’ special rule. This weapon uses the Black Powder Misfire table.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Stone Thrower" hidden="false" id="3142-ada8-328d-1615" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12-60&quot; S4(8) AP-1(-3) Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3+1)</characteristic>
-      </characteristics>
-    </profile>
     <profile name="Organ gun" hidden="false" id="5635-efd8-13b6-c841" typeId="a378-c633-912d-11ce" typeName="Weapon" page="228" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="R" typeId="2360-c777-5e07-ed58">30&quot;</characteristic>
@@ -1564,11 +1532,6 @@ If the only other remaining models in a unit are the champion and standard beare
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Repeater Pistol" hidden="false" id="f675-db0d-397c-d873" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12&quot; S4 AP-1 Armour Bane (1), Multiple Shots (3), Quick Shot</characteristic>
-      </characteristics>
-    </profile>
     <profile name="Repeater handgun" hidden="false" id="7f58-91d4-ee6c-3cb7" typeId="a378-c633-912d-11ce" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="R" typeId="2360-c777-5e07-ed58">24&quot;</characteristic>
@@ -1605,11 +1568,6 @@ If the only other remaining models in a unit are the champion and standard beare
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Two Hand Weapon" hidden="false" id="1f58-a56f-e54c-ddc5" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">Extra Atacks (+1), Require Two Hands</characteristic>
-      </characteristics>
-    </profile>
     <profile name="Sling" hidden="false" id="eee6-7b1-58de-6ad2" typeId="a378-c633-912d-11ce" typeName="Weapon" page="219" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="R" typeId="2360-c777-5e07-ed58">18&quot;</characteristic>
@@ -1637,11 +1595,6 @@ If the only other remaining models in a unit are the champion and standard beare
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
-    <profile name="Wicked Claws" hidden="false" id="14c0-c7a7-dd09-ea49" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">AP-2</characteristic>
-      </characteristics>
-    </profile>
     <profile name="Base (round 50)" hidden="false" id="2c87-b5d6-e13b-4082" typeId="1ae4-7f34-4055-fd5f" typeName="Base">
       <characteristics>
         <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">50</characteristic>
@@ -1649,11 +1602,6 @@ If the only other remaining models in a unit are the champion and standard beare
       <modifiers>
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
-    </profile>
-    <profile name="Mortar" hidden="false" id="11c5-c8bc-6ce3-8932" typeId="cc88-6a7d-41c9-d63e" typeName="Weapon">
-      <characteristics>
-        <characteristic name="Description" typeId="47f2-ecee-cae0-9ef9">12-48&quot; S2(6) AP-2(-3) Armour Bane (1), Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
-      </characteristics>
     </profile>
     <profile name="Base (75x50)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="f4be-ad24-1cc9-a6ac">
       <characteristics>
@@ -13408,6 +13356,87 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
         <characteristic name="Description" id="431e-fec-d87e-6b3c" hidden="false" typeId="9f84-4221-785a-db50">In addition to the Lores of Magic they may normally know spells from, Orc Shamans and Goblin Shamans within a Troll Horde army may know spells from the Lore of Troll Magic.</characteristic>
       </characteristics>
     </profile>
+    <profile name="Wicked Claws" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="8382-4e23-e72c-d90">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-2</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">-</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Brace of Repeater Handbows" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="9e65-b907-560d-3a7">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">12&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">3</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Multiple Shots (4), Quick Shot</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Brace of Pistols" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="3f0e-1dc6-b425-bf59">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">12&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">4</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane(1), Multiple Shots (2), Quick Shot</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">In combat: Extra Attacks (+1), Requires To Hands</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Warbow" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="d6b8-1ad9-d024-1d72">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">24&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Volley Fire</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Additional Hand Weapon" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="44c2-f355-d5ed-24d7">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Extra Atacks (+1), Require Two Hands</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Mortar" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="2115-8098-83e9-ead7">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">12-48&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">2 (6)</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-2 (-3)</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Stone Thrower" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="bfbc-c435-2046-4691">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">12-60&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">4 (8)</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1 (-3)</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3+1)</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Repeater Pistol" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="76e2-58f8-9f0d-2fce">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">12&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">4</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Multiple Shots (3), Quick Shot</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Two Hand Weapon" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="9bc5-ae1d-c50c-3442">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Extra Atacks (+1), Require Two Hands</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -13529,7 +13558,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f0af-c3d3-876d-5263"/>
       </constraints>
       <infoLinks>
-        <infoLink name="Warbow" hidden="false" type="profile" id="7988-5456-f37-1645" targetId="20c1-9325-e604-a558"/>
+        <infoLink name="Warbow" hidden="false" type="profile" id="7988-5456-f37-1645" targetId="d6b8-1ad9-d024-1d72"/>
       </infoLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Additional Hand Weapon" hidden="false" id="8943-3e16-db2a-b7f3" collective="true">
@@ -13537,7 +13566,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="12df-72d-f5b3-d569"/>
       </constraints>
       <infoLinks>
-        <infoLink name="Additional Hand Weapon" hidden="false" type="profile" id="1a2d-de59-94a9-b97d" targetId="300e-9667-fc8c-c763"/>
+        <infoLink name="Additional Hand Weapon" hidden="false" type="profile" id="1a2d-de59-94a9-b97d" targetId="44c2-f355-d5ed-24d7"/>
       </infoLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Pistol" hidden="false" id="d3c7-5222-61e8-9920" collective="true">
@@ -13550,7 +13579,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Brace of Pistols" hidden="false" id="d8bb-85b0-3575-6029">
       <infoLinks>
-        <infoLink name="Brace of Pistols" hidden="false" type="profile" id="da9a-ae92-f6bf-6372" targetId="cdb0-f5d2-68e0-205f"/>
+        <infoLink name="Brace of Pistols" hidden="false" type="profile" id="da9a-ae92-f6bf-6372" targetId="3f0e-1dc6-b425-bf59"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bb24-f518-d872-575c-max"/>
@@ -13582,7 +13611,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Stone Thrower" hidden="false" id="365a-2626-2fb2-3a69" collective="true">
       <infoLinks>
-        <infoLink name="Stone Thrower" hidden="false" type="profile" id="a8ac-b1de-da49-351" targetId="3142-ada8-328d-1615"/>
+        <infoLink name="Stone Thrower" hidden="false" type="profile" id="a8ac-b1de-da49-351" targetId="bfbc-c435-2046-4691"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e6a-f8b9-767b-e92c"/>
@@ -13625,7 +13654,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cf5f-459a-36b3-81a4"/>
       </constraints>
       <infoLinks>
-        <infoLink name="Two Hand Weapon" hidden="false" type="profile" id="1914-5906-5a1a-2ec5" targetId="1f58-a56f-e54c-ddc5"/>
+        <infoLink name="Two Hand Weapon" hidden="false" type="profile" id="1914-5906-5a1a-2ec5" targetId="9bc5-ae1d-c50c-3442"/>
       </infoLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Flail" hidden="false" id="308a-2562-9266-2151" collective="true">
@@ -13693,7 +13722,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Repeater Pistol" hidden="false" id="6d12-5625-aef5-e25d" collective="true">
       <infoLinks>
-        <infoLink name="Repeater Pistol" hidden="false" type="profile" id="d6c2-8220-bca4-c141" targetId="f675-db0d-397c-d873"/>
+        <infoLink name="Repeater Pistol" hidden="false" type="profile" id="d6c2-8220-bca4-c141" targetId="76e2-58f8-9f0d-2fce"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7b22-afdc-1c29-745c"/>
@@ -13701,7 +13730,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Brace of Repeater Handbows" hidden="false" id="9f47-81ce-2112-83e1" collective="true">
       <infoLinks>
-        <infoLink name="Brace of Repeater Handbows" hidden="false" type="profile" id="dc96-7ebd-c388-3fda" targetId="fca0-3c32-72da-53b9"/>
+        <infoLink name="Brace of Repeater Handbows" hidden="false" type="profile" id="dc96-7ebd-c388-3fda" targetId="9e65-b907-560d-3a7"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bebc-8aba-b2a3-e7a8"/>
@@ -13746,7 +13775,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Wicked Claws" hidden="false" id="7414-cec3-7cd7-a94b" collective="true">
       <infoLinks>
-        <infoLink name="Wicked Claws" hidden="false" type="profile" id="4e04-9a9d-41d7-3e12" targetId="14c0-c7a7-dd09-ea49"/>
+        <infoLink name="Wicked Claws" hidden="false" type="profile" id="4e04-9a9d-41d7-3e12" targetId="8382-4e23-e72c-d90"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f1e2-76b3-2728-2664"/>
@@ -13762,7 +13791,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Mortar" hidden="false" id="b4ec-f8f5-83b4-5cd8" collective="true">
       <infoLinks>
-        <infoLink name="Mortar" hidden="false" type="profile" id="e0aa-bc2b-9600-b9bf" targetId="11c5-c8bc-6ce3-8932"/>
+        <infoLink name="Mortar" hidden="false" type="profile" id="e0aa-bc2b-9600-b9bf" targetId="2115-8098-83e9-ead7"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="74ca-7660-ed4a-7cd6"/>
