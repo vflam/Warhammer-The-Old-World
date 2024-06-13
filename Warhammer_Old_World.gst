@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="109" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="110" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -5708,9 +5708,7 @@ The Greater the Danger
 The Limits of Endurance</characteristic>
       </characteristics>
       <comment>imported</comment>
-      <alias>
-        <undefined/>
-      </alias>
+      <alias/>
     </profile>
     <profile name="Fleeing as a Compulsory Move" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="7aaf-163e-d95f-f65">
       <characteristics>
@@ -7430,9 +7428,7 @@ Related: Ark of Sotek</characteristic>
 Related: What are Special Rules?</characteristic>
       </characteristics>
       <comment>imported</comment>
-      <alias>
-        <undefined/>
-      </alias>
+      <alias/>
     </profile>
     <profile name="Universal Special Rules" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="87df-ec02-e84f-57ac">
       <characteristics>
@@ -10628,26 +10624,22 @@ Related: Stone Throwers</characteristic>
     </profile>
     <profile name="Cannon Fire" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="5a5e-6dc6-10eb-742c">
       <characteristics>
-        <characteristic name="Description" id="378d-35b4-af9e-5c83" hidden="false" typeId="9f84-4221-785a-db50">1. Choose Target Point:  Choose a point within both the war machine&apos;s line of sight and maximum range. This does not have to be an enemy model; it can be a point on the ground. Once you have chosen your target point, mark it with a small marker.
- 2. Fire:  Once the target point has been marked, roll an Artillery dice:
- - If a &apos;Misfire&apos; is rolled, something has gone horribly wrong. Roll immediately on the appropriate Misfire table to determine exactly what.
- - If a number is rolled, move the target point marker that many inches, directly away from the cannon. This is the ‘strike point’ – the point at which the cannonball strikes the ground.
-
- 3. Bounce:  Unless the cannon misfired, the cannonball will bounce from the strike point, tearing through anything in its path. To determine how far the cannonball bounces, roll another Artillery dice:
- - If a &apos;Misfire&apos; is rolled, the cannonball buries itself in the ground and comes to a rest.
- - If a number is rolled, the cannonball bounces, as shown in Fig 226.1. Measure the distance of the bounce from the strike point, directly away from the cannon.
-
-  4. Determine Hits:  Once the strike point and the distance of the bounce have been established, it is time to determine which models (if any) have been hit:
- - Any model whose base lies underneath the strike point is hit automatically.
- - Any model whose base lies under the path of the bouncing cannonball is hit automatically.
-
- However, should a cannonball bounce through a formed unit, it can hit a maximum of:
- - One model per rank, if the cannon lies in the unit’s front or rear arc.
- - One model per file, if the cannon lies in the unit’s flank arc. Models that lie fully beyond the distance of the bounce are not hit.
-
- 5. Crunch:  Sometimes, a bouncing cannonball will encounter something that stops it dead:
- - If the cannonball hits a model whose troop type is  monstrous creature  or  behemoth , it stops immediately. No further models are hit.
- - If the cannonball hits impassable terrain or a high linear obstacle, it stops immediately. No further models are hit.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">1. Choose Target Point: Choose a point within both the war machine&apos;s line of sight and maximum range. This does not have to be an enemy model; it can be a point on the ground. Once you have chosen your target point, mark it with a small marker.
+2. Fire: Once the target point has been marked, roll an Artillery dice:
+    - If a &apos;Misfire&apos; is rolled, something has gone horribly wrong. Roll immediately on the appropriate Misfire table to determine exactly what.
+    - If a number is rolled, move the target point marker that many inches, directly away from the cannon. This is the ‘strike point’ – the point at which the cannonball strikes the ground.
+3. Bounce: Unless the cannon misfired, the cannonball will bounce from the strike point, tearing through anything in its path. To determine how far the cannonball bounces, roll another Artillery dice:
+    - If a &apos;Misfire&apos; is rolled, the cannonball buries itself in the ground and comes to a rest.
+    - If a number is rolled, the cannonball bounces, as shown in Fig 226.1. Measure the distance of the bounce from the strike point, directly away from the cannon.
+4. Determine Hits: Once the strike point and the distance of the bounce have been established, it is time to determine which models (if any) have been hit:
+    - Any model whose base lies underneath the strike point is hit automatically.
+    - Any model whose base lies under the path of the bouncing cannonball is hit automatically.
+However, should a cannonball bounce through a formed unit, it can hit a maximum of:
+    - One model per rank, if the cannon lies in the unit’s front or rear arc.
+    - One model per file, if the cannon lies in the unit’s flank arc. Models that lie fully beyond the distance of the bounce are not hit.
+5. Crunch: Sometimes, a bouncing cannonball will encounter something that stops it dead:
+    - If the cannonball hits a model whose troop type is monstrous creature or behemoth , it stops immediately. No further models are hit.
+    - If the cannonball hits impassable terrain or a high linear obstacle, it stops immediately. No further models are hit.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
