@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="7318-4de6-f164-6575" name="Kingdom of Bretonnia - Errantry Crusade" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="78" revision="8" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="false" id="7318-4de6-f164-6575" name="Kingdom of Bretonnia - Errantry Crusade" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="78" revision="9" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Kingdom of Bretonnia" id="20-9db8-89f5-7779" targetId="f8cb-e518-1881-292"/>
     <catalogueLink type="catalogue" name="The Empire of Man" id="ae74-2637-fc97-c98" targetId="7b8f-602e-29cd-5786"/>
@@ -7,7 +7,7 @@
   <entryLinks>
     <entryLink import="true" name="Duke" hidden="false" id="44dc-1dcc-9a1c-8462" type="selectionEntry" targetId="d629-c87d-c6bf-235d">
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="29f-281c-e2ee-43fd" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="29f-281c-e2ee-43fd" includeChildSelections="true"/>
       </constraints>
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="ad86-4b70-8177-dd2c" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
@@ -17,20 +17,52 @@
     <entryLink import="true" name="Baron" hidden="false" id="3dbf-71f3-1e1e-3b15" type="selectionEntry" targetId="6b9c-516e-c172-370e">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="fc70-ac4-87ab-10a0" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-        <categoryLink name="Baron or Prophetess" hidden="false" id="ec29-3665-2790-ba4a" targetId="532d-eb62-56b2-4cd1" primary="false"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Errantry Crusade" hidden="false" id="cfe0-9072-51d7-cb01" primary="false" targetId="6acb-f99a-8d48-1c3d"/>
       </categoryLinks>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="b443-8300-d189-bc13"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="b443-8300-d189-bc13">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+        <modifier type="decrement" value="1" field="b443-8300-d189-bc13">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="a46d-47dd-297e-dda3" shared="true" roundUp="false"/>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="b112-9ccb-7d23-8f50" shared="true" roundUp="false"/>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="509e-5757-d73a-9c06" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Prophetess" hidden="false" id="a46d-47dd-297e-dda3" type="selectionEntry" targetId="4f9a-7d13-6a17-72dd">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="ac70-9e71-9889-c617" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-        <categoryLink name="Baron or Prophetess" hidden="false" id="6032-406f-9c13-6d62" targetId="532d-eb62-56b2-4cd1" primary="false"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Errantry Crusade" hidden="false" id="ee3d-9a24-5327-3100" primary="false" targetId="6acb-f99a-8d48-1c3d"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="increment" value="1" field="ee44-1717-2e37-96e2">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+        <modifier type="decrement" value="1" field="ee44-1717-2e37-96e2">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="3dbf-71f3-1e1e-3b15" shared="true" roundUp="false"/>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="b112-9ccb-7d23-8f50" shared="true" roundUp="false"/>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="509e-5757-d73a-9c06" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="ee44-1717-2e37-96e2"/>
+      </constraints>
     </entryLink>
     <entryLink import="true" name="Paladin" hidden="false" id="af63-7828-621b-1969" type="selectionEntry" targetId="d7c1-b247-ad76-df23">
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="roster" shared="true" id="d488-b41c-48ce-ae8e" includeChildSelections="true"/>
+        <constraint type="min" value="1" field="selections" scope="force" shared="true" id="d488-b41c-48ce-ae8e" includeChildSelections="true"/>
       </constraints>
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="9b77-2a80-fb77-d996" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
@@ -56,7 +88,7 @@
         <categoryLink name="Units" hidden="false" id="d13a-a81d-d7c6-faf1" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <constraints>
-        <constraint type="min" value="0" field="selections" scope="roster" shared="true" id="d2ec-dc6a-2400-1225" includeChildSelections="true"/>
+        <constraint type="min" value="0" field="selections" scope="force" shared="true" id="d2ec-dc6a-2400-1225" includeChildSelections="true"/>
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="d2ec-dc6a-2400-1225">
@@ -68,13 +100,14 @@
     </entryLink>
     <entryLink import="true" name="Battle Pilgrims &amp; Grail Reliquae" hidden="false" id="5d6-bffc-4159-e560" type="selectionEntry" targetId="573b-ddad-d3fe-b920">
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="476d-e27d-9beb-9ec7" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="force" shared="false" id="476d-e27d-9beb-9ec7" includeChildSelections="true"/>
       </constraints>
       <categoryLinks>
         <categoryLink name="Core" hidden="false" id="ad7b-b028-1114-f875" targetId="f0e3-2e32-8866-ea32" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Errantry Crusade" hidden="false" id="62e8-f2d4-c271-6952" primary="false" targetId="6acb-f99a-8d48-1c3d"/>
         <categoryLink name="Units" hidden="false" id="bbb9-fab1-6696-1522" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <comment>Core</comment>
     </entryLink>
     <entryLink import="true" name="Mounted Knights of the Realm" hidden="false" id="602e-bcc9-f2a8-9bc7" type="selectionEntry" targetId="7fe1-69ab-7c6b-20d0">
       <categoryLinks>
@@ -124,6 +157,7 @@
         <categoryLink name="Faction: Kingdom of Bretonnia - Errantry Crusade" hidden="false" id="d60-17d1-e7b5-13f8" primary="false" targetId="6acb-f99a-8d48-1c3d"/>
         <categoryLink name="Units" hidden="false" id="21d3-23d5-6335-6b5c" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <comment>Special</comment>
     </entryLink>
     <entryLink import="true" name="Questing Knights" hidden="false" id="fa68-8114-74ae-fd90" type="selectionEntry" targetId="d7ca-225f-7ad7-c2df">
       <categoryLinks>
@@ -138,7 +172,7 @@
         <categoryLink name="Faction: Kingdom of Bretonnia - Errantry Crusade" hidden="false" id="ddbb-abc6-a216-801c" primary="false" targetId="6acb-f99a-8d48-1c3d"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="ca46-2883-e0f5-bb7d" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="ca46-2883-e0f5-bb7d" includeChildSelections="true"/>
       </constraints>
     </entryLink>
     <entryLink import="true" name="Grail Knights" hidden="false" id="1760-fec8-e81c-1fb4" type="selectionEntry" targetId="1a2b-329e-b45e-9aec">
@@ -176,8 +210,15 @@
         <categoryLink name="Faction: Kingdom of Bretonnia - Errantry Crusade" hidden="false" id="cdf9-e147-bee6-f127" primary="false" targetId="6acb-f99a-8d48-1c3d"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="c8bb-c13-b93e-ff6a" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="c8bb-c13-b93e-ff6a" includeChildSelections="true"/>
       </constraints>
+      <modifiers>
+        <modifier type="set" value="1" field="c8bb-c13-b93e-ff6a">
+          <conditions>
+            <condition type="atLeast" value="1000" field="limit::points" scope="roster" childId="any" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Lady Élisse Duchaard" hidden="false" id="509e-5757-d73a-9c06" type="selectionEntry" targetId="2841ae6c-cbe84bb6">
       <categoryLinks>
@@ -186,8 +227,15 @@
         <categoryLink name="Faction: Kingdom of Bretonnia - Errantry Crusade" hidden="false" id="f20a-2f4e-1b2b-5dc1" primary="false" targetId="6acb-f99a-8d48-1c3d"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="b79d-4baf-682c-8992" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="b79d-4baf-682c-8992" includeChildSelections="true"/>
       </constraints>
+      <modifiers>
+        <modifier type="set" value="1" field="b79d-4baf-682c-8992">
+          <conditions>
+            <condition type="atLeast" value="1000" field="limit::points" scope="roster" childId="any" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="The Green Knight" hidden="false" id="b3f-25e6-b8b0-61e9" type="selectionEntry" targetId="ab104d16-bf0b9fe0">
       <categoryLinks>
@@ -200,19 +248,5 @@
       </constraints>
     </entryLink>
   </entryLinks>
-  <categoryEntries>
-    <categoryEntry name="Baron or Prophetess" hidden="true" id="532d-eb62-56b2-4cd1">
-      <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="dd64-ced7-d6c7-4feb" includeChildSelections="true"/>
-      </constraints>
-      <modifiers>
-        <modifier type="increment" value="1" field="dd64-ced7-d6c7-4feb">
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="7125-bfd1-6b90-8071"/>
-          </repeats>
-        </modifier>
-      </modifiers>
-    </categoryEntry>
-  </categoryEntries>
   <comment>No Warhall</comment>
 </catalogue>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="c637-f6be-935d-faae" name="Kingdom of Bretonnia - Bretonnian Exiles" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="77" revision="11" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="false" id="c637-f6be-935d-faae" name="Kingdom of Bretonnia - Bretonnian Exiles" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="77" revision="12" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Kingdom of Bretonnia" id="7db7-5c17-f100-570c" targetId="f8cb-e518-1881-292"/>
     <catalogueLink type="catalogue" name="The Empire of Man" id="254-944b-97a5-4b18" targetId="7b8f-602e-29cd-5786"/>
@@ -11,7 +11,7 @@
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="a994-68e4-52b1-cd0c" primary="false" targetId="c796-bbb0-377c-76b1"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="b13-b76f-4f59-afc3" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="b13-b76f-4f59-afc3" includeChildSelections="true"/>
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="b13-b76f-4f59-afc3">
@@ -19,11 +19,16 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="846f-e82e-eb40-b5de"/>
           </repeats>
         </modifier>
+        <modifier type="decrement" value="1" field="b13-b76f-4f59-afc3">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="f651-1812-e123-46c3" shared="true" roundUp="false" id="b90f-1a2a-bf8c-729d"/>
+          </repeats>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="Damsel" hidden="false" id="c3a6-46a3-e17c-74c7" type="selectionEntry" targetId="969e-5f92-cb5e-1cd8">
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="3e19-d3a7-52c-d6ba" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="3e19-d3a7-52c-d6ba" includeChildSelections="true"/>
       </constraints>
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="7627-8750-9b29-7901" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
@@ -69,7 +74,7 @@
       <modifiers>
         <modifier type="set" value="0" field="91fe-302-c792-4e9c">
           <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="roster" childId="7fbc-6390-2e62-e1a2" shared="true"/>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="7fbc-6390-2e62-e1a2" shared="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -81,12 +86,12 @@
     </entryLink>
     <entryLink import="true" name="Mounted Knights of the Realm" hidden="false" type="selectionEntry" id="7fbc-6390-2e62-e1a2" targetId="7fe1-69ab-7c6b-20d0">
       <constraints>
-        <constraint type="min" value="0" field="selections" scope="force" shared="true" id="b732-129f-b231-3e66" includeChildSelections="true"/>
+        <constraint type="min" value="1" field="selections" scope="force" shared="true" id="b732-129f-b231-3e66" includeChildSelections="true"/>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="b732-129f-b231-3e66">
+        <modifier type="set" value="0" field="b732-129f-b231-3e66">
           <conditions>
-            <condition type="equalTo" value="0" field="selections" scope="roster" childId="3938-abe4-613b-fa75" shared="true"/>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="3938-abe4-613b-fa75" shared="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -115,12 +120,12 @@
     </entryLink>
     <entryLink import="true" name="Peasant Bowmen" hidden="false" type="selectionEntry" id="8fb0-e47a-f651-970" targetId="5e10-1040-5760-5ed2">
       <constraints>
-        <constraint type="min" value="0" field="selections" scope="force" shared="true" id="c53e-e43b-d38a-29e7" includeChildSelections="true"/>
+        <constraint type="min" value="1" field="selections" scope="force" shared="true" id="c53e-e43b-d38a-29e7" includeChildSelections="true"/>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="c53e-e43b-d38a-29e7">
+        <modifier type="set" value="0" field="c53e-e43b-d38a-29e7">
           <conditions>
-            <condition type="equalTo" value="0" field="selections" scope="roster" childId="8896-a10b-5397-3a3" shared="true"/>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="8896-a10b-5397-3a3" shared="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -132,7 +137,7 @@
     </entryLink>
     <entryLink import="true" name="Knights Errant" hidden="false" id="f30b-6982-9123-7238" type="selectionEntry" targetId="8ae5-43d-e70d-8133">
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="2902-e6e8-26bb-463d" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="2902-e6e8-26bb-463d" includeChildSelections="true"/>
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="2902-e6e8-26bb-463d">
@@ -154,16 +159,9 @@
         <categoryLink name="Units" hidden="false" id="0fd7-ee5f-0007-044d" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Men-At-Arms" hidden="false" id="fedc-78ec-76f6-613b" type="selectionEntry" targetId="7070-3759-d579-6b24">
-      <categoryLinks>
-        <categoryLink name="Core" hidden="false" id="4887-b8c-575b-ae64" targetId="f0e3-2e32-8866-ea32" primary="true"/>
-        <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="ee3d-ed6a-f8ac-bbb3" primary="false" targetId="c796-bbb0-377c-76b1"/>
-        <categoryLink name="Units" hidden="false" id="5e97-29e4-cfca-507d" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-    </entryLink>
     <entryLink import="true" name="Border Princes Bombard" hidden="false" id="88d-c309-420b-ddc7" type="selectionEntry" targetId="2450-622c-6c12-6cac">
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="bf0c-d430-4071-49ad" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="bf0c-d430-4071-49ad" includeChildSelections="true"/>
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="bf0c-d430-4071-49ad">
@@ -179,7 +177,7 @@
     </entryLink>
     <entryLink import="true" name="Battle Pilgrims &amp; Grail Reliquae" hidden="false" id="73d3-3e2a-9de2-c4e3" type="selectionEntry" targetId="573b-ddad-d3fe-b920">
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="4d9b-e48e-1a32-6584" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="4d9b-e48e-1a32-6584" includeChildSelections="true"/>
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="4d9b-e48e-1a32-6584">
@@ -196,7 +194,7 @@
     </entryLink>
     <entryLink import="true" name="Field Trebuchet" hidden="false" id="6d4e-2c45-788e-9919" type="selectionEntry" targetId="787e-752a-bf30-df0d">
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="308b-7989-72f4-aafe" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="308b-7989-72f4-aafe" includeChildSelections="true"/>
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="308b-7989-72f4-aafe">
@@ -238,8 +236,15 @@
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="be8f-b8f2-1040-9142" primary="false" targetId="c796-bbb0-377c-76b1"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="f2b1-7965-97b2-573d" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="f2b1-7965-97b2-573d" includeChildSelections="true"/>
       </constraints>
+      <modifiers>
+        <modifier type="set" value="1" field="f2b1-7965-97b2-573d">
+          <conditions>
+            <condition type="atLeast" value="1000" field="limit::points" scope="roster" childId="any" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="The Green Knight" hidden="false" id="4419-dc53-d630-9a21" type="selectionEntry" targetId="ab104d16-bf0b9fe0">
       <categoryLinks>
@@ -256,6 +261,13 @@
         <categoryLink name="Mercenaries" hidden="false" id="42a7-951-457-75b8" targetId="5b84-2c3c-869d-3522" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="36a5-30f1-9c92-88a" primary="false" targetId="c796-bbb0-377c-76b1"/>
         <categoryLink name="Units" hidden="false" id="f11b-1d9d-8b31-66a2" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Men-At-Arms" hidden="false" id="fedc-78ec-76f6-613b" type="selectionEntry" targetId="7070-3759-d579-6b24">
+      <categoryLinks>
+        <categoryLink name="Core" hidden="false" id="4887-b8c-575b-ae64" targetId="f0e3-2e32-8866-ea32" primary="true"/>
+        <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="ee3d-ed6a-f8ac-bbb3" primary="false" targetId="c796-bbb0-377c-76b1"/>
+        <categoryLink name="Units" hidden="false" id="5e97-29e4-cfca-507d" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
   </entryLinks>
