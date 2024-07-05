@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="bb5-4152-4695-83a5" name="Tomb Kings of Khemri - Mortuary Cult" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="79" revision="11" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="false" id="bb5-4152-4695-83a5" name="Tomb Kings of Khemri - Mortuary Cult" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="79" revision="12" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <entryLinks>
     <entryLink import="true" name="High Priest" hidden="false" id="da19-78ec-8e62-632c" type="selectionEntry" targetId="9588-64f-fed8-a491">
       <categoryLinks>
@@ -7,12 +7,12 @@
         <categoryLink name="Faction: Tomb Kings: Mortuary Cult" hidden="false" id="59e9-1bb-1eee-7a51" primary="false" targetId="22ae-234f-ffd2-6c4f"/>
       </categoryLinks>
       <constraints>
-        <constraint type="min" value="1" field="selections" scope="force" shared="true" id="62b7-5ce2-e8aa-72b1" includeChildSelections="false"/>
+        <constraint type="min" value="0" field="selections" scope="force" shared="true" id="62b7-5ce2-e8aa-72b1" includeChildSelections="false"/>
       </constraints>
       <modifiers>
-        <modifier type="decrement" value="1" field="62b7-5ce2-e8aa-72b1">
+        <modifier type="set" value="1" field="62b7-5ce2-e8aa-72b1">
           <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="3fea-5ea4-6511-3e24" shared="true"/>
+            <condition type="lessThan" value="1" field="selections" scope="force" childId="3fea-5ea4-6511-3e24" shared="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -26,7 +26,7 @@
         <constraint type="min" value="1" field="selections" scope="force" shared="true" id="b939-db72-3be4-1dbc" includeChildSelections="false"/>
       </constraints>
       <modifiers>
-        <modifier type="decrement" value="1" field="b939-db72-3be4-1dbc">
+        <modifier type="set" value="0" field="b939-db72-3be4-1dbc">
           <conditions>
             <condition type="atLeast" value="1" field="selections" scope="force" childId="da19-78ec-8e62-632c" shared="true"/>
           </conditions>
@@ -36,16 +36,46 @@
     <entryLink import="true" name="Tomb Prince" hidden="false" id="f774-7e2-20a5-be39" type="selectionEntry" targetId="70ec-97fa-8a6a-1443">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="b871-f57c-d921-3b2c" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-        <categoryLink name="Tomb Prince or Arch Necrotect" hidden="false" id="68b6-9af2-23fb-572" targetId="e94e-92f6-8dfc-d8a7" primary="false"/>
         <categoryLink name="Faction: Tomb Kings: Mortuary Cult" hidden="false" id="72ce-6070-b712-1219" primary="false" targetId="22ae-234f-ffd2-6c4f"/>
       </categoryLinks>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="a5ba-64bd-220b-94f0"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="a5ba-64bd-220b-94f0">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+        <modifier type="decrement" value="1" field="a5ba-64bd-220b-94f0">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="2b6e-4edc-c180-c611" shared="true" roundUp="false"/>
+            <repeat value="1" repeats="1" field="selections" scope="parent" childId="297c-707-7c29-c6af" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Arch Necrotect" hidden="false" id="297c-707-7c29-c6af" type="selectionEntry" targetId="df9e9f82-d038c54c">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="21b8-85f0-ac34-8ffd" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-        <categoryLink name="Tomb Prince or Arch Necrotect" hidden="false" id="30f2-868-60e6-ff4c" targetId="e94e-92f6-8dfc-d8a7" primary="false"/>
         <categoryLink name="Faction: Tomb Kings: Mortuary Cult" hidden="false" id="761f-cf0e-5943-dc49" primary="false" targetId="22ae-234f-ffd2-6c4f"/>
       </categoryLinks>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="5381-49a2-7712-2502"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="5381-49a2-7712-2502">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+        <modifier type="decrement" value="1" field="5381-49a2-7712-2502">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="2b6e-4edc-c180-c611" shared="true" roundUp="false"/>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="f774-7e2-20a5-be39" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Skeleton Warriors" hidden="false" id="243f-5bc0-b333-dd0d" type="selectionEntry" targetId="310d-5ffd-d45b-60bb">
       <categoryLinks>
@@ -83,6 +113,7 @@
       <constraints>
         <constraint type="max" value="1" field="selections" scope="force" shared="false" id="31ce-1b02-8332-2205" includeChildSelections="false"/>
       </constraints>
+      <comment>Core</comment>
     </entryLink>
     <entryLink import="true" name="Ushabti" hidden="false" id="e347-9158-3aa9-2157" type="selectionEntry" targetId="81e7-bf62-d1a1-9693">
       <categoryLinks>
@@ -93,6 +124,7 @@
       <constraints>
         <constraint type="max" value="1" field="selections" scope="force" shared="false" id="2374-9d3c-fd59-b4f4" includeChildSelections="false"/>
       </constraints>
+      <comment>Core</comment>
     </entryLink>
     <entryLink import="true" name="Necroserpents" hidden="false" id="a9ba-259-d918-39c0" type="selectionEntry" targetId="8b31-1331-addb-339d">
       <categoryLinks>
@@ -103,6 +135,7 @@
       <constraints>
         <constraint type="max" value="1" field="selections" scope="force" shared="false" id="d2dd-a01c-8936-c32c" includeChildSelections="false"/>
       </constraints>
+      <comment>Core</comment>
     </entryLink>
     <entryLink import="true" name="Tomb Scorpion" hidden="false" id="17cc-3d22-4df-87d2" type="selectionEntry" targetId="db22-ad0d-c619-e261">
       <constraints>
@@ -124,18 +157,38 @@
     <entryLink import="true" name="Necrolith Colossus" hidden="false" id="46cb-beee-db7e-15f8" type="selectionEntry" targetId="bb39-7f95-8981-acb8">
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="1d7a-f7e8-3c92-7c69" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Necrolith Colossus or Necrosphinx" hidden="false" id="7c81-65b4-18de-b8a5" targetId="bf51-5b14-4914-6c64" primary="false"/>
         <categoryLink name="Faction: Tomb Kings: Mortuary Cult" hidden="false" id="b2d3-3ee9-6050-8a" primary="false" targetId="22ae-234f-ffd2-6c4f"/>
         <categoryLink name="Units" hidden="false" id="0a65-27d0-a150-f419" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <comment>Special</comment>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="00f4-faba-4c49-a541"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="00f4-faba-4c49-a541">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="b61f-1ca-c655-e3ef" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Necrosphinx" hidden="false" id="b61f-1ca-c655-e3ef" type="selectionEntry" targetId="fe47-435b-7909-3c85">
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="6f-b44d-85c3-498a" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Necrolith Colossus or Necrosphinx" hidden="false" id="284-5e7c-db04-ca6c" targetId="bf51-5b14-4914-6c64" primary="false"/>
         <categoryLink name="Faction: Tomb Kings: Mortuary Cult" hidden="false" id="510e-4603-e735-4b30" primary="false" targetId="22ae-234f-ffd2-6c4f"/>
         <categoryLink name="Units" hidden="false" id="474c-5b56-dd4f-50dd" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <comment>Special</comment>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="a792-dbbf-4fc7-7f08"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="a792-dbbf-4fc7-7f08">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="46cb-beee-db7e-15f8" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Ushabti" hidden="false" id="aae2-847-fa12-6edb" type="selectionEntry" targetId="81e7-bf62-d1a1-9693">
       <categoryLinks>
@@ -143,6 +196,7 @@
         <categoryLink name="Faction: Tomb Kings: Mortuary Cult" hidden="false" id="b938-9ff1-535d-b283" primary="false" targetId="22ae-234f-ffd2-6c4f"/>
         <categoryLink name="Units" hidden="false" id="962d-12b1-69d4-bf24" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <comment>Special</comment>
     </entryLink>
     <entryLink import="true" name="Venerable Ushabti" hidden="false" id="cc1b-db4e-8c2a-d4b0" type="selectionEntry" targetId="1027-1a96-82a2-a95f">
       <categoryLinks>
@@ -156,6 +210,7 @@
         <categoryLink name="Special" hidden="false" id="ff73-ddd0-76cb-c048" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Faction: Tomb Kings: Mortuary Cult" hidden="false" id="37e4-dc04-730d-125d" primary="false" targetId="22ae-234f-ffd2-6c4f"/>
       </categoryLinks>
+      <comment>Special</comment>
     </entryLink>
     <entryLink import="true" name="Carrion" hidden="false" id="aaf8-f456-59a8-c7c5" type="selectionEntry" targetId="38d7-eaad-2a14-e42a">
       <categoryLinks>
@@ -177,6 +232,7 @@
         <categoryLink name="Faction: Tomb Kings: Mortuary Cult" hidden="false" id="43db-520c-55cd-b8ce" primary="false" targetId="22ae-234f-ffd2-6c4f"/>
         <categoryLink name="Units" hidden="false" id="9cc1-882b-3480-fc64" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <comment>Special</comment>
     </entryLink>
     <entryLink import="true" name="Skeleton Chariots" hidden="false" id="9b67-ab3-1468-9ffb" type="selectionEntry" targetId="bda8-d5bc-866e-92b6">
       <categoryLinks>
@@ -191,6 +247,7 @@
         <categoryLink name="Faction: Tomb Kings: Mortuary Cult" hidden="false" id="b3fa-1f3-7979-ec41" primary="false" targetId="22ae-234f-ffd2-6c4f"/>
         <categoryLink name="Units" hidden="false" id="ade4-7388-3373-739b" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <comment>Rare</comment>
     </entryLink>
     <entryLink import="true" name="Necrolith Colossus" hidden="false" id="b60e-ade9-7352-9397" type="selectionEntry" targetId="bb39-7f95-8981-acb8">
       <categoryLinks>
@@ -198,6 +255,7 @@
         <categoryLink name="Faction: Tomb Kings: Mortuary Cult" hidden="false" id="cca5-e846-f303-fba9" primary="false" targetId="22ae-234f-ffd2-6c4f"/>
         <categoryLink name="Units" hidden="false" id="7cea-255d-8aa2-089f" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <comment>Rare</comment>
     </entryLink>
     <entryLink import="true" name="Screaming Skull Catapult" hidden="false" id="b612-83db-ea9a-8b03" type="selectionEntry" targetId="832e-7b2d-b5d5-5742">
       <categoryLinks>
@@ -239,51 +297,7 @@
       </categoryLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="93f1-51e5-1c71-45f" includeChildSelections="true"/>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="53a6-5162-650b-c2b6" includeChildSelections="true"/>
       </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="93f1-51e5-1c71-45f">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="roster" childId="300-f70e-f7b-442d" shared="true" includeChildSelections="true"/>
-          </conditions>
-        </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Settra the Imperishable" hidden="false" type="selectionEntry" id="c38-e908-f0d4-6786" targetId="38a76fc0-593570a">
-      <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="b8c8-9b9c-403e-425e" targetId="a4cc-15c9-cfae-1b3b" primary="false"/>
-        <categoryLink name="Named Characters" hidden="false" id="fc49-ee1-a2a4-d507" targetId="3ba8-a41e-b6ae-d4ba" primary="true"/>
-        <categoryLink name="Faction: Tomb Kings: Mortuary Cult" hidden="false" id="4f83-c9a9-5b7f-4bfa" primary="false" targetId="22ae-234f-ffd2-6c4f"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="26fa-ed59-8b83-1cab" includeChildSelections="true"/>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="940a-88bf-536e-734f" includeChildSelections="true"/>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="26fa-ed59-8b83-1cab">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="roster" childId="300-f70e-f7b-442d" shared="true" includeChildSelections="true"/>
-          </conditions>
-        </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Nekaph" hidden="false" type="selectionEntry" id="3e3b-fb39-f432-75c3" targetId="8677d14e-6f10e758">
-      <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="ac9-7e0a-ee81-b393" targetId="a4cc-15c9-cfae-1b3b" primary="false"/>
-        <categoryLink name="Named Characters" hidden="false" id="96bd-8c6b-1000-55f2" targetId="3ba8-a41e-b6ae-d4ba" primary="true"/>
-        <categoryLink name="Faction: Tomb Kings: Mortuary Cult" hidden="false" id="6f56-869-274d-a56a" primary="false" targetId="22ae-234f-ffd2-6c4f"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="423-6ce5-9ee-873e" includeChildSelections="true"/>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="9c4b-148e-cff5-c60b" includeChildSelections="true"/>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="423-6ce5-9ee-873e">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="roster" childId="300-f70e-f7b-442d" shared="true" includeChildSelections="true"/>
-          </conditions>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Necrotect" hidden="false" id="3acb-eb13-ce92-d1cc" type="selectionEntry" targetId="483-7fbe-ee6c-6030">
       <categoryLinks>
@@ -302,30 +316,4 @@
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Tomb Kings of Khemri" id="5835-fbde-29b-825e" targetId="be27-8084-f552-1f4"/>
   </catalogueLinks>
-  <categoryEntries>
-    <categoryEntry name="Tomb Prince or Arch Necrotect" hidden="false" id="e94e-92f6-8dfc-d8a7">
-      <constraints>
-        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="d2ee-70e1-dcdf-2fd6" includeChildSelections="false"/>
-      </constraints>
-      <modifiers>
-        <modifier type="increment" value="1" field="d2ee-70e1-dcdf-2fd6">
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="f5e3-d3aa-80c2-8114"/>
-          </repeats>
-        </modifier>
-      </modifiers>
-    </categoryEntry>
-    <categoryEntry name="Necrolith Colossus or Necrosphinx" hidden="false" id="bf51-5b14-4914-6c64">
-      <constraints>
-        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="8233-c19b-e380-471f" includeChildSelections="false"/>
-      </constraints>
-      <modifiers>
-        <modifier type="increment" value="1" field="8233-c19b-e380-471f">
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="537f-5ba2-4d03-769"/>
-          </repeats>
-        </modifier>
-      </modifiers>
-    </categoryEntry>
-  </categoryEntries>
 </catalogue>
