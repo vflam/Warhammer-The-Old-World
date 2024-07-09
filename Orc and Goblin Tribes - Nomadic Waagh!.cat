@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="d03c-d17e-e3f7-d3fd" name="Orc and Goblin Tribes - Nomadic Waagh!" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="98" revision="9" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="false" id="d03c-d17e-e3f7-d3fd" name="Orc and Goblin Tribes - Nomadic Waagh!" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="98" revision="10" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Orc and Goblin Tribes" id="50cc-f36e-f099-680b" targetId="c997-9d47-72ad-c5f1"/>
   </catalogueLinks>
@@ -20,19 +20,67 @@
     </entryLink>
     <entryLink import="true" name="Orc Weirdnob" hidden="false" id="e750-6ccc-340f-74cd" type="selectionEntry" targetId="4a90-3060-c790-2d98">
       <categoryLinks>
-        <categoryLink name="Lord" hidden="false" id="741d-dcf8-d6ac-84b9" targetId="331e-3a37-38cb-23d2" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="dde8-4e1c-805f-4f97" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-        <categoryLink name="Orc Warboss or Orc Weirdnob" hidden="false" id="cf45-3fd6-4b0b-976c" targetId="afda-bfee-d5ce-3671" primary="false"/>
         <categoryLink name="Faction: Orc and Goblin Tribes - Nomadic Waagh!" hidden="false" id="3ab9-4655-c68f-c05a" primary="false" targetId="f89b-a1c3-e6eb-e69a"/>
       </categoryLinks>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="adc8-774e-a011-0a81"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="adc8-774e-a011-0a81">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+        <modifier type="increment" value="1" field="adc8-774e-a011-0a81">
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+        <modifier type="decrement" value="1" field="adc8-774e-a011-0a81">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="92b4-e584-76ef-ab7" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Orc Warboss" hidden="false" id="e936-1f93-10d0-cf71" type="selectionEntry" targetId="92b4-e584-76ef-ab7">
       <categoryLinks>
-        <categoryLink name="Lord" hidden="false" id="623e-24cb-c8f7-5a19" targetId="331e-3a37-38cb-23d2" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="8a5f-de79-a82e-3db8" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-        <categoryLink name="Orc Warboss or Orc Weirdnob" hidden="false" id="ec3a-b62e-7423-2d3" targetId="afda-bfee-d5ce-3671" primary="false"/>
         <categoryLink name="Faction: Orc and Goblin Tribes - Nomadic Waagh!" hidden="false" id="40ae-d39c-5cb-c2cc" primary="false" targetId="f89b-a1c3-e6eb-e69a"/>
       </categoryLinks>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="c597-eafe-fd84-dbb1"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="c597-eafe-fd84-dbb1">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="c597-eafe-fd84-dbb1">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="decrement" value="1" field="c597-eafe-fd84-dbb1">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="4a90-3060-c790-2d98" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Orc Bigboss" hidden="false" id="5d4-422a-62e6-1b31" type="selectionEntry" targetId="cc13-c8e5-a88a-542a">
       <categoryLinks>
@@ -98,13 +146,26 @@
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="roster" childId="218d-9f41-a767-926a" shared="true" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="roster" childId="ddf0-8d23-a171-7858" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="218d-9f41-a767-926a" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="ddf0-8d23-a171-7858" shared="true" includeChildSelections="true"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
+          <comment>Allow if general is Orc Bigboss or Orc Warboss</comment>
+        </modifier>
+        <modifier type="set" value="true" field="hidden">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="lessThan" value="1" field="selections" scope="force" childId="218d-9f41-a767-926a" shared="true" includeChildSelections="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="force" childId="ddf0-8d23-a171-7858" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <comment>Hide if general is neither Orc Bigboss or Orc Warboss</comment>
         </modifier>
       </modifiers>
+      <comment>Core</comment>
     </entryLink>
     <entryLink import="true" name="Black Orc Chariot" hidden="false" id="cfa0-c96-40da-d00a" type="selectionEntry" targetId="5f35-1bc8-110c-3dc1">
       <categoryLinks>
@@ -120,13 +181,26 @@
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="roster" childId="fc43-c2ce-2212-4192" shared="true" includeChildSelections="true"/>
-                <condition type="atLeast" value="1" field="selections" scope="roster" childId="9665-6bb6-af9a-7a69" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="fc43-c2ce-2212-4192" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="9665-6bb6-af9a-7a69" shared="true" includeChildSelections="true"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
+          <comment>Allow if general is Black Orc Bigboss or Black Orc Warboss</comment>
+        </modifier>
+        <modifier type="set" value="true" field="hidden">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="lessThan" value="1" field="selections" scope="force" childId="fc43-c2ce-2212-4192" shared="true" includeChildSelections="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="force" childId="9665-6bb6-af9a-7a69" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <comment>Hide if general is neither Black Orc Bigboss or Black Orc Warboss</comment>
         </modifier>
       </modifiers>
+      <comment>Core</comment>
     </entryLink>
     <entryLink import="true" name="Orc Boar Boy Mobs" hidden="false" id="7023-ff3b-ee93-b395" type="selectionEntry" targetId="5b90-17e7-7f9c-f674">
       <categoryLinks>
@@ -134,6 +208,7 @@
         <categoryLink name="Faction: Orc and Goblin Tribes - Nomadic Waagh!" hidden="false" id="3b47-f767-3d14-7e45" primary="false" targetId="f89b-a1c3-e6eb-e69a"/>
         <categoryLink name="Units" hidden="false" id="d55c-a155-5f74-3ebd" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <comment>Special</comment>
     </entryLink>
     <entryLink import="true" name="Orc Boar Chariots" hidden="false" id="a679-52-9e65-9499" type="selectionEntry" targetId="7990-59e-8323-b39c">
       <categoryLinks>
@@ -155,6 +230,7 @@
         <categoryLink name="Faction: Orc and Goblin Tribes - Nomadic Waagh!" hidden="false" id="4064-abb8-616d-bbcd" primary="false" targetId="f89b-a1c3-e6eb-e69a"/>
         <categoryLink name="Units" hidden="false" id="32dc-af93-000e-8bde" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <comment>Rare</comment>
     </entryLink>
     <entryLink import="true" name="Giants" hidden="false" id="63b1-e83d-ac25-bb65" type="selectionEntry" targetId="2e4e-ec04-8461-5da3">
       <categoryLinks>
