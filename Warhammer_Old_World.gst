@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="116" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="117" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -992,7 +992,7 @@
     </profile>
     <profile name="Evasive" hidden="false" id="9fff-999f-6e96-e149" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="168" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Once per turn, when this unit is declared the target during the enemy Shooting phase, it may choose to Fall Back in Good Order and will flee directly away from the enemy unit shooting at it. Once this unit has completed its move, the enemy unit may continue with its shooting as declared.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Once per turn, when a unit in which the majority of models have this special rule is declared the target during the enemy Shooting phase, it may choose to Fall Back in Good Order, fleeing directly away from the enemy unit shooting at it. Once this unit has completed its move, the enemy unit may continue with its shooting as declared.</characteristic>
       </characteristics>
     </profile>
     <profile name="Extra Attacks" hidden="false" id="23c7-1aeb-5f02-c9e1" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
@@ -1030,11 +1030,11 @@
     </profile>
     <profile name="Fire &amp; Flee" hidden="false" id="1a06-31aa-cbfe-1a5" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="169" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit with this special rule that is also armed with missile weapons may declare that it will ‘Fire &amp; Flee’ as a charge reaction:
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">If the majority of the models in a unit armed armed with missile weapons have this special rule, the unit may declare that it will ‘Fire &amp; Flee’ as a charge reaction:
 
- Fire &amp; Flee: The unit launches a volley of weapons fire before turning to flee from the enemy. If a unit with this special rule is armed with missile weapons and can draw a line of sight to the charging unit, it may declare that it will Fire &amp; Flee. The unit will Stand &amp; Shoot before turning tail and fleeing from the charge. However, due to the time spent shooting at the charging foe, when making its Flee roll the unit rolls two D6 and discards the lowest result. If both dice roll the same result, discard either.
+Fire &amp; Flee: The unit launches a volley of weapons fire before turning to flee from the enemy. If a unit with this special rule is armed with missile weapons and can draw a line of sight to the charging unit, it may declare that it will Fire &amp; Flee. The unit will Stand &amp; Shoot before turning tail and fleeing from the charge. However, due to the time spent shooting at the charging foe, when making its Flee roll the unit rolls two D6 and discards the lowest result. If both dice roll the same result, discard either.
 
- Note that, if the distance between this unit and the charging unit is less than the Movement characteristic of the charging unit, this unit must either Hold or Flee.</characteristic>
+Note that, if the distance between this unit and the charging unit is less than the Movement characteristic of the charging unit, this unit must either Hold or Flee.</characteristic>
       </characteristics>
     </profile>
     <profile name="First Charge" hidden="false" id="785a-2886-af42-dce9" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="169" publicationId="768b-3da1-a182-a1d8">
@@ -1056,13 +1056,13 @@
     </profile>
     <profile name="Fly" hidden="false" id="c557-6102-9a35-bbcd" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule can Fly. Models that can Fly can choose wither to move normally on the ground (using their Movement characteristic), or to move by flying. How many inches a model can Fly varies from model to model, and will be shown in brackets after the name of this special rule. Models tat choose to move by flying:
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Whenever a model with this special rule moves, it can choose either to move across the ground as normal, using its given Movement characteristic, or to move by flying through the air. When a model flies it uses a special ‘Fly Movement’ characteristic, shown in brackets after the name of this special rule (shown here as ‘X’). Models that choose to move by flying:
 
- - May move as normal (i.e. they may charge, march and manoeuvre as if moving on the ground), except that they are able to pass freely above other models, units and terrain features without any penalty, and they can march whilst within 8&quot; of an enemy unit without first having to make a Leadership test.
+- May move as normal (i.e. they may charge, march and manoeuvre as if moving on the ground), except that they are able to pass freely above other models, units and terrain features without any penalty, and they can march whilst within 8&quot; of an enemy unit without first having to make a Leadership test.
 
- - May end their movement in terrain, but will suffer its effects if they do. They cannot end their movement &apos;on top&apos; of impassable terrain or another unit, or within 1&quot; of an enemy unit.
+- May end their movement in terrain, but will suffer its effects if they do. They cannot end their movement &apos;on top&apos; of impassable terrain or another unit, or within 1&quot; of an enemy unit.
 
- Models that can Fly must begin and end all their movement on the ground. A character with this special rule cannot join a unit without this special rule, and vice versa.</characteristic>
+Models that can Fly must begin and end all their movement on the ground. A character with this special rule cannot join a unit without this special rule, and vice versa.</characteristic>
       </characteristics>
     </profile>
     <profile name="Furious Charge" hidden="false" id="eaca-69a2-8b6a-81c6" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="171" publicationId="768b-3da1-a182-a1d8">
@@ -1120,12 +1120,12 @@
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A monster with this special rule is accompanied by one or more models representing its handlers. During deployment, position these models anywhere that is adjacent to, and in base contact with, the monster. If the handlers are found to be blocking movement or line of sight, simply move them aside.
 
- In combat, each handler adds its attacks to those of the monster. If the monster suffers an unsaved wound, roll a D6. On a roll of 1-4 the monster loses a Wound, but on a roll of 5+ a handler model suffers the wound instead. If the monster is removed from play, so are its handlers.</characteristic>
+In combat, each handler adds its attacks to those of the monster. If the monster suffers an unsaved wound, roll a D6. On a roll of 1-4 the monster loses a Wound, but on a roll of 5+ one of the handlers is removed instead. If the monster is removed from play, so are its handlers.</characteristic>
       </characteristics>
     </profile>
     <profile name="Chariot Runners" hidden="false" id="afa3-a46a-2608-f62c" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="167" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Friendly models whose troop type is ‘chariot’ can draw a line of sight over or through models with this special rule and can move through friendly units of Chariot Runners that are in Skirmish formation. If the chariot’s move would result in it ending up ‘on top’ of a Chariot Runner, simply nudge the Chariot Runner aside, by the smallest amount possible, to make space for the chariot. Whilst in Skirmish formation units of Chariot Runners can treat friendly chariots that are within 1&quot; of one or more of the unit’s models as a part of the unit for the purposes of unit coherency.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Friendly models whose troop type is ‘chariot’ can draw a line of sight over or through models with this special rule and can move through friendly units if they are in Skirmish formation and if the majority of models have this special rule. If the chariot’s move would result in it ending up ‘on top’ of a Chariot Runner, simply nudge the Chariot Runner aside, by the smallest amount possible, to make space for the chariot. Whilst in Skirmish formation units of Chariot Runners can treat friendly chariots that are within 1&quot; of one or more of the unit’s models as a part of the unit for the purposes of unit coherency.</characteristic>
       </characteristics>
     </profile>
     <profile name="Howdah" hidden="false" id="b8f6-1cbc-b19-c7b7" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="171" publicationId="768b-3da1-a182-a1d8">
@@ -1212,11 +1212,11 @@
     </profile>
     <profile name="Random Movement" hidden="false" id="4924-fc1f-bcd-746a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="176" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Models with this special rule do not have a normal Movement characteristic. Instead, a dice roll is given (2D6, for example). Whenever a model with this special rule moves (for any reason), roll the dice to determine how far it must move.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Models with this special rule do not have a normal Movement characteristic. Instead, a dice roll is given (2D6, for example). When a model with this special rule moves, roll the dice to determine its maximum movement..
 
- Models with this special rule move during the Compulsory Moves sub-phase. They cannot march or declare a charge. They can wheel to change direction, but cannot perform any other manoeuvres. If the model is able to make contact with an enemy unit during the Compulsory Moves sub-phase or whilst pursuing, it may do so and counts as having charged. The model aligns against the enemy unit and stops moving. A unit charged in this way must Hold.
+Models with this special rule move during the Compulsory Moves sub-phase. They cannot march or declare a charge. They can wheel to change direction, but cannot perform any other manoeuvres. If the model is able to make contact with an enemy unit during the Compulsory Moves sub-phase or whilst pursuing, it may do so and counts as having charged. The model aligns against the enemy unit and stops moving. A unit charged in this way must Hold.
 
- If every model in a unit has this special rule, roll once for the entire unit. If two or more models in a unit have different Random Movement characteristics, roll for each and use the lowest result for the entire unit.</characteristic>
+If every model in a unit has this special rule, roll once for the entire unit. If two or more models in a unit have different Random Movement characteristics, roll for each and use the lowest result for the entire unit.</characteristic>
       </characteristics>
     </profile>
     <profile name="Regeneration" hidden="false" id="2eb0-1ec8-8e04-72d4" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
@@ -1238,7 +1238,7 @@
     </profile>
     <profile name="Reserve Move" hidden="false" id="1f10-d7d-be19-7e8f" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="177" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless it charged, marched or fled during the Movement phase of its turn, a unit with this special rule may make a Reserve move at the end of the Shooting phase of its turn, after all shooting has been resolved. A unit making a Reserve move moves as described in the Basic Movement rules. It may manoeuvre normally, but cannot march.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless it charged, marched or fled during the Movement phase, a unit in which the majority of the models have this special rule may make a Reserve move at the end of the Shooting phase of its turn, after all shooting has been resolved. A unit making a Reserve move moves as described in the Basic Movement rules. It may manoeuvre normally, but cannot march.</characteristic>
       </characteristics>
     </profile>
     <profile name="Stomp Attacks" hidden="false" id="72db-24bb-7493-d753" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
@@ -1276,7 +1276,7 @@
     </profile>
     <profile name="Swiftstride" hidden="false" id="dc91-48b3-3696-217" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="178" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit with this special rule increases its maximum possible charge range by 3&quot; and, when it makes a Charge, Flee or Pursuit roll, may apply a +D6 modifier to the result.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit which consists entirely of models with this special rule increases its maximum possible charge range by 3&quot; and, when it makes a Charge, Flee or Pursuit roll, may apply a +D6 modifier to the result.</characteristic>
       </characteristics>
     </profile>
     <profile name="Terror" hidden="false" id="c7a2-35bf-4313-f4f0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="179" publicationId="768b-3da1-a182-a1d8">
@@ -2989,15 +2989,15 @@ Related: Unit Shape (Close Order), Combat Order (Close Order)</characteristic>
     </profile>
     <profile name="Combat Order (Close Order)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b0b3-863b-2565-bfa1">
       <characteristics>
-        <characteristic name="Description" id="21af-d8e3-1c18-943b" hidden="false" typeId="9f84-4221-785a-db50">A Close Order  formation that is wider than it is deep (i.e., that has more models per rank than per file, as shown in Fig 101.1) or that is square (i.e., has the same number of models per file as per rank) is said to be in Combat Order. Such units are able to count a  Rank Bonus  in certain situations:
- # Rank Bonus
- If a unit in Close Order formation is wide enough, it can claim a Rank Bonus of +1 for each rank behind the first, up to the maximum determined by its troop type:
- - How many models a rank must contain to claim a Rank Bonus, as well as the maximum Rank Bonus a unit can claim, is determined by its  troop type .
- - Certain special rules may increase the Rank Bonus a unit can claim beyond the maximum normally allowed by its troop type.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A Close Order formation that is wider than it is deep (i.e., that has more models per rank than per file, as shown in Fig 101.1) or that is square (i.e., has the same number of models per file as per rank) is said to be in Combat Order. Such units are able to count a Rank Bonus in certain situations:
+# Rank Bonus
+If a unit in Close Order formation is wide enough, it can claim a Rank Bonus of +1 for each rank behind the first, up to the maximum determined by its troop type:
+- How many models a rank must contain to claim a Rank Bonus, as well as the maximum Rank Bonus a unit can claim, is determined by its troop type .
+- Certain special rules may increase the Rank Bonus a unit can claim beyond the maximum normally allowed by its troop type.
 
- Note that this bonus can be claimed for an incomplete rear rank, as long as there are sufficient models in it. However, if your unit has become  Disrupted  it cannot claim a Rank Bonus.
- # Combat Result Bonus
- Whilst in Combat Order, a Close Order formation may claim a bonus of +1  combat result  point.</characteristic>
+Note that this bonus can be claimed for an incomplete rear rank, as long as there are sufficient models in it. However, if your unit has become Disrupted it cannot claim a Rank Bonus.
+# Combat Result Bonus
+Whilst in Combat Order, a Close Order formation with a unit strength of 5 or more  may claim a bonus of +1 combat result point.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -8961,9 +8961,9 @@ Related: Common Causes of Panic</characteristic>
     </profile>
     <profile name="Heavy Casualties" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="a12d-f274-a35d-8613">
       <characteristics>
-        <characteristic name="Description" id="8c26-e443-180-f65" hidden="false" typeId="9f84-4221-785a-db50">If, during any single phase other than the Combat phase, a unit loses more than a quarter (25%) of the Unit Strength it had at the start of that phase, it must make a Panic test.
- A unit that fails a Panic test caused by heavy casualties will flee directly away from the enemy unit that caused those casualties. If the casualties were not caused by an enemy unit, the unit will instead flee from the nearest enemy unit which is not itself fleeing.
- Note that heavy casualties caused during the Combat phase do not cause Panic tests. During combat, the urgency of defeating the enemy and driving them back (represented by calculating combat results and making Break tests) takes precedence.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">If, during any single phase other than the Combat phase, a unit loses more than a quarter (25%) of the models it contained at the start of that phase, it must make a Panic test.
+A unit that fails a Panic test caused by heavy casualties will flee directly away from the enemy unit that caused those casualties. If the casualties were not caused by an enemy unit, the unit will instead flee from the nearest enemy unit which is not itself fleeing.
+Note that heavy casualties caused during the Combat phase do not cause Panic tests. During combat, the urgency of defeating the enemy and driving them back (represented by calculating combat results and making Break tests) takes precedence.
 
 
 Related: Common Causes of Panic</characteristic>
