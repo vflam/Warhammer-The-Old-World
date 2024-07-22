@@ -13442,6 +13442,19 @@ Note that if this model is reduced to zero Wounds whilst engaged in a challenge,
 Note that this special rule only applies to a single, ordinary hand weapon. If the model is using two hand weapons or any other sort of weapon, or if their hand weapon is inscribed with any Weapon runes, this special rule ceases to apply.</characteristic>
       </characteristics>
     </profile>
+    <profile name="Function Over Form" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1a67-5c3c-a15b-e85a">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">When writing your muster list, you may reduce the Toughness characteristic of any of the following war machines by 1 (to a minimum of 1):
+
+
+- Cannon
+- Organ Guns
+- Flame Cannon
+
+
+Any war machine that has its Toughness reduced in this way also loses the Move or Shoot special rule.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -13604,7 +13617,7 @@ Note that this special rule only applies to a single, ordinary hand weapon. If t
           <modifiers>
             <modifier type="set" value="Armour Bane (2), Cannon Fire, Cumbersome, Multiple Wounds (D3)" field="5f83-3633-336b-93b4">
               <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="992c-cbe5-82ba-d98f" shared="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="fac7-648f-252e-8ddf" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -13620,7 +13633,7 @@ Note that this special rule only applies to a single, ordinary hand weapon. If t
           <modifiers>
             <modifier type="set" value="Armour Bane (2), Cumbersome, Multi-Barrelled" field="5f83-3633-336b-93b4">
               <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="bf60-74bd-2f15-86f8" shared="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="fac7-648f-252e-8ddf" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -13644,7 +13657,7 @@ Note that this special rule only applies to a single, ordinary hand weapon. If t
           <modifiers>
             <modifier type="set" value="Column of Fire, Cumbersome, Flaming Attacks" field="5f83-3633-336b-93b4">
               <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="7f53-f91e-d327-6ef7" shared="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="fac7-648f-252e-8ddf" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -13931,6 +13944,14 @@ Note that this special rule only applies to a single, ordinary hand weapon. If t
     <selectionEntry type="upgrade" import="true" name="Ironfist" hidden="false" id="2139-5be6-d6b0-4321">
       <infoLinks>
         <infoLink name="Ironfist" id="59a8-76ed-9e56-b231" hidden="false" targetId="d432-2b40-b9e4-c45c" type="profile"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Function Over Form" hidden="false" id="fac7-648f-252e-8ddf">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="aa51-179b-75b9-d839"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Function Over Form" id="b313-88b8-6646-3418" hidden="false" type="profile" targetId="1a67-5c3c-a15b-e85a"/>
       </infoLinks>
     </selectionEntry>
   </sharedSelectionEntries>
