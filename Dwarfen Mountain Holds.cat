@@ -876,6 +876,61 @@ However if a misfire is rolled on the Artillery dice, no shots are fired and a c
         <characteristic name="Description" typeId="9f84-4221-785a-db50">After deployment but before the first turn begins, nominate a single enemy character. For one reason or another, this individual has earned themselves a place in the Clan&apos;s Book of Grudges and must be brought to justice. All friendly models gain the Hatred (nominated enemy character) special rule. In addition, you win a bonus of 75 Victory Points if the nominated character is slain, has fled the battlefield or is fleeing when the game ends.</characteristic>
       </characteristics>
     </profile>
+    <profile name="Scout Gyrocopter" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="a77d-c183-17df-4d14">
+      <characteristics>
+        <characteristic name="M" typeId="cd3b-a5a4-e185-5a9d">1</characteristic>
+        <characteristic name="WS" typeId="b007-7d58-4f14-1e01">4</characteristic>
+        <characteristic name="BS" typeId="59f9-ccf5-1155-fb05">4</characteristic>
+        <characteristic name="S" typeId="5b6b-1427-2a45-dd0c">4</characteristic>
+        <characteristic name="T" typeId="ab43-8b61-83e7-d090">4</characteristic>
+        <characteristic name="W" typeId="83ed-7b82-bf1f-e558">3</characteristic>
+        <characteristic name="I" typeId="73b1-abe5-72f8-41e2">2</characteristic>
+        <characteristic name="A" typeId="dddc-9fbd-b0fd-a480">2</characteristic>
+        <characteristic name="Ld" typeId="c435-6b14-f77e-3c72">9</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Extended Formation" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="708d-ae6e-2dd6-608b">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Whilst in Skirmish formation, every model in a unit of Scout Gyrocopters must be within 3&quot; of another model belonging to the same unit, rather than the usual 1&quot;.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Hit &amp; Run" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="be3e-4c8c-e168-523f">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Should it win a round of combat, a unit with this special rule may choose to Fall Back in Good Order rather than making a follow up or pursuit move.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Expeditionary Marksmen" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ae8c-387c-e48f-d03d">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Expeditionary Marksmen do not suffer any negative To Hit modifiers for Moving and Shooting.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Subterranean Ambush" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="d810-bce7-55a7-0f74">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">If your army includes a unit of Miners you may, after both sides have deployed but before the first turn of the game begins, deploy two 32mm round Mine markers, plus one additional marker for each additional unit of Miners your army includes. These markers can be deployed anywhere on the battlefield that is not within:
+
+
+- The enemy player&apos;s deployment zone
+- 12&quot; of another friendly Mine marker
+- 6&quot; of an enemy unit
+- 3&quot; of a special feature of an objective marker
+
+
+When a unit of Miners would arrive onto the battlefield as Reserves, it can be placed anywhere on the battlefield within 6&quot; of a Mine marker, but not within 6&quot; of an enemy unit. The unit cannot charge during this turn and counts as having moved for the purpose of shooting, but can otherwise act as normal.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Function Over Form" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1a67-5c3c-a15b-e85a">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">When writing your muster list, you may reduce the Toughness characteristic of any of the following war machines by 1 (to a minimum of 1):
+
+
+- Cannon
+- Organ Guns
+- Flame Cannon
+
+
+Any war machine that has its Toughness reduced in this way also loses the Move or Shoot special rule.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <entryLinks>
     <entryLink import="true" name="Rangers" hidden="false" type="selectionEntry" id="61ba-2fd5-e048-c81a" targetId="e080-e75e-694c-50df">
@@ -2521,6 +2576,50 @@ However if a misfire is rolled on the Artillery dice, no shots are fired and a c
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup name="Unit Options" id="f72a-aef0-3ed8-6e45" hidden="false">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Expeditionary Marksmen" hidden="true" id="b99b-2ce0-1d04-ceff" sortIndex="1">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cda3-51fc-f9b1-482b"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="false" id="398d-daed-c2b0-2aab" includeChildSelections="true"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Expeditionary Marksmen" id="995b-7be8-a018-da66" hidden="false" type="profile" targetId="ae8c-387c-e48f-d03d"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="a39e-ca6d-6a07-f154" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="398d-daed-c2b0-2aab">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="f295-aced-7dcd-d8e6" includeChildSelections="true"/>
+                  </repeats>
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="398d-daed-c2b0-2aab">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="8475-05b2-657d-e508" includeChildSelections="true"/>
+                  </repeats>
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <categoryLinks>
         <categoryLink name="Faction: Dwarfen Mountain Holds" hidden="false" id="89b4-3088-7a28-1a84" primary="false" targetId="f4fd-aa79-6ff3-1ea9"/>
@@ -3105,6 +3204,15 @@ However if a misfire is rolled on the Artillery dice, no shots are fired and a c
             <infoLink name="Resolute" hidden="false" type="profile" id="22f4-3086-9d18-817e" targetId="a230-c540-6a65-4974"/>
             <infoLink name="Ambushers" hidden="false" type="profile" id="86dd-873b-c59a-eefd" targetId="8c0b-6fe6-dc06-512"/>
             <infoLink name="Vanguard" hidden="false" type="profile" id="275-355c-6ec9-ff46" targetId="691e-10ec-4f7c-a2c4"/>
+            <infoLink name="Subterranean Ambush" id="221a-6bc4-7700-1a35" hidden="true" type="profile" targetId="d810-bce7-55a7-0f74">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3949,6 +4057,15 @@ However if a misfire is rolled on the Artillery dice, no shots are fired and a c
             </infoLink>
             <infoLink name="Skirmishers" hidden="false" type="profile" id="5fa1-9cf0-3131-7de4" targetId="59a5-7eca-ee35-96ac"/>
             <infoLink name="Stubborn" hidden="false" type="profile" id="d944-8e0c-10b8-88f5" targetId="e351-bbd6-f470-b604"/>
+            <infoLink name="Function Over Form" id="85a3-e8fa-3380-baf9" hidden="true" type="profile" targetId="1a67-5c3c-a15b-e85a">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -4025,6 +4142,15 @@ However if a misfire is rolled on the Artillery dice, no shots are fired and a c
             </infoLink>
             <infoLink name="Skirmishers" hidden="false" type="profile" id="418-2bd6-3e84-e36f" targetId="59a5-7eca-ee35-96ac"/>
             <infoLink name="Stubborn" hidden="false" type="profile" id="4d0d-676a-c45d-dcfd" targetId="e351-bbd6-f470-b604"/>
+            <infoLink name="Function Over Form" id="dd81-91ef-7a08-489c" hidden="true" type="profile" targetId="1a67-5c3c-a15b-e85a">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -4091,6 +4217,15 @@ However if a misfire is rolled on the Artillery dice, no shots are fired and a c
             </infoLink>
             <infoLink name="Skirmishers" hidden="false" type="profile" id="88ec-5547-2e3a-d35d" targetId="59a5-7eca-ee35-96ac"/>
             <infoLink name="Stubborn" hidden="false" type="profile" id="eafb-bb3b-ac1c-cb81" targetId="e351-bbd6-f470-b604"/>
+            <infoLink name="Function Over Form" id="5a45-043e-954f-fdec" hidden="true" type="profile" targetId="1a67-5c3c-a15b-e85a">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -4959,17 +5094,17 @@ However if a misfire is rolled on the Artillery dice, no shots are fired and a c
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e512-2292-a981-9831"/>
           </constraints>
           <entryLinks>
-            <entryLink import="true" name="Heavy Armour" hidden="false" type="selectionEntry" id="5e2a-784e-b3ce-4220" targetId="62fb-f89d-afc-1cf1" sortIndex="3">
+            <entryLink import="true" name="Heavy Armour" hidden="false" type="selectionEntry" id="5e2a-784e-b3ce-4220" targetId="62fb-f89d-afc-1cf1" sortIndex="2">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="db79-72e2-44d1-978d"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="faa5-6ac0-1d6c-ed53" targetId="721d-36e3-388a-c0d6" sortIndex="2">
+            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="faa5-6ac0-1d6c-ed53" targetId="721d-36e3-388a-c0d6" sortIndex="1">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="3b06-ac0b-32db-c1b3"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Runes" hidden="false" type="selectionEntryGroup" id="9d0f-aa2d-d03b-c86d" targetId="1e31-2c1f-9494-2b89" flatten="false" sortIndex="6">
+            <entryLink import="true" name="Runes" hidden="false" type="selectionEntryGroup" id="9d0f-aa2d-d03b-c86d" targetId="1e31-2c1f-9494-2b89" flatten="false" sortIndex="5">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="b22-2d2b-6e0f-ad84" includeChildSelections="true"/>
               </constraints>
@@ -4983,7 +5118,7 @@ However if a misfire is rolled on the Artillery dice, no shots are fired and a c
             <cost name="pts" typeId="points" value="50"/>
           </costs>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Pistol" hidden="false" id="2468-1de5-3118-9947" sortIndex="5">
+            <selectionEntryGroup name="Pistol" hidden="false" id="2468-1de5-3118-9947" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a22f-8795-54b5-8203"/>
               </constraints>
@@ -5000,7 +5135,7 @@ However if a misfire is rolled on the Artillery dice, no shots are fired and a c
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Extra Weapon" hidden="false" id="4bf0-b03e-2926-46e7" sortIndex="4">
+            <selectionEntryGroup name="Extra Weapon" hidden="false" id="4bf0-b03e-2926-46e7" sortIndex="3">
               <entryLinks>
                 <entryLink import="true" name="Handgun" hidden="false" type="selectionEntry" id="ac38-77bd-e747-85f5" targetId="e2ed-a3fd-dee5-3e9f" sortIndex="2">
                   <costs>
@@ -5014,10 +5149,32 @@ However if a misfire is rolled on the Artillery dice, no shots are fired and a c
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" id="b190-1cc7-4242-6627" hidden="false">
+            <selectionEntryGroup name="Command" id="b190-1cc7-4242-6627" hidden="false" sortIndex="6">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" id="2133-aa8a-1a7d-c07e" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Unit Options" id="0640-283f-af21-ff27" hidden="false">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Expeditionary Marksmen" hidden="true" id="8105-e6c2-e58c-497d" sortIndex="1">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="13f2-ea9f-700c-2ad7"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Expeditionary Marksmen" id="d15e-05ef-d9b3-335d" hidden="false" type="profile" targetId="ae8c-387c-e48f-d03d"/>
+                  </infoLinks>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <costs>
+                    <cost name="pts" typeId="points" value="10"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <categoryLinks>
@@ -5675,8 +5832,16 @@ However if a misfire is rolled on the Artillery dice, no shots are fired and a c
             <infoLink name="Dwarf Engineer Sappers" id="c632-2b5e-509b-2577" hidden="false" type="profile" targetId="f176-2928-db85-c36c"/>
           </infoLinks>
           <entryLinks>
-            <entryLink import="true" name="Hand Weapon" hidden="false" id="4126-26de-034c-8326" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1"/>
-            <entryLink import="true" name="Heavy Armour" hidden="false" id="5485-34ba-04bd-c187" type="selectionEntry" targetId="62fb-f89d-afc-1cf1" sortIndex="2"/>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="4126-26de-034c-8326" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="24fa-46c8-29c3-8fd2"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Heavy Armour" hidden="false" id="5485-34ba-04bd-c187" type="selectionEntry" targetId="62fb-f89d-afc-1cf1" sortIndex="2">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1cbf-1207-412e-5c2f"/>
+              </constraints>
+            </entryLink>
             <entryLink import="true" name="Runes" hidden="false" id="032f-1617-546f-5e00" type="selectionEntryGroup" targetId="1e31-2c1f-9494-2b89" sortIndex="5">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="d621-a554-da8f-0ee9" includeChildSelections="true"/>
@@ -5713,6 +5878,11 @@ However if a misfire is rolled on the Artillery dice, no shots are fired and a c
                     <cost name="pts" typeId="points" value="4"/>
                   </costs>
                 </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Command" id="6767-0a1b-a67b-7f2c" hidden="false" sortIndex="6">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="false" id="c4b5-16a0-563b-3f7a" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
@@ -6267,6 +6437,88 @@ However if a misfire is rolled on the Artillery dice, no shots are fired and a c
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="633e-837b-a536-c380"/>
       </constraints>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Scout Gyrocopters" hidden="false" id="b091-b415-c678-b9b9">
+      <categoryLinks>
+        <categoryLink targetId="36e4-45e0-c904-55d1" id="91a6-7281-5443-36d8" primary="false" name="Cavalry"/>
+        <categoryLink targetId="f4fd-aa79-6ff3-1ea9" id="0712-fa6c-f2d5-76b6" primary="false" name="Faction: Dwarfen Mountain Holds"/>
+      </categoryLinks>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="f924-2a75-13ae-8f24" hidden="false">
+          <infoLinks>
+            <infoLink name="Extended Formation" id="9c6d-036f-d1f4-e4c3" hidden="false" type="profile" targetId="708d-ae6e-2dd6-608b"/>
+            <infoLink name="Fire &amp; Flee" id="4975-8b8d-3f6f-ed6e" hidden="false" type="profile" targetId="1a06-31aa-cbfe-1a5"/>
+            <infoLink name="Fly" id="f3c0-9fcc-bee3-4200" hidden="false" type="profile" targetId="c557-6102-9a35-bbcd">
+              <modifiers>
+                <modifier type="append" value="(10)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Hatred" id="06ea-0b56-d93a-5d82" hidden="false" type="profile" targetId="f4b3-18af-16bf-78dd">
+              <modifiers>
+                <modifier type="append" value="(Orcs &amp; Goblins)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Hit &amp; Run" id="0086-3032-3974-b715" hidden="false" type="profile" targetId="be3e-4c8c-e168-523f"/>
+            <infoLink name="Impact Hits" id="a876-8b29-5b89-97bc" hidden="false" type="profile" targetId="5c2-e9dd-2715-a0c0">
+              <modifiers>
+                <modifier type="append" value="(D3)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Magic Resistance" id="0955-8ca6-649e-b3bd" hidden="false" type="profile" targetId="90ed-c9be-a611-79cc">
+              <modifiers>
+                <modifier type="append" value="(-1)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Skirmishers" id="3459-e7c2-68db-5d5d" hidden="false" type="profile" targetId="59a5-7eca-ee35-96ac"/>
+            <infoLink name="Swiftstride" id="a0ff-93b7-5edd-cb80" hidden="false" type="profile" targetId="dc91-48b3-3696-217"/>
+            <infoLink name="Vanguard" id="09e1-32f9-2ff5-3412" hidden="false" type="profile" targetId="691e-10ec-4f7c-a2c4"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <profiles>
+        <profile name="Scout Gyrocopters" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="540e-b746-d178-70ef">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Monstrous Cavalry</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">1-2</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Scout Gyrocopter" hidden="false" id="6820-8b29-3392-3d04">
+          <categoryLinks>
+            <categoryLink targetId="2c85-5f2b-9288-1257" id="93de-1f85-d713-67aa" primary="false" name="Monstrous Cavalry"/>
+            <categoryLink targetId="may-have-armour" id="856e-c8ca-b1c2-38bc" primary="false" name="MAY_HAVE_ARMOUR"/>
+          </categoryLinks>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="60aa-4d26-36df-21d7"/>
+            <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="a46c-e5ab-bae8-f40a"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Base (50x50)" id="953a-a556-1c80-cd5e" hidden="false" type="profile" targetId="7813-4d15-143d-1bf1"/>
+            <infoLink name="Scout Gyrocopter" id="cd7f-1ec9-dd74-4224" hidden="false" type="profile" targetId="a77d-c183-17df-4d14"/>
+          </infoLinks>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="cd63-c9cb-557c-e6ed" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="815c-85ad-6422-1558"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Clattergun" hidden="false" id="0895-d12f-d95a-ace2" type="selectionEntry" targetId="4ff9-18c3-8a07-67cd" sortIndex="2">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6161-aa38-23f9-f1f3"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Heavy Armour" hidden="false" id="108c-1a16-967a-b49d" type="selectionEntry" targetId="62fb-f89d-afc-1cf1" sortIndex="3">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="5472-84f0-504c-cef6"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="60"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
     </selectionEntry>
   </sharedSelectionEntries>
   <catalogueLinks>
