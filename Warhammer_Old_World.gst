@@ -159,6 +159,11 @@
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true"/>
               </conditions>
             </modifier>
+            <modifier type="set" value="33" field="f0f7-32b6-d076-214a">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </categoryLink>
         <categoryLink name="Mercenaries" hidden="false" id="6032-af52-ae71-e755" targetId="5b84-2c3c-869d-3522">
@@ -174,6 +179,16 @@
             <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7bbf-73df-eb6d-d411" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
