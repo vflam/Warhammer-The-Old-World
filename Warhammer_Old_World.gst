@@ -13600,7 +13600,15 @@ Note that this special rule only applies to a single, ordinary hand weapon. If t
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Cannon" hidden="false" id="ca63-2c16-928e-1e45" collective="true">
       <infoLinks>
-        <infoLink name="Cannon" hidden="false" type="profile" id="3e4c-9708-eee8-14cd" targetId="8ef5-8512-e1c2-6474"/>
+        <infoLink name="Cannon" hidden="false" type="profile" id="3e4c-9708-eee8-14cd" targetId="8ef5-8512-e1c2-6474">
+          <modifiers>
+            <modifier type="set" value="Armour Bane (2), Cannon Fire, Cumbersome, Multiple Wounds (D3)" field="5f83-3633-336b-93b4">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="992c-cbe5-82ba-d98f" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ae72-ea17-e2b-8ca6"/>
@@ -13608,7 +13616,15 @@ Note that this special rule only applies to a single, ordinary hand weapon. If t
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Organ Gun" hidden="false" id="e690-7263-fa52-7192" collective="true">
       <infoLinks>
-        <infoLink name="Organ gun" hidden="false" type="profile" id="93f0-c7ec-3e3-360e" targetId="5635-efd8-13b6-c841"/>
+        <infoLink name="Organ gun" hidden="false" type="profile" id="93f0-c7ec-3e3-360e" targetId="5635-efd8-13b6-c841">
+          <modifiers>
+            <modifier type="set" value="Armour Bane (2), Cumbersome, Multi-Barrelled" field="5f83-3633-336b-93b4">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="bf60-74bd-2f15-86f8" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="df7e-515b-6c02-41c0"/>
@@ -13624,7 +13640,15 @@ Note that this special rule only applies to a single, ordinary hand weapon. If t
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Fire Thrower" hidden="false" id="75a5-87ec-2be6-6adb" collective="true">
       <infoLinks>
-        <infoLink name="Fire Thrower" hidden="false" type="profile" id="4c01-ea2c-2a89-b87b" targetId="2694-34f1-f146-6351"/>
+        <infoLink name="Fire Thrower" hidden="false" type="profile" id="4c01-ea2c-2a89-b87b" targetId="2694-34f1-f146-6351">
+          <modifiers>
+            <modifier type="set" value="Column of Fire, Cumbersome, Flaming Attacks" field="5f83-3633-336b-93b4">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="7f53-f91e-d327-6ef7" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="890b-e8c0-76c1-6024"/>
