@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="117" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="118" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -288,6 +288,7 @@
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7b8f-602e-29cd-5786" shared="true"/>
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f8cb-e518-1881-292" shared="true"/>
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56fb-835b-a377-6639" shared="true"/>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7bbf-73df-eb6d-d411" shared="true"/>
                           </conditions>
                         </conditionGroup>
                       </conditionGroups>
@@ -13419,6 +13420,25 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Extra Atacks (+1), Require Two Hands</characteristic>
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Resolute" hidden="false" id="a230-c540-6a65-4974" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="39" publicationId="8b8d-8fc4-559e-87b1">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Models with this special rule suffer a -1 modifier to the result of any Flee roll or Pursuit roll they make (to a minimum of 1).</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Deathblow" hidden="false" id="233a-1715-82be-1410" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="39" publicationId="8b8d-8fc4-559e-87b1">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">When a model with this special rule is reduced to zero Wounds by an enemy attack during the Combat phase, the unit that made the attack suffers a Strength 3 hit, with an AP of -1.
+
+Note that if this model is reduced to zero Wounds whilst engaged in a challenge, it is the model that made the attack that suffers this hit, rather than its unit.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Gromril Weapons" hidden="false" id="2e16-e293-353e-6881" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="39" publicationId="8b8d-8fc4-559e-87b1">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A hand weapon carried by a model with this special rule has an Armour Piercing characteristic of -1.
+
+Note that this special rule only applies to a single, ordinary hand weapon. If the model is using two hand weapons or any other sort of weapon, or if their hand weapon is inscribed with any Weapon runes, this special rule ceases to apply.</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
