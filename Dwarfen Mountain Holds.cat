@@ -2649,24 +2649,12 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ad7-b1b6-4083-1db1"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="Shield" hidden="false" id="5276-3455-ff5d-951f" type="selectionEntry" targetId="6192-f9f1-5d53-2042">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </entryLink>
           </entryLinks>
-          <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="377b-4298-d4dd-c14" flatten="true" sortIndex="6">
-              <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Shields" hidden="false" id="5449-c4b-5ba0-c848" collective="true">
-                  <costs>
-                    <cost name="pts" typeId="points" value="1"/>
-                  </costs>
-                  <entryLinks>
-                    <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="5276-3455-ff5d-951f" targetId="6192-f9f1-5d53-2042"/>
-                  </entryLinks>
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ff83-fdb5-60e5-3cc5"/>
-                  </constraints>
-                </selectionEntry>
-              </selectionEntries>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
           <infoLinks>
             <infoLink name="Hammerer" hidden="false" type="profile" id="61d4-fdda-3fe4-ac9e" targetId="7a34-50ec-fd82-d932"/>
             <infoLink name="Base (25x25)" hidden="false" type="profile" id="71a7-277d-b2a0-8a69" targetId="193c-4d0d-de6b-bbb1"/>
@@ -2674,32 +2662,44 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
           <costs>
             <cost name="pts" typeId="points" value="16"/>
           </costs>
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="8130-65d-7bbf-5144" collective="true" sortIndex="4">
-              <costs>
-                <cost name="pts" typeId="points" value="1"/>
-              </costs>
-              <infoLinks>
-                <infoLink name="Drilled" hidden="false" type="profile" id="2832-2143-5cc0-b139" targetId="1f64-3ddc-db58-12fb"/>
-              </infoLinks>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="70ab-7e7e-19fc-d688"/>
-              </constraints>
-            </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="970-71b7-98f8-842d" collective="true" sortIndex="5">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e15f-89ac-bb27-c4a"/>
-              </constraints>
-              <costs>
-                <cost name="pts" typeId="points" value="1"/>
-              </costs>
-            </selectionEntry>
-          </selectionEntries>
           <categoryLinks>
             <categoryLink name="Heavy Infantry" hidden="false" id="30be-f5e1-6516-a19d" targetId="ca7e-d004-ccde-caf3" primary="false"/>
             <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="e76c-f8a5-9a9-e8e" targetId="may-have-armour"/>
             <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="985c-aaba-8ce-ddac" targetId="may-have-shield"/>
           </categoryLinks>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="8130-65d-7bbf-5144" collective="true" sortIndex="3">
+          <costs>
+            <cost name="pts" typeId="points" value="0"/>
+          </costs>
+          <infoLinks>
+            <infoLink name="Drilled" id="2832-2143-5cc0-b139" hidden="false" type="profile" targetId="1f64-3ddc-db58-12fb"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="70ab-7e7e-19fc-d688"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Veteran" hidden="false" id="970-71b7-98f8-842d" collective="true" sortIndex="4">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e15f-89ac-bb27-c4a"/>
+          </constraints>
+          <infoLinks>
+            <infoLink name="Veteran" id="568b-8e15-f038-2143" hidden="false" type="profile" targetId="4022-c403-b083-ba83"/>
+          </infoLinks>
+          <modifiers>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
