@@ -501,11 +501,6 @@ Range: 15&quot; 
 Effect: The target enemy unit suffers 2D6 Strength 4 hits, each with an AP of -. This Bound spell has the Flaming Attacks special rule.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Poisoned Attacks" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6a98-a822-6f51-5546">
-      <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Note that, because it has the Howdah special rule, a Stegadon or Ancient Stegadon is considered to be a chariot mount, rather than a ridden monster.</characteristic>
-      </characteristics>
-    </profile>
     <profile name="Impervious Defence" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c59f-ddf3-63b7-eaf">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Enemy units cannot claim any bonus combat result points for being engaged with this model’s flank or rear arc.</characteristic>
@@ -1610,13 +1605,24 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
                 </modifier>
                 <modifier type="increment" value="1" field="8af85685-557e597b">
                   <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="3225a08-667a08b2"/>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="3225a08-667a08b2" includeChildSelections="false"/>
                   </repeats>
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="8af85685-557e597b">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="9f6b-884c-3993-94b8" includeChildSelections="true"/>
+                  </repeats>
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                  </conditions>
                 </modifier>
               </modifiers>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="ef4abe87-b329a2d5" includeChildSelections="false"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="8af85685-557e597b" includeChildSelections="true"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="8af85685-557e597b" includeChildSelections="true"/>
               </constraints>
             </selectionEntry>
           </selectionEntries>
@@ -1714,7 +1720,31 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
               </infoLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="8ab06b9d-80932553" includeChildSelections="false"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="fffe-cb79-8d51-d821" includeChildSelections="true"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="1" field="fffe-cb79-8d51-d821">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                  </conditions>
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="fffe-cb79-8d51-d821">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                  </conditions>
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="decrement" value="1" field="fffe-cb79-8d51-d821">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="force" childId="850a8da-ae2c82c4" shared="true" roundUp="false" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry name="Vanguard" id="850a8da-ae2c82c4" type="upgrade" import="true" hidden="false" sortIndex="1">
               <costs>
@@ -1725,7 +1755,31 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
               </infoLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="524cd12e-582dd238" includeChildSelections="false"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="f239-3c71-d0d1-12da" includeChildSelections="true"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="1" field="f239-3c71-d0d1-12da">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                  </conditions>
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+                  </repeats>
+                </modifier>
+                <modifier type="decrement" value="1" field="f239-3c71-d0d1-12da">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="force" childId="c5bc71aa-82f3bc54" shared="true" roundUp="false" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="f239-3c71-d0d1-12da">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                  </conditions>
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
             </selectionEntry>
           </selectionEntries>
           <constraints>
