@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="117" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="118" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -159,6 +159,11 @@
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true"/>
               </conditions>
             </modifier>
+            <modifier type="set" value="33" field="f0f7-32b6-d076-214a">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </categoryLink>
         <categoryLink name="Mercenaries" hidden="false" id="6032-af52-ae71-e755" targetId="5b84-2c3c-869d-3522">
@@ -174,6 +179,16 @@
             <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7bbf-73df-eb6d-d411" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -288,6 +303,8 @@
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7b8f-602e-29cd-5786" shared="true"/>
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f8cb-e518-1881-292" shared="true"/>
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="56fb-835b-a377-6639" shared="true"/>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7bbf-73df-eb6d-d411" shared="true"/>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
                           </conditions>
                         </conditionGroup>
                       </conditionGroups>
@@ -13421,6 +13438,38 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
+    <profile name="Resolute" hidden="false" id="a230-c540-6a65-4974" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="39" publicationId="8b8d-8fc4-559e-87b1">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Models with this special rule suffer a -1 modifier to the result of any Flee roll or Pursuit roll they make (to a minimum of 1).</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Deathblow" hidden="false" id="233a-1715-82be-1410" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="39" publicationId="8b8d-8fc4-559e-87b1">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">When a model with this special rule is reduced to zero Wounds by an enemy attack during the Combat phase, the unit that made the attack suffers a Strength 3 hit, with an AP of -1.
+
+Note that if this model is reduced to zero Wounds whilst engaged in a challenge, it is the model that made the attack that suffers this hit, rather than its unit.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Gromril Weapons" hidden="false" id="2e16-e293-353e-6881" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="39" publicationId="8b8d-8fc4-559e-87b1">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A hand weapon carried by a model with this special rule has an Armour Piercing characteristic of -1.
+
+Note that this special rule only applies to a single, ordinary hand weapon. If the model is using two hand weapons or any other sort of weapon, or if their hand weapon is inscribed with any Weapon runes, this special rule ceases to apply.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Function Over Form" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1a67-5c3c-a15b-e85a">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">When writing your muster list, you may reduce the Toughness characteristic of any of the following war machines by 1 (to a minimum of 1):
+
+
+- Cannon
+- Organ Guns
+- Flame Cannon
+
+
+Any war machine that has its Toughness reduced in this way also loses the Move or Shoot special rule.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -13579,7 +13628,15 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Cannon" hidden="false" id="ca63-2c16-928e-1e45" collective="true">
       <infoLinks>
-        <infoLink name="Cannon" hidden="false" type="profile" id="3e4c-9708-eee8-14cd" targetId="8ef5-8512-e1c2-6474"/>
+        <infoLink name="Cannon" hidden="false" type="profile" id="3e4c-9708-eee8-14cd" targetId="8ef5-8512-e1c2-6474">
+          <modifiers>
+            <modifier type="set" value="Armour Bane (2), Cannon Fire, Cumbersome, Multiple Wounds (D3)" field="5f83-3633-336b-93b4">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="fac7-648f-252e-8ddf" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ae72-ea17-e2b-8ca6"/>
@@ -13587,7 +13644,15 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Organ Gun" hidden="false" id="e690-7263-fa52-7192" collective="true">
       <infoLinks>
-        <infoLink name="Organ gun" hidden="false" type="profile" id="93f0-c7ec-3e3-360e" targetId="5635-efd8-13b6-c841"/>
+        <infoLink name="Organ gun" hidden="false" type="profile" id="93f0-c7ec-3e3-360e" targetId="5635-efd8-13b6-c841">
+          <modifiers>
+            <modifier type="set" value="Armour Bane (2), Cumbersome, Multi-Barrelled" field="5f83-3633-336b-93b4">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="fac7-648f-252e-8ddf" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="df7e-515b-6c02-41c0"/>
@@ -13603,7 +13668,15 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Fire Thrower" hidden="false" id="75a5-87ec-2be6-6adb" collective="true">
       <infoLinks>
-        <infoLink name="Fire Thrower" hidden="false" type="profile" id="4c01-ea2c-2a89-b87b" targetId="2694-34f1-f146-6351"/>
+        <infoLink name="Fire Thrower" hidden="false" type="profile" id="4c01-ea2c-2a89-b87b" targetId="2694-34f1-f146-6351">
+          <modifiers>
+            <modifier type="set" value="Column of Fire, Cumbersome, Flaming Attacks" field="5f83-3633-336b-93b4">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="ancestor" childId="fac7-648f-252e-8ddf" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="890b-e8c0-76c1-6024"/>
@@ -13886,6 +13959,14 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
     <selectionEntry type="upgrade" import="true" name="Ironfist" hidden="false" id="2139-5be6-d6b0-4321">
       <infoLinks>
         <infoLink name="Ironfist" id="59a8-76ed-9e56-b231" hidden="false" targetId="d432-2b40-b9e4-c45c" type="profile"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Function Over Form" hidden="false" id="fac7-648f-252e-8ddf">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="aa51-179b-75b9-d839"/>
+      </constraints>
+      <infoLinks>
+        <infoLink name="Function Over Form" id="b313-88b8-6646-3418" hidden="false" type="profile" targetId="1a67-5c3c-a15b-e85a"/>
       </infoLinks>
     </selectionEntry>
   </sharedSelectionEntries>
