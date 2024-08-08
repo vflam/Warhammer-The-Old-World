@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="118" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="119" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -13319,11 +13319,11 @@ Wizards &amp; Armour (Weapons)</characteristic>
     </profile>
     <profile name="Troll Vomit" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="cdde-5994-8941-787f">
       <characteristics>
-        <characteristic name="R" id="a56b-a816-bc66-7faf" hidden="false" typeId="2360-c777-5e07-ed58">Combat</characteristic>
-        <characteristic name="S" id="5c36-4d2a-a060-406c" hidden="false" typeId="ac19-f99c-72e9-a1a7">3</characteristic>
-        <characteristic name="AP" id="c62b-bd9e-c4ea-294c" hidden="false" typeId="9429-ffe7-2ce5-e9a5">2</characteristic>
-        <characteristic name="Special Rules" id="b390-1a36-215e-4471" hidden="false" typeId="5f83-3633-336b-93b4">-</characteristic>
-        <characteristic name="Notes" id="4155-995e-7efd-27b4" hidden="false" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">3</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-2</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">-</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">A troll that is in base contact with an enemy model may make one additional attack each turn with this weapon. This attack must be made last, after all other attacks have been made (including Stomp Attacks), but hits automatically.</characteristic>
       </characteristics>
     </profile>
     <profile name="Ironfist" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="d432-2b40-b9e4-c45c">
