@@ -2,5 +2,61 @@
 <catalogue library="false" id="09eb-a3a1-87f4-7fef" name="Warriors of Chaos - Wolves of the Sea" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="119" revision="1" authorUrl="www.newrecruit.eu" authorContact="Discord: Tidomann" authorName="Tidomann" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Warriors of Chaos" id="b2f6-21bb-449b-06de" targetId="c908-5f26-5bdf-2a48"/>
+    <catalogueLink type="catalogue" name="Magic Items" id="989e-8c78-f839-9aee" targetId="6c22-b0e4-7c83-f9ce"/>
   </catalogueLinks>
+  <entryLinks>
+    <entryLink import="true" name="Chaos Lord" hidden="false" id="272d-2e83-cb9a-5df6" type="selectionEntry" targetId="617-b6cf-592e-8832">
+      <categoryLinks>
+        <categoryLink targetId="f211-ceec-13ba-afdd" id="ce11-be4b-c6ea-c3c6" primary="false" name="Chaos Lord, Daemon Prince, Or Sorcerer Lord"/>
+        <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="5cb0-2718-ca03-e422" primary="false" name="Characters"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Daemon Princes" hidden="false" id="780e-3511-2c96-5bc1" type="selectionEntry" targetId="d45d-49ef-8592-13d4">
+      <categoryLinks>
+        <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="4228-37f6-414f-0284" primary="false" name="Characters"/>
+        <categoryLink targetId="f211-ceec-13ba-afdd" id="d7ba-7b18-76d1-3462" primary="false" name="Chaos Lord, Daemon Prince, or Sorcerer Lord"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Sorcerer Lord" hidden="false" id="3a74-c2ba-ff81-db3f" type="selectionEntry" targetId="415c-fa0b-bb8e-4424">
+      <categoryLinks>
+        <categoryLink targetId="29c5-17ab-7027-db7b" id="eaca-5e5a-5165-a56b" primary="false" name="Exalted Champion or Exalted Sorcerer"/>
+        <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="42d6-152c-7b0d-a8ca" primary="false" name="Characters"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Aspiring Champion" hidden="false" id="f5e1-dd25-8059-478c" type="selectionEntry" targetId="d4d8-e066-e0fc-12c4">
+      <categoryLinks>
+        <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="6655-3673-ac39-3341" primary="false" name="Characters"/>
+      </categoryLinks>
+    </entryLink>
+  </entryLinks>
+  <categoryEntries>
+    <categoryEntry name="Chaos Lord, Daemon Prince, or Sorcerer Lord" id="f211-ceec-13ba-afdd" hidden="false">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="16ee-4a82-4e34-9413"/>
+      </constraints>
+    </categoryEntry>
+    <categoryEntry name="Exalted Champion or Exalted Sorcerer" id="29c5-17ab-7027-db7b" hidden="false">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="46df-cbb9-aad3-d246"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="46df-cbb9-aad3-d246">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+        <modifier type="increment" value="1" field="46df-cbb9-aad3-d246">
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+  </categoryEntries>
 </catalogue>
