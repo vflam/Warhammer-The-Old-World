@@ -700,6 +700,43 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         <characteristic name="Ld" typeId="c435-6b14-f77e-3c72">9</characteristic>
       </characteristics>
     </profile>
+    <profile name="Warpfire Dragon" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="8039-5683-7571-b299">
+      <characteristics>
+        <characteristic name="M" typeId="cd3b-a5a4-e185-5a9d">6</characteristic>
+        <characteristic name="WS" typeId="b007-7d58-4f14-1e01">6</characteristic>
+        <characteristic name="BS" typeId="59f9-ccf5-1155-fb05">0</characteristic>
+        <characteristic name="S" typeId="5b6b-1427-2a45-dd0c">6</characteristic>
+        <characteristic name="T" typeId="ab43-8b61-83e7-d090">6</characteristic>
+        <characteristic name="W" typeId="83ed-7b82-bf1f-e558">6</characteristic>
+        <characteristic name="I" typeId="73b1-abe5-72f8-41e2">3</characteristic>
+        <characteristic name="A" typeId="dddc-9fbd-b0fd-a480">5</characteristic>
+        <characteristic name="Ld" typeId="c435-6b14-f77e-3c72">8</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Explosive Demise" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4769-be05-035a-7e91">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">When a Warpfire Dragon loses its last Wound, before the model is removed from play, every unit (friend or foe) within 6&quot; of it suffers D6 Strength 5 hits, each with an AP of -2.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Fire &amp; Chaos" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="8dcd-1035-2a18-ba2f">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Warpfire Dragons have a 5+ Ward save against any wound suffered that were caused by an attack that has either the Magical Attacks or Flaming Attacks special rule.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Warpfire Aura" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ccb7-517d-8228-355e">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Other models (both friend and foe) are not permitted a Ward save whilst within 3&quot; of this model.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Warpfire Blast" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="f189-6235-d0ec-ec20">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">6&quot;-24&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">4 (8)</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1 (-3)</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Bombardment, Cumbersome, Flaming Attacks, Multiple Wounds (D3+1)</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">This weapon shoots like a stone thrower, using the &apos;Bombardment&apos; special rule and a 3&quot; blast template. If a &apos;Misfire&apos; is rolled on the Artillery dice, this model loses a single Wound (instead of rolling on the Misfire table). The Multiple Wounds (D3+1) special rule applies only to a single model whose base lies underneath the central hole of the blast template.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Fumes of Contagion" hidden="false" id="f20c-7123-c387-a33d" collective="true">
@@ -918,6 +955,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <selectionEntryGroup name="Mount" hidden="false" id="c230-aa46-d826-e6f5" sortIndex="5">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4eb-301d-2a72-aa82"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="a8e0-f36f-e404-51d2"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="Chaos Chariot" hidden="false" type="selectionEntry" id="23f5-1529-4283-428d" targetId="6cfb-92ff-9f22-de1a" sortIndex="2">
@@ -947,6 +985,13 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                   </categoryLinks>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="a8e0-f36f-e404-51d2">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a96b-bece-2c01-38d2" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="5009-55ad-4302-5bfa" sortIndex="4">
               <entryLinks>
@@ -1060,10 +1105,18 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               </infoLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ab86-a7b-d68-6a79"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="89d2-333f-608f-16dd"/>
               </constraints>
               <costs>
                 <cost name="pts" typeId="points" value="30"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="1" field="89d2-333f-608f-16dd">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a96b-bece-2c01-38d2" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
           </selectionEntries>
           <selectionEntryGroups>
@@ -1286,6 +1339,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <selectionEntryGroup name="Mount" hidden="false" id="b88b-7b11-fa2a-c178" sortIndex="5">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bfa0-79e4-81b0-895f"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="2b25-36c7-c199-32cc"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="Chaos Chariot" hidden="false" type="selectionEntry" id="4267-f506-3cc3-918d" targetId="6cfb-92ff-9f22-de1a" sortIndex="3">
@@ -1320,6 +1374,14 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                   </categoryLinks>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="2b25-36c7-c199-32cc">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a96b-bece-2c01-38d2" shared="true"/>
+                    <condition type="atMost" value="0" field="selections" scope="root-entry" childId="6f4-749b-1894-1c50" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="4fb7-6b5d-9b6d-5ec9" sortIndex="4">
               <entryLinks>
@@ -1456,6 +1518,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <selectionEntryGroup name="Mount" hidden="false" id="a579-5f1e-d942-f510" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9686-5ab1-4a9d-f6be"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="f8b7-466a-0197-208b"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="Chaos Chariot" hidden="false" type="selectionEntry" id="9bde-f55c-50d5-3b45" targetId="6cfb-92ff-9f22-de1a" sortIndex="1">
@@ -1477,6 +1540,13 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                   </costs>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="f8b7-466a-0197-208b">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a96b-bece-2c01-38d2" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Mark of Chaos" hidden="false" id="221d-902f-ae8c-cccc" defaultSelectionEntryId="43c9-f874-45d6-cfce" sortIndex="5">
               <constraints>
@@ -1665,6 +1735,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <selectionEntryGroup name="Mount" hidden="false" id="823a-4c75-69e7-f454" sortIndex="5">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6634-71f-8817-38b9"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="ae54-d8a1-e5b3-c199"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="Chaos Chariot" hidden="false" type="selectionEntry" id="a43f-cc4c-88b9-454e" targetId="6cfb-92ff-9f22-de1a" sortIndex="1">
@@ -1704,6 +1775,14 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                   </costs>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="ae54-d8a1-e5b3-c199">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a96b-bece-2c01-38d2" shared="true"/>
+                    <condition type="atMost" value="0" field="selections" scope="root-entry" childId="6f4-749b-1894-1c50" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="5298-ec2f-2977-509" sortIndex="4">
               <entryLinks>
@@ -1856,6 +1935,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <selectionEntryGroup name="Mount" hidden="false" id="b8a9-c4e7-78b7-2072" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="629a-e7e-513a-55af"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="4d93-c439-cd06-d0bd"/>
               </constraints>
               <entryLinks>
                 <entryLink import="true" name="Chaos Chariot" hidden="false" type="selectionEntry" id="439f-7b1e-6aec-a492" targetId="6cfb-92ff-9f22-de1a" sortIndex="1">
@@ -1887,6 +1967,13 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                   </costs>
                 </entryLink>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="1" field="4d93-c439-cd06-d0bd">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a96b-bece-2c01-38d2" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="e254-5be9-9efb-72f5" sortIndex="3">
               <entryLinks>
@@ -2553,6 +2640,9 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       <categoryLinks>
         <categoryLink name="Faction: Warriors of Chaos" hidden="false" id="d045-f9a7-96c5-e5d6" primary="false" targetId="75a1-ee95-da32-b765"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Ambushers" hidden="false" id="270d-4afc-37f5-23db" type="selectionEntry" targetId="dee4-b7d7-0e86-d1d6" sortIndex="4"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Forsaken" hidden="false" id="1951-80d7-6aa4-acdd">
       <profiles>
@@ -3751,6 +3841,9 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       <categoryLinks>
         <categoryLink name="Faction: Warriors of Chaos" hidden="false" id="d4b-18f4-1f9f-1473" primary="false" targetId="75a1-ee95-da32-b765"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Ambushers" hidden="false" id="5b5d-9fd2-d900-01c2" type="selectionEntry" targetId="dee4-b7d7-0e86-d1d6" sortIndex="3"/>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Chaos Chariot" hidden="false" id="6cfb-92ff-9f22-de1a" flatten="true">
       <constraints>
@@ -4159,7 +4252,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <infoLink name="Base (25x25)" id="8c45-afa0-aa45-98ce" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
           </infoLinks>
           <costs>
-            <cost name="pts" typeId="points" value="125"/>
+            <cost name="pts" typeId="points" value="65"/>
           </costs>
           <selectionEntryGroups>
             <selectionEntryGroup name="Mount" id="6fb3-f8af-002b-6ce2" hidden="false" sortIndex="6">
@@ -4402,7 +4495,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" id="0b20-0f24-4de7-5cd0" hidden="false" sortIndex="2">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Champion" hidden="false" id="b752-75c8-dcb7-6538" subType="crew" sortIndex="1">
+            <selectionEntry type="model" import="true" name="Headtaker" hidden="false" id="b752-75c8-dcb7-6538" subType="crew" sortIndex="1">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="45a5-c2f1-aff2-9ae4"/>
               </constraints>
@@ -4649,7 +4742,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Musician" hidden="false" id="327d-be96-aa62-587a" collective="false" subType="crew" sortIndex="3">
               <costs>
-                <cost name="pts" typeId="points" value="5"/>
+                <cost name="pts" typeId="points" value="6"/>
               </costs>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="05e1-8ef4-dedb-6c25"/>
@@ -4666,7 +4759,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </selectionEntry>
             <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="a087-1c25-f282-08d1" collective="false" subType="crew" sortIndex="2">
               <costs>
-                <cost name="pts" typeId="points" value="5"/>
+                <cost name="pts" typeId="points" value="6"/>
               </costs>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e10a-0a39-07c4-ce68"/>
@@ -4690,7 +4783,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </selectionEntry>
             <selectionEntry type="model" import="true" name="First Sword" hidden="false" id="e95e-2cd4-272c-998a" subType="crew" sortIndex="1">
               <costs>
-                <cost name="pts" typeId="points" value="7"/>
+                <cost name="pts" typeId="points" value="8"/>
               </costs>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e7b4-ab1d-9053-45bd"/>
@@ -4775,7 +4868,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" id="f80d-cffd-c667-0c3d" hidden="false" sortIndex="2">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Champion" hidden="false" id="0368-d042-5b56-d2b6" subType="crew" sortIndex="1">
+            <selectionEntry type="model" import="true" name="Skin Wolf Jarl" hidden="false" id="0368-d042-5b56-d2b6" subType="crew" sortIndex="1">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6f70-125a-df50-cada"/>
               </constraints>
@@ -4938,6 +5031,164 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
           </constraints>
         </entryLink>
       </entryLinks>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Warpfire Dragons" hidden="false" id="9a4d-bb0a-06b2-f7d5">
+      <profiles>
+        <profile name="Warpfire Dragon" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="d546-b505-a47f-505a">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Behmoth</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">1</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Warpfire Dragon" hidden="false" id="67eb-9104-2338-3458" sortIndex="1">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="d9e4-b1bf-1eed-b77d-min"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d9e4-b1bf-1eed-b77d-max"/>
+          </constraints>
+          <entryLinks>
+            <entryLink import="true" name="Wicked Claws" hidden="false" id="0e66-2849-22f3-3c7b" type="selectionEntry" targetId="7414-cec3-7cd7-a94b" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="88d6-a85a-74ba-f4f2"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Full Plate Armour" hidden="false" id="bde7-9e4d-3226-3ab6" type="selectionEntry" targetId="2505-873d-1655-3b0b" sortIndex="3">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1b3b-c85d-d66f-0cf1"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="Draconic Scales" field="name"/>
+              </modifiers>
+            </entryLink>
+            <entryLink import="true" name="Warpfire Blast" hidden="false" id="a3f5-2fce-6a5f-48d2" type="selectionEntry" targetId="3a1f-e80c-7a11-0e32" sortIndex="2">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="0202-e405-9d2f-f69c"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Wizard Level" id="b8fc-49c1-5059-839c" hidden="false" defaultSelectionEntryId="3b23-b9a3-61a9-3327" sortIndex="4">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ae5b-0d7f-23e9-6dd5"/>
+              </constraints>
+              <entryLinks>
+                <entryLink import="true" name="Wizard Level 1" hidden="false" id="e7bd-f636-f5c9-223d" type="selectionEntry" targetId="7d84-39e9-a5f-947e" sortIndex="1">
+                  <costs>
+                    <cost name="pts" typeId="points" value="30"/>
+                  </costs>
+                </entryLink>
+                <entryLink import="true" name="Wizard Level 2" hidden="false" id="aa78-ac63-75c8-c7fa" type="selectionEntry" targetId="8e47-73e8-f7f9-808" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="60"/>
+                  </costs>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Lores of Magic" id="da50-074b-58f4-376f" hidden="true" sortIndex="5">
+              <entryLinks>
+                <entryLink import="true" name="Daemonology" hidden="false" id="afc6-4c68-27cb-a2dd" type="selectionEntry" targetId="c3ec-be1b-91ce-96ed" sortIndex="2"/>
+                <entryLink import="true" name="Dark Magic" hidden="false" id="6e39-9c13-fa43-d528" type="selectionEntry" targetId="e9f-f0fb-d874-4151" sortIndex="3"/>
+                <entryLink import="true" name="Battle Magic" hidden="false" id="3e07-67b9-9efb-3c39" type="selectionEntry" targetId="5b2e-35c6-f987-741e" sortIndex="1"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a320-4860-64bb-ea6f"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b83b-6afc-1ca3-95dd"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="e7bd-f636-f5c9-223d" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="aa78-ac63-75c8-c7fa" shared="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <infoLinks>
+            <infoLink name="Warpfire Dragon" id="0ec0-cba8-52c3-df13" hidden="false" type="profile" targetId="8039-5683-7571-b299"/>
+            <infoLink name="Base (60x100)" id="b764-30cb-3f04-ec2c" hidden="false" type="profile" targetId="5125-89a4-916a-eabd"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="375"/>
+          </costs>
+          <categoryLinks>
+            <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="c788-e671-66c8-b7e9" targetId="may-have-armour"/>
+            <categoryLink targetId="3755-6732-99b2-c713" id="2796-ce19-df16-9301" primary="false" name="Behemoth"/>
+          </categoryLinks>
+        </selectionEntry>
+      </selectionEntries>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="acd5-c2f3-db46-0f39" hidden="false">
+          <infoLinks>
+            <infoLink name="Explosive Demise" id="4345-513c-9f30-2047" hidden="false" type="profile" targetId="4769-be05-035a-7e91"/>
+            <infoLink name="Fire &amp; Chaos" id="9e5b-2bb7-ca70-e32b" hidden="false" type="profile" targetId="8dcd-1035-2a18-ba2f"/>
+            <infoLink name="Fly" id="08fa-3886-866c-ee33" hidden="false" type="profile" targetId="c557-6102-9a35-bbcd">
+              <modifiers>
+                <modifier type="append" value="(10)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Large Target" id="8255-fd30-afbf-62b8" hidden="false" type="profile" targetId="c822-7ad0-f24a-e4af"/>
+            <infoLink name="Lore of Chaos" id="1aaf-a6aa-e436-1240" hidden="false" type="profile" targetId="97b3-1cdd-d81b-331a"/>
+            <infoLink name="Magical Attacks" id="9b7d-02f1-9a04-fdc9" hidden="false" type="profile" targetId="2125-6aa2-f782-42bf"/>
+            <infoLink name="Lore of Chaos" id="86f1-f7f8-4b8c-d328" hidden="false" type="infoGroup" targetId="487f-e9ad-f00f-bfc"/>
+            <infoLink name="Magic Resistance" id="e141-dcd4-6e81-3eb6" hidden="false" type="profile" targetId="90ed-c9be-a611-79cc">
+              <modifiers>
+                <modifier type="append" value="(-2)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Mark of Chaos Undivided" id="de24-2222-cff4-ee68" hidden="false" type="profile" targetId="fcf3-41f3-60c8-7deb"/>
+            <infoLink name="Regeneration" id="606e-d223-9d6c-578e" hidden="false" type="profile" targetId="2eb0-1ec8-8e04-72d4">
+              <modifiers>
+                <modifier type="append" value="(5+)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Stomp Attacks" id="cddc-6725-bcef-a29e" hidden="false" type="profile" targetId="72db-24bb-7493-d753">
+              <modifiers>
+                <modifier type="append" value="(D6)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Swiftstride" id="28af-7be7-b031-fad9" hidden="false" type="profile" targetId="dc91-48b3-3696-217"/>
+            <infoLink name="Terror" id="7f55-f4f3-9090-bba1" hidden="false" type="profile" targetId="c7a2-35bf-4313-f4f0"/>
+            <infoLink name="Warpfire Aura" id="c650-b04b-4e54-6ad9" hidden="false" type="profile" targetId="ccb7-517d-8228-355e"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <categoryLinks>
+        <categoryLink name="Faction: Warriors of Chaos" hidden="false" id="1e55-5752-c63f-8f42" primary="false" targetId="75a1-ee95-da32-b765"/>
+      </categoryLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Warpfire Blast" hidden="false" id="3a1f-e80c-7a11-0e32" collective="true">
+      <infoLinks>
+        <infoLink name="Warpfire Blast" id="4317-bb97-9d69-87ed" hidden="false" type="profile" targetId="f189-6235-d0ec-ec20"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8ba6-0db9-6e2b-7542" includeChildSelections="false"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="true" id="dee4-b7d7-0e86-d1d6">
+      <infoLinks>
+        <infoLink name="Ambushers" id="fb30-55a7-5e66-25dc" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="efee-fead-1ea6-6bcf"/>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="1527-eab2-8ac7-f15b" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="c89f-7aa9-b012-20db" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <costs>
+        <cost name="pts" typeId="points" value="0"/>
+      </costs>
+      <comment>Commander &amp; Captain</comment>
     </selectionEntry>
   </sharedSelectionEntries>
   <entryLinks>
@@ -5102,12 +5353,12 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         <categoryLink name="Units" hidden="false" id="559d-e689-1991-c9f7" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="5c65-3b39-c08e-4b2b" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="5c65-3b39-c08e-4b2b" includeChildSelections="true"/>
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="5c65-3b39-c08e-4b2b">
           <repeats>
-            <repeat value="1" repeats="1" field="selections" scope="roster" childId="cc2d-9a2b-68e-81f4" shared="true" roundUp="false" id="f6f2-e29a-e342-504" includeChildSelections="true"/>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="cc2d-9a2b-68e-81f4" shared="true" roundUp="false" id="f6f2-e29a-e342-504" includeChildSelections="true"/>
           </repeats>
         </modifier>
       </modifiers>
@@ -5155,13 +5406,22 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         </modifier>
         <modifier type="increment" value="1" field="2516-faf3-02c7-d546">
           <repeats>
-            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true"/>
           </repeats>
           <conditions>
             <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
           </conditions>
         </modifier>
       </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Warpfire Dragons" hidden="false" id="e2ae-ec53-9c56-0ef5" type="selectionEntry" targetId="9a4d-bb0a-06b2-f7d5">
+      <categoryLinks>
+        <categoryLink targetId="2bfe-5863-46fe-d284" id="325d-2f1f-2a49-2545" primary="true" name="Rare"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="da94-9b9b-0fec-6126" primary="false" name="Units"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="false" id="1e9e-4075-9153-d961"/>
+      </constraints>
     </entryLink>
   </entryLinks>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
@@ -5277,20 +5537,31 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <categoryEntries>
-    <categoryEntry name="Chaos Lord or Daemon Prince" hidden="false" id="dd77-1902-a17a-b72b">
+    <categoryEntry name="Chaos Lord or Daemon Prince" hidden="true" id="dd77-1902-a17a-b72b">
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="9ea9-dc96-c567-95fb" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="9ea9-dc96-c567-95fb" includeChildSelections="true"/>
       </constraints>
     </categoryEntry>
-    <categoryEntry name="Exalted Champions or Sorcerer Lords" hidden="false" id="698-dd6-5dd4-aed3">
+    <categoryEntry name="Exalted Champions or Sorcerer Lords" hidden="true" id="698-dd6-5dd4-aed3">
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="9bee-c5b3-1fc7-94a7" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="9bee-c5b3-1fc7-94a7" includeChildSelections="true"/>
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="9bee-c5b3-1fc7-94a7">
           <repeats>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="dfb6-f880-75b9-eba7"/>
           </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="9bee-c5b3-1fc7-94a7">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="113e-c8ca-c4e8-c6bd"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </categoryEntry>
