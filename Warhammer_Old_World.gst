@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="119" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="120" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -85,6 +85,8 @@
       </constraints>
     </categoryEntry>
     <categoryEntry name="Skaven Warlord of Chieftain" id="a902-2b12-a891-cecf" hidden="true"/>
+    <categoryEntry name="Faction: Warriors of Chaos - Heralds of Darkness" id="6fdd-30cc-ac89-f73c" hidden="true"/>
+    <categoryEntry name="Faction: Warriors of Chaos - Wolves of the Sea" id="4d3a-fc38-df88-d250" hidden="true"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
@@ -118,6 +120,11 @@
             <modifier type="set" value="33" field="563-332d-aa18-dad">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="5e58-9ce8-a93c-272d" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="33" field="563-332d-aa18-dad">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a96b-bece-2c01-38d2" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -164,6 +171,11 @@
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
               </conditions>
             </modifier>
+            <modifier type="set" value="33" field="f0f7-32b6-d076-214a">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="09eb-a3a1-87f4-7fef" shared="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </categoryLink>
         <categoryLink name="Mercenaries" hidden="false" id="6032-af52-ae71-e755" targetId="5b84-2c3c-869d-3522">
@@ -189,6 +201,11 @@
             <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="09eb-a3a1-87f4-7fef" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -289,6 +306,8 @@
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c997-9d47-72ad-c5f1" shared="true"/>
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="eaaf-1e11-a32d-ab11" shared="true"/>
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="be27-8084-f552-1f4" shared="true"/>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a96b-bece-2c01-38d2" shared="true"/>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="09eb-a3a1-87f4-7fef" shared="true"/>
                           </conditions>
                         </conditionGroup>
                       </conditionGroups>
