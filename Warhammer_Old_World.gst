@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="120" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="121" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -54,7 +54,7 @@
     <categoryEntry name="Monarch of Nehekhara" hidden="false" id="86f8-37da-1b61-1f32"/>
     <categoryEntry name="Regimental Unit" hidden="true" id="5e89-9cfa-f74-43ea"/>
     <categoryEntry name="ORC BOSS" id="7cec-b7c4-6638-5d34" hidden="true"/>
-    <categoryEntry name="ORC BOSS" id="b060-648a-8c55-c7c6" hidden="true"/>
+    <categoryEntry name="GOBLIN BOSS" id="b060-648a-8c55-c7c6" hidden="true"/>
     <categoryEntry name="SHAMAN" id="c551-3880-4822-c6c0" hidden="true"/>
     <categoryEntry name="Faction: Beastmen Brayherds" id="a265-1c26-e439-8f2c" hidden="true"/>
     <categoryEntry name="Faction: Kingdom of Bretonnia" id="31d7-4049-b1ba-f056" hidden="true"/>
@@ -87,6 +87,22 @@
     <categoryEntry name="Skaven Warlord of Chieftain" id="a902-2b12-a891-cecf" hidden="true"/>
     <categoryEntry name="Faction: Warriors of Chaos - Heralds of Darkness" id="6fdd-30cc-ac89-f73c" hidden="true"/>
     <categoryEntry name="Faction: Warriors of Chaos - Wolves of the Sea" id="4d3a-fc38-df88-d250" hidden="true"/>
+    <categoryEntry name="BRETONNIAN WARHORSE" id="fa9f-c1b3-1e39-17c1" hidden="true"/>
+    <categoryEntry name="NIGHT GOBLIN BOSS" id="062e-87ff-e17b-aa13" hidden="true"/>
+    <categoryEntry name="SETTRA OR NEKAPH" id="72fd-d451-2775-a75a" hidden="true"/>
+    <categoryEntry name="MARK OF CHAOS UNDIVIDED" id="6e6a-5413-b34f-c86c" hidden="true">
+      <comment>for magic item Tome of the Dark Gods</comment>
+    </categoryEntry>
+    <categoryEntry name="SAURUS HERO" id="3bb5-6935-1162-6e4d" hidden="true">
+      <comment>For Magic Items</comment>
+    </categoryEntry>
+    <categoryEntry name="COLD ONE MOUNT" id="c7bb-d5e7-8587-47da" hidden="true">
+      <comment>For Magic Items</comment>
+    </categoryEntry>
+    <categoryEntry name="SKINK HERO" hidden="true" id="bcb5-5651-b441-279e"/>
+    <categoryEntry name="EMISSARY OF THE GREAT MAW" id="2330-dd35-2881-ae56" hidden="true">
+      <comment>For Magic Items</comment>
+    </categoryEntry>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
