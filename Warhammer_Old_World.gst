@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="121" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="122" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -101,6 +101,9 @@
     </categoryEntry>
     <categoryEntry name="SKINK HERO" hidden="true" id="bcb5-5651-b441-279e"/>
     <categoryEntry name="EMISSARY OF THE GREAT MAW" id="2330-dd35-2881-ae56" hidden="true">
+      <comment>For Magic Items</comment>
+    </categoryEntry>
+    <categoryEntry name="BEASTMAN CHIEFTAIN OR BEASTMAN SHAMAN" id="2188-6202-19c7-969a" hidden="true">
       <comment>For Magic Items</comment>
     </categoryEntry>
   </categoryEntries>
