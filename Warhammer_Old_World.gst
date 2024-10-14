@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="122" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="123" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -1709,10 +1709,10 @@ If, by some unusual circumstance, there are two Battle Standards on the same sid
     <profile name="Repeater Bolt Thrower" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="3f5c-8185-3494-86c1">
       <characteristics>
         <characteristic name="R" typeId="2360-c777-5e07-ed58">48&quot;</characteristic>
-        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">4</characteristic>
-        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
-        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Cumbersome, Move or Shoot, Multiple Shots(D3+3)</characteristic>
-        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">6</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-3</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Cumbersome, Move or Shoot, Multiple Wounds (2), Rapid Fire, Through &amp; Through</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71"/>
       </characteristics>
     </profile>
     <profile name="Great Cannon" hidden="false" id="ae36-d4c3-eaf5-198b" typeId="a378-c633-912d-11ce" typeName="Weapon" page="226" publicationId="768b-3da1-a182-a1d8">
@@ -5738,7 +5738,7 @@ Related: Manoeuvring During a Charge, Resolving Uncertainties</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
-    <profile name="Flee!" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ef19-75bf-25ed-742e">
+    <profile name="" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ef19-75bf-25ed-742e">
       <characteristics>
         <characteristic name="Description" id="4a00-89ad-9e9b-f189" hidden="false" typeId="9f84-4221-785a-db50">Units flee for many reasons. Units that fail to rally during the Strategy phase will flee in the Compulsory Moves sub-phase, others will flee from a charging enemy, and so forth. When a unit flees, it abandons all formation and heads to safety by the most direct route possible.
 
@@ -7465,7 +7465,7 @@ Related: Ark of Sotek</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
-    <profile name="Unique Special Rules" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="8675-6081-d07e-e9c0">
+    <profile name="" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="8675-6081-d07e-e9c0">
       <characteristics>
         <characteristic name="Description" id="22a7-41eb-1bc9-bf92" hidden="false" typeId="9f84-4221-785a-db50">Some models and some special items of equipment have special rules unique to them. These will be included, in full, as part of the model or weapon profile.
 
@@ -9841,7 +9841,7 @@ Related: Categories of Troop Type (at a Glance), Troop Type Table, Unit Strength
       </characteristics>
       <comment>imported</comment>
     </profile>
-    <profile name="Behemoths" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ab70-6b36-9ac9-324c">
+    <profile name="Behemoth" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ab70-6b36-9ac9-324c">
       <characteristics>
         <characteristic name="Description" id="a531-79ae-36ab-b873" hidden="false" typeId="9f84-4221-785a-db50">Behemoths are the largest beings in the Warhammer world. This category includes such terrors as mighty Dragons, be they noble or corrupted; Greater Daemons of Chaos, the most accursed of the Dark Gods&apos; servants; towering Giants; lumbering constructs of science and sorcery, and far more besides.
  
@@ -9943,7 +9943,7 @@ Related: Light Chariots</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
-    <profile name="Heavy Chariots" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6e0b-1ace-f70c-8401">
+    <profile name="Heavy Chariot" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6e0b-1ace-f70c-8401">
       <characteristics>
         <characteristic name="Description" id="990b-d8f7-60af-ca72" hidden="false" typeId="9f84-4221-785a-db50">Built for strength and durability, heavy chariots deliver crushing charges deep into the ranks of the enemy. Where light chariots move quickly and harass the foe, heavy chariots move slowly, gradually building their speed before crashing like the fist of an angry god into the quaking battle lines of the opposing army.
  Often, the charge of a heavy chariot will cause the serried ranks of the enemy to buckle and crumple as scythed wheels hew through limbs and armoured beasts trample all before them. The survivors of such a charge fare no better, for heavy chariots are invariably crewed by mighty warriors that use the armoured cab of their vehicle as a platform from which to slay their enemies with brutal efficiency.
@@ -13508,6 +13508,15 @@ Note that this special rule only applies to a single, ordinary hand weapon. If t
 Any war machine that has its Toughness reduced in this way also loses the Move or Shoot special rule.</characteristic>
       </characteristics>
     </profile>
+    <profile name="Rapid Fire" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="3646-bdc6-7ed0-5119" publicationId="768b-3da1-a182-a1d8" page="223">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">48&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">4</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Cumbersome, Move or Shoot, Multiple Shots (D3+3)</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Instead of shooting normally, a repeater bolt can &apos;rapid fire&apos; a number of small bolts with the profile given below. If this special rule is used, all shots must be at the same target.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
@@ -13953,6 +13962,7 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
     <selectionEntry type="upgrade" import="true" name="Repeater Bolt Thrower" hidden="false" id="acc3-8d86-f430-1a84" collective="true">
       <infoLinks>
         <infoLink name="Repeater Bolt Thrower" hidden="false" type="profile" id="ac2b-8f84-5870-2886" targetId="3f5c-8185-3494-86c1"/>
+        <infoLink name="Rapid Fire" id="b8ea-9ba2-ed6e-a920" hidden="false" type="profile" targetId="3646-bdc6-7ed0-5119"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="95b-b7e5-5d46-1477"/>
