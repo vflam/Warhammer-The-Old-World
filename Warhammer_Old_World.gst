@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="123" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="124" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -5738,7 +5738,7 @@ Related: Manoeuvring During a Charge, Resolving Uncertainties</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
-    <profile name="" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ef19-75bf-25ed-742e">
+    <profile name="Flee!" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ef19-75bf-25ed-742e">
       <characteristics>
         <characteristic name="Description" id="4a00-89ad-9e9b-f189" hidden="false" typeId="9f84-4221-785a-db50">Units flee for many reasons. Units that fail to rally during the Strategy phase will flee in the Compulsory Moves sub-phase, others will flee from a charging enemy, and so forth. When a unit flees, it abandons all formation and heads to safety by the most direct route possible.
 
@@ -5753,7 +5753,7 @@ The Greater the Danger
 The Limits of Endurance</characteristic>
       </characteristics>
       <comment>imported</comment>
-      <alias/>
+      <alias>Flee</alias>
     </profile>
     <profile name="Fleeing as a Compulsory Move" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="7aaf-163e-d95f-f65">
       <characteristics>
@@ -7464,16 +7464,6 @@ Related: Ark of Sotek</characteristic>
  If a Lance is charged in its flank, align the enemy unit against its widest rank. The Lance then becomes blunted.</characteristic>
       </characteristics>
       <comment>imported</comment>
-    </profile>
-    <profile name="" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="8675-6081-d07e-e9c0">
-      <characteristics>
-        <characteristic name="Description" id="22a7-41eb-1bc9-bf92" hidden="false" typeId="9f84-4221-785a-db50">Some models and some special items of equipment have special rules unique to them. These will be included, in full, as part of the model or weapon profile.
-
-
-Related: What are Special Rules?</characteristic>
-      </characteristics>
-      <comment>imported</comment>
-      <alias/>
     </profile>
     <profile name="Universal Special Rules" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="87df-ec02-e84f-57ac">
       <characteristics>
@@ -9841,7 +9831,7 @@ Related: Categories of Troop Type (at a Glance), Troop Type Table, Unit Strength
       </characteristics>
       <comment>imported</comment>
     </profile>
-    <profile name="Behemoth" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ab70-6b36-9ac9-324c">
+    <profile name="Behemoths" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="ab70-6b36-9ac9-324c">
       <characteristics>
         <characteristic name="Description" id="a531-79ae-36ab-b873" hidden="false" typeId="9f84-4221-785a-db50">Behemoths are the largest beings in the Warhammer world. This category includes such terrors as mighty Dragons, be they noble or corrupted; Greater Daemons of Chaos, the most accursed of the Dark Gods&apos; servants; towering Giants; lumbering constructs of science and sorcery, and far more besides.
  
@@ -9943,7 +9933,7 @@ Related: Light Chariots</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
-    <profile name="Heavy Chariot" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6e0b-1ace-f70c-8401">
+    <profile name="Heavy Chariots" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6e0b-1ace-f70c-8401">
       <characteristics>
         <characteristic name="Description" id="990b-d8f7-60af-ca72" hidden="false" typeId="9f84-4221-785a-db50">Built for strength and durability, heavy chariots deliver crushing charges deep into the ranks of the enemy. Where light chariots move quickly and harass the foe, heavy chariots move slowly, gradually building their speed before crashing like the fist of an angry god into the quaking battle lines of the opposing army.
  Often, the charge of a heavy chariot will cause the serried ranks of the enemy to buckle and crumple as scythed wheels hew through limbs and armoured beasts trample all before them. The survivors of such a charge fare no better, for heavy chariots are invariably crewed by mighty warriors that use the armoured cab of their vehicle as a platform from which to slay their enemies with brutal efficiency.
