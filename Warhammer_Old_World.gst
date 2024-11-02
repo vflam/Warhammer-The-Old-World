@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="124" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="125" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -850,9 +850,9 @@
     </profile>
     <profile name="Magic Resistance" hidden="false" id="90ed-c9be-a611-79cc" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">The Casting roll of any enemy spell (including Bound Spells) that targets a unit that includes one ore more models with this special rule suffers a modifier, as shown in brackets after the name of this special rule (-X).
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">The Casting roll of any enemy spell (including Bound Spells) that targets a unit that includes one or more models with this special rule suffers a modifier, as shown in brackets after the name of this special rule (-X).
 
- Note that this special rule is not cumulative. If two or more models in a unit have this special rule, use the highest modifier.</characteristic>
+Note that this special rule is not cumulative. If two or more models in a unit have this special rule, use the highest modifier.</characteristic>
       </characteristics>
     </profile>
     <profile name="Pistol" hidden="false" id="4c62-cdd4-4e0c-4265" typeId="a378-c633-912d-11ce" typeName="Weapon" page="217" publicationId="768b-3da1-a182-a1d8">
