@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="1ddf-26c6-1d88-2b8c" name="Dwarfen Mountain Holds" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="8" revision="104" battleScribeVersion="2.03" type="catalogue" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="1ddf-26c6-1d88-2b8c" name="Dwarfen Mountain Holds" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="8" revision="105" battleScribeVersion="2.03" type="catalogue" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedProfiles>
     <profile name="Longbeard" hidden="false" id="fbc8-de41-190b-8903" typeId="b070-143a-73f-2772" typeName="Model">
       <characteristics>
@@ -1267,9 +1267,35 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
       <modifiers>
         <modifier type="increment" value="1" field="6c19-9b43-858d-0e2e">
           <repeats>
-            <repeat value="1" repeats="1" field="selections" scope="force" childId="174d-f289-f063-894b" shared="true" roundUp="false" includeChildSelections="true"/>
-            <repeat value="1" repeats="1" field="selections" scope="force" childId="cbe9-7017-4f8-fb1f" shared="true" roundUp="false" includeChildSelections="true"/>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
           </repeats>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="174d-f289-f063-894b" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="cbe9-7017-4f8-fb1f" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="6c19-9b43-858d-0e2e">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="174d-f289-f063-894b" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="cbe9-7017-4f8-fb1f" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
         </modifier>
       </modifiers>
       <categoryLinks>
