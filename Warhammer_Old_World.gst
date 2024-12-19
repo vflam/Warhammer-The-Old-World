@@ -106,6 +106,8 @@
     <categoryEntry name="BEASTMAN CHIEFTAIN OR BEASTMAN SHAMAN" id="2188-6202-19c7-969a" hidden="true">
       <comment>For Magic Items</comment>
     </categoryEntry>
+    <categoryEntry name="Faction: The Empire of Man - Knightly Order" id="7135-7f44-2427-9af9" hidden="true"/>
+    <categoryEntry name="Faction: The Empire of Man - City-state of Nuln" id="38be-5fe9-9738-fd43" hidden="true"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
