@@ -659,6 +659,13 @@ This weapon does not have a 360° line of sight, it can only shoot into the Stea
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Cumbersome, Ponderous</characteristic>
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">If the roll To Hit is successful, a grenade launching blunderbuss causes D3+1 hits to the target enemy unit, rather than the usual one hit.</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="set" value="Cumbersome" field="5f83-3633-336b-93b4">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Pigeon Bombs" hidden="false" id="d71-dbcc-b41f-1429" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
@@ -1046,6 +1053,16 @@ In addition, a Grand Master, Chapter Master or unit of Inner Circle Knights belo
 Note that any special rules granted by these upgrades do not apply to the models&apos; mounts.</characteristic>
       </characteristics>
     </profile>
+    <profile name="Big Guns Know No Fear" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="35d3-9f70-4a70-0524">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Empire Engineers in a City-state of Nuln army (and any unit they have joined) gain the Immune to Psychology special rule whilst there is a friendly war machine within their Command range.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Handgun Drill" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="9ed6-5a3e-af1f-a763">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Once per game, each detachment of State Missile troops in a City-state of Nuln army can fire with one additional rank.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="model" import="true" name="Barded Warhorse" hidden="false" id="e0b3-b528-aa3e-dbbb" subType="mount" collective="true">
@@ -1408,7 +1425,7 @@ Note that any special rules granted by these upgrades do not apply to the models
         <categoryLink name="Faction: The Empire of Man" hidden="false" id="a57-47af-1844-c0c8" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
       </categoryLinks>
       <entryLinks>
-        <entryLink import="true" name="Knightly Order" hidden="false" id="0197-7839-4da1-a3d1" type="selectionEntryGroup" targetId="4944-c209-f1e2-8a01"/>
+        <entryLink import="true" name="Knightly Order" hidden="false" id="0197-7839-4da1-a3d1" type="selectionEntryGroup" targetId="3141-3c83-b47b-4ab9"/>
       </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Wizard Lord" hidden="false" id="31f4-8c29-412c-ef81">
@@ -2492,7 +2509,22 @@ Note that any special rules granted by these upgrades do not apply to the models
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" id="6a4e-a1f0-fa4c-d59b" hidden="false" sortIndex="4">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" id="2ac8-c61c-4fa9-4c23" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="General" hidden="false" id="2ac8-c61c-4fa9-4c23" type="selectionEntry" targetId="7d76-b1a1-1535-a04c" sortIndex="1"/>
+                <entryLink import="true" name="Battle Standard Bearer" hidden="true" id="56c2-13ae-e81a-cdcc" type="selectionEntry" targetId="5b87-9cf5-953d-3829" flatten="true" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="25"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="false" id="aeb9-debe-2d6c-cf98" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6"/>
+                  </entryLinks>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="61e8-b202-bb39-6d05"/>
@@ -2535,6 +2567,15 @@ Note that any special rules granted by these upgrades do not apply to the models
           <infoLinks>
             <infoLink name="Clouds of Shoot &amp; Smoke" hidden="false" type="profile" id="5da6-1056-6677-ebf9" targetId="1327-a23a-6082-a5d5"/>
             <infoLink name="Master of Ballistics" hidden="false" type="profile" id="8395-7911-d0ef-2e6d" targetId="6fe8-b5a4-2a44-af31"/>
+            <infoLink name="Big Guns Know No Fear" id="8dbf-4145-02d1-8b35" hidden="true" type="profile" targetId="35d3-9f70-4a70-0524">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3148,6 +3189,15 @@ Note that any special rules granted by these upgrades do not apply to the models
             <infoLink name="Close Order" hidden="false" type="profile" id="c6d-ee62-41d3-e12" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Detachment" hidden="false" type="profile" id="403f-8804-2a72-4e68" targetId="559-d4c6-b2e8-500f"/>
             <infoLink name="Regimental Unit" hidden="false" type="profile" id="dae5-4c70-afad-81f1" targetId="7424-ec43-7581-965a"/>
+            <infoLink name="Handgun Drill" id="df45-f0a3-b83a-1a1d" hidden="true" type="profile" targetId="9ed6-5a3e-af1f-a763">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3954,34 +4004,11 @@ Note that any special rules granted by these upgrades do not apply to the models
                     <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4af4-eb27-3ee-605b-min"/>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4af4-eb27-3ee-605b-max"/>
                   </constraints>
-                  <selectionEntries>
-                    <selectionEntry type="upgrade" import="true" name="Repeater Handgun" hidden="false" id="2e-2f68-600a-d5de" sortIndex="2">
-                      <constraints>
-                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4d3b-6947-ed4-94d"/>
-                      </constraints>
-                      <infoLinks>
-                        <infoLink name="Repeater handgun" hidden="false" type="profile" id="d82f-bb1f-5193-8849" targetId="7f58-91d4-ee6c-3cb7"/>
-                      </infoLinks>
-                    </selectionEntry>
-                    <selectionEntry type="upgrade" import="true" name="Brace of Pistols" hidden="false" id="c971-9a6d-f810-152f" sortIndex="1">
-                      <constraints>
-                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9ec8-3ee2-6007-9a79"/>
-                      </constraints>
-                      <infoLinks>
-                        <infoLink name="Brace of Pistols" hidden="false" type="profile" id="c877-a2be-b9f4-7b6f" targetId="3f0e-1dc6-b425-bf59"/>
-                      </infoLinks>
-                    </selectionEntry>
-                    <selectionEntry type="upgrade" import="true" name="Repeater Pistol" hidden="false" id="937e-b92e-9b2c-cff0" sortIndex="3">
-                      <constraints>
-                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c3c7-d8b-51a9-7455"/>
-                      </constraints>
-                      <infoLinks>
-                        <infoLink name="Repeater Pistol" hidden="false" type="profile" id="eb51-1d80-4595-6447" targetId="76e2-58f8-9f0d-2fce"/>
-                      </infoLinks>
-                    </selectionEntry>
-                  </selectionEntries>
                   <entryLinks>
-                    <entryLink targetId="acd6-cea6-e2ea-3a79" id="5fc7-bb7d-90f3-fafb" type="selectionEntry" name="Grenade Launching Blunderbuss" hidden="false" sortIndex="4">
+                    <entryLink import="true" name="Brace of Pistols" hidden="false" id="b61b-da39-48ae-2f34" type="selectionEntry" targetId="d8bb-85b0-3575-6029" collective="true" sortIndex="2"/>
+                    <entryLink import="true" name="Repeater Handgun" hidden="false" id="6401-309d-ade6-227b" type="selectionEntry" targetId="1748-87d-961c-9278" sortIndex="1"/>
+                    <entryLink import="true" name="Repeater Pistol" hidden="false" id="fbdf-3683-c52a-40d7" type="selectionEntry" targetId="6d12-5625-aef5-e25d" sortIndex="4"/>
+                    <entryLink import="true" name="Grenade Launching Blunderbuss" hidden="false" id="f7dc-7970-0352-fe44" type="selectionEntry" targetId="acd6-cea6-e2ea-3a79" sortIndex="3">
                       <costs>
                         <cost name="pts" typeId="points" value="10"/>
                       </costs>
@@ -4323,7 +4350,7 @@ Note that any special rules granted by these upgrades do not apply to the models
         <categoryLink name="Faction: The Empire of Man" hidden="false" id="bc2b-e8e5-35a7-b43a" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
       </categoryLinks>
       <entryLinks>
-        <entryLink import="true" name="Knightly Order" hidden="false" id="3072-e22a-7c83-ee00" type="selectionEntryGroup" targetId="ee1f-06e6-c3c7-5719" sortIndex="4"/>
+        <entryLink import="true" name="Knightly Order" hidden="false" id="3072-e22a-7c83-ee00" type="selectionEntryGroup" targetId="934d-0c94-9509-cb36" sortIndex="4"/>
       </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Inner Circle Knights" hidden="false" id="3407-96f3-26d4-473f">
@@ -4578,21 +4605,11 @@ Note that any special rules granted by these upgrades do not apply to the models
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="8c6c-ae4b-7cb4-117c" includeChildSelections="true"/>
-      </constraints>
-      <modifiers>
-        <modifier type="increment" value="1" field="8c6c-ae4b-7cb4-117c">
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="5c2a-8735-9946-1640"/>
-          </repeats>
-        </modifier>
-      </modifiers>
       <categoryLinks>
         <categoryLink name="Faction: The Empire of Man" hidden="false" id="6787-85e-2a8b-99fc" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
       </categoryLinks>
       <entryLinks>
-        <entryLink import="true" name="Knightly Order" hidden="false" id="6f8f-83d3-372d-1fdc" type="selectionEntryGroup" targetId="ee1f-06e6-c3c7-5719" sortIndex="3"/>
+        <entryLink import="true" name="Knightly Order" hidden="false" id="6f8f-83d3-372d-1fdc" type="selectionEntryGroup" targetId="934d-0c94-9509-cb36" sortIndex="3"/>
       </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Demigryph Knights" hidden="false" id="b4a9-61e8-2b85-9c99">
@@ -4837,7 +4854,7 @@ Note that any special rules granted by these upgrades do not apply to the models
         <categoryLink name="Faction: The Empire of Man" hidden="false" id="7385-1396-ac5-7967" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
       </categoryLinks>
       <entryLinks>
-        <entryLink import="true" name="Knightly Order" hidden="false" id="eec7-402c-bda1-6589" type="selectionEntryGroup" targetId="ee1f-06e6-c3c7-5719" sortIndex="3"/>
+        <entryLink import="true" name="Knightly Order" hidden="false" id="eec7-402c-bda1-6589" type="selectionEntryGroup" targetId="934d-0c94-9509-cb36" sortIndex="3"/>
       </entryLinks>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="War Altar of Sigmar" hidden="false" id="4f41-e802-c019-63b4" subType="mount">
@@ -5153,7 +5170,7 @@ Note that any special rules granted by these upgrades do not apply to the models
             <categoryLink name="War Machine" hidden="false" id="2e11-e8e-3f2e-7d5e" targetId="9fcf-19ad-fe84-9c61" primary="false"/>
           </categoryLinks>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Veteran" hidden="false" id="62dd-64ae-c26d-4315" sortIndex="2">
+        <selectionEntry type="upgrade" import="true" name="Veteran" hidden="false" id="62dd-64ae-c26d-4315" sortIndex="3">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7a4c-57c8-3c52-93eb" includeChildSelections="false"/>
           </constraints>
@@ -5175,6 +5192,13 @@ Note that any special rules granted by these upgrades do not apply to the models
       <categoryLinks>
         <categoryLink name="Faction: The Empire of Man" hidden="false" id="e5e7-8fbd-6470-3254" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Gun Limbers" hidden="false" id="aca7-1818-40c6-921a" type="selectionEntry" targetId="a702-6435-c9e2-58f7" sortIndex="2">
+          <costs>
+            <cost name="pts" typeId="points" value="5"/>
+          </costs>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Mortar" hidden="false" id="da5-c1f4-d897-75a8">
       <profiles>
@@ -5215,7 +5239,7 @@ Note that any special rules granted by these upgrades do not apply to the models
             <categoryLink name="War Machine" hidden="false" id="86c0-880d-c0c0-82d9" targetId="9fcf-19ad-fe84-9c61" primary="false"/>
           </categoryLinks>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Veteran" hidden="false" id="89d3-8f7e-cffc-95ba" sortIndex="2">
+        <selectionEntry type="upgrade" import="true" name="Veteran" hidden="false" id="89d3-8f7e-cffc-95ba" sortIndex="3">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6060-662b-ea9f-af3d"/>
           </constraints>
@@ -5237,6 +5261,13 @@ Note that any special rules granted by these upgrades do not apply to the models
       <categoryLinks>
         <categoryLink name="Faction: The Empire of Man" hidden="false" id="94d0-8f1f-dfa2-eed6" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Gun Limbers" hidden="false" id="1b56-98fc-ea60-4888" type="selectionEntry" targetId="a702-6435-c9e2-58f7" sortIndex="2">
+          <costs>
+            <cost name="pts" typeId="points" value="5"/>
+          </costs>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Helblaster Volley Gun" hidden="false" id="d5e8-4361-2b00-787a">
       <selectionEntries>
@@ -5289,6 +5320,13 @@ Note that any special rules granted by these upgrades do not apply to the models
       <categoryLinks>
         <categoryLink name="Faction: The Empire of Man" hidden="false" id="a8ce-c3c0-2a95-d4da" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Gun Limbers" hidden="false" id="2662-694a-279d-f27a" type="selectionEntry" targetId="a702-6435-c9e2-58f7" sortIndex="2">
+          <costs>
+            <cost name="pts" typeId="points" value="15"/>
+          </costs>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Helstorm Rocket Battery" hidden="false" id="a-18bf-bb56-9788">
       <profiles>
@@ -5341,6 +5379,13 @@ Note that any special rules granted by these upgrades do not apply to the models
       <categoryLinks>
         <categoryLink name="Faction: The Empire of Man" hidden="false" id="8cb6-8760-6536-3c1e" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Gun Limbers" hidden="false" id="0e17-117e-bd05-51e6" type="selectionEntry" targetId="a702-6435-c9e2-58f7" sortIndex="2">
+          <costs>
+            <cost name="pts" typeId="points" value="10"/>
+          </costs>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Hochland Long Rifle" hidden="false" id="451f-4f26-82e2-7f07" collective="false">
       <infoLinks>
@@ -5841,7 +5886,22 @@ Note that any special rules granted by these upgrades do not apply to the models
             </selectionEntryGroup>
             <selectionEntryGroup name="Command" hidden="false" id="c942-efef-8c47-a4df" sortIndex="3">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="cf1a-21b0-7fbc-e079" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="cf1a-21b0-7fbc-e079" targetId="7d76-b1a1-1535-a04c" sortIndex="1"/>
+                <entryLink import="true" name="Battle Standard Bearer" hidden="true" id="2ca5-02a0-f9cb-f729" type="selectionEntry" targetId="5b87-9cf5-953d-3829" flatten="true" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="25"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="false" id="12e6-4944-41ca-c147" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6"/>
+                  </entryLinks>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2b9f-5cb1-f722-13c7" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4e9c-f33b-5a60-31fb"/>
@@ -5887,7 +5947,7 @@ Note that any special rules granted by these upgrades do not apply to the models
         <categoryLink name="Faction: The Empire of Man" hidden="false" id="da37-6a16-8eef-ac82" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
       </categoryLinks>
       <entryLinks>
-        <entryLink import="true" name="Knightly Order" hidden="false" id="7ffe-7926-5f02-8998" type="selectionEntryGroup" targetId="4944-c209-f1e2-8a01"/>
+        <entryLink import="true" name="Knightly Order" hidden="false" id="7ffe-7926-5f02-8998" type="selectionEntryGroup" targetId="3141-3c83-b47b-4ab9"/>
       </entryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Grenade Launching Blunderbuss" hidden="false" id="acd6-cea6-e2ea-3a79">
@@ -6159,7 +6219,7 @@ Note that any special rules granted by these upgrades do not apply to the models
       </categoryLinks>
       <comment>No Warhall</comment>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Empire War Wagons" hidden="false" id="847a-bdbc-5566-cf68">
+    <selectionEntry type="unit" import="true" name="Empire War Wagons" hidden="false" id="847a-bdbc-5566-cf68">
       <categoryLinks>
         <categoryLink targetId="e5f1-f9ee-d533-b2dc" id="1d9a-3142-f046-6f4b" primary="false" name="Faction: The Empire of Man"/>
       </categoryLinks>
@@ -6651,7 +6711,7 @@ Note that any special rules granted by these upgrades do not apply to the models
       </constraints>
       <comment>No Warhall</comment>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Harald Gemunsen, Grand Master of the Knights Panther" hidden="false" id="adab-cb42-9a4f-3ba7">
+    <selectionEntry type="unit" import="true" name="Harald Gemunsen, Grand Master of the Knights Panther" hidden="false" id="adab-cb42-9a4f-3ba7">
       <categoryLinks>
         <categoryLink targetId="e5f1-f9ee-d533-b2dc" id="a34a-b85c-dc6b-b39c" primary="false" name="Faction: The Empire of Man"/>
       </categoryLinks>
@@ -6860,6 +6920,883 @@ Note that any special rules granted by these upgrades do not apply to the models
         <infoLink name="Wolf hammer" id="d03f-171a-d8e3-7a41" hidden="false" type="profile" targetId="64fd-1757-a27b-7819"/>
       </infoLinks>
     </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Gun Limbers" hidden="true" id="a702-6435-c9e2-58f7" collective="false">
+      <infoLinks>
+        <infoLink name="Vanguard" id="657d-0615-f2b5-3342" hidden="false" type="profile" targetId="691e-10ec-4f7c-a2c4"/>
+        <infoLink name="Veteran" id="70e7-766d-2c0c-e034" hidden="false" type="profile" targetId="4022-c403-b083-ba83"/>
+      </infoLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="4f34-92cc-ecf1-c186">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="4f34-92cc-ecf1-c186">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3fe3-c96f-5ca1-190a"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="4f34-92cc-ecf1-c186" includeChildSelections="true"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Nuln State Troops" hidden="false" id="079c-a63e-1ece-18e2">
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="State Trooper" hidden="false" id="960d-4c69-c34d-0fbb" sortIndex="1">
+          <constraints>
+            <constraint type="min" value="10" field="selections" scope="parent" shared="true" id="2207-ac6a-71ef-2724"/>
+          </constraints>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="27e4-072d-8ec9-244e" type="selectionEntry" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="5798-b7a9-4c01-d631"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Light Armour" hidden="false" id="c71c-336f-599c-ab57" type="selectionEntry" targetId="7cab-40e6-f134-de78" collective="true" sortIndex="2">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7917-69f6-390e-bad5"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Shield" hidden="false" id="bba5-0884-c84f-c444" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="4">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </entryLink>
+            <entryLink import="true" name="Halberd" hidden="false" id="7b0f-ed1b-480b-c29c" type="selectionEntry" targetId="f0a5-1b2e-3d2b-d540" sortIndex="3">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4bac-bf15-257c-8c90"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <infoLinks>
+            <infoLink name="State Trooper" id="f000-335f-8460-52b8" hidden="false" type="profile" targetId="1a6a-960a-2636-1a11"/>
+            <infoLink name="Base (25x25)" id="b1ae-4175-31b7-cd8c" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="5"/>
+          </costs>
+          <modifiers>
+            <modifier type="set" value="5" field="2207-ac6a-71ef-2724">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="551d-34fe-3832-416d" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="82f9-300e-e28e-c1a6" targetId="f3f7-ca43-674e-115f" primary="false"/>
+            <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="609c-c9d5-da4c-0122" targetId="may-have-armour"/>
+            <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="d4c5-5ac8-5017-6088" targetId="may-have-shield"/>
+          </categoryLinks>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Command" id="4201-85d2-e214-c309" hidden="false" sortIndex="2">
+          <selectionEntries>
+            <selectionEntry type="model" import="true" name="Sergeant" hidden="false" id="26b4-cc65-08a7-baec" subType="crew" flatten="true" sortIndex="1">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="eef4-54ef-aba4-2bbc"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="5"/>
+              </costs>
+              <infoLinks>
+                <infoLink name="State Trooper" id="8029-9952-144e-4302" hidden="false" type="profile" targetId="1a6a-960a-2636-1a11">
+                  <modifiers>
+                    <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
+                    <modifier type="set" value="Sargeant" field="name"/>
+                  </modifiers>
+                </infoLink>
+                <infoLink name="Champion" id="7357-c61a-d07a-bb08" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
+              </infoLinks>
+              <comment>upgrades: b804-2976-136-c0f1</comment>
+              <categoryLinks>
+                <categoryLink name="CHAMPION" hidden="false" id="8f19-6044-dc56-02ac" targetId="83a1-945c-564c-84af" primary="false"/>
+                <categoryLink name="Regular Infantry" hidden="false" id="4161-559f-96a2-c70e" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="608e-43be-6ff8-53bc" targetId="may-have-armour"/>
+                <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="c463-5027-7323-2085" targetId="may-have-shield"/>
+              </categoryLinks>
+            </selectionEntry>
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="8f68-a3d0-48ac-88eb" subType="crew" flatten="true" sortIndex="2">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3cf5-8142-fd9e-b037"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="5"/>
+              </costs>
+              <comment>upgrades: b804-2976-136-c0f1</comment>
+              <infoLinks>
+                <infoLink name="Standard Bearer" id="6a8c-ef1b-55cc-f9e7" hidden="false" type="profile" targetId="bcf8-d942-102e-b155"/>
+              </infoLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="8c30-fd2e-4d7d-5d50" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="fedf-f74c-f0af-0e0a" targetId="may-have-armour"/>
+                <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="f1e7-ef6e-4b07-8555" targetId="may-have-shield"/>
+              </categoryLinks>
+            </selectionEntry>
+            <selectionEntry type="model" import="true" name="Musician" hidden="false" id="d32a-cfca-9980-6e88" subType="crew" sortIndex="3">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8d5a-20ed-3ca5-a855"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="5"/>
+              </costs>
+              <comment>upgrades: b804-2976-136-c0f1</comment>
+              <infoLinks>
+                <infoLink name="Musician" id="308c-3b88-2137-5dac" hidden="false" type="profile" targetId="40f2-dd77-f0ca-3663"/>
+              </infoLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="3e7a-0ed2-0fc9-2321" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="2e24-43b3-588c-0220" targetId="may-have-armour"/>
+                <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="f09f-2cf3-97ab-192f" targetId="may-have-shield"/>
+              </categoryLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Detachments" id="348e-2b0e-ad2e-6fb6" hidden="false" sortIndex="3">
+          <selectionEntries>
+            <selectionEntry type="unit" import="true" name="State Missile Troops" hidden="false" id="b941-a029-a9b0-0fec" sortIndex="1">
+              <profiles>
+                <profile name="State Missile Troops" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="7c60-c2ae-750c-530f">
+                  <characteristics>
+                    <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Regular infantry</characteristic>
+                    <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">10+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <selectionEntries>
+                <selectionEntry type="model" import="true" name="State Missile Trooper" hidden="false" id="11fc-860b-201a-7158" sortIndex="1">
+                  <constraints>
+                    <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="5417-befa-bc64-6c01"/>
+                    <constraint type="max" value="0" field="selections" scope="parent" shared="true" id="d19f-458c-2606-abd0"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink import="true" name="Hand Weapon" hidden="false" id="977f-e91c-c329-f809" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+                      <constraints>
+                        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9f2b-9e09-b7c1-e9fe"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink import="true" name="Light Armour" hidden="false" id="f346-c677-0487-86de" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="3">
+                      <costs>
+                        <cost name="pts" typeId="points" value="1"/>
+                      </costs>
+                    </entryLink>
+                    <entryLink import="true" name="Handgun" hidden="false" id="ad2d-6245-7fd6-a77f" type="selectionEntry" targetId="e2ed-a3fd-dee5-3e9f" sortIndex="2">
+                      <costs>
+                        <cost name="pts" typeId="points" value="1"/>
+                      </costs>
+                      <constraints>
+                        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6e19-ca81-3ceb-5287"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                  <infoLinks>
+                    <infoLink name="State Missile Trooper" id="2911-87c3-4b2e-a034" hidden="false" type="profile" targetId="bd08-df61-f45c-349"/>
+                    <infoLink name="Base (25x25)" id="d011-6587-dd81-1d0f" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="7"/>
+                  </costs>
+                  <modifiers>
+                    <modifier type="increment" value="1" field="d19f-458c-2606-abd0">
+                      <repeats>
+                        <repeat value="2" repeats="1" field="selections" scope="root-entry" childId="960d-4c69-c34d-0fbb" shared="true" roundUp="false" includeChildSelections="false"/>
+                      </repeats>
+                    </modifier>
+                  </modifiers>
+                  <categoryLinks>
+                    <categoryLink name="Regular Infantry" hidden="false" id="2217-a66a-f152-6bcc" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                    <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="a43f-59be-c8f0-0341" targetId="may-have-armour"/>
+                  </categoryLinks>
+                </selectionEntry>
+              </selectionEntries>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Command" id="fb63-01fb-5885-c1ba" hidden="false" sortIndex="3">
+                  <selectionEntries>
+                    <selectionEntry type="model" import="true" name="Sergeant" hidden="false" id="302a-0a10-8bf9-0414" subType="crew" flatten="true" sortIndex="1">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="515d-a592-7cb4-0e58"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="State Missile Trooper" id="3df6-1494-ac23-2ad4" hidden="false" type="profile" targetId="bd08-df61-f45c-349">
+                          <modifiers>
+                            <modifier type="increment" value="1" field="59f9-ccf5-1155-fb05"/>
+                            <modifier type="set" value="Sergeant" field="name"/>
+                          </modifiers>
+                        </infoLink>
+                        <infoLink name="Champion" id="9aae-093b-0eab-1596" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
+                      </infoLinks>
+                      <comment>upgrades: 3e11-1ae1-1c1a-6094</comment>
+                      <selectionEntryGroups>
+                        <selectionEntryGroup name="Ranged Weapon" id="ce3f-aaaf-872e-71fa" hidden="false" defaultSelectionEntryId="6e1f-76f5-e373-86b8">
+                          <constraints>
+                            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9629-0a0a-fb45-11c7"/>
+                            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2d2e-61c3-f323-6f9e"/>
+                          </constraints>
+                          <entryLinks>
+                            <entryLink import="true" name="Brace of Pistols" hidden="false" id="3774-291c-2745-c884" type="selectionEntry" targetId="d8bb-85b0-3575-6029" sortIndex="2">
+                              <costs>
+                                <cost name="pts" typeId="points" value="5"/>
+                              </costs>
+                            </entryLink>
+                            <entryLink import="true" name="Hochland Long Rifle" hidden="false" id="ca95-5cef-7905-a0ad" type="selectionEntry" targetId="451f-4f26-82e2-7f07" sortIndex="4">
+                              <costs>
+                                <cost name="pts" typeId="points" value="8"/>
+                              </costs>
+                            </entryLink>
+                            <entryLink import="true" name="Repeater Handgun" hidden="false" id="7e18-221c-d9ff-d99a" type="selectionEntry" targetId="1748-87d-961c-9278" sortIndex="3">
+                              <costs>
+                                <cost name="pts" typeId="points" value="5"/>
+                              </costs>
+                            </entryLink>
+                            <entryLink import="true" name="Handgun" hidden="false" id="f9d8-326b-a834-b779" type="selectionEntry" targetId="e2ed-a3fd-dee5-3e9f" sortIndex="1"/>
+                          </entryLinks>
+                        </selectionEntryGroup>
+                      </selectionEntryGroups>
+                      <categoryLinks>
+                        <categoryLink name="CHAMPION" hidden="false" id="bfa0-4177-acdc-5253" targetId="83a1-945c-564c-84af" primary="false"/>
+                        <categoryLink name="Regular Infantry" hidden="false" id="4016-7a73-de28-7539" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                        <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="85c4-5b2b-9994-7def" targetId="may-have-armour"/>
+                      </categoryLinks>
+                    </selectionEntry>
+                  </selectionEntries>
+                </selectionEntryGroup>
+                <selectionEntryGroup name="Unit Options" id="f663-53e9-70be-9577" hidden="false" sortIndex="4">
+                  <selectionEntries>
+                    <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="51e8-1b2f-59a4-6efb" sortIndex="1">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c4e7-e936-d9ea-86bf"/>
+                        <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="f0c1-c71a-e8f8-0f39" includeChildSelections="true"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Drilled" id="2c02-cd31-dabb-7f66" hidden="false" type="profile" targetId="1f64-3ddc-db58-12fb"/>
+                      </infoLinks>
+                      <modifiers>
+                        <modifier type="increment" value="1" field="points">
+                          <repeats>
+                            <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="c010-1418-a636-4624" includeChildSelections="true"/>
+                          </repeats>
+                        </modifier>
+                        <modifier type="increment" value="1" field="f0c1-c71a-e8f8-0f39">
+                          <repeats>
+                            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="4c94-302d-f28e-5a4f" includeChildSelections="true"/>
+                          </repeats>
+                        </modifier>
+                      </modifiers>
+                      <costs>
+                        <cost name="pts" typeId="points" value="0"/>
+                      </costs>
+                    </selectionEntry>
+                  </selectionEntries>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
+              <infoGroups>
+                <infoGroup name="Special Rules" id="d095-faf7-3851-5d83" hidden="false">
+                  <infoLinks>
+                    <infoLink name="Close Order" id="fe2c-65ac-9446-240a" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+                    <infoLink name="Detachment" id="f2e1-fd0f-e16d-20ad" hidden="false" type="profile" targetId="559-d4c6-b2e8-500f"/>
+                    <infoLink name="Regimental Unit" id="7393-3b29-ecee-4987" hidden="false" type="profile" targetId="7424-ec43-7581-965a"/>
+                    <infoLink name="Handgun Drill" id="73ab-325a-b30c-f30c" hidden="true" type="profile" targetId="9ed6-5a3e-af1f-a763">
+                      <modifiers>
+                        <modifier type="set" value="false" field="hidden">
+                          <conditions>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
+                    </infoLink>
+                  </infoLinks>
+                </infoGroup>
+              </infoGroups>
+              <categoryLinks>
+                <categoryLink name="Faction: The Empire of Man" hidden="false" id="d547-0706-a495-7d2f" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
+                <categoryLink targetId="fec1-537a-bbeb-7926" id="a81b-ea0d-23b5-e588" primary="false" name="Units"/>
+              </categoryLinks>
+              <comment>No Warhall</comment>
+            </selectionEntry>
+            <selectionEntry type="unit" import="true" name="State Troops" hidden="false" id="e46a-0ae1-8489-4b1d" sortIndex="2">
+              <profiles>
+                <profile name="State Troops" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="9d88-0f9a-7629-4562">
+                  <characteristics>
+                    <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Regular infantry</characteristic>
+                    <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">10+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <selectionEntries>
+                <selectionEntry type="model" import="true" name="State Trooper" hidden="false" id="2273-31e7-c47f-dae0" sortIndex="1">
+                  <constraints>
+                    <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="fda2-4f3c-d463-7c51"/>
+                    <constraint type="max" value="0" field="selections" scope="parent" shared="true" id="1a68-67e7-bd43-605a"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink import="true" name="Hand Weapon" hidden="false" id="d41a-f63d-1815-611a" type="selectionEntry" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="1">
+                      <constraints>
+                        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="29f0-d402-bfc1-8045"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink import="true" name="Light Armour" hidden="false" id="27b7-f910-16d3-22d8" type="selectionEntry" targetId="7cab-40e6-f134-de78" collective="true" sortIndex="2">
+                      <constraints>
+                        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="e751-4fcc-66b6-6342"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink import="true" name="Shield" hidden="false" id="eb25-b142-ac68-3070" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="3">
+                      <costs>
+                        <cost name="pts" typeId="points" value="1"/>
+                      </costs>
+                      <constraints>
+                        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b198-4a66-975b-8a39"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                  <infoLinks>
+                    <infoLink name="State Trooper" id="4708-1f82-b86c-dbe7" hidden="false" type="profile" targetId="1a6a-960a-2636-1a11"/>
+                    <infoLink name="Base (25x25)" id="533f-785d-fbe8-0e81" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="5"/>
+                  </costs>
+                  <modifiers>
+                    <modifier type="increment" value="1" field="1a68-67e7-bd43-605a">
+                      <repeats>
+                        <repeat value="2" repeats="1" field="selections" scope="root-entry" childId="960d-4c69-c34d-0fbb" shared="true" roundUp="false" includeChildSelections="false"/>
+                      </repeats>
+                    </modifier>
+                  </modifiers>
+                  <categoryLinks>
+                    <categoryLink name="Regular Infantry" hidden="false" id="802a-a0c5-ce00-6bd3" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                    <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="b5db-7e5c-2e90-8bad" targetId="may-have-armour"/>
+                    <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="b0d1-1c5e-73d2-f718" targetId="may-have-shield"/>
+                  </categoryLinks>
+                </selectionEntry>
+              </selectionEntries>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Command" id="0baa-a306-6f35-6ba3" hidden="false" sortIndex="3">
+                  <selectionEntries>
+                    <selectionEntry type="model" import="true" name="Sergeant" hidden="false" id="524e-d9da-c075-e30d" subType="crew" flatten="true" sortIndex="1">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a914-32f2-e5aa-b798"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="State Trooper" id="47cd-f13e-cd5e-3e5a" hidden="false" type="profile" targetId="1a6a-960a-2636-1a11">
+                          <modifiers>
+                            <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
+                            <modifier type="set" value="Sargeant" field="name"/>
+                          </modifiers>
+                        </infoLink>
+                        <infoLink name="Champion" id="f8cb-2e0d-8a7b-6436" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
+                      </infoLinks>
+                      <comment>upgrades: b804-2976-136-c0f1</comment>
+                      <categoryLinks>
+                        <categoryLink name="CHAMPION" hidden="false" id="c377-2dc6-f1da-4d86" targetId="83a1-945c-564c-84af" primary="false"/>
+                        <categoryLink name="Regular Infantry" hidden="false" id="7319-51c5-c6b5-d965" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                        <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="0766-fec0-322b-ccbc" targetId="may-have-armour"/>
+                        <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="adf0-8e9f-f71a-f2d8" targetId="may-have-shield"/>
+                      </categoryLinks>
+                    </selectionEntry>
+                  </selectionEntries>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
+              <infoGroups>
+                <infoGroup name="Special Rules" id="d35e-ff77-b5f8-afb3" hidden="false">
+                  <infoLinks>
+                    <infoLink name="Close Order" id="f9a6-7096-80c2-4b66" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+                    <infoLink name="Detachment" id="fdba-f38d-5955-e733" hidden="false" type="profile" targetId="559-d4c6-b2e8-500f"/>
+                    <infoLink name="Regimental Unit" id="9efa-94e4-f2a1-a3e7" hidden="false" type="profile" targetId="7424-ec43-7581-965a"/>
+                  </infoLinks>
+                </infoGroup>
+              </infoGroups>
+              <categoryLinks>
+                <categoryLink name="Faction: The Empire of Man" hidden="false" id="c90d-176d-0457-64b9" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
+                <categoryLink targetId="fec1-537a-bbeb-7926" id="e601-ed97-c620-d402" primary="false" name="Units"/>
+              </categoryLinks>
+              <comment>No Warhall</comment>
+            </selectionEntry>
+          </selectionEntries>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2457-bbc8-076e-63cb"/>
+            <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="69c0-bb08-7c02-8b53"/>
+          </constraints>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <profiles>
+        <profile name="State Troops" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="775e-5d6e-86e3-e934">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Regular infantry</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">10+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="8fb1-6464-7abc-b4e3" hidden="false">
+          <infoLinks>
+            <infoLink name="Close Order" id="eae0-e75b-3ff4-1161" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+            <infoLink name="Detachment" id="0146-7f9e-edca-1f01" hidden="false" type="profile" targetId="559-d4c6-b2e8-500f"/>
+            <infoLink name="Regimental Unit" id="76eb-b257-3611-52f5" hidden="false" type="profile" targetId="7424-ec43-7581-965a"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <categoryLinks>
+        <categoryLink targetId="e5f1-f9ee-d533-b2dc" id="d9b2-a764-ca74-7e59" primary="false" name="Faction: The Empire of Man"/>
+      </categoryLinks>
+      <comment>No Warhall</comment>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Nuln Veteran State Troops" hidden="false" id="b8bd-1618-29c9-1f93">
+      <profiles>
+        <profile name="Veteran State Troops" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="efd9-1ffc-b914-5566">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Regular infantry</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">10+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Veteran State Trooper" hidden="false" id="c6de-08e9-e0db-1be5" sortIndex="1">
+          <constraints>
+            <constraint type="min" value="10" field="selections" scope="parent" shared="true" id="af28-7415-5f0d-32c7"/>
+          </constraints>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="09f7-f80f-8721-a722" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="98ed-a584-314e-99cd"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Light Armour" hidden="false" id="26dc-7500-5466-491f" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="2">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="3444-40c8-7868-4474"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Shield" hidden="false" id="2146-f4ce-0845-199b" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="5">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </entryLink>
+            <entryLink import="true" name="Halberd" hidden="false" id="8de6-d393-f824-615b" type="selectionEntry" targetId="f0a5-1b2e-3d2b-d540" sortIndex="3">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6adc-41af-3efe-d757"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <infoLinks>
+            <infoLink name="Veteran State Trooper" id="5194-65bd-2f0b-37db" hidden="false" type="profile" targetId="2d43-6a21-37b9-488b"/>
+            <infoLink name="Base (25x25)" id="ba8c-50e6-8ac0-cb40" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="7"/>
+          </costs>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="fcd7-012b-64fe-8b35" collective="true" sortIndex="4">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7676-95f0-73c8-8077"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Drilled" id="6b76-4edd-bcc9-78e3" hidden="false" type="profile" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <modifiers>
+            <modifier type="set" value="5" field="af28-7415-5f0d-32c7">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="551d-34fe-3832-416d" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="4bc4-dfdb-317f-524d" targetId="f3f7-ca43-674e-115f" primary="false"/>
+            <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="8fd7-ed8c-f7d6-a716" targetId="may-have-armour"/>
+            <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="55f9-fa67-3d03-1637" targetId="may-have-shield"/>
+          </categoryLinks>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Command" id="de27-8841-07aa-bc0d" hidden="false" sortIndex="2">
+          <selectionEntries>
+            <selectionEntry type="model" import="true" name="Sergeant" hidden="false" id="d739-2c44-ee48-2cad" subType="crew" flatten="true" sortIndex="1">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="47f2-245b-eba8-51c1"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="5"/>
+              </costs>
+              <infoLinks>
+                <infoLink name="Veteran State Trooper" id="8360-4ef1-fef4-9f89" hidden="false" type="profile" targetId="2d43-6a21-37b9-488b">
+                  <modifiers>
+                    <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
+                    <modifier type="set" value="Veteran Sargeant" field="name"/>
+                  </modifiers>
+                </infoLink>
+                <infoLink name="Champion" id="b018-1701-5b02-759f" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
+              </infoLinks>
+              <comment>upgrades: 1a33-6ef0-f7fb-db55</comment>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" id="35f3-70a9-5fc4-5081" type="selectionEntryGroup" targetId="1539-fd78-88f-badd" flatten="false">
+                  <constraints>
+                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="fbe5-462e-d872-5949"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+              <categoryLinks>
+                <categoryLink name="CHAMPION" hidden="false" id="e6ac-7993-b2bc-3d04" targetId="83a1-945c-564c-84af" primary="false"/>
+                <categoryLink name="Regular Infantry" hidden="false" id="a31f-daed-eded-a1d7" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="e195-43a0-2cad-8c31" targetId="may-have-armour"/>
+                <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="1de4-7538-9798-c78f" targetId="may-have-shield"/>
+              </categoryLinks>
+            </selectionEntry>
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="a678-a495-7135-7a53" subType="crew" flatten="true" sortIndex="2">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="db09-aae1-dad5-4611"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="5"/>
+              </costs>
+              <comment>upgrades: 1a33-6ef0-f7fb-db55</comment>
+              <infoLinks>
+                <infoLink name="Standard Bearer" id="af22-ba9a-3d56-e813" hidden="false" type="profile" targetId="bcf8-d942-102e-b155"/>
+              </infoLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="false" id="ce16-15d1-0b51-f028" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="602c-20bc-da0d-1a81"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="7895-3510-46da-8d13" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="023d-1c5b-de48-7c72" targetId="may-have-armour"/>
+                <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="1e9f-0498-5f81-e8b4" targetId="may-have-shield"/>
+              </categoryLinks>
+            </selectionEntry>
+            <selectionEntry type="model" import="true" name="Musician" hidden="false" id="ce7c-0e0c-7106-aa97" subType="crew" sortIndex="3">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5357-2909-5b1d-6ce4"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="5"/>
+              </costs>
+              <comment>upgrades: 1a33-6ef0-f7fb-db55</comment>
+              <infoLinks>
+                <infoLink name="Musician" id="ddc3-c158-b43b-36cf" hidden="false" type="profile" targetId="40f2-dd77-f0ca-3663"/>
+              </infoLinks>
+              <categoryLinks>
+                <categoryLink name="Regular Infantry" hidden="false" id="d04a-c564-fd48-c596" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="58c9-75bc-06d0-28de" targetId="may-have-armour"/>
+                <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="a1f1-c0cf-b480-c5c6" targetId="may-have-shield"/>
+              </categoryLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Detachments" id="0988-dc15-f6e2-17fd" hidden="false" sortIndex="3">
+          <selectionEntries>
+            <selectionEntry type="unit" import="true" name="State Troops" hidden="false" id="fed7-164e-cc85-9f00" sortIndex="2">
+              <profiles>
+                <profile name="State Troops" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="b945-57d7-c439-f144">
+                  <characteristics>
+                    <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Regular infantry</characteristic>
+                    <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">10+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <selectionEntries>
+                <selectionEntry type="model" import="true" name="State Trooper" hidden="false" id="eaa8-a9d6-0508-79a3" sortIndex="1">
+                  <constraints>
+                    <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="e4ac-f92b-1132-8136"/>
+                    <constraint type="max" value="0" field="selections" scope="parent" shared="true" id="63ed-830d-a7fc-fa81"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink import="true" name="Hand Weapon" hidden="false" id="88c7-cd8f-fb7e-76c8" type="selectionEntry" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="1">
+                      <constraints>
+                        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ed17-c4b4-218c-48b4"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink import="true" name="Light Armour" hidden="false" id="99ad-e760-3560-358b" type="selectionEntry" targetId="7cab-40e6-f134-de78" collective="true" sortIndex="2">
+                      <constraints>
+                        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="dc7d-1aa4-aedd-70ed"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink import="true" name="Shield" hidden="false" id="96d4-71dd-f5fa-bada" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="3">
+                      <costs>
+                        <cost name="pts" typeId="points" value="1"/>
+                      </costs>
+                      <constraints>
+                        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="0f4f-6c2e-f2ef-118c"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                  <infoLinks>
+                    <infoLink name="State Trooper" id="72e2-0849-c650-ae3a" hidden="false" type="profile" targetId="1a6a-960a-2636-1a11"/>
+                    <infoLink name="Base (25x25)" id="18df-5a09-fdd7-b95c" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="5"/>
+                  </costs>
+                  <modifiers>
+                    <modifier type="increment" value="1" field="63ed-830d-a7fc-fa81">
+                      <repeats>
+                        <repeat value="2" repeats="1" field="selections" scope="root-entry" childId="c6de-08e9-e0db-1be5" shared="true" roundUp="false" includeChildSelections="false"/>
+                      </repeats>
+                    </modifier>
+                  </modifiers>
+                  <categoryLinks>
+                    <categoryLink name="Regular Infantry" hidden="false" id="f867-01c7-ec7a-bb26" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                    <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="4ce7-d587-b5b8-1a61" targetId="may-have-armour"/>
+                    <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="7145-80c3-a9f7-cf69" targetId="may-have-shield"/>
+                  </categoryLinks>
+                </selectionEntry>
+              </selectionEntries>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Command" id="f54d-9ec4-9f1e-22a5" hidden="false" sortIndex="3">
+                  <selectionEntries>
+                    <selectionEntry type="model" import="true" name="Sergeant" hidden="false" id="b91d-3099-e446-f862" subType="crew" flatten="true" sortIndex="1">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5691-1418-7682-b0bd"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="State Trooper" id="d618-73ff-9292-a4a4" hidden="false" type="profile" targetId="1a6a-960a-2636-1a11">
+                          <modifiers>
+                            <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
+                            <modifier type="set" value="Sargeant" field="name"/>
+                          </modifiers>
+                        </infoLink>
+                        <infoLink name="Champion" id="5529-c6c3-0eff-9735" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
+                      </infoLinks>
+                      <comment>upgrades: b804-2976-136-c0f1</comment>
+                      <categoryLinks>
+                        <categoryLink name="CHAMPION" hidden="false" id="a1af-103d-ad52-a7ba" targetId="83a1-945c-564c-84af" primary="false"/>
+                        <categoryLink name="Regular Infantry" hidden="false" id="51e0-bb17-0394-c87c" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                        <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="48de-2ce8-27cf-504e" targetId="may-have-armour"/>
+                        <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="caa7-f819-a21a-2148" targetId="may-have-shield"/>
+                      </categoryLinks>
+                    </selectionEntry>
+                  </selectionEntries>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
+              <infoGroups>
+                <infoGroup name="Special Rules" id="03f9-1b7c-ffa5-8b91" hidden="false">
+                  <infoLinks>
+                    <infoLink name="Close Order" id="36b8-866e-e588-4a0c" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+                    <infoLink name="Detachment" id="e7ac-9ada-f69d-c239" hidden="false" type="profile" targetId="559-d4c6-b2e8-500f"/>
+                    <infoLink name="Regimental Unit" id="8872-e24b-1f7e-ce12" hidden="false" type="profile" targetId="7424-ec43-7581-965a"/>
+                  </infoLinks>
+                </infoGroup>
+              </infoGroups>
+              <categoryLinks>
+                <categoryLink name="Faction: The Empire of Man" hidden="false" id="9b6c-c204-1d1b-11f7" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
+                <categoryLink targetId="fec1-537a-bbeb-7926" id="25ea-7df7-ecdb-2390" primary="false" name="Units"/>
+              </categoryLinks>
+              <comment>No Warhall</comment>
+            </selectionEntry>
+            <selectionEntry type="unit" import="true" name="State Missile Troops" hidden="false" id="4947-26e0-17b6-3d45" sortIndex="1">
+              <profiles>
+                <profile name="State Missile Troops" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="9135-1acf-3e91-f605">
+                  <characteristics>
+                    <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Regular infantry</characteristic>
+                    <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">10+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <selectionEntries>
+                <selectionEntry type="model" import="true" name="State Missile Trooper" hidden="false" id="d5fa-d2c5-ad88-ced8" sortIndex="1">
+                  <constraints>
+                    <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="d2dc-54f6-ee74-0f4c"/>
+                    <constraint type="max" value="0" field="selections" scope="parent" shared="true" id="350e-ff7d-0b21-a21f"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink import="true" name="Hand Weapon" hidden="false" id="2d08-3a11-cbad-1b70" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+                      <constraints>
+                        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="20e6-cda5-b62f-e367"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink import="true" name="Light Armour" hidden="false" id="db86-b7e3-522d-483e" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="3">
+                      <costs>
+                        <cost name="pts" typeId="points" value="1"/>
+                      </costs>
+                    </entryLink>
+                    <entryLink import="true" name="Handgun" hidden="false" id="2672-2671-448f-6230" type="selectionEntry" targetId="e2ed-a3fd-dee5-3e9f" sortIndex="2">
+                      <costs>
+                        <cost name="pts" typeId="points" value="1"/>
+                      </costs>
+                      <constraints>
+                        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ee2f-997e-745b-eeae"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                  <infoLinks>
+                    <infoLink name="State Missile Trooper" id="3a4f-de5d-3637-e7aa" hidden="false" type="profile" targetId="bd08-df61-f45c-349"/>
+                    <infoLink name="Base (25x25)" id="8c58-1e6c-2767-151e" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="7"/>
+                  </costs>
+                  <modifiers>
+                    <modifier type="increment" value="1" field="350e-ff7d-0b21-a21f">
+                      <repeats>
+                        <repeat value="2" repeats="1" field="selections" scope="root-entry" childId="c6de-08e9-e0db-1be5" shared="true" roundUp="false" includeChildSelections="false"/>
+                      </repeats>
+                    </modifier>
+                  </modifiers>
+                  <categoryLinks>
+                    <categoryLink name="Regular Infantry" hidden="false" id="9dbe-3455-6f37-eb10" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                    <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="a88d-d7c1-8a87-4b66" targetId="may-have-armour"/>
+                  </categoryLinks>
+                </selectionEntry>
+              </selectionEntries>
+              <selectionEntryGroups>
+                <selectionEntryGroup name="Command" id="8f6f-0348-f0ca-b489" hidden="false" sortIndex="3">
+                  <selectionEntries>
+                    <selectionEntry type="model" import="true" name="Sergeant" hidden="false" id="7cac-a7f1-3588-82a8" subType="crew" flatten="true" sortIndex="1">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5312-10b9-9b2f-d9b4"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="State Missile Trooper" id="60ca-ea69-d0ad-5f0b" hidden="false" type="profile" targetId="bd08-df61-f45c-349">
+                          <modifiers>
+                            <modifier type="increment" value="1" field="59f9-ccf5-1155-fb05"/>
+                            <modifier type="set" value="Sergeant" field="name"/>
+                          </modifiers>
+                        </infoLink>
+                        <infoLink name="Champion" id="e98a-9446-f4d5-87f3" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
+                      </infoLinks>
+                      <comment>upgrades: 3e11-1ae1-1c1a-6094</comment>
+                      <selectionEntryGroups>
+                        <selectionEntryGroup name="Ranged Weapon" id="14f0-9b46-d80c-e850" hidden="false" defaultSelectionEntryId="6e1f-76f5-e373-86b8">
+                          <constraints>
+                            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="67b7-a596-c441-9a57"/>
+                            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9249-f92d-89fe-8d12"/>
+                          </constraints>
+                          <entryLinks>
+                            <entryLink import="true" name="Brace of Pistols" hidden="false" id="58f9-0e15-1e82-5588" type="selectionEntry" targetId="d8bb-85b0-3575-6029" sortIndex="2">
+                              <costs>
+                                <cost name="pts" typeId="points" value="5"/>
+                              </costs>
+                            </entryLink>
+                            <entryLink import="true" name="Hochland Long Rifle" hidden="false" id="2de9-c726-314b-238f" type="selectionEntry" targetId="451f-4f26-82e2-7f07" sortIndex="4">
+                              <costs>
+                                <cost name="pts" typeId="points" value="8"/>
+                              </costs>
+                            </entryLink>
+                            <entryLink import="true" name="Repeater Handgun" hidden="false" id="914c-69ea-8e2c-2b94" type="selectionEntry" targetId="1748-87d-961c-9278" sortIndex="3">
+                              <costs>
+                                <cost name="pts" typeId="points" value="5"/>
+                              </costs>
+                            </entryLink>
+                            <entryLink import="true" name="Handgun" hidden="false" id="f595-4652-53c8-7bd1" type="selectionEntry" targetId="e2ed-a3fd-dee5-3e9f" sortIndex="1"/>
+                          </entryLinks>
+                        </selectionEntryGroup>
+                      </selectionEntryGroups>
+                      <categoryLinks>
+                        <categoryLink name="CHAMPION" hidden="false" id="af8b-9f6f-e335-4c0a" targetId="83a1-945c-564c-84af" primary="false"/>
+                        <categoryLink name="Regular Infantry" hidden="false" id="2abd-6734-7e0b-0f9c" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                        <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="c9d4-5ab3-d190-acc2" targetId="may-have-armour"/>
+                      </categoryLinks>
+                    </selectionEntry>
+                  </selectionEntries>
+                </selectionEntryGroup>
+                <selectionEntryGroup name="Unit Options" id="25ae-f266-6beb-9b04" hidden="false" sortIndex="4">
+                  <selectionEntries>
+                    <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="3c8a-9609-20a8-e1a3" sortIndex="1">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="520c-2a96-4183-6431"/>
+                        <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="2e2b-e542-9980-40ee" includeChildSelections="true"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Drilled" id="4df0-d275-b657-2c79" hidden="false" type="profile" targetId="1f64-3ddc-db58-12fb"/>
+                      </infoLinks>
+                      <modifiers>
+                        <modifier type="increment" value="1" field="points">
+                          <repeats>
+                            <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="4b33-3a6c-b42f-7173" includeChildSelections="true"/>
+                          </repeats>
+                        </modifier>
+                        <modifier type="increment" value="1" field="2e2b-e542-9980-40ee">
+                          <repeats>
+                            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="54a4-8a12-ce5b-73c7" includeChildSelections="true"/>
+                          </repeats>
+                        </modifier>
+                      </modifiers>
+                      <costs>
+                        <cost name="pts" typeId="points" value="0"/>
+                      </costs>
+                    </selectionEntry>
+                  </selectionEntries>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
+              <infoGroups>
+                <infoGroup name="Special Rules" id="fec7-30e6-f398-3c3f" hidden="false">
+                  <infoLinks>
+                    <infoLink name="Close Order" id="2273-93d1-caa0-fb7d" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+                    <infoLink name="Detachment" id="6423-ae32-085c-9650" hidden="false" type="profile" targetId="559-d4c6-b2e8-500f"/>
+                    <infoLink name="Regimental Unit" id="1ea7-43ff-cea8-1675" hidden="false" type="profile" targetId="7424-ec43-7581-965a"/>
+                    <infoLink name="Handgun Drill" id="0530-38dc-da43-f008" hidden="true" type="profile" targetId="9ed6-5a3e-af1f-a763">
+                      <modifiers>
+                        <modifier type="set" value="false" field="hidden">
+                          <conditions>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
+                    </infoLink>
+                  </infoLinks>
+                </infoGroup>
+              </infoGroups>
+              <categoryLinks>
+                <categoryLink name="Faction: The Empire of Man" hidden="false" id="3130-4c00-4fa6-c9a8" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
+                <categoryLink name="Units" hidden="false" id="cb92-a6d3-28c4-38ef" targetId="fec1-537a-bbeb-7926" primary="false"/>
+              </categoryLinks>
+              <comment>No Warhall</comment>
+            </selectionEntry>
+          </selectionEntries>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="613f-3087-bbe6-e2a0"/>
+            <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="9dd4-a8e7-7733-0362"/>
+          </constraints>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="40b4-8b3a-bc4e-9f8e" hidden="false">
+          <infoLinks>
+            <infoLink name="Close Order" id="b619-1fc7-470a-7630" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+            <infoLink name="Detachment" id="f2b4-fe01-c967-0518" hidden="false" type="profile" targetId="559-d4c6-b2e8-500f"/>
+            <infoLink name="Regimental Unit" id="e404-f875-2e08-488e" hidden="false" type="profile" targetId="7424-ec43-7581-965a"/>
+            <infoLink name="Veteran" id="d776-1291-7435-19ed" hidden="false" type="profile" targetId="4022-c403-b083-ba83"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="c431-06c4-c0fc-8193" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="c431-06c4-c0fc-8193">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="9e7d-3331-1db5-b486"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink name="Faction: The Empire of Man" hidden="false" id="3755-6bda-f601-52c1" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
+      </categoryLinks>
+      <comment>No Warhall</comment>
+    </selectionEntry>
   </sharedSelectionEntries>
   <entryLinks>
     <entryLink import="true" name="Captain of the Empire" hidden="false" type="selectionEntry" id="8d44-3c40-3ee-aa2d" targetId="7273-83e0-822f-d49d">
@@ -6991,6 +7928,27 @@ Note that any special rules granted by these upgrades do not apply to the models
         <categoryLink name="Special" hidden="false" id="dd95-650d-1c48-13c0" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Units" hidden="false" id="260e-1750-5cca-c297" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="increment" value="1" field="8c6c-ae4b-7cb4-117c">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+        <modifier type="increment" value="1" field="8c6c-ae4b-7cb4-117c">
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="8c6c-ae4b-7cb4-117c" includeChildSelections="true"/>
+      </constraints>
     </entryLink>
     <entryLink import="true" name="Demigryph Knights" hidden="false" type="selectionEntry" id="9028-efb-1996-ad86" targetId="b4a9-61e8-2b85-9c99">
       <categoryLinks>
@@ -7016,7 +7974,7 @@ Note that any special rules granted by these upgrades do not apply to the models
     </entryLink>
     <entryLink import="true" name="Great Cannon" hidden="false" type="selectionEntry" id="5f61-c8c1-b8b5-b909" targetId="1a5c-f654-806a-a64d">
       <categoryLinks>
-        <categoryLink name="Cannon or Mortar" hidden="false" id="fe01-be3c-1ba6-f90" targetId="a37-c139-d031-7393" primary="false"/>
+        <categoryLink name="Great Cannon or Mortar" hidden="false" id="fe01-be3c-1ba6-f90" targetId="a37-c139-d031-7393" primary="false"/>
         <categoryLink name="Special" hidden="false" id="393e-a861-edee-e226" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
@@ -7034,7 +7992,7 @@ Note that any special rules granted by these upgrades do not apply to the models
     </entryLink>
     <entryLink targetId="da5-c1f4-d897-75a8" id="ae19-52da-3230-d715" type="selectionEntry" name="Mortar" hidden="false">
       <categoryLinks>
-        <categoryLink name="Cannon or Mortar" hidden="false" id="6f1e-4c70-88b1-2a42" targetId="a37-c139-d031-7393" primary="false"/>
+        <categoryLink name="Great Cannon or Mortar" hidden="false" id="6f1e-4c70-88b1-2a42" targetId="a37-c139-d031-7393" primary="false"/>
         <categoryLink name="Special" hidden="false" id="d15b-b355-79ab-3b3a" targetId="633f-f67a-1b6a-d203" primary="true"/>
       </categoryLinks>
     </entryLink>
@@ -7092,13 +8050,13 @@ Note that any special rules granted by these upgrades do not apply to the models
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="0a17-7d27-da03-b7cd" primary="true" name="Characters"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="b178-2af4-83d1-1c6f"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="9c84-0bef-f820-43ef"/>
       </constraints>
       <modifiers>
-        <modifier type="increment" value="1" field="b178-2af4-83d1-1c6f">
-          <repeats>
-            <repeat value="1" repeats="1" field="selections" scope="force" childId="68ee-4733-e734-10b" shared="true" roundUp="false" includeChildSelections="true"/>
-          </repeats>
+        <modifier type="set" value="1" field="9c84-0bef-f820-43ef">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="68ee-4733-e734-10b" shared="true" includeChildSelections="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </entryLink>
@@ -7148,26 +8106,48 @@ Note that any special rules granted by these upgrades do not apply to the models
         </modifier>
       </modifiers>
     </categoryEntry>
-    <categoryEntry name="Cannon or Mortar" hidden="true" id="a37-c139-d031-7393">
+    <categoryEntry name="Great Cannon or Mortar" hidden="true" id="a37-c139-d031-7393">
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="652-f3dd-3d87-4d33" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="ba46-5e1e-1db8-2334" includeChildSelections="true"/>
       </constraints>
       <modifiers>
-        <modifier type="increment" value="3" field="652-f3dd-3d87-4d33">
+        <modifier type="increment" value="1" field="ba46-5e1e-1db8-2334">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
           <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="ab76-7543-907a-c72e"/>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+        <modifier type="increment" value="1" field="ba46-5e1e-1db8-2334">
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
           </repeats>
         </modifier>
       </modifiers>
     </categoryEntry>
     <categoryEntry name="Volley Gun or Rocket Battery" hidden="true" id="4672-fd87-b5c8-1269">
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="596c-815-3b99-41f9" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="596c-815-3b99-41f9" includeChildSelections="true"/>
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="596c-815-3b99-41f9">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
           <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="38fe-7031-c6-a3c3"/>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+        </modifier>
+        <modifier type="increment" value="1" field="596c-815-3b99-41f9">
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
           </repeats>
         </modifier>
       </modifiers>
@@ -7494,10 +8474,10 @@ Note that any special rules granted by these upgrades do not apply to the models
     </categoryEntry>
   </categoryEntries>
   <sharedSelectionEntryGroups>
-    <selectionEntryGroup name="Knightly Order" id="ee1f-06e6-c3c7-5719" hidden="false" collective="true">
+    <selectionEntryGroup name="Knightly Order" id="934d-0c94-9509-cb36" hidden="false" collective="true">
       <comment>units</comment>
       <entryLinks>
-        <entryLink import="true" name="Order of the Blazing Sun" hidden="false" id="f12b-d56b-8ab3-0c74" type="selectionEntry" targetId="9100-3967-5889-c6ec">
+        <entryLink import="true" name="Order of the Blazing Sun" hidden="false" id="3f2f-fb62-1d21-1e6a" type="selectionEntry" targetId="9100-3967-5889-c6ec">
           <modifiers>
             <modifier type="increment" value="2" field="points">
               <repeats>
@@ -7506,7 +8486,7 @@ Note that any special rules granted by these upgrades do not apply to the models
             </modifier>
           </modifiers>
         </entryLink>
-        <entryLink import="true" name="Order of the Fiery Heart" hidden="false" id="8835-c0df-2f91-8408" type="selectionEntry" targetId="69c6-db20-fd86-c6c2">
+        <entryLink import="true" name="Order of the Fiery Heart" hidden="false" id="17fb-fc0c-071a-73d6" type="selectionEntry" targetId="69c6-db20-fd86-c6c2">
           <modifiers>
             <modifier type="increment" value="3" field="points">
               <repeats>
@@ -7515,7 +8495,7 @@ Note that any special rules granted by these upgrades do not apply to the models
             </modifier>
           </modifiers>
         </entryLink>
-        <entryLink import="true" name="Order of the Knights of Morr" hidden="false" id="752d-5a51-21b0-d861" type="selectionEntry" targetId="20f0-e110-67cf-1ee8">
+        <entryLink import="true" name="Order of the Knights of Morr" hidden="false" id="fe62-7689-7b1b-9b07" type="selectionEntry" targetId="20f0-e110-67cf-1ee8">
           <modifiers>
             <modifier type="increment" value="3" field="points">
               <repeats>
@@ -7524,16 +8504,25 @@ Note that any special rules granted by these upgrades do not apply to the models
             </modifier>
           </modifiers>
         </entryLink>
-        <entryLink import="true" name="Order of the Knights Panther" hidden="false" id="9f5d-7650-87d9-f050" type="selectionEntry" targetId="e770-9944-6a04-7953">
+        <entryLink import="true" name="Order of the Knights Panther" hidden="false" id="9d6e-0cf2-7fd6-0893" type="selectionEntry" targetId="e770-9944-6a04-7953">
           <modifiers>
             <modifier type="increment" value="2" field="points">
               <repeats>
                 <repeat value="1" repeats="1" field="selections" scope="root-entry" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
               </repeats>
             </modifier>
+            <modifier type="set" value="1" field="df48-943b-02a4-e3ab">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2b9f-5cb1-f722-13c7" shared="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="adab-cb42-9a4f-3ba7" shared="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
+          <constraints>
+            <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="df48-943b-02a4-e3ab"/>
+          </constraints>
         </entryLink>
-        <entryLink import="true" name="Order of the White Wolf" hidden="false" id="9726-13bc-7be6-6b60" type="selectionEntry" targetId="0a33-2770-c8d3-585e">
+        <entryLink import="true" name="Order of the White Wolf" hidden="false" id="3dc7-a26d-ac9b-a0a3" type="selectionEntry" targetId="0a33-2770-c8d3-585e">
           <modifiers>
             <modifier type="increment" value="3" field="points">
               <repeats>
@@ -7544,55 +8533,91 @@ Note that any special rules granted by these upgrades do not apply to the models
         </entryLink>
       </entryLinks>
       <modifiers>
-        <modifier type="set" value="-1" field="1075-0df3-e9d6-792a">
+        <modifier type="set" value="-1" field="485c-b951-2379-4fc8">
           <conditions>
             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2b9f-5cb1-f722-13c7" shared="true"/>
           </conditions>
         </modifier>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2b9f-5cb1-f722-13c7" shared="true"/>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5b84-2c3c-869d-3522" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" value="1" field="3f8c-a26c-45cc-893f">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2b9f-5cb1-f722-13c7" shared="true"/>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="7d76-b1a1-1535-a04c" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="1075-0df3-e9d6-792a" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="485c-b951-2379-4fc8" includeChildSelections="true"/>
+        <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="3f8c-a26c-45cc-893f"/>
       </constraints>
     </selectionEntryGroup>
-    <selectionEntryGroup name="Knightly Order" id="4944-c209-f1e2-8a01" hidden="false" collective="true">
+    <selectionEntryGroup name="Knightly Order" id="3141-3c83-b47b-4ab9" hidden="false" collective="true">
       <comment>characters</comment>
       <entryLinks>
-        <entryLink import="true" name="Order of the Blazing Sun" hidden="false" id="fd94-d881-707e-2a65" type="selectionEntry" targetId="9100-3967-5889-c6ec">
+        <entryLink import="true" name="Order of the Blazing Sun" hidden="false" id="267b-b8cb-dc09-319e" type="selectionEntry" targetId="9100-3967-5889-c6ec">
           <costs>
             <cost name="pts" typeId="points" value="10"/>
           </costs>
         </entryLink>
-        <entryLink import="true" name="Order of the Fiery Heart" hidden="false" id="bf9f-bc1a-fb36-39e1" type="selectionEntry" targetId="69c6-db20-fd86-c6c2">
+        <entryLink import="true" name="Order of the Fiery Heart" hidden="false" id="e7f4-1191-9ba0-c727" type="selectionEntry" targetId="69c6-db20-fd86-c6c2">
           <costs>
             <cost name="pts" typeId="points" value="15"/>
           </costs>
         </entryLink>
-        <entryLink import="true" name="Order of the Knights of Morr" hidden="false" id="1052-44b3-2a16-51e5" type="selectionEntry" targetId="20f0-e110-67cf-1ee8">
+        <entryLink import="true" name="Order of the Knights of Morr" hidden="false" id="b5a5-6c0d-7fc4-c8db" type="selectionEntry" targetId="20f0-e110-67cf-1ee8">
           <costs>
             <cost name="pts" typeId="points" value="15"/>
           </costs>
         </entryLink>
-        <entryLink import="true" name="Order of the Knights Panther" hidden="false" id="312b-25f5-a7fc-58c8" type="selectionEntry" targetId="e770-9944-6a04-7953">
+        <entryLink import="true" name="Order of the Knights Panther" hidden="false" id="d419-f971-ce6c-23a9" type="selectionEntry" targetId="e770-9944-6a04-7953">
           <costs>
             <cost name="pts" typeId="points" value="10"/>
           </costs>
+          <constraints>
+            <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="6086-be78-fdc7-87aa"/>
+          </constraints>
+          <modifiers>
+            <modifier type="set" value="1" field="6086-be78-fdc7-87aa">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2b9f-5cb1-f722-13c7" shared="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="adab-cb42-9a4f-3ba7" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </entryLink>
-        <entryLink import="true" name="Order of the White Wolf" hidden="false" id="8760-054a-ddfd-12cd" type="selectionEntry" targetId="0a33-2770-c8d3-585e">
+        <entryLink import="true" name="Order of the White Wolf" hidden="false" id="dba1-8bc0-a92a-a78b" type="selectionEntry" targetId="0a33-2770-c8d3-585e">
           <costs>
             <cost name="pts" typeId="points" value="15"/>
           </costs>
         </entryLink>
       </entryLinks>
       <modifiers>
-        <modifier type="set" value="-1" field="c830-8e55-4ea4-b0cb">
+        <modifier type="set" value="-1" field="7d2a-914f-5d03-eb99">
           <conditions>
             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2b9f-5cb1-f722-13c7" shared="true"/>
           </conditions>
         </modifier>
+        <modifier type="set" value="1" field="3f53-f265-5a8c-e932">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2b9f-5cb1-f722-13c7" shared="true"/>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="7d76-b1a1-1535-a04c" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="c830-8e55-4ea4-b0cb" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="7d2a-914f-5d03-eb99" includeChildSelections="true"/>
+        <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="3f53-f265-5a8c-e932"/>
       </constraints>
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
+  <sharedRules>
+    <rule name="Entrenched Position" id="76b7-c3af-cad7-052f" hidden="false">
+      <description>During deployment, you may &apos;Entrench&apos; a single non-character model whose troop type is &apos;war machine&apos; for each empire engineer your army includes. An Entrenched war machine is considered to be behind partial cover and to be defending a low linear obstacle. Should the war machine move for any reason (including making a Vanguard move), it is no longer Entrenched.</description>
+    </rule>
+  </sharedRules>
 </catalogue>

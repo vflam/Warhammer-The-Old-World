@@ -1589,6 +1589,13 @@ If the only other remaining models in a unit are the champion and standard beare
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Multiple Shots (3), Ponderous</characteristic>
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="set" value="Armour Bane (1), Multiple Shots (3)" field="5f83-3633-336b-93b4">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Crossbow" hidden="false" id="1ef1-8579-c310-4fb5" typeId="a378-c633-912d-11ce" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
@@ -13947,7 +13954,7 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
     <selectionEntry type="upgrade" import="true" name="Battle Standard Bearer" hidden="false" id="5b87-9cf5-953d-3829" publicationId="768b-3da1-a182-a1d8" page="203">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a066-d20c-3b09-66ff"/>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="4c2c-9d24-8171-ff3" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="4c2c-9d24-8171-ff3" includeChildSelections="true"/>
       </constraints>
       <infoLinks>
         <infoLink name="Battle Standard Bearer" hidden="false" type="profile" id="8b9c-a19b-3dae-69a9" targetId="da9a-f205-577f-debb"/>
