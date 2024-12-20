@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="7b8f-602e-29cd-5786" name="The Empire of Man" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="84" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="7b8f-602e-29cd-5786" name="The Empire of Man" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="85" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Prayers of Ulric" hidden="false" id="d1f4-5e82-b7ed-3ad0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="53" publicationId="8b8d-8fc4-559e-87b1">
       <characteristics>
@@ -4330,7 +4330,6 @@ Note that any special rules granted by these upgrades do not apply to the models
             <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="1b02-db3a-2cee-7834" sortIndex="1">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2116-b1aa-5a19-7c54"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="869d-c545-905c-65a7" includeChildSelections="true"/>
               </constraints>
               <infoLinks>
                 <infoLink name="Drilled" hidden="false" type="profile" id="871c-fd5f-2ac-a667" targetId="1f64-3ddc-db58-12fb"/>
@@ -4339,11 +4338,6 @@ Note that any special rules granted by these upgrades do not apply to the models
                 <modifier type="increment" value="1" field="points">
                   <repeats>
                     <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="d3aa-d483-de23-52da" includeChildSelections="true"/>
-                  </repeats>
-                </modifier>
-                <modifier type="increment" value="1" field="869d-c545-905c-65a7">
-                  <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="c5b6-ad49-c6ff-73c4" includeChildSelections="true"/>
                   </repeats>
                 </modifier>
               </modifiers>
@@ -4360,14 +4354,8 @@ Note that any special rules granted by these upgrades do not apply to the models
               </infoLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d819-9cc9-1075-730d"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="f8de-d89d-54a9-91f2" includeChildSelections="true"/>
               </constraints>
               <modifiers>
-                <modifier type="increment" value="1" field="f8de-d89d-54a9-91f2">
-                  <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="f73c-6a71-be6e-181" includeChildSelections="true"/>
-                  </repeats>
-                </modifier>
                 <modifier type="increment" value="2" field="points">
                   <repeats>
                     <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="159b-5c6e-4c74-855f" includeChildSelections="true"/>
@@ -4376,6 +4364,16 @@ Note that any special rules granted by these upgrades do not apply to the models
               </modifiers>
             </selectionEntry>
           </selectionEntries>
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="869d-c545-905c-65a7" includeChildSelections="true"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="869d-c545-905c-65a7">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="c5b6-ad49-c6ff-73c4" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
@@ -6346,7 +6344,15 @@ Note that any special rules granted by these upgrades do not apply to the models
         </entryLink>
       </entryLinks>
       <infoLinks>
-        <infoLink name="War Wagon" id="1387-aa83-5ac8-c7d9" hidden="false" type="profile" targetId="480d-a718-c921-da3a"/>
+        <infoLink name="War Wagon" id="1387-aa83-5ac8-c7d9" hidden="false" type="profile" targetId="480d-a718-c921-da3a">
+          <modifiers>
+            <modifier type="set" value="(+6)" field="83ed-7b82-bf1f-e558">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
         <infoLink name="Base (60x100)" id="d8ec-6e7c-8e8c-2e5b" hidden="false" type="profile" targetId="5125-89a4-916a-eabd"/>
       </infoLinks>
       <costs>
