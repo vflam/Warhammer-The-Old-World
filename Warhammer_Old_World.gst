@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="127" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="128" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -106,6 +106,8 @@
     <categoryEntry name="BEASTMAN CHIEFTAIN OR BEASTMAN SHAMAN" id="2188-6202-19c7-969a" hidden="true">
       <comment>For Magic Items</comment>
     </categoryEntry>
+    <categoryEntry name="Faction: The Empire of Man - Knightly Order" id="7135-7f44-2427-9af9" hidden="true"/>
+    <categoryEntry name="Faction: The Empire of Man - City-state of Nuln" id="38be-5fe9-9738-fd43" hidden="true"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
@@ -220,6 +222,11 @@
             <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="09eb-a3a1-87f4-7fef" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -352,6 +359,8 @@
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f8cb-e518-1881-292" shared="true"/>
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="13b1-ec94-d107-d711" shared="true"/>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2b9f-5cb1-f722-13c7" shared="true"/>
                           </conditions>
                         </conditionGroup>
                       </conditionGroups>
@@ -1580,6 +1589,13 @@ If the only other remaining models in a unit are the champion and standard beare
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Multiple Shots (3), Ponderous</characteristic>
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="set" value="Armour Bane (1), Multiple Shots (3)" field="5f83-3633-336b-93b4">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Crossbow" hidden="false" id="1ef1-8579-c310-4fb5" typeId="a378-c633-912d-11ce" typeName="Weapon" page="218" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
@@ -13938,7 +13954,7 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
     <selectionEntry type="upgrade" import="true" name="Battle Standard Bearer" hidden="false" id="5b87-9cf5-953d-3829" publicationId="768b-3da1-a182-a1d8" page="203">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a066-d20c-3b09-66ff"/>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="4c2c-9d24-8171-ff3" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="4c2c-9d24-8171-ff3" includeChildSelections="true"/>
       </constraints>
       <infoLinks>
         <infoLink name="Battle Standard Bearer" hidden="false" type="profile" id="8b9c-a19b-3dae-69a9" targetId="da9a-f205-577f-debb"/>

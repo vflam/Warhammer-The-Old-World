@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="true" id="12a0-32cd-11d6-f952" name="Mercenaries" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="99" revision="15" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="true" id="12a0-32cd-11d6-f952" name="Mercenaries" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="99" revision="16" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Badlands Ogre Bulls" hidden="false" id="a4af-ea3a-49ea-d56e" collective="false">
       <profiles>
@@ -889,6 +889,184 @@
         </selectionEntry>
       </selectionEntries>
     </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Imperial Ogres" hidden="false" id="35c8-1830-8069-55b7" collective="false">
+      <profiles>
+        <profile name="Imperial Ogres" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="e6a3-fce7-2bbe-7797">
+          <characteristics>
+            <characteristic name="Troop Type" id="ee1a-df63-ec5b-8da7" hidden="false" typeId="5d94-6b94-bd89-1944">Monstrous infantry</characteristic>
+            <characteristic name="Unit Size" id="ec2a-9e39-e2ac-93d4" hidden="false" typeId="80a1-bb6f-66e4-4a5b">3+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Imperial Ogre" hidden="false" id="ec63-cf43-991c-c00c">
+          <infoLinks>
+            <infoLink name="Imperial Ogre" id="6b0b-8220-4548-2449" hidden="false" type="profile" targetId="203c-b12e-043f-d3bb">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="ef33-2795-a482-2a97" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Base (40x40)" id="c6f1-76a8-59f4-8b99" hidden="false" type="profile" targetId="1b54-27fc-b510-61b8"/>
+            <infoLink name="Light Armour" id="29a3-07bf-067e-27ab" hidden="true" type="profile" targetId="dbb2-4d85-84c2-528c">
+              <modifierGroups>
+                <modifierGroup type="and">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden"/>
+                  </modifiers>
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="35c8-1830-8069-55b7" childId="3a1a-3cb1-c418-4d73" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifierGroup>
+              </modifierGroups>
+            </infoLink>
+            <infoLink name="Heavy Armour" id="fe4c-2d2f-a545-63fb" hidden="true" type="profile" targetId="c56e-8d1b-bb4-de99">
+              <modifierGroups>
+                <modifierGroup type="and">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden"/>
+                  </modifiers>
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="35c8-1830-8069-55b7" childId="63e8-970e-b03b-5ddb" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifierGroup>
+              </modifierGroups>
+            </infoLink>
+          </infoLinks>
+          <costs>
+            <cost name="pts" id="0cc2-cfe2-7e47-977a" hidden="false" typeId="points" value="31"/>
+          </costs>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="ce57-5fb9-9014-c6c6" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="2a0f-33b5-8270-eefe"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="f067-a7b4-4023-0028"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Command" id="e329-1b20-fced-e89c" hidden="false" sortIndex="2">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Ogre Captain" hidden="false" id="ef33-2795-a482-2a97" sortIndex="1">
+                  <infoLinks>
+                    <infoLink name="Base (40x40)" id="7ecf-f07f-2cf0-69ec" hidden="false" type="profile" targetId="1b54-27fc-b510-61b8"/>
+                    <infoLink name="Champion" id="d06d-fed0-7cf6-875c" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
+                    <infoLink name="Imperial Ogre" id="3ca5-d4a7-c417-fc47" hidden="false" type="profile" targetId="203c-b12e-043f-d3bb">
+                      <modifiers>
+                        <modifier type="set" value="Ogre Captain" field="name"/>
+                        <modifier type="increment" value="1" field="59f9-ccf5-1155-fb05"/>
+                        <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
+                      </modifiers>
+                    </infoLink>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="7"/>
+                  </costs>
+                  <categoryLinks>
+                    <categoryLink name="Monstrous Infantry" hidden="false" id="423c-ee04-b1ca-e196" targetId="5c55-f9d6-b181-92f8" primary="false"/>
+                  </categoryLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1ad1-e629-4762-e14d" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="35c8-1830-8069-55b7" shared="true" id="2294-8909-8a7f-232f" includeChildSelections="true"/>
+                  </constraints>
+                </selectionEntry>
+              </selectionEntries>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="0d26-775c-c4f1-6675" includeChildSelections="false"/>
+              </constraints>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Weapons" id="545d-0deb-d6f9-28a1" hidden="false" sortIndex="3">
+              <entryLinks>
+                <entryLink import="true" name="Great Weapon" hidden="false" id="28a3-9bcb-ba8a-5c69" type="selectionEntry" targetId="2283-26e9-76c3-6048" sortIndex="1">
+                  <costs>
+                    <cost name="pts" id="9037-61bf-f841-8231" hidden="false" typeId="points" value="4"/>
+                  </costs>
+                </entryLink>
+                <entryLink import="true" name="Morning Star" hidden="false" id="f6f6-d6aa-e417-94fb" type="selectionEntry" targetId="7408-2024-917-7f11" sortIndex="2"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="22ed-e519-2d98-a3ec" includeChildSelections="false"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Light cannon" hidden="false" id="517a-2d56-403c-fe75" collective="true" sortIndex="3">
+                  <infoLinks>
+                    <infoLink name="Light cannon" id="b40e-d718-008b-7d09" hidden="false" type="profile" targetId="f3ae-e171-8066-414a"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c98c-3bd6-398f-1cca"/>
+                  </constraints>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Ogre pistol" hidden="false" id="bc0d-e776-1ade-7e49" collective="true" sortIndex="4">
+                  <infoLinks>
+                    <infoLink name="Ogre Pistol" id="ba7e-026c-c7c9-3248" hidden="false" type="profile" targetId="5d4b-5d29-bc2a-c9a0"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7a3b-e5be-75fb-91e0"/>
+                  </constraints>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <constraints>
+            <constraint type="min" value="3" field="selections" scope="parent" shared="true" id="129e-3cc6-880c-792b"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink name="Monstrous Infantry" hidden="false" id="846a-bfcd-b130-7516" targetId="5c55-f9d6-b181-92f8" primary="false"/>
+          </categoryLinks>
+        </selectionEntry>
+      </selectionEntries>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="e247-a352-4740-93b8" hidden="false">
+          <infoLinks>
+            <infoLink name="Armour Bane" id="9760-0d90-0ba3-0aaf" hidden="false" type="profile" targetId="2af0-975f-bb14-8b8f">
+              <modifiers>
+                <modifier type="append" value="(1)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Close Order" id="0c83-4f3c-7f1c-fd8d" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+            <infoLink name="Fear" id="a573-23cd-38c1-933b" hidden="false" type="profile" targetId="5ec9-a98-d8c5-e18b"/>
+            <infoLink name="Impact Hits" id="df6a-5bba-8db6-99a2" hidden="false" type="profile" targetId="5c2-e9dd-2715-a0c0">
+              <modifiers>
+                <modifier type="append" value="(1)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Mercenaries" id="5998-6b88-ab38-d158" hidden="false" type="profile" targetId="4d1b-2617-ebdc-4f4d"/>
+            <infoLink name="Motley Crew" id="8abf-e668-a9cd-1777" hidden="false" type="profile" targetId="6359-4018-5cd4-3720"/>
+            <infoLink name="Ogre Charge" id="edb2-5b94-64d7-15ae" hidden="false" type="profile" targetId="9e92-303-8d40-895c"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Armour" id="73ee-aeda-732e-7f22" hidden="false">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="bbba-c808-93f3-62c8" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c765-e065-5918-24fc" includeChildSelections="false"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Light Armour" hidden="false" id="3a1a-3cb1-c418-4d73" sortIndex="1">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f7fe-b391-4c2f-d2f1" includeChildSelections="false"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Heavy Armour" hidden="false" id="63e8-970e-b03b-5ddb" sortIndex="2">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7905-2c9e-31b9-ab2e" includeChildSelections="false"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="3" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedProfiles>
     <profile name="Ogre" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="5ccf-bbe6-f153-88b2">
@@ -1062,6 +1240,38 @@ Bonegrinder Giant Attacks Table
         <characteristic name="Ld" typeId="c435-6b14-f77e-3c72">9</characteristic>
       </characteristics>
     </profile>
+    <profile name="Imperial Ogre" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="203c-b12e-043f-d3bb">
+      <characteristics>
+        <characteristic name="M" typeId="cd3b-a5a4-e185-5a9d">6</characteristic>
+        <characteristic name="WS" typeId="b007-7d58-4f14-1e01">3</characteristic>
+        <characteristic name="BS" typeId="59f9-ccf5-1155-fb05">3</characteristic>
+        <characteristic name="S" typeId="5b6b-1427-2a45-dd0c">4</characteristic>
+        <characteristic name="T" typeId="ab43-8b61-83e7-d090">4</characteristic>
+        <characteristic name="W" typeId="83ed-7b82-bf1f-e558">3</characteristic>
+        <characteristic name="I" typeId="73b1-abe5-72f8-41e2">2</characteristic>
+        <characteristic name="A" typeId="dddc-9fbd-b0fd-a480">3</characteristic>
+        <characteristic name="Ld" typeId="c435-6b14-f77e-3c72">7</characteristic>
+      </characteristics>
+      <comment>New Entry/Ogre</comment>
+    </profile>
+    <profile name="Light cannon" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="f3ae-e171-8066-414a">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">18&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">4</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (2)</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">If the roll To Hit is successful when firing a light cannon, it causes D3 hits to the target enemy unit, rather than the usual one</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Ogre Pistol" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="5d4b-5d29-bc2a-c9a0">
+      <characteristics>
+        <characteristic name="R" typeId="2360-c777-5e07-ed58">24&quot;</characteristic>
+        <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">4</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Quick Shot</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71"/>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <entryLinks>
     <entryLink import="true" name="Badlands Ogre Bulls" hidden="false" id="44c9-e0c9-75ce-1fce" type="selectionEntry" targetId="a4af-ea3a-49ea-d56e">
@@ -1186,6 +1396,29 @@ Bonegrinder Giant Attacks Table
       </categoryLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="8dab-898b-f546-aa47"/>
+      </constraints>
+    </entryLink>
+    <entryLink import="true" name="Imperial Ogres" hidden="true" id="b41d-0f2c-5f52-bce7" type="selectionEntry" targetId="35c8-1830-8069-55b7">
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7b8f-602e-29cd-5786" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <comment>Hide if not grand army of Dwarfen Mountain holds or Empire of War</comment>
+        </modifier>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink targetId="e5f1-f9ee-d533-b2dc" id="ddc8-ca27-2f93-a10e" primary="false" name="Faction: The Empire of Man"/>
+        <categoryLink targetId="5b84-2c3c-869d-3522" id="ebbb-6e0d-ed55-b549" primary="true" name="Mercenaries"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="fc0a-a625-d49e-f761" primary="false" name="Units"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="fdd3-85e4-a486-cf0d" includeChildSelections="true"/>
       </constraints>
     </entryLink>
   </entryLinks>
