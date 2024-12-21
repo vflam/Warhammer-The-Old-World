@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="128" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="129" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -108,6 +108,7 @@
     </categoryEntry>
     <categoryEntry name="Faction: The Empire of Man - Knightly Order" id="7135-7f44-2427-9af9" hidden="true"/>
     <categoryEntry name="Faction: The Empire of Man - City-state of Nuln" id="38be-5fe9-9738-fd43" hidden="true"/>
+    <categoryEntry name="Outrider Non-Ponderous" id="71d6-3c4f-f6e3-819d" hidden="true"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
@@ -1593,6 +1594,7 @@ If the only other remaining models in a unit are the champion and standard beare
         <modifier type="set" value="Armour Bane (1), Multiple Shots (3)" field="5f83-3633-336b-93b4">
           <conditions>
             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="71d6-3c4f-f6e3-819d" shared="true" includeChildSelections="false"/>
           </conditions>
         </modifier>
       </modifiers>
