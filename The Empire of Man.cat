@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="7b8f-602e-29cd-5786" name="The Empire of Man" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="88" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="7b8f-602e-29cd-5786" name="The Empire of Man" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="89" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Prayers of Ulric" hidden="false" id="d1f4-5e82-b7ed-3ad0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="53" publicationId="8b8d-8fc4-559e-87b1">
       <characteristics>
@@ -3057,6 +3057,58 @@ Note that any special rules granted by these upgrades do not apply to the models
             <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="e2ee-a0c9-f1e6-d04b" targetId="may-have-armour"/>
           </categoryLinks>
         </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Unit Options" hidden="false" id="e8ce-7850-cc46-f4d3">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="c1a4-3e27-8ec9-7fa9">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="34fb-f18a-9b25-24f0"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Drilled" id="93f9-22c6-4329-1bf5" hidden="false" type="profile" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="root-entry" childId="model" shared="true" roundUp="false" id="eb01-c79c-fbe0-44b2" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="ae76-940a-a9bf-b087">
+              <categoryLinks>
+                <categoryLink name="NO EXPORT" hidden="false" id="56c4-c1ad-bbf7-77f5" targetId="49a9-ce63-af1a-18f7" primary="false"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1eb5-9293-ffda-7671"/>
+              </constraints>
+            </selectionEntry>
+          </selectionEntries>
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="bb42-d3cc-d787-d2bb" includeChildSelections="true"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2737-5f37-217c-b19b"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="bb42-d3cc-d787-d2bb">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="b6d3-9e54-f8cb-d233" includeChildSelections="true"/>
+              </repeats>
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="bb42-d3cc-d787-d2bb">
+              <repeats>
+                <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="a944-ccf4-3862-6ac9" includeChildSelections="true"/>
+              </repeats>
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="b741-242e-2597-8b90" sortIndex="3">
@@ -3176,50 +3228,6 @@ Note that any special rules granted by these upgrades do not apply to the models
               </conditions>
             </modifier>
           </modifiers>
-        </selectionEntryGroup>
-        <selectionEntryGroup name="Unit Options" hidden="false" id="bad8-5477-fdb7-4e2f" sortIndex="4">
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="c1a4-3e27-8ec9-7fa9" sortIndex="1">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="34fb-f18a-9b25-24f0"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="bb42-d3cc-d787-d2bb" includeChildSelections="true"/>
-              </constraints>
-              <infoLinks>
-                <infoLink name="Drilled" hidden="false" type="profile" id="93f9-22c6-4329-1bf5" targetId="1f64-3ddc-db58-12fb"/>
-              </infoLinks>
-              <modifiers>
-                <modifier type="increment" value="1" field="points">
-                  <repeats>
-                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="eb01-c79c-fbe0-44b2" includeChildSelections="true"/>
-                  </repeats>
-                </modifier>
-                <modifier type="increment" value="1" field="bb42-d3cc-d787-d2bb">
-                  <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="b6d3-9e54-f8cb-d233" includeChildSelections="true"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-              <costs>
-                <cost name="pts" typeId="points" value="0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="ae76-940a-a9bf-b087" sortIndex="2">
-              <categoryLinks>
-                <categoryLink targetId="49a9-ce63-af1a-18f7" id="56c4-c1ad-bbf7-77f5" primary="false" name="NO EXPORT"/>
-              </categoryLinks>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1eb5-9293-ffda-7671"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="a76b-5259-f642-801f" includeChildSelections="true"/>
-              </constraints>
-              <modifiers>
-                <modifier type="increment" value="1" field="a76b-5259-f642-801f">
-                  <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="d84a-ee5b-84b6-5c2c" includeChildSelections="true"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-            </selectionEntry>
-          </selectionEntries>
         </selectionEntryGroup>
         <selectionEntryGroup name="Detatchment" hidden="false" id="de83-7f3d-9c4f-8552" sortIndex="2">
           <entryLinks>
@@ -3523,6 +3531,76 @@ Note that any special rules granted by these upgrades do not apply to the models
             <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="31a7-642b-e5a8-dff9" targetId="may-have-armour"/>
           </categoryLinks>
         </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Unit Options" hidden="false" id="f4f3-bde1-be8e-75e9">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="2f67-e297-5dcd-3a64">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="645b-b9a8-52f0-a5fd"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Drilled" id="c496-e476-5d19-2ed1" hidden="false" type="profile" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="2" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="root-entry" childId="model" shared="true" roundUp="false" id="5279-6816-3996-18d7" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="d316-b094-3046-4fb4">
+              <categoryLinks>
+                <categoryLink name="NO EXPORT" hidden="false" id="26c6-c585-257a-52d" targetId="49a9-ce63-af1a-18f7" primary="false"/>
+              </categoryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="40f4-91c8-5306-5791"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="15be-8aab-e539-ff5">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e52-23ab-f840-7a0f"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Veteran" id="85e3-f1f1-dc26-4f41" hidden="false" type="profile" targetId="4022-c403-b083-ba83"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="root-entry" childId="model" shared="true" roundUp="false" id="e84a-e261-92d4-641"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3c7d-e28d-f204-e092"/>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="996b-7ce4-e8eb-915c" includeChildSelections="true"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="996b-7ce4-e8eb-915c">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+              </conditions>
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+              </repeats>
+            </modifier>
+            <modifier type="increment" value="1" field="996b-7ce4-e8eb-915c">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+              </conditions>
+              <repeats>
+                <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="890c-e415-a07b-b032" sortIndex="2">
@@ -3603,79 +3681,6 @@ Note that any special rules granted by these upgrades do not apply to the models
                 <categoryLink name="Regular Infantry" hidden="false" id="8a7e-7538-8049-76db" targetId="f3f7-ca43-674e-115f" primary="false"/>
                 <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="5686-612f-e08c-85bd" targetId="may-have-armour"/>
               </categoryLinks>
-            </selectionEntry>
-          </selectionEntries>
-        </selectionEntryGroup>
-        <selectionEntryGroup name="Unit Options" hidden="false" id="4ba0-dfd8-3b73-fde1" sortIndex="3">
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="2f67-e297-5dcd-3a64" sortIndex="1">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="645b-b9a8-52f0-a5fd"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="e0cf-24d1-c5e0-5f75" includeChildSelections="true"/>
-              </constraints>
-              <infoLinks>
-                <infoLink name="Drilled" hidden="false" type="profile" id="c496-e476-5d19-2ed1" targetId="1f64-3ddc-db58-12fb"/>
-              </infoLinks>
-              <modifiers>
-                <modifier type="increment" value="2" field="points">
-                  <repeats>
-                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="5279-6816-3996-18d7" includeChildSelections="true"/>
-                  </repeats>
-                </modifier>
-                <modifier type="increment" value="1" field="e0cf-24d1-c5e0-5f75">
-                  <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="de13-ea87-ec8f-5285" includeChildSelections="true"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-              <costs>
-                <cost name="pts" typeId="points" value="0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="d316-b094-3046-4fb4" sortIndex="2">
-              <categoryLinks>
-                <categoryLink targetId="49a9-ce63-af1a-18f7" id="26c6-c585-257a-52d" primary="false" name="NO EXPORT"/>
-              </categoryLinks>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="40f4-91c8-5306-5791"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="97b-e57-2b03-8e04" includeChildSelections="true"/>
-              </constraints>
-              <modifiers>
-                <modifier type="set" value="Standard Runes" field="name">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
-                  </conditions>
-                </modifier>
-                <modifier type="increment" value="1" field="97b-e57-2b03-8e04">
-                  <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="607a-4337-b0bb-3093" includeChildSelections="true"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-            </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="15be-8aab-e539-ff5" sortIndex="3">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e52-23ab-f840-7a0f"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="1b1a-ad65-e792-c691" includeChildSelections="true"/>
-              </constraints>
-              <infoLinks>
-                <infoLink name="Veteran" hidden="false" type="profile" id="85e3-f1f1-dc26-4f41" targetId="4022-c403-b083-ba83"/>
-              </infoLinks>
-              <modifiers>
-                <modifier type="increment" value="1" field="points">
-                  <repeats>
-                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="e84a-e261-92d4-641"/>
-                  </repeats>
-                </modifier>
-                <modifier type="increment" value="1" field="1b1a-ad65-e792-c691">
-                  <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="89cb-c19a-c159-1fa5" includeChildSelections="true"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-              <costs>
-                <cost name="pts" typeId="points" value="0"/>
-              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -3929,18 +3934,29 @@ Note that any special rules granted by these upgrades do not apply to the models
               </infoLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a314-f024-b3d-94ea"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="aa47-d617-5907-ac7d" includeChildSelections="true"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="false" id="aa47-d617-5907-ac7d" includeChildSelections="true"/>
               </constraints>
               <modifiers>
                 <modifier type="increment" value="1" field="aa47-d617-5907-ac7d">
                   <repeats>
                     <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="9519-d9e7-fd1-31cf" includeChildSelections="true"/>
                   </repeats>
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                  </conditions>
                 </modifier>
                 <modifier type="increment" value="2" field="points">
                   <repeats>
                     <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="d717-c426-6139-f59f" includeChildSelections="true"/>
                   </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="aa47-d617-5907-ac7d">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="1e51-d589-fc75-4be9" includeChildSelections="true"/>
+                  </repeats>
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                  </conditions>
                 </modifier>
               </modifiers>
               <costs>
@@ -4249,6 +4265,68 @@ Note that any special rules granted by these upgrades do not apply to the models
             </modifier>
           </modifiers>
         </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Unit Options" hidden="false" id="5438-c7e6-ee53-a1a4" sortIndex="4">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="1b02-db3a-2cee-7834">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2116-b1aa-5a19-7c54"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Drilled" id="871c-fd5f-2ac-a667" hidden="false" type="profile" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="root-entry" childId="model" shared="true" roundUp="false" id="d3aa-d483-de23-52da" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="false" id="510c-7680-1ce1-dbc9">
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+              <infoLinks>
+                <infoLink name="Stubborn" id="6f8-4a71-6663-66f7" hidden="false" type="profile" targetId="e351-bbd6-f470-b604"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d819-9cc9-1075-730d"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="2" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="root-entry" childId="model" shared="true" roundUp="false" id="159b-5c6e-4c74-855f" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
+          <constraints>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="869d-c545-905c-65a7" includeChildSelections="true"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1b19-65e3-4b26-2dc8"/>
+          </constraints>
+          <modifiers>
+            <modifier type="increment" value="1" field="869d-c545-905c-65a7">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="c5b6-ad49-c6ff-73c4" includeChildSelections="true"/>
+              </repeats>
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="869d-c545-905c-65a7">
+              <repeats>
+                <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="83ac-8fdf-d390-bc18" includeChildSelections="true"/>
+              </repeats>
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="7843-559a-1b71-af12" sortIndex="2">
@@ -4327,56 +4405,6 @@ Note that any special rules granted by these upgrades do not apply to the models
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Unit Options" hidden="false" id="bf31-3c99-e0ea-f1b8" sortIndex="3">
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="1b02-db3a-2cee-7834" sortIndex="1">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2116-b1aa-5a19-7c54"/>
-              </constraints>
-              <infoLinks>
-                <infoLink name="Drilled" hidden="false" type="profile" id="871c-fd5f-2ac-a667" targetId="1f64-3ddc-db58-12fb"/>
-              </infoLinks>
-              <modifiers>
-                <modifier type="increment" value="1" field="points">
-                  <repeats>
-                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="d3aa-d483-de23-52da" includeChildSelections="true"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-              <costs>
-                <cost name="pts" typeId="points" value="0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="false" id="510c-7680-1ce1-dbc9" sortIndex="2">
-              <costs>
-                <cost name="pts" typeId="points" value="0"/>
-              </costs>
-              <infoLinks>
-                <infoLink name="Stubborn" hidden="false" type="profile" id="6f8-4a71-6663-66f7" targetId="e351-bbd6-f470-b604"/>
-              </infoLinks>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d819-9cc9-1075-730d"/>
-              </constraints>
-              <modifiers>
-                <modifier type="increment" value="2" field="points">
-                  <repeats>
-                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="159b-5c6e-4c74-855f" includeChildSelections="true"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-            </selectionEntry>
-          </selectionEntries>
-          <constraints>
-            <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="869d-c545-905c-65a7" includeChildSelections="true"/>
-          </constraints>
-          <modifiers>
-            <modifier type="increment" value="1" field="869d-c545-905c-65a7">
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="c5b6-ad49-c6ff-73c4" includeChildSelections="true"/>
-              </repeats>
-            </modifier>
-          </modifiers>
-        </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="156-7c99-6f32-e91b">
@@ -4392,7 +4420,7 @@ Note that any special rules granted by these upgrades do not apply to the models
         <categoryLink name="Faction: The Empire of Man" hidden="false" id="bc2b-e8e5-35a7-b43a" primary="false" targetId="e5f1-f9ee-d533-b2dc"/>
       </categoryLinks>
       <entryLinks>
-        <entryLink import="true" name="Knightly Order" hidden="false" id="3072-e22a-7c83-ee00" type="selectionEntryGroup" targetId="934d-0c94-9509-cb36" sortIndex="4"/>
+        <entryLink import="true" name="Knightly Order" hidden="false" id="3072-e22a-7c83-ee00" type="selectionEntryGroup" targetId="934d-0c94-9509-cb36" sortIndex="5"/>
       </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Inner Circle Knights" hidden="false" id="3407-96f3-26d4-473f">
