@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="20b-6412-2ac1-d146" name="Skaven" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="51" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="20b-6412-2ac1-d146" name="Skaven" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="52" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
   <sharedProfiles>
     <profile name="Skaven Warlord" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="a4f2-1637-63e4-25df">
       <characteristics>
@@ -1637,18 +1637,16 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <entryLink name="Halberd" id="83a15b79-c9156ccf" hidden="false" type="selectionEntry" targetId="f0a5-1b2e-3d2b-d540" sortIndex="1" import="true">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="e2053a76-6edce140"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="d418ac24-a773016e"/>
               </constraints>
             </entryLink>
             <entryLink name="Heavy Armour" id="bc68abbf-5dae39cd" hidden="false" type="selectionEntry" targetId="62fb-f89d-afc-1cf1" sortIndex="3" import="true">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="f39d57ec-501aa936"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="188533e-343f5088"/>
               </constraints>
             </entryLink>
             <entryLink name="Hand Weapon" id="6fd63e9a-fb576a84" hidden="false" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="2" import="true">
               <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="93dc1907-f5c2955"/>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="93dc1907-f5c2955"/>
               </constraints>
             </entryLink>
             <entryLink import="true" name="Shield" hidden="false" id="8fc0-244f-d310-706d" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="4">
@@ -1671,7 +1669,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="e919799d-5743c353" sortIndex="3">
+        <selectionEntryGroup name="Command" hidden="false" id="e919799d-5743c353" sortIndex="2">
           <selectionEntries>
             <selectionEntry type="model" subType="crew" name="Fangleader" id="d2ae858d-9f43cdc3" hidden="false" sortIndex="1">
               <infoLinks>
@@ -1755,22 +1753,12 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         </infoGroup>
       </infoGroups>
       <entryLinks>
-        <entryLink import="true" name="Weapon Team" hidden="false" id="4c8f-9a50-7b96-6ef5" type="selectionEntry" targetId="26ff5f14-60499a1e" sortIndex="2">
+        <entryLink import="true" name="Weapon Team" hidden="false" id="4c8f-9a50-7b96-6ef5" type="selectionEntry" targetId="26ff5f14-60499a1e" sortIndex="3">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="54c81fbf-2f720dcd" includeChildSelections="false"/>
           </constraints>
         </entryLink>
       </entryLinks>
-      <modifiers>
-        <modifier type="increment" value="1" field="81e3-7124-dff4-9d52">
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="8ce-41b6-e383-3e04"/>
-          </repeats>
-        </modifier>
-      </modifiers>
-      <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="81e3-7124-dff4-9d52"/>
-      </constraints>
       <categoryLinks>
         <categoryLink name="Faction: Skaven" hidden="false" id="8ce1-ffb2-12bb-cf59" primary="false" targetId="ed3f-1102-3044-59f5"/>
       </categoryLinks>
@@ -1806,6 +1794,16 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="e8a9f194-f70b989e"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="Thrusting Spear" hidden="false" id="90b1bc33-1027fbe1" type="selectionEntry" targetId="99d2-7f59-5c14-3bf7" sortIndex="3">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </entryLink>
+            <entryLink import="true" name="Shield" hidden="false" id="7ccad5a5-69b9709b" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="4">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </entryLink>
           </entryLinks>
           <constraints>
             <constraint type="min" value="20" field="selections" scope="parent" shared="true" id="8a0b1424-a92296e"/>
@@ -1818,43 +1816,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Equipment" hidden="false" id="980eb723-eb372b51" sortIndex="4">
-          <entryLinks>
-            <entryLink name="Thrusting Spear" id="90b1bc33-1027fbe1" hidden="false" type="selectionEntry" targetId="99d2-7f59-5c14-3bf7" sortIndex="2">
-              <modifiers>
-                <modifier type="increment" value="1" field="points">
-                  <comment>per model</comment>
-                  <repeats>
-                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="83d3a05-2e8020fb"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="a3062da4-13e876ee" includeChildSelections="false"/>
-              </constraints>
-              <costs>
-                <cost name="pts" typeId="points" value="0"/>
-              </costs>
-            </entryLink>
-            <entryLink name="Shield" id="7ccad5a5-69b9709b" hidden="false" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="1">
-              <modifiers>
-                <modifier type="increment" value="1" field="points">
-                  <comment>per model</comment>
-                  <repeats>
-                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="883832e9-effdffbf"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="7db2ae68-65b4ba12" includeChildSelections="false"/>
-              </constraints>
-              <costs>
-                <cost name="pts" typeId="points" value="0"/>
-              </costs>
-            </entryLink>
-          </entryLinks>
-        </selectionEntryGroup>
-        <selectionEntryGroup name="Command" hidden="false" id="312bc371-6e731847" sortIndex="3">
+        <selectionEntryGroup name="Command" hidden="false" id="312bc371-6e731847" sortIndex="2">
           <selectionEntries>
             <selectionEntry type="model" subType="crew" name="Clawleader" id="96069a4-9d90d2ee" hidden="false" sortIndex="1">
               <infoLinks>
@@ -1920,7 +1882,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         </infoGroup>
       </infoGroups>
       <entryLinks>
-        <entryLink name="Weapon Team" id="6be70b5-17a5ebab" hidden="false" type="selectionEntry" targetId="26ff5f14-60499a1e" sortIndex="2">
+        <entryLink name="Weapon Team" id="6be70b5-17a5ebab" hidden="false" type="selectionEntry" targetId="26ff5f14-60499a1e" sortIndex="3">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6409-1e57-5a7f-de27"/>
           </constraints>
@@ -2075,13 +2037,13 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="bf5766b0-879f907a"/>
               </constraints>
             </entryLink>
-            <entryLink name="Warplock jezzail" id="7985233a-60db6224" hidden="false" type="selectionEntry" targetId="17ca-ad7c-1028-f71d" sortIndex="3" import="true">
+            <entryLink name="Warplock jezzail" id="7985233a-60db6224" hidden="false" type="selectionEntry" targetId="17ca-ad7c-1028-f71d" sortIndex="2" import="true">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="fda7fa69-40b38b3f"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="ef945ca7-31a37075"/>
               </constraints>
             </entryLink>
-            <entryLink name="Pavise" id="3163592b-ebfb4b79" hidden="false" type="selectionEntry" targetId="606e-1ba3-a0a8-8d61" sortIndex="2">
+            <entryLink name="Pavise" id="3163592b-ebfb4b79" hidden="false" type="selectionEntry" targetId="606e-1ba3-a0a8-8d61" sortIndex="3">
               <constraints>
                 <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="11938c00-33bc914a"/>
                 <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="278026ea-9c6fc794"/>
@@ -2105,13 +2067,6 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <modifiers>
-        <modifier type="increment" value="1" field="b478-d663-9378-810b">
-          <repeats>
-            <repeat value="1" repeats="1" field="selections" scope="roster" childId="7358f1d1-b9cd7927" shared="true" roundUp="false" id="b4c8-59ba-a5eb-6c99" includeChildSelections="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="b478-d663-9378-810b"/>
       </constraints>
@@ -2144,13 +2099,13 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="32d5f7b6-46bdb480"/>
               </constraints>
             </entryLink>
-            <entryLink name="Poisoned Wind globes" id="d6b93a02-20aa8bcc" hidden="false" type="selectionEntry" targetId="365fdc76-b7527340" sortIndex="3">
+            <entryLink name="Poisoned Wind globes" id="d6b93a02-20aa8bcc" hidden="false" type="selectionEntry" targetId="365fdc76-b7527340" sortIndex="2">
               <constraints>
                 <constraint type="min" value="1" scope="parent" shared="false" field="selections" id="a2d66cd1-d3871c27"/>
                 <constraint type="max" value="1" scope="parent" shared="false" field="selections" id="b4ea10df-f0c3196d"/>
               </constraints>
             </entryLink>
-            <entryLink name="Light Armour" id="9eb36fcf-440d2e5d" hidden="false" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="2" import="true">
+            <entryLink name="Light Armour" id="9eb36fcf-440d2e5d" hidden="false" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="3" import="true">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="5fe0177c-539b2806"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="4dcc736e-fc1e6278"/>
@@ -2176,16 +2131,6 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <modifiers>
-        <modifier type="increment" value="1" field="c4a8-bccd-a314-d173">
-          <repeats>
-            <repeat value="1" repeats="1" field="selections" scope="roster" childId="7358f1d1-b9cd7927" shared="true" roundUp="false" id="95ae-9121-6ae3-37ce" includeChildSelections="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
-      <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="c4a8-bccd-a314-d173"/>
-      </constraints>
       <categoryLinks>
         <categoryLink name="Faction: Skaven" hidden="false" id="d8ef-1889-42e4-5a6f" primary="false" targetId="ed3f-1102-3044-59f5"/>
       </categoryLinks>
@@ -3727,6 +3672,16 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <categoryLink name="Core" hidden="false" id="f25c-3fff-2f42-5c68" targetId="f0e3-2e32-8866-ea32" primary="true"/>
         <categoryLink name="Units" hidden="false" id="0de3-ee35-7864-a51c" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="81e3-7124-dff4-9d52"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="81e3-7124-dff4-9d52">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="8ce-41b6-e383-3e04"/>
+          </repeats>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Clanrats" hidden="false" id="9d37b090-8dcdbda" type="selectionEntry" targetId="a5aa96a6-178617b0">
       <categoryLinks>
@@ -3739,12 +3694,29 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <categoryLink name="Special" hidden="false" id="ac25-7dfb-8787-8950" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Units" hidden="false" id="0260-cfd3-7de1-8742" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="increment" value="1" field="b478-d663-9378-810b">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="roster" childId="7358f1d1-b9cd7927" shared="true" roundUp="false" id="b4c8-59ba-a5eb-6c99" includeChildSelections="true"/>
+          </repeats>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Poisoned Wind Globadiers" hidden="false" id="2561ac0b-d33c03d9" type="selectionEntry" targetId="b29eb8e5-a95439db">
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="49ff-56d2-e550-5a85" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Units" hidden="false" id="5338-8330-edcc-865b" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="increment" value="1" field="c4a8-bccd-a314-d173">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="roster" childId="7358f1d1-b9cd7927" shared="true" roundUp="false" id="95ae-9121-6ae3-37ce" includeChildSelections="true"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="c4a8-bccd-a314-d173"/>
+      </constraints>
     </entryLink>
     <entryLink import="true" name="Rat Swarms" hidden="false" id="9cd28630-3545b3fa" type="selectionEntry" targetId="be93b446-106a11d0">
       <categoryLinks>
