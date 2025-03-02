@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="4545-8340-9988-9ea0" name="Vampire Counts" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="51" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Giloushaker#2496">
+<catalogue library="false" id="4545-8340-9988-9ea0" name="Vampire Counts" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="52" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Giloushaker#2496">
   <sharedProfiles>
     <profile name="Vampire Count" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="57d7-6e34-d546-4b92">
       <characteristics>
@@ -3303,6 +3303,25 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                 <categoryLink name="Heavy Cavalry" hidden="false" id="54b9-3a07-2c72-ef9d" targetId="5165-d052-cfc2-5887" primary="false"/>
               </categoryLinks>
             </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="80004e7-aeefd6b5" sortIndex="6" collective="true">
+              <costs>
+                <cost name="pts" typeId="points" value="3"/>
+              </costs>
+              <infoLinks>
+                <infoLink name="Drilled" id="9282351e-fe271fe8" hidden="false" type="profile" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="3" field="points">
+                  <comment>per model</comment>
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="35aa8229-3ee3d4ff"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="a663c1a8-37c33352" includeChildSelections="false"/>
+              </constraints>
+            </selectionEntry>
           </selectionEntries>
         </selectionEntry>
       </selectionEntries>
@@ -3380,29 +3399,6 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
                 <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="c327-9006-5a24-2a74" targetId="may-have-armour"/>
                 <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="e9d6-8397-c633-ab3a" targetId="may-have-shield"/>
               </categoryLinks>
-            </selectionEntry>
-          </selectionEntries>
-        </selectionEntryGroup>
-        <selectionEntryGroup name="Special Rules" hidden="false" id="fdcd19f1-da55bac7" sortIndex="3">
-          <selectionEntries>
-            <selectionEntry name="Drilled" id="80004e7-aeefd6b5" type="upgrade" import="true" hidden="false">
-              <costs>
-                <cost name="pts" typeId="points" value="0"/>
-              </costs>
-              <infoLinks>
-                <infoLink name="Drilled" hidden="false" id="9282351e-fe271fe8" type="profile" targetId="1f64-3ddc-db58-12fb"/>
-              </infoLinks>
-              <modifiers>
-                <modifier type="increment" value="3" field="points">
-                  <comment>per model</comment>
-                  <repeats>
-                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="35aa8229-3ee3d4ff"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="a663c1a8-37c33352" includeChildSelections="false"/>
-              </constraints>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -5271,7 +5267,7 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
             <infoLink name="Dark Acolyte" hidden="false" id="610f-5f65-1afa-f214" type="profile" targetId="9349-c828-b9e4-8499"/>
           </infoLinks>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Master of the Black Arts" hidden="false" id="3b9c-cd9b-4674-4169" sortIndex="4">
+        <selectionEntry type="upgrade" import="true" name="Master of the Black Arts" hidden="true" id="3b9c-cd9b-4674-4169" sortIndex="4">
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7667-274f-950e-6e4"/>
           </constraints>
@@ -5281,6 +5277,23 @@ Note that this is not cumulative with the Indomitable (X) special rule (see page
           <infoLinks>
             <infoLink name="Master Of The Black Arts" hidden="false" id="36d7-62b4-b39c-92be" type="profile" targetId="41cf-e8df-d66e-24d1"/>
           </infoLinks>
+          <comment>Extra Spells: 1</comment>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="91272088-d249b32" shared="true" includeChildSelections="true">
+                      <comment>Vampire Count</comment>
+                    </condition>
+                    <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="9cf2d159-d2bafbaf" shared="true" includeChildSelections="true">
+                      <comment>Vampire Thrall</comment>
+                    </condition>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Supernatural Horror" hidden="false" id="b7c2-82e5-a8c0-3e" sortIndex="2">
           <constraints>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="56fb-835b-a377-6639" name="High Elf Realms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="95" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="56fb-835b-a377-6639" name="High Elf Realms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="96" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Sons of Caledor" hidden="false" id="2f86-a9f-38aa-d39a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="170" publicationId="8b8d-8fc4-559e-87b1">
       <characteristics>
@@ -489,14 +489,14 @@
     </profile>
     <profile name="Sea Guard Crew" hidden="false" id="84ec-5133-1791-da43" typeId="b070-143a-73f-2772" typeName="Model">
       <characteristics>
-        <characteristic name="M" typeId="cd3b-a5a4-e185-5a9d">-</characteristic>
+        <characteristic name="M" typeId="cd3b-a5a4-e185-5a9d">5</characteristic>
         <characteristic name="WS" typeId="b007-7d58-4f14-1e01">4</characteristic>
         <characteristic name="BS" typeId="59f9-ccf5-1155-fb05">4</characteristic>
         <characteristic name="S" typeId="5b6b-1427-2a45-dd0c">3</characteristic>
-        <characteristic name="T" typeId="ab43-8b61-83e7-d090">-</characteristic>
-        <characteristic name="W" typeId="83ed-7b82-bf1f-e558">-</characteristic>
+        <characteristic name="T" typeId="ab43-8b61-83e7-d090">3</characteristic>
+        <characteristic name="W" typeId="83ed-7b82-bf1f-e558">2</characteristic>
         <characteristic name="I" typeId="73b1-abe5-72f8-41e2">4</characteristic>
-        <characteristic name="A" typeId="dddc-9fbd-b0fd-a480">1</characteristic>
+        <characteristic name="A" typeId="dddc-9fbd-b0fd-a480">2</characteristic>
         <characteristic name="Ld" typeId="c435-6b14-f77e-3c72">8</characteristic>
       </characteristics>
     </profile>
@@ -943,9 +943,9 @@
             <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="23e3-1e58-ffbc-f51" targetId="may-have-shield"/>
           </categoryLinks>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Shieldwall" hidden="false" id="2974-9a02-ed37-3647" sortIndex="2">
+        <selectionEntry type="upgrade" import="true" name="Shieldwall" hidden="false" id="2974-9a02-ed37-3647" sortIndex="3">
           <infoLinks>
-            <infoLink name="Shieldwall" hidden="false" type="profile" id="bc79-97ed-2e87-74ab" targetId="32f7-8e30-3fe8-b11e"/>
+            <infoLink name="Shieldwall" id="bc79-97ed-2e87-74ab" hidden="false" type="profile" targetId="32f7-8e30-3fe8-b11e"/>
           </infoLinks>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1fa9-3927-d9d0-17f7"/>
@@ -956,7 +956,7 @@
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="bc1e-2f19-cb19-a38c" sortIndex="3">
+        <selectionEntryGroup name="Command" hidden="false" id="bc1e-2f19-cb19-a38c" sortIndex="2">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Sentinel" hidden="false" id="b4e4-d2eb-f26-3f15" subType="crew" sortIndex="1">
               <constraints>
@@ -1032,33 +1032,39 @@
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Unit Options" hidden="false" id="6bd1-48a8-dc46-e751" sortIndex="4">
+        <selectionEntryGroup name="Unit Options (0-1 per 1,000)" hidden="false" id="6bd1-48a8-dc46-e751" sortIndex="4">
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="b3d8-dfc0-df0d-2916" sortIndex="1">
+            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="b3d8-dfc0-df0d-2916" sortIndex="2">
               <categoryLinks>
                 <categoryLink targetId="49a9-ce63-af1a-18f7" id="b9ac-5153-77d0-3b6e" primary="false" name="NO EXPORT"/>
               </categoryLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="29af-5263-4526-6c4b"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="ddef-ab7a-408e-eb2c" includeChildSelections="true"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="ddef-ab7a-408e-eb2c" includeChildSelections="true"/>
               </constraints>
               <modifiers>
-                <modifier type="set" value="Standard Runes" field="name">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
-                  </conditions>
-                </modifier>
                 <modifier type="increment" value="1" field="ddef-ab7a-408e-eb2c">
                   <repeats>
                     <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="2f1a-fed3-7973-4c7c" includeChildSelections="true"/>
                   </repeats>
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="ddef-ab7a-408e-eb2c">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="ecf8-57f0-a51f-12cc" includeChildSelections="true"/>
+                  </repeats>
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
                 </modifier>
               </modifiers>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="68ee-14ac-c5fd-6a40" sortIndex="2">
+            <selectionEntry type="upgrade" import="true" name="Veteran (Replaces Valour of Ages)" hidden="false" id="68ee-14ac-c5fd-6a40" sortIndex="3">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a280-69c0-5ed6-c905"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="9e4e-6948-ed46-a9cf" includeChildSelections="true"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="59c6-fbba-cccc-4efe" includeChildSelections="true"/>
               </constraints>
               <infoLinks>
                 <infoLink name="Veteran" hidden="false" type="profile" id="eaff-e664-6856-1d86" targetId="4022-c403-b083-ba83"/>
@@ -1069,10 +1075,21 @@
                     <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="819c-5353-c967-fd97"/>
                   </repeats>
                 </modifier>
-                <modifier type="increment" value="1" field="9e4e-6948-ed46-a9cf">
+                <modifier type="increment" value="1" field="59c6-fbba-cccc-4efe">
                   <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="b708-985b-585b-ba3b" includeChildSelections="true"/>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="e285-4c8a-4235-2bb2" includeChildSelections="true"/>
                   </repeats>
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="59c6-fbba-cccc-4efe">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="942f-b6bb-948b-9e26" includeChildSelections="true"/>
+                  </repeats>
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
                 </modifier>
               </modifiers>
               <costs>
@@ -1088,7 +1105,15 @@
             <infoLink name="Close Order" hidden="false" type="profile" id="9e6b-87a0-a694-eb8e" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Elven Reflexes" hidden="false" type="profile" id="5fb0-d457-2a30-1c76" targetId="f18f-50f-3108-1486"/>
             <infoLink name="Martial Prowess" hidden="false" type="profile" id="24e8-bca2-1449-8923" targetId="306e-1857-ff89-754e"/>
-            <infoLink name="Valour of Ages" hidden="false" type="profile" id="bc6d-1784-f3a4-6edd" targetId="6731-240-f75b-dcac"/>
+            <infoLink name="Valour of Ages" hidden="false" type="profile" id="bc6d-1784-f3a4-6edd" targetId="6731-240-f75b-dcac">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="68ee-14ac-c5fd-6a40" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Regimental Unit" hidden="false" type="profile" id="557a-4dd0-3adf-f0e5" targetId="7424-ec43-7581-965a"/>
           </infoLinks>
         </infoGroup>
@@ -3255,7 +3280,7 @@
             </modifier>
           </modifiers>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Unit Options" hidden="false" id="7e2f-30cc-e9f-b4b" sortIndex="3">
+        <selectionEntryGroup name="Unit Options (0-1 per 1,000)" hidden="false" id="7e2f-30cc-e9f-b4b" sortIndex="3">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="f264-be82-fc97-1f88" sortIndex="2">
               <categoryLinks>
@@ -3263,25 +3288,31 @@
               </categoryLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1461-b02b-26c7-e51e"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="42e6-9d88-a562-1a38" includeChildSelections="true"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="42e6-9d88-a562-1a38" includeChildSelections="true" includeChildForces="true"/>
               </constraints>
               <modifiers>
-                <modifier type="set" value="Standard Runes" field="name">
+                <modifier type="increment" value="1" field="42e6-9d88-a562-1a38">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="9448-5635-6994-d251" includeChildSelections="true"/>
+                  </repeats>
                   <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
                   </conditions>
                 </modifier>
                 <modifier type="increment" value="1" field="42e6-9d88-a562-1a38">
                   <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="c04a-e2a6-e2d5-5298" includeChildSelections="true"/>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="8cd4-73ad-0ad7-9a66" includeChildSelections="true"/>
                   </repeats>
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
                 </modifier>
               </modifiers>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="fc44-6fd0-838a-7c8e" sortIndex="3">
+            <selectionEntry type="upgrade" import="true" name="Veteran (Replaces Valour of Ages)" hidden="false" id="fc44-6fd0-838a-7c8e" sortIndex="3">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6d03-6935-30c2-df3f"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="1b27-1e61-fe11-950f" includeChildSelections="true"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="1b27-1e61-fe11-950f" includeChildSelections="true"/>
               </constraints>
               <infoLinks>
                 <infoLink name="Veteran" hidden="false" type="profile" id="bd94-c7bd-3137-8b40" targetId="4022-c403-b083-ba83"/>
@@ -3294,8 +3325,19 @@
                 </modifier>
                 <modifier type="increment" value="1" field="1b27-1e61-fe11-950f">
                   <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="ce08-de0c-28d8-8c98" includeChildSelections="true"/>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="e018-c7ba-d471-247e" includeChildSelections="true"/>
                   </repeats>
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="1b27-1e61-fe11-950f">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="7563-c4d1-9b98-059e" includeChildSelections="true"/>
+                  </repeats>
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
                 </modifier>
               </modifiers>
               <costs>
@@ -3326,7 +3368,15 @@
             <infoLink name="Close Order" hidden="false" type="profile" id="b43-2adf-4f82-534e" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Elven Reflexes" hidden="false" type="profile" id="ce11-4930-1b43-c262" targetId="f18f-50f-3108-1486"/>
             <infoLink name="Detachment" hidden="false" type="profile" id="95d9-ce64-3700-d5a3" targetId="559-d4c6-b2e8-500f"/>
-            <infoLink name="Valour of Ages" hidden="false" type="profile" id="a083-5eed-e5b9-ad26" targetId="6731-240-f75b-dcac"/>
+            <infoLink name="Valour of Ages" hidden="false" type="profile" id="a083-5eed-e5b9-ad26" targetId="6731-240-f75b-dcac">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="fc44-6fd0-838a-7c8e" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3482,25 +3532,31 @@
               </categoryLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1def-326e-b89e-13db"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="f529-d287-5fde-6b8b" includeChildSelections="true"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="f529-d287-5fde-6b8b" includeChildSelections="true"/>
               </constraints>
               <modifiers>
-                <modifier type="set" value="Standard Runes" field="name">
+                <modifier type="increment" value="1" field="f529-d287-5fde-6b8b">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="8145-d689-185f-024a" includeChildSelections="true"/>
+                  </repeats>
                   <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
                   </conditions>
                 </modifier>
                 <modifier type="increment" value="1" field="f529-d287-5fde-6b8b">
                   <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="da8e-5121-cb7-2d3d" includeChildSelections="true"/>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="dcf7-0af8-d2b6-2948" includeChildSelections="true"/>
                   </repeats>
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
                 </modifier>
               </modifiers>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Veterans" hidden="false" id="c3b3-aff6-ddb-9bf9" sortIndex="2">
+            <selectionEntry type="upgrade" import="true" name="Veteran (Replaces Valour of Ages)" hidden="false" id="c3b3-aff6-ddb-9bf9" sortIndex="2">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4bfe-7036-48ee-4672"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="beb-a095-42e-b276" includeChildSelections="true"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="beb-a095-42e-b276" includeChildSelections="true"/>
               </constraints>
               <infoLinks>
                 <infoLink name="Veteran" hidden="false" type="profile" id="a1fa-1889-e735-232a" targetId="4022-c403-b083-ba83"/>
@@ -3513,8 +3569,19 @@
                 </modifier>
                 <modifier type="increment" value="1" field="beb-a095-42e-b276">
                   <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="70a6-a0f3-da6-3714" includeChildSelections="true"/>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="86df-f133-1697-5929" includeChildSelections="true"/>
                   </repeats>
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="beb-a095-42e-b276">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="09f2-e54f-91eb-6f6a" includeChildSelections="true"/>
+                  </repeats>
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
                 </modifier>
               </modifiers>
               <costs>
@@ -3530,7 +3597,15 @@
             <infoLink name="Close Order" hidden="false" type="profile" id="d2ef-7516-23ad-f192" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Elven Reflexes" hidden="false" type="profile" id="b86f-bf9b-f244-7287" targetId="f18f-50f-3108-1486"/>
             <infoLink name="Martial Prowess" hidden="false" type="profile" id="4895-d1f5-d673-5c2b" targetId="306e-1857-ff89-754e"/>
-            <infoLink name="Valour of Ages" hidden="false" type="profile" id="4c42-d607-5493-f56a" targetId="6731-240-f75b-dcac"/>
+            <infoLink name="Valour of Ages" hidden="false" type="profile" id="4c42-d607-5493-f56a" targetId="6731-240-f75b-dcac">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="c3b3-aff6-ddb-9bf9" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Naval Discipline" hidden="false" type="profile" id="6b60-f63f-a5d4-f26e" targetId="ca28-8a3-989a-4ecc"/>
           </infoLinks>
         </infoGroup>
@@ -4497,7 +4572,7 @@
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Unit Options" hidden="false" id="ba07-e296-63d9-dc3e" sortIndex="3">
+        <selectionEntryGroup name="Unit Options (0-1 per 1,000)" hidden="false" id="ba07-e296-63d9-dc3e" sortIndex="3">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="dd27-bea0-98c0-85cf" sortIndex="1">
               <categoryLinks>
@@ -4505,18 +4580,24 @@
               </categoryLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="216b-7e2b-d11b-39cf"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="b475-c3a2-f1ba-1912" includeChildSelections="true"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="b475-c3a2-f1ba-1912" includeChildSelections="true"/>
               </constraints>
               <modifiers>
-                <modifier type="set" value="Standard Runes" field="name">
+                <modifier type="increment" value="1" field="b475-c3a2-f1ba-1912">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="f8ec-2fb0-e989-ba39" includeChildSelections="true"/>
+                  </repeats>
                   <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
                   </conditions>
                 </modifier>
                 <modifier type="increment" value="1" field="b475-c3a2-f1ba-1912">
                   <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="7d02-2101-daee-79aa" includeChildSelections="true"/>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="aa86-2746-63f3-34de" includeChildSelections="true"/>
                   </repeats>
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
                 </modifier>
               </modifiers>
             </selectionEntry>
@@ -4526,18 +4607,29 @@
               </infoLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="21ee-9764-15d2-40e6"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="a18-372e-fc7a-255b" includeChildSelections="true"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="a18-372e-fc7a-255b" includeChildSelections="true"/>
               </constraints>
               <modifiers>
-                <modifier type="increment" value="1" field="a18-372e-fc7a-255b">
-                  <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="cc0c-5b2a-fc80-1446" includeChildSelections="true"/>
-                  </repeats>
-                </modifier>
                 <modifier type="increment" value="2" field="points">
                   <repeats>
                     <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="d9aa-7693-f14b-92ef" includeChildSelections="true"/>
                   </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="a18-372e-fc7a-255b">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="35f2-5b9b-adf5-a7d1" includeChildSelections="true"/>
+                  </repeats>
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="a18-372e-fc7a-255b">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="58f0-bdf2-3668-0bed" includeChildSelections="true"/>
+                  </repeats>
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
                 </modifier>
               </modifiers>
               <costs>
@@ -4550,18 +4642,29 @@
               </infoLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fb71-ca86-b3b7-ee57"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="b493-b13f-8e04-b197" includeChildSelections="true"/>
+                <constraint type="max" value="0" field="selections" scope="force" shared="true" id="b493-b13f-8e04-b197" includeChildSelections="true"/>
               </constraints>
               <modifiers>
-                <modifier type="increment" value="1" field="b493-b13f-8e04-b197">
-                  <repeats>
-                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="10c5-1dae-1089-a8be"/>
-                  </repeats>
-                </modifier>
                 <modifier type="increment" value="1" field="points">
                   <repeats>
                     <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="5894-9b6-4102-8188" includeChildSelections="true"/>
                   </repeats>
+                </modifier>
+                <modifier type="increment" value="1" field="b493-b13f-8e04-b197">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="2b23-76fa-05eb-6403" includeChildSelections="true"/>
+                  </repeats>
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="b493-b13f-8e04-b197">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="190f-4b13-6327-1582" includeChildSelections="true"/>
+                  </repeats>
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                  </conditions>
                 </modifier>
               </modifiers>
               <costs>
@@ -5558,16 +5661,6 @@
           </modifiers>
         </infoLink>
       </infoLinks>
-      <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="31c6-956b-46ef-a1ab" includeChildSelections="true"/>
-      </constraints>
-      <modifiers>
-        <modifier type="increment" value="2" field="31c6-956b-46ef-a1ab">
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="1676-1895-a5a9-4ae4"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Flamespyre Phoenix" hidden="false" id="a9d0-9d7a-9fe8-53cb" collective="true">
       <infoLinks>
@@ -5801,23 +5894,14 @@
   </sharedSelectionEntries>
   <entryLinks>
     <entryLink import="true" name="Eagle-Claw Bolt Thrower" hidden="false" type="selectionEntry" id="1ff5-2a42-b6b4-ed1c" targetId="8312-1ed9-ecb-2e51">
-      <modifiers>
-        <modifier type="increment" value="2" field="8ca1-46f-b273-904e">
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="6a9b-62fb-789d-86c0"/>
-          </repeats>
-        </modifier>
-      </modifiers>
-      <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="8ca1-46f-b273-904e" includeChildSelections="true"/>
-      </constraints>
       <categoryLinks>
         <categoryLink name="Rare" hidden="false" id="3707-c8ea-3e0c-65f4" targetId="2bfe-5863-46fe-d284" primary="true"/>
+        <categoryLink targetId="9c67-7882-410e-2059" id="a59c-ce52-eb2d-cd35" primary="false" name="0-2 Eagle Claw Bolt Throwers per 1,000 points"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Frostheart Phoenix" hidden="false" type="selectionEntry" id="f7b4-3c4a-b61d-4b39" targetId="9f05-174d-3f08-d020">
       <categoryLinks>
-        <categoryLink targetId="8294-bb96-8083-3508" id="f920-441d-c09f-a83c" primary="false" name="Phoenix"/>
+        <categoryLink targetId="8294-bb96-8083-3508" id="f920-441d-c09f-a83c" primary="false" name="0-1 Flamespyre or Frostheart Phoenix (not counting character mounts) per 1,000 points"/>
         <categoryLink name="Rare" hidden="false" id="c388-6ebd-1709-913a" targetId="2bfe-5863-46fe-d284" primary="true"/>
         <categoryLink name="Units" hidden="false" id="9e04-e9c8-f3c6-d3a5" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
@@ -5826,11 +5910,12 @@
       <categoryLinks>
         <categoryLink name="Rare" hidden="false" id="cbee-c26f-852f-4cb4" targetId="2bfe-5863-46fe-d284" primary="true"/>
         <categoryLink name="Units" hidden="false" id="c9fa-d8ee-b733-f483" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink targetId="bdbd-fde2-eff2-c55b" id="e3c6-81af-a01a-f1b2" primary="false" name="0-2 Great Eagles per 1,000 points"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Flamespyre Phoenix" hidden="false" type="selectionEntry" id="59c5-fc95-1d96-b75" targetId="938a-1775-845-a8bd">
       <categoryLinks>
-        <categoryLink targetId="8294-bb96-8083-3508" id="3cb3-47f8-c355-f0f3" primary="false" name="Phoenix"/>
+        <categoryLink targetId="8294-bb96-8083-3508" id="3cb3-47f8-c355-f0f3" primary="false" name="0-1 Flamespyre or Frostheart Phoenix (not counting character mounts) per 1,000 points"/>
         <categoryLink name="Rare" hidden="false" id="7981-6ec7-3e01-e88d" targetId="2bfe-5863-46fe-d284" primary="true"/>
         <categoryLink name="Units" hidden="false" id="dbdb-8f8a-5061-578a" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
@@ -5856,19 +5941,10 @@
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Dragon Princes" hidden="false" type="selectionEntry" id="15ff-ffc-21fe-58e7" targetId="3660-5d1a-17d4-588c">
-      <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="bd4c-6ad3-e643-40f2" includeChildSelections="true"/>
-      </constraints>
-      <modifiers>
-        <modifier type="increment" value="1" field="bd4c-6ad3-e643-40f2">
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="263d-7f37-d282-7ede"/>
-          </repeats>
-        </modifier>
-      </modifiers>
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="e394-cc06-98d4-5761" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Units" hidden="false" id="3fde-9914-90d4-693f" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink targetId="a228-3ddd-5a6f-35e4" id="ccd2-b07c-5c85-8a98" primary="false" name="0-1 unit of Dragon Princes of Caledor per 1,000 points"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Silver Helms" hidden="false" type="selectionEntry" id="55c7-5bf2-ce33-aae3" targetId="e9b1-22cd-7328-5fde">
@@ -5934,13 +6010,13 @@
     </entryLink>
     <entryLink import="true" name="Handmaiden of the Everqueen" hidden="false" type="selectionEntry" id="d672-d835-95ac-6eba" targetId="9117-2bee-3a99-c73f">
       <categoryLinks>
-        <categoryLink name="Dragon Mage or Handmaiden" hidden="false" id="1955-e01-f126-a798" targetId="1ff6-7636-a2de-f452" primary="false"/>
+        <categoryLink name="0-1 Dragon Mage or Handmaiden of the Everqueen per 1,000 points" hidden="false" id="1955-e01-f126-a798" targetId="1ff6-7636-a2de-f452" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="8eff-51dc-840e-6fa9" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Dragon Mage" hidden="false" type="selectionEntry" id="438a-95e1-5539-95bd" targetId="aeb6-a2b9-b47d-a1b">
       <categoryLinks>
-        <categoryLink name="Dragon Mage or Handmaiden" hidden="false" id="297a-cca5-b76f-249f" targetId="1ff6-7636-a2de-f452" primary="false"/>
+        <categoryLink name="0-1 Dragon Mage or Handmaiden of the Everqueen per 1,000 points" hidden="false" id="297a-cca5-b76f-249f" targetId="1ff6-7636-a2de-f452" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="952a-e7a6-aab7-c03a" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
     </entryLink>
@@ -5968,8 +6044,8 @@
         </modifier>
       </modifiers>
       <categoryLinks>
-        <categoryLink targetId="331e-3a37-38cb-23d2" id="8b38-7556-436c-d8b1" primary="false" name="Lord"/>
         <categoryLink name="Characters" hidden="false" id="e3f1-4d43-387b-e606" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+        <categoryLink targetId="9766-01f4-0611-f01c" id="648c-4d34-37e2-9369" primary="false" name="0-1 High Elf Prince or Archmage per 1,000 points"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Mage" hidden="false" type="selectionEntry" id="122d-6827-da78-6c39" targetId="7c6e-11dc-9fb-1702">
@@ -6050,8 +6126,8 @@
         </modifier>
       </modifiers>
       <categoryLinks>
-        <categoryLink targetId="331e-3a37-38cb-23d2" id="2aa-897c-1f7e-edd3" primary="false" name="Lord"/>
         <categoryLink name="Characters" hidden="false" id="7e31-ffe5-ad58-acae" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+        <categoryLink targetId="9766-01f4-0611-f01c" id="38dd-1ab4-7f3c-633f" primary="false" name="0-1 High Elf Prince or Archmage per 1,000 points"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Sisters of Avelorn" hidden="false" type="selectionEntry" id="e3d0-1953-b080-195d" targetId="ec7-689f-9d5b-cdc2">
@@ -6060,19 +6136,19 @@
         <categoryLink name="Units" hidden="false" id="abab-56a6-ba0e-6571" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="false" id="a0ae-bbd8-87d1-e95"/>
+        <constraint type="max" value="1" field="selections" scope="force" shared="false" id="a0ae-bbd8-87d1-e95" includeChildSelections="true"/>
       </constraints>
-      <modifiers>
-        <modifier type="remove" value="2bfe-5863-46fe-d284" field="category"/>
-      </modifiers>
       <modifierGroups>
         <modifierGroup type="and">
           <modifiers>
             <modifier type="set" value="0" field="a0ae-bbd8-87d1-e95"/>
             <modifier type="set" value="true" field="hidden"/>
+            <modifier type="add" value="0-1 unit of {this} may be taken as a Core choice only if your General is a Handmaiden of the Everqueen" field="error"/>
           </modifiers>
           <conditions>
-            <condition type="atMost" value="0" field="selections" scope="roster" childId="8fb5-c706-d9b0-e13e" shared="true" includeChildSelections="true"/>
+            <condition type="atMost" value="0" field="selections" scope="force" childId="8fb5-c706-d9b0-e13e" shared="true" includeChildSelections="true">
+              <comment>Handmaiden of the Everqueen General</comment>
+            </condition>
           </conditions>
         </modifierGroup>
       </modifierGroups>
@@ -6084,7 +6160,7 @@
         <categoryLink name="Units" hidden="false" id="0e09-c8ff-a2d2-b024" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="1ec2-b-b50e-2d1b" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="false" id="1ec2-b-b50e-2d1b" includeChildSelections="true"/>
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="1ec2-b-b50e-2d1b">
@@ -6093,12 +6169,26 @@
           </repeats>
           <conditions>
             <condition type="atLeast" value="1" field="selections" scope="force" childId="3712-79a3-37fa-24f0" shared="true" includeChildSelections="true"/>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
-        <modifier type="remove" value="2bfe-5863-46fe-d284" field="category"/>
         <modifier type="set" value="false" field="hidden">
           <conditions>
             <condition type="atLeast" value="1" field="selections" scope="force" childId="3712-79a3-37fa-24f0" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="1ec2-b-b50e-2d1b">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="e2bc-72a7-2b3a-8757" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="3712-79a3-37fa-24f0" shared="true" includeChildSelections="true"/>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="0-1 unit of {this} may be taken as a Special choice per 1,000 points only if your General has the Chracian Hunter Elven Honour" field="error">
+          <conditions>
+            <condition type="lessThan" value="1" field="selections" scope="force" childId="3712-79a3-37fa-24f0" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -6110,7 +6200,7 @@
         <categoryLink name="Units" hidden="false" id="a1ed-c052-1bac-3446" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="27f9-1c6f-5325-29b0" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="false" id="27f9-1c6f-5325-29b0" includeChildSelections="true"/>
       </constraints>
       <modifiers>
         <modifier type="set" value="1" field="27f9-1c6f-5325-29b0">
@@ -6118,10 +6208,14 @@
             <condition type="atLeast" value="1" field="selections" scope="force" childId="d71c-77be-f820-2ede" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
-        <modifier type="remove" value="2bfe-5863-46fe-d284" field="category"/>
         <modifier type="set" value="false" field="hidden">
           <conditions>
             <condition type="atLeast" value="1" field="selections" scope="force" childId="d71c-77be-f820-2ede" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="0-1 unit of {this} may be taken as a Special choice only if your General has the Sea Guard Elven Honour" field="error">
+          <conditions>
+            <condition type="lessThan" value="1" field="selections" scope="force" childId="d71c-77be-f820-2ede" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -6251,29 +6345,143 @@
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <categoryEntries>
-    <categoryEntry name="Dragon Mage or Handmaiden" hidden="true" id="1ff6-7636-a2de-f452">
+    <categoryEntry name="0-1 Dragon Mage or Handmaiden of the Everqueen per 1,000 points" hidden="true" id="1ff6-7636-a2de-f452">
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="883d-257d-b4e6-78c9" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="883d-257d-b4e6-78c9" includeChildSelections="true"/>
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="883d-257d-b4e6-78c9">
           <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="4cb0-fac-b983-60b2"/>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="3cff-3622-c9ee-aeb9"/>
           </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="883d-257d-b4e6-78c9">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="f18f-6e12-d4f3-8cf9" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </categoryEntry>
     <categoryEntry name="Chracian General" hidden="true" id="3712-79a3-37fa-24f0"/>
     <categoryEntry name="Seaguard General" hidden="true" id="d71c-77be-f820-2ede"/>
-    <categoryEntry name="Phoenix" hidden="true" id="8294-bb96-8083-3508">
+    <categoryEntry name="0-1 Flamespyre or Frostheart Phoenix (not counting character mounts) per 1,000 points" hidden="true" id="8294-bb96-8083-3508">
       <constraints>
-        <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="13a7-f16b-9441-a8cb" includeChildSelections="true"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="13a7-f16b-9441-a8cb" includeChildSelections="true"/>
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="13a7-f16b-9441-a8cb">
           <repeats>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="5a88-298c-4c8f-472c" includeChildSelections="false"/>
           </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="13a7-f16b-9441-a8cb">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="26a8-5eb7-fea9-c6fc" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 High Elf Prince or Archmage per 1,000 points" id="9766-01f4-0611-f01c" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="718e-92d4-7aa1-8fee" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="718e-92d4-7aa1-8fee">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="caf6-f616-a44e-e31a"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="718e-92d4-7aa1-8fee">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="3d09-258f-b397-0818" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 unit of Dragon Princes of Caledor per 1,000 points" id="a228-3ddd-5a6f-35e4" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="d681-0710-23ba-3774" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="d681-0710-23ba-3774">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="d61e-8231-5109-0d11"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="d681-0710-23ba-3774">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="6164-1879-85ab-7ac2" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-2 Great Eagles per 1,000 points" id="bdbd-fde2-eff2-c55b" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="aaf4-e967-355b-98c3" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="2" field="aaf4-e967-355b-98c3">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="6faa-c02a-41eb-9bd5" includeChildSelections="false"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="2" field="aaf4-e967-355b-98c3">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="c578-c1a7-fc5a-27c7" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-2 Eagle Claw Bolt Throwers per 1,000 points" id="9c67-7882-410e-2059" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="e392-1df9-1ea2-4ff0" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="2" field="e392-1df9-1ea2-4ff0">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="6f09-4733-7b44-aa51" includeChildSelections="false"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="2" field="e392-1df9-1ea2-4ff0">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="03ed-9662-e642-89b5" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </categoryEntry>
