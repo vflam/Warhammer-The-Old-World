@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="132" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="133" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -125,29 +125,19 @@
           </constraints>
           <modifiers>
             <modifier type="set" value="33" field="563-332d-aa18-dad">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="708f-d597-bd5f-a586" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="33" field="563-332d-aa18-dad">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="33" field="563-332d-aa18-dad">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="33" field="563-332d-aa18-dad">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="5e58-9ce8-a93c-272d" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="33" field="563-332d-aa18-dad">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a96b-bece-2c01-38d2" shared="true"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="708f-d597-bd5f-a586" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="5e58-9ce8-a93c-272d" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a96b-bece-2c01-38d2" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="142f-feb2-1509-865b" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="6dc7-f698-014b-63e1" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
         </categoryLink>
@@ -169,29 +159,19 @@
           </constraints>
           <modifiers>
             <modifier type="set" value="33" field="f0f7-32b6-d076-214a">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c637-f6be-935d-faae" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="33" field="f0f7-32b6-d076-214a">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="33" field="f0f7-32b6-d076-214a">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="33" field="f0f7-32b6-d076-214a">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="33" field="f0f7-32b6-d076-214a">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="09eb-a3a1-87f4-7fef" shared="true"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c637-f6be-935d-faae" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="bb5-4152-4695-83a5" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="09eb-a3a1-87f4-7fef" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="142f-feb2-1509-865b" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="6dc7-f698-014b-63e1" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
         </categoryLink>
@@ -201,34 +181,28 @@
           </constraints>
           <modifiers>
             <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c637-f6be-935d-faae" shared="true"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c637-f6be-935d-faae" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7bbf-73df-eb6d-d411" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="09eb-a3a1-87f4-7fef" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
-            <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7318-4de6-f164-6575" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7bbf-73df-eb6d-d411" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a339-984f-3777-c73f" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="09eb-a3a1-87f4-7fef" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="25" field="4bbb-90a8-3513-cbec">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7706-6528-7747-65a2" shared="true"/>
-              </conditions>
+            <modifier type="set" value="0" field="4bbb-90a8-3513-cbec">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="142f-feb2-1509-865b" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="6dc7-f698-014b-63e1" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
         </categoryLink>
