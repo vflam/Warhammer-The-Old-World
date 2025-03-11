@@ -109,6 +109,8 @@
     <categoryEntry name="Faction: The Empire of Man - Knightly Order" id="7135-7f44-2427-9af9" hidden="true"/>
     <categoryEntry name="Faction: The Empire of Man - City-state of Nuln" id="38be-5fe9-9738-fd43" hidden="true"/>
     <categoryEntry name="Outrider Non-Ponderous" id="71d6-3c4f-f6e3-819d" hidden="true"/>
+    <categoryEntry name="Faction: High Elf Realms - Chracian Warhost" id="79c5-dc15-19d1-9fb1" hidden="true"/>
+    <categoryEntry name="Faction: High Elf Realms - Sea Guard Garrison" id="0caf-45de-6e99-3bb9" hidden="true"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
