@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="134" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="135" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -79,10 +79,22 @@
     <categoryEntry name="Faction: Warriors of Chaos" id="75a1-ee95-da32-b765" hidden="true"/>
     <categoryEntry name="Faction: Wood Elf Realms" id="f9f5-dd21-7903-b9c" hidden="true"/>
     <categoryEntry name="Commander of the Empire" id="94df-cedb-8070-80ec" hidden="true"/>
-    <categoryEntry name="Units" id="fec1-537a-bbeb-7926" hidden="true">
+    <categoryEntry name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" id="fec1-537a-bbeb-7926" hidden="true">
       <constraints>
-        <constraint type="min" value="3" field="selections" scope="roster" shared="true" id="f7ea-a0fb-8340-6cfe" includeChildSelections="true"/>
+        <constraint type="min" value="3" field="selections" scope="force" shared="true" id="f7ea-a0fb-8340-6cfe" includeChildSelections="true"/>
       </constraints>
+      <modifiers>
+        <modifier type="set" value="3" field="f7ea-a0fb-8340-6cfe">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" value="1" field="f7ea-a0fb-8340-6cfe">
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </categoryEntry>
     <categoryEntry name="Skaven Warlord of Chieftain" id="a902-2b12-a891-cecf" hidden="true"/>
     <categoryEntry name="Faction: Warriors of Chaos - Heralds of Darkness" id="6fdd-30cc-ac89-f73c" hidden="true"/>
