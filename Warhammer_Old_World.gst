@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="135" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="136" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -96,7 +96,7 @@
         </modifier>
       </modifiers>
     </categoryEntry>
-    <categoryEntry name="Skaven Warlord of Chieftain" id="a902-2b12-a891-cecf" hidden="true"/>
+    <categoryEntry name="Skaven Warlord or Chieftain" id="a902-2b12-a891-cecf" hidden="true"/>
     <categoryEntry name="Faction: Warriors of Chaos - Heralds of Darkness" id="6fdd-30cc-ac89-f73c" hidden="true"/>
     <categoryEntry name="Faction: Warriors of Chaos - Wolves of the Sea" id="4d3a-fc38-df88-d250" hidden="true"/>
     <categoryEntry name="BRETONNIAN WARHORSE" id="fa9f-c1b3-1e39-17c1" hidden="true"/>
@@ -7292,14 +7292,14 @@ Related: Lance Formation</characteristic>
     </profile>
     <profile name="Lightning Strike" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="f2e3-25a1-168a-f99d">
       <characteristics>
-        <characteristic name="Description" id="48f7-b8dc-5992-cd1c" hidden="false" typeId="9f84-4221-785a-db50">When shooting with this weapon, draw a straight line, 8D6&quot; in length, from the model&apos;s base edge. Any model (friend or foe) whose base falls under this line suffers a hit, the Strength of which is determined by rolling an Artillery dice. If a &apos;Misfire&apos; is rolled when rolling to determine the Strength of this weapon, something has gone horribly wrong. Roll immediately on the Warp Lightning Misfire table to determine exactly what.
- 
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">When shooting with this weapon, draw a straight line, 8D6&quot; in length, from the model&apos;s base edge. Any model (friend or foe) whose base falls under this line suffers a hit, the Strength of which is determined by rolling an Artillery dice. If a &apos;Misfire&apos; is rolled when rolling to determine the Strength of this weapon, something has gone horribly wrong. Roll immediately on the Warp Lightning Misfire table to determine exactly what.
 
+Warp Lightning Misfire Table
 |||
 |:--|:--|
 |D6|Result|
 |1|Meltdown: The machine and its crew explode in a spectacular green fireball. The model fails to shoot this turn. Instead, it is destroyed and immediately removed from play.|
-|2-4|Energy Overload:  Unfathomable energies spin the war machine around before it unleashes a potent blast of warp lightning. The Warp Lightning Cannon shoots with a Strength of 6 in a random direction, determined by rolling a Scatter dice.|
+|2-4|Energy Overload: Unfathomable energies spin the war machine around before it unleashes a potent blast of warp lightning. The Warp Lightning Cannon shoots with a Strength of 6 in a random direction, determined by rolling a Scatter dice.|
 |5-6|Fzzzt: With a high-pitched screech, followed by a descending, whirring noise, the energy dissipates harmlessly. The model fails to shoot this turn.|</characteristic>
       </characteristics>
       <comment>imported</comment>
@@ -13754,7 +13754,7 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7efc-2607-1899-ffd5"/>
       </constraints>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Two Hand Weapon" hidden="false" id="a5bd-e584-3c96-550f" collective="true">
+    <selectionEntry type="upgrade" import="true" name="Two Hand Weapons" hidden="false" id="a5bd-e584-3c96-550f" collective="true">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cf5f-459a-36b3-81a4"/>
       </constraints>
@@ -13790,6 +13790,9 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
       <infoLinks>
         <infoLink name="Whip" hidden="false" type="profile" id="5abd-ceb0-f68c-9111" targetId="7505-7edf-c3de-57a6"/>
       </infoLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6f97-2c9b-ca43-120b"/>
+      </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Cavalry Spear" hidden="false" id="a2d0-40e9-83ad-23dc" collective="true">
       <infoLinks>
