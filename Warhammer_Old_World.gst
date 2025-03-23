@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="136" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="137" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -13341,7 +13341,7 @@ Wizards &amp; Armour (Weapons)</characteristic>
         <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
         <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
-        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (2), Multiple Wounds (2)</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Multiple Wounds (2)</characteristic>
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">In combat, this model must make each attack granted by the Extra Attacks (+remaining Wounds) special rule with this weapon.</characteristic>
       </characteristics>
     </profile>
