@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="137" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="138" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -14008,10 +14008,13 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
         <infoLink name="Troll Vomit" id="9570-4cc9-59ec-7274" hidden="false" type="profile" targetId="cdde-5994-8941-787f"/>
       </infoLinks>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Ironfist" hidden="false" id="2139-5be6-d6b0-4321">
+    <selectionEntry type="upgrade" import="true" name="Ironfist" hidden="false" id="2139-5be6-d6b0-4321" collective="true">
       <infoLinks>
         <infoLink name="Ironfist" id="59a8-76ed-9e56-b231" hidden="false" targetId="d432-2b40-b9e4-c45c" type="profile"/>
       </infoLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d2e7-df45-5ef9-5d0d"/>
+      </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Function Over Form" hidden="false" id="fac7-648f-252e-8ddf">
       <constraints>
