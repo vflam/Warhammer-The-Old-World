@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="140" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="141" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -7051,11 +7051,12 @@ Related: Lance Formation</characteristic>
     </profile>
     <profile name="Cannonade" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="afc8-bfc4-b506-7f7d">
       <characteristics>
-        <characteristic name="Description" id="ed2c-91ec-78dc-57c0" hidden="false" typeId="9f84-4221-785a-db50">When shooting with a steam cannonade, roll two Artillery dice before making any rolls To Hit. The number of shots fired is equal to the total of both Artillery dice:
- - If a Misfire is rolled on one of the Artillery dice, all shots fired from the steam cannonade this turn suffer an additional -1 To Hit modifier (instead of rolling on a Misfire table).
- - If a Misfire is rolled on both of the Artillery dice, no shots are fired and this model loses a single Wound (instead of rolling on a Misfire table).
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">When shooting with a steam cannonade, roll two Artillery dice before making any rolls To Hit. The number of shots fired is equal to the total of both Artillery dice:
+- If a Misfire is rolled on one of the Artillery dice, all shots fired from the steam cannonade this turn suffers and additional -1 To Hit modifier (instead of rolling on a Misfire table).
+- If a Misfire is rolled on both the Artillery dice, no shots are fired and this model loses a single Wound (instead of rolling on a Misfire table).
 
- After determining the number of shots, roll To Hit for each as normal, using the crew&apos;s Ballistic Skill and applying all appropriate modifiers.</characteristic>
+
+After determining the number of shots, roll To Hit for each as normal, using the crew&apos;s Ballistic Skill and applying all appropriate modifiers.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
