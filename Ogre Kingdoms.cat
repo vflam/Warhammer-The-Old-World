@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="13ed-b3e5-e610-615f" name="Ogre Kingdoms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="55" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorName="Flammy" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="13ed-b3e5-e610-615f" name="Ogre Kingdoms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="56" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorName="Flammy" authorUrl="www.newrecruit.eu">
   <sharedProfiles>
     <profile name="Tyrant" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="f58e-2d63-3721-5926">
       <characteristics>
@@ -894,7 +894,7 @@ Enemy models removed from play are considered to have been removed from the figh
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Monstrous tusks" hidden="false" id="115a46f5-e8310feb" collective="true">
       <infoLinks>
-        <infoLink name="Weapon -  Monstrous tusks" hidden="false" id="4eda8fa3-47e03fd1" type="profile" targetId="59ec-ad95-6df2-3fd2"/>
+        <infoLink name="Monstrous tusks" hidden="false" id="4eda8fa3-47e03fd1" type="profile" targetId="59ec-ad95-6df2-3fd2"/>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="eb92-6cc7-5401-63cf"/>
@@ -2508,7 +2508,15 @@ Enemy models removed from play are considered to have been removed from the figh
       <selectionEntries>
         <selectionEntry type="model" name="Maneater" id="85022a57-10b568a5" hidden="false" sortIndex="1">
           <infoLinks>
-            <infoLink name="Maneater" hidden="false" type="profile" id="eded062d-bbf8d1e3" targetId="2177-9315-cc2b-8466"/>
+            <infoLink name="Maneater" hidden="false" type="profile" id="eded062d-bbf8d1e3" targetId="2177-9315-cc2b-8466">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="9ba279fb-4b66b789" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base (40x40)" hidden="false" type="profile" id="84179407-f3e3cc55" targetId="1b54-27fc-b510-61b8"/>
           </infoLinks>
           <costs>
@@ -2584,6 +2592,130 @@ Enemy models removed from play are considered to have been removed from the figh
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="4ee10aa7-a51aae75" includeChildSelections="false"/>
               </constraints>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Command" id="2b428bf9-7529194f" hidden="false" collapsible="false" sortIndex="5">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Maneater Captain" hidden="false" id="9ba279fb-4b66b789" sortIndex="1" collapsible="true">
+                  <infoLinks>
+                    <infoLink name="Maneater" id="a0b7b669-7565673f" hidden="false" type="profile" targetId="2177-9315-cc2b-8466">
+                      <modifiers>
+                        <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
+                        <modifier type="set" value="Maneater Captain" field="name"/>
+                      </modifiers>
+                    </infoLink>
+                    <infoLink name="Champion" id="87543fed-b6d83da3" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="7"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Items" hidden="false" id="5ee79dd1-9b86c527" type="selectionEntryGroup" targetId="1539-fd78-88f-badd" sortIndex="5">
+                      <constraints>
+                        <constraint type="max" value="50" field="points" scope="parent" shared="false" id="9e4c5aec-2f399436"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="bf99-3bb6-5991-3c88" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="a640f5be-851edf08" shared="true" id="f8c9-126e-7990-465d" includeChildSelections="true"/>
+                  </constraints>
+                  <comment>upgrades: 85022a57-10b568a5</comment>
+                  <categoryLinks>
+                    <categoryLink name="Monstrous Infantry" hidden="false" id="baee-6e53-6790-d3c6" targetId="5c55-f9d6-b181-92f8" primary="false"/>
+                    <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="983a-a006-5080-14ce" targetId="may-have-armour"/>
+                  </categoryLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Standard Bearer" hidden="false" id="f53587e4-ab4aff2e" sortIndex="2" collapsible="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="7"/>
+                  </costs>
+                  <infoLinks>
+                    <infoLink name="Standard Bearer" id="605b6216-7f560ce0" hidden="false" type="profile" targetId="bcf8-d942-102e-b155"/>
+                    <infoLink name="Maneater" id="455e-c4fa-6ebe-8533" hidden="false" type="profile" targetId="2177-9315-cc2b-8466"/>
+                  </infoLinks>
+                  <comment>upgrades: 85022a57-10b568a5</comment>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="602935d5-85ff85cb" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="a640f5be-851edf08" shared="true" id="9234-4f64-42d5-64b2" includeChildSelections="true"/>
+                  </constraints>
+                  <categoryLinks>
+                    <categoryLink name="Monstrous Infantry" hidden="false" id="36b4-15c8-9de8-9411" targetId="5c55-f9d6-b181-92f8" primary="false"/>
+                    <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="70a-e468-5465-849b" targetId="may-have-armour"/>
+                  </categoryLinks>
+                  <selectionEntries>
+                    <selectionEntry type="upgrade" import="true" name="Look-out Gnoblar" hidden="false" id="cc69ef1d-15648cd3" sortIndex="5">
+                      <costs>
+                        <cost name="pts" typeId="points" value="5"/>
+                      </costs>
+                      <infoLinks>
+                        <infoLink name="Look-Out Gnoblar" id="2f0018d4-88f685de" hidden="false" type="profile" targetId="d6b8-cf0b-390f-d1d3"/>
+                      </infoLinks>
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="f7d659ce-3c372bd8" includeChildSelections="false"/>
+                      </constraints>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="3d03-ea73-82df-63a9" sortIndex="6">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7285-548e-3477-9b5d"/>
+                        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="3f48-daaa-a847-c688" includeChildSelections="true"/>
+                      </constraints>
+                      <modifiers>
+                        <modifier type="increment" value="1" field="3f48-daaa-a847-c688">
+                          <repeats>
+                            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="9ff7-be42-885b-dcb3"/>
+                          </repeats>
+                          <conditions>
+                            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </modifier>
+                        <modifier type="increment" value="1" field="3f48-daaa-a847-c688">
+                          <repeats>
+                            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="edb1-5860-3dcb-4385" includeChildSelections="true"/>
+                          </repeats>
+                          <conditions>
+                            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
+                      <entryLinks>
+                        <entryLink import="true" name="Magic Standards" hidden="true" id="fbfafbba-dbde76a4" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6">
+                          <constraints>
+                            <constraint type="max" value="50" field="points" scope="parent" shared="false" id="2ae838a7-db786c75"/>
+                          </constraints>
+                          <modifiers>
+                            <modifier type="set" value="false" field="hidden">
+                              <conditions>
+                                <condition type="atLeast" value="1" field="selections" scope="a640f5be-851edf08" childId="3d03-ea73-82df-63a9" shared="true" includeChildSelections="true"/>
+                              </conditions>
+                            </modifier>
+                          </modifiers>
+                        </entryLink>
+                      </entryLinks>
+                    </selectionEntry>
+                  </selectionEntries>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Musician" hidden="false" id="4dfde11f-183667ad" sortIndex="3" collapsible="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="7"/>
+                  </costs>
+                  <infoLinks>
+                    <infoLink name="Musician" id="597ecf69-952bb83f" hidden="false" type="profile" targetId="40f2-dd77-f0ca-3663"/>
+                    <infoLink name="Maneater" id="3994-d597-a10f-5dc8" hidden="false" type="profile" targetId="2177-9315-cc2b-8466"/>
+                  </infoLinks>
+                  <comment>upgrades: 85022a57-10b568a5</comment>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="88421fe-9966a948" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="a640f5be-851edf08" shared="true" id="bf98-0cd4-d265-ce38" includeChildSelections="true"/>
+                  </constraints>
+                  <categoryLinks>
+                    <categoryLink name="Monstrous Infantry" hidden="false" id="a202-541e-f286-dc72" targetId="5c55-f9d6-b181-92f8" primary="false"/>
+                    <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="83cd-1cf4-b246-8cd5" targetId="may-have-armour"/>
+                  </categoryLinks>
+                </selectionEntry>
+              </selectionEntries>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c43d-60d1-be74-6539"/>
+              </constraints>
+            </selectionEntryGroup>
           </selectionEntryGroups>
           <constraints>
             <constraint type="min" value="2" field="selections" scope="parent" shared="true" id="63046a1e-6eface8"/>
@@ -2635,133 +2767,6 @@ Enemy models removed from play are considered to have been removed from the figh
             <constraint type="min" value="0" field="selections" scope="parent" shared="false" id="55951a0c-82910656"/>
             <constraint type="max" value="2" field="selections" scope="parent" shared="false" id="6381a85e-310f928" includeChildSelections="false"/>
           </constraints>
-        </selectionEntryGroup>
-        <selectionEntryGroup name="Command" id="2b428bf9-7529194f" hidden="false" sortIndex="2" collapsible="false">
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Maneater Captain" hidden="false" id="9ba279fb-4b66b789" sortIndex="1" collapsible="true">
-              <infoLinks>
-                <infoLink name="Maneater" id="a0b7b669-7565673f" hidden="false" type="profile" targetId="2177-9315-cc2b-8466">
-                  <modifiers>
-                    <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
-                    <modifier type="set" value="Maneater Captain" field="name"/>
-                  </modifiers>
-                </infoLink>
-                <infoLink name="Champion" id="87543fed-b6d83da3" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
-              </infoLinks>
-              <costs>
-                <cost name="pts" typeId="points" value="7"/>
-              </costs>
-              <entryLinks>
-                <entryLink import="true" name="Magic Items" hidden="false" id="5ee79dd1-9b86c527" type="selectionEntryGroup" targetId="1539-fd78-88f-badd" sortIndex="5">
-                  <constraints>
-                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="9e4c5aec-2f399436"/>
-                  </constraints>
-                </entryLink>
-              </entryLinks>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="6e5bb564-72d3c0ae" includeChildSelections="false"/>
-              </constraints>
-              <comment>upgrades: 85022a57-10b568a5</comment>
-              <categoryLinks>
-                <categoryLink name="Monstrous Infantry" hidden="false" id="baee-6e53-6790-d3c6" targetId="5c55-f9d6-b181-92f8" primary="false"/>
-                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="983a-a006-5080-14ce" targetId="may-have-armour"/>
-              </categoryLinks>
-              <associations>
-                <association min="1" max="1" scope="parent" childId="85022a57-10b568a5" name="Maneater Command (1 per model)" id="b61d-dd9e-c150-44ff"/>
-              </associations>
-            </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Standard Bearer" hidden="false" id="f53587e4-ab4aff2e" sortIndex="2" collapsible="true">
-              <costs>
-                <cost name="pts" typeId="points" value="7"/>
-              </costs>
-              <infoLinks>
-                <infoLink name="Standard Bearer" id="605b6216-7f560ce0" hidden="false" type="profile" targetId="bcf8-d942-102e-b155"/>
-                <infoLink name="Maneater" id="455e-c4fa-6ebe-8533" hidden="false" type="profile" targetId="2177-9315-cc2b-8466"/>
-              </infoLinks>
-              <comment>upgrades: 85022a57-10b568a5</comment>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="602935d5-85ff85cb" includeChildSelections="false"/>
-              </constraints>
-              <categoryLinks>
-                <categoryLink name="Monstrous Infantry" hidden="false" id="36b4-15c8-9de8-9411" targetId="5c55-f9d6-b181-92f8" primary="false"/>
-                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="70a-e468-5465-849b" targetId="may-have-armour"/>
-              </categoryLinks>
-              <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Look-out Gnoblar" hidden="false" id="cc69ef1d-15648cd3" sortIndex="5">
-                  <costs>
-                    <cost name="pts" typeId="points" value="5"/>
-                  </costs>
-                  <infoLinks>
-                    <infoLink name="Look-Out Gnoblar" id="2f0018d4-88f685de" hidden="false" type="profile" targetId="d6b8-cf0b-390f-d1d3"/>
-                  </infoLinks>
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="f7d659ce-3c372bd8" includeChildSelections="false"/>
-                  </constraints>
-                </selectionEntry>
-                <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="3d03-ea73-82df-63a9" sortIndex="6">
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7285-548e-3477-9b5d"/>
-                    <constraint type="max" value="0" field="selections" scope="force" shared="true" id="3f48-daaa-a847-c688" includeChildSelections="true"/>
-                  </constraints>
-                  <modifiers>
-                    <modifier type="increment" value="1" field="3f48-daaa-a847-c688">
-                      <repeats>
-                        <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="9ff7-be42-885b-dcb3"/>
-                      </repeats>
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
-                      </conditions>
-                    </modifier>
-                    <modifier type="increment" value="1" field="3f48-daaa-a847-c688">
-                      <repeats>
-                        <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="edb1-5860-3dcb-4385" includeChildSelections="true"/>
-                      </repeats>
-                      <conditions>
-                        <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
-                      </conditions>
-                    </modifier>
-                  </modifiers>
-                  <entryLinks>
-                    <entryLink import="true" name="Magic Standards" hidden="true" id="fbfafbba-dbde76a4" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6">
-                      <constraints>
-                        <constraint type="max" value="50" field="points" scope="parent" shared="false" id="2ae838a7-db786c75"/>
-                      </constraints>
-                      <modifiers>
-                        <modifier type="set" value="false" field="hidden">
-                          <conditions>
-                            <condition type="atLeast" value="1" field="selections" scope="a640f5be-851edf08" childId="3d03-ea73-82df-63a9" shared="true" includeChildSelections="true"/>
-                          </conditions>
-                        </modifier>
-                      </modifiers>
-                    </entryLink>
-                  </entryLinks>
-                </selectionEntry>
-              </selectionEntries>
-              <associations>
-                <association min="1" max="1" scope="parent" childId="85022a57-10b568a5" name="Maneater Command (1 per model)" id="5182-638e-1b22-4d2e"/>
-              </associations>
-            </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Musician" hidden="false" id="4dfde11f-183667ad" sortIndex="3" collapsible="true">
-              <costs>
-                <cost name="pts" typeId="points" value="7"/>
-              </costs>
-              <infoLinks>
-                <infoLink name="Musician" id="597ecf69-952bb83f" hidden="false" type="profile" targetId="40f2-dd77-f0ca-3663"/>
-                <infoLink name="Maneater" id="3994-d597-a10f-5dc8" hidden="false" type="profile" targetId="2177-9315-cc2b-8466"/>
-              </infoLinks>
-              <comment>upgrades: 85022a57-10b568a5</comment>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="88421fe-9966a948" includeChildSelections="false"/>
-              </constraints>
-              <categoryLinks>
-                <categoryLink name="Monstrous Infantry" hidden="false" id="a202-541e-f286-dc72" targetId="5c55-f9d6-b181-92f8" primary="false"/>
-                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="83cd-1cf4-b246-8cd5" targetId="may-have-armour"/>
-              </categoryLinks>
-              <associations>
-                <association min="1" max="1" scope="parent" childId="85022a57-10b568a5" name="Maneater Command (1 per model)" id="5920-85c8-6c85-b96e"/>
-              </associations>
-            </selectionEntry>
-          </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
@@ -3196,7 +3201,7 @@ Enemy models removed from play are considered to have been removed from the figh
                 <cost name="pts" typeId="points" value="0"/>
               </costs>
               <entryLinks>
-                <entryLink name="Weapon -  Monstrous tusks" id="ff4c4e24-47f9936e" hidden="false" type="selectionEntry" targetId="115a46f5-e8310feb" import="true" collective="true">
+                <entryLink name="Monstrous tusks" id="ff4c4e24-47f9936e" hidden="false" type="selectionEntry" targetId="115a46f5-e8310feb" import="true" collective="true">
                   <constraints>
                     <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="a365ca6b-c5e032b9"/>
                   </constraints>

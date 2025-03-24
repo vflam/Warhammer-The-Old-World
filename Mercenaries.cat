@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="true" id="12a0-32cd-11d6-f952" name="Mercenaries" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="99" revision="21" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="true" id="12a0-32cd-11d6-f952" name="Mercenaries" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="99" revision="22" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Badlands Ogre Bulls" hidden="false" id="a4af-ea3a-49ea-d56e" collective="false">
       <profiles>
@@ -15,9 +15,14 @@
           <infoLinks>
             <infoLink name="Ogre" id="3dbe0aa3-f5cfe2d1" hidden="false" type="profile" targetId="5ccf-bbe6-f153-88b2">
               <modifiers>
-                <modifier type="set" value="true" field="hidden">
+                <modifier type="set" value="Crusher" field="name">
                   <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="f6d1e456-6f867d20" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="f6d1e456-6f867d20" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="f6d1e456-6f867d20" shared="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
@@ -64,8 +69,6 @@
               <selectionEntries>
                 <selectionEntry type="upgrade" import="true" name="Crusher" hidden="false" id="f6d1e456-6f867d20" sortIndex="1">
                   <infoLinks>
-                    <infoLink name="Crusher" id="44d31484-20a9064e" hidden="false" type="profile" targetId="9b86-a71c-6866-3c56"/>
-                    <infoLink name="Base (40x40)" id="b7f781ac-26d584f6" hidden="false" type="profile" targetId="1b54-27fc-b510-61b8"/>
                     <infoLink name="Champion" id="6ac4-f027-e968-21b4" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
                   </infoLinks>
                   <costs>
@@ -899,17 +902,8 @@
         </profile>
       </profiles>
       <selectionEntries>
-        <selectionEntry type="model" import="true" name="Imperial Ogre" hidden="false" id="ec63-cf43-991c-c00c">
+        <selectionEntry type="model" import="true" name="Imperial Ogre" hidden="false" id="ec63-cf43-991c-c00c" flatten="false">
           <infoLinks>
-            <infoLink name="Imperial Ogre" id="6b0b-8220-4548-2449" hidden="false" type="profile" targetId="203c-b12e-043f-d3bb">
-              <modifiers>
-                <modifier type="set" value="true" field="hidden">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="ef33-2795-a482-2a97" shared="true"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </infoLink>
             <infoLink name="Base (40x40)" id="c6f1-76a8-59f4-8b99" hidden="false" type="profile" targetId="1b54-27fc-b510-61b8"/>
             <infoLink name="Light Armour" id="29a3-07bf-067e-27ab" hidden="true" type="profile" targetId="dbb2-4d85-84c2-528c">
               <modifierGroups>
@@ -935,6 +929,25 @@
                 </modifierGroup>
               </modifierGroups>
             </infoLink>
+            <infoLink name="Imperial Ogre" id="3ca5-d4a7-c417-fc47" hidden="false" type="profile" targetId="203c-b12e-043f-d3bb">
+              <modifiers>
+                <modifier type="set" value="Ogre Captain" field="name">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="ef33-2795-a482-2a97" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="59f9-ccf5-1155-fb05">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="ef33-2795-a482-2a97" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="ef33-2795-a482-2a97" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
           <costs>
             <cost name="pts" id="0cc2-cfe2-7e47-977a" hidden="false" typeId="points" value="31"/>
@@ -943,24 +956,15 @@
             <entryLink import="true" name="Hand Weapon" hidden="false" id="ce57-5fb9-9014-c6c6" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="2a0f-33b5-8270-eefe"/>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="f067-a7b4-4023-0028"/>
               </constraints>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Command" id="e329-1b20-fced-e89c" hidden="false" sortIndex="2">
+            <selectionEntryGroup name="Command" id="e329-1b20-fced-e89c" hidden="false" sortIndex="3">
               <selectionEntries>
                 <selectionEntry type="upgrade" import="true" name="Ogre Captain" hidden="false" id="ef33-2795-a482-2a97" sortIndex="1">
                   <infoLinks>
-                    <infoLink name="Base (40x40)" id="7ecf-f07f-2cf0-69ec" hidden="false" type="profile" targetId="1b54-27fc-b510-61b8"/>
                     <infoLink name="Champion" id="d06d-fed0-7cf6-875c" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
-                    <infoLink name="Imperial Ogre" id="3ca5-d4a7-c417-fc47" hidden="false" type="profile" targetId="203c-b12e-043f-d3bb">
-                      <modifiers>
-                        <modifier type="set" value="Ogre Captain" field="name"/>
-                        <modifier type="increment" value="1" field="59f9-ccf5-1155-fb05"/>
-                        <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
-                      </modifiers>
-                    </infoLink>
                   </infoLinks>
                   <costs>
                     <cost name="pts" typeId="points" value="7"/>
@@ -978,7 +982,7 @@
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="0d26-775c-c4f1-6675" includeChildSelections="false"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Weapons" id="545d-0deb-d6f9-28a1" hidden="false" sortIndex="3">
+            <selectionEntryGroup name="Weapons" id="545d-0deb-d6f9-28a1" hidden="false" sortIndex="2" flatten="true">
               <entryLinks>
                 <entryLink import="true" name="Great Weapon" hidden="false" id="28a3-9bcb-ba8a-5c69" type="selectionEntry" targetId="2283-26e9-76c3-6048" sortIndex="1">
                   <costs>
@@ -1287,7 +1291,7 @@ Bonegrinder Giant Attacks Table
     <entryLink import="true" name="Badlands Ogre Bulls" hidden="false" id="44c9-e0c9-75ce-1fce" type="selectionEntry" targetId="a4af-ea3a-49ea-d56e">
       <categoryLinks>
         <categoryLink name="Mercenaries" hidden="false" id="e1fb-895d-5867-cc2e" targetId="5b84-2c3c-869d-3522" primary="true"/>
-        <categoryLink name="Units" hidden="false" id="ae52-c1c2-0eab-c51a" targetId="fec1-537a-bbeb-7926" primary="false"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="ae52-c1c2-0eab-c51a" targetId="fec1-537a-bbeb-7926" primary="false"/>
         <categoryLink targetId="96f6-a6de-3328-b74c" id="6c6a-2713-7765-f261" primary="false" name="Faction: Orc and Goblin Tribes"/>
       </categoryLinks>
       <costs>
@@ -1319,7 +1323,7 @@ Bonegrinder Giant Attacks Table
     <entryLink import="true" name="Bonegrinder Giant" hidden="true" id="3d62c558-86da0cc2" type="selectionEntry" targetId="514-eadb-6386-ff1a">
       <categoryLinks>
         <categoryLink name="Mercenaries" hidden="false" id="699e-9d83-25e5-7de7" targetId="5b84-2c3c-869d-3522" primary="true"/>
-        <categoryLink name="Units" hidden="false" id="0a21-4d55-1a8f-c16c" targetId="fec1-537a-bbeb-7926" primary="false"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="0a21-4d55-1a8f-c16c" targetId="fec1-537a-bbeb-7926" primary="false"/>
         <categoryLink targetId="96f6-a6de-3328-b74c" id="49ed-028b-f391-7135" primary="false" name="Faction: Orc and Goblin Tribes"/>
       </categoryLinks>
       <modifiers>
@@ -1380,7 +1384,7 @@ Bonegrinder Giant Attacks Table
       </modifiers>
       <categoryLinks>
         <categoryLink name="Mercenaries" hidden="false" id="2e76-232b-ee59-1926" targetId="5b84-2c3c-869d-3522" primary="true"/>
-        <categoryLink name="Units" hidden="false" id="5ffd-ced7-a69c-7fe3" targetId="fec1-537a-bbeb-7926" primary="false"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="5ffd-ced7-a69c-7fe3" targetId="fec1-537a-bbeb-7926" primary="false"/>
         <categoryLink targetId="f4fd-aa79-6ff3-1ea9" id="8925-af8d-1829-120f" primary="false" name="Faction: Dwarfen Mountain Holds"/>
       </categoryLinks>
     </entryLink>
@@ -1403,7 +1407,7 @@ Bonegrinder Giant Attacks Table
       <categoryLinks>
         <categoryLink targetId="5b84-2c3c-869d-3522" id="0d18-babd-b4c8-35de" primary="true" name="Mercenaries"/>
         <categoryLink targetId="f4fd-aa79-6ff3-1ea9" id="fbe8-189c-4570-65ec" primary="false" name="Faction: Dwarfen Mountain Holds"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="4b6f-37ef-1d69-4ac5" primary="false" name="Units"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="4b6f-37ef-1d69-4ac5" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
       </categoryLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="8dab-898b-f546-aa47"/>
@@ -1426,7 +1430,7 @@ Bonegrinder Giant Attacks Table
       <categoryLinks>
         <categoryLink targetId="e5f1-f9ee-d533-b2dc" id="ddc8-ca27-2f93-a10e" primary="false" name="Faction: The Empire of Man"/>
         <categoryLink targetId="5b84-2c3c-869d-3522" id="ebbb-6e0d-ed55-b549" primary="true" name="Mercenaries"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="fc0a-a625-d49e-f761" primary="false" name="Units"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="fc0a-a625-d49e-f761" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
       </categoryLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="force" shared="true" id="fdd3-85e4-a486-cf0d" includeChildSelections="true"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="13b1-ec94-d107-d711" name="Wood Elf Realms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="78" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="13b1-ec94-d107-d711" name="Wood Elf Realms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="79" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Elven Reflexes" hidden="false" id="a8c1-1eef-eaba-d157" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
@@ -1309,6 +1309,18 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
             <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Regular Infantry</characteristic>
             <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">5+</characteristic>
           </characteristics>
+          <modifiers>
+            <modifier type="set" value="2" field="dddc-9fbd-b0fd-a480">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="self" childId="5bed-5b0d-b155-a4c8" shared="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="Bladesinger" field="name">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="self" childId="5bed-5b0d-b155-a4c8" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </profile>
       </profiles>
       <selectionEntries>
@@ -1324,18 +1336,88 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
             <cost name="pts" typeId="points" value="16"/>
           </costs>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="872b-1cc-ce15-c314" sortIndex="2" collective="false" defaultSelectionEntryId="6c42-356f-3a98-876b">
+            <selectionEntryGroup name="Equipment" hidden="false" id="872b-1cc-ce15-c314" sortIndex="2" collective="false" defaultSelectionEntryId="6c42-356f-3a98-876b" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="acd9-2a7f-d-6727"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="Additional Hand Weapon" hidden="false" id="6c42-356f-3a98-876b" type="selectionEntry" targetId="8943-3e16-db2a-b7f3" sortIndex="2">
+                <entryLink import="true" name="Additional Hand Weapon" hidden="false" id="6c42-356f-3a98-876b" type="selectionEntry" targetId="8943-3e16-db2a-b7f3" sortIndex="1">
                   <costs>
                     <cost name="pts" typeId="points" value="1"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Throwing Spear" hidden="false" id="2f90-599c-14c6-9418" type="selectionEntry" targetId="9113-238a-ef75-aa23" sortIndex="1"/>
+                <entryLink import="true" name="Throwing Spear" hidden="false" id="2f90-599c-14c6-9418" type="selectionEntry" targetId="9113-238a-ef75-aa23" sortIndex="2"/>
               </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Command" id="ef74-21a3-7635-fda2" hidden="false">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Bladesinger" hidden="false" id="5bed-5b0d-b155-a4c8" flatten="true" sortIndex="1">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6a1e-7f99-e1d-1716"/>
+                    <constraint type="max" value="1" field="selections" scope="4a01-6b67-783-6d3a" shared="true" id="9998-fad5-b5f3-6b8f" includeChildSelections="true"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="6"/>
+                  </costs>
+                  <infoLinks>
+                    <infoLink name="Champion" id="72f0-be29-95fa-b9b0" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
+                  </infoLinks>
+                  <comment>upgrades: 6160-3842-e000-ae97</comment>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Items" hidden="false" id="bb81-a59b-3a83-d78b" type="selectionEntryGroup" targetId="1539-fd78-88f-badd">
+                      <constraints>
+                        <constraint type="max" value="25" field="points" scope="parent" shared="true" id="31e4-90bf-d36c-e2dd"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                  <categoryLinks>
+                    <categoryLink name="CHAMPION" hidden="false" id="7c24-4ce0-e51f-2c67" targetId="83a1-945c-564c-84af" primary="false"/>
+                    <categoryLink name="Regular Infantry" hidden="false" id="4873-da3d-8a70-8a3e" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                  </categoryLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Standard Bearer" hidden="false" id="53cb-63f5-81b2-81d1" flatten="true" sortIndex="2">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="66c9-b17d-8b5d-268c"/>
+                    <constraint type="max" value="1" field="selections" scope="4a01-6b67-783-6d3a" shared="true" id="238a-3004-7fbd-9861" includeChildSelections="true"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="6"/>
+                  </costs>
+                  <comment>upgrades: 6160-3842-e000-ae97</comment>
+                  <infoLinks>
+                    <infoLink name="Standard Bearer" id="fd5d-3cfd-7ea9-525e" hidden="false" type="profile" targetId="bcf8-d942-102e-b155"/>
+                  </infoLinks>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="false" id="f888-85fd-82cc-c6e6" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6">
+                      <constraints>
+                        <constraint type="max" value="50" field="points" scope="parent" shared="false" id="258c-3068-ee85-f6e1"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                  <categoryLinks>
+                    <categoryLink name="Regular Infantry" hidden="false" id="4096-8c27-ff23-362b" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                  </categoryLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Musician" hidden="false" id="cef1-2e76-6a07-ef98" sortIndex="3">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="995b-36af-209-49f3"/>
+                    <constraint type="max" value="1" field="selections" scope="4a01-6b67-783-6d3a" shared="true" id="f92a-8f9a-bc52-46aa" includeChildSelections="true"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="6"/>
+                  </costs>
+                  <comment>upgrades: 6160-3842-e000-ae97</comment>
+                  <infoLinks>
+                    <infoLink name="Musician" id="5352-3f40-332b-dfd5" hidden="false" type="profile" targetId="40f2-dd77-f0ca-3663"/>
+                  </infoLinks>
+                  <categoryLinks>
+                    <categoryLink name="Regular Infantry" hidden="false" id="4c95-9091-70ba-f642" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                  </categoryLinks>
+                </selectionEntry>
+              </selectionEntries>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="eb29-3cdb-966f-116b"/>
+              </constraints>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <selectionEntries>
@@ -1355,78 +1437,6 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
           </categoryLinks>
         </selectionEntry>
       </selectionEntries>
-      <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="ef74-21a3-7635-fda2" sortIndex="2">
-          <selectionEntries>
-            <selectionEntry type="model" import="true" name="Bladesinger" hidden="false" id="5bed-5b0d-b155-a4c8" subType="crew" flatten="true" sortIndex="1">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6a1e-7f99-e1d-1716"/>
-              </constraints>
-              <costs>
-                <cost name="pts" typeId="points" value="6"/>
-              </costs>
-              <infoLinks>
-                <infoLink name="Wardancers" hidden="false" type="profile" id="4dc0-95b5-e140-5af7" targetId="6518-8fc0-d3e3-5158">
-                  <modifiers>
-                    <modifier type="set" value="2" field="dddc-9fbd-b0fd-a480"/>
-                    <modifier type="set" value="Bladesinger" field="name"/>
-                  </modifiers>
-                </infoLink>
-                <infoLink name="Champion" hidden="false" type="profile" id="72f0-be29-95fa-b9b0" targetId="5f1c-fd04-b0d5-d5e"/>
-              </infoLinks>
-              <comment>upgrades: 6160-3842-e000-ae97</comment>
-              <entryLinks>
-                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="bb81-a59b-3a83-d78b" targetId="1539-fd78-88f-badd">
-                  <constraints>
-                    <constraint type="max" value="25" field="points" scope="parent" shared="true" id="31e4-90bf-d36c-e2dd"/>
-                  </constraints>
-                </entryLink>
-              </entryLinks>
-              <categoryLinks>
-                <categoryLink targetId="83a1-945c-564c-84af" id="7c24-4ce0-e51f-2c67" primary="false" name="CHAMPION"/>
-                <categoryLink name="Regular Infantry" hidden="false" id="4873-da3d-8a70-8a3e" targetId="f3f7-ca43-674e-115f" primary="false"/>
-              </categoryLinks>
-            </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="53cb-63f5-81b2-81d1" subType="crew" flatten="true" sortIndex="2">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="66c9-b17d-8b5d-268c"/>
-              </constraints>
-              <costs>
-                <cost name="pts" typeId="points" value="6"/>
-              </costs>
-              <comment>upgrades: 6160-3842-e000-ae97</comment>
-              <infoLinks>
-                <infoLink name="Standard Bearer" hidden="false" type="profile" id="fd5d-3cfd-7ea9-525e" targetId="bcf8-d942-102e-b155"/>
-              </infoLinks>
-              <entryLinks>
-                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="f888-85fd-82cc-c6e6" targetId="6bbe-8054-19b7-e5d6">
-                  <constraints>
-                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="258c-3068-ee85-f6e1"/>
-                  </constraints>
-                </entryLink>
-              </entryLinks>
-              <categoryLinks>
-                <categoryLink name="Regular Infantry" hidden="false" id="4096-8c27-ff23-362b" targetId="f3f7-ca43-674e-115f" primary="false"/>
-              </categoryLinks>
-            </selectionEntry>
-            <selectionEntry type="model" import="true" name="Musician" hidden="false" id="cef1-2e76-6a07-ef98" subType="crew" sortIndex="3">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="995b-36af-209-49f3"/>
-              </constraints>
-              <costs>
-                <cost name="pts" typeId="points" value="6"/>
-              </costs>
-              <comment>upgrades: 6160-3842-e000-ae97</comment>
-              <infoLinks>
-                <infoLink name="Musician" hidden="false" type="profile" id="5352-3f40-332b-dfd5" targetId="40f2-dd77-f0ca-3663"/>
-              </infoLinks>
-              <categoryLinks>
-                <categoryLink name="Regular Infantry" hidden="false" id="4c95-9091-70ba-f642" targetId="f3f7-ca43-674e-115f" primary="false"/>
-              </categoryLinks>
-            </selectionEntry>
-          </selectionEntries>
-        </selectionEntryGroup>
-      </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="3e8a-f6a8-d4dd-62a7">
           <infoLinks>

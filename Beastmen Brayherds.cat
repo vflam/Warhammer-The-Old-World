@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="eaaf-1e11-a32d-ab11" name="Beastmen Brayherds" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="93" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="eaaf-1e11-a32d-ab11" name="Beastmen Brayherds" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="94" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Blood Rage" hidden="false" id="8117-de6e-d7df-3eca" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="115" publicationId="7c89-736c-3139-24a0">
       <characteristics>
@@ -2151,25 +2151,29 @@ When they do so, they may select instead the signature spell of their chose Lore
         </profile>
       </profiles>
       <selectionEntries>
-        <selectionEntry type="model" import="true" name="Minotaur" hidden="false" id="1a14-ee08-ddf3-f80a" sortIndex="1">
+        <selectionEntry type="model" import="true" name="Minotaur" hidden="false" id="1a14-ee08-ddf3-f80a" sortIndex="1" collective="false">
           <constraints>
             <constraint type="min" value="2" field="selections" scope="parent" shared="true" id="5750-284b-a3a6-5a08"/>
-            <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="fee4-645f-a62c-9177"/>
           </constraints>
           <entryLinks>
-            <entryLink import="true" name="Light Armour" hidden="false" type="selectionEntry" id="5d25-86cb-133e-4927" targetId="7cab-40e6-f134-de78" sortIndex="2">
+            <entryLink import="true" name="Light Armour" hidden="false" type="selectionEntry" id="5d25-86cb-133e-4927" targetId="7cab-40e6-f134-de78" sortIndex="3">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="df5d-8ea4-77e2-8d5f"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="2741-7b57-f90c-7785" targetId="6192-f9f1-5d53-2042" sortIndex="3">
+            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="2741-7b57-f90c-7785" targetId="6192-f9f1-5d53-2042" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="2"/>
               </costs>
             </entryLink>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="d081-cc31-7db5-f104" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="57e7-2978-aa3d-01dc"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="8c52-eace-2679-ad65" sortIndex="4">
+            <selectionEntryGroup name="Weapons" hidden="false" id="8c52-eace-2679-ad65" sortIndex="2" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a406-d8e2-ef29-c6d8"/>
               </constraints>
@@ -2186,42 +2190,108 @@ When they do so, they may select instead the signature spell of their chose Lore
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Command" id="4adc-3a25-daeb-e70f" hidden="false" sortIndex="6">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Standard Bearer" hidden="false" id="ca3c-212c-d2b2-4494" sortIndex="2">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7a25-45a3-4efe-e653"/>
+                    <constraint type="max" value="1" field="selections" scope="a60-a56e-1b19-1969" shared="true" id="85c4-f66b-e2a1-9f47" includeChildSelections="true"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="6"/>
+                  </costs>
+                  <infoLinks>
+                    <infoLink name="Standard Bearer" id="8052-9646-fd05-aa0f" hidden="false" type="profile" targetId="bcf8-d942-102e-b155"/>
+                  </infoLinks>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="false" id="0d51-fd5f-2472-b8d7" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6" sortIndex="5">
+                      <constraints>
+                        <constraint type="max" value="50" field="points" scope="parent" shared="false" id="6223-7d84-8f13-0cd9"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                  <comment>model: Minotaur</comment>
+                  <categoryLinks>
+                    <categoryLink name="Monstrous Infantry" hidden="false" id="a331-ac35-6453-97ec" targetId="5c55-f9d6-b181-92f8" primary="false"/>
+                    <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="42e4-fd99-f717-a3c1" targetId="may-have-armour"/>
+                    <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="dac0-34ff-68e8-28bb" targetId="may-have-shield"/>
+                  </categoryLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Musician" hidden="false" id="4fa9-30ea-317c-a79a" sortIndex="3">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2855-4679-eebb-63c2"/>
+                    <constraint type="max" value="1" field="selections" scope="a60-a56e-1b19-1969" shared="true" id="a907-2e0e-9aff-30e4" includeChildSelections="true"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="6"/>
+                  </costs>
+                  <infoLinks>
+                    <infoLink name="Musician" id="9871-7876-a10b-8cf2" hidden="false" type="profile" targetId="40f2-dd77-f0ca-3663"/>
+                  </infoLinks>
+                  <comment>model: Minotaur</comment>
+                  <categoryLinks>
+                    <categoryLink name="Monstrous Infantry" hidden="false" id="289c-c8e4-98da-7219" targetId="5c55-f9d6-b181-92f8" primary="false"/>
+                    <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="7dfd-d575-4d7e-fcd0" targetId="may-have-armour"/>
+                    <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="a066-65a4-e0ca-333d" targetId="may-have-shield"/>
+                  </categoryLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Bloodkine" hidden="false" id="6e56-bee1-1ae5-deea" sortIndex="1">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6a18-4c51-a83c-5554"/>
+                    <constraint type="max" value="1" field="selections" scope="a60-a56e-1b19-1969" shared="true" id="b8bd-d0b5-c0b9-f9bb" includeChildSelections="true"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="6"/>
+                  </costs>
+                  <infoLinks>
+                    <infoLink name="Champion" id="d5c5-a5d1-dafa-fcca" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
+                  </infoLinks>
+                  <categoryLinks>
+                    <categoryLink name="CHAMPION" hidden="false" id="c3f2-183c-96b6-11fa" targetId="83a1-945c-564c-84af" primary="false"/>
+                    <categoryLink name="Monstrous Infantry" hidden="false" id="72da-6e7a-6b80-e9d5" targetId="5c55-f9d6-b181-92f8" primary="false"/>
+                    <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="2ec6-f0d7-2370-53d4" targetId="may-have-armour"/>
+                    <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="2177-c8cc-ab03-deb5" targetId="may-have-shield"/>
+                  </categoryLinks>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Items" hidden="false" id="ddf4-3b64-c593-7dc0" type="selectionEntryGroup" targetId="1539-fd78-88f-badd" sortIndex="2">
+                      <constraints>
+                        <constraint type="max" value="25" field="points" scope="parent" shared="false" id="836f-cd71-2207-9623"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink import="true" name="Chaos Mutations" hidden="false" id="f191-9ada-d482-6797" type="selectionEntryGroup" targetId="6c4d-40ba-4d01-74b3" sortIndex="1">
+                      <constraints>
+                        <constraint type="max" value="25" field="points" scope="parent" shared="false" id="36fb-3058-8d81-5bf1"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                  <comment>model: Minotaur</comment>
+                </selectionEntry>
+              </selectionEntries>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9604-63bc-30c9-7e9e"/>
+              </constraints>
+            </selectionEntryGroup>
           </selectionEntryGroups>
           <infoLinks>
-            <infoLink name="Minotaur" hidden="false" type="profile" id="8a0c-f434-c321-4b58" targetId="1f49-8739-a20a-9a70"/>
+            <infoLink name="Minotaur" hidden="false" type="profile" id="8a0c-f434-c321-4b58" targetId="1f49-8739-a20a-9a70">
+              <modifiers>
+                <modifier type="set" value="Bloodkine" field="name">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="6e56-bee1-1ae5-deea" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="6e56-bee1-1ae5-deea" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base (50x50)" hidden="false" type="profile" id="bc31-ecc6-e5f3-8196" targetId="7813-4d15-143d-1bf1"/>
           </infoLinks>
           <costs>
             <cost name="pts" typeId="points" value="47"/>
           </costs>
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="f43e-b78b-486f-b214" sortIndex="1">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4bb5-bb7b-7166-a163"/>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="bf0a-7e04-75f0-c7df"/>
-              </constraints>
-              <infoLinks>
-                <infoLink name="Hand Weapon" hidden="false" type="profile" id="defb-8685-60ed-d5a8" targetId="6d4a-7733-d725-a267"/>
-              </infoLinks>
-            </selectionEntry>
-          </selectionEntries>
-          <modifiers>
-            <modifier type="decrement" value="1" field="5750-284b-a3a6-5a08">
-              <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="a60-a56e-1b19-1969" childId="1efb-1fa8-d5a7-d367" shared="true" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="decrement" value="1" field="5750-284b-a3a6-5a08">
-              <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="a60-a56e-1b19-1969" childId="9315-949a-d11b-54c2" shared="true" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="decrement" value="1" field="5750-284b-a3a6-5a08">
-              <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="a60-a56e-1b19-1969" childId="ca3c-212c-d2b2-4494" shared="true" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <categoryLinks>
             <categoryLink name="Monstrous Infantry" hidden="false" id="ca69-76f3-9789-422f" targetId="5c55-f9d6-b181-92f8" primary="false"/>
             <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="3254-bc5a-b140-538d" targetId="may-have-armour"/>
@@ -2230,222 +2300,6 @@ When they do so, they may select instead the signature spell of their chose Lore
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="4adc-3a25-daeb-e70f" sortIndex="2">
-          <selectionEntries>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="ca3c-212c-d2b2-4494" sortIndex="2">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3e92-87d9-3234-c27c"/>
-              </constraints>
-              <costs>
-                <cost name="pts" typeId="points" value="53"/>
-              </costs>
-              <infoLinks>
-                <infoLink name="Standard Bearer" hidden="false" type="profile" id="43de-ed37-1bb4-f819" targetId="bcf8-d942-102e-b155"/>
-                <infoLink name="Base (50x50)" hidden="false" type="profile" id="6ca4-f990-e1ce-2262" targetId="7813-4d15-143d-1bf1"/>
-                <infoLink name="Minotaur" hidden="false" type="profile" id="6cf4-9761-73e9-1ca2" targetId="1f49-8739-a20a-9a70">
-                  <modifiers>
-                    <modifier type="set" value="Standard Bearer (Minotaur)" field="name"/>
-                  </modifiers>
-                </infoLink>
-              </infoLinks>
-              <entryLinks>
-                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="6ae2-6dc4-1138-6a2d" targetId="6bbe-8054-19b7-e5d6" sortIndex="5">
-                  <constraints>
-                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="55d9-dd11-6f26-5410"/>
-                  </constraints>
-                </entryLink>
-                <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="507-51c1-7596-3a04" targetId="6192-f9f1-5d53-2042" sortIndex="3">
-                  <costs>
-                    <cost name="pts" typeId="points" value="2"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Light Armour" hidden="false" type="selectionEntry" id="35c7-80c4-ff20-ebcf" targetId="7cab-40e6-f134-de78" sortIndex="2">
-                  <constraints>
-                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a79-9297-bb7f-c6fb"/>
-                  </constraints>
-                </entryLink>
-              </entryLinks>
-              <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="1680-1fa4-9388-e34d" sortIndex="1">
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cd50-d09f-2669-2d8e"/>
-                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="58fb-9a3f-8547-6583"/>
-                  </constraints>
-                  <infoLinks>
-                    <infoLink name="Hand Weapon" hidden="false" type="profile" id="597a-bee4-7c88-5de9" targetId="6d4a-7733-d725-a267"/>
-                  </infoLinks>
-                </selectionEntry>
-              </selectionEntries>
-              <selectionEntryGroups>
-                <selectionEntryGroup name="Equipment" hidden="false" id="2508-16a-ea40-649d" sortIndex="4">
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="524a-19c5-6d5a-8287"/>
-                  </constraints>
-                  <entryLinks>
-                    <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="f538-c1d6-2c2f-5a50" targetId="8943-3e16-db2a-b7f3" sortIndex="1">
-                      <costs>
-                        <cost name="pts" typeId="points" value="3"/>
-                      </costs>
-                    </entryLink>
-                    <entryLink import="true" name="Great Weapon" hidden="false" type="selectionEntry" id="95b9-bccd-d699-f85e" targetId="2283-26e9-76c3-6048" sortIndex="2">
-                      <costs>
-                        <cost name="pts" typeId="points" value="4"/>
-                      </costs>
-                    </entryLink>
-                  </entryLinks>
-                </selectionEntryGroup>
-              </selectionEntryGroups>
-              <comment>model: Minotaur</comment>
-              <categoryLinks>
-                <categoryLink name="Monstrous Infantry" hidden="false" id="8a99-e71d-5f6e-b0bd" targetId="5c55-f9d6-b181-92f8" primary="false"/>
-                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="d543-659e-82ea-fc88" targetId="may-have-armour"/>
-                <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="e409-f34a-268b-115d" targetId="may-have-shield"/>
-              </categoryLinks>
-            </selectionEntry>
-            <selectionEntry type="model" import="true" name="Musician" hidden="false" id="9315-949a-d11b-54c2" sortIndex="3">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1f4f-74a8-1647-6d23"/>
-              </constraints>
-              <costs>
-                <cost name="pts" typeId="points" value="53"/>
-              </costs>
-              <infoLinks>
-                <infoLink name="Musician" hidden="false" type="profile" id="1252-40d3-32f8-1118" targetId="40f2-dd77-f0ca-3663"/>
-                <infoLink name="Base (50x50)" hidden="false" type="profile" id="ebe3-ed92-f496-eeac" targetId="7813-4d15-143d-1bf1"/>
-                <infoLink name="Minotaur" hidden="false" type="profile" id="aff5-2ef4-32ea-f614" targetId="1f49-8739-a20a-9a70">
-                  <modifiers>
-                    <modifier type="set" value="Musician (Minotaur)" field="name"/>
-                  </modifiers>
-                </infoLink>
-              </infoLinks>
-              <entryLinks>
-                <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="bea1-7edc-bfb2-e155" targetId="6192-f9f1-5d53-2042" sortIndex="3">
-                  <costs>
-                    <cost name="pts" typeId="points" value="2"/>
-                  </costs>
-                </entryLink>
-                <entryLink import="true" name="Light Armour" hidden="false" type="selectionEntry" id="38d3-6f30-a74f-ef1b" targetId="7cab-40e6-f134-de78" sortIndex="2">
-                  <constraints>
-                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a039-222a-50d7-c6fd"/>
-                  </constraints>
-                </entryLink>
-              </entryLinks>
-              <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="6204-1e47-632-b6c6" sortIndex="1">
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cbd5-bed2-341c-7e2d"/>
-                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6c36-f3e7-77b5-5f94"/>
-                  </constraints>
-                  <infoLinks>
-                    <infoLink name="Hand Weapon" hidden="false" type="profile" id="509-3989-7490-bd45" targetId="6d4a-7733-d725-a267"/>
-                  </infoLinks>
-                </selectionEntry>
-              </selectionEntries>
-              <selectionEntryGroups>
-                <selectionEntryGroup name="Equipment" hidden="false" id="9c0a-a282-4c2-c263" sortIndex="4">
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9e95-561f-54be-b11b"/>
-                  </constraints>
-                  <entryLinks>
-                    <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="9b48-8b86-fcfe-dd32" targetId="8943-3e16-db2a-b7f3" sortIndex="1">
-                      <costs>
-                        <cost name="pts" typeId="points" value="3"/>
-                      </costs>
-                    </entryLink>
-                    <entryLink import="true" name="Great Weapon" hidden="false" type="selectionEntry" id="984b-c057-90c7-d8bd" targetId="2283-26e9-76c3-6048" sortIndex="2">
-                      <costs>
-                        <cost name="pts" typeId="points" value="4"/>
-                      </costs>
-                    </entryLink>
-                  </entryLinks>
-                </selectionEntryGroup>
-              </selectionEntryGroups>
-              <comment>model: Minotaur</comment>
-              <categoryLinks>
-                <categoryLink name="Monstrous Infantry" hidden="false" id="d333-c4d4-7020-1726" targetId="5c55-f9d6-b181-92f8" primary="false"/>
-                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="6ba5-cefc-6d31-779b" targetId="may-have-armour"/>
-                <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="8c5-dd70-ec19-1516" targetId="may-have-shield"/>
-              </categoryLinks>
-            </selectionEntry>
-            <selectionEntry type="model" import="true" name="Bloodkine" hidden="false" id="1efb-1fa8-d5a7-d367" sortIndex="1">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b6eb-72b8-8187-7f59"/>
-              </constraints>
-              <costs>
-                <cost name="pts" typeId="points" value="53"/>
-              </costs>
-              <infoLinks>
-                <infoLink name="Minotaur" hidden="false" type="profile" id="ef9f-f0c4-7ad7-de13" targetId="1f49-8739-a20a-9a70">
-                  <modifiers>
-                    <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
-                    <modifier type="set" value="Bloodkine" field="name"/>
-                  </modifiers>
-                </infoLink>
-                <infoLink name="Champion" hidden="false" type="profile" id="1cda-9055-f57d-27e0" targetId="5f1c-fd04-b0d5-d5e"/>
-                <infoLink name="Base (50x50)" hidden="false" type="profile" id="6946-bc16-147e-b9b2" targetId="7813-4d15-143d-1bf1"/>
-              </infoLinks>
-              <categoryLinks>
-                <categoryLink targetId="83a1-945c-564c-84af" id="c39c-5b8f-dcf9-1ba8" primary="false" name="CHAMPION"/>
-                <categoryLink name="Monstrous Infantry" hidden="false" id="ee0a-f5e9-eb5d-24be" targetId="5c55-f9d6-b181-92f8" primary="false"/>
-                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="5118-a543-7fc9-59f4" targetId="may-have-armour"/>
-                <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="e354-da62-2ff0-470" targetId="may-have-shield"/>
-              </categoryLinks>
-              <entryLinks>
-                <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="62f9-c1cc-63e3-a8e4" targetId="1539-fd78-88f-badd" sortIndex="5">
-                  <constraints>
-                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="eb44-51d5-f72c-c72"/>
-                  </constraints>
-                </entryLink>
-                <entryLink import="true" name="Chaos Mutations" hidden="false" type="selectionEntryGroup" id="8ecb-faa1-2db8-868b" targetId="6c4d-40ba-4d01-74b3" sortIndex="6">
-                  <constraints>
-                    <constraint type="max" value="25" field="points" scope="parent" shared="false" id="3575-15bb-7790-26bc"/>
-                  </constraints>
-                </entryLink>
-                <entryLink import="true" name="Light Armour" hidden="false" type="selectionEntry" id="fa3b-5de7-3bda-804e" targetId="7cab-40e6-f134-de78" sortIndex="2">
-                  <constraints>
-                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c2e1-9d85-3614-f515"/>
-                  </constraints>
-                </entryLink>
-                <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="ad2a-3f0b-d4db-a077" targetId="6192-f9f1-5d53-2042" sortIndex="3">
-                  <costs>
-                    <cost name="pts" typeId="points" value="2"/>
-                  </costs>
-                </entryLink>
-              </entryLinks>
-              <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="10ed-74ee-6112-b644" sortIndex="1">
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f7f1-4e5-3cb2-dfa"/>
-                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b2de-6571-395a-6328"/>
-                  </constraints>
-                  <infoLinks>
-                    <infoLink name="Hand Weapon" hidden="false" type="profile" id="e9d6-6a-376f-4b3a" targetId="6d4a-7733-d725-a267"/>
-                  </infoLinks>
-                </selectionEntry>
-              </selectionEntries>
-              <selectionEntryGroups>
-                <selectionEntryGroup name="Equipment" hidden="false" id="6a72-514-a022-a7df" sortIndex="4">
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5073-c701-9adb-8b48"/>
-                  </constraints>
-                  <entryLinks>
-                    <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="ff96-6dec-7b04-860b" targetId="8943-3e16-db2a-b7f3" sortIndex="1">
-                      <costs>
-                        <cost name="pts" typeId="points" value="3"/>
-                      </costs>
-                    </entryLink>
-                    <entryLink import="true" name="Great Weapon" hidden="false" type="selectionEntry" id="3f3-b686-312c-5a49" targetId="2283-26e9-76c3-6048" sortIndex="2">
-                      <costs>
-                        <cost name="pts" typeId="points" value="4"/>
-                      </costs>
-                    </entryLink>
-                  </entryLinks>
-                </selectionEntryGroup>
-              </selectionEntryGroups>
-              <comment>model: Minotaur</comment>
-            </selectionEntry>
-          </selectionEntries>
-        </selectionEntryGroup>
         <selectionEntryGroup name="Special Rules" hidden="false" id="90fe-9f76-7cde-174e" sortIndex="3">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="b4b6-e07b-3053-17f" collective="false">
@@ -2453,7 +2307,7 @@ When they do so, they may select instead the signature spell of their chose Lore
                 <infoLink name="Ambushers" hidden="false" type="profile" id="6a76-39ca-b799-ba9f" targetId="8c0b-6fe6-dc06-512"/>
               </infoLinks>
               <constraints>
-                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="8d76-759e-caf9-2f6e" includeChildSelections="true"/>
+                <constraint type="max" value="1" field="selections" scope="force" shared="true" id="8d76-759e-caf9-2f6e" includeChildSelections="true"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a9bd-46e0-f19-8649"/>
               </constraints>
               <costs>
@@ -3718,12 +3572,6 @@ When they do so, they may select instead the signature spell of their chose Lore
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="fc40-89fa-7c9a-e1b6" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Ungor Herds" hidden="false" type="selectionEntry" id="bd56-c381-8b71-181c" targetId="55ac-3093-dbc4-5b4d">
-      <categoryLinks>
-        <categoryLink name="Core" hidden="false" id="4f0f-64bc-f59b-964" targetId="f0e3-2e32-8866-ea32" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="9de1-79c4-0e9c-4cf3" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-    </entryLink>
     <entryLink import="true" name="Harpies" hidden="false" type="selectionEntry" id="fcbe-ba8c-234a-3eab" targetId="de54-b440-ee4f-246">
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="2da1-e266-bfee-931c" targetId="633f-f67a-1b6a-d203" primary="true"/>
@@ -4017,4 +3865,60 @@ When they do so, they may select instead the signature spell of their chose Lore
     <catalogueLink type="catalogue" name="Chaos Library" id="fe4b-32e-8b30-bfd4" targetId="a4ff-b11e-14a0-4bcf"/>
     <catalogueLink type="catalogue" name="Mercenaries" id="d3e8-b51e-c723-5f3" targetId="12a0-32cd-11d6-f952" importRootEntries="true"/>
   </catalogueLinks>
+  <selectionEntries>
+    <selectionEntry type="upgrade" import="true" name="Unique Choice" hidden="false" id="61fe-317e-5c70-c593">
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Faction" id="61ab-744c-c5f6-0f3b" hidden="false" defaultSelectionEntryId="none">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="A" hidden="false" id="d1cb-6c43-908e-9ec5">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4aef-4afd-3125-286b" includeChildSelections="false"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="acd2-deab-e787-0ecd" includeChildSelections="false" automatic="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="1" field="acd2-deab-e787-0ecd">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="roster" childId="d1cb-6c43-908e-9ec5" shared="true" includeChildSelections="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="d1cb-6c43-908e-9ec5" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="B" hidden="false" id="dc1c-0765-2636-0a19">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5980-9e9a-18d9-b7c6" includeChildSelections="false"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="f6b8-c0b7-048f-e940" includeChildSelections="false" automatic="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="1" field="f6b8-c0b7-048f-e940">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="roster" childId="dc1c-0765-2636-0a19" shared="true" includeChildSelections="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="dc1c-0765-2636-0a19" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="C" hidden="false" id="a589-f54d-6ac2-48f0">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="83f9-98a8-73b2-4912" includeChildSelections="false"/>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="1f74-3164-c25b-8d45" includeChildSelections="false" automatic="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="1" field="1f74-3164-c25b-8d45">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="roster" childId="a589-f54d-6ac2-48f0" shared="true" includeChildSelections="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="a589-f54d-6ac2-48f0" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8502-504b-831c-e61e" includeChildSelections="false" automatic="true"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1f9d-7b4f-2572-0a4e" includeChildSelections="false"/>
+          </constraints>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+    </selectionEntry>
+  </selectionEntries>
 </catalogue>
