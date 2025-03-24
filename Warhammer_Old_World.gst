@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="139" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="140" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -123,6 +123,7 @@
     <categoryEntry name="Outrider Non-Ponderous" id="71d6-3c4f-f6e3-819d" hidden="true"/>
     <categoryEntry name="Faction: High Elf Realms - Chracian Warhost" id="79c5-dc15-19d1-9fb1" hidden="true"/>
     <categoryEntry name="Faction: High Elf Realms - Sea Guard Garrison" id="0caf-45de-6e99-3bb9" hidden="true"/>
+    <categoryEntry name="Order of the Knights Panther Battle Standard Bearer" id="cbc0-f22f-0315-0d56" hidden="true"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
