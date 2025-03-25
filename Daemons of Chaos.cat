@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="ec01-a361-b3bf-78ac" name="Daemons of Chaos" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="83" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="ec01-a361-b3bf-78ac" name="Daemons of Chaos" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="84" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
   <sharedProfiles>
     <profile name="Bloodthirster" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="2304-f7d1-ef2a-eb19">
       <characteristics>
@@ -748,7 +748,26 @@ In addition, all Daemonic models have the following universal special rules:
 • Immune to Psychology
 • Magical Attacks
 • Unbreakable
-• Warp-spawned A character with this special rule cannot join a unit without this special rule, and vice versa.    </profile>
+• Warp-spawned A character with this special rule cannot join a unit without this special rule, and vice versa.      <modifiers>
+        <modifier type="set" value="Models with this special rule are ‘Daemonic’.
+All Daemonic models have a 5+ Ward save against any wounds suffered.
+In addition, all Daemonic models have the following universal special rules:
+• Daemonic Instability
+• Fear
+• Immune to Psychology
+• Magical Attacks
+• Unbreakable
+• Warp-spawned
+A character with this special rule cannot join a unit without this special rule, and vice versa." field="9f84-4221-785a-db50">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+    </profile>
     <profile name="Daemonic Instability" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="331a-503d-1adf-5622">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">If a unit with this special rule loses a round of combat, it must make a Leadership test (before it Gives Ground) with a +1 modifier to the result for every combat result point by which it lost:
@@ -1320,8 +1339,30 @@ Flaming Attacks, Multiple Shots (2), Quick Shot        </profile>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Cannon of Khorne" hidden="false" id="b7c4-31a8-4299-ce7b" collective="true">
       <infoLinks>
-        <infoLink name="Cannon of Khorne -  Scatter shot" hidden="false" id="8f05-92f1-7886-b05" type="profile" targetId="7cd6-d329-ea50-6d9a"/>
-        <infoLink name="Cannon of Khorne -  Solid shot" hidden="false" id="a1bb-e82b-ee2c-cd86" type="profile" targetId="f0f4-6d93-2765-627c"/>
+        <infoLink name="Cannon of Khorne -  Scatter shot" hidden="false" id="8f05-92f1-7886-b05" type="profile" targetId="7cd6-d329-ea50-6d9a">
+          <modifiers>
+            <modifier type="append" value="This weapon does not have 360° line of sight, it can only shoot into the Skull Cannon of Khorne&apos;s front arc." field="772a-a7ff-f6b3-df71">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+              <comment>Renegades</comment>
+            </modifier>
+          </modifiers>
+        </infoLink>
+        <infoLink name="Cannon of Khorne -  Solid shot" hidden="false" id="a1bb-e82b-ee2c-cd86" type="profile" targetId="f0f4-6d93-2765-627c">
+          <modifiers>
+            <modifier type="append" value="This weapon does not have 360° line of sight, it can only shoot into the Skull Cannon of Khorne&apos;s front arc." field="772a-a7ff-f6b3-df71">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+              <comment>Renegades</comment>
+            </modifier>
+          </modifiers>
+        </infoLink>
       </infoLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Bloodflail" hidden="false" id="71e1e54f-831bf7dd" collective="true">
@@ -1520,7 +1561,7 @@ Flaming Attacks, Multiple Shots (2), Quick Shot        </profile>
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="157e0d21-b5333ef7/Bloodthirster" type="profile" targetId="755a-790d-9ba0-fdd5"/>
             <infoLink name="Daemonic Charge" hidden="false" id="b4a6c1d9-584b682f/Bloodthirster" type="profile" targetId="c883-e46f-ba0f-c6be"/>
-            <infoLink name="Daemon Of Khorne" hidden="false" id="558931f-b2b89ad/Bloodthirster" type="profile" targetId="5683-c92c-2137-7db0"/>
+            <infoLink name="Daemon of Khorne" hidden="false" id="558931f-b2b89ad/Bloodthirster" type="profile" targetId="5683-c92c-2137-7db0"/>
             <infoLink name="Fly" hidden="false" id="a12c1658-b7d0d5c2/Bloodthirster" type="profile" targetId="c557-6102-9a35-bbcd">
               <modifiers>
                 <modifier type="append" value="(10)" field="name"/>
@@ -1545,6 +1586,19 @@ Flaming Attacks, Multiple Shots (2), Quick Shot        </profile>
               </modifiers>
             </infoLink>
             <infoLink name="Terror" hidden="false" id="f37fa2f1-942bfbc7/Bloodthirster" type="profile" targetId="c7a2-35bf-4313-f4f0"/>
+            <infoLink name="Close Order" id="a95a-00b6-1869-ad92" hidden="true" type="profile" targetId="883e-e1b1-4fe9-5912">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
+              </modifiers>
+              <comment>Renegades</comment>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -1662,7 +1716,7 @@ Heavy infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="fe67506-1a0cc90/Herald of Khorne">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="14c61755-6fa95b4b/Herald of Khorne" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Khorne" hidden="false" id="9fd36923-5b464d51/Herald of Khorne" type="profile" targetId="5683-c92c-2137-7db0"/>
+            <infoLink name="Daemon of Khorne" hidden="false" id="9fd36923-5b464d51/Herald of Khorne" type="profile" targetId="5683-c92c-2137-7db0"/>
             <infoLink name="Furious Charge" hidden="false" id="ca929f8a-155a44b4/Herald of Khorne" type="profile" targetId="eaca-69a2-8b6a-81c6">
               <modifiers>
                 <modifier type="set" value="does not apply to this model&apos;s mount should it have one" field="annotation">
@@ -1715,7 +1769,7 @@ Heavy infantry (character)        </profile>
               </modifiers>
             </infoLink>
             <infoLink name="Daemonic" hidden="false" id="eea0bb43-5d860c71" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Khorne" hidden="false" id="7141aebb-32e64649" type="profile" targetId="5683-c92c-2137-7db0"/>
+            <infoLink name="Daemon of Khorne" hidden="false" id="7141aebb-32e64649" type="profile" targetId="5683-c92c-2137-7db0"/>
             <infoLink name="First Charge" hidden="false" id="aabb122d-29f67de3" type="profile" targetId="785a-2886-af42-dce9"/>
             <infoLink name="Impact Hits" hidden="false" id="18685e08-f96fecb2" type="profile" targetId="5c2-e9dd-2715-a0c0">
               <modifiers>
@@ -1879,7 +1933,7 @@ Heavy infantry (character)        </profile>
           <infoLinks>
             <infoLink name="Close Order" hidden="false" id="4097163a-1c5bd24" type="profile" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Daemonic" hidden="false" id="c335166e-4329ed78" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Khorne" hidden="false" id="b33d559f-7ad6382d" type="profile" targetId="5683-c92c-2137-7db0"/>
+            <infoLink name="Daemon of Khorne" hidden="false" id="b33d559f-7ad6382d" type="profile" targetId="5683-c92c-2137-7db0"/>
             <infoLink name="Impetuous" hidden="false" id="2534ec1d-4defa1d3" type="profile" targetId="b664-8530-a988-7ba9"/>
             <infoLink name="Magic Resistance" hidden="false" id="629d2f53-752fec01" type="profile" targetId="90ed-c9be-a611-79cc">
               <modifiers>
@@ -1967,12 +2021,25 @@ Heavy infantry (character)        </profile>
             <infoLink name="Close Order" hidden="false" id="c2df13e-d0c7fe88" type="profile" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Counter Charge" hidden="false" id="9b6c1d42-802c550c" type="profile" targetId="5186-798d-69d-6545"/>
             <infoLink name="Daemonic" hidden="false" id="a4d6be6-e3e842f0" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Khorne" hidden="false" id="304e8407-26e33c55" type="profile" targetId="5683-c92c-2137-7db0"/>
+            <infoLink name="Daemon of Khorne" hidden="false" id="304e8407-26e33c55" type="profile" targetId="5683-c92c-2137-7db0"/>
             <infoLink name="Impetuous" hidden="false" id="3429e555-a97eb94b" type="profile" targetId="b664-8530-a988-7ba9"/>
             <infoLink name="Magic Resistance" hidden="false" id="17e5e550-f4f36a9a" type="profile" targetId="90ed-c9be-a611-79cc">
               <modifiers>
                 <modifier type="append" value="(-2)" field="name"/>
               </modifiers>
+            </infoLink>
+            <infoLink name="Swiftstride" id="fbf4-750b-b274-4b8c" hidden="true" type="profile" targetId="dc91-48b3-3696-217">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
+              </modifiers>
+              <comment>Renegades</comment>
             </infoLink>
           </infoLinks>
         </infoGroup>
@@ -2119,7 +2186,7 @@ Heavy infantry (character)        </profile>
             </infoLink>
             <infoLink name="Close Order" hidden="false" id="b10dfdac-4b5820f6" type="profile" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Daemonic" hidden="false" id="c3c684dc-a0d05ee6" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Khorne" hidden="false" id="5e959d00-be261a4a" type="profile" targetId="5683-c92c-2137-7db0"/>
+            <infoLink name="Daemon of Khorne" hidden="false" id="5e959d00-be261a4a" type="profile" targetId="5683-c92c-2137-7db0"/>
             <infoLink name="Impact Hits" hidden="false" id="bad84f79-86f4c0cf" type="profile" targetId="5c2-e9dd-2715-a0c0">
               <modifiers>
                 <modifier type="append" value="(2)" field="name"/>
@@ -2179,7 +2246,7 @@ Heavy infantry (character)        </profile>
           <infoLinks>
             <infoLink name="Close Order" hidden="false" id="33688c61-4f4fc437" type="profile" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Daemonic" hidden="false" id="8bf32545-ecacb23b" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Khorne" hidden="false" id="76b75de9-e32bd2bf" type="profile" targetId="5683-c92c-2137-7db0"/>
+            <infoLink name="Daemon of Khorne" hidden="false" id="76b75de9-e32bd2bf" type="profile" targetId="5683-c92c-2137-7db0"/>
             <infoLink name="First Charge" hidden="false" id="9c2529b3-ed93fd61" type="profile" targetId="785a-2886-af42-dce9"/>
             <infoLink name="Gorefeast" hidden="false" id="4a4d0e11-b5beb367" type="profile" targetId="6147-fbe4-65ce-b1aa"/>
             <infoLink name="Impact Hits" hidden="false" id="e58cca0c-f54b3656" type="profile" targetId="5c2-e9dd-2715-a0c0">
@@ -2368,7 +2435,7 @@ Heavy infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="74d0ae52-6a9f739c/Great Unclean One">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="bf387e1-88a6e3b7/Great Unclean One" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Nurgle" hidden="false" id="42802d4d-5dca3783/Great Unclean One" type="profile" targetId="5bc7-74c0-b56a-457d"/>
+            <infoLink name="Daemon of Nurgle" hidden="false" id="42802d4d-5dca3783/Great Unclean One" type="profile" targetId="5bc7-74c0-b56a-457d"/>
             <infoLink name="Infernal Favour" hidden="false" id="4bfe6ebc-3b8cc546/Great Unclean One" type="profile" targetId="e054-df59-ce35-eff8">
               <modifiers>
                 <modifier type="append" value="(2)" field="name"/>
@@ -2388,6 +2455,19 @@ Heavy infantry (character)        </profile>
               </modifiers>
             </infoLink>
             <infoLink name="Terror" hidden="false" id="5344f931-c494a007/Great Unclean One" type="profile" targetId="c7a2-35bf-4313-f4f0"/>
+            <infoLink name="Close Order" id="af6b-1b62-d32b-54cc" hidden="true" type="profile" targetId="883e-e1b1-4fe9-5912">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
+              </modifiers>
+              <comment>Renegades</comment>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -2545,7 +2625,7 @@ Regular infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="2dc99a84-11bb5c4e/Herald of Nurgle">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="7dc634ef-9fd2cbfd/Herald of Nurgle" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Nurgle" hidden="false" id="1ee86cf7-47a645c5/Herald of Nurgle" type="profile" targetId="5bc7-74c0-b56a-457d"/>
+            <infoLink name="Daemon of Nurgle" hidden="false" id="1ee86cf7-47a645c5/Herald of Nurgle" type="profile" targetId="5bc7-74c0-b56a-457d"/>
             <infoLink name="Infernal Favour" hidden="false" id="69e861-91664037/Herald of Nurgle" type="profile" targetId="e054-df59-ce35-eff8">
               <modifiers>
                 <modifier type="append" value="(1)" field="name"/>
@@ -2580,7 +2660,7 @@ Regular infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="1be1aebb-88864649">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="b0d449ac-a28c0cf6" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Nurgle" hidden="false" id="a178f2f2-8c98efbc" type="profile" targetId="5bc7-74c0-b56a-457d"/>
+            <infoLink name="Daemon of Nurgle" hidden="false" id="a178f2f2-8c98efbc" type="profile" targetId="5bc7-74c0-b56a-457d"/>
             <infoLink name="Poisoned Attacks" hidden="false" id="fb77e048-9715cf2" type="profile" targetId="81f5-4895-4abc-fc39"/>
             <infoLink name="Random Attacks" hidden="false" id="45390f52-abccc9c" type="profile" targetId="1b08-4621-6379-ff1f"/>
           </infoLinks>
@@ -2719,7 +2799,7 @@ Regular infantry (character)        </profile>
           <infoLinks>
             <infoLink name="Close Order" hidden="false" id="6a2bccb3-d84d8861" type="profile" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Daemonic" hidden="false" id="d253c423-88ebd051" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Nurgle" hidden="false" id="a16f4742-58c62f0c" type="profile" targetId="5bc7-74c0-b56a-457d"/>
+            <infoLink name="Daemon of Nurgle" hidden="false" id="a16f4742-58c62f0c" type="profile" targetId="5bc7-74c0-b56a-457d"/>
             <infoLink name="Poisoned Attacks" hidden="false" id="2400143-5dfb2271" type="profile" targetId="81f5-4895-4abc-fc39"/>
             <infoLink name="Regeneration" hidden="false" id="5c9f29c6-db6ddb50" type="profile" targetId="2eb0-1ec8-8e04-72d4">
               <modifiers>
@@ -2780,7 +2860,7 @@ Regular infantry (character)        </profile>
             <infoLink name="Attention Seeker" hidden="false" id="1b8c3b7a-df67b864" type="profile" targetId="e74d-de46-99dc-cf8e"/>
             <infoLink name="Close Order" hidden="false" id="17248c0f-ed93689d" type="profile" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Daemonic" hidden="false" id="d3cec4f9-9d8b8a4f" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Nurgle" hidden="false" id="705a6f90-56f1a2da" type="profile" targetId="5bc7-74c0-b56a-457d"/>
+            <infoLink name="Daemon of Nurgle" hidden="false" id="705a6f90-56f1a2da" type="profile" targetId="5bc7-74c0-b56a-457d"/>
             <infoLink name="Impetuous" hidden="false" id="11a30890-f2d73da" type="profile" targetId="b664-8530-a988-7ba9"/>
             <infoLink name="Infernal Favour" hidden="false" id="722d4421-2cb0bdf7" type="profile" targetId="e054-df59-ce35-eff8">
               <modifiers>
@@ -2842,7 +2922,7 @@ Regular infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="c655217d-8df870b3">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="8a06538a-b39058b4" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Nurgle" hidden="false" id="74a91c35-5ddf3b2b" type="profile" targetId="5bc7-74c0-b56a-457d"/>
+            <infoLink name="Daemon of Nurgle" hidden="false" id="74a91c35-5ddf3b2b" type="profile" targetId="5bc7-74c0-b56a-457d"/>
             <infoLink name="Loner" hidden="false" id="cec21cc-6171d016" type="profile" targetId="2ecd-c6b3-bd8b-864b"/>
             <infoLink name="Poisoned Attacks" hidden="false" id="3b4e794a-47e95074" type="profile" targetId="81f5-4895-4abc-fc39"/>
             <infoLink name="Random Attacks" hidden="false" id="8b515ee8-5bd9e692" type="profile" targetId="1b08-4621-6379-ff1f"/>
@@ -2852,6 +2932,19 @@ Regular infantry (character)        </profile>
               </modifiers>
             </infoLink>
             <infoLink name="Skirmishers" hidden="false" id="4404f60e-2f8ee618" type="profile" targetId="59a5-7eca-ee35-96ac"/>
+            <infoLink name="Scouts" id="bad9-529e-39d1-3564" hidden="true" type="profile" targetId="fe5e-8838-7fbd-a7ec">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
+              </modifiers>
+              <comment>Renegades</comment>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3033,7 +3126,7 @@ Regular infantry (character)        </profile>
               </modifiers>
             </infoLink>
             <infoLink name="Daemonic" hidden="false" id="ac08de4a-4da88d74" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Nurgle" hidden="false" id="bbe20d29-890707ff" type="profile" targetId="5bc7-74c0-b56a-457d"/>
+            <infoLink name="Daemon of Nurgle" hidden="false" id="bbe20d29-890707ff" type="profile" targetId="5bc7-74c0-b56a-457d"/>
             <infoLink name="Fly" hidden="false" id="3af3d59d-2f6b3f53" type="profile" targetId="c557-6102-9a35-bbcd">
               <modifiers>
                 <modifier type="append" value="(9)" field="name"/>
@@ -3159,7 +3252,7 @@ Regular infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="fb1eb5f-9d781fed/Keeper of Secrets">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="edc80f70-6dc4f33a/Keeper of Secrets" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Slaanesh" hidden="false" id="3d491930-7f6faefa/Keeper of Secrets" type="profile" targetId="3341-9239-4961-e8ce"/>
+            <infoLink name="Daemon of Slaanesh" hidden="false" id="3d491930-7f6faefa/Keeper of Secrets" type="profile" targetId="3341-9239-4961-e8ce"/>
             <infoLink name="Infernal Favour" hidden="false" id="244fbafd-b8523e33/Keeper of Secrets" type="profile" targetId="e054-df59-ce35-eff8">
               <modifiers>
                 <modifier type="append" value="(2)" field="name"/>
@@ -3174,6 +3267,19 @@ Regular infantry (character)        </profile>
             </infoLink>
             <infoLink name="Swiftstride" hidden="false" id="9de5db62-1956aaac/Keeper of Secrets" type="profile" targetId="dc91-48b3-3696-217"/>
             <infoLink name="Terror" hidden="false" id="6931600e-64080018/Keeper of Secrets" type="profile" targetId="c7a2-35bf-4313-f4f0"/>
+            <infoLink name="Close Order" id="8286-588a-5ce6-7b65" hidden="true" type="profile" targetId="883e-e1b1-4fe9-5912">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
+              </modifiers>
+              <comment>Renegades</comment>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3329,7 +3435,7 @@ Regular infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="f737ab66-6c848670/Herald of Slaanesh">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="c84729b5-ad20dcab/Herald of Slaanesh" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Slaanesh" hidden="false" id="cf97b393-13b44e41/Herald of Slaanesh" type="profile" targetId="3341-9239-4961-e8ce"/>
+            <infoLink name="Daemon of Slaanesh" hidden="false" id="cf97b393-13b44e41/Herald of Slaanesh" type="profile" targetId="3341-9239-4961-e8ce"/>
             <infoLink name="Infernal Favour" hidden="false" id="39c673b-57a73ac9/Herald of Slaanesh" type="profile" targetId="e054-df59-ce35-eff8">
               <modifiers>
                 <modifier type="append" value="(1)" field="name"/>
@@ -3364,7 +3470,7 @@ Regular infantry (character)        </profile>
             </infoLink>
             <infoLink name="Counter Charge" hidden="false" id="dc1e82da-b0bb8cc4" type="profile" targetId="5186-798d-69d-6545"/>
             <infoLink name="Daemonic" hidden="false" id="2ba74e0e-575e7e18" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Slaanesh" hidden="false" id="7d0a11ee-37b0cf8" type="profile" targetId="3341-9239-4961-e8ce"/>
+            <infoLink name="Daemon of Slaanesh" hidden="false" id="7d0a11ee-37b0cf8" type="profile" targetId="3341-9239-4961-e8ce"/>
             <infoLink name="Fast Cavalry" hidden="false" id="f4fa9ec6-2345a850" type="profile" targetId="df-a39-e62-1c57"/>
             <infoLink name="Poisoned Attacks" hidden="false" id="fca4b4-890797be" type="profile" targetId="81f5-4895-4abc-fc39">
               <modifiers>
@@ -3501,7 +3607,7 @@ Regular infantry (character)        </profile>
           <infoLinks>
             <infoLink name="Close Order" hidden="false" id="cc8bc52a-e5ac73d4" type="profile" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Daemonic" hidden="false" id="5e3aa93e-fcaef688" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Slaanesh" hidden="false" id="7637b0cf-1367675d" type="profile" targetId="3341-9239-4961-e8ce"/>
+            <infoLink name="Daemon of Slaanesh" hidden="false" id="7637b0cf-1367675d" type="profile" targetId="3341-9239-4961-e8ce"/>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3646,7 +3752,7 @@ Regular infantry (character)        </profile>
             </infoLink>
             <infoLink name="Counter Charge" hidden="false" id="b6469e65-6990f35b" type="profile" targetId="5186-798d-69d-6545"/>
             <infoLink name="Daemonic" hidden="false" id="23cd74c5-a83885bb" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Slaanesh" hidden="false" id="89c6443d-594a7d73" type="profile" targetId="3341-9239-4961-e8ce"/>
+            <infoLink name="Daemon of Slaanesh" hidden="false" id="89c6443d-594a7d73" type="profile" targetId="3341-9239-4961-e8ce"/>
             <infoLink name="Fast Cavalry" hidden="false" id="26e22cbd-494321f3" type="profile" targetId="df-a39-e62-1c57"/>
             <infoLink name="Open Order" hidden="false" id="fca4fe9d-204b2053" type="profile" targetId="5b67-8535-146c-7cea"/>
             <infoLink name="Poisoned Attacks" hidden="false" id="37daa6bd-aa7cbf3" type="profile" targetId="81f5-4895-4abc-fc39">
@@ -3708,7 +3814,7 @@ Regular infantry (character)        </profile>
           <infoLinks>
             <infoLink name="Close Order" hidden="false" id="867eac4c-11c0696" type="profile" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Daemonic" hidden="false" id="be1eaaac-887b65f6" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Slaanesh" hidden="false" id="48b1753d-3d542673" type="profile" targetId="3341-9239-4961-e8ce"/>
+            <infoLink name="Daemon of Slaanesh" hidden="false" id="48b1753d-3d542673" type="profile" targetId="3341-9239-4961-e8ce"/>
             <infoLink name="Soporific Musk" hidden="false" id="4247e3c-370658c6" type="profile" targetId="591b-9c1d-b844-166f"/>
             <infoLink name="Swiftstride" hidden="false" id="b1f2b0b6-d2ca580" type="profile" targetId="dc91-48b3-3696-217"/>
           </infoLinks>
@@ -3898,7 +4004,7 @@ Regular infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="eb9e104d-10e10283/Lord of Change">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="229eb87a-17fe4d64/Lord of Change" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Tzeentch" hidden="false" id="d3fadec-6dfa4f36/Lord of Change" type="profile" targetId="e96e-7433-355b-34bc"/>
+            <infoLink name="Daemon of Tzeentch" hidden="false" id="d3fadec-6dfa4f36/Lord of Change" type="profile" targetId="e96e-7433-355b-34bc"/>
             <infoLink name="Flaming Attacks" hidden="false" id="aab243cb-a3c9dd99/Lord of Change" type="profile" targetId="e45d-952-f679-ae2c"/>
             <infoLink name="Fly" hidden="false" id="c4070449-1e12201f/Lord of Change" type="profile" targetId="c557-6102-9a35-bbcd">
               <modifiers>
@@ -3919,6 +4025,19 @@ Regular infantry (character)        </profile>
             </infoLink>
             <infoLink name="Swiftstride" hidden="false" id="aa039f2c-1094b676/Lord of Change" type="profile" targetId="dc91-48b3-3696-217"/>
             <infoLink name="Terror" hidden="false" id="776e38d0-229d221a/Lord of Change" type="profile" targetId="c7a2-35bf-4313-f4f0"/>
+            <infoLink name="Close Order" id="b211-d057-5803-c32c" hidden="true" type="profile" targetId="883e-e1b1-4fe9-5912">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
+              </modifiers>
+              <comment>Renegades</comment>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -4090,7 +4209,7 @@ Regular infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="ae54834-eb8f1f3e/Herald of Tzeentch">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="104541ff-a7741e0d/Herald of Tzeentch" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Tzeentch" hidden="false" id="c43f47ff-ef6df40d/Herald of Tzeentch" type="profile" targetId="e96e-7433-355b-34bc"/>
+            <infoLink name="Daemon of Tzeentch" hidden="false" id="c43f47ff-ef6df40d/Herald of Tzeentch" type="profile" targetId="e96e-7433-355b-34bc"/>
             <infoLink name="Infernal Favour" hidden="false" id="e7476491-a73255e7/Herald of Tzeentch" type="profile" targetId="e054-df59-ce35-eff8">
               <modifiers>
                 <modifier type="append" value="(1)" field="name"/>
@@ -4119,7 +4238,7 @@ Regular infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="c4d4ed4b-c88b3b19">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="2d8c319c-9782a5a6" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Tzeentch" hidden="false" id="cb9ea9c2-cd667d8c" type="profile" targetId="e96e-7433-355b-34bc"/>
+            <infoLink name="Daemon of Tzeentch" hidden="false" id="cb9ea9c2-cd667d8c" type="profile" targetId="e96e-7433-355b-34bc"/>
             <infoLink name="Fly" hidden="false" id="9b61cb0b-2432ad9" type="profile" targetId="c557-6102-9a35-bbcd">
               <modifiers>
                 <modifier type="append" value="(10)" field="name"/>
@@ -4341,9 +4460,22 @@ Regular infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="c967d347-cc381195">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="f64be8c8-68612172" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Tzeentch" hidden="false" id="11097657-8a2254a5" type="profile" targetId="e96e-7433-355b-34bc"/>
+            <infoLink name="Daemon of Tzeentch" hidden="false" id="11097657-8a2254a5" type="profile" targetId="e96e-7433-355b-34bc"/>
             <infoLink name="Move Through Cover" hidden="false" id="a1ca5a4b-b06d4019" type="profile" targetId="e83e-f127-1904-3858"/>
             <infoLink name="Open Order" hidden="false" id="c40b5d94-3401a49e" type="profile" targetId="5b67-8535-146c-7cea"/>
+            <infoLink name="Skirmishers" id="ee0f-c4ef-b9c5-2f3c" hidden="true" type="profile" targetId="59a5-7eca-ee35-96ac">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
+              </modifiers>
+              <comment>Renegades</comment>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -4507,7 +4639,7 @@ Regular infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="634e5c56-e45f3520">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="9939aac5-34930bbb" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Tzeentch" hidden="false" id="2c61a9ba-c79fb4a4" type="profile" targetId="e96e-7433-355b-34bc"/>
+            <infoLink name="Daemon of Tzeentch" hidden="false" id="2c61a9ba-c79fb4a4" type="profile" targetId="e96e-7433-355b-34bc"/>
             <infoLink name="Flaming Attacks" hidden="false" id="efcdbeb4-347fe1be" type="profile" targetId="e45d-952-f679-ae2c"/>
             <infoLink name="Infernal Favour" hidden="false" id="1bd99a65-b2ac0f5b" type="profile" targetId="e054-df59-ce35-eff8">
               <modifiers>
@@ -4567,7 +4699,7 @@ Regular infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="323e0ad0-145e641a">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="1fb4ad2b-1521ff79" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Tzeentch" hidden="false" id="bb7bfd34-2fc82c3e" type="profile" targetId="e96e-7433-355b-34bc"/>
+            <infoLink name="Daemon of Tzeentch" hidden="false" id="bb7bfd34-2fc82c3e" type="profile" targetId="e96e-7433-355b-34bc"/>
             <infoLink name="Flaming Attacks" hidden="false" id="3bd949b6-79167680" type="profile" targetId="e45d-952-f679-ae2c"/>
             <infoLink name="Loner" hidden="false" id="6f36ea09-1f14d7df" type="profile" targetId="2ecd-c6b3-bd8b-864b"/>
             <infoLink name="Skirmishers" hidden="false" id="7b09ac2f-a6c0893d" type="profile" targetId="59a5-7eca-ee35-96ac"/>
@@ -4617,7 +4749,7 @@ Regular infantry (character)        </profile>
         <infoGroup name="Special Rules" hidden="false" id="4d9a2c7-529f6515">
           <infoLinks>
             <infoLink name="Daemonic" hidden="false" id="33dd0448-6d8d60f2" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Tzeentch" hidden="false" id="369a2dd7-a2715025" type="profile" targetId="e96e-7433-355b-34bc"/>
+            <infoLink name="Daemon of Tzeentch" hidden="false" id="369a2dd7-a2715025" type="profile" targetId="e96e-7433-355b-34bc"/>
             <infoLink name="Fly" hidden="false" id="523e1627-82335df5" type="profile" targetId="c557-6102-9a35-bbcd">
               <modifiers>
                 <modifier type="append" value="(9)" field="name"/>
@@ -4665,7 +4797,7 @@ Regular infantry (character)        </profile>
           <infoLinks>
             <infoLink name="Close Order" hidden="false" id="f3b4463-b8154e91" type="profile" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Daemonic" hidden="false" id="cd8659b3-aa6bad61" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Tzeentch" hidden="false" id="6bf639f9-86cf574f" type="profile" targetId="e96e-7433-355b-34bc"/>
+            <infoLink name="Daemon of Tzeentch" hidden="false" id="6bf639f9-86cf574f" type="profile" targetId="e96e-7433-355b-34bc"/>
             <infoLink name="Fly" hidden="false" id="6fad7ac2-1076c68c" type="profile" targetId="c557-6102-9a35-bbcd">
               <modifiers>
                 <modifier type="append" value="(9)" field="name"/>
@@ -4846,7 +4978,7 @@ Regular infantry (character)        </profile>
           <infoLinks>
             <infoLink name="Close Order" hidden="false" id="575e0f40-e98fa8a" type="profile" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Daemonic" hidden="false" id="b7a332b8-904128a2" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Tzeentch" hidden="false" id="5b8d79c6-5069ab50" type="profile" targetId="e96e-7433-355b-34bc"/>
+            <infoLink name="Daemon of Tzeentch" hidden="false" id="5b8d79c6-5069ab50" type="profile" targetId="e96e-7433-355b-34bc"/>
             <infoLink name="Fly" hidden="false" id="ec5d679f-f665ba2d" type="profile" targetId="c557-6102-9a35-bbcd">
               <modifiers>
                 <modifier type="append" value="(9)" field="name"/>
@@ -4978,7 +5110,7 @@ Monstrous infantry (character)        </profile>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
                   <infoLinks>
-                    <infoLink name="Daemon Of Khorne" hidden="false" id="276483b-26aa13c9" type="profile" targetId="5683-c92c-2137-7db0"/>
+                    <infoLink name="Daemon of Khorne" hidden="false" id="276483b-26aa13c9" type="profile" targetId="5683-c92c-2137-7db0"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="c444d5cd-47259c03" includeChildSelections="false"/>
@@ -4992,7 +5124,7 @@ Monstrous infantry (character)        </profile>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
                   <infoLinks>
-                    <infoLink name="Daemon Of Nurgle" hidden="false" id="84f985d9-e7e80c2f" type="profile" targetId="5bc7-74c0-b56a-457d"/>
+                    <infoLink name="Daemon of Nurgle" hidden="false" id="84f985d9-e7e80c2f" type="profile" targetId="5bc7-74c0-b56a-457d"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="750c67b-9a3ea009" includeChildSelections="false"/>
@@ -5006,7 +5138,7 @@ Monstrous infantry (character)        </profile>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
                   <infoLinks>
-                    <infoLink name="Daemon Of Slaanesh" hidden="false" id="21cf07fb-efbed589" type="profile" targetId="3341-9239-4961-e8ce"/>
+                    <infoLink name="Daemon of Slaanesh" hidden="false" id="21cf07fb-efbed589" type="profile" targetId="3341-9239-4961-e8ce"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="cdc4e8d9-d140572f" includeChildSelections="false"/>
@@ -5020,7 +5152,7 @@ Monstrous infantry (character)        </profile>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
                   <infoLinks>
-                    <infoLink name="Daemon Of Tzeentch" hidden="false" id="db2d30e9-575b0dbf" type="profile" targetId="e96e-7433-355b-34bc"/>
+                    <infoLink name="Daemon of Tzeentch" hidden="false" id="db2d30e9-575b0dbf" type="profile" targetId="e96e-7433-355b-34bc"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="c6cc51eb-1ed67e39" includeChildSelections="false"/>
@@ -5133,6 +5265,22 @@ Monstrous infantry (character)        </profile>
               </modifiers>
             </infoLink>
             <infoLink name="Lore Of Daemons" hidden="false" id="5c84bc43-92420571/Daemon Prince" type="profile" targetId="f761-a20c-f2ba-8fc9"/>
+            <infoLink name="Regeneration" id="9850-bb0b-f783-5cc1" hidden="true" type="profile" targetId="2eb0-1ec8-8e04-72d4">
+              <modifiers>
+                <modifier type="append" value="(5+)" field="name">
+                  <comment>Renegades</comment>
+                </modifier>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
+              </modifiers>
+              <comment>Renegades</comment>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -5206,7 +5354,7 @@ Monstrous infantry (character)        </profile>
                     <cost name="pts" typeId="points" value="2"/>
                   </costs>
                   <infoLinks>
-                    <infoLink name="Daemon Of Khorne" id="8a02f2f1-3c14cbc7" hidden="false" type="profile" targetId="5683-c92c-2137-7db0"/>
+                    <infoLink name="Daemon of Khorne" id="8a02f2f1-3c14cbc7" hidden="false" type="profile" targetId="5683-c92c-2137-7db0"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="68dcc7c7-eb616215" includeChildSelections="false"/>
@@ -5220,7 +5368,7 @@ Monstrous infantry (character)        </profile>
                     <cost name="pts" typeId="points" value="2"/>
                   </costs>
                   <infoLinks>
-                    <infoLink name="Daemon Of Nurgle" id="6f53de13-1b3b24c1" hidden="false" type="profile" targetId="5bc7-74c0-b56a-457d"/>
+                    <infoLink name="Daemon of Nurgle" id="6f53de13-1b3b24c1" hidden="false" type="profile" targetId="5bc7-74c0-b56a-457d"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="ad769c9-c433599f" includeChildSelections="false"/>
@@ -5234,7 +5382,7 @@ Monstrous infantry (character)        </profile>
                     <cost name="pts" typeId="points" value="3"/>
                   </costs>
                   <infoLinks>
-                    <infoLink name="Daemon Of Slaanesh" id="a043bf95-3777c18b" hidden="false" type="profile" targetId="3341-9239-4961-e8ce"/>
+                    <infoLink name="Daemon of Slaanesh" id="a043bf95-3777c18b" hidden="false" type="profile" targetId="3341-9239-4961-e8ce"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="3e8cc8ff-81476d0d" includeChildSelections="false"/>
@@ -5248,7 +5396,7 @@ Monstrous infantry (character)        </profile>
                     <cost name="pts" typeId="points" value="2"/>
                   </costs>
                   <infoLinks>
-                    <infoLink name="Daemon Of Tzeentch" id="39cc21eb-db57ce39" hidden="false" type="profile" targetId="e96e-7433-355b-34bc"/>
+                    <infoLink name="Daemon of Tzeentch" id="39cc21eb-db57ce39" hidden="false" type="profile" targetId="e96e-7433-355b-34bc"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="f727c499-6b2e54ef" includeChildSelections="false"/>
@@ -5380,7 +5528,7 @@ Monstrous infantry (character)        </profile>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
                   <infoLinks>
-                    <infoLink name="Daemon Of Khorne" hidden="false" id="6bd01cec-9e8f4636" type="profile" targetId="5683-c92c-2137-7db0"/>
+                    <infoLink name="Daemon of Khorne" hidden="false" id="6bd01cec-9e8f4636" type="profile" targetId="5683-c92c-2137-7db0"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="be06d964-405c4ae" includeChildSelections="false"/>
@@ -5394,7 +5542,7 @@ Monstrous infantry (character)        </profile>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
                   <infoLinks>
-                    <infoLink name="Daemon Of Nurgle" hidden="false" id="5be2800e-f8302018" type="profile" targetId="5bc7-74c0-b56a-457d"/>
+                    <infoLink name="Daemon of Nurgle" hidden="false" id="5be2800e-f8302018" type="profile" targetId="5bc7-74c0-b56a-457d"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="ed938a7a-70bc8f64" includeChildSelections="false"/>
@@ -5408,7 +5556,7 @@ Monstrous infantry (character)        </profile>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
                   <infoLinks>
-                    <infoLink name="Daemon Of Slaanesh" hidden="false" id="a9db8ce8-a8a2a492" type="profile" targetId="3341-9239-4961-e8ce"/>
+                    <infoLink name="Daemon of Slaanesh" hidden="false" id="a9db8ce8-a8a2a492" type="profile" targetId="3341-9239-4961-e8ce"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="4b3bcf8-61fb60e2" includeChildSelections="false"/>
@@ -5422,7 +5570,7 @@ Monstrous infantry (character)        </profile>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
                   <infoLinks>
-                    <infoLink name="Daemon Of Tzeentch" hidden="false" id="c47b2f5e-ea064828" type="profile" targetId="e96e-7433-355b-34bc"/>
+                    <infoLink name="Daemon of Tzeentch" hidden="false" id="c47b2f5e-ea064828" type="profile" targetId="e96e-7433-355b-34bc"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="1b0f15f2-4a65fabc" includeChildSelections="false"/>
@@ -5564,7 +5712,7 @@ Monstrous infantry (character)        </profile>
             </infoLink>
             <infoLink name="Close Order" hidden="false" id="a671-d232-349a-1620" type="profile" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Daemonic" hidden="false" id="f636-403a-f3c2-234" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Slaanesh" hidden="false" id="c4bc-d1c-614f-8017" type="profile" targetId="3341-9239-4961-e8ce"/>
+            <infoLink name="Daemon of Slaanesh" hidden="false" id="c4bc-d1c-614f-8017" type="profile" targetId="3341-9239-4961-e8ce"/>
             <infoLink name="First Charge" hidden="false" id="dfdb-d4d1-169a-b837" type="profile" targetId="785a-2886-af42-dce9"/>
             <infoLink name="Impact Hits" hidden="false" id="431c-7a7e-2252-c2b" type="profile" targetId="5c2-e9dd-2715-a0c0">
               <modifiers>
@@ -5662,11 +5810,24 @@ Monstrous infantry (character)        </profile>
             </infoLink>
             <infoLink name="Counter Charge" hidden="false" id="9ee8-dba5-6e30-3d62" type="profile" targetId="5186-798d-69d-6545"/>
             <infoLink name="Daemonic" hidden="false" id="a34b-a3ec-287b-bd3" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Slaanesh" hidden="false" id="e73c-a311-8227-5f1f" type="profile" targetId="3341-9239-4961-e8ce"/>
+            <infoLink name="Daemon of Slaanesh" hidden="false" id="e73c-a311-8227-5f1f" type="profile" targetId="3341-9239-4961-e8ce"/>
             <infoLink name="First Charge" hidden="false" id="50b9-2c0f-ea9e-a25b" type="profile" targetId="785a-2886-af42-dce9"/>
             <infoLink name="Impact Hits" hidden="false" id="d113-7de4-c28b-7772" type="profile" targetId="5c2-e9dd-2715-a0c0">
               <modifiers>
-                <modifier type="append" value="(D3+1)" field="name"/>
+                <modifier type="append" value="(D3+1)" field="name">
+                  <conditions>
+                    <condition type="lessThan" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                </modifier>
+                <modifier type="append" value="(D3+1, AP -1)" field="name">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                </modifier>
               </modifiers>
             </infoLink>
             <infoLink name="Open Order" hidden="false" id="c88c-46f8-3e8a-3298" type="profile" targetId="5b67-8535-146c-7cea"/>
@@ -5765,7 +5926,7 @@ Monstrous infantry (character)        </profile>
               </modifiers>
             </infoLink>
             <infoLink name="Daemonic" hidden="false" id="6b19-cec2-c624-ef02" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Khorne" hidden="false" id="2770-e4a5-6d89-591a" type="profile" targetId="5683-c92c-2137-7db0"/>
+            <infoLink name="Daemon of Khorne" hidden="false" id="2770-e4a5-6d89-591a" type="profile" targetId="5683-c92c-2137-7db0"/>
             <infoLink name="Impact Hits" hidden="false" id="3bf9-3637-a89f-b06a" type="profile" targetId="5c2-e9dd-2715-a0c0">
               <modifiers>
                 <modifier type="append" value="(2)" field="name"/>
@@ -5835,7 +5996,7 @@ Monstrous infantry (character)        </profile>
             <infoLink name="Brazen Wheels" id="8aa5fd79-dee4fecf" hidden="false" type="profile" targetId="99b8-490b-fb62-c2b5"/>
             <infoLink name="Close Order" id="24563a13-fd4aa0c1" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Daemonic" id="45ef493d-9a035a73" hidden="false" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Khorne" id="a4f4c721-8f2428f7" hidden="false" type="profile" targetId="5683-c92c-2137-7db0"/>
+            <infoLink name="Daemon of Khorne" id="a4f4c721-8f2428f7" hidden="false" type="profile" targetId="5683-c92c-2137-7db0"/>
             <infoLink name="First Charge" id="a209672b-5b00e979" hidden="false" type="profile" targetId="785a-2886-af42-dce9"/>
             <infoLink name="Impact Hits" id="bc0a33a5-480dde9b" hidden="false" type="profile" targetId="5c2-e9dd-2715-a0c0">
               <modifiers>
@@ -5908,11 +6069,25 @@ Monstrous infantry (character)        </profile>
             <infoLink name="Close Order" id="16f4-1f3a-13d6-a9ee" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
             <infoLink name="Counter Charge" id="a865-d882-564b-8b27" hidden="false" type="profile" targetId="5186-798d-69d-6545"/>
             <infoLink name="Daemonic" id="1374-a1ff-49bf-f978" hidden="false" type="profile" targetId="755a-790d-9ba0-fdd5"/>
-            <infoLink name="Daemon Of Slaanesh" id="0ae8-dfb4-932e-13f0" hidden="false" type="profile" targetId="3341-9239-4961-e8ce"/>
+            <infoLink name="Daemon of Slaanesh" id="0ae8-dfb4-932e-13f0" hidden="false" type="profile" targetId="3341-9239-4961-e8ce"/>
             <infoLink name="First Charge" id="82cf-d9de-ecb5-31d9" hidden="false" type="profile" targetId="785a-2886-af42-dce9"/>
             <infoLink name="Impact Hits" id="eccc-8605-6ab5-e7d1" hidden="false" type="profile" targetId="5c2-e9dd-2715-a0c0">
               <modifiers>
-                <modifier type="append" value="(2D6+1)" field="name"/>
+                <modifier type="append" value="(2D6+1)" field="name">
+                  <conditions>
+                    <condition type="lessThan" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                </modifier>
+                <modifier type="append" value="(2D6+1, AP -1)" field="name">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
               </modifiers>
             </infoLink>
             <infoLink name="Poisoned Attacks" id="9d2e-f15e-0c2a-8661" hidden="false" type="profile" targetId="81f5-4895-4abc-fc39">
@@ -6013,6 +6188,16 @@ Monstrous infantry (character)        </profile>
         <categoryLink name="Characters" hidden="false" id="94f8-626d-1ebf-11b1" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
         <categoryLink targetId="c913-dd76-9dc5-9d1e" id="fe99-bc8e-d1bf-4686" primary="false" name="0-1 Greater Daemon"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Herald of Khorne" hidden="false" id="fb25bb12-5e661a5c" type="selectionEntry" targetId="2f514dd1-bb22f527">
       <categoryLinks>
@@ -6043,9 +6228,16 @@ Monstrous infantry (character)        </profile>
       </categoryLinks>
       <modifiers>
         <modifier type="set" value="false" field="hidden">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="6f57-c02b-7bf6-f772" shared="true" includeChildSelections="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="6f57-c02b-7bf6-f772" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <comment>Core</comment>
@@ -6063,6 +6255,16 @@ Monstrous infantry (character)        </profile>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="44fe-b404-27be-074d" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <comment>Rare</comment>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Skull Cannon Of Khorne" hidden="false" id="c7e7b9a2-8dd796ec" type="selectionEntry" targetId="3e6f2140-40917c8a">
       <categoryLinks>
@@ -6096,6 +6298,16 @@ Monstrous infantry (character)        </profile>
         <categoryLink name="Characters" hidden="false" id="8bd3-d2c3-dfb4-e047" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
         <categoryLink targetId="c913-dd76-9dc5-9d1e" id="58f4-f750-d623-e983" primary="false" name="0-1 Greater Daemon"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Herald of Nurgle" hidden="false" id="c7e13ac8-8ebbe372" type="selectionEntry" targetId="eadf23f3-82c25a1">
       <categoryLinks>
@@ -6126,9 +6338,16 @@ Monstrous infantry (character)        </profile>
       </categoryLinks>
       <modifiers>
         <modifier type="set" value="false" field="hidden">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="a17e-24e9-133a-c6ad" shared="true" includeChildSelections="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="a17e-24e9-133a-c6ad" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <comment>Core</comment>
@@ -6140,9 +6359,16 @@ Monstrous infantry (character)        </profile>
       </categoryLinks>
       <modifiers>
         <modifier type="set" value="false" field="hidden">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="a17e-24e9-133a-c6ad" shared="true" includeChildSelections="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="a17e-24e9-133a-c6ad" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <comment>Special</comment>
@@ -6169,6 +6395,9 @@ Monstrous infantry (character)        </profile>
         <modifier type="set" value="false" field="hidden">
           <conditions>
             <condition type="atLeast" value="1" field="selections" scope="roster" childId="a17e-24e9-133a-c6ad" shared="true" includeChildSelections="true"/>
+            <condition type="lessThan" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
           </conditions>
         </modifier>
       </modifiers>
@@ -6179,6 +6408,16 @@ Monstrous infantry (character)        </profile>
         <categoryLink name="Characters" hidden="false" id="c4d7-7a0b-bea1-6b54" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
         <categoryLink targetId="c913-dd76-9dc5-9d1e" id="f7d1-e9b0-bfb4-6cdb" primary="false" name="0-1 Greater Daemon"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Herald of Slaanesh" hidden="false" id="e69eb7ae-29bc84b8" type="selectionEntry" targetId="25b7c975-448e7e6b">
       <categoryLinks>
@@ -6209,9 +6448,16 @@ Monstrous infantry (character)        </profile>
       </categoryLinks>
       <modifiers>
         <modifier type="set" value="false" field="hidden">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="efb6-f92e-bd02-dd94" shared="true" includeChildSelections="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="efb6-f92e-bd02-dd94" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <comment>Core</comment>
@@ -6230,9 +6476,16 @@ Monstrous infantry (character)        </profile>
       </categoryLinks>
       <modifiers>
         <modifier type="set" value="false" field="hidden">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="efb6-f92e-bd02-dd94" shared="true" includeChildSelections="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="efb6-f92e-bd02-dd94" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <comment>Special</comment>
@@ -6246,6 +6499,9 @@ Monstrous infantry (character)        </profile>
         <modifier type="set" value="false" field="hidden">
           <conditions>
             <condition type="atLeast" value="1" field="selections" scope="force" childId="efb6-f92e-bd02-dd94" shared="true" includeChildSelections="true"/>
+            <condition type="lessThan" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
           </conditions>
         </modifier>
       </modifiers>
@@ -6256,6 +6512,16 @@ Monstrous infantry (character)        </profile>
         <categoryLink name="Characters" hidden="false" id="5f8b-78b-7879-3bff" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
         <categoryLink targetId="c913-dd76-9dc5-9d1e" id="a9dd-cc58-db92-a1dc" primary="false" name="0-1 Greater Daemon"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Herald of Tzeentch" hidden="false" id="2ced20b0-56b77a7a" type="selectionEntry" targetId="251519cb-18660399">
       <categoryLinks>
@@ -6286,9 +6552,16 @@ Monstrous infantry (character)        </profile>
       </categoryLinks>
       <modifiers>
         <modifier type="set" value="false" field="hidden">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="e187-4f54-d986-a47e" shared="true" includeChildSelections="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="e187-4f54-d986-a47e" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <comment>Core</comment>
@@ -6307,9 +6580,16 @@ Monstrous infantry (character)        </profile>
       </categoryLinks>
       <modifiers>
         <modifier type="set" value="false" field="hidden">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="e187-4f54-d986-a47e" shared="true" includeChildSelections="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="e187-4f54-d986-a47e" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <comment>Special</comment>
@@ -6326,11 +6606,19 @@ Monstrous infantry (character)        </profile>
       </categoryLinks>
       <modifiers>
         <modifier type="set" value="false" field="hidden">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="e187-4f54-d986-a47e" shared="true" includeChildSelections="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="e187-4f54-d986-a47e" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
+      <comment>Special</comment>
     </entryLink>
     <entryLink import="true" name="Burning Chariot Of Tzeentch" hidden="false" id="1f5d354d-1b7eff83" type="selectionEntry" targetId="a3d8-b116-a743-65d3">
       <categoryLinks>
@@ -6382,6 +6670,16 @@ Monstrous infantry (character)        </profile>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="9445-4c4b-2e4b-54eb" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <comment>Special</comment>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Flesh Hounds Of Khorne" hidden="true" id="b0e-8b62-e32-4365" type="selectionEntry" targetId="daf0d29-e46c07ff">
       <categoryLinks>
@@ -6403,6 +6701,16 @@ Monstrous infantry (character)        </profile>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="1144-68da-4efc-e44e" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <comment>Special</comment>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Nurglings" hidden="false" id="70d6-cfc6-c4e7-609f" type="selectionEntry" targetId="96b828e9-2ece45bf">
       <categoryLinks>
@@ -6416,6 +6724,16 @@ Monstrous infantry (character)        </profile>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="1847-9660-c46c-e51a" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <comment>Special</comment>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Seekers Of Slaanesh" hidden="true" id="1443-f4cc-ba73-8345" type="selectionEntry" targetId="d9b356b8-38b02ca2">
       <categoryLinks>
@@ -6437,6 +6755,16 @@ Monstrous infantry (character)        </profile>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="9a06-054b-484a-fb6c" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <comment>Special</comment>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Blue Horrors Of Tzeentch" hidden="true" id="e9df-85bb-d56b-d3f" type="selectionEntry" targetId="71a2a427-36037bf5">
       <categoryLinks>
@@ -6472,9 +6800,16 @@ Monstrous infantry (character)        </profile>
       </categoryLinks>
       <modifiers>
         <modifier type="set" value="false" field="hidden">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="6f57-c02b-7bf6-f772" shared="true" includeChildSelections="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="6f57-c02b-7bf6-f772" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <comment>Special</comment>
@@ -6485,6 +6820,16 @@ Monstrous infantry (character)        </profile>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="888a-4677-dc05-df7a" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <comment>Rare</comment>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Plague Drones Of Nurgle" hidden="false" id="d016-e480-ffbd-1143" type="selectionEntry" targetId="30060615-e5f3d40b">
       <categoryLinks>
@@ -6499,6 +6844,16 @@ Monstrous infantry (character)        </profile>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="6a5b-05ae-2269-91bb" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <comment>Rare</comment>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Hellflayer Of Slaanesh" hidden="false" id="ddf8-1c3e-6a52-767b" type="selectionEntry" targetId="6b44b276-2609940">
       <categoryLinks>
@@ -6513,11 +6868,32 @@ Monstrous infantry (character)        </profile>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="6430-e50b-1d26-6a02" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <comment>Rare</comment>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Screamers Of Tzeentch" hidden="false" id="9172-7cde-f98b-fa25" type="selectionEntry" targetId="747803a7-8c31df75">
       <categoryLinks>
         <categoryLink name="Rare" hidden="false" id="d160-2fd5-51dd-11ed" targetId="2bfe-5863-46fe-d284" primary="true"/>
       </categoryLinks>
+      <comment>Rare</comment>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Seeker Chariot Of Slaanesh" hidden="true" id="cb3a-1ea0-9cbf-759" type="selectionEntry" targetId="a2158237-6c40b105">
       <categoryLinks>
@@ -6526,9 +6902,16 @@ Monstrous infantry (character)        </profile>
       </categoryLinks>
       <modifiers>
         <modifier type="set" value="false" field="hidden">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="efb6-f92e-bd02-dd94" shared="true" includeChildSelections="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="efb6-f92e-bd02-dd94" shared="true" includeChildSelections="true"/>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <comment>Special</comment>
@@ -6539,6 +6922,153 @@ Monstrous infantry (character)        </profile>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="c7e1-be90-818b-2658" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <comment>Rare</comment>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Renegades (Square Based)" hidden="false" id="6e21-09cd-4a3a-5a92" type="selectionEntry" targetId="974c-3bf3-af4b-701d"/>
+    <entryLink import="true" name="Bloodthirster" hidden="true" id="ae1b-1694-87d9-aee5" type="selectionEntry" targetId="5fe41816-60e912e0">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="9914-6a56-48b5-ba88" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+        <categoryLink targetId="6943-b023-fcc4-5314" id="b008-4dbe-8a00-2f1b" primary="false" name="0-1 Greater Daemon (Renegades)"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="d6cd-e91b-441b-0d2d" includeChildSelections="true">
+          <comment>Renegades</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+        <modifier type="increment" value="1" field="d6cd-e91b-441b-0d2d">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="88d6-6a25-670-e154" shared="true" roundUp="false" id="ff63-70c9-38cf-741c" includeChildSelections="false"/>
+          </repeats>
+          <comment>Renegades</comment>
+        </modifier>
+        <modifier type="decrement" value="1" field="d6cd-e91b-441b-0d2d">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="5fe41816-60e912e0" shared="true" roundUp="false" id="4658-b1b1-1d3f-13b9"/>
+          </repeats>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+      <comment>Renegades</comment>
+    </entryLink>
+    <entryLink import="true" name="Great Unclean One" hidden="true" id="97cb-5337-82c0-d0f3" type="selectionEntry" targetId="e2f90838-6b3c5222">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="4602-3f47-daf4-265f" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+        <categoryLink targetId="6943-b023-fcc4-5314" id="b098-776a-0b66-76ee" primary="false" name="0-1 Greater Daemon (Renegades)"/>
+      </categoryLinks>
+      <comment>Renegades</comment>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+        <modifier type="increment" value="1" field="d1cc-4fd0-34fd-0029">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="e20-3c11-13b5-e880" shared="true" roundUp="false" id="29fe-d451-e03b-bd94" includeChildSelections="false"/>
+          </repeats>
+          <comment>Renegades</comment>
+        </modifier>
+        <modifier type="decrement" value="1" field="d1cc-4fd0-34fd-0029">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="e2f90838-6b3c5222" shared="true" roundUp="false" id="1e83-7e66-9650-cec1"/>
+          </repeats>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="d1cc-4fd0-34fd-0029" includeChildSelections="true">
+          <comment>Renegades</comment>
+        </constraint>
+      </constraints>
+    </entryLink>
+    <entryLink import="true" name="Keeper of Secrets" hidden="true" id="8776-466f-374b-29d8" type="selectionEntry" targetId="2b47503b-30b2dbc9">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="e139-a0d5-a3b2-fb9b" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+        <categoryLink targetId="6943-b023-fcc4-5314" id="27d0-8bfa-f4ec-ba61" primary="false" name="0-1 Greater Daemon (Renegades)"/>
+      </categoryLinks>
+      <comment>Renegades</comment>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="320a-c4e4-67f0-fe26" includeChildSelections="true">
+          <comment>Renegades</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+        <modifier type="increment" value="1" field="320a-c4e4-67f0-fe26">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="2955-25dc-92ce-6e4a" shared="true" roundUp="false" id="e0cd-7734-dcb7-aa4d" includeChildSelections="false"/>
+          </repeats>
+          <comment>Renegades</comment>
+        </modifier>
+        <modifier type="decrement" value="1" field="320a-c4e4-67f0-fe26">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="2b47503b-30b2dbc9" shared="true" roundUp="false" id="a991-dbb3-3f5d-1aa5"/>
+          </repeats>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Lord of Change" hidden="true" id="6169-3d24-06a3-90f1" type="selectionEntry" targetId="66c567ab-44d8e5f9">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="9b25-bccd-1041-1aa0" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+        <categoryLink targetId="6943-b023-fcc4-5314" id="dfc7-ec87-cc71-3fbb" primary="false" name="0-1 Greater Daemon (Renegades)"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="4914-1030-8995-7a1d" includeChildSelections="true">
+          <comment>Renegades</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+        <modifier type="increment" value="1" field="4914-1030-8995-7a1d">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="a3d4-f3d0-3587-e55a" shared="true" roundUp="false" id="5d19-e808-822b-db27" includeChildSelections="false"/>
+          </repeats>
+          <comment>Renegades</comment>
+        </modifier>
+        <modifier type="decrement" value="1" field="4914-1030-8995-7a1d">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="66c567ab-44d8e5f9" shared="true" roundUp="false" id="e95d-e752-afce-dc0d"/>
+          </repeats>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+      <comment>Renegades</comment>
     </entryLink>
   </entryLinks>
   <catalogueLinks>
@@ -7418,7 +7948,7 @@ Whilst within this Wizard’s dispel range, enemy Wizards suffer a -1 modifier t
   <categoryEntries>
     <categoryEntry name="Daemon of Khorne" hidden="false" id="88d6-6a25-670-e154">
       <infoLinks>
-        <infoLink name="Daemon Of Khorne" hidden="false" id="4044-17dd-dac0-450f" type="profile" targetId="5683-c92c-2137-7db0"/>
+        <infoLink name="Daemon of Khorne" hidden="false" id="4044-17dd-dac0-450f" type="profile" targetId="5683-c92c-2137-7db0"/>
         <infoLink name="Hatred" hidden="false" id="3c7a-c25d-22e2-456c" type="profile" targetId="f4b3-18af-16bf-78dd">
           <modifiers>
             <modifier type="append" value="(Daemons of Slaanesh)" field="name"/>
@@ -7428,7 +7958,7 @@ Whilst within this Wizard’s dispel range, enemy Wizards suffer a -1 modifier t
     </categoryEntry>
     <categoryEntry name="Daemon of Tzeentch" hidden="false" id="a3d4-f3d0-3587-e55a">
       <infoLinks>
-        <infoLink name="Daemon Of Tzeentch" hidden="false" id="45de-9d02-59f3-d7ab" type="profile" targetId="e96e-7433-355b-34bc"/>
+        <infoLink name="Daemon of Tzeentch" hidden="false" id="45de-9d02-59f3-d7ab" type="profile" targetId="e96e-7433-355b-34bc"/>
         <infoLink name="Hatred" hidden="false" id="974f-8ae-b77c-5021" type="profile" targetId="f4b3-18af-16bf-78dd">
           <modifiers>
             <modifier type="append" value="(Daemons of Nurgle)" field="name"/>
@@ -7438,7 +7968,7 @@ Whilst within this Wizard’s dispel range, enemy Wizards suffer a -1 modifier t
     </categoryEntry>
     <categoryEntry name="Daemon of Nurgle" hidden="false" id="e20-3c11-13b5-e880">
       <infoLinks>
-        <infoLink name="Daemon Of Nurgle" hidden="false" id="b06d-e41e-4278-7848" type="profile" targetId="5bc7-74c0-b56a-457d"/>
+        <infoLink name="Daemon of Nurgle" hidden="false" id="b06d-e41e-4278-7848" type="profile" targetId="5bc7-74c0-b56a-457d"/>
         <infoLink name="Hatred" hidden="false" id="2e71-6079-955-8893" type="profile" targetId="f4b3-18af-16bf-78dd">
           <modifiers>
             <modifier type="append" value="(Daemons of Tzeentch)" field="name"/>
@@ -7448,7 +7978,7 @@ Whilst within this Wizard’s dispel range, enemy Wizards suffer a -1 modifier t
     </categoryEntry>
     <categoryEntry name="Daemon of Slaanesh" hidden="false" id="2955-25dc-92ce-6e4a">
       <infoLinks>
-        <infoLink name="Daemon Of Slaanesh" hidden="false" id="9e7f-d397-98f5-7a4c" type="profile" targetId="3341-9239-4961-e8ce"/>
+        <infoLink name="Daemon of Slaanesh" hidden="false" id="9e7f-d397-98f5-7a4c" type="profile" targetId="3341-9239-4961-e8ce"/>
         <infoLink name="Hatred" hidden="false" id="f618-82fe-f67f-cb33" type="profile" targetId="f4b3-18af-16bf-78dd">
           <modifiers>
             <modifier type="append" value="(Daemons of Khorne)" field="name"/>
@@ -7457,7 +7987,7 @@ Whilst within this Wizard’s dispel range, enemy Wizards suffer a -1 modifier t
       </infoLinks>
     </categoryEntry>
     <categoryEntry name="Herald" hidden="false" id="b727-9b30-81eb-c25d"/>
-    <categoryEntry name="0-1 Greater Daemon" hidden="false" id="c913-dd76-9dc5-9d1e">
+    <categoryEntry name="0-1 Greater Daemon" hidden="true" id="c913-dd76-9dc5-9d1e">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="force" shared="true" id="ba6d-d8d9-7e10-ff23" includeChildSelections="true"/>
       </constraints>
@@ -7510,6 +8040,34 @@ Whilst within this Wizard’s dispel range, enemy Wizards suffer a -1 modifier t
           <conditions>
             <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
           </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 Greater Daemon (Renegades)" id="6943-b023-fcc4-5314" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="1bff-446d-764e-42d9" includeChildSelections="true">
+          <comment>Renegades</comment>
+        </constraint>
+      </constraints>
+      <comment>Renegades</comment>
+      <modifiers>
+        <modifier type="increment" value="1" field="1bff-446d-764e-42d9">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="ee71-2490-dc04-b450"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+        <modifier type="increment" value="1" field="1bff-446d-764e-42d9">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="13d5-6879-f161-e646" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+          <comment>Renegades</comment>
         </modifier>
       </modifiers>
     </categoryEntry>

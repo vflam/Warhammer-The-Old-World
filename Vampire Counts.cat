@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="4545-8340-9988-9ea0" name="Vampire Counts" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="55" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Giloushaker#2496">
+<catalogue library="false" id="4545-8340-9988-9ea0" name="Vampire Counts" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="56" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema" authorContact="Giloushaker#2496">
   <sharedProfiles>
     <profile name="Vampire Count" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="57d7-6e34-d546-4b92">
       <characteristics>
@@ -667,11 +667,31 @@ However, if the winning side significantly outnumbers the losing side, it will o
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Whilst within this model’s Command range, friendly units with the Necromantic Undead special rule gain a +1 modifier to their Movement and Initiative characteristics.</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="append" value="This is not cumulative with effects from additional Mortis Engines." field="9f84-4221-785a-db50">
+          <comment>Renegades</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Blasphemous Tome" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="325f-b9d3-e13c-452e">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">All Wizards (friend or foe) may apply a +1 modifier to any Casting roll whilst within this model’s Command range. However, if any Wizard miscasts whilst within this model’s Command range, they must roll twice on the Miscast table and apply both results.</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="append" value="This is not cumulative with effects from additional Mortis Engines." field="9f84-4221-785a-db50">
+          <comment>Renegades</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Balefire Brazier" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1e33-db54-cb98-d68b">
       <characteristics>
@@ -713,6 +733,13 @@ Note that if an attack wounds automatically, this special rule cannot be used.</
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Models with this special rule are not subject to the Death of a General rule. In addition, unless they have joined a unit that does not have this special rule they (and their mounts) can march as normal.</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="append" value="A Vampire Count or Vampire Thrall with this special rule may wear armour without penality." field="9f84-4221-785a-db50">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Indomitable" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="78b6-d212-caa2-cef1">
       <characteristics>
@@ -743,6 +770,22 @@ The target must make a Leadership test with a -2 modifier to its Leadership char
 
 Note that a Wailing Dirge attack can target an enemy character, regardless of the usual rules for targeting Lone characters.</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="set" value="During the Shooting phase of its turn, unless it marched during the preceding Movement phase, a model with this special rule may make a ‘Wailing Dirge’ attack. A Wailing Dirge attack may target any enemy unit that is within 8&quot; of this model (including units that are engaged in combat) and that this model can draw a line of sight to. If this model is engaged in combat, it may only target a unit in base contact.
+
+
+The target must make a Leadership test with a -2 modifier to its Leadership characteristic (to a minimum of 2). If this test is failed, the target suffers a number of wounds equal to the amount by which it failed the test, with no armour or Regeneration saves permitted (Ward saves can be attempted as normal).
+
+
+Note that a Wailing Dirge attack can target an enemy character, regardless of the usual rules for targeting Lone characters." field="9f84-4221-785a-db50">
+          <comment>Renegades</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Resurrecting The Fallen" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c1d3-29e3-b7cd-c9f7" page="154" publicationId="7c89-736c-3139-24a0">
       <characteristics>
@@ -1033,6 +1076,13 @@ Resurrected models are added to the front rank until it reaches the minimum requ
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">This Vampire gains the Invocation of Nehek special rule. For the purposes of using this special rule, this model counts as a Level 1 Wizard.</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="set" value="This Vampire gains the Invocation of Nehek special rule.If this model is not already a wizard, for the purposes of using this special rule this model counts as a Level 1 Wizard." field="9f84-4221-785a-db50">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Master Of The Black Arts" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="41cf-e8df-d66e-24d1" page="23" publicationId="1c5e-3047-5732-f4">
       <characteristics>
@@ -1135,7 +1185,17 @@ Resurrected models are added to the front rank until it reaches the minimum requ
       <selectionEntries>
         <selectionEntry type="model" name="Vampire Count" id="73997cdc-8a4b96e6" hidden="false">
           <infoLinks>
-            <infoLink name="Vampire Count" hidden="false" type="profile" id="3fb1a1ba-10afeca4" targetId="57d7-6e34-d546-4b92"/>
+            <infoLink name="Vampire Count" hidden="false" type="profile" id="3fb1a1ba-10afeca4" targetId="57d7-6e34-d546-4b92">
+              <modifiers>
+                <modifier type="increment" value="1" field="c435-6b14-f77e-3c72">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base (25x25)" hidden="false" type="profile" id="d1a6437a-c4718064" targetId="193c-4d0d-de6b-bbb1"/>
             <infoLink name="Lore of Undeath" hidden="false" id="7f36-a659-41de-acbf" type="infoGroup" targetId="5b5f-acf0-7c9-33b5"/>
           </infoLinks>
@@ -1240,6 +1300,22 @@ Resurrected models are added to the front rank until it reaches the minimum requ
                   <costs>
                     <cost name="pts" typeId="points" value="6"/>
                   </costs>
+                </entryLink>
+                <entryLink import="true" name="Full Plate Armour" hidden="true" id="8cde-de4e-1617-e4b1" type="selectionEntry" targetId="2505-873d-1655-3b0b" sortIndex="3">
+                  <costs>
+                    <cost name="pts" typeId="points" value="9"/>
+                  </costs>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <comment>Renegades</comment>
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                          <comment>Renegades</comment>
+                        </condition>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <comment>Renegades</comment>
                 </entryLink>
               </entryLinks>
               <constraints>
@@ -5021,7 +5097,7 @@ Resurrected models are added to the front rank until it reaches the minimum requ
                     <modifier type="append" value="(6+)" field="name"/>
                   </modifiers>
                 </infoLink>
-                <infoLink name="Scrying Pool" hidden="false" id="7ba0cd85-772b187b" type="profile" targetId="bd76-139a-4a2b-605b"/>
+                <infoLink name="Coven Throne Bound Spell" hidden="false" id="7ba0cd85-772b187b" type="profile" targetId="bd76-139a-4a2b-605b"/>
                 <infoLink name="Armour Value" hidden="false" id="3dbe6afe-d886aa48" type="profile" targetId="e099-1ebb-9e85-34c8">
                   <modifiers>
                     <modifier type="append" value=":  4+" field="name"/>

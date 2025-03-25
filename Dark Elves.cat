@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="d9b0-fa44-a251-bfea" name="Dark Elves" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="59" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: Giloushaker#2496" authorUrl="www.newrecruit.eu" authorName="Giloushaker">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="d9b0-fa44-a251-bfea" name="Dark Elves" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="60" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: Giloushaker#2496" authorUrl="www.newrecruit.eu" authorName="Giloushaker">
   <sharedProfiles>
     <profile name="Dark Elf Dreadlord" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="ee4f-5f57-cc9d-7dbb">
       <characteristics>
@@ -767,8 +767,21 @@ Note that this special rule does not apply to this model’s mount (should it ha
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">When engaged in combat, a model with this special rule that is fighting with a hand weapon may re-roll any rolls To Wound of a natural 1.
 
-Note that this special rule only applies to a single, non-magical hand weapon and does not apply to a model’s mount (should it have one). If the model is using two hand weapons or any other sort of weapon, this special rule ceases to apply.</characteristic>
+*Note that this special rule only applies to a single, non-magical hand weapon and does not apply to a model’s mount (should it have one). If the model is using two hand weapons or any other sort of weapon, this special rule ceases to apply.*</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="set" value="In the first round of combat, a model with this special rule may re-roll any rolls To Wound of a natural 1.
+
+
+*Note that this special rule only applies to non-magical hand weapon and does not apply to a model’s mount (should it have one). If the model is using a magical weapon, this special rule ceases to apply.*" field="9f84-4221-785a-db50">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Sea Dragon Cloak" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="a52f-2b8e-55bf-b140">
       <characteristics>
@@ -2033,7 +2046,7 @@ Note that this special rule only applies to a single, non-magical hand weapon an
             <cost name="pts" typeId="points" value="70"/>
           </costs>
           <entryLinks>
-            <entryLink name="Two Hand Weapon" id="62403a29-290bccff" hidden="false" type="selectionEntry" targetId="a5bd-e584-3c96-550f" sortIndex="1" import="true">
+            <entryLink name="Two Hand Weapons" id="62403a29-290bccff" hidden="false" type="selectionEntry" targetId="a5bd-e584-3c96-550f" sortIndex="1" import="true">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="c861bae6-98e219f0"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="da755ef4-62687ffe"/>
@@ -4973,14 +4986,14 @@ Note that this special rule only applies to a single, non-magical hand weapon an
       </modifiers>
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="f9d8-9822-a2c3-748a" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Dark Elf Chariots" hidden="false" id="43e7-7269-37e0-6b25" targetId="f95b-ffdd-32cb-e182" primary="false"/>
+        <categoryLink name="0-2 Scourgerunner Chariots or Cold One Chariots per 1,000 points" hidden="false" id="43e7-7269-37e0-6b25" targetId="f95b-ffdd-32cb-e182" primary="false"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="5c4e-7791-5573-822a" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Cold One Chariots" hidden="false" id="8acdb037-c1c76f05" type="selectionEntry" targetId="f22ea911-23bb7667">
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="754c-f21d-90bf-3bbc" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Dark Elf Chariots" hidden="false" id="9212-d027-ec49-1bfa" targetId="f95b-ffdd-32cb-e182" primary="false"/>
+        <categoryLink name="0-2 Scourgerunner Chariots or Cold One Chariots per 1,000 points" hidden="false" id="9212-d027-ec49-1bfa" targetId="f95b-ffdd-32cb-e182" primary="false"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="add8-9ece-5c88-3d64" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
@@ -5089,6 +5102,7 @@ Note that this special rule only applies to a single, non-magical hand weapon an
       </modifiers>
       <comment>Beastmaster General</comment>
     </entryLink>
+    <entryLink import="true" name="Renegades (Square Based)" hidden="false" id="3af6-df49-fcca-f5b2" type="selectionEntry" targetId="974c-3bf3-af4b-701d"/>
   </entryLinks>
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Magic Items" id="a8-15c2-bd3d-e97f" targetId="6c22-b0e4-7c83-f9ce"/>
@@ -5232,7 +5246,7 @@ Note that this special rule only applies to a single, non-magical hand weapon an
                 <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="a29b2b70-4b1f2f3a"/>
               </constraints>
             </entryLink>
-            <entryLink name="Noxious breath N/A" id="c51e9251-3b6215a7" hidden="false" type="selectionEntry" targetId="c12cd453-d01a6901" sortIndex="3" import="true">
+            <entryLink name="Noxious breath" id="c51e9251-3b6215a7" hidden="false" type="selectionEntry" targetId="c12cd453-d01a6901" sortIndex="3" import="true">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="f41e176c-9b996cb6"/>
               </constraints>
@@ -5290,7 +5304,18 @@ Note that this special rule only applies to a single, non-magical hand weapon an
         </selectionEntry>
         <selectionEntry type="model" name="Manticore" id="263b9db8-b8be3ba2" hidden="true" subType="mount" sortIndex="6">
           <infoLinks>
-            <infoLink name="Manticore" hidden="false" type="profile" id="7c973b3e-4f96f888" targetId="b810-fb32-b31c-c2c1"/>
+            <infoLink name="Manticore" hidden="false" type="profile" id="7c973b3e-4f96f888" targetId="b810-fb32-b31c-c2c1">
+              <modifiers>
+                <modifier type="set" value="(+2)" field="ab43-8b61-83e7-d090">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base (60x100)" hidden="false" type="profile" id="9462fb26-90575830" targetId="5125-89a4-916a-eabd"/>
           </infoLinks>
           <costs>
@@ -5403,6 +5428,29 @@ Note that this special rule only applies to a single, non-magical hand weapon an
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="d570962-f7ce68ac" shared="true"/>
                     <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="d9292409-23a541df" shared="true"/>
                   </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                          <comment>Renegades</comment>
+                        </condition>
+                      </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="a9e6a271-345eff47" shared="true">
+                              <comment>Renegades</comment>
+                            </condition>
+                            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="7aa0790-c7047ada" shared="true">
+                              <comment>Renegades</comment>
+                            </condition>
+                          </conditions>
+                          <comment>Renegades</comment>
+                        </conditionGroup>
+                      </conditionGroups>
+                      <comment>Renegades</comment>
+                    </conditionGroup>
+                  </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
@@ -5420,6 +5468,7 @@ Note that this special rule only applies to a single, non-magical hand weapon an
               </modifiers>
             </infoLink>
             <infoLink name="Base (60x100)" hidden="false" type="profile" id="fc49731e-b3c46de8" targetId="5125-89a4-916a-eabd"/>
+            <infoLink name="Cauldron of Blood" id="0f87-045a-d035-406f" hidden="false" type="infoGroup" targetId="bb96-1acf-9e5d-a071"/>
           </infoLinks>
           <costs>
             <cost name="pts" typeId="points" value="150"/>
@@ -5437,7 +5486,7 @@ Note that this special rule only applies to a single, non-magical hand weapon an
                 <cost name="pts" typeId="points" value="0"/>
               </costs>
               <entryLinks>
-                <entryLink name="Two Hand Weapon" id="566c694a-3a97c074" hidden="false" type="selectionEntry" targetId="a5bd-e584-3c96-550f" import="true">
+                <entryLink name="Two Hand Weapons" id="566c694a-3a97c074" hidden="false" type="selectionEntry" targetId="a5bd-e584-3c96-550f" import="true">
                   <constraints>
                     <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="fc0ba6f9-88d15c4f"/>
                   </constraints>
@@ -5486,7 +5535,21 @@ Note that this special rule only applies to a single, non-magical hand weapon an
                     <modifier type="append" value=":  4+" field="name"/>
                   </modifiers>
                 </infoLink>
-                <infoLink name="Blessings Of Khaine" id="89cf-a3e6-75ca-419a" hidden="false" type="profile" targetId="db3d-faa3-4355-3a6b"/>
+                <infoLink name="Blessings Of Khaine" id="89cf-a3e6-75ca-419a" hidden="false" type="profile" targetId="db3d-faa3-4355-3a6b">
+                  <modifiers>
+                    <modifier type="set" value="Even if engaged in combat, this model can cast the following Bound spell, with a Power Level of 3:
+
+
+Blessings of Khaine" field="9f84-4221-785a-db50">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                          <comment>Renegades</comment>
+                        </condition>
+                      </conditions>
+                      <comment>Renegades</comment>
+                    </modifier>
+                  </modifiers>
+                </infoLink>
               </infoLinks>
             </infoGroup>
           </infoGroups>

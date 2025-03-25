@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="13ed-b3e5-e610-615f" name="Ogre Kingdoms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="56" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorName="Flammy" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="13ed-b3e5-e610-615f" name="Ogre Kingdoms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="57" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorName="Flammy" authorUrl="www.newrecruit.eu">
   <sharedProfiles>
     <profile name="Tyrant" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="f58e-2d63-3721-5926">
       <characteristics>
@@ -385,6 +385,16 @@
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A Hunter that joins a unit of Sabretusks gains the Swiftstride special rule for as long as they remain with the unit. In addition, for as long as the Hunter remains with the unit, the Sabretusks lose the Impetuous special rule.</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="append" value="When a Hunter joins a unit of Sabretusks the unit may adopt or stay in a Skirmish formation, despite the difference in their unit types." field="9f84-4221-785a-db50">
+          <comment>Renegades</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Blessings Of The Volcano God" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="a644-3d09-1039-f3e2">
       <characteristics>
@@ -518,6 +528,16 @@ For this attack, the Giant does not use its club. Instead, the target unit suffe
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (2), Cannon Fire, Cumbersome, Multiple Wounds (D3+1)</characteristic>
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71"/>
       </characteristics>
+      <modifiers>
+        <modifier type="append" value="This weapon does not have 360° line of sight, it can only shoot into the Ironblaster&apos;s front arc." field="772a-a7ff-f6b3-df71">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Cannon of the Sky-Titans -  Scatter shot" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="6937-1aa2-781d-a6cb">
       <characteristics>
@@ -527,6 +547,16 @@ For this attack, the Giant does not use its club. Instead, the target unit suffe
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Breath Weapon</characteristic>
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">A Cannon of the Sky-Titans has two profiles, representing its two modes of firing. When firing solid shot, this weapon shoots like a cannon, using the ‘Cannon Fire’ special rule. This weapon uses the Ironblaster Misfire table.</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="append" value="This weapon does not have 360° line of sight, it can only shoot into the Ironblaster&apos;s front arc." field="772a-a7ff-f6b3-df71">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Horns of stone" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="ffc0-7bb2-eff1-c590">
       <characteristics>
@@ -807,6 +837,24 @@ Enemy models removed from play are considered to have been removed from the figh
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1)</characteristic>
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">A Leadbelcher gun has two profiles, representing its two modes of firing. If the roll To Hit is successful when firing scatter shot, a leadbelcher gun causes D3 hits to the target enemy unit, rather than the usual one.</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="append" value="Cumbersome, Multiple Shots (3)" field="5f83-3633-336b-93b4">
+          <comment>Renegades</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+        </modifier>
+        <modifier type="set" value="A Leadbelcher gun has two profiles, representing its two modes of firing. A Leadbelcher gun ignores penalties for Moving and Shooting and Multiple Shots" field="772a-a7ff-f6b3-df71">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Leadbelcher Gun (Solid shot)" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="b006-417c-17d1-fb58">
       <characteristics>
@@ -4108,6 +4156,16 @@ Enemy models removed from play are considered to have been removed from the figh
       <constraints>
         <constraint type="min" value="1" field="selections" scope="force" shared="true" id="d351-d37e-ec7d-319" includeChildSelections="true"/>
       </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="d351-d37e-ec7d-319">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Ironguts" hidden="false" id="9ea533b1-5a1f0687" type="selectionEntry" targetId="4b1bfec3-a90b33f1">
       <categoryLinks>
@@ -4211,6 +4269,16 @@ Enemy models removed from play are considered to have been removed from the figh
         <categoryLink name="Special" hidden="false" id="349e-acff-eb17-78a6" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="7efb-f702-478f-449f" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Stonehorn Riders" hidden="false" id="68ebd6d7-7aedb125" type="selectionEntry" targetId="b485b1b1-110b9487">
       <categoryLinks>
@@ -4279,6 +4347,52 @@ Enemy models removed from play are considered to have been removed from the figh
       </categoryLinks>
       <constraints>
         <constraint type="max" value="3" field="selections" scope="force" shared="true" id="aa7b-957a-f356-128a" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="-1" field="aa7b-957a-f356-128a">
+          <comment>Renegades</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Renegades (Square Based)" hidden="false" id="500d-fd8c-b0f8-0408" type="selectionEntry" targetId="974c-3bf3-af4b-701d"/>
+    <entryLink import="true" name="Gnoblar Scraplauncher" hidden="true" id="0b21-1424-9a21-b861" type="selectionEntry" targetId="8b5e829a-d07d8e84">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="7b78-c77a-0c67-7f01" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="5f98-3795-a22d-76fa" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+      <comment>Renegades</comment>
+    </entryLink>
+    <entryLink import="true" name="Bonegrinder Giant" hidden="true" id="722e-b5ab-c6ce-15f2" type="selectionEntry" targetId="514-eadb-6386-ff1a">
+      <categoryLinks>
+        <categoryLink targetId="5b84-2c3c-869d-3522" id="ccb9-8843-1a35-ace6" primary="true" name="Mercenaries"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <comment>Renegades</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="6826-b3b0-5e74-dbee" includeChildSelections="true"/>
       </constraints>
     </entryLink>
   </entryLinks>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="ab16-38c2-b85a-9197" name="Lizardmen" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="49" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="ab16-38c2-b85a-9197" name="Lizardmen" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="50" battleScribeVersion="2.03" type="catalogue" authorContact="Giloushaker#2496">
   <sharedProfiles>
     <profile name="Slann Mage-Priest" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="e2b9-fc0e-f107-4ae">
       <characteristics>
@@ -492,8 +492,7 @@ Character Mount: A Carnosaur may only be included in your army as a character’
     </profile>
     <profile name="Engine Of The Gods" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="7072-8586-c656-26f5">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">This model can cast Burning Alignment, with a Power Level of 3.
-</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">This model can cast Burning Alignment, with a Power Level of 3.</characteristic>
       </characteristics>
     </profile>
     <profile name="Impervious Defence" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c59f-ddf3-63b7-eaf">
@@ -622,6 +621,17 @@ Note that spells with a range of “Self” cannot be channelled in this way.</c
 
 When required to make a Fear, Panic or Terror test, models with this special rule may roll an extra D6 and discard the highest result.</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="set" value="When required to make a Leadership or Break Test, models with this special rule may roll an extra D6 and discard the highest result.
+" field="9f84-4221-785a-db50">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Aquatic" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1f39-2789-f136-7645">
       <characteristics>
@@ -759,6 +769,16 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Should a friendly Slann Mage-Priest model that is within 3&quot; of this unit suffer a hit during the Shooting phase, roll a D6. On a roll of 2+, you may choose to transfer that hit and all of its effects onto this unit. In addition, any model in a unit of Temple Guard that is within the Command range of a Slann Mage-Priest can issue and accept challenges in the same manner as a character.</characteristic>
       </characteristics>
+      <modifiers>
+        <modifier type="set" value="This unit may be joined by a character with the Palanquin special rule. In addition, any model in a unit of Temple Guard that is within the Command range of a Slann Mage-Priest can issue and accept challenges in the same manner as a character." field="9f84-4221-785a-db50">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </profile>
     <profile name="Fiery breath" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="62a4-535f-c619-df64">
       <characteristics>
@@ -857,11 +877,70 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
 *Note that, because it has the Howdah special rule, a Stegadon or Ancient Stegadon is considered to be a chariot mount, rather than a ridden monster.*</characteristic>
       </characteristics>
     </profile>
+    <profile name="Wisdom of the Old Ones" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="true" id="ee65-1207-9b54-785f">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Once per turn, the Slaan Mage-Priest may re-roll one of the D6 when making a Casting Roll. In addition, it knows one more spell (chosen in the usual way) than is normal for their Level of Wizardy</characteristic>
+      </characteristics>
+      <comment>Extra Spells: 1</comment>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+    </profile>
+    <profile name="Palanquin" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="true" id="9f63-a7a7-a141-a70e">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">This character may join a unit with the Guardians special rule despite having the Fly special rule. As long as the front rank has a minimum of 4 models they may be placed in the second rank. However, they continue to confer benefits to the unit in the form of Leadership and Special Rules. As long as this model is not in the fighting rank, they may cast and dispel as normal, even if its unit is engaged in Combat, but may not cast Assailment spells. For the purpose of shooting and casting spells, this model has a 360° vision arc and ignores models in the unit for drawing line of sight.</characteristic>
+      </characteristics>
+      <comment>Renegades</comment>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Fiery breath" hidden="false" id="a18e-badc-b8d3-19de" collective="true">
       <infoLinks>
-        <infoLink targetId="62a4-535f-c619-df64" id="6458-b0fa-451f-aca2" type="profile" name="Fiery breath" hidden="false"/>
+        <infoLink targetId="62a4-535f-c619-df64" id="6458-b0fa-451f-aca2" type="profile" name="Fiery breath" hidden="false">
+          <modifiers>
+            <modifier type="set" value="0&quot;" field="2360-c777-5e07-ed58">
+              <comment>Renegades</comment>
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="Column of Fire, Cumbersome, Flaming Attacks" field="5f83-3633-336b-93b4">
+              <comment>Renegades</comment>
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="If the artillery dice result is a misfire, no shots are fired and D3 Skink Handlers are removed until there are none remaining. If no Skink Handlers remain when a misfire is rolled, the Salamander loses a wound instead." field="772a-a7ff-f6b3-df71">
+              <comment>Renegades</comment>
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
       </infoLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9af2-ffb9-bab5-ec2c"/>
@@ -973,7 +1052,18 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
       <selectionEntries>
         <selectionEntry type="model" name="Slann Mage-Priest" id="ea9a4c77-3bcd2945" hidden="false">
           <infoLinks>
-            <infoLink name="Slann Mage-Priest" hidden="false" type="profile" id="d894cc4d-841de83" targetId="e2b9-fc0e-f107-4ae"/>
+            <infoLink name="Slann Mage-Priest" hidden="false" type="profile" id="d894cc4d-841de83" targetId="e2b9-fc0e-f107-4ae">
+              <modifiers>
+                <modifier type="set" value="4" field="cd3b-a5a4-e185-5a9d">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base (50x50)" hidden="false" type="profile" id="b46d98c7-89e3ab15" targetId="7813-4d15-143d-1bf1"/>
             <infoLink targetId="9872-a62f-93ff-4e9e" id="fc76-66df-19d0-281b" type="infoGroup" name="Lore of Lustria" hidden="false"/>
           </infoLinks>
@@ -1056,6 +1146,24 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
           <categoryLinks>
             <categoryLink name="Monstrous Creature" hidden="false" id="946-7f95-46db-3a74" targetId="fb36-5275-617-c895" primary="false"/>
           </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="fb36-5275-617-c895" field="category" id="8374-02d7-c731-f537">
+              <comment>Renegades</comment>
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </modifier>
+            <modifier type="add" value="5c55-f9d6-b181-92f8" field="category" id="7eaa-6295-c5ae-1079">
+              <comment>Renegades</comment>
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                  <comment>Renegades</comment>
+                </condition>
+              </conditions>
+            </modifier>
+          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <infoGroups>
@@ -1068,9 +1176,33 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
                 <modifier type="append" value="(8)" field="name"/>
               </modifiers>
             </infoLink>
-            <infoLink name="Large Target" hidden="false" id="db19b0a6-e4ac61b0" type="profile" targetId="c822-7ad0-f24a-e4af"/>
+            <infoLink name="Large Target" hidden="false" id="db19b0a6-e4ac61b0" type="profile" targetId="c822-7ad0-f24a-e4af">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Lore Of Lustria" hidden="false" id="96efe307-3781a355" type="profile" targetId="7310-fc0b-4011-6eaa"/>
-            <infoLink name="Close Order" id="466f-a08a-77ea-e7fa" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+            <infoLink name="Close Order" id="466f-a08a-77ea-e7fa" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Palanquin" id="d21c-8203-7d0c-98ab" hidden="true" type="profile" targetId="9f63-a7a7-a141-a70e"/>
+            <infoLink name="Wisdom of the Old Ones" id="c10f-f8e0-aa20-1325" hidden="false" type="profile" targetId="ee65-1207-9b54-785f"/>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -1384,7 +1516,18 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
       <selectionEntries>
         <selectionEntry type="model" name="Temple Guard" id="3bcab5ee-df1690f8" hidden="false" sortIndex="1">
           <infoLinks>
-            <infoLink name="Temple Guard" hidden="false" type="profile" id="801e4a7c-a24fc306" targetId="29da-d99a-b5de-482f"/>
+            <infoLink name="Temple Guard" hidden="false" type="profile" id="801e4a7c-a24fc306" targetId="29da-d99a-b5de-482f">
+              <modifiers>
+                <modifier type="increment" value="1" field="73b1-abe5-72f8-41e2">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                      <comment>Renegades</comment>
+                    </condition>
+                  </conditions>
+                  <comment>Renegades</comment>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base (30x30)" hidden="false" type="profile" id="70cd46b0-3e66707a" targetId="7f1f-eba6-b670-ece0"/>
           </infoLinks>
           <costs>
@@ -1431,6 +1574,14 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
                   <modifiers>
                     <modifier type="set" value="Revered Guardian" field="name"/>
                     <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
+                    <modifier type="increment" value="1" field="73b1-abe5-72f8-41e2">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                          <comment>Renegades</comment>
+                        </condition>
+                      </conditions>
+                      <comment>Renegades</comment>
+                    </modifier>
                   </modifiers>
                 </infoLink>
                 <infoLink name="Base (30x30)" hidden="false" type="profile" id="53e8ad2e-560ace38" targetId="7f1f-eba6-b670-ece0"/>
@@ -2099,7 +2250,7 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
         </profile>
       </profiles>
       <selectionEntries>
-        <selectionEntry type="model" name="Skink Handler" id="dac69476-d2c36b40" hidden="false" sortIndex="1" defaultAmount="" subType="crew">
+        <selectionEntry type="model" name="Skink Handler" id="dac69476-d2c36b40" hidden="false" sortIndex="1" subType="crew">
           <infoLinks>
             <infoLink name="Skink Handler" hidden="false" type="profile" id="73dc17a4-4abf10ee" targetId="50d-aeb7-ee25-1c6e"/>
             <infoLink name="Base (25x25)" hidden="false" type="profile" id="ef035bf4-609e94fe" targetId="193c-4d0d-de6b-bbb1"/>
@@ -2127,7 +2278,7 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
             <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="57fb-5298-8cad-f657" targetId="may-have-armour"/>
           </categoryLinks>
         </selectionEntry>
-        <selectionEntry type="model" name="Salamander" id="735076c0-7cbc260a" hidden="false" sortIndex="2" defaultAmount="">
+        <selectionEntry type="model" name="Salamander" id="735076c0-7cbc260a" hidden="false" sortIndex="2">
           <infoLinks>
             <infoLink name="Salamander" hidden="false" type="profile" id="54593be6-5f1592f0" targetId="6a71-f92c-c53f-6aa2"/>
             <infoLink name="Base (50x75)" hidden="false" type="profile" id="2cf2c4b6-678c1980" targetId="2b6f-489f-3c3c-bf7c"/>
@@ -2751,6 +2902,9 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f55a-8c89-37d6-4e9e"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f964-a8b3-8fc9-a718"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink targetId="3755-6732-99b2-c713" id="381d-4f5f-7ffe-c321" primary="false" name="Behemoth"/>
+          </categoryLinks>
         </entryLink>
       </entryLinks>
       <categoryLinks>
@@ -2951,7 +3105,18 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
               </costs>
               <infoLinks>
                 <infoLink name="Engine of The Gods" hidden="false" id="2b-83bb-8020-e125" type="infoGroup" targetId="7f26-d4f0-a758-1fbb"/>
-                <infoLink name="Arcane Configuration" id="b20a-a9d1-1c00-6dfe" hidden="false" type="profile" targetId="6231-d461-6dda-2f90"/>
+                <infoLink name="Arcane Configuration" id="b20a-a9d1-1c00-6dfe" hidden="false" type="profile" targetId="6231-d461-6dda-2f90">
+                  <modifiers>
+                    <modifier type="set" value="Friendly Wizards may apply a +1 modifier to any Casting roll they make whilst within 6&quot; of an Engine of the Gods." field="description">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+                          <comment>Renegades</comment>
+                        </condition>
+                      </conditions>
+                      <comment>Renegades</comment>
+                    </modifier>
+                  </modifiers>
+                </infoLink>
                 <infoLink name="Engine Of The Gods" id="1156-79df-eb0f-b066" hidden="false" type="profile" targetId="7072-8586-c656-26f5"/>
               </infoLinks>
               <constraints>
@@ -3311,6 +3476,9 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="91c0-b70e-8289-232d"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8b16-ba64-db02-73b1"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink targetId="3755-6732-99b2-c713" id="3508-14a8-1346-f07c" primary="false" name="Behemoth"/>
+          </categoryLinks>
         </entryLink>
       </entryLinks>
       <categoryLinks>
@@ -3582,6 +3750,16 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="force" shared="true" id="7358-813c-b225-d364" includeChildSelections="true"/>
       </constraints>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Saurus Scar-Veteran" hidden="false" id="81ff6ced-a0c202a3" type="selectionEntry" targetId="2c31af4f-c89d71dd">
       <categoryLinks>
@@ -3601,6 +3779,16 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="force" shared="true" id="cb99-886d-5109-c569" includeChildSelections="true"/>
       </constraints>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Saurus Warriors" hidden="false" id="27fcfed0-5c85b81a" type="selectionEntry" targetId="474230e6-c10edff0">
       <categoryLinks>
@@ -3610,6 +3798,16 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
       <constraints>
         <constraint type="min" value="1" field="selections" scope="force" shared="true" id="3c75-72af-f6aa-7979" includeChildSelections="true"/>
       </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="3c75-72af-f6aa-7979">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Skink Skirmishers" hidden="false" id="e6859164-c2cebcae" type="selectionEntry" targetId="a08674da-5e53eec4">
       <categoryLinks>
@@ -3637,14 +3835,34 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
     <entryLink import="true" name="Salamander Packs" hidden="false" id="64c4618a-7bedf6b4" type="selectionEntry" targetId="dafc1748-451bdbf2">
       <categoryLinks>
         <categoryLink name="Rare" hidden="false" id="2039-9bcb-ea7e-9ef6" targetId="2bfe-5863-46fe-d284" primary="true"/>
-        <categoryLink name="Salamander or Razordon Pack" hidden="false" id="a1ad-464d-58e4-6d4a" targetId="eb07-282d-bdfe-ee73" primary="false"/>
+        <categoryLink name="0-1 Salamander or Razordon Pack per 1,000 points" hidden="false" id="a1ad-464d-58e4-6d4a" targetId="eb07-282d-bdfe-ee73" primary="false"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Razordon Packs" hidden="false" id="fe674de1-cd4c79b7" type="selectionEntry" targetId="56a82633-8f1b15e1">
       <categoryLinks>
         <categoryLink name="Rare" hidden="false" id="e801-db2d-277-7cf9" targetId="2bfe-5863-46fe-d284" primary="true"/>
-        <categoryLink name="Salamander or Razordon Pack" hidden="false" id="afde-c0ba-3046-bb2" targetId="eb07-282d-bdfe-ee73" primary="false"/>
+        <categoryLink name="0-1 Salamander or Razordon Pack per 1,000 points" hidden="false" id="afde-c0ba-3046-bb2" targetId="eb07-282d-bdfe-ee73" primary="false"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Cold One Riders" hidden="false" id="2d769a43-e0b4f371" type="selectionEntry" targetId="24416dfd-4d1e5933">
       <categoryLinks>
@@ -3666,6 +3884,14 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="bcb5-5651-b441-279e" shared="true" roundUp="false" id="37d5-4d61-aedd-e7b6" includeChildSelections="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="Ripperdactyl Riders" hidden="false" id="7ebf284e-a4658658" type="selectionEntry" targetId="aef3883c-6f0d12c6">
@@ -3682,14 +3908,32 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="bcb5-5651-b441-279e" shared="true" roundUp="false" id="554-aba6-5916-5480" includeChildSelections="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="Stegadon" hidden="false" id="66eaf1ca-adde04f4" type="selectionEntry" targetId="f66f5c88-2e4af732">
       <categoryLinks>
         <categoryLink name="Rare" hidden="false" id="ec5b-982e-f3c3-d2a6" targetId="2bfe-5863-46fe-d284" primary="true"/>
-        <categoryLink name="Stegadon or Troglodon" hidden="false" id="fd60-1193-8d88-4b1f" targetId="3c7f-1be5-3e40-51fa" primary="false"/>
+        <categoryLink name="0-1 Stegadon or Troglodon per 1,000 points" hidden="false" id="fd60-1193-8d88-4b1f" targetId="3c7f-1be5-3e40-51fa" primary="false"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="2cf1-4e19-0c75-4e54" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Bastiladon" hidden="false" id="fd6822b1-f5527d87" type="selectionEntry" targetId="a9deedc3-443eaaf1">
       <categoryLinks>
@@ -3716,33 +3960,322 @@ This character has a 5+ Ward save against any wounds suffered</characteristic>
             <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="Troglodon" hidden="false" id="62fd3a68-d44ae612" type="selectionEntry" targetId="61b6dfe-77e39548">
       <categoryLinks>
         <categoryLink name="Rare" hidden="false" id="9b19-4f40-80fe-b4e4" targetId="2bfe-5863-46fe-d284" primary="true"/>
-        <categoryLink name="Stegadon or Troglodon" hidden="false" id="9eb-977b-62c9-8910" targetId="3c7f-1be5-3e40-51fa" primary="false"/>
+        <categoryLink name="0-1 Stegadon or Troglodon per 1,000 points" hidden="false" id="9eb-977b-62c9-8910" targetId="3c7f-1be5-3e40-51fa" primary="false"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="86ae-e845-c650-ba41" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Saurus Oldblood" hidden="false" id="2341-8dcd-3d73-28ff" type="selectionEntry" targetId="1cba-edc8-e470-8d9f">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="c450-bb61-8aa5-2670" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-        <categoryLink name="Oldblood or Skink Priest" hidden="false" id="e62a-d5ba-3124-3741" targetId="26e8-5eab-2e75-782f" primary="false"/>
+        <categoryLink name="0-1 Saurus Oldblood or Skink Priest per 1,000 points" hidden="false" id="e62a-d5ba-3124-3741" targetId="26e8-5eab-2e75-782f" primary="false"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Skink Priest" hidden="false" id="c2d4-dd4a-52b7-c4be" type="selectionEntry" targetId="9666-c0e6-3093-8c2c">
       <categoryLinks>
-        <categoryLink name="Oldblood or Skink Priest" hidden="false" id="d5d5-63f8-4ebe-3114" targetId="26e8-5eab-2e75-782f" primary="false"/>
+        <categoryLink name="0-1 Saurus Oldblood or Skink Priest per 1,000 points" hidden="false" id="d5d5-63f8-4ebe-3114" targetId="26e8-5eab-2e75-782f" primary="false"/>
         <categoryLink name="Characters" hidden="false" id="894b-dc32-3d5f-ed19" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Ancient Stegadon" hidden="false" id="61d2-6ed2-8b01-ba82" type="selectionEntry" targetId="de27-1214-9f35-c7cf">
       <categoryLinks>
         <categoryLink name="Rare" hidden="false" id="7739-9b9d-ad13-754d" targetId="2bfe-5863-46fe-d284" primary="true"/>
-        <categoryLink name="Stegadon or Troglodon" hidden="false" id="d86-9800-75ba-e57b" targetId="3c7f-1be5-3e40-51fa" primary="false"/>
+        <categoryLink name="0-1 Stegadon or Troglodon per 1,000 points" hidden="false" id="d86-9800-75ba-e57b" targetId="3c7f-1be5-3e40-51fa" primary="false"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="87ac-8dbd-dce0-3157" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Renegades (Square Based)" hidden="false" id="8342-dbe9-0658-8c12" type="selectionEntry" targetId="974c-3bf3-af4b-701d"/>
+    <entryLink import="true" name="Slann Mage-Priests" hidden="true" id="4ccb-0300-d7a0-972b" type="selectionEntry" targetId="685efcf9-dbda024f">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="b659-a44e-938d-dfbc" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="c583-d3e4-0457-48ca" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="c583-d3e4-0457-48ca">
+          <repeats>
+            <repeat value="1500" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="1ce0-aca0-2f44-b0f1"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="c583-d3e4-0457-48ca">
+          <repeats>
+            <repeat value="1500" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="e98b-fdcb-d9a6-67bb" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <comment>Renegades</comment>
+    </entryLink>
+    <entryLink import="true" name="Saurus Oldblood" hidden="true" id="4ff6-e71d-52fc-9501" type="selectionEntry" targetId="1cba-edc8-e470-8d9f">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="66e2-959a-be55-8b5a" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+        <modifier type="increment" value="1" field="54c1-68e4-8d9f-a2ed">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="e2f0-204b-b705-5408"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="54c1-68e4-8d9f-a2ed">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="8856-0155-72c8-9115" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <comment>Renegades</comment>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="54c1-68e4-8d9f-a2ed" includeChildSelections="true"/>
+      </constraints>
+    </entryLink>
+    <entryLink import="true" name="Skink Priest" hidden="true" id="168f-6669-cf67-7cf1" type="selectionEntry" targetId="9666-c0e6-3093-8c2c">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="7ec9-1710-4ed2-c977" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+      <comment>Renegades</comment>
+    </entryLink>
+    <entryLink import="true" name="Temple Guard" hidden="true" id="149e-d6cf-4d80-8816" type="selectionEntry" targetId="2ce4b83e-f908d88">
+      <categoryLinks>
+        <categoryLink name="Core" hidden="false" id="0db3-4bee-65db-08ed" targetId="f0e3-2e32-8866-ea32" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="0fbb-344e-4158-a9db" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="d18b-84c9-34d7-f570" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="ec14-408f-bc90-2e4b" shared="true" includeChildSelections="true">
+              <comment>Slaan-Mage General</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+      <comment>Renegades</comment>
+    </entryLink>
+    <entryLink import="true" name="Ripperdactyl Riders" hidden="true" id="a3a7-fd2c-b51f-8f0e" type="selectionEntry" targetId="aef3883c-6f0d12c6">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="e6d9-5db9-b348-8658" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="3444-6e7a-e198-ae0a" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+      <comment>Renegades</comment>
+    </entryLink>
+    <entryLink import="true" name="Terradon Riders" hidden="true" id="32bd-e925-4423-e64f" type="selectionEntry" targetId="47137b98-f6d31102">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="b2fb-8d18-23fd-0453" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="c5cd-10ac-7a69-8ea6" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+      <comment>Renegades</comment>
+    </entryLink>
+    <entryLink import="true" name="Stegadon" hidden="true" id="4927-ec0c-9786-ac92" type="selectionEntry" targetId="f66f5c88-2e4af732">
+      <categoryLinks>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="d07f-2ef5-6ca5-ec42" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink targetId="633f-f67a-1b6a-d203" id="b5d7-5337-3a6d-1c4c" primary="true" name="Special"/>
+      </categoryLinks>
+      <comment>Renegades</comment>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Salamander Packs" hidden="true" id="f6cd-d810-305c-6591" type="selectionEntry" targetId="dafc1748-451bdbf2">
+      <categoryLinks>
+        <categoryLink name="Rare" hidden="false" id="eb70-d296-b959-9f1b" targetId="2bfe-5863-46fe-d284" primary="true"/>
+      </categoryLinks>
+      <comment>Renegades</comment>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Razordon Packs" hidden="true" id="d8f1-c9d7-5353-7381" type="selectionEntry" targetId="56a82633-8f1b15e1">
+      <categoryLinks>
+        <categoryLink name="Rare" hidden="false" id="ba65-672c-0b35-85d2" targetId="2bfe-5863-46fe-d284" primary="true"/>
+      </categoryLinks>
+      <comment>Renegades</comment>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Ancient Stegadon" hidden="true" id="dbd5-320b-de5d-3869" type="selectionEntry" targetId="de27-1214-9f35-c7cf">
+      <categoryLinks>
+        <categoryLink name="Rare" hidden="false" id="1525-8d85-959b-839a" targetId="2bfe-5863-46fe-d284" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="82dc-34b0-874a-d459" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <comment>Renegades</comment>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Troglodon" hidden="true" id="823a-5145-8eac-9d82" type="selectionEntry" targetId="61b6dfe-77e39548">
+      <categoryLinks>
+        <categoryLink name="Rare" hidden="false" id="ae91-524b-88c8-b1b6" targetId="2bfe-5863-46fe-d284" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="7e30-d5a2-9c87-c095" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <comment>Renegades</comment>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Bastiladon" hidden="true" id="8d67-b70e-34fe-34c0" type="selectionEntry" targetId="a9deedc3-443eaaf1">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="4ccc-b189-ce51-a5ed" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="61a7-2026-a803-e2b0" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="force" childId="974c-3bf3-af4b-701d" shared="true" includeChildSelections="true">
+              <comment>Renegades</comment>
+            </condition>
+          </conditions>
+          <comment>Renegades</comment>
+        </modifier>
+      </modifiers>
+      <comment>Renegades</comment>
     </entryLink>
   </entryLinks>
   <catalogueLinks>
