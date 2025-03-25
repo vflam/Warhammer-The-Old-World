@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="141" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="142" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -14028,6 +14028,14 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
       <infoLinks>
         <infoLink name="Function Over Form" id="b313-88b8-6646-3418" hidden="false" type="profile" targetId="1a67-5c3c-a15b-e85a"/>
       </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Renegades (Square Based)" hidden="false" id="974c-3bf3-af4b-701d">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="parent" shared="true" id="f31e-4067-047f-fba9">
+          <comment>Renegades</comment>
+        </constraint>
+      </constraints>
+      <comment>Renegades</comment>
     </selectionEntry>
   </sharedSelectionEntries>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
