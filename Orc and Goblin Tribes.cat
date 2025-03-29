@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="157" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="158" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Orc Mobs" hidden="false" id="51e8-1471-ce4c-d5dd">
       <profiles>
@@ -557,7 +557,7 @@
               <modifiers>
                 <modifier type="set" value="true" field="hidden">
                   <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="7062-dff1-ac19-8a7c" shared="true" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="7062-dff1-ac19-8a7c" shared="true" includeChildSelections="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
@@ -621,25 +621,54 @@
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f6d3-8e6f-309e-fd1b"/>
               </constraints>
-              <entryLinks>
-                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="278b-4d43-d0c7-9fdd" targetId="6bbe-8054-19b7-e5d6">
-                  <constraints>
-                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="eb66-4496-e7ee-d6fa"/>
-                  </constraints>
-                  <modifiers>
-                    <modifier type="set" value="false" field="hidden">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="6ce4-96c1-6e66-4e65" childId="e86d-2ae7-e493-5942" shared="true" includeChildSelections="true"/>
-                      </conditions>
-                    </modifier>
-                  </modifiers>
-                </entryLink>
-              </entryLinks>
               <categoryLinks>
                 <categoryLink name="Regular Infantry" hidden="false" id="7d5b-1389-4c58-2b51" targetId="f3f7-ca43-674e-115f" primary="false"/>
                 <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="b5d4-ee68-fef4-c2bb" targetId="may-have-armour"/>
                 <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="4346-27f3-c686-50d2" targetId="may-have-shield"/>
               </categoryLinks>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="e86d-2ae7-e493-5942">
+                  <categoryLinks>
+                    <categoryLink name="NO EXPORT" hidden="false" id="5513-3a40-4b15-6865" targetId="49a9-ce63-af1a-18f7" primary="false"/>
+                  </categoryLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d6b3-f1e0-a20e-23ac"/>
+                    <constraint type="max" value="0" field="selections" scope="force" shared="true" id="fc30-295c-41b3-6feb" includeChildSelections="true"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="true" id="278b-4d43-d0c7-9fdd" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6">
+                      <constraints>
+                        <constraint type="max" value="50" field="points" scope="parent" shared="false" id="eb66-4496-e7ee-d6fa"/>
+                      </constraints>
+                      <modifiers>
+                        <modifier type="set" value="false" field="hidden">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="6ce4-96c1-6e66-4e65" childId="e86d-2ae7-e493-5942" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
+                    </entryLink>
+                  </entryLinks>
+                  <modifiers>
+                    <modifier type="increment" value="1" field="fc30-295c-41b3-6feb">
+                      <repeats>
+                        <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="7ac2-def6-cb0b-ee62"/>
+                      </repeats>
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="increment" value="1" field="fc30-295c-41b3-6feb">
+                      <repeats>
+                        <repeat value="1000" repeats="1" field="points" scope="roster" childId="any" shared="true" roundUp="false" id="af0b-68de-f06c-dac0"/>
+                      </repeats>
+                      <conditions>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </selectionEntry>
+              </selectionEntries>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -662,16 +691,16 @@
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="90f6-ae98-4281-536"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Light Armour" hidden="false" type="selectionEntry" id="8129-1fee-4f86-ed7" targetId="7cab-40e6-f134-de78" sortIndex="2" collective="true">
+            <entryLink import="true" name="Light Armour" hidden="false" type="selectionEntry" id="8129-1fee-4f86-ed7" targetId="7cab-40e6-f134-de78" sortIndex="3" collective="true">
               <costs>
                 <cost name="pts" typeId="points" value="1"/>
               </costs>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="62ef-2116-3a2e-9914" sortIndex="3" collective="true">
+            <selectionEntryGroup name="Thrusting Spears or Shields/Shortbows" id="62ef-2116-3a2e-9914" hidden="false" collective="true" sortIndex="2" flatten="true">
               <entryLinks>
-                <entryLink import="true" name="Thrusting Spear" hidden="false" type="selectionEntry" id="5037-cb84-b006-8c6e" targetId="99d2-7f59-5c14-3bf7" collective="true" sortIndex="1">
+                <entryLink import="true" name="Thrusting Spear" hidden="false" id="5037-cb84-b006-8c6e" type="selectionEntry" targetId="99d2-7f59-5c14-3bf7" collective="true" sortIndex="1">
                   <costs>
                     <cost name="pts" typeId="points" value="1"/>
                   </costs>
@@ -681,18 +710,23 @@
                         <condition type="atLeast" value="1" field="selections" scope="parent" childId="b13c-60ed-f43f-e459" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
+                    <modifier type="add" value="{this} cannot take thrusting spears if they have shortbows." field="error">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="b13c-60ed-f43f-e459" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
                   </modifiers>
                 </entryLink>
               </entryLinks>
               <selectionEntryGroups>
-                <selectionEntryGroup name="Weapon" hidden="false" id="f7be-d249-6de-a58c" flatten="true" defaultSelectionEntryId="1c9a-6640-4186-4116" sortIndex="2">
+                <selectionEntryGroup name="Shield or Shortbow" id="f7be-d249-6de-a58c" hidden="false" flatten="true" defaultSelectionEntryId="1c9a-6640-4186-4116" sortIndex="2">
                   <entryLinks>
-                    <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="1c9a-6640-4186-4116" targetId="6192-f9f1-5d53-2042" collective="true" sortIndex="1">
+                    <entryLink import="true" name="Shield" hidden="false" id="1c9a-6640-4186-4116" type="selectionEntry" targetId="6192-f9f1-5d53-2042" collective="true" sortIndex="2" defaultAmount="1">
                       <costs>
                         <cost name="pts" typeId="points" value="0"/>
                       </costs>
                     </entryLink>
-                    <entryLink import="true" name="Shortbow" hidden="false" type="selectionEntry" id="b13c-60ed-f43f-e459" targetId="f187-20d4-41f3-63cc" collective="true" sortIndex="2">
+                    <entryLink import="true" name="Shortbow" hidden="false" id="b13c-60ed-f43f-e459" type="selectionEntry" targetId="f187-20d4-41f3-63cc" collective="true" sortIndex="1" defaultAmount="0">
                       <costs>
                         <cost name="pts" typeId="points" value="1"/>
                       </costs>
@@ -711,10 +745,8 @@
             <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="f49b-6cae-7ac-138f" targetId="may-have-armour"/>
             <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="2748-c03a-f08b-dc0a" targetId="may-have-shield"/>
           </categoryLinks>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Unit Options" hidden="false" id="54c6-aa08-d15a-65d0" sortIndex="4">
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="false" id="7062-dff1-ac19-8a7c" sortIndex="1">
+            <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="false" id="7062-dff1-ac19-8a7c" collective="true" sortIndex="4">
               <infoLinks>
                 <infoLink name="Skirmishers" id="6488-3191-9d7d-e67c" hidden="false" type="profile" targetId="59a5-7eca-ee35-96ac"/>
               </infoLinks>
@@ -725,37 +757,7 @@
                 <cost name="pts" typeId="points" value="0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="e86d-2ae7-e493-5942" sortIndex="2">
-              <categoryLinks>
-                <categoryLink name="NO EXPORT" hidden="false" id="5513-3a40-4b15-6865" targetId="49a9-ce63-af1a-18f7" primary="false"/>
-              </categoryLinks>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d6b3-f1e0-a20e-23ac"/>
-              </constraints>
-            </selectionEntry>
           </selectionEntries>
-          <constraints>
-            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="1893-1860-4956-b421" includeChildSelections="true"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7ff1-1710-1bbf-c4e3"/>
-          </constraints>
-          <modifiers>
-            <modifier type="increment" value="1" field="1893-1860-4956-b421">
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="3468-30e5-51cd-eda0"/>
-              </repeats>
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="increment" value="1" field="1893-1860-4956-b421">
-              <repeats>
-                <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="58ee-c946-0315-9f85"/>
-              </repeats>
-              <conditions>
-                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-              </conditions>
-            </modifier>
-          </modifiers>
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
@@ -771,6 +773,13 @@
       <categoryLinks>
         <categoryLink name="Faction: Orc and Goblin Tribes" hidden="false" id="44a1-7225-ba55-35b3" primary="false" targetId="96f6-a6de-3328-b74c"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="add" value="166c-6799-e59f-f651" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="7062-dff1-ac19-8a7c" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Night Goblin Mobs" hidden="false" id="399b-6e05-9a74-e18f">
       <profiles>
@@ -864,11 +873,6 @@
                     <constraint type="max" value="0" field="selections" scope="force" shared="true" id="ca55-db65-af07-5342" includeChildSelections="true"/>
                   </constraints>
                   <modifiers>
-                    <modifier type="set" value="Standard Runes" field="name">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
-                      </conditions>
-                    </modifier>
                     <modifier type="increment" value="1" field="ca55-db65-af07-5342">
                       <repeats>
                         <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="5387-9752-2d03-dec7" includeChildSelections="true"/>
@@ -926,38 +930,43 @@
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="9444-a3d-f96e-6095" sortIndex="2" collective="true">
+            <selectionEntryGroup name="Thrusting Spears or Shields/Shortbows" id="c854-69f4-b58c-0f78" hidden="false" collective="true" flatten="true" sortIndex="2">
               <entryLinks>
-                <entryLink import="true" name="Thrusting Spear" hidden="false" type="selectionEntry" id="bb74-fe52-8281-61e3" targetId="99d2-7f59-5c14-3bf7" collective="true" sortIndex="1">
+                <entryLink import="true" name="Thrusting Spear" hidden="false" id="a170-1dfc-8dcc-ad4f" type="selectionEntry" targetId="99d2-7f59-5c14-3bf7" collective="true" sortIndex="1">
                   <costs>
                     <cost name="pts" typeId="points" value="1"/>
                   </costs>
                   <modifiers>
                     <modifier type="set" value="0" field="386b-19fa-4c1c-3d68">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="b8d8-7b27-ef73-e8c4" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="ef98-6060-92f2-1601" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="add" value="{this} cannot take thrusting spears if they have shortbows." field="error">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="ef98-6060-92f2-1601" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
                 </entryLink>
               </entryLinks>
               <selectionEntryGroups>
-                <selectionEntryGroup name="Weapon" hidden="false" id="9369-f540-853-7e88" flatten="true" defaultSelectionEntryId="1c9a-6640-4186-4116" sortIndex="2">
+                <selectionEntryGroup name="Shield or Shortbow" id="de46-a977-5857-a3d2" hidden="false" flatten="true" defaultSelectionEntryId="1c9a-6640-4186-4116" sortIndex="2">
                   <entryLinks>
-                    <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="38a-d18-1f8f-ad76" targetId="6192-f9f1-5d53-2042" collective="true" sortIndex="1">
+                    <entryLink import="true" name="Shield" hidden="false" id="5dc4-2ab3-573b-51a9" type="selectionEntry" targetId="6192-f9f1-5d53-2042" collective="true" sortIndex="2" defaultAmount="1">
                       <costs>
                         <cost name="pts" typeId="points" value="0"/>
                       </costs>
                     </entryLink>
-                    <entryLink import="true" name="Shortbow" hidden="false" type="selectionEntry" id="b8d8-7b27-ef73-e8c4" targetId="f187-20d4-41f3-63cc" collective="true" sortIndex="2">
+                    <entryLink import="true" name="Shortbow" hidden="false" id="ef98-6060-92f2-1601" type="selectionEntry" targetId="f187-20d4-41f3-63cc" collective="true" sortIndex="1" defaultAmount="0">
                       <costs>
                         <cost name="pts" typeId="points" value="1"/>
                       </costs>
                     </entryLink>
                   </entryLinks>
                   <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c248-c910-d13c-96a6"/>
-                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6c6c-e08-a1fa-23c2"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fb74-e1dc-7836-aa95"/>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="71cd-4b6c-8840-7fe7"/>
                   </constraints>
                 </selectionEntryGroup>
               </selectionEntryGroups>
@@ -968,7 +977,7 @@
             <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="f3d-e537-fbd2-70d6" targetId="may-have-shield"/>
           </categoryLinks>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Netters" hidden="false" id="deab-c7e0-9293-cb3a" collective="false" sortIndex="3">
+        <selectionEntry type="upgrade" import="true" name="Netters" hidden="false" id="deab-c7e0-9293-cb3a" collective="false" sortIndex="2">
           <costs>
             <cost name="pts" typeId="points" value="20"/>
           </costs>
@@ -981,7 +990,7 @@
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink import="true" name="Fanatic" hidden="false" type="selectionEntry" id="3520-c4ca-56bb-18d5" targetId="fc7e-38b1-6c78-d8ac" sortIndex="2">
+        <entryLink import="true" name="Fanatic" hidden="false" type="selectionEntry" id="3520-c4ca-56bb-18d5" targetId="fc7e-38b1-6c78-d8ac" sortIndex="3">
           <costs>
             <cost name="pts" typeId="points" value="25"/>
           </costs>
@@ -1110,12 +1119,12 @@
             <infoLink name="Base (40x40)" hidden="false" type="profile" id="229a-773-a3b-f8f5" targetId="1b54-27fc-b510-61b8"/>
           </infoLinks>
           <entryLinks>
-            <entryLink import="true" name="Calloused Hide" hidden="false" type="selectionEntry" id="32c9-c682-8128-c691" targetId="5fa5-9f5d-71b6-8777" collective="true" sortIndex="1">
+            <entryLink import="true" name="Calloused Hide" hidden="false" type="selectionEntry" id="32c9-c682-8128-c691" targetId="5fa5-9f5d-71b6-8777" collective="true" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="0"/>
               </costs>
             </entryLink>
-            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="3d6e-c35-16fd-b01f" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="2">
+            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="3d6e-c35-16fd-b01f" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="1">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="31de-babe-6a91-f778"/>
               </constraints>
@@ -1127,7 +1136,7 @@
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="20f7-1851-2b12-5416" sortIndex="4">
+            <selectionEntryGroup name="Equipment" hidden="false" id="20f7-1851-2b12-5416" sortIndex="2" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="738d-8c8c-76a9-77a0"/>
               </constraints>
@@ -1206,24 +1215,24 @@
             <infoLink name="Base (40x40)" hidden="false" type="profile" id="c293-fe27-e00b-41c2" targetId="1b54-27fc-b510-61b8"/>
           </infoLinks>
           <entryLinks>
-            <entryLink import="true" name="Calloused Hide" hidden="false" type="selectionEntry" id="e03b-3993-d020-d3e8" targetId="5fa5-9f5d-71b6-8777" collective="true" sortIndex="1">
+            <entryLink import="true" name="Calloused Hide" hidden="false" type="selectionEntry" id="e03b-3993-d020-d3e8" targetId="5fa5-9f5d-71b6-8777" collective="true" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="0"/>
               </costs>
             </entryLink>
-            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="5846-f567-1972-6972" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="2">
+            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="5846-f567-1972-6972" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="1">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="68c2-dcd7-2feb-2b42"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Troll Vomit" hidden="false" type="selectionEntry" id="2703-3503-f52f-f041" targetId="b5d4-7050-5328-3003" collective="true" sortIndex="3">
+            <entryLink import="true" name="Troll Vomit" hidden="false" type="selectionEntry" id="2703-3503-f52f-f041" targetId="b5d4-7050-5328-3003" collective="true" sortIndex="2">
               <costs>
                 <cost name="pts" typeId="points" value="0"/>
               </costs>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="1ef-4c77-2cfb-ab6e" sortIndex="4">
+            <selectionEntryGroup name="Equipment" hidden="false" id="1ef-4c77-2cfb-ab6e" sortIndex="3" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3e0b-dbf5-795d-90ae"/>
               </constraints>
@@ -1303,24 +1312,24 @@
             <infoLink name="Base (40x40)" hidden="false" type="profile" id="d416-6e12-1b58-89f9" targetId="1b54-27fc-b510-61b8"/>
           </infoLinks>
           <entryLinks>
-            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="8cc8-4f66-e0cb-8f67" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="2">
+            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="8cc8-4f66-e0cb-8f67" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="1">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7d55-eeb3-7e03-f2dd"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Calloused Hide" hidden="false" type="selectionEntry" id="29fe-275c-5df1-82a8" targetId="5fa5-9f5d-71b6-8777" collective="true" sortIndex="1">
+            <entryLink import="true" name="Calloused Hide" hidden="false" type="selectionEntry" id="29fe-275c-5df1-82a8" targetId="5fa5-9f5d-71b6-8777" collective="true" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="0"/>
               </costs>
             </entryLink>
-            <entryLink import="true" name="Troll Vomit" hidden="false" type="selectionEntry" id="6ca1-ee-55b3-57da" targetId="b5d4-7050-5328-3003" collective="true" sortIndex="3">
+            <entryLink import="true" name="Troll Vomit" hidden="false" type="selectionEntry" id="6ca1-ee-55b3-57da" targetId="b5d4-7050-5328-3003" collective="true" sortIndex="2">
               <costs>
                 <cost name="pts" typeId="points" value="0"/>
               </costs>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="c3ab-af1e-5e24-4026" sortIndex="4">
+            <selectionEntryGroup name="Equipment" hidden="false" id="c3ab-af1e-5e24-4026" sortIndex="3" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ce1a-4bc2-8f85-3504"/>
               </constraints>
@@ -5358,7 +5367,7 @@
         </infoGroup>
       </infoGroups>
       <selectionEntries>
-        <selectionEntry type="upgrade" import="true" name="Fanatic Ball &amp; Chain" hidden="false" id="6d69-b38c-a263-9ffd">
+        <selectionEntry type="upgrade" import="true" name="Fanatic Ball &amp; Chain" hidden="false" id="6d69-b38c-a263-9ffd" collective="false">
           <infoLinks>
             <infoLink name="Fanatic Ball &amp; Chain" hidden="false" type="profile" id="d03b-c7cd-f4b4-36fb" targetId="1f92-933c-dfaa-bd0a"/>
           </infoLinks>
@@ -6818,7 +6827,7 @@ Note that this special rule only applies to attacks made by a War Boar, not to t
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">When this unit’s combat is chosen during Step 1.1 of any Choose &amp; Fight Combat sub-phase, it may attempt to ‘entangle’ one enemy unit it is engaged with. Roll a D6. On a roll of 1, the unit has entangled itself. On a roll of 2+, the enemy unit is entangled. Until the end of the Combat phase, an entangled unit suffers a -1 modifier to its Strength characteristic (to a minimum of 1).
 
- Note that this modifier is not cumulative.</characteristic>
+*Note that this modifier is not cumulative.*</characteristic>
       </characteristics>
     </profile>
     <profile name="Skulking Menace" hidden="false" id="8186-4d89-630-5b0a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="24" publicationId="7c89-736c-3139-24a0">
@@ -7456,21 +7465,20 @@ Note that this special rule only applies to attacks made by a War Boar, not to t
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Fanatics are not placed on the battlefield at the start of the game. Instead, make a note of which Night Goblin units include Fanatics, and of how many they include. These units are referred to as ‘concealing’ units. A concealing unit may release one or more of its Fanatics during any Start of Turn sub-phase.
 
- When a Fanatic is released, it travels through the air to land spinning several feet away from its concealing unit, before embarking upon its erratic journey across the battlefield. To represent this, place the model so that its base is within 3&quot; of its concealing unit and not touching the bases of any other models.
+When a Fanatic is released, it travels through the air to land spinning several feet away from its concealing unit, before embarking upon its erratic journey across the battlefield. To represent this, place the model so that its base is within 3&quot; of its concealing unit and not touching the bases of any other models.
 
- Fanatic Movement: During the Compulsory Moves sub-phase of the turn in which it was released, a Fanatic moves 2D6&quot; in a direction chosen by its controlling player.
+**Fanatic Movement:** During the Compulsory Moves sub-phase of the turn in which it was released, a Fanatic moves 2D6&quot; in a direction chosen by its controlling player.
 
- During each and every other Compulsory Moves sub-phase, a Fanatic Moves 2D6&quot; in a random direction. If a Fanatic’s movement brings it into contact with a unit (friend or foe), it moves through that unit. Continue to move it in the same direction until it can be placed on the battlefield with its base not touching the bases of any other models.
+During each and every other Compulsory Moves sub-phase, a Fanatic Moves 2D6&quot; in a random direction. If a Fanatic’s movement brings it into contact with a unit (friend or foe), it moves through that unit. Continue to move it in the same direction until it can be placed on the battlefield with its base not touching the bases of any other models.
 
- Note that, unlike other models, Fanatics ignore the 1&quot; rule.
+*Note that, unlike other models, Fanatics ignore the 1&quot; rule.*
 
- Moving Through a Fanatic: Although dangerous, any unit may move through a Fanatic. Should a unit ever end its move ‘on top’ of a Fanatic, move the Fanatic by the shortest route possible until it can be placed on the battlefield with its base not touching the bases of any models.
+**Moving Through a Fanatic:** Although dangerous, any unit may move through a Fanatic. Should a unit ever end its move ‘on top’ of a Fanatic, move the Fanatic by the shortest route possible until it can be placed on the battlefield with its base not touching the bases of any models.
 
- Fanatic Ball &amp; Chain: Any unit (friend or foe) that is moved through by a moving Fanatic, or that moves through a Fanatic, suffers D6 Strength 5 hits, each with an AP of -3.
+**Fanatic Ball &amp; Chain:** Any unit (friend or foe) that is moved through by a moving Fanatic, or that moves through a Fanatic, suffers D6 Strength 5 hits, each with an AP of -3.
 
- Death of a Fanatic: A Fanatic model cannot be charged, targeted or attacked in any way.
-
- However, the life of a Fanatic is no less dangerous for this. Should a Fanatic find itself lying fully or partially underneath a template (one placed over a nearby unit, for example, or that has scattered), it risks being hit as normal. Additionally, if any natural double is rolled for its movement, or if a Fanatic moves into any difficult, dangerous or impassable terrain, or any type of linear obstacle, it comes to a sudden and terminal stop, and is immediately removed from play as a casualty. Finally, if a concealing unit is destroyed or flees the battlefield before its Fanatics have been released, they are removed as casualties.</characteristic>
+**Death of a Fanatic:** A Fanatic model cannot be charged, targeted or attacked in any way.
+However, the life of a Fanatic is no less dangerous for this. Should a Fanatic find itself lying fully or partially underneath a template (one placed over a nearby unit, for example, or that has scattered), it risks being hit as normal. Additionally, if any natural double is rolled for its movement, or if a Fanatic moves into any difficult, dangerous or impassable terrain, or any type of linear obstacle, it comes to a sudden and terminal stop, and is immediately removed from play as a casualty. Finally, if a concealing unit is destroyed or flees the battlefield before its Fanatics have been released, they are removed as casualties.</characteristic>
       </characteristics>
     </profile>
     <profile name="Fanatic" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="5af3-a46d-e0a0-649d">
@@ -8435,6 +8443,29 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
       <constraints>
         <constraint type="max" value="1" field="selections" scope="force" shared="true" id="fcc8-5a7f-f783-da78" includeChildSelections="true"/>
       </constraints>
+    </categoryEntry>
+    <categoryEntry name="0-1 Goblin Mobs per 1,000 points may replace the Close Order special rule with Skirmishers" id="166c-6799-e59f-f651" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="8720-8976-2417-4090" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="8720-8976-2417-4090">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="ee1b-8a5b-a6ad-2f2e"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="8720-8976-2417-4090">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="roster" childId="any" shared="true" roundUp="false" id="1a4f-1e5e-f46b-45b9"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </categoryEntry>
   </categoryEntries>
 </catalogue>
