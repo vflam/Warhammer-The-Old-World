@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="156" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="157" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Orc Mobs" hidden="false" id="51e8-1471-ce4c-d5dd">
       <profiles>
@@ -32,7 +32,7 @@
       <selectionEntryGroups>
         <selectionEntryGroup name="Command" hidden="false" id="a374-7f93-4857-38c5" sortIndex="2">
           <selectionEntries>
-            <selectionEntry type="model" import="true" name="Boss" hidden="false" id="9601-28c5-b717-6ebd" flatten="true" sortIndex="1" subType="crew">
+            <selectionEntry type="model" import="true" name="Boss" hidden="false" id="9601-28c5-b717-6ebd" flatten="false" sortIndex="1" subType="crew">
               <infoLinks>
                 <infoLink name="Orc Boy" hidden="false" type="profile" id="4b99-41f8-7f54-2784" targetId="5f5d-e3ae-fd89-7005">
                   <modifiers>
@@ -81,7 +81,7 @@
                 <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="78b9-c53c-d387-da1e" targetId="may-have-shield"/>
               </categoryLinks>
             </selectionEntry>
-            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="44b5-5969-34f5-f4e0" flatten="true" sortIndex="2" subType="crew">
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="44b5-5969-34f5-f4e0" flatten="false" sortIndex="2" subType="crew">
               <infoLinks>
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="e076-7bfb-dd2-4961" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
@@ -92,48 +92,37 @@
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c17d-6c3a-9fa4-3798"/>
               </constraints>
-              <entryLinks>
-                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="2a42-b365-b928-121b" targetId="6bbe-8054-19b7-e5d6">
-                  <constraints>
-                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="e677-f456-e76e-5280"/>
-                  </constraints>
-                  <modifiers>
-                    <modifier type="set" value="false" field="hidden">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="51e8-1471-ce4c-d5dd" childId="3774-b8cd-51a1-7893" shared="true" includeChildSelections="true"/>
-                      </conditions>
-                    </modifier>
-                  </modifiers>
-                </entryLink>
-              </entryLinks>
               <categoryLinks>
                 <categoryLink name="Regular Infantry" hidden="false" id="12d2-1f84-52bc-a3be" targetId="f3f7-ca43-674e-115f" primary="false"/>
                 <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="9308-7778-5323-41f3" targetId="may-have-armour"/>
                 <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="69b4-aecb-e292-26fb" targetId="may-have-shield"/>
               </categoryLinks>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="3774-b8cd-51a1-7893" flatten="false">
+                  <categoryLinks>
+                    <categoryLink name="NO EXPORT" hidden="false" id="23bf-68bb-3b5c-1716" targetId="49a9-ce63-af1a-18f7" primary="false"/>
+                  </categoryLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="eaa7-b95e-54af-9f25"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Standards" hidden="true" id="2a42-b365-b928-121b" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6">
+                      <constraints>
+                        <constraint type="max" value="50" field="points" scope="parent" shared="false" id="e677-f456-e76e-5280"/>
+                      </constraints>
+                      <modifiers>
+                        <modifier type="set" value="false" field="hidden">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="51e8-1471-ce4c-d5dd" childId="3774-b8cd-51a1-7893" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
+                    </entryLink>
+                  </entryLinks>
+                </selectionEntry>
+              </selectionEntries>
             </selectionEntry>
           </selectionEntries>
-        </selectionEntryGroup>
-        <selectionEntryGroup name="Armour" hidden="false" id="57ca-35dc-5550-4db5" defaultSelectionEntryId="fd6b-dbf1-219e-78a8" sortIndex="3">
-          <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="61d1-e39c-b043-9725-min"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="61d1-e39c-b043-9725-max"/>
-          </constraints>
-          <entryLinks>
-            <entryLink import="true" name="Light Armour" hidden="false" id="fd6b-dbf1-219e-78a8" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="2"/>
-          </entryLinks>
-          <modifiers>
-            <modifier type="set" value="0" field="61d1-e39c-b043-9725-max">
-              <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="5544-e5a2-6fa7-9d97" shared="true" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" value="0" field="61d1-e39c-b043-9725-min">
-              <conditions>
-                <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="5544-e5a2-6fa7-9d97" shared="true" includeChildSelections="true"/>
-              </conditions>
-            </modifier>
-          </modifiers>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <selectionEntries>
@@ -154,14 +143,22 @@
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="3f21-1104-8a96-a4b7"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="d90c-346e-736c-61f7" targetId="6192-f9f1-5d53-2042" collective="true" sortIndex="2">
+            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="d90c-346e-736c-61f7" targetId="6192-f9f1-5d53-2042" collective="true" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="1"/>
               </costs>
             </entryLink>
+            <entryLink import="true" name="Big Un&apos;s" hidden="false" id="76a8-703c-b2ce-23c7" type="selectionEntry" targetId="f68f-42ea-0e26-638c" collective="true">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="76ad-740f-d0ae-82c0" includeChildSelections="false"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="2"/>
+              </costs>
+            </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="6a18-3ccb-f792-a26a" sortIndex="4">
+            <selectionEntryGroup name="Equipment" hidden="false" id="6a18-3ccb-f792-a26a" sortIndex="2" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fd05-b255-96a6-dbd6"/>
               </constraints>
@@ -171,12 +168,12 @@
                     <cost name="pts" typeId="points" value="1"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Throwing Spear" hidden="false" type="selectionEntry" id="2957-c09b-b480-c35a" targetId="9113-238a-ef75-aa23" collective="true" sortIndex="3">
+                <entryLink import="true" name="Throwing Spear" hidden="false" type="selectionEntry" id="2957-c09b-b480-c35a" targetId="9113-238a-ef75-aa23" collective="true" sortIndex="4">
                   <costs>
                     <cost name="pts" typeId="points" value="1"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Thrusting Spear" hidden="false" type="selectionEntry" id="b86-8d91-c1b3-53c" targetId="99d2-7f59-5c14-3bf7" collective="true" sortIndex="4">
+                <entryLink import="true" name="Thrusting Spear" hidden="false" type="selectionEntry" id="b86-8d91-c1b3-53c" targetId="99d2-7f59-5c14-3bf7" collective="true" sortIndex="3">
                   <costs>
                     <cost name="pts" typeId="points" value="1"/>
                   </costs>
@@ -184,111 +181,62 @@
                 <entryLink import="true" name="Warbow" hidden="false" id="4e49-ef7-7ef5-dedc" type="selectionEntry" targetId="244d-ff04-bdc1-56b8" sortIndex="1"/>
               </entryLinks>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Armour or Frenzy" id="080e-056e-eb5b-dc32" hidden="false" sortIndex="3" flatten="true">
+              <entryLinks>
+                <entryLink import="true" name="Light Armour" hidden="false" id="fd6b-dbf1-219e-78a8" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="1"/>
+              </entryLinks>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="false" id="5544-e5a2-6fa7-9d97" flatten="true" collective="true" sortIndex="2">
+                  <infoLinks>
+                    <infoLink name="Frenzy" id="6b96-1450-827d-92b2" hidden="false" type="profile" targetId="3b0c-a477-8823-3a25"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e557-24bd-d0c4-c72a"/>
+                  </constraints>
+                  <selectionEntries>
+                    <selectionEntry type="upgrade" import="true" name="Warpaint" hidden="false" id="0ffc-ce29-615e-3a19" collective="true" sortIndex="2">
+                      <costs>
+                        <cost name="pts" typeId="points" value="1"/>
+                      </costs>
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8772-7408-48eb-d93b"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Warpaint" id="0184-987b-383c-8131" hidden="false" type="profile" targetId="be75-116d-97e0-fbae"/>
+                      </infoLinks>
+                    </selectionEntry>
+                    <selectionEntry type="upgrade" import="true" name="Big Stabbas" hidden="false" id="3662-284e-4aac-e98d" collective="true" sortIndex="1">
+                      <constraints>
+                        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="df85-eeea-5f6a-6a4f"/>
+                      </constraints>
+                      <infoLinks>
+                        <infoLink name="Big Stabass" id="9782-b085-82f4-3dd4" hidden="false" type="profile" targetId="ab77-45c5-d8b5-8ae0"/>
+                      </infoLinks>
+                      <modifiers>
+                        <modifier type="set" value="5 Points per unit" field="annotation">
+                          <conditions>
+                            <condition type="lessThan" value="1" field="selections" scope="root-entry" childId="3662-284e-4aac-e98d" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
+                    </selectionEntry>
+                  </selectionEntries>
+                  <costs>
+                    <cost name="pts" typeId="points" value="1"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f458-1057-1c2d-2641"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fb79-22e4-07bd-2c99"/>
+              </constraints>
+            </selectionEntryGroup>
           </selectionEntryGroups>
           <categoryLinks>
             <categoryLink name="Regular Infantry" hidden="false" id="481f-f834-6e1e-9006" targetId="f3f7-ca43-674e-115f" primary="false"/>
             <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="5f8f-a29e-b3ca-b53e" targetId="may-have-armour"/>
             <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="3cfa-9482-8b6c-2aa8" targetId="may-have-shield"/>
           </categoryLinks>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Unit Options" hidden="false" id="3b56-19b1-8dea-3a30" sortIndex="5">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b5f3-4264-5df5-16c4"/>
-            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="abec-90e3-6374-1aed" includeChildSelections="true"/>
-          </constraints>
-          <modifiers>
-            <modifier type="increment" value="1" field="abec-90e3-6374-1aed">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-              </conditions>
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
-              </repeats>
-            </modifier>
-            <modifier type="increment" value="1" field="abec-90e3-6374-1aed">
-              <conditions>
-                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-              </conditions>
-              <repeats>
-                <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
-              </repeats>
-            </modifier>
-          </modifiers>
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="false" id="5544-e5a2-6fa7-9d97" flatten="true">
-              <infoLinks>
-                <infoLink name="Frenzy" id="e8e6-b640-a7b0-b0f5" hidden="false" type="profile" targetId="3b0c-a477-8823-3a25"/>
-              </infoLinks>
-              <modifiers>
-                <modifier type="increment" value="1" field="points">
-                  <repeats>
-                    <repeat value="1" repeats="1" field="selections" scope="root-entry" childId="model" shared="true" roundUp="false"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3584-eaaf-b6e2-67a6"/>
-              </constraints>
-              <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Warpaint" hidden="false" id="f1d0-3d6-cbc4-5a2" collective="true">
-                  <costs>
-                    <cost name="pts" typeId="points" value="0"/>
-                  </costs>
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="be26-9b48-a2cc-c1e2"/>
-                  </constraints>
-                  <infoLinks>
-                    <infoLink name="Warpaint" id="9b61-b7e5-2d59-2336" hidden="false" type="profile" targetId="be75-116d-97e0-fbae"/>
-                  </infoLinks>
-                  <modifiers>
-                    <modifier type="increment" value="1" field="points">
-                      <repeats>
-                        <repeat value="1" repeats="1" field="selections" scope="root-entry" childId="model" shared="true" roundUp="false" id="162d-fc6a-3f5b-a579"/>
-                      </repeats>
-                    </modifier>
-                  </modifiers>
-                </selectionEntry>
-                <selectionEntry type="upgrade" import="true" name="Big Stabbas" hidden="false" id="414d-253c-435c-d96d" collective="true">
-                  <costs>
-                    <cost name="pts" typeId="points" value="5"/>
-                  </costs>
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="eb6c-f194-9f2b-dc6f"/>
-                  </constraints>
-                  <infoLinks>
-                    <infoLink name="Big Stabass" id="1ce7-6b32-87e5-c89a" hidden="false" type="profile" targetId="ab77-45c5-d8b5-8ae0"/>
-                  </infoLinks>
-                </selectionEntry>
-              </selectionEntries>
-            </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="3774-b8cd-51a1-7893" flatten="false">
-              <categoryLinks>
-                <categoryLink name="NO EXPORT" hidden="false" id="23bf-68bb-3b5c-1716" targetId="49a9-ce63-af1a-18f7" primary="false"/>
-              </categoryLinks>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="eaa7-b95e-54af-9f25"/>
-              </constraints>
-              <modifiers>
-                <modifier type="set" value="Standard Runes" field="name">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-            </selectionEntry>
-          </selectionEntries>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Unique Options" hidden="false" id="32aa-47f5-de1c-104b" sortIndex="4" flatten="false">
-          <entryLinks>
-            <entryLink import="true" name="Big Un&apos;s" hidden="false" id="76a8-703c-b2ce-23c7" type="selectionEntry" targetId="f68f-42ea-0e26-638c" collective="true">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="76ad-740f-d0ae-82c0" includeChildSelections="false"/>
-              </constraints>
-              <costs>
-                <cost name="pts" hidden="false" id="4ef6-2da-9e97-b338" typeId="points" value="0"/>
-              </costs>
-            </entryLink>
-          </entryLinks>
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="false" id="a8bf-d5a9-117a-1b88" collective="true">
               <infoLinks>
@@ -299,14 +247,38 @@
               </constraints>
             </selectionEntry>
           </selectionEntries>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="force" shared="true" id="334d-7ba9-3e29-478f" includeChildSelections="true"/>
-          </constraints>
         </selectionEntry>
       </selectionEntries>
       <categoryLinks>
         <categoryLink name="Faction: Orc and Goblin Tribes" hidden="false" id="68c7-cb3d-c01-b5a6" primary="false" targetId="96f6-a6de-3328-b74c"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="add" value="87af-7ace-a311-6c74" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="5544-e5a2-6fa7-9d97" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="4b9c-7204-21c7-0620" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="3774-b8cd-51a1-7893" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="5" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="3662-284e-4aac-e98d" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="e253-5bb3-ba3c-4705" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="76a8-703c-b2ce-23c7" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="7b83-a27c-1089-2932" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="a8bf-d5a9-117a-1b88" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Big Un&apos;s" hidden="false" id="e06e-f7ee-cc7f-ec67">
       <costs>
@@ -347,7 +319,7 @@
         </infoGroup>
       </infoGroups>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Special Rules" hidden="false" id="99c1-93dc-6114-be9b" sortIndex="3">
+        <selectionEntryGroup name="Special Rules" hidden="false" id="99c1-93dc-6114-be9b" sortIndex="1">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="false" id="822b-1356-f43b-b132" collective="true" sortIndex="1">
               <infoLinks>
@@ -389,7 +361,7 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
       <selectionEntries>
-        <selectionEntry type="model" import="true" name="Black Orc" hidden="false" id="907e-90b-b5a5-a8a3" sortIndex="1" flatten="false">
+        <selectionEntry type="model" import="true" name="Black Orc" hidden="false" id="907e-90b-b5a5-a8a3" sortIndex="2" flatten="false">
           <costs>
             <cost name="pts" typeId="points" value="12"/>
           </costs>
@@ -456,7 +428,7 @@
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" id="f3e1-8036-e38a-6f63" hidden="false" sortIndex="5">
+            <selectionEntryGroup name="Command" id="f3e1-8036-e38a-6f63" hidden="false" sortIndex="6">
               <selectionEntries>
                 <selectionEntry type="upgrade" import="true" name="Boss" hidden="false" id="e0dc-51c3-dea4-e187" sortIndex="1" collapsible="true">
                   <infoLinks>
@@ -2764,7 +2736,7 @@
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Wyvern" hidden="false" id="84e5-c8c3-3a09-473e" subType="mount">
       <selectionEntries>
-        <selectionEntry type="upgrade" import="true" name="Wicked claws" hidden="false" id="4983-c7b-c6ce-7a45" sortIndex="3">
+        <selectionEntry type="upgrade" import="true" name="Wicked claws" hidden="false" id="4983-c7b-c6ce-7a45" sortIndex="1" collective="true">
           <constraints>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="d07c-3510-e87b-dc4b"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a4d-fde2-f6d5-963b"/>
@@ -2773,7 +2745,7 @@
             <infoLink name="Wicked Claws" hidden="false" type="profile" id="eff9-91bf-d4e2-cd3d" targetId="8382-4e23-e72c-d90"/>
           </infoLinks>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Venomous Tail" hidden="false" id="4a3a-116c-8f2b-24ac" sortIndex="2">
+        <selectionEntry type="upgrade" import="true" name="Venomous Tail" hidden="false" id="4a3a-116c-8f2b-24ac" sortIndex="2" collective="true">
           <infoLinks>
             <infoLink name="Venomous Tail" hidden="false" id="dee6-f4f3-5772-5d31" type="profile" targetId="c761-4dde-b2c8-b6fe"/>
           </infoLinks>
@@ -2808,7 +2780,7 @@
         <infoLink name="Wyvern" hidden="false" type="profile" id="5c3a-1f70-e864-b24" targetId="7201-2362-dd8b-8cf4"/>
       </infoLinks>
       <entryLinks>
-        <entryLink import="true" name="Heavy Armour" hidden="false" id="28db-9806-5efe-d38f" type="selectionEntry" targetId="62fb-f89d-afc-1cf1" sortIndex="1">
+        <entryLink import="true" name="Heavy Armour" hidden="false" id="28db-9806-5efe-d38f" type="selectionEntry" targetId="62fb-f89d-afc-1cf1" sortIndex="3">
           <constraints>
             <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7afd-5a1f-ca4d-aa0c"/>
           </constraints>
@@ -3032,7 +3004,7 @@
                 <constraint type="max" value="100" field="points" scope="parent" shared="false" id="7244-ef03-82af-e356"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Full Plate Armour" hidden="false" type="selectionEntry" id="59db-d360-b0fa-359f" targetId="2505-873d-1655-3b0b" collective="true" sortIndex="1">
+            <entryLink import="true" name="Full Plate Armour" hidden="false" type="selectionEntry" id="59db-d360-b0fa-359f" targetId="2505-873d-1655-3b0b" collective="true" sortIndex="3">
               <costs>
                 <cost name="pts" typeId="points" value="0"/>
               </costs>
@@ -3040,19 +3012,19 @@
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ccb9-b00e-9a0-8635"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="37f5-8667-da52-1ed7" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="2">
+            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="37f5-8667-da52-1ed7" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="1">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4558-f12-16f8-8753"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="4be4-8be5-a2b0-3868" targetId="6192-f9f1-5d53-2042" sortIndex="3">
+            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="4be4-8be5-a2b0-3868" targetId="6192-f9f1-5d53-2042" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="2"/>
               </costs>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="d927-7342-130f-3956" sortIndex="6">
+            <selectionEntryGroup name="Equipment" hidden="false" id="d927-7342-130f-3956" sortIndex="2" flatten="true">
               <entryLinks>
                 <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="6c55-6daa-b82e-584f" targetId="8943-3e16-db2a-b7f3" sortIndex="2">
                   <costs>
@@ -3074,13 +3046,13 @@
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e2b-2c94-d235-5e3b" includeChildSelections="false"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mount" hidden="false" id="b647-86dc-2f46-39b9" sortIndex="5">
+            <selectionEntryGroup name="Mount" hidden="false" id="b647-86dc-2f46-39b9" sortIndex="6" collapsible="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8a9c-fd97-45ff-bb5b"/>
                 <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="61cf-2e63-7078-f82b" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="d2d4-65c2-c34b-1c8a" targetId="3c93-ea7e-4771-ad63" sortIndex="2">
+                <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="d2d4-65c2-c34b-1c8a" targetId="3c93-ea7e-4771-ad63" sortIndex="1">
                   <costs>
                     <cost name="pts" typeId="points" value="16"/>
                   </costs>
@@ -3088,7 +3060,7 @@
                     <categoryLink name="Heavy Cavalry" hidden="false" id="d8ea-9f6a-4780-a517" targetId="5165-d052-cfc2-5887" primary="false"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Orc Boar Chariot" hidden="false" type="selectionEntry" id="1501-a5ee-3378-7370" targetId="d199-3d8-1b92-465d" sortIndex="1">
+                <entryLink import="true" name="Orc Boar Chariot" hidden="false" type="selectionEntry" id="1501-a5ee-3378-7370" targetId="d199-3d8-1b92-465d" sortIndex="2">
                   <categoryLinks>
                     <categoryLink targetId="c96a-608-5de4-b943" id="bb3e-7179-8229-8464" primary="false" name="MOUNT"/>
                   </categoryLinks>
@@ -3108,7 +3080,7 @@
                 </modifier>
               </modifiers>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="9cf1-64d2-4ead-fc63" sortIndex="4">
+            <selectionEntryGroup name="Command" hidden="false" id="9cf1-64d2-4ead-fc63" sortIndex="5">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="fc43-c2ce-2212-4192" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
@@ -3209,12 +3181,12 @@
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="1528-3326-9e18-80eb"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="5ec4-3276-89a8-6893" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="2">
+            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="5ec4-3276-89a8-6893" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="1">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="5561-135d-773b-e4d3"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Full Plate Armour" hidden="false" type="selectionEntry" id="6989-e8a4-936a-8d02" targetId="2505-873d-1655-3b0b" collective="true" sortIndex="1">
+            <entryLink import="true" name="Full Plate Armour" hidden="false" type="selectionEntry" id="6989-e8a4-936a-8d02" targetId="2505-873d-1655-3b0b" collective="true" sortIndex="3">
               <costs>
                 <cost name="pts" typeId="points" value="0"/>
               </costs>
@@ -3222,20 +3194,20 @@
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="bf7d-8885-e680-aa2e"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="db65-5e58-4607-fdb5" targetId="6192-f9f1-5d53-2042" sortIndex="3">
+            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="db65-5e58-4607-fdb5" targetId="6192-f9f1-5d53-2042" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="2"/>
               </costs>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Mount" hidden="false" id="cb67-c360-2aa7-c5d9" sortIndex="5" flatten="false" collapsible="false">
+            <selectionEntryGroup name="Mount" hidden="false" id="cb67-c360-2aa7-c5d9" sortIndex="6" flatten="false" collapsible="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="95f4-6a6e-d02e-4145"/>
                 <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="5946-2bca-acf8-26d1" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="a55f-46a4-25bd-aca4" targetId="3c93-ea7e-4771-ad63" sortIndex="2">
+                <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="a55f-46a4-25bd-aca4" targetId="3c93-ea7e-4771-ad63" sortIndex="1">
                   <costs>
                     <cost name="pts" typeId="points" value="16"/>
                   </costs>
@@ -3243,7 +3215,7 @@
                     <categoryLink name="Heavy Cavalry" hidden="false" id="6724-a18f-7266-17b0" targetId="5165-d052-cfc2-5887" primary="false"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Orc Boar Chariot" hidden="false" type="selectionEntry" id="1971-5a95-aad6-6760" targetId="d199-3d8-1b92-465d" sortIndex="1">
+                <entryLink import="true" name="Orc Boar Chariot" hidden="false" type="selectionEntry" id="1971-5a95-aad6-6760" targetId="d199-3d8-1b92-465d" sortIndex="2">
                   <categoryLinks>
                     <categoryLink targetId="c96a-608-5de4-b943" id="fdc9-ade2-9dd6-db41" primary="false" name="MOUNT"/>
                   </categoryLinks>
@@ -3258,7 +3230,7 @@
                 </modifier>
               </modifiers>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Equipment" hidden="false" id="4504-2437-3b19-be44" sortIndex="6">
+            <selectionEntryGroup name="Equipment" hidden="false" id="4504-2437-3b19-be44" sortIndex="2" flatten="true">
               <entryLinks>
                 <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="3a83-3e6d-e12-44db" targetId="8943-3e16-db2a-b7f3" sortIndex="2">
                   <costs>
@@ -3280,7 +3252,7 @@
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="69cc-e8a9-c8f3-b01c" includeChildSelections="false"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="2565-39a5-4bf9-4ede" sortIndex="4" collapsible="false">
+            <selectionEntryGroup name="Command" hidden="false" id="2565-39a5-4bf9-4ede" sortIndex="5" collapsible="false">
               <entryLinks>
                 <entryLink import="true" name="Battle Standard Bearer" hidden="true" type="selectionEntry" id="5b43-d18a-36c5-19c7" targetId="5b87-9cf5-953d-3829" flatten="true" sortIndex="2">
                   <costs>
@@ -3367,7 +3339,7 @@
             <infoLink name="Base (25x25)" hidden="false" type="profile" id="35c2-e327-79ec-2acb" targetId="193c-4d0d-de6b-bbb1"/>
           </infoLinks>
           <entryLinks>
-            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="ffdb-7645-db9e-488d" targetId="1539-fd78-88f-badd" sortIndex="7">
+            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="ffdb-7645-db9e-488d" targetId="1539-fd78-88f-badd" sortIndex="8">
               <constraints>
                 <constraint type="max" value="100" field="points" scope="parent" shared="false" id="7beb-cfa4-df6c-dc46"/>
               </constraints>
@@ -3382,14 +3354,14 @@
                 <cost name="pts" typeId="points" value="3"/>
               </costs>
             </entryLink>
-            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="ecf7-68e2-f434-44e9" targetId="6192-f9f1-5d53-2042" sortIndex="2">
+            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="ecf7-68e2-f434-44e9" targetId="6192-f9f1-5d53-2042" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="2"/>
               </costs>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="bbca-395a-9e5-7d9e" sortIndex="6">
+            <selectionEntryGroup name="Equipment" hidden="false" id="bbca-395a-9e5-7d9e" sortIndex="2" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b2b5-8671-d462-3ffc"/>
               </constraints>
@@ -3411,23 +3383,23 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mount" hidden="false" id="bb1f-12d7-fbf0-7ab7" sortIndex="5">
+            <selectionEntryGroup name="Mount" hidden="false" id="bb1f-12d7-fbf0-7ab7" sortIndex="7">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bbed-e7df-d4f9-39e8"/>
                 <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="5889-eee8-db13-37b7" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="Goblin Wolf Chariot" hidden="false" type="selectionEntry" id="7ddd-b306-a2a6-db97" targetId="e235-ad57-e069-77d0" sortIndex="1">
+                <entryLink import="true" name="Goblin Wolf Chariot" hidden="false" type="selectionEntry" id="7ddd-b306-a2a6-db97" targetId="e235-ad57-e069-77d0" sortIndex="3">
                   <categoryLinks>
                     <categoryLink targetId="c96a-608-5de4-b943" id="3cec-8a64-1eb7-2277" primary="false" name="MOUNT"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Gigantic Spider" hidden="false" type="selectionEntry" id="8499-b6e-8cc0-fe39" targetId="3d51-77-691f-c5ba" sortIndex="3">
+                <entryLink import="true" name="Gigantic Spider" hidden="false" type="selectionEntry" id="8499-b6e-8cc0-fe39" targetId="3d51-77-691f-c5ba" sortIndex="2">
                   <costs>
                     <cost name="pts" typeId="points" value="35"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Giant Wolf" hidden="false" type="selectionEntry" id="d54d-e8b7-b054-dab9" targetId="5d79-54f9-120d-31c9" sortIndex="2">
+                <entryLink import="true" name="Giant Wolf" hidden="false" type="selectionEntry" id="d54d-e8b7-b054-dab9" targetId="5d79-54f9-120d-31c9" sortIndex="1">
                   <costs>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
@@ -3447,12 +3419,12 @@
                 </modifier>
               </modifiers>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="444-624e-8936-fa2a" sortIndex="4">
+            <selectionEntryGroup name="Command" hidden="false" id="444-624e-8936-fa2a" sortIndex="6">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="e76f-80cc-456-1183" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Options" id="a0dd-816c-3fde-878" hidden="false" sortIndex="8">
+            <selectionEntryGroup name="Options" id="a0dd-816c-3fde-878" hidden="false" sortIndex="5" flatten="true">
               <selectionEntries>
                 <selectionEntry type="upgrade" import="true" name="Ambush" hidden="true" id="dbec-36ed-694f-b2ae">
                   <constraints>
@@ -3469,6 +3441,9 @@
                   <costs>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
+                  <infoLinks>
+                    <infoLink name="Ambushers" id="474f-3cdc-5c25-3921" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+                  </infoLinks>
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
@@ -3558,14 +3533,14 @@
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1234-6898-4152-aad"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="8585-1595-2e16-9adb" targetId="6192-f9f1-5d53-2042" sortIndex="2">
+            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="8585-1595-2e16-9adb" targetId="6192-f9f1-5d53-2042" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="2"/>
               </costs>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="8dbf-6844-e7ec-3b6c" sortIndex="6">
+            <selectionEntryGroup name="Equipment" hidden="false" id="8dbf-6844-e7ec-3b6c" sortIndex="2" flatten="true">
               <entryLinks>
                 <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="e3ea-b592-6d33-4537" targetId="8943-3e16-db2a-b7f3" sortIndex="2">
                   <costs>
@@ -3587,13 +3562,13 @@
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5f7f-1929-3ad4-4766"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mount" hidden="false" id="8b82-c044-f3fc-a657" sortIndex="4">
+            <selectionEntryGroup name="Mount" hidden="false" id="8b82-c044-f3fc-a657" sortIndex="6" collapsible="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4149-ef4d-1681-cd7c"/>
                 <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="9c0e-746e-b39a-5f05" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="64e6-57ea-773c-9268" targetId="3c93-ea7e-4771-ad63" sortIndex="2">
+                <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="64e6-57ea-773c-9268" targetId="3c93-ea7e-4771-ad63" sortIndex="1">
                   <costs>
                     <cost name="pts" typeId="points" value="16"/>
                   </costs>
@@ -3601,7 +3576,7 @@
                     <categoryLink name="Heavy Cavalry" hidden="false" id="f5a6-4306-5ce-7065" targetId="5165-d052-cfc2-5887" primary="false"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Orc Boar Chariot" hidden="false" type="selectionEntry" id="cabb-94a4-fa62-97a1" targetId="d199-3d8-1b92-465d" sortIndex="1">
+                <entryLink import="true" name="Orc Boar Chariot" hidden="false" type="selectionEntry" id="cabb-94a4-fa62-97a1" targetId="d199-3d8-1b92-465d" sortIndex="2">
                   <categoryLinks>
                     <categoryLink targetId="c96a-608-5de4-b943" id="ae1b-709c-1006-b7a" primary="false" name="MOUNT"/>
                   </categoryLinks>
@@ -3615,10 +3590,10 @@
                 </modifier>
               </modifiers>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Armour" hidden="false" id="bfd5-a04d-6fef-21b9" sortIndex="5" defaultSelectionEntryId="b1b3-c7ed-e2cd-e9dc">
+            <selectionEntryGroup name="Armour" hidden="false" id="bfd5-a04d-6fef-21b9" sortIndex="3" defaultSelectionEntryId="b1b3-c7ed-e2cd-e9dc" flatten="true">
               <entryLinks>
-                <entryLink targetId="55c1-2dbc-f143-bfd8" id="6675-1995-72fa-a189" type="selectionEntry" name="Frenzy" hidden="false" collective="false" sortIndex="2" flatten="true"/>
-                <entryLink import="true" name="Heavy Armour" hidden="false" type="selectionEntry" id="4492-8f67-1833-ec51" targetId="62fb-f89d-afc-1cf1" sortIndex="3">
+                <entryLink targetId="55c1-2dbc-f143-bfd8" id="6675-1995-72fa-a189" type="selectionEntry" name="Frenzy" hidden="false" collective="false" sortIndex="3" flatten="true"/>
+                <entryLink import="true" name="Heavy Armour" hidden="false" type="selectionEntry" id="4492-8f67-1833-ec51" targetId="62fb-f89d-afc-1cf1" sortIndex="2">
                   <costs>
                     <cost name="pts" typeId="points" value="3"/>
                   </costs>
@@ -3634,7 +3609,7 @@
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="5ce8-52f0-b8fd-1adb"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="adc1-dda5-cc61-4d9d" sortIndex="3">
+            <selectionEntryGroup name="Command" hidden="false" id="adc1-dda5-cc61-4d9d" sortIndex="5">
               <entryLinks>
                 <entryLink import="true" name="Battle Standard Bearer" hidden="false" type="selectionEntry" id="e7ad-5e3e-2af5-2c32" targetId="5b87-9cf5-953d-3829" flatten="true" sortIndex="2">
                   <costs>
@@ -3721,7 +3696,7 @@
                 <constraint type="max" value="100" field="points" scope="parent" shared="false" id="1157-b859-98a5-819d"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Frenzy" hidden="false" id="5434-cb90-30b2-68e0" targetId="123c-2d45-fa0-45e" type="selectionEntry" sortIndex="4" flatten="true"/>
+            <entryLink import="true" name="Frenzy" hidden="false" id="5434-cb90-30b2-68e0" targetId="123c-2d45-fa0-45e" type="selectionEntry" sortIndex="2" flatten="true"/>
           </entryLinks>
           <selectionEntryGroups>
             <selectionEntryGroup name="Lores of Magic" hidden="false" id="f364-ff41-3fe0-1555" sortIndex="6">
@@ -3770,7 +3745,7 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mount" hidden="false" id="98ec-a765-62a4-b6dc" sortIndex="3">
+            <selectionEntryGroup name="Mount" hidden="false" id="98ec-a765-62a4-b6dc" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8ab5-4bb6-c107-f805"/>
                 <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="d7ed-8bb1-fd24-9010" includeChildSelections="false"/>
@@ -3798,7 +3773,7 @@
                 </modifier>
               </modifiers>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="305a-55a3-5199-3a85" sortIndex="2">
+            <selectionEntryGroup name="Command" hidden="false" id="305a-55a3-5199-3a85" sortIndex="3">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="b0bd-98e2-b824-1b39" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
@@ -3862,7 +3837,7 @@
             <infoLink name="Lore of Gork" id="5b8f-8cf1-9eb0-191b" hidden="false" type="infoGroup" targetId="1602-1620-2e33-4c18"/>
           </infoLinks>
           <entryLinks>
-            <entryLink targetId="123c-2d45-fa0-45e" id="d8e3-1d37-aeb0-971d" type="selectionEntry" name="Frenzy" hidden="false" collective="false" sortIndex="4" flatten="true"/>
+            <entryLink targetId="123c-2d45-fa0-45e" id="d8e3-1d37-aeb0-971d" type="selectionEntry" name="Frenzy" hidden="false" collective="false" sortIndex="2" flatten="true"/>
             <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="6214-e0f2-6583-e34c" targetId="721d-36e3-388a-c0d6" collective="true" sortIndex="1">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="978d-e74b-1e92-e338"/>
@@ -3921,7 +3896,7 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mount" hidden="false" id="af30-bfed-abf0-3edc" sortIndex="3">
+            <selectionEntryGroup name="Mount" hidden="false" id="af30-bfed-abf0-3edc" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d033-ba08-ebef-3965"/>
                 <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="b46c-f0ca-c79a-3ff9" includeChildSelections="false"/>
@@ -3944,7 +3919,7 @@
                 </modifier>
               </modifiers>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="4dad-4d3-4d0d-3bab" sortIndex="2">
+            <selectionEntryGroup name="Command" hidden="false" id="4dad-4d3-4d0d-3bab" sortIndex="3">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="4a8f-ec21-eeb0-b4ab" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
@@ -4032,20 +4007,20 @@
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="43af-ca51-b486-133c"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="4a7d-cfb1-c2e-c187" targetId="6192-f9f1-5d53-2042" sortIndex="2">
+            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="4a7d-cfb1-c2e-c187" targetId="6192-f9f1-5d53-2042" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="2"/>
               </costs>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Mount" hidden="false" id="e5a1-9377-6078-2c62" sortIndex="5">
+            <selectionEntryGroup name="Mount" hidden="false" id="e5a1-9377-6078-2c62" sortIndex="6" collapsible="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="83ed-2e68-ecca-a583"/>
                 <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="5406-82d1-d3e-97ca" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="d236-db45-f23d-3d3e" targetId="3c93-ea7e-4771-ad63" sortIndex="2">
+                <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="d236-db45-f23d-3d3e" targetId="3c93-ea7e-4771-ad63" sortIndex="1">
                   <costs>
                     <cost name="pts" typeId="points" value="16"/>
                   </costs>
@@ -4058,7 +4033,7 @@
                     <cost name="pts" typeId="points" value="130"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Orc Boar Chariot" hidden="false" type="selectionEntry" id="71bd-e14b-8db0-b44d" targetId="d199-3d8-1b92-465d" sortIndex="1">
+                <entryLink import="true" name="Orc Boar Chariot" hidden="false" type="selectionEntry" id="71bd-e14b-8db0-b44d" targetId="d199-3d8-1b92-465d" sortIndex="2">
                   <categoryLinks>
                     <categoryLink targetId="c96a-608-5de4-b943" id="8587-5538-e755-95ee" primary="false" name="MOUNT"/>
                   </categoryLinks>
@@ -4072,7 +4047,7 @@
                 </modifier>
               </modifiers>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Equipment" hidden="false" id="f2cb-13a4-1a39-a7cf" sortIndex="6">
+            <selectionEntryGroup name="Equipment" hidden="false" id="f2cb-13a4-1a39-a7cf" sortIndex="2" flatten="true">
               <entryLinks>
                 <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="b805-70d9-ae9f-ab50" targetId="8943-3e16-db2a-b7f3" sortIndex="2">
                   <costs>
@@ -4094,7 +4069,7 @@
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d8be-5d42-4cf3-f61b"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Armour" hidden="false" id="e916-dafc-421c-3893" sortIndex="3" defaultSelectionEntryId="56d0-53ee-c7db-8dcc">
+            <selectionEntryGroup name="Armour" hidden="false" id="e916-dafc-421c-3893" sortIndex="3" defaultSelectionEntryId="56d0-53ee-c7db-8dcc" flatten="true">
               <entryLinks>
                 <entryLink import="true" name="Heavy Armour" hidden="false" type="selectionEntry" id="876f-98f8-f9f4-11d3" targetId="62fb-f89d-afc-1cf1" sortIndex="3">
                   <costs>
@@ -4106,14 +4081,14 @@
                     <cost name="pts" typeId="points" value="0"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Frenzy" hidden="false" id="5352-e7af-4efb-981a" targetId="55c1-2dbc-f143-bfd8" type="selectionEntry" flatten="true"/>
+                <entryLink import="true" name="Frenzy" hidden="false" id="5352-e7af-4efb-981a" targetId="55c1-2dbc-f143-bfd8" type="selectionEntry" flatten="true" collective="true"/>
               </entryLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ddc1-569-6835-30ed"/>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c408-9057-f8b-a9ce"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="3c7d-b85f-545a-1158" sortIndex="4">
+            <selectionEntryGroup name="Command" hidden="false" id="3c7d-b85f-545a-1158" sortIndex="5">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="ddf0-8d23-a171-7858" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
@@ -4177,12 +4152,12 @@
             <infoLink name="Base (25x25)" hidden="false" type="profile" id="a69d-28ec-a713-5470" targetId="193c-4d0d-de6b-bbb1"/>
           </infoLinks>
           <entryLinks>
-            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="cc64-d867-9504-c626" targetId="1539-fd78-88f-badd" sortIndex="7">
+            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="cc64-d867-9504-c626" targetId="1539-fd78-88f-badd" sortIndex="8">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="f0cc-d353-85ca-f508"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="2035-60e2-5a9d-fb90" targetId="6192-f9f1-5d53-2042" sortIndex="2">
+            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="2035-60e2-5a9d-fb90" targetId="6192-f9f1-5d53-2042" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="2"/>
               </costs>
@@ -4199,18 +4174,18 @@
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Mount" hidden="false" id="8705-e2d2-c23e-b7ba" sortIndex="5">
+            <selectionEntryGroup name="Mount" hidden="false" id="8705-e2d2-c23e-b7ba" sortIndex="7">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2626-296f-67f9-4c6"/>
                 <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="d0e5-426d-2c69-c97f" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="Goblin Wolf Chariot" hidden="false" type="selectionEntry" id="3f8d-603e-8f9d-3464" targetId="e235-ad57-e069-77d0" sortIndex="1">
+                <entryLink import="true" name="Goblin Wolf Chariot" hidden="false" type="selectionEntry" id="3f8d-603e-8f9d-3464" targetId="e235-ad57-e069-77d0" sortIndex="3">
                   <categoryLinks>
                     <categoryLink targetId="c96a-608-5de4-b943" id="9b71-3394-7276-b21f" primary="false" name="MOUNT"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Gigantic Spider" hidden="false" type="selectionEntry" id="dec7-5be6-350a-968c" targetId="3d51-77-691f-c5ba" sortIndex="3">
+                <entryLink import="true" name="Gigantic Spider" hidden="false" type="selectionEntry" id="dec7-5be6-350a-968c" targetId="3d51-77-691f-c5ba" sortIndex="2">
                   <costs>
                     <cost name="pts" typeId="points" value="35"/>
                   </costs>
@@ -4218,7 +4193,7 @@
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ee7b-5e33-5f40-244d"/>
                   </constraints>
                 </entryLink>
-                <entryLink import="true" name="Giant Wolf" hidden="false" type="selectionEntry" id="e254-1705-351b-7879" targetId="5d79-54f9-120d-31c9" sortIndex="2">
+                <entryLink import="true" name="Giant Wolf" hidden="false" type="selectionEntry" id="e254-1705-351b-7879" targetId="5d79-54f9-120d-31c9" sortIndex="1">
                   <costs>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
@@ -4238,7 +4213,7 @@
                 </modifier>
               </modifiers>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Equipment" hidden="false" id="bd77-d21c-16d3-f1be" sortIndex="6">
+            <selectionEntryGroup name="Equipment" hidden="false" id="bd77-d21c-16d3-f1be" sortIndex="2" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c8d0-9980-c3df-ca25"/>
               </constraints>
@@ -4260,7 +4235,7 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="f17e-26ca-e6cd-e1e3" sortIndex="4">
+            <selectionEntryGroup name="Command" hidden="false" id="f17e-26ca-e6cd-e1e3" sortIndex="6">
               <entryLinks>
                 <entryLink import="true" name="Battle Standard Bearer" hidden="false" type="selectionEntry" id="fadf-529-389-5a8" targetId="5b87-9cf5-953d-3829" flatten="true" sortIndex="2">
                   <costs>
@@ -4276,7 +4251,7 @@
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9852-37cb-e59b-af3e"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Options" id="1137-6de2-80df-83f6" hidden="false" sortIndex="8">
+            <selectionEntryGroup name="Options" id="1137-6de2-80df-83f6" hidden="false" sortIndex="5" flatten="true">
               <selectionEntries>
                 <selectionEntry type="upgrade" import="true" name="Ambush" hidden="true" id="83dd-dbcf-ac94-1f0e">
                   <constraints>
@@ -4293,6 +4268,9 @@
                   <costs>
                     <cost name="pts" id="be56-bf5b-e240-c174" hidden="false" typeId="points" value="10"/>
                   </costs>
+                  <infoLinks>
+                    <infoLink name="Ambushers" id="7356-7fdc-b7ff-bd06" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+                  </infoLinks>
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
@@ -4473,14 +4451,14 @@
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="116c-78aa-1032-4c02"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="5b43-4960-75b2-393b" targetId="1539-fd78-88f-badd" sortIndex="6">
+            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="5b43-4960-75b2-393b" targetId="1539-fd78-88f-badd" sortIndex="7">
               <constraints>
                 <constraint type="max" value="100" field="points" scope="parent" shared="false" id="7ed4-2422-e891-f5c6"/>
               </constraints>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Lores of Magic" hidden="false" id="85dd-4ccd-18a6-a5a6" sortIndex="5">
+            <selectionEntryGroup name="Lores of Magic" hidden="false" id="85dd-4ccd-18a6-a5a6" sortIndex="6">
               <entryLinks>
                 <entryLink import="true" name="Waaagh! Magic" hidden="false" type="selectionEntry" id="7bf5-ca7-c81-e6e2" targetId="bd6f-7c73-9ace-36a0" sortIndex="2"/>
                 <entryLink import="true" name="Elementalism" hidden="false" type="selectionEntry" id="b42b-c5f4-f414-47fb" targetId="2b23-3ae1-f5ad-8e7a" sortIndex="1"/>
@@ -4511,7 +4489,7 @@
                 </modifier>
               </modifiers>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Wizard Level" hidden="false" id="794f-fd02-4f13-7958" defaultSelectionEntryId="72e4-bb8c-6cf1-68bd" sortIndex="4">
+            <selectionEntryGroup name="Wizard Level" hidden="false" id="794f-fd02-4f13-7958" defaultSelectionEntryId="72e4-bb8c-6cf1-68bd" sortIndex="5">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="64da-f38a-dcbd-5d4a"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7860-f604-bc13-37e6"/>
@@ -4525,7 +4503,7 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mount" hidden="false" id="fdf0-b158-26ba-8711" sortIndex="3">
+            <selectionEntryGroup name="Mount" hidden="false" id="fdf0-b158-26ba-8711" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="25e-f3ba-7351-6b76"/>
                 <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="92f4-3316-a01d-b577" includeChildSelections="false"/>
@@ -4558,12 +4536,12 @@
                 </modifier>
               </modifiers>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="2f54-21c8-333a-a59d" sortIndex="2">
+            <selectionEntryGroup name="Command" hidden="false" id="2f54-21c8-333a-a59d" sortIndex="3">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="f2ec-9271-8c1f-d6e7" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Options" id="ba7b-0041-8234-b0dc" hidden="false" sortIndex="7">
+            <selectionEntryGroup name="Options" id="ba7b-0041-8234-b0dc" hidden="false" sortIndex="2" flatten="true">
               <selectionEntries>
                 <selectionEntry type="upgrade" import="true" name="Ambush" hidden="true" id="90e6-93a6-b061-6765">
                   <constraints>
@@ -4580,6 +4558,9 @@
                   <costs>
                     <cost name="pts" id="2d0b-6373-d899-9520" hidden="false" typeId="points" value="10"/>
                   </costs>
+                  <infoLinks>
+                    <infoLink name="Ambushers" id="610b-df69-7333-3988" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+                  </infoLinks>
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
@@ -4640,7 +4621,7 @@
             <infoLink name="Lore of Mork" id="8123-d0af-5afc-94c6" hidden="false" type="infoGroup" targetId="8be9-f485-dfe4-7f8a"/>
           </infoLinks>
           <entryLinks>
-            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="12b3-3dff-717e-418c" targetId="1539-fd78-88f-badd" sortIndex="6">
+            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="12b3-3dff-717e-418c" targetId="1539-fd78-88f-badd" sortIndex="7">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="dac4-8ebb-6273-ed51"/>
               </constraints>
@@ -4652,7 +4633,7 @@
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Lores of Magic" hidden="false" id="2dee-9d9b-a52d-d007" sortIndex="5">
+            <selectionEntryGroup name="Lores of Magic" hidden="false" id="2dee-9d9b-a52d-d007" sortIndex="6">
               <entryLinks>
                 <entryLink import="true" name="Waaagh! Magic" hidden="false" type="selectionEntry" id="18e7-385b-61e8-38ca" targetId="bd6f-7c73-9ace-36a0" sortIndex="3"/>
                 <entryLink import="true" name="Elementalism" hidden="false" type="selectionEntry" id="d20e-fc39-7a79-7c61" targetId="2b23-3ae1-f5ad-8e7a" sortIndex="1"/>
@@ -4683,7 +4664,7 @@
                 </modifier>
               </modifiers>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Wizard Level" hidden="false" id="ae9f-74e7-8e3c-d09a" defaultSelectionEntryId="3cd8-bd03-b3db-3a5c" sortIndex="4">
+            <selectionEntryGroup name="Wizard Level" hidden="false" id="ae9f-74e7-8e3c-d09a" defaultSelectionEntryId="3cd8-bd03-b3db-3a5c" sortIndex="5">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6045-b7ff-e5ca-ff47"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="cb6-9962-d05b-e6c1"/>
@@ -4697,18 +4678,18 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mount" hidden="false" id="6f18-f2d9-835-3526" sortIndex="3">
+            <selectionEntryGroup name="Mount" hidden="false" id="6f18-f2d9-835-3526" sortIndex="4">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3b95-f7a6-379-58d0"/>
                 <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="3178-1768-28bb-d641" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="Goblin Wolf Chariot" hidden="false" type="selectionEntry" id="a337-18b9-2a45-1270" targetId="e235-ad57-e069-77d0" sortIndex="1">
+                <entryLink import="true" name="Goblin Wolf Chariot" hidden="false" type="selectionEntry" id="a337-18b9-2a45-1270" targetId="e235-ad57-e069-77d0" sortIndex="2">
                   <categoryLinks>
                     <categoryLink targetId="c96a-608-5de4-b943" id="7530-3f06-9241-1464" primary="false" name="MOUNT"/>
                   </categoryLinks>
                 </entryLink>
-                <entryLink import="true" name="Giant Wolf" hidden="false" type="selectionEntry" id="5e3b-5997-392c-f133" targetId="5d79-54f9-120d-31c9" sortIndex="3">
+                <entryLink import="true" name="Giant Wolf" hidden="false" type="selectionEntry" id="5e3b-5997-392c-f133" targetId="5d79-54f9-120d-31c9" sortIndex="1">
                   <costs>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
@@ -4728,12 +4709,12 @@
                 </modifier>
               </modifiers>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="161d-4ec1-2a6e-46c7" sortIndex="2">
+            <selectionEntryGroup name="Command" hidden="false" id="161d-4ec1-2a6e-46c7" sortIndex="3">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="e3a9-5634-f23d-384e" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Options" id="8c86-330a-827f-8c9d" hidden="false" sortIndex="7">
+            <selectionEntryGroup name="Options" id="8c86-330a-827f-8c9d" hidden="false" sortIndex="2" flatten="true">
               <selectionEntries>
                 <selectionEntry type="upgrade" import="true" name="Ambush" hidden="true" id="3798-2201-eb3d-c4a8">
                   <constraints>
@@ -4750,6 +4731,9 @@
                   <costs>
                     <cost name="pts" id="2df0-59c9-d6df-a61a" hidden="false" typeId="points" value="10"/>
                   </costs>
+                  <infoLinks>
+                    <infoLink name="Ambushers" id="65f4-3f5b-1d34-373f" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+                  </infoLinks>
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
@@ -4946,14 +4930,14 @@
                 <cost name="pts" typeId="points" value="3"/>
               </costs>
             </entryLink>
-            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="3232-124b-aef0-9359" targetId="6192-f9f1-5d53-2042" sortIndex="2">
+            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="3232-124b-aef0-9359" targetId="6192-f9f1-5d53-2042" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="2"/>
               </costs>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="1430-fe01-1225-f69" sortIndex="6">
+            <selectionEntryGroup name="Equipment" hidden="false" id="1430-fe01-1225-f69" sortIndex="2" flatten="true">
               <entryLinks>
                 <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="c1f0-c75b-a67c-def" targetId="8943-3e16-db2a-b7f3" sortIndex="2">
                   <costs>
@@ -4975,7 +4959,7 @@
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="10eb-7150-aac4-c52e"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mount" hidden="false" id="950c-910e-4c3-8e26" sortIndex="5">
+            <selectionEntryGroup name="Mount" hidden="false" id="950c-910e-4c3-8e26" sortIndex="6">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8fe2-164e-b5ce-3d6"/>
               </constraints>
@@ -4987,7 +4971,7 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="2678-744e-af1b-29ee" sortIndex="4">
+            <selectionEntryGroup name="Command" hidden="false" id="2678-744e-af1b-29ee" sortIndex="5">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="46bb-bfec-9e29-c30e" targetId="7d76-b1a1-1535-a04c">
                   <modifiers>
@@ -5080,14 +5064,14 @@
                 <cost name="pts" typeId="points" value="3"/>
               </costs>
             </entryLink>
-            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="1d16-d136-d81b-64ad" targetId="6192-f9f1-5d53-2042" sortIndex="2">
+            <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="1d16-d136-d81b-64ad" targetId="6192-f9f1-5d53-2042" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="2"/>
               </costs>
             </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="a478-a986-f711-945d" sortIndex="6">
+            <selectionEntryGroup name="Equipment" hidden="false" id="a478-a986-f711-945d" sortIndex="2" flatten="true">
               <entryLinks>
                 <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="85c8-2f6c-8c3e-9615" targetId="8943-3e16-db2a-b7f3" sortIndex="2">
                   <costs>
@@ -5109,7 +5093,7 @@
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="dfc3-ffb2-6379-7fec"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mount" hidden="false" id="b-39ab-af69-9282" sortIndex="5">
+            <selectionEntryGroup name="Mount" hidden="false" id="b-39ab-af69-9282" sortIndex="6">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6552-60ce-ace3-1051"/>
               </constraints>
@@ -5121,7 +5105,7 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="a0ae-45e8-6530-1d65" sortIndex="4">
+            <selectionEntryGroup name="Command" hidden="false" id="a0ae-45e8-6530-1d65" sortIndex="5">
               <entryLinks>
                 <entryLink import="true" name="Battle Standard Bearer" hidden="false" type="selectionEntry" id="be91-f5c2-818d-ab8a" targetId="5b87-9cf5-953d-3829" flatten="true" sortIndex="2">
                   <costs>
@@ -5849,7 +5833,7 @@
         <infoLink name="Base (50x100)" hidden="false" type="profile" id="b48a-faff-3054-eef8" targetId="d456-e30e-f85d-14d"/>
       </infoLinks>
       <entryLinks>
-        <entryLink import="true" name="Orc Crew" hidden="false" type="selectionEntry" id="3c03-20fc-574c-947c" targetId="e605-29cc-37c9-8195" collective="true" sortIndex="2">
+        <entryLink import="true" name="Orc Crew" hidden="false" type="selectionEntry" id="3c03-20fc-574c-947c" targetId="e605-29cc-37c9-8195" collective="true" sortIndex="1">
           <constraints>
             <constraint type="min" value="2" field="selections" scope="parent" shared="true" id="11f7-1a30-4d3f-5395"/>
             <constraint type="max" value="3" field="selections" scope="parent" shared="true" id="ce3c-47cd-992-ffa0"/>
@@ -5857,8 +5841,34 @@
           <categoryLinks>
             <categoryLink targetId="4cf7-bf85-308d-c29a" id="6f26-af37-d0db-97c3" primary="false" name="CHARIOT CREW"/>
           </categoryLinks>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="false" id="1d83-81b-508d-7015" collective="true" flatten="true">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a057-787-c028-d1a0"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Frenzy" id="9868-8da-8a8-d7b7" hidden="false" type="profile" targetId="3b0c-a477-8823-3a25"/>
+              </infoLinks>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Warpaint" hidden="false" id="5cc7-5f24-4e5f-d1e3" collective="true" sortIndex="5">
+                  <infoLinks>
+                    <infoLink name="Warpaint" id="a5af-3996-ea41-dbfb" hidden="false" type="profile" targetId="be75-116d-97e0-fbae"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a5e0-b411-2159-2182"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="10"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <costs>
+                <cost name="pts" typeId="points" value="2"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
         </entryLink>
-        <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="49c-ecd9-25c3-2735" targetId="3c93-ea7e-4771-ad63" sortIndex="1">
+        <entryLink import="true" name="War Boar" hidden="false" type="selectionEntry" id="49c-ecd9-25c3-2735" targetId="3c93-ea7e-4771-ad63" sortIndex="2">
           <constraints>
             <constraint type="min" value="2" field="selections" scope="parent" shared="true" id="eba7-509a-c49-6ee9"/>
             <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="bb27-8009-ad2-12ba"/>
@@ -5868,60 +5878,15 @@
           </categoryLinks>
         </entryLink>
       </entryLinks>
-      <selectionEntries>
-        <selectionEntry type="upgrade" import="true" name="Frenzy" hidden="false" id="1d83-81b-508d-7015" collective="true" sortIndex="3" flatten="true">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a057-787-c028-d1a0"/>
-            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="f6ef-621c-894d-51ee" includeChildSelections="true"/>
-          </constraints>
-          <infoLinks>
-            <infoLink name="Frenzy" hidden="false" type="profile" id="9868-8da-8a8-d7b7" targetId="3b0c-a477-8823-3a25"/>
-          </infoLinks>
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Warpaint" hidden="false" id="5cc7-5f24-4e5f-d1e3" collective="true" sortIndex="5">
-              <infoLinks>
-                <infoLink name="Warpaint" hidden="false" type="profile" id="a5af-3996-ea41-dbfb" targetId="be75-116d-97e0-fbae"/>
-              </infoLinks>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a5e0-b411-2159-2182"/>
-              </constraints>
-              <costs>
-                <cost name="pts" typeId="points" value="10"/>
-              </costs>
-            </selectionEntry>
-          </selectionEntries>
-          <modifiers>
-            <modifier type="increment" value="1" field="f6ef-621c-894d-51ee">
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="4913-bfa0-33c8-6702" includeChildSelections="false"/>
-              </repeats>
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-              </conditions>
-            </modifier>
-            <modifier type="increment" value="2" field="points">
-              <repeats>
-                <repeat value="1" repeats="1" field="selections" scope="d199-3d8-1b92-465d" childId="3c03-20fc-574c-947c" shared="true" roundUp="false" id="7e54-7893-5f30-3933" includeChildSelections="true"/>
-              </repeats>
-            </modifier>
-            <modifier type="increment" value="1" field="f6ef-621c-894d-51ee">
-              <repeats>
-                <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="68c7-0579-2889-8921" includeChildSelections="false"/>
-              </repeats>
-              <conditions>
-                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <costs>
-            <cost name="pts" typeId="points" value="0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
       <modifiers>
         <modifier type="increment" value="5" field="points">
           <conditions>
             <condition type="atLeast" value="3" field="selections" scope="parent" childId="3c03-20fc-574c-947c" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="926a-7236-60af-cdab" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="1d83-81b-508d-7015" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -6724,13 +6689,6 @@
       <infoLinks>
         <infoLink name="Big &apos;Uns" id="7431-285b-d119-aac9" hidden="false" type="profile" targetId="956e-905b-9dda-7175"/>
       </infoLinks>
-      <modifiers>
-        <modifier type="increment" value="2" field="points">
-          <repeats>
-            <repeat value="1" repeats="1" field="selections" scope="root-entry" childId="model" shared="true" roundUp="false" id="4380-55d9-fe16-f6ea" includeChildSelections="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
       <comment>Orc Mobs</comment>
     </selectionEntry>
   </sharedSelectionEntries>
@@ -8068,13 +8026,13 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
     <entryLink import="true" name="Black Orc Bigboss" hidden="false" type="selectionEntry" id="af2f-a321-e720-9fb1" targetId="3a60-b23d-7e34-aecf">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="b8-eb9-9db2-88c3" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-        <categoryLink targetId="0ba6-6cb2-c5f4-904a" id="338c-d502-7830-dc2f" primary="false" name="Black Orc Boss"/>
+        <categoryLink targetId="0ba6-6cb2-c5f4-904a" id="338c-d502-7830-dc2f" primary="false" name="Black Orc Boss (Da Boyz Special Rule)"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Black Orc Warboss" hidden="false" type="selectionEntry" id="741c-39d1-4128-aff2" targetId="5f11-e9c2-fece-fff8">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="659-34d5-e41a-8173" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-        <categoryLink name="Black Orc Boss" hidden="false" id="d385-ed46-4678-0d58" targetId="0ba6-6cb2-c5f4-904a" primary="false"/>
+        <categoryLink name="Black Orc Boss (Da Boyz Special Rule)" hidden="false" id="d385-ed46-4678-0d58" targetId="0ba6-6cb2-c5f4-904a" primary="false"/>
       </categoryLinks>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="cfdd-321a-7124-e2ea"/>
@@ -8387,7 +8345,7 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
     <catalogueLink type="catalogue" name="Mercenaries" id="7000-d85-d1a2-d03b" targetId="12a0-32cd-11d6-f952" importRootEntries="true"/>
   </catalogueLinks>
   <categoryEntries>
-    <categoryEntry name="Black Orc Boss" id="0ba6-6cb2-c5f4-904a" hidden="true">
+    <categoryEntry name="Black Orc Boss (Da Boyz Special Rule)" id="0ba6-6cb2-c5f4-904a" hidden="true">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="a088-cde7-22eb-32b5" includeChildSelections="true"/>
       </constraints>
@@ -8398,6 +8356,85 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
           </repeats>
         </modifier>
       </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 Orc Boar Chariots per 1,000 points may have the Frenzy rule" id="926a-7236-60af-cdab" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="7a0d-6be1-34af-2a77" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="7a0d-6be1-34af-2a77">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="63fe-7790-13c9-587f"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="7a0d-6be1-34af-2a77">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="roster" childId="any" shared="true" roundUp="false" id="f099-5208-4196-e751"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 Orc Mobs per 1,000 points may have the Frenzy rule" id="87af-7ace-a311-6c74" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="3628-b2d2-7b0c-679a" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="3628-b2d2-7b0c-679a">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="7817-8626-cf44-cd76"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="3628-b2d2-7b0c-679a">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="roster" childId="any" shared="true" roundUp="false" id="3dbb-f2a1-2aeb-bfb1"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 Orc Mobs per 1,000 points may purchase a magic standard" id="4b9c-7204-21c7-0620" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="49a7-59c3-b012-7ea9" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="49a7-59c3-b012-7ea9">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="6dbf-b3fc-149e-a589"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="49a7-59c3-b012-7ea9">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="roster" childId="any" shared="true" roundUp="false" id="bb6d-1c9f-fd11-f31a"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 Orc Mobs may have the Big &apos;Uns special rule" id="e253-5bb3-ba3c-4705" hidden="true">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="8782-f9cd-03e9-402f" includeChildSelections="true"/>
+      </constraints>
+    </categoryEntry>
+    <categoryEntry name="0-1 Orc Mobs may replace Close Order special rule with Skirmishers" id="7b83-a27c-1089-2932" hidden="true">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="fcc8-5a7f-f783-da78" includeChildSelections="true"/>
+      </constraints>
     </categoryEntry>
   </categoryEntries>
 </catalogue>
