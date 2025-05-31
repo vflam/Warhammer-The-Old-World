@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="143" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="144" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -228,13 +228,14 @@
       <forceEntries>
         <forceEntry id="c586-b327-4cc4-c4b8" name="Allies" hidden="true">
           <categoryLinks>
+            <categoryLink name="Named Characters" hidden="false" id="2d2b-4441-9683-f695" targetId="3ba8-a41e-b6ae-d4ba"/>
             <categoryLink name="Characters" hidden="false" id="9b2c-aa33-1092-9dde" targetId="a4cc-15c9-cfae-1b3b">
               <constraints>
                 <constraint type="max" value="12.5" field="limit::points" scope="force" shared="true" id="10c-6241-496-7b11" percentValue="true" includeChildSelections="true"/>
                 <constraint type="min" value="1" field="selections" scope="force" shared="true" id="8d62-b0d4-d73c-2c5" includeChildSelections="true"/>
               </constraints>
             </categoryLink>
-            <categoryLink id="169a-a894-16ac-3f01" targetId="f0e3-2e32-8866-ea32" name="Core">
+            <categoryLink name="Core" hidden="false" id="169a-a894-16ac-3f01" targetId="f0e3-2e32-8866-ea32">
               <constraints>
                 <constraint type="min" value="6.25" field="limit::points" scope="force" shared="true" id="f32e-718d-5ba8-789" percentValue="true" includeChildSelections="true"/>
               </constraints>
