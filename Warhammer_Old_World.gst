@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="144" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="145" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -126,6 +126,8 @@
     <categoryEntry name="Order of the Knights Panther Battle Standard Bearer" id="cbc0-f22f-0315-0d56" hidden="true"/>
     <categoryEntry name="Faction: Wood Elf Realms - Orion&apos;s Wild Hunt" id="9af2-fc8e-3df6-57d4" hidden="true"/>
     <categoryEntry name="Faction: Wood Elf Realms - Host of Talsyn" id="ab10-4058-4013-f8f7" hidden="true"/>
+    <categoryEntry name="Faction: Beastmen Brayherds - Minotaur Blood Herd" id="f8bd-9647-bbde-fb7e" hidden="true"/>
+    <categoryEntry name="Faction: Beastmen Brayherds - Wild Herd" id="50f7-6ee0-7369-ea5e" hidden="true"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
@@ -275,6 +277,8 @@
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="be27-8084-f552-1f4" shared="true"/>
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c997-9d47-72ad-c5f1" shared="true"/>
                             <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c908-5f26-5bdf-2a48" shared="true"/>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
                           </conditions>
                         </conditionGroup>
                       </conditionGroups>
