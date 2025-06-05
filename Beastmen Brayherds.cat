@@ -741,6 +741,16 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
         <characteristic name="Description" typeId="9f84-4221-785a-db50">A Herdstone can be controlled by a single unit that is within 6&quot; of it, that has a Unit Strength of five or more and that is not fleeing. If two or more eligible units belonging to opposing armies are within 6&quot;, the unit closest to the Herdstone controls it. If two units belonging to opposing armies are equally close, a Herdstone is &apos;contested&apos; and neither unit controls it.</characteristic>
       </characteristics>
     </profile>
+    <profile name="Magics of the Dark Gods" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="a838-9ef3-efb4-8063">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">The General of a Minotaur Blood Herd must be a Doombull or Gorebull. For +35 points, this character may be a Level 1 Wizard, or for +65 points, this character may be a Level 2 Wizard. If so, this character knows spells from the Lore of Battle Magic or the Lore of Dark Magic. A Wizard with this special rule may wear armour without penalty.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Dark Coven" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="814d-8748-07c1-ab99">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Beastmen Shamans within a Wild Herd army may leach power from nearby Wizards when they attempt to cast a spell or when attempting a Wizardly Dispel. To do so, a Bray-Shaman or Great Bray-Shaman may apply a +1 modifier to their Casting or Dispel roll for each other friendly Wizard within their command range. However, if they roll any natural double when making the roll, something has gone horribly wrong and the spell is miscast or they have been outclasses in the art. In such cases, roll immediately on the Miscast table and apply the result to the Bray-Shaman or Great Bray-Shaman that made the attempt and to each friendly Wizard within their Command range.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Braystaff" hidden="false" id="ad6f-3e47-945c-ddcd">
@@ -808,11 +818,25 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
               <constraints>
                 <constraint type="max" value="100" field="points" scope="parent" shared="false" id="cc0f-c255-12ac-c3a"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="25" field="cc0f-c255-12ac-c3a">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
             <entryLink import="true" name="Chaos Mutations" hidden="false" type="selectionEntryGroup" id="4894-7297-2251-d684" targetId="6c4d-40ba-4d01-74b3" sortIndex="3">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="a8eb-6a12-5eee-1c3c" includeChildSelections="false"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="25" field="a8eb-6a12-5eee-1c3c">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
           </entryLinks>
           <infoLinks>
@@ -846,9 +870,14 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                 <entryLink import="true" name="Primal Magic" hidden="true" id="e500-dd77-3f3b-e916" type="selectionEntry" targetId="f0d1-4062-fa5f-9b84" sortIndex="4">
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="89ee-ae1f-4127-152a" shared="true" includeChildSelections="true"/>
-                      </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="89ee-ae1f-4127-152a" shared="true" includeChildSelections="true"/>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
                     </modifier>
                   </modifiers>
                 </entryLink>
@@ -903,15 +932,7 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7ed4-308b-19a3-22cb"/>
-                    <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="d51a-1bfb-e7d9-ef5f" includeChildSelections="true"/>
                   </constraints>
-                  <modifiers>
-                    <modifier type="increment" value="1" field="d51a-1bfb-e7d9-ef5f">
-                      <repeats>
-                        <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="afd0-726b-ca51-3d25" includeChildSelections="true"/>
-                      </repeats>
-                    </modifier>
-                  </modifiers>
                   <costs>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
@@ -950,6 +971,15 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
             <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="9501-8a99-b8f9-227e" targetId="595-bbd0-34c7-e601"/>
             <infoLink name="Warband" hidden="false" type="profile" id="19b3-7956-f59-1e4b" targetId="505f-e12d-2e36-31d0"/>
             <infoLink name="Lore of Beasts" hidden="false" type="profile" id="54cf-8417-cde-49f3" targetId="6419-d95f-555e-16b9"/>
+            <infoLink name="Dark Coven" id="7aef-97d9-76f7-c66b" hidden="true" type="profile" targetId="814d-8748-07c1-ab99">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -969,8 +999,8 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
       <selectionEntries>
         <selectionEntry type="model" import="true" name="Doombull" hidden="false" id="933f-6352-8a25-a958" sortIndex="1">
           <constraints>
-            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9533-1ad7-c7df-9f8c"/>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a5cd-7521-5493-9a83"/>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ed1a-7f1d-744d-96b7"/>
           </constraints>
           <entryLinks>
             <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="8c5f-2159-5a95-9e3b" targetId="721d-36e3-388a-c0d6" sortIndex="1">
@@ -978,20 +1008,39 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a455-d2cd-4361-3cea"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="a9dc-cffd-1b4d-11a2" targetId="1539-fd78-88f-badd" sortIndex="7">
+            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="a9dc-cffd-1b4d-11a2" targetId="1539-fd78-88f-badd" sortIndex="10">
               <constraints>
                 <constraint type="max" value="100" field="points" scope="parent" shared="false" id="dfb3-d2cc-741a-24ab"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="25" field="dfb3-d2cc-741a-24ab">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
             <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="7667-5f9d-496d-8c15" targetId="6192-f9f1-5d53-2042" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="5"/>
               </costs>
             </entryLink>
-            <entryLink import="true" name="Chaos Mutations" hidden="false" type="selectionEntryGroup" id="eb44-74ef-2b69-db9f" targetId="6c4d-40ba-4d01-74b3" sortIndex="5">
+            <entryLink import="true" name="Chaos Mutations" hidden="false" id="eb44-74ef-2b69-db9f" type="selectionEntryGroup" targetId="6c4d-40ba-4d01-74b3" sortIndex="5">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="333e-b317-e9be-2946" includeChildSelections="false"/>
               </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="25" field="333e-b317-e9be-2946">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
           </entryLinks>
           <infoLinks>
@@ -1036,10 +1085,84 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="d7ce-5935-7eb5-6e67" sortIndex="6">
+            <selectionEntryGroup name="Command" hidden="false" id="d7ce-5935-7eb5-6e67" sortIndex="7">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="4ef-14b4-81e0-2c8d" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Guardians of the Herdstones" id="11a2-2caa-9964-ed98" hidden="true" sortIndex="6" flatten="false">
+              <entryLinks>
+                <entryLink import="true" name="Gifts of Chaos" hidden="false" id="c399-19df-8975-4ffb" type="selectionEntryGroup" targetId="82fd-ec27-de63-3852" sortIndex="2"/>
+                <entryLink import="true" name="Chaos Mutations" hidden="false" id="7139-c486-5313-3f2f" type="selectionEntryGroup" targetId="6c4d-40ba-4d01-74b3" sortIndex="1"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="50" field="points" scope="parent" shared="true" id="d79f-4960-9d4c-65af"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Wizard Level" id="191e-abab-da62-be32" hidden="true" defaultSelectionEntryId="31fe-493c-8c70-abea" sortIndex="8">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="df24-347e-da54-7a82"/>
+              </constraints>
+              <entryLinks>
+                <entryLink import="true" name="Wizard Level 1" hidden="false" id="1c08-1cfa-95c4-1764" type="selectionEntry" targetId="7d84-39e9-a5f-947e" sortIndex="1">
+                  <costs>
+                    <cost name="pts" typeId="points" value="35"/>
+                  </costs>
+                </entryLink>
+                <entryLink import="true" name="Wizard Level 2" hidden="false" id="beec-928b-22c7-ccfb" type="selectionEntry" targetId="8e47-73e8-f7f9-808" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="65"/>
+                  </costs>
+                </entryLink>
+              </entryLinks>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="7d76-b1a1-1535-a04c" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Lores of Magic" id="c995-83ac-dc3e-3bab" hidden="true" sortIndex="9">
+              <entryLinks>
+                <entryLink import="true" name="Dark Magic" hidden="false" id="5c6e-5cdc-9496-8836" type="selectionEntry" targetId="e9f-f0fb-d874-4151" sortIndex="2"/>
+                <entryLink import="true" name="Primal Magic" hidden="true" id="08f7-f93c-af97-ef72" type="selectionEntry" targetId="f0d1-4062-fa5f-9b84" sortIndex="3">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="89ee-ae1f-4127-152a" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Battle Magic" hidden="false" id="130f-0822-4cb6-ab0b" type="selectionEntry" targetId="5b2e-35c6-f987-741e" sortIndex="1"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="853a-a285-4116-b027"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="be35-46e8-4961-ac87"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="2" field="be35-46e8-4961-ac87">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="8123-d36e-9442-13a1" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="7d76-b1a1-1535-a04c" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="f954-b4c0-b835-a048" shared="true" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <categoryLinks>
@@ -1078,6 +1201,17 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                 <modifier type="set" value="false" field="hidden">
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Magics of the Dark Gods" id="2de0-1b61-91bd-5011" hidden="true" type="profile" targetId="a838-9ef3-efb4-8063">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="7d76-b1a1-1535-a04c" shared="true" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="f954-b4c0-b835-a048" shared="true" includeChildSelections="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
@@ -1123,11 +1257,25 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="99d9-d5c6-811a-472b"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="25" field="99d9-d5c6-811a-472b">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
             <entryLink import="true" name="Chaos Mutations" hidden="false" type="selectionEntryGroup" id="5a49-d0b3-3c46-7e10" targetId="6c4d-40ba-4d01-74b3" sortIndex="3">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="9ddf-607a-2899-101c"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="25" field="9ddf-607a-2899-101c">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
           </entryLinks>
           <infoLinks>
@@ -1161,9 +1309,14 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                 <entryLink import="true" name="Primal Magic" hidden="true" id="6b76-d39c-d75b-af35" type="selectionEntry" targetId="f0d1-4062-fa5f-9b84" sortIndex="4">
                   <modifiers>
                     <modifier type="set" value="false" field="hidden">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="89ee-ae1f-4127-152a" shared="true" includeChildSelections="true"/>
-                      </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="89ee-ae1f-4127-152a" shared="true" includeChildSelections="true"/>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
                     </modifier>
                   </modifiers>
                 </entryLink>
@@ -1209,6 +1362,13 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="93f6-a0f5-417f-9d0b" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Unit Options" id="baee-d397-4b74-3e33" hidden="false" sortIndex="2" flatten="true">
               <selectionEntries>
@@ -1218,15 +1378,7 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7277-d250-e98a-57e4"/>
-                    <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="5e68-82e8-271d-f8f0" includeChildSelections="true"/>
                   </constraints>
-                  <modifiers>
-                    <modifier type="increment" value="1" field="5e68-82e8-271d-f8f0">
-                      <repeats>
-                        <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="a1ab-75d8-2d72-b2ae" includeChildSelections="true"/>
-                      </repeats>
-                    </modifier>
-                  </modifiers>
                   <costs>
                     <cost name="pts" typeId="points" value="10"/>
                   </costs>
@@ -1265,6 +1417,15 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
             <infoLink name="Mark of Chaos Undivided" hidden="false" type="profile" id="8f3-58d5-51d7-b9f4" targetId="595-bbd0-34c7-e601"/>
             <infoLink name="Warband" hidden="false" type="profile" id="58d-a5ca-ea8e-7563" targetId="505f-e12d-2e36-31d0"/>
             <infoLink name="Lore of Beasts" hidden="false" type="profile" id="573-c86a-ecd6-cf5e" targetId="6419-d95f-555e-16b9"/>
+            <infoLink name="Dark Coven" id="a9f1-011f-7c6e-ba90" hidden="true" type="profile" targetId="814d-8748-07c1-ab99">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -1302,11 +1463,25 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="17b-7b-fbb9-6718"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="25" field="17b-7b-fbb9-6718">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
             <entryLink import="true" name="Chaos Mutations" hidden="false" type="selectionEntryGroup" id="3e07-593d-2de3-42ee" targetId="6c4d-40ba-4d01-74b3" sortIndex="7">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="b0b7-edf4-28d6-f02e" includeChildSelections="false"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="25" field="b0b7-edf4-28d6-f02e">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
           </entryLinks>
           <infoLinks>
@@ -1372,10 +1547,17 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="82c7-b55b-9229-3177" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
             <selectionEntryGroup name="Unit Options" id="81e9-73db-2ccd-61af" hidden="false" sortIndex="6" flatten="true">
               <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="26e9-149d-2a99-6531" sortIndex="24">
+                <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="26e9-149d-2a99-6531" sortIndex="1">
                   <infoLinks>
                     <infoLink name="Ambushers" id="7a2-59d3-1d39-bd6" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
                   </infoLinks>
@@ -1398,6 +1580,29 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                       </repeats>
                       <conditions>
                         <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="set" value="true" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <costs>
+                    <cost name="pts" typeId="points" value="10"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Roaming Warband" hidden="false" id="2377-1c18-5662-c7bd" collective="true" sortIndex="2">
+                  <infoLinks>
+                    <infoLink name="Ambushers" id="238d-3abb-0b12-8c80" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3ab6-57df-9a97-6416"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
@@ -1465,15 +1670,34 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                 <cost name="pts" typeId="points" value="5"/>
               </costs>
             </entryLink>
-            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="266-6dec-b38b-e857" targetId="1539-fd78-88f-badd" sortIndex="7">
+            <entryLink import="true" name="Magic Items" hidden="false" type="selectionEntryGroup" id="266-6dec-b38b-e857" targetId="1539-fd78-88f-badd" sortIndex="10">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="a382-6766-9a0a-ca66"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="25" field="a382-6766-9a0a-ca66">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
-            <entryLink import="true" name="Chaos Mutations" hidden="false" type="selectionEntryGroup" id="f0fd-d907-478f-6797" targetId="6c4d-40ba-4d01-74b3" sortIndex="5">
+            <entryLink import="true" name="Chaos Mutations" hidden="false" id="f0fd-d907-478f-6797" type="selectionEntryGroup" targetId="6c4d-40ba-4d01-74b3" sortIndex="5">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="434e-6a89-d54c-7846" includeChildSelections="false"/>
               </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="25" field="434e-6a89-d54c-7846">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
           </entryLinks>
           <infoLinks>
@@ -1518,7 +1742,7 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Command" hidden="false" id="9fe0-42a4-fc77-1a3b" sortIndex="6">
+            <selectionEntryGroup name="Command" hidden="false" id="9fe0-42a4-fc77-1a3b" sortIndex="7">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="8459-fa7a-fcbf-708c" targetId="7d76-b1a1-1535-a04c" sortIndex="1"/>
                 <entryLink import="true" name="Battle Standard Bearer" hidden="true" id="62e0-5ed7-6b7a-8421" type="selectionEntry" targetId="5b87-9cf5-953d-3829" flatten="true" sortIndex="2">
@@ -1537,6 +1761,80 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                   </modifiers>
                 </entryLink>
               </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Guardians of the Herdstones" id="98aa-adf0-6939-505f" hidden="true" sortIndex="6" flatten="false">
+              <constraints>
+                <constraint type="max" value="50" field="points" scope="parent" shared="true" id="75da-a0cd-cf81-2d2f"/>
+              </constraints>
+              <entryLinks>
+                <entryLink import="true" name="Chaos Mutations" hidden="false" id="f3c1-2728-c032-4e9b" type="selectionEntryGroup" targetId="6c4d-40ba-4d01-74b3"/>
+                <entryLink import="true" name="Gifts of Chaos" hidden="false" id="1fd1-85ed-7fc5-030e" type="selectionEntryGroup" targetId="82fd-ec27-de63-3852"/>
+              </entryLinks>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Wizard Level" id="1377-0cbc-2675-15f6" hidden="true" defaultSelectionEntryId="31fe-493c-8c70-abea" sortIndex="8">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3010-2f4d-c623-a25f"/>
+              </constraints>
+              <entryLinks>
+                <entryLink import="true" name="Wizard Level 1" hidden="false" id="6d28-75c9-772a-411e" type="selectionEntry" targetId="7d84-39e9-a5f-947e" sortIndex="1">
+                  <costs>
+                    <cost name="pts" typeId="points" value="35"/>
+                  </costs>
+                </entryLink>
+                <entryLink import="true" name="Wizard Level 2" hidden="false" id="0cf2-fa8e-a250-195e" type="selectionEntry" targetId="8e47-73e8-f7f9-808" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="65"/>
+                  </costs>
+                </entryLink>
+              </entryLinks>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="7d76-b1a1-1535-a04c" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Lores of Magic" id="c4b9-0643-4523-3883" hidden="true" sortIndex="9">
+              <entryLinks>
+                <entryLink import="true" name="Dark Magic" hidden="false" id="0710-b2ac-0e05-1694" type="selectionEntry" targetId="e9f-f0fb-d874-4151" sortIndex="2"/>
+                <entryLink import="true" name="Primal Magic" hidden="true" id="0609-242b-486b-2bbd" type="selectionEntry" targetId="f0d1-4062-fa5f-9b84" sortIndex="3">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="89ee-ae1f-4127-152a" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink import="true" name="Battle Magic" hidden="false" id="4ce9-78df-4d4b-38f6" type="selectionEntry" targetId="5b2e-35c6-f987-741e" sortIndex="1"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="9b03-b528-a61e-b48e"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6d99-be5e-db24-794a"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="2" field="6d99-be5e-db24-794a">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="8123-d36e-9442-13a1" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="7d76-b1a1-1535-a04c" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="f954-b4c0-b835-a048" shared="true" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <categoryLinks>
@@ -1579,6 +1877,17 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                 </modifier>
               </modifiers>
             </infoLink>
+            <infoLink name="Magics of the Dark Gods" id="266d-ab19-dd33-8766" hidden="true" type="profile" targetId="a838-9ef3-efb4-8063">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="7d76-b1a1-1535-a04c" shared="true" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="f954-b4c0-b835-a048" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -1616,11 +1925,25 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
               <constraints>
                 <constraint type="max" value="100" field="points" scope="parent" shared="false" id="90de-c1c5-c7c2-2bc2"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="25" field="90de-c1c5-c7c2-2bc2">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
             <entryLink import="true" name="Chaos Mutations" hidden="false" type="selectionEntryGroup" id="c761-2e32-e02e-4b60" targetId="6c4d-40ba-4d01-74b3" sortIndex="6">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="3739-1f23-f4ff-e940" includeChildSelections="false"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="25" field="3739-1f23-f4ff-e940">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
           </entryLinks>
           <infoLinks>
@@ -1698,19 +2021,18 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
             </selectionEntryGroup>
             <selectionEntryGroup name="Unit Options" id="976d-967b-f6a4-d04b" hidden="false" sortIndex="5" flatten="true">
               <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="8e48-9e-b1aa-f099" sortIndex="24">
+                <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="8e48-9e-b1aa-f099" sortIndex="1" collective="true">
                   <infoLinks>
                     <infoLink name="Ambushers" id="b8b3-eadd-b1b4-acc3" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c939-82f0-7e44-432"/>
-                    <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="1363-a28e-3dad-f218" includeChildSelections="true"/>
                   </constraints>
                   <modifiers>
-                    <modifier type="increment" value="1" field="1363-a28e-3dad-f218">
-                      <repeats>
-                        <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="93d3-e8b7-6e90-275" includeChildSelections="true"/>
-                      </repeats>
+                    <modifier type="set" value="true" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                      </conditions>
                     </modifier>
                   </modifiers>
                   <costs>
@@ -1719,6 +2041,24 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                   <categoryLinks>
                     <categoryLink targetId="ba8c-8dba-ebcd-0847" id="0ffa-c576-f6bf-07a9" primary="false" name="0-1 Beastman Chieftain per 1,000 points may have the Ambushers special rule"/>
                   </categoryLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Roaming Warband" hidden="true" id="a07e-218b-b1a1-0083" collective="true" sortIndex="2">
+                  <infoLinks>
+                    <infoLink name="Ambushers" id="a63a-709b-c1bb-fe0a" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="de7c-2be1-522f-2878"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <costs>
+                    <cost name="pts" typeId="points" value="10"/>
+                  </costs>
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
@@ -1999,6 +2339,22 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                 <cost name="pts" typeId="points" value="1"/>
               </costs>
             </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Roaming Warbands" hidden="true" id="9bee-8abc-214b-fe7c" collective="true" sortIndex="4">
+              <infoLinks>
+                <infoLink name="Ambushers" id="c87c-8dad-443b-9ed3" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d9c8-5901-4e7c-1e02"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                    <condition type="lessThan" value="11" field="selections" scope="root-entry" childId="model" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
           </selectionEntries>
         </selectionEntry>
       </selectionEntries>
@@ -2180,6 +2536,15 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
             <infoLink name="Horde" hidden="false" type="profile" id="f207-c689-fd5b-1221" targetId="9cba-89a5-1796-5fe4"/>
             <infoLink name="Move Through Cover" hidden="false" type="profile" id="2ece-8259-7016-ac3a" targetId="e83e-f127-1904-3858"/>
             <infoLink name="Skirmishers" hidden="false" type="profile" id="9f4e-2cf3-ee64-75c9" targetId="59a5-7eca-ee35-96ac"/>
+            <infoLink name="Impetuous" id="b2f8-1370-2c45-8c26" hidden="true" type="profile" targetId="b664-8530-a988-7ba9">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -2190,6 +2555,12 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
         <modifier type="add" value="fdbe-f7d0-4160-ccdb" field="category">
           <conditions>
             <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="8e66-1dce-6330-56ec" shared="true" includeChildSelections="true"/>
+            <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="e3e7-100e-4258-2e5d" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="9bee-8abc-214b-fe7c" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -2281,7 +2652,7 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
             <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="8edc-1e48-be72-2d57" targetId="may-have-shield"/>
           </categoryLinks>
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="d52d-1ed9-42d3-86e4" collective="true">
+            <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="d52d-1ed9-42d3-86e4" collective="true" sortIndex="3">
               <infoLinks>
                 <infoLink name="Ambushers" id="30b7-54ca-2f22-dc68" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
               </infoLinks>
@@ -2291,6 +2662,22 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
               <costs>
                 <cost name="pts" typeId="points" value="1"/>
               </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Roaming Warbands" hidden="true" id="a892-5f39-6fa3-3c57" collective="true" sortIndex="4">
+              <infoLinks>
+                <infoLink name="Ambushers" id="92c2-0b67-86b2-9599" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1362-06b3-832d-c748"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                    <condition type="lessThan" value="11" field="selections" scope="root-entry" childId="model" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
           </selectionEntries>
         </selectionEntry>
@@ -2378,6 +2765,12 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
         <modifier type="add" value="6100-3e2d-c680-0bce" field="category">
           <conditions>
             <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="d52d-1ed9-42d3-86e4" shared="true" includeChildSelections="true"/>
+            <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="e3e7-100e-4258-2e5d" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="a892-5f39-6fa3-3c57" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -2672,9 +3065,21 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c2bc-5e3b-9327-b5c2"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="Shield" hidden="false" id="86c2-6940-81a1-7d54" type="selectionEntry" targetId="6192-f9f1-5d53-2042" defaultAmount="1" sortIndex="2">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4407-8994-b388-249b"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="2283-26e9-76c3-6048" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </entryLink>
           </entryLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Throwing Weapon" hidden="false" id="ebe8-66c6-b451-862e" sortIndex="4">
+            <selectionEntryGroup name="Throwing Weapon" hidden="false" id="ebe8-66c6-b451-862e" sortIndex="4" flatten="true">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d147-a9a8-50d6-4ca8"/>
               </constraints>
@@ -2691,61 +3096,27 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Equipment" hidden="false" id="3728-ac2e-7725-c1eb" defaultSelectionEntryId="965e-cdbf-20b-350e" sortIndex="3">
+            <selectionEntryGroup name="Equipment" hidden="false" id="3728-ac2e-7725-c1eb" defaultSelectionEntryId="965e-cdbf-20b-350e" sortIndex="3" flatten="true">
               <entryLinks>
-                <entryLink import="true" name="Shield" hidden="false" type="selectionEntry" id="86c2-6940-81a1-7d54" targetId="6192-f9f1-5d53-2042" defaultAmount="1" sortIndex="2"/>
+                <entryLink import="true" name="Great Weapon" hidden="false" id="425e-3ab5-9d4a-70b6" type="selectionEntry" targetId="2283-26e9-76c3-6048" defaultAmount="0" sortIndex="1">
+                  <costs>
+                    <cost name="pts" typeId="points" value="1"/>
+                  </costs>
+                </entryLink>
+                <entryLink import="true" name="Cavalry Spear" hidden="false" id="d396-c120-196a-35ab" type="selectionEntry" targetId="a2d0-40e9-83ad-23dc" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="1"/>
+                  </costs>
+                </entryLink>
+                <entryLink import="true" name="Throwing Spear" hidden="false" id="a35f-ab7e-e042-e25a" type="selectionEntry" targetId="9113-238a-ef75-aa23" sortIndex="3">
+                  <costs>
+                    <cost name="pts" typeId="points" value="1"/>
+                  </costs>
+                </entryLink>
               </entryLinks>
               <constraints>
-                <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="4572-3508-cb81-2a01"/>
-                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8a73-5127-d941-8b41"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="454c-487b-6744-33fa"/>
               </constraints>
-              <selectionEntryGroups>
-                <selectionEntryGroup name="Extra Weapon" hidden="false" id="cb80-23ea-76aa-c346" flatten="true" sortIndex="1">
-                  <constraints>
-                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="aaab-1956-f587-229d"/>
-                  </constraints>
-                  <entryLinks>
-                    <entryLink import="true" name="Throwing Spear" hidden="false" type="selectionEntry" id="29f9-d78c-d967-e763" targetId="9113-238a-ef75-aa23" sortIndex="2">
-                      <costs>
-                        <cost name="pts" typeId="points" value="1"/>
-                      </costs>
-                    </entryLink>
-                    <entryLink import="true" name="Cavalry Spear" hidden="false" type="selectionEntry" id="d396-c120-196a-35ab" targetId="a2d0-40e9-83ad-23dc" sortIndex="1">
-                      <costs>
-                        <cost name="pts" typeId="points" value="1"/>
-                      </costs>
-                    </entryLink>
-                    <entryLink import="true" name="Great Weapon" hidden="false" type="selectionEntry" id="425e-3ab5-9d4a-70b6" targetId="2283-26e9-76c3-6048" defaultAmount="0" sortIndex="3">
-                      <costs>
-                        <cost name="pts" typeId="points" value="1"/>
-                      </costs>
-                    </entryLink>
-                  </entryLinks>
-                </selectionEntryGroup>
-              </selectionEntryGroups>
-              <modifiers>
-                <modifier type="set" value="2" field="8a73-5127-d941-8b41">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="29f9-d78c-d967-e763" shared="true"/>
-                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="d396-c120-196a-35ab" shared="true"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-              <modifierGroups>
-                <modifierGroup type="and">
-                  <modifiers>
-                    <modifier type="set" value="1" field="4572-3508-cb81-2a01"/>
-                    <modifier type="set" value="1" field="8a73-5127-d941-8b41"/>
-                  </modifiers>
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="425e-3ab5-9d4a-70b6" shared="true"/>
-                  </conditions>
-                </modifierGroup>
-              </modifierGroups>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <infoLinks>
@@ -2759,21 +3130,35 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
             <categoryLink name="Light Cavalry" hidden="false" id="9528-226b-2bf2-dccf" targetId="600c-7d08-5be1-fe0c" primary="false"/>
             <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="6b11-57a2-6d2-ba15" targetId="may-have-shield"/>
           </categoryLinks>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="bcb9-bb7-3ba2-2510" sortIndex="2">
-          <infoLinks>
-            <infoLink name="Ambushers" hidden="false" type="profile" id="e24a-68c7-7dff-b406" targetId="8c0b-6fe6-dc06-512"/>
-          </infoLinks>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="5926-f627-71ad-88c2"/>
-          </constraints>
-          <modifiers>
-            <modifier type="increment" value="1" field="points">
-              <repeats>
-                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" id="f574-d763-f84d-605d"/>
-              </repeats>
-            </modifier>
-          </modifiers>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="bcb9-bb7-3ba2-2510" sortIndex="5" collective="true">
+              <infoLinks>
+                <infoLink name="Ambushers" id="e24a-68c7-7dff-b406" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5926-f627-71ad-88c2" includeChildSelections="true"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Roaming Warbands" hidden="true" id="ebb9-a79c-f8eb-4053" collective="true" sortIndex="6">
+              <infoLinks>
+                <infoLink name="Ambushers" id="8069-9618-9cd7-96ee" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7245-bc0e-1c42-fe12"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                    <condition type="lessThan" value="6" field="selections" scope="root-entry" childId="model" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -2908,6 +3293,19 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
       <categoryLinks>
         <categoryLink name="Faction: Beastmen Brayherds" hidden="false" id="b97a-3c05-388c-caf9" primary="false" targetId="a265-1c26-e439-8f2c"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="add" value="a46c-a27a-d380-08c3" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="bcb9-bb7-3ba2-2510" shared="true" includeChildSelections="true"/>
+            <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="e3e7-100e-4258-2e5d" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="ebb9-a79c-f8eb-4053" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Chaos Warhounds" hidden="false" id="22da-f2b2-cf5a-f8e7">
       <profiles>
@@ -3654,11 +4052,25 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="db3-20c8-65cc-d30c"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="25" field="db3-20c8-65cc-d30c">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
             <entryLink import="true" name="Chaos Mutations" hidden="false" type="selectionEntryGroup" id="7d39-8bcd-16c2-44db" targetId="6c4d-40ba-4d01-74b3" sortIndex="6">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="e8-8b1a-1ad2-cff"/>
               </constraints>
+              <modifiers>
+                <modifier type="increment" value="25" field="e8-8b1a-1ad2-cff">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
           </entryLinks>
           <infoLinks>
@@ -3739,7 +4151,15 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                     <entryLink import="true" name="Magic Standards" hidden="false" id="3f61-a6d0-b919-cfb5" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6"/>
                   </entryLinks>
                 </entryLink>
-                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="52b7-2555-69f6-da2c" targetId="7d76-b1a1-1535-a04c" sortIndex="1"/>
+                <entryLink import="true" name="General" hidden="false" type="selectionEntry" id="52b7-2555-69f6-da2c" targetId="7d76-b1a1-1535-a04c" sortIndex="1">
+                  <modifiers>
+                    <modifier type="set" value="true" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7b-1c1b-1ac6-7d61"/>
@@ -3747,19 +4167,18 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
             </selectionEntryGroup>
             <selectionEntryGroup name="Unit Options" id="17ca-595f-9e4f-c90" hidden="false" sortIndex="5" flatten="true">
               <selectionEntries>
-                <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="ac22-40eb-5977-6f9b" sortIndex="24">
+                <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="ac22-40eb-5977-6f9b" sortIndex="1">
                   <infoLinks>
                     <infoLink name="Ambushers" id="49a0-552-aa91-4988" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
                   </infoLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f6ef-4e47-fffb-b343"/>
-                    <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="2dd3-f97f-4306-85ef" includeChildSelections="true"/>
                   </constraints>
                   <modifiers>
-                    <modifier type="increment" value="1" field="2dd3-f97f-4306-85ef">
-                      <repeats>
-                        <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="433-da5b-3b9-7b26" includeChildSelections="true"/>
-                      </repeats>
+                    <modifier type="set" value="true" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                      </conditions>
                     </modifier>
                   </modifiers>
                   <costs>
@@ -3768,6 +4187,24 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                   <categoryLinks>
                     <categoryLink targetId="ba8c-8dba-ebcd-0847" id="2c13-ef04-3b0f-5d6b" primary="false" name="0-1 Beastman Chieftain per 1,000 points may have the Ambushers special rule"/>
                   </categoryLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Roaming Warband" hidden="true" id="fea1-17af-4aca-15e4" collective="true" sortIndex="2">
+                  <infoLinks>
+                    <infoLink name="Ambushers" id="4206-f0a6-9c9c-df77" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c034-5d9f-369d-7128"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <costs>
+                    <cost name="pts" typeId="points" value="10"/>
+                  </costs>
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
@@ -3896,6 +4333,15 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
             <infoLink name="Lore of Beasts" id="a55e-2fe1-fb66-c14f" hidden="false" type="profile" targetId="6419-d95f-555e-16b9"/>
             <infoLink name="Future Sight" id="ca6e-db3f-e493-64ac" hidden="false" type="profile" targetId="e9e5-d860-7701-0f11"/>
             <infoLink name="Leering Spirit" id="c3ef-a0d2-b823-e7c5" hidden="false" type="profile" targetId="87fd-67b2-286c-24e5"/>
+            <infoLink name="Dark Coven" id="3226-f184-7a65-6282" hidden="true" type="profile" targetId="814d-8748-07c1-ab99">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -3948,6 +4394,13 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" id="480c-241e-9c63-c305" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="86da-6653-7618-1f76" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <categoryLinks>
@@ -4296,7 +4749,7 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
         </profile>
       </profiles>
       <selectionEntries>
-        <selectionEntry type="model" import="true" name="Gor" hidden="false" id="8e23-1bf3-695e-232c" sortIndex="1">
+        <selectionEntry type="model" import="true" name="Gor" hidden="false" id="8e23-1bf3-695e-232c" sortIndex="2">
           <constraints>
             <constraint type="min" value="10" field="selections" scope="parent" shared="true" id="d9c3-3d9d-a0eb-015d"/>
           </constraints>
@@ -4331,7 +4784,7 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
             </selectionEntryGroup>
           </selectionEntryGroups>
         </selectionEntry>
-        <selectionEntry type="model" import="true" name="Ungor" hidden="false" id="ab52-13ae-f964-74d5" sortIndex="2">
+        <selectionEntry type="model" import="true" name="Ungor" hidden="false" id="ab52-13ae-f964-74d5" sortIndex="3">
           <constraints>
             <constraint type="min" value="10" field="selections" scope="parent" shared="true" id="b93a-ad3b-61a4-c86c"/>
           </constraints>
@@ -4365,9 +4818,27 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
             <categoryLink name="Regular Infantry" hidden="false" id="1a67-3192-1637-c627" targetId="f3f7-ca43-674e-115f" primary="false"/>
           </categoryLinks>
         </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="efa8-e66b-d733-b44c" collective="true" sortIndex="1">
+          <infoLinks>
+            <infoLink name="Ambushers" id="ec87-f9c5-06d1-b33a" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+          </infoLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fc29-54ff-ceee-640e"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="0"/>
+          </costs>
+          <modifiers>
+            <modifier type="increment" value="1" field="points">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" id="3f95-2431-654d-e28b" hidden="false" sortIndex="3">
+        <selectionEntryGroup name="Command" id="3f95-2431-654d-e28b" hidden="false" sortIndex="4">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Foe-render" hidden="false" id="d542-27de-c87e-97bc" subType="crew" flatten="false" sortIndex="1">
               <constraints>
@@ -5227,6 +5698,34 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
     <categoryEntry name="0-1 unit of Warped Gores may have the Ambushers special rule" id="fb30-14ab-91e5-b850" hidden="false">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="force" shared="true" id="9b63-4778-704f-09db" includeChildSelections="true"/>
+      </constraints>
+    </categoryEntry>
+    <categoryEntry name="0-1 Gor Herd, Ungor Herd or Centigor Herd per 1,000 points with a Unit Strength of 10 or less may be given the Ambushers special rule for free." id="e3e7-100e-4258-2e5d" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="69df-18a5-c722-d313" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="69df-18a5-c722-d313">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="4f6a-df4a-f951-b7fc"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="69df-18a5-c722-d313">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="b40a-768e-02f7-a0e3" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 unit of Centigor Herds may have the Ambushers special rule" id="a46c-a27a-d380-08c3" hidden="true">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="6411-0371-5dc0-fbd7" includeChildSelections="true"/>
       </constraints>
     </categoryEntry>
   </categoryEntries>
