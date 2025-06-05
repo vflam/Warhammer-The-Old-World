@@ -13530,6 +13530,14 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Instead of shooting normally, a repeater bolt can &apos;rapid fire&apos; a number of small bolts with the profile given below. If this special rule is used, all shots must be at the same target.</characteristic>
       </characteristics>
     </profile>
+    <profile name="Base (152x152)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="a476-3cca-8c8e-e32e">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">152x152</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
