@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="147" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="148" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -13606,9 +13606,9 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Instead of shooting normally, a repeater bolt can &apos;rapid fire&apos; a number of small bolts with the profile given below. If this special rule is used, all shots must be at the same target.</characteristic>
       </characteristics>
     </profile>
-    <profile name="Base (152x152)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="a476-3cca-8c8e-e32e">
+    <profile name="Base (108x108)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="a476-3cca-8c8e-e32e">
       <characteristics>
-        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">152x152</characteristic>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">108x108</characteristic>
       </characteristics>
       <modifiers>
         <modifier type="set" value="Base" field="name"/>
