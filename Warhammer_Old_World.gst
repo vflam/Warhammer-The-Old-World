@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="148" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="149" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -1023,19 +1023,19 @@ Note that this special rule is not cumulative. If two or more models in a unit h
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">After deployment, units with this special rule may make a Vanguard move. A unit making a Vanguard move moves as described in the Basic Movement rules. It may manoeuvre normally but cannot march.
 
- If both armies contain Vanguard units, a roll-off determines who moves first. The players then alternate moving their Vanguard units one at a time, starting with the player who won the roll-off.</characteristic>
+If both armies contain Vanguard units, a roll-off determines who moves first. The players then alternate moving their Vanguard units one at a time, starting with the player who won the roll-off. Units that make a Vanguard move cannot declare a charge during their first turn.</characteristic>
       </characteristics>
     </profile>
     <profile name="Warband" hidden="false" id="505f-e12d-2e36-31d0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="180" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless it is fleeing, a Warband gains a positive (+) modifier to its Leadership characteristic equal to its current Rank Bonus, up to a maximum of Leadership 10. However, a Warband cannot use this modifier to its Leadership should it ever choose to make a Restraint test. In addition, if the majority of the models in a unit have this special rule, it may re-roll its Charge roll.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless it is fleeing, a Warband gains a positive (+) modifier to its Leadership characteristic equal to its current Rank Bonus, up to a maximum of Leadership 10.However, a Warband cannot use this modifier to its Leadership should it ever choose to make a Restraint test or, if it is Impetuous, when testing to see if it must declare a charge or may act as normal. In addition, if the majority of the models in a unit have this special rule, it may re-roll its Charge roll.
 
- Note that unless a character also has this special rule, their Leadership cannot be modified by this special rule. A Warband can use either its own modified Leadership, the modified Leadership of a Warband character, or the unmodified Leadership of a non-Warband character, whichever is the higher.</characteristic>
+Note that unless a character also has this special rule, their Leadership cannot be modified by this special rule. A Warband can use either its own modified Leadership, the modified Leadership of a Warband character, or the unmodified Leadership of a non-Warband character, whichever is the higher.</characteristic>
       </characteristics>
     </profile>
     <profile name="Impetuous" hidden="false" id="b664-8530-a988-7ba9" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="172" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">If during the Declare Charges &amp; Charge Reactions sub-phase of its turn, a unit that includes one or more Impetuous models is able to declare a charge, roll a D6. On a roll of 1-3, the unit must declare a charge. On a roll of 4+, the unit may act as normal.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">If during the Declare Charges &amp; Charge Reactions sub-phase of its turn, a unit that includes one or more Impetuous models is able to declare a charge, it must make a Leadership test. If this test is failed, the unit must declare a charge. If this test is passed, the unit may act as normal.</characteristic>
       </characteristics>
     </profile>
     <profile name="Light Armour" hidden="false" id="dbb2-4d85-84c2-528c" typeId="c14f-740-8107-d34b" typeName="Armour">
@@ -1063,20 +1063,14 @@ Note that this special rule is not cumulative. If two or more models in a unit h
     </profile>
     <profile name="Frenzy" hidden="false" id="3b0c-a477-8823-3a25" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="170" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A Frenzied model has a +1 modifier to its Attacks characteristic. This modifier does not apply to the model’s mount (in the case of a cavalry model), to the beasts that draw it (in the case of a chariot), or to its rider (in the case of a monster).
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">During a turn in which it made a charge move, or during the turn after it made a follow up move, a Frenzied model has a +1 modifier to its Attacks characteristic. However, a Frenzied rider does not confer this modifier to their mount, and vice versa.
 
- In addition:
+In addition:
+- If the majority of the models in a unit are Frenzied, the unit automatically passes any Fear, Panic or Terror tests it is required to make.
+- If a unit that includes one or more Frenzied models is able to declare a charge during the Declare Charges &amp; Charge Reactions sub-phase of its turn, it must do so.
+- If the majority of the models in a unit are Frenzied, it cannot choose to Flee as a charge reaction, nor can it ever choose to make a Restraint test.
 
- 
-• 	If the majority of the models in a unit are Frenzied, the unit automatically passes any Fear, Panic or Terror tests it is required to make.
-
- 
-• 	If a unit that includes one or more Frenzied models is able to declare a charge during the Declare Charges &amp; Charge Reactions sub-phase of its turn, it must do so.
-
- 
-• 	If the majority of the models in a unit are Frenzied, it cannot choose to Flee as a charge reaction, nor can it ever choose to make a Restraint test.
-
- Losing Frenzy: Unlike other special rules, Frenzy can be lost during a game. Any model that loses a round of combat will immediately lose this special rule.</characteristic>
+**Losing Frenzy:** Unlike other special rules, Frenzy can be lost during a game. Any model that loses a round of combat will immediately lose this special rule.</characteristic>
       </characteristics>
     </profile>
     <profile name="Armour Bane" hidden="false" id="2af0-975f-bb14-8b8f" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
@@ -1201,7 +1195,7 @@ Note that, if the distance between this unit and the charging unit is less than 
     </profile>
     <profile name="Fly" hidden="false" id="c557-6102-9a35-bbcd" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Whenever a model with this special rule moves, it can choose either to move across the ground as normal, using its given Movement characteristic, or to move by flying through the air. When a model flies it uses a special ‘Fly Movement’ characteristic, shown in brackets after the name of this special rule (shown here as ‘X’). Models that choose to move by flying:
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Except when following up or pursuing, a model with this special rule can choose to move by flying through the air, rather than moving across the ground as normal. When a model flies it uses a special ‘Fly Movement’ characteristic, shown in brackets after the name of this special rule (shown here as ‘X’). Models that choose to move by flying:
 
 - May move as normal (i.e. they may charge, march and manoeuvre as if moving on the ground), except that they are able to pass freely above other models, units and terrain features without any penalty, and they can march whilst within 8&quot; of an enemy unit without first having to make a Leadership test.
 
@@ -1282,12 +1276,12 @@ In combat, each handler adds its attacks to those of the monster. If the monster
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">The number of Impact Hits caused varies from model to model, and will be shown in brackets after the name of this special rile. Often, this is determined by the roll of a dice.
 
- Resolving Impact Hits: Impact Hits can only be made by a charging model that moved 3&quot; or more and that is in base contact with the enemy. Impact hits are attacks made in combat that always strike at Initiative 10 (regardless of modifiers), and that hit automatically using the unmodified Strength characteristic of the model.</characteristic>
+**Resolving Impact Hits:** Impact Hits can only be made by a charging model that moved 3&quot; or more and that is in base contact with the enemy. Impact Hits are resolved against the charged unit when the combat is chosen during Step 1.1 of the Choose Combat &amp; Fight sub-phase, before issuing challenges. They hit automatically and use the unmodified Strength of the model making them.</characteristic>
       </characteristics>
     </profile>
     <profile name="Large Target" hidden="false" id="c822-7ad0-f24a-e4af" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="172" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Enemy models never suffer To Hit modifiers for full or partial cover when shooting at models with this special rule. In addition, a model can draw a line of sight to a model with this special rule over or through other models, and vice versa.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Large Targets do not benefit from partial or full cover. In addition, a unit can draw a line of sight to a Large Target over or through another unit, and vice versa, provided that unit is not also a Large Target. Finally, a unit that shoots at a Large Target can shoot with one additional rank. For example, a unit armed with crossbows can shoot with its first two ranks when shooting at a Large Target, or with its first three if also standing on a hill.</characteristic>
       </characteristics>
     </profile>
     <profile name="Monster Slayer" hidden="false" id="6b2f-7ce0-3e27-4ded" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="173" publicationId="768b-3da1-a182-a1d8">
@@ -1347,7 +1341,7 @@ In combat, each handler adds its attacks to those of the monster. If the monster
     </profile>
     <profile name="Poisoned Attacks" hidden="false" id="81f5-4895-4abc-fc39" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="175" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">If a model with Poisoned Attacks rolls a natural 6 when making a roll To Hit, that hit will wound automatically. Unless otherwise stated, a model with this special rule may use it when making both shooting and combat attacks. Any spells cast by the model are unaffected, as are any attacks made with magic weapons. Note that if an attack needs a To Hit roll of 7+, or hits automatically, this special rule cannot be used.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">For each roll To Hit of a natural 6 a model with Poisoned Attacks makes, they may apply a +2 modifier to one of their rolls To Wound. Unless otherwise stated, a model with this special rule may use it when making both shooting and combat attacks. Any spells cast by the model are unaffected, as are any attacks made with magic weapons. Note that if an attack needs a To Hit roll of 7+, or hits automatically, this special rule cannot be used.</characteristic>
       </characteristics>
     </profile>
     <profile name="Random Attacks" hidden="false" id="1b08-4621-6379-ff1f" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="176" publicationId="768b-3da1-a182-a1d8">
@@ -1366,9 +1360,7 @@ If every model in a unit has this special rule, roll once for the entire unit. I
     </profile>
     <profile name="Regeneration" hidden="false" id="2eb0-1ec8-8e04-72d4" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule can make a &apos;Regeneration&apos; save. The armour value of a Regeneration save is shown in brackets after the name of this special rule (X+). A Regeneration save can never be modified by the AP characteristic of a weapon and can be made in addition to an armour save and Ward save. However, any wounds saved by a Regeneration save are still counted for the purposes of calculating combat result.
-
- Note that models with this special rule are often vulnerable to the Flaming Attacks or Magical Attacks special rules.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Immediately after a Wound is lost, but before models with zero Wounds remaining are removed from play, a model with this special rule may make a &quot;Regeneration save&quot; roll by rolling a D6 and comparing the result to its &quot;Regeneration value&quot;, shown in brackets after the name of this special rule (shown here as &quot;X+&quot;). If the Regeneration save roll equals or exceeds the model’s Regeneration value, the lost Wound is recovered, but is still counted for the purposes of calculating the combat result. Rules that affect armour values do not affect Regeneration values unless stated otherwise.</characteristic>
       </characteristics>
     </profile>
     <profile name="Regimental Unit" hidden="false" id="7424-ec43-7581-965a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="176" publicationId="768b-3da1-a182-a1d8">
@@ -1390,7 +1382,7 @@ If every model in a unit has this special rule, roll once for the entire unit. I
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">The number of Stomp Attacks caused varies from model to model and will be shown in brackets after the name of this special rule. Often, this is determined by the roll of a dice.
 
- Resolving Stomp Attacks: Stomp Attacks can only be made by a model that is in base contact with the enemy. Stomp Attacks are attacks made in combat that always strike at Initiative 1 (regardless of modifiers) and that hit automatically using the unmodified Strength characteristic of the model.</characteristic>
+**Resolving Stomp Attacks:** Stomp Attacks can only be made by a model that is in base contact with the enemy. Stomp Attacks are attacks made in combat that must be made last, after all other attacks have been made, including attacks made at Initiative 1. They hit automatically and use the unmodified Strength of the model making them.</characteristic>
       </characteristics>
     </profile>
     <profile name="Strike First" hidden="false" id="48fd-23c1-c0d5-ae1d" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="177" publicationId="768b-3da1-a182-a1d8">
@@ -1405,23 +1397,18 @@ If every model in a unit has this special rule, roll once for the entire unit. I
     </profile>
     <profile name="Stupidity" hidden="false" id="f7af-e016-1f9c-54c0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="178" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless it is engaged in combat, a unit with this special rule must make a ‘Stupidity’ test during the Start of Turn sub-phase of its turn. To make a Stupidity test, test against the unit’s Leadership characteristic. If this test is failed, the unit becomes Stupid. A Stupid unit:
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless it is fleeing or engaged in combat, a unit with this special rule must make a Stupidity test by testing against its Leadership during the Start of Turn sub-phase of each of its turns. If this test is failed, the unit succumbs to Stupidity until its next Start of Turn sub-phase. A unit that has succumbed to Stupidity:
+- Cannot move.
+- Cannot shoot or cast spells.
+- Cannot attempt a Wizardly dispel.
+- Must &quot;Hold&quot; if charged by an enemy.
 
- 
-• 	Moves during the Compulsory Moves sub-phase.
-
- 
-• 	Must move straight ahead, without performing any manoeuvres.
-
- 
-• 	Cannot march or declare a charge.
-
- A unit or mount that does not have this special rule becomes subject to it when joined or ridden by a character that does (Stupidity is contagious).</characteristic>
+A unit or mount that does not have this special rule becomes subject to it when joined or ridden by a character that does (Stupidity is contagious).</characteristic>
       </characteristics>
     </profile>
     <profile name="Swiftstride" hidden="false" id="dc91-48b3-3696-217" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="178" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit which consists entirely of models with this special rule increases its maximum possible charge range by 3&quot; and, when it makes a Charge, Flee or Pursuit roll, may apply a +D6 modifier to the result.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit which consists entirely of models with this special rule increases its maximum possible charge range by 3&quot; and, before making a Charge, Flee or Pursuit roll, may choose to apply a +D6 modifier to the result.</characteristic>
       </characteristics>
     </profile>
     <profile name="Terror" hidden="false" id="c7a2-35bf-4313-f4f0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="179" publicationId="768b-3da1-a182-a1d8">
@@ -1618,17 +1605,17 @@ If the only other remaining models in a unit are the champion and standard beare
         <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
         <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S+1</characteristic>
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
-        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">-</characteristic>
-        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">A morning star’s Strength modifier applies only during the first round of combat.</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1)</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">A morning star’s Strength modifier and Armour Bane (1) special rule apply only against enemy models the wielder charged this turn.</characteristic>
       </characteristics>
     </profile>
     <profile name="Halberd" hidden="false" id="98f8-9d8-94cd-3379" typeId="a378-c633-912d-11ce" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
         <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S+1</characteristic>
-        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1</characteristic>
+        <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-1 (-2)</characteristic>
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Requires Two Hands</characteristic>
-        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">A halberd has an AP of -2 against enemy models the wielder charged this turn.</characteristic>
       </characteristics>
     </profile>
     <profile name="Flail" hidden="false" id="b326-5bf3-9b4e-f8ad" typeId="a378-c633-912d-11ce" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
@@ -1636,8 +1623,8 @@ If the only other remaining models in a unit are the champion and standard beare
         <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
         <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S+2</characteristic>
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-2</characteristic>
-        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Requires Two Hands</characteristic>
-        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">A flail’s Strength modifier applies only during the first round of combat.</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Requires Two Hands</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">A flail’s Strength modifier and Armour Bane (1) special rule apply only against enemy models the wielder charged this turn.</characteristic>
       </characteristics>
     </profile>
     <profile name="Whip" hidden="false" id="7505-7edf-c3de-57a6" typeId="a378-c633-912d-11ce" typeName="Weapon" page="214" publicationId="768b-3da1-a182-a1d8">
@@ -1655,7 +1642,7 @@ If the only other remaining models in a unit are the champion and standard beare
         <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S+2</characteristic>
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-2</characteristic>
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1)</characteristic>
-        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Models whose troop type is ‘cavalry’ or ‘monster’ only. A lance can only be used during a turn in which the wielder charged. In subsequent turns (or if the wielder did not charge) the model must use its hand weapon instead.</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">Models whose troop type is &apos;cavalry&apos; or &apos;monster&apos; only. A lance can only be used during a turn in which the wielder charged, and its Strength and Armour Piercing modifiers apply only against enemy models the wielder charged that turn.</characteristic>
       </characteristics>
     </profile>
     <profile name="Shortbow" hidden="false" id="1b65-71ef-52a3-93d0" typeId="a378-c633-912d-11ce" typeName="Weapon" page="216" publicationId="768b-3da1-a182-a1d8">
@@ -2304,7 +2291,7 @@ Related: Challenges</characteristic>
     </profile>
     <profile name="Challenges &amp; Mounts" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="9ab9-3ff2-b0f6-65d">
       <characteristics>
-        <characteristic name="Description" id="cdb4-de9-5e0b-1e5c" hidden="false" typeId="9f84-4221-785a-db50">If either participant in a challenge is mounted, their mount (including the crew of a chariot) must direct its attacks against the other participant. If the rival participant is slain before a mount&apos;s attacks are made (because the mount has a lower Initiative, for example), the mount&apos;s attacks may be made against the rival as normal for the purposes of Overkill.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">If either participant in a challenge is mounted, their mount (including the crew of a chariot) must direct its attacks against the other participant. *Note that, if either participant is slain before their rival or a mount can make an attack, those attacks are lost.*
 
 
 Related: Challenges</characteristic>
@@ -2456,12 +2443,12 @@ Related: Character Models, General &amp; Battle Standard</characteristic>
     </profile>
     <profile name="Enemy Shooting (Characters)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1be9-a8c-b631-269e">
       <characteristics>
-        <characteristic name="Description" id="771b-7101-ee88-f708" hidden="false" typeId="9f84-4221-785a-db50">A character that has joined a unit cannot be hit by enemy shooting unless:
- - They are targeted by an attack that allows a specific model within a unit to be targeted.
- - They find themselves lying underneath a template.
- - There are fewer than five rank and file models in the unit.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A character that has joined a unit of models of the same troop type as them (i.e., infantry or cavalry), cannot be targeted by enemy shooting unless:
+- They are targeted by an attack that allows a specific model within a unit to be targeted.
+- They find themselves lying underneath a template.
+- There are fewer than five rank and file models in the unit.
 
- If there are fewer than five rank and file models in the unit, the controlling player must first allocate hits to the unit until one hit has been allocated to each model it contains. Any remaining hits are divided as equally as possible between the character(s) and the unit.
+If there are fewer than five rank and file models of the same troop type as the character in the unit, the controlling player must first allocate hits to the unit until one hit has been allocated to each model it contains. Any remaining hits are divided as equally as possible between the character(s) and the unit.
 
 
 Related: Characters &amp; Shooting</characteristic>
@@ -2555,7 +2542,7 @@ Related: Characters &amp; Units</characteristic>
     </profile>
     <profile name="&quot;Look Out, Sir!&quot; (Characters)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="661e-f34a-87ad-c05">
       <characteristics>
-        <characteristic name="Description" id="b4c1-b2c4-2b0a-a9b9" hidden="false" typeId="9f84-4221-785a-db50">If a character is hit by a shooting attack, and if there are five or more rank and file models in the unit, the character can make a &quot;Look Out, Sir!&quot; roll. To make a &quot;Look Out, Sir!&quot; roll, roll a D6. On a roll of 1, the character is hit. On a roll of 2+, a member of the unit is hit in the character&apos;s place – resolve the hit against the unit.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">If a character is hit by a shooting attack, and if there are five or more rank and file models of the same troop type as the character in the unit, the character can make a “Look Out, Sir!” roll. To make a &quot;Look Out, Sir!&quot; roll, roll a D6. On a roll of 1, the character is hit. On a roll of 2+, a member of the unit is hit in the character&apos;s place – resolve the hit against the unit.
 
 
 Related: Characters &amp; Shooting</characteristic>
@@ -3150,7 +3137,7 @@ If a unit in Close Order formation is wide enough, it can claim a Rank Bonus of 
 
 Note that this bonus can be claimed for an incomplete rear rank, as long as there are sufficient models in it. However, if your unit has become Disrupted it cannot claim a Rank Bonus.
 # Combat Result Bonus
-Whilst in Combat Order, a Close Order formation with a unit strength of 5 or more  may claim a bonus of +1 combat result point.</characteristic>
+Whilst in Combat Order, a Close Order formation with a unit strength of 10 or more may claim a bonus of +1 combat result point.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3404,12 +3391,12 @@ Related: Spell Categories</characteristic>
     </profile>
     <profile name="Casting Roll, Casting Result &amp; Casting Value" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="9f7b-b1bb-ce9d-3a35">
       <characteristics>
-        <characteristic name="Description" id="9879-d974-ef9c-af3" hidden="false" typeId="9f84-4221-785a-db50">To cast a spell, you must make a &apos;Casting&apos; roll. To make a Casting roll, roll 2D6. This represents the Wizard&apos;s attempts to draw raw magical power from the æther and shape it to their will.
- The casting Wizard&apos;s Level is then added to the result of this roll to give a &apos;casting result&apos;. For example, if a Level 2 Wizard makes a Casting roll of 1 and 6, the total casting result would be 9 (1 + 6 = 7 for the Casting roll, plus 2 for the Level of Wizardry).
- Keep the dice in front of you for the moment – the scores will be needed if your opponent makes a dispel attempt.
- Each spell has an associated &apos;casting value&apos;. Spells with a higher casting value have greater effect, but require more power:
- - If the casting result equals or exceeds the spell&apos;s casting value, the spell is successfully cast (though your opponent may subsequently dispel it).
- - If the casting result is less than the casting value, the spell is not cast.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">To cast a spell, you must make a &apos;Casting&apos; roll. To make a Casting roll, roll 2D6. This represents the Wizard&apos;s attempts to draw raw magical power from the æther and shape it to their will.
+The casting Wizard’s Level of Wizardry is then divided by 2 (rounding fractions up) and added to this roll to give a ‘casting result’. For example, if a Level 2 Wizard makes a Casting roll of 1 and 6, the total casting result would be 8 (1 + 6 = 7 for the Casting roll, plus 1 for the Level of Wizardry divided by 2).
+Keep the dice in front of you for the moment – the scores will be needed if your opponent makes a dispel attempt.
+Each spell has an associated &apos;casting value&apos;. Spells with a higher casting value have greater effect, but require more power:
+- If the casting result equals or exceeds the spell&apos;s casting value, the spell is successfully cast (though your opponent may subsequently dispel it).
+- If the casting result is less than the casting value, the spell is not cast.
 
 
 
@@ -3419,14 +3406,14 @@ Related: Choosing a Target</characteristic>
     </profile>
     <profile name="Casting Spells" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="dace-d11f-f3e6-a9c5">
       <characteristics>
-        <characteristic name="Description" id="a50b-4b83-3dec-f6fc" hidden="false" typeId="9f84-4221-785a-db50">When a spell can be cast depends upon its type:
- - Enchantment  and  Hex  spells can be cast during the Conjuration sub-phase of your Strategy phase.
- - Conveyance  spells can be cast at any point during the Remaining Moves sub-phase of your Movement phase.
- - Magic Missiles  and  Magical Vortex  spells can be cast when a Wizard is chosen during your Shooting phase.
- - Assailment  spells can be cast when a Wizard fights during any Combat phase.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">When a spell can be cast depends upon its type:
+- Enchantment and Hex spells can be cast during the Conjuration sub-phase of your Strategy phase.
+- Conveyance spells can be cast at any point during the Remaining Moves sub-phase of your Movement phase.
+- Magic Missiles and Magical Vortex spells can be cast when a Wizard is chosen during your Shooting phase.
+- Assailment spells can be cast when a Wizard fights during any Combat phase.
 
- A Wizard can only attempt to cast each of their spells once per turn. Wizards that are fleeing cannot cast spells. Unless stated otherwise, Wizards that are engaged in combat can only cast Assailment or range  self  spells.
- To cast a spell, a Wizard declares which spell they wish to cast and its target (if required).
+A Wizard can attempt to cast a number of spells equal to their Level of Wizardry per turn, but may only attempt to cast each spell once per turn. Wizards that are fleeing cannot cast spells. Unless stated otherwise, Wizards that are engaged in combat can only cast Assailment or range self spells.
+To cast a spell, a Wizard declares which spell they wish to cast and its target (if required).
 
 
 Related:
@@ -3463,12 +3450,12 @@ Related: Spell Categories</characteristic>
     </profile>
     <profile name="Dispel Roll &amp; Dispel Result" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4432-8c61-3f1f-d107">
       <characteristics>
-        <characteristic name="Description" id="e563-185-f7f9-9433" hidden="false" typeId="9f84-4221-785a-db50">To dispel a spell, you must make a &apos;Dispel&apos; roll. To make a Dispel roll, roll 2D6. This represents either the efforts of a Wizard to counter enemy magic, or the twists of fate that can see the Winds of Magic suddenly dissipate.
- If you are attempting a Wizardly dispel, add the Wizard&apos;s Level to the result of this roll to give a &apos;dispel result&apos;. If you are attempting a Fated dispel, nothing is added – the result of the Dispel roll is itself the dispel result:
- - If the dispel result exceeds the casting result, the spell is successfully dispelled and immediately ends.
- - If the dispel result is equal to or less than the casting result, the dispel attempt has failed. The spell is not dispelled.*
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">To dispel a spell, you must make a &apos;Dispel&apos; roll. To make a Dispel roll, roll 2D6. This represents either the efforts of a Wizard to counter enemy magic, or the twists of fate that can see the Winds of Magic suddenly dissipate.
+If you are attempting a Wizardly dispel, the Dispel roll is modified by adding the Wizard’s Level of Wizardry divided by 2 (rounding fractions up) to give a &quot;dispel result&quot;.
+- If the dispel result exceeds the casting result, the spell is successfully dispelled and immediately ends.
+- If the dispel result is equal to or less than the casting result, the dispel attempt has failed. The spell is not dispelled.*
 
- * Admin Note:  This has been flagged by the community as conflicting with the &quot; Dispelling A Spell&quot; section  of the  Quick Reference . Current consensus is this version of the rule is the intended way to play.</characteristic>
+* Admin Note: This has been flagged by the community as conflicting with the &quot; Dispelling A Spell&quot; section of the Quick Reference . Current consensus is this version of the rule is the intended way to play.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3483,8 +3470,8 @@ Related: Types of Dispel, Dispel Roll &amp; Dispel Result, Outclassed in the Art
     </profile>
     <profile name="Dispelling Remains in Play Spells" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6843-d011-d93c-ac71">
       <characteristics>
-        <characteristic name="Description" id="459e-8e73-7ad6-d843" hidden="false" typeId="9f84-4221-785a-db50">If not immediately dispelled when cast, you may attempt to dispel a  Remains in Play  spell cast by your opponent during the  Conjuration  sub-phase of any of your subsequent turns. To do so, you may attempt either a Fated dispel or a  Wizardly dispel  (provided the Wizard making the attempt is within Dispel range of the Wizard that cast the spell).
- Remains in Play spells do not retain the energy of their casting, and so you do not need to beat the original casting result if attempting to dispel in subsequent turns, but rather the minimum casting value given in the spell&apos;s description.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">If not immediately dispelled when cast, you may attempt to dispel a Remains in Play spell cast by your opponent during the Conjuration sub-phase of any of your subsequent turns. To do so, you may attempt either a Fated dispel or a Wizardly dispel (provided the Wizard making the attempt is within Dispel range of the Wizard that cast the spell or, in the case of a Magical Vortex, within range of the template representing the spell).
+Remains in Play spells do not retain the energy of their casting, and so you do not need to beat the original casting result if attempting to dispel in subsequent turns, but rather the minimum casting value given in the spell&apos;s description.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3552,8 +3539,8 @@ Related: Spell Categories</characteristic>
     </profile>
     <profile name="Magical Vortex" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6b21-bacf-475-fe57">
       <characteristics>
-        <characteristic name="Description" id="83b8-af2-d688-7673" hidden="false" typeId="9f84-4221-785a-db50">These are roiling globes of magical energy that travel across the battlefield. A Magical Vortex does not require a target – instead, it uses a round template which is placed on the battlefield, not touching the bases of any models, and with its central hole within the range given by the spell. Once placed, Magical Vortexes remain on the battlefield (unless they move off it).
- Some Magical Vortexes move at the start of each turn. If a Magical Vortex ever ends such a move over a unit, continue to move it in the same direction until it can be placed on the battlefield, not touching the bases of any models.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">These are roiling globes of magical energy that travel across the battlefield. A Magical Vortex does not require a target – instead, it uses a round template which is placed on the battlefield, not touching the bases of any models, and with its central hole within the range given by the spell. Once placed, Magical Vortexes remain on the battlefield (unless they move off it).
+Some Magical Vortexes move at the start of each turn, often by scattering. Should a Magical Vortex end such a move over a unit, move it by the smallest amount possible, in any direction, so that it can be placed on the battlefield, not touching the bases of any models.
 
 
 Related: Spell Categories</characteristic>
@@ -3562,14 +3549,14 @@ Related: Spell Categories</characteristic>
     </profile>
     <profile name="Miscast Table" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c11-bf60-8cc3-5bc5">
       <characteristics>
-        <characteristic name="Description" id="cbf5-fd-fe39-9a0" hidden="false" typeId="9f84-4221-785a-db50">|||
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">|||
 |:--|:--|
 |2D6|Result|
-|2-4|Dimensional Cascade:  The summoned magic breaks free, creating an ethereal tornado. Centre a 5&quot; blast  template  over the Wizard. Every model (friend or foe) whose base lies underneath the template risks being hit and suffering a single Strength 10 hit with an  AP  of -4.|
-|5-6|Calamitous Detonation:  Roiling magic explodes from the Wizard in a flash of light. Centre a 3&quot; blast  template  over the Wizard. Every model (friend or foe) whose base lies underneath the template risks being hit and suffering a single Strength 6 hit with an  AP  of -2.|
-|7|Careless Conjuration:  The Wizard mispronounces a syllable, causing the spell to backfire, knocking them to the ground. The Wizard suffers a single Strength 4 hit with an  AP  of -1.|
-|8-9|Barely Controlled Power:  The Wizard manages to control the magic, but at the expense of great power. The spell is cast (at its casting value, for the purpose of dispel attempts). However, you cannot attempt to cast any more spells for the remainder of the current turn.|
-|10-12|Power Drain:  With a deafening boom, the summoned magic is unleashed and an unnatural calm descends. The spell is cast with a perfect invocation. However, you cannot attempt to cast any more spells for the remainder of the current turn.|</characteristic>
+|2-4|Dimensional Cascade: The summoned magic breaks free, creating an ethereal tornado. Centre a 5&quot; blast template over the Wizard. Every model (friend or foe) whose base lies underneath the template risks being hit and suffering a single Strength 10 hit with an AP of -4.|
+|5-6|Calamitous Detonation: Roiling magic explodes from the Wizard in a flash of light. Centre a 3&quot; blast template over the Wizard. Every model (friend or foe) whose base lies underneath the template risks being hit and suffering a single Strength 6 hit with an AP of -2.|
+|7|Careless Conjuration: The Wizard mispronounces a syllable, causing the spell to backfire, knocking them to the ground. The Wizard suffers a single Strength 4 hit with an AP of -1.|
+|8-9|Barely Controlled Power: The Wizard manages to control the magic, but at the expense of great power. The spell is cast (at its casting value, for the purpose of dispel attempts). However, the Wizard cannot attempt to cast any more spells for the remainder of the current turn.|
+|10-12|Power Drain: With a deafening boom, the summoned magic is unleashed and an unnatural calm descends. The spell is cast with a perfect invocation. However, you cannot attempt to cast any more spells for the remainder of the current turn.|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3718,11 +3705,11 @@ Related: Outclassed in the Art &amp; Unbinding</characteristic>
     </profile>
     <profile name="Wizardly Dispel" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4a22-393a-f66f-cf1e">
       <characteristics>
-        <characteristic name="Description" id="9e40-c2e1-6c87-d50a" hidden="false" typeId="9f84-4221-785a-db50">To attempt a Wizardly dispel, nominate a single Wizard in your army that is within &apos;Dispel range&apos; of the Wizard that cast the spell. Dispel range varies depending upon the Level of the Wizard nominated:
- - Level 1 and Level 2 Wizards have a Dispel range of 18&quot;.
- - Level 3 and Level 4 Wizards have a Dispel range of 24&quot;.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">To attempt a Wizardly dispel, nominate a single Wizard in your army that is within &apos;Dispel range&apos; of the Wizard that cast the spell. Dispel range varies depending upon the Level of the Wizard nominated:
+- Level 1 and Level 2 Wizards have a Dispel range of 18&quot;.
+- Level 3 and Level 4 Wizards have a Dispel range of 24&quot;.
 
- Wizards that are engaged in combat, that are fleeing or that are not on the battlefield cannot be nominated.
+Wizards that are fleeing or that are not on the battlefield cannot be nominated. Wizards that are engaged in combat can only be nominated to dispel spells that target them or their unit.
 
 
 Related: Types of Dispel</characteristic>
@@ -7259,11 +7246,16 @@ Related: Abominable Attacks</characteristic>
     </profile>
     <profile name="Fly (X)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="cc9e-70c4-6f2c-413f">
       <characteristics>
-        <characteristic name="Description" id="cb93-c2d4-7f85-389" hidden="false" typeId="9f84-4221-785a-db50">A model with this special rule can Fly. Models that can Fly can choose either to move normally on the ground (using their Movement characteristic), or to move by flying. How many inches a model can Fly varies from model to model, and will be shown in brackets after the name of this special rule (shown here as &apos;X&apos;). Models that choose to move by flying:
- - May move as normal (i.e., they may  charge ,  march  and  manoeuvre  as if moving on the ground), except that they are able to pass freely above other models, units and terrain features without any penalty, and they can march whilst within 8&quot; of an enemy unit without first having to make a  Leadership test .
- - May end their movement in terrain, but will suffer its effects if they do. They cannot end their movement &apos;on top&apos; of impassable terrain or another unit, or within 1&quot; of an enemy unit.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Except when following up or pursuing, a model with this special rule can choose to move by flying through the air, rather than moving across the ground as normal. When a model flies it uses a special ‘Fly Movement’ characteristic, shown in brackets after the name of this special rule (shown here as ‘X’). Models that choose to move by flying:
 
- Models that can Fly must begin and end all of their movement on the ground. A character with this special rule cannot join a unit without this special rule, and vice versa.</characteristic>
+
+- May move as normal (i.e. they may charge, march and manoeuvre as if moving on the ground), except that they are able to pass freely above other models, units and terrain features without any penalty, and they can march whilst within 8&quot; of an enemy unit without first having to make a Leadership test.
+
+
+- May end their movement in terrain, but will suffer its effects if they do. They cannot end their movement &apos;on top&apos; of impassable terrain or another unit, or within 1&quot; of an enemy unit.
+
+
+Models that can Fly must begin and end all their movement on the ground. A character with this special rule cannot join a unit without this special rule, and vice versa.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7335,9 +7327,10 @@ Related: Abominable Attacks</characteristic>
     </profile>
     <profile name="Impact Hits (X)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="5f3c-3336-9f01-52c5">
       <characteristics>
-        <characteristic name="Description" id="30aa-167d-5528-8d57" hidden="false" typeId="9f84-4221-785a-db50">The number of Impact Hits caused varies from model to model, and will be shown in brackets after the name of this special rule (shown here as &apos;X&apos;). Often, this is determined by the roll of a dice.
- # Resolving Impact Hits
- Impact Hits can only be made by a charging model that moved 3&quot; or more and that is in base contact with the enemy. Impact hits are attacks made in combat that always strike at Initiative 10 (regardless of modifiers), and that hit automatically using the unmodified Strength characteristic of the model.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">The number of Impact Hits caused varies from model to model, and will be shown in brackets after the name of this special rile. Often, this is determined by the roll of a dice.
+
+
+**Resolving Impact Hits:** Impact Hits can only be made by a charging model that moved 3&quot; or more and that is in base contact with the enemy. Impact Hits are resolved against the charged unit when the combat is chosen during Step 1.1 of the Choose Combat &amp; Fight sub-phase, before issuing challenges. They hit automatically and use the unmodified Strength of the model making them.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7451,8 +7444,7 @@ Mark of Tzeentch</characteristic>
     </profile>
     <profile name="Regeneration (X+)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="6e39-5258-cf17-3bde">
       <characteristics>
-        <characteristic name="Description" id="17ab-c35d-efd8-4a2c" hidden="false" typeId="9f84-4221-785a-db50">A model with this special rule can make a &apos;Regeneration&apos; save. The armour value of a Regeneration save is shown in brackets after the name of this special rule (shown here as &apos;X+&apos;). A Regeneration save can never be modified by the  AP  characteristic of a weapon and can be made in addition to an  armour save  and a  Ward save . However, any wounds saved by a Regeneration save are still counted for the purposes of calculating the  combat result .
- Note that models with this special rule are often vulnerable to the  Flaming Attacks  or  Magical Attacks  special rules.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Immediately after a Wound is lost, but before models with zero Wounds remaining are removed from play, a model with this special rule may make a &quot;Regeneration save&quot; roll by rolling a D6 and comparing the result to its &quot;Regeneration value&quot;, shown in brackets after the name of this special rule (shown here as &quot;X+&quot;). If the Regeneration save roll equals or exceeds the model’s Regeneration value, the lost Wound is recovered, but is still counted for the purposes of calculating the combat result. Rules that affect armour values do not affect Regeneration values unless stated otherwise.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7531,9 +7523,10 @@ Related: Ark of Sotek</characteristic>
     </profile>
     <profile name="Stomp Attacks (X)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="73e4-3483-b269-9079">
       <characteristics>
-        <characteristic name="Description" id="48c9-633f-de16-193" hidden="false" typeId="9f84-4221-785a-db50">The number of Stomp Attacks caused varies from model to model, and will be shown in brackets after the name of this special rule (shown here as &apos;X&apos;). Often, this is determined by the roll of a dice.
- # Resolving Stomp Attacks
- Stomp Attacks can only be made by a model that is in base contact with the enemy. Stomp Attacks are attacks made in combat that always strike at Initiative 1 (regardless of modifiers), and that hit automatically using the unmodified Strength characteristic of the model.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">The number of Stomp Attacks caused varies from model to model and will be shown in brackets after the name of this special rule. Often, this is determined by the roll of a dice.
+
+
+**Resolving Stomp Attacks:** Stomp Attacks can only be made by a model that is in base contact with the enemy. Stomp Attacks are attacks made in combat that must be made last, after all other attacks have been made, including attacks made at Initiative 1. They hit automatically and use the unmodified Strength of the model making them.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -7711,9 +7704,9 @@ Related: Oddball Stuff (Combat)</characteristic>
     </profile>
     <profile name="Charging Units" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="a8b2-3c35-bfb2-a659">
       <characteristics>
-        <characteristic name="Description" id="1f23-bc43-247a-6ac6" hidden="false" typeId="9f84-4221-785a-db50">Charging into the enemy gives a considerable advantage, which is increased when charging into an enemy&apos;s vulnerable flank or rear. To represent this, every model within a charging unit modifies its Initiative characteristic for the remainder of that turn (to a maximum of 10):
- • Charging an enemy in their front arc:  +1 Initiative per full inch moved (prior to making contact), to a maximum of +3.
-•  Charging an enemy in their flank or rear arc:  +1 Initiative per full inch moved (prior to making contact), to a maximum of +4.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Charging into the enemy gives a considerable advantage, which is increased when charging into an enemy&apos;s vulnerable flank or rear. To represent this, models gain a modifier to their Initiative characteristic during the Combat phase of a turn in which they charged (to a maximum of 10):
+• Charging an enemy in their front arc: +1 Initiative per full inch moved (prior to making contact), to a maximum of +3.
+• Charging an enemy in their flank or rear arc: +1 Initiative per full inch moved (prior to making contact), to a maximum of +4.
 
 
 Related: Who Strikes First?</characteristic>
@@ -8409,7 +8402,7 @@ Related: Remove Casualties (Combat)</characteristic>
     </profile>
     <profile name="Supporting Attacks" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="e613-d229-d3f9-af36">
       <characteristics>
-        <characteristic name="Description" id="e339-cf8f-a8e0-e116" hidden="false" typeId="9f84-4221-785a-db50">Some models are equipped with weapons that allow them to make a &apos;supporting attack&apos;. To make a supporting attack, a model must be directly behind a friendly model that is itself in a fighting rank. However, supporting attacks cannot be made to a unit&apos;s flank or rear, nor can they be made by a model that is itself in a fighting rank.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Models whose weapons allow them to make a &quot;supporting attack&quot; can do so if they are in the rank or file directly behind the fighting rank of their unit, and within a number of inches equal to their Movement of the enemy unit. However, supporting attacks cannot be made to a unit’s flank or rear, or by a model that is itself in a fighting rank.
 
 
 Related: Who Can Fight?</characteristic>
@@ -8462,8 +8455,8 @@ Related: End of Turn</characteristic>
     </profile>
     <profile name="The Fighting Rank" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1b92-5bed-33fc-b078">
       <characteristics>
-        <characteristic name="Description" id="425-be75-b45f-7650" hidden="false" typeId="9f84-4221-785a-db50">When two opposing units are engaged in combat, any row of models (be it a rank or file) that has one or more models in base contact with the enemy is called the &apos;fighting rank&apos;. Every model within the fighting rank can fight. This represents models in that row but not in base contact with the enemy encircling the foe.
-  
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">When two opposing units are engaged in combat, any row of models (be it a rank or file) in which one or more is in base contact with the enemy is a &quot;fighting rank&quot;. Any model that is within a fighting rank and within a number of inches equal to its Movement of the enemy unit can fight. This represents models closing in upon the foe.
+
 
 
 Related: Who Can Fight?</characteristic>
@@ -9638,7 +9631,7 @@ Related: Roll to Hit (Shooting), Range &amp; Movement Modifiers, Cover Modifiers
     </profile>
     <profile name="Ward Saves" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="7508-282a-fa22-ec7">
       <characteristics>
-        <characteristic name="Description" id="f4c1-87ee-b028-f12c" hidden="false" typeId="9f84-4221-785a-db50">A Ward save represents the magical protection offered by an enchanted talisman or suit of armour. The armour value of a Ward save will always be shown either in the description of the item that grants it, or in a special rule. The key difference between a Ward save and a regular armour save is that a Ward save can never be modified by the AP characteristic of a weapon.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Representing magical protection of some sort, Ward saves are made in the same manner as armour saves; by rolling a D6 and comparing the result to the ‘Warding value’. A Ward save’s Warding value is always given in either the description of the item or spell that grants it, or shown after the name of a special rule. Rules that affect armour values do not affect Warding values unless stated otherwise.
 
 
 Related: Roll to Wound &amp; Make Armour Saves (Shooting)</characteristic>
@@ -10052,13 +10045,13 @@ Related: Light Chariots</characteristic>
     </profile>
     <profile name="Heavy Infantry" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="d21-535c-a317-5c4f">
       <characteristics>
-        <characteristic name="Description" id="fb49-fde9-dc76-eeb6" hidden="false" typeId="9f84-4221-785a-db50">This sub-category covers the many warriors that are larger than the average man, but not monstrously large, and the heavily armed or armoured elites that the rank and file aspire towards and that generals turn to as bodyguards and more. Close Order formations of heavy infantry can usually be found where the fighting is thickest.
- 
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">This sub-category covers the many warriors that are larger than the average man, but not monstrously large, and the heavily armed or armoured elites that the rank and file aspire towards and that generals turn to as bodyguards and more. Close Order formations of heavy infantry can usually be found where the fighting is thickest.
+
 
 ||||||
 |:--|:--|:--|:--|:--|
 |Troop Type|Models per Rank|Maximum Rank Bonus|Unit Strength per Model|Special Rules|
-|Heavy Infantry|4|+2|1|Steady in the Ranks|</characteristic>
+|Heavy Infantry|4|+2|1|Steady in the Ranks, Press of Battle, Massed Infantry, Parry|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10185,14 +10178,14 @@ Related: Monsters</characteristic>
     </profile>
     <profile name="Regular Infantry" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="880b-6867-d9a4-6979">
       <characteristics>
-        <characteristic name="Description" id="f56-f6b1-158f-9a21" hidden="false" typeId="9f84-4221-785a-db50">This sub-category covers all the roughly human-sized warriors of the Warhammer world, be they Men, Elves, Dwarfs, Orcs, Zombies and so on. Regular infantry will normally form the core of your Warhammer army, the troops upon which you rely to get the job done. Regular infantry can be expected to adopt almost any formation to fulfil any role.
- Due to their ubiquity, the basic rules of Warhammer: the Old World are written around regular infantry, so no additional rules apply to this troop type.
- 
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">This sub-category covers all the roughly human-sized warriors of the Warhammer world, be they Men, Elves, Dwarfs, Orcs, Zombies and so on. Regular infantry will normally form the core of your Warhammer army, the troops upon which you rely to get the job done. Regular infantry can be expected to adopt almost any formation to fulfil any role.
+Due to their ubiquity, the basic rules of Warhammer: the Old World are written around regular infantry, so no additional rules apply to this troop type.
+
 
 ||||||
 |:--|:--|:--|:--|:--|
 |Troop Type|Models per Rank|Maximum Rank Bonus|Unit Strength per Model|Special Rules|
-|Regular Infantry|5|+2|1|-|</characteristic>
+|Regular Infantry|5|+2|1|Press of Battle, Massed Infantry, Parry|</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -10330,9 +10323,9 @@ Related: Cavalry</characteristic>
     </profile>
     <profile name="War Machines" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="a47c-a11e-85bc-b32d">
       <characteristics>
-        <characteristic name="Description" id="5fc3-c325-16bd-c37d" hidden="false" typeId="9f84-4221-785a-db50">War machines are mechanical constructions that hurl massive projectiles at the foe. Bolt throwers, cannon and stone throwers are all war machines, and there are many other bizarre contraptions to be found in the Warhammer world.
- The following sections present the rules and weapon profiles for the most commonly seen types of war machine. Still more exotic types can be found in the various army lists, representing war machines unique to a certain race. For the most part, these exotic war machines will use the rules presented here with a few minor alterations or additional special rules, the better to reflect their unique nature.
- For clarity, any war machine that uses one of the profiles presented here will have the name of the weapon and profile given as part of its &apos;equipment&apos;.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">War machines are mechanical constructions that hurl massive projectiles at the foe. Bolt throwers, cannon and stone throwers are all war machines, and there are many other bizarre contraptions to be found in the Warhammer world.
+The following sections present the rules and weapon profiles for the most commonly seen types of war machine. Still more exotic types can be found in the various army lists, representing war machines unique to a certain race. For the most part, these exotic war machines will use the rules presented here with a few minor alterations or additional special rules, the better to reflect their unique nature.
+For clarity, any war machine that uses one of the profiles presented here will have the name of the weapon and profile given as part of its &apos;equipment&apos;.
 
 
 Related:
@@ -10547,8 +10540,7 @@ Related: Highly Manoeuvrable, Unit Shape (Open Order), Combat Order (Open Order)
     </profile>
     <profile name="Quick Turn" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1e11-55ae-e371-d024">
       <characteristics>
-        <characteristic name="Description" id="6376-f26f-54cd-cbd2" hidden="false" typeId="9f84-4221-785a-db50">After moving, unless it charged, marched or fled, a unit that is in Open Order formation may pivot about its centre to change its facing by up to 90°.
-
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless it marched, a unit that is in Open Order formation may pivot about its centre to change its facing by up to 90° after moving during the Remaining Moves sub-phase.
 
 Related: Highly Manoeuvrable</characteristic>
       </characteristics>
@@ -10577,10 +10569,8 @@ Skirmishers Charging Skirmishers</characteristic>
     </profile>
     <profile name="Skirmishers &amp; Charging" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b296-1413-d110-b2a4">
       <characteristics>
-        <characteristic name="Description" id="22be-e81e-67b5-7a49" hidden="false" typeId="9f84-4221-785a-db50">A unit of Skirmishers may charge an enemy that is visible to at least one of its models when charges are declared. In which arc the enemy is charged is determined as normal.
- When a unit of Skirmishers charges, each model is moved individually, starting with the model closest to the charge target, as shown in Fig 186.1. Each model moves as directly as possible towards the charge target in order to make base contact with it and form a fighting rank. Models that cannot make base contact with the charge target must form up behind the fighting rank, as shown in Fig 186.2.
-   
-
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A unit of Skirmishers may charge an enemy unit that is visible to more than half (50%) of its models when charges are declared. In which arc the enemy is charged is determined as normal.
+When a unit of Skirmishers charges, each model is moved individually, starting with the model closest to the charge target, as shown in Fig 186.1. Each model moves as directly as possible towards the charge target in order to make base contact with it and form a fighting rank. Models that cannot make base contact with the charge target must form up behind the fighting rank, as shown in Fig 186.2. If any Skirmishers are unable to form up, the unit is considered to have lost its coherency, as described on page 184.
 
 Related: Skirmish Formation</characteristic>
       </characteristics>
@@ -10644,8 +10634,8 @@ Related: Skirmish Formation</characteristic>
     </profile>
     <profile name="Skirmishers in Combat" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1078-1775-d0bc-e4ed">
       <characteristics>
-        <characteristic name="Description" id="65d2-550-e1bb-29ef" hidden="false" typeId="9f84-4221-785a-db50">When engaged in combat, Skirmishers do not remain in their usual, dispersed formation. Instead, they will &apos;form up&apos; into base contact with one another, edge-to-edge and front corner to front corner, against the enemy in order to create a fighting rank. Skirmishers that charge the enemy, or that are themselves charged by the enemy, must always form up in this way once contact is made. Any Skirmishers that cannot make base contact with the enemy cannot form part of the fighting rank and must instead form up into ranks behind the fighting rank.
- Skirmishers will maintain this close formation until the combat is over (i.e., until they are not engaged with any enemy at the end of a Combat phase), at which point they will once again adopt Skirmish formation.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">When engaged in combat, Skirmishers do not remain in their usual, dispersed formation. Instead, they will &apos;form up&apos; into base contact with one another, edge-to-edge and front corner to front corner, against the enemy in order to create a fighting rank. Skirmishers that charge the enemy, or that are themselves charged by the enemy, must always form up in this way once contact is made. Any Skirmishers that cannot make base contact with the enemy cannot form part of the fighting rank and must instead form up into ranks behind the fighting rank.
+Skirmishers will maintain this close formation until the combat is over (i.e., until they are not engaged with any enemy at the end of a Combat phase), at which point the models must separate, moving the smallest amount possible to once again adopt Skirmish formation.
 
 
 Related: Skirmishers &amp; Rank Bonus, Skirmishers &amp; Disruption</characteristic>
@@ -12307,10 +12297,10 @@ Related: Game Length (Warhammer Battles)</characteristic>
     </profile>
     <profile name="Dead or Fled" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="9220-c3ef-93c3-a53">
       <characteristics>
-        <characteristic name="Description" id="36a8-75f8-9dc3-59f0" hidden="false" typeId="9f84-4221-785a-db50">The most usual way to win Victory Points is by destroying, routing or significantly reducing the fighting strength of enemy units:
- - Each enemy unit that has been destroyed or that has fled off the battlefield is worth a number of Victory Points equal to 100% of its points cost.
- - Each enemy unit that is fleeing at the end of the battle is worth a number of Victory Points equal to 50% of its points cost (rounding fractions up). For example, a unit that cost your opponent 351 points to field would be worth 176 Victory Points to you if it is fleeing when the battle ends.
- - Each enemy unit that has been reduced to less than 25% of its starting Unit Strength at the end of the battle is worth a number of Victory Points equal to 25% of its points cost (rounding fractions up).</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">The most usual way to win Victory Points is by destroying, routing or significantly reducing the fighting strength of enemy units:
+- Each enemy unit that has been destroyed or that has fled off the battlefield is worth a number of Victory Points equal to 100% of its points cost.
+- Each enemy unit that is fleeing at the end of the battle is worth a number of Victory Points equal to 50% of its points cost (rounding fractions up). For example, a unit that cost your opponent 351 points to field would be worth 176 Victory Points to you if it is fleeing when the battle ends.
+- Each enemy unit that has been reduced to 25% of its starting Unit Strength or less at the end of the battle or, if its Unit Strength is equal to its starting Wounds, to 25% of its starting Wounds or less at the end of the battle, is worth a number of Victory Points equal to 50% of its points cost (rounding fractions up).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12931,7 +12921,12 @@ Once step 2, Scatter, is complete, you may roll a D3 and move the 3&quot; blast 
     </profile>
     <profile name="Maximum Armour Value" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="eabd-495b-7898-1d21">
       <characteristics>
-        <characteristic name="Description" id="363c-45a6-2bc0-2cb6" hidden="false" typeId="9f84-4221-785a-db50">Regardless of the armour it wears or the equipment it carries, a model can never have an armour value better than 2+. Any bonuses, be they granted by equipment, special rules, spells or from any other source, that would improve a model&apos;s armour further have no effect.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Regardless of the armour it wears or the equipment it carries, there is a limit to how well protected a model can be, with larger models proving much harder to encase in armour than their smaller counterparts. To represent this, models whose troop type is:
+- &apos;Infantry&apos; or ‘&apos;cavalry’&apos; can never have an armour value better than 2+.
+- &apos;Chariot&apos;, ‘&apos;monster&apos; or ‘&apos;war machine’&apos; can never have an armour value better than 3+.
+
+
+Any bonuses, regardless of their source, that would improve a model’s armour further have no effect.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -12974,11 +12969,11 @@ Throwing Axe</characteristic>
     </profile>
     <profile name="More than One Combat Weapon" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="35e0-c651-a368-9ea1">
       <characteristics>
-        <characteristic name="Description" id="42c6-4479-8b04-8803" hidden="false" typeId="9f84-4221-785a-db50">Many models carry two or more combat weapons, giving them a choice of which to use upon entering the fray:
- - If a unit is equipped with two or more combat weapons, you must choose which it will use when its combat is chosen during Step 1.1 of the Choose &amp; Fight Combat sub-phase.
- - The entire unit, including command, must use the same weapon (with the possible exception of units with the Motley Crew special rule). Characters can always choose separately – they are not obliged to use the same weapon as a unit they have joined.
- - If a unit champion has the option to be equipped differently to the rest of their unit, they can choose which weapon they will use separately.
- - Unless the weapon itself states otherwise (as do lances, for example), a unit cannot change weapons between rounds of combat if it remains locked in place and engaged in combat. The weapon chosen for the first round of a combat (i.e., the first round fought following a charge) must be used for the duration of the combat.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Many models carry two or more combat weapons, giving them a choice of which to use upon entering the fray:
+- If a unit that is engaged in combat is equipped with two or more combat weapons, you must choose which weapon it will fight with when its combat is chosen during Step 1.1 of each and every Choose &amp; Fight Combat sub-phase.
+- The entire unit, including command, must use the same weapon (with the possible exception of units with the Motley Crew special rule). Characters can always choose separately – they are not obliged to use the same weapon as a unit they have joined.
+- If a unit champion has the option to be equipped differently to the rest of their unit, they can choose which weapon they will use separately.
+- Unless the weapon itself states otherwise (as do lances, for example), a unit cannot change weapons between rounds of combat if it remains locked in place and engaged in combat. The weapon chosen for the first round of a combat (i.e., the first round fought following a charge) must be used for the duration of the combat.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -13188,239 +13183,9 @@ Related: Unusual Armour</characteristic>
     </profile>
     <profile name="Weapons of War" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1073-670-d1bd-d05e">
       <characteristics>
-        <characteristic name="Description" id="ebc5-fff6-af49-3c2b" hidden="false" typeId="9f84-4221-785a-db50">Across the grim and dangerous Old World and beyond, warriors employ many different types of weapons against a multitude of foes. From the well-wrought axes of the Dwarfs to the less-sophisticated choppas of the Orcs, every race has its favoured weapons.
- It is usual for all the models in a unit to carry the same weapons. It is acceptable for models belonging to the command group to be differently armed for the sake of identification.
-
-
-Related:
-Blessed Triptych
-Bloodflail
-Blowpipe
-Blunderbuss
-Braystaff
-Dark Fire of Chaos
-Dragon Fire
-Dread Halberd
-Fanatic Ball &amp; Chain
-Great Hammer
-Great Throwing Spears
-Ritual Blade
-Spear of Loec
-Spectral Scythe (Cairn Wraith)
-Steam Cannon
-Steam Cannonade
-Swarming Mass
-Warplock Musket
-Weapon Profiles
-Bombard
-Brace of Drakefire Pistols
-Combat Weapons
-Fiery Breath (Lizardmen)
-Filth-Encrusted Claws
-Flaming Breath (Ogre Kingdoms)
-Fumes of Contagion
-Great Axe
-Greatbow
-Handmaiden&apos;s Spear
-Har Ganeth Greatsword
-Huge Gob
-Massive Gob
-Polearm
-Slythey Tongue
-Steam Gun (Empire)
-Trampling Hooves
-Trickster&apos;s Blades
-Warplock Pistol
-Burning Braziers
-Drakegun
-Eagle-eye Bolt Thrower
-Flaming Breath (Warriors of Chaos)
-Goring Horns
-Horns of Stone
-Lash &amp; Buckler
-Lash of Khorne
-More than One Combat Weapon
-Oaken Fists
-Petrifying Gaze
-Plague Censer
-Razor Barbs
-Serrated Maw
-Spectral Scythe (Black Coach)
-Troll Vomit
-Writhing Tail
-Acidic Vomit
-Bow of Avelorn
-Brass Bound Hooves
-Breath of Desiccation
-Cinderblast Bombs
-Defensive Stakes
-Doom-Flayer
-Fiend Tail
-Fireleech Bolas
-Great Tusks
-Hand Weapon
-Helblaster Volley Gun
-Mace Tail
-Pestilential Breath
-Ravager Harpoon
-Strangleroots
-Wicked Claws
-Cannon of Khorne
-Ceremonial Halberd
-Chill Breath
-Doomfire
-Envenomed Sting
-Field Trebuchet
-Filth-Encrusted Talons
-Helstorm Rocket Battery
-Hurl Attack
-Mighty Antlers
-Noxious Breath
-Poisoned Wind Mortar
-Slashing Talons
-Sorcerous Exhalation
-Trollhammer Torpedo
-Two Hand Weapons/Additional Hand Weapon
-Venomous Tail
-Asrai Spear
-Bilesword
-Blasting Charges
-Chracian Great Blade
-Cleaver-limbs
-Demolition Rockets
-Fiery Roar
-Flail
-Great Horns
-Grenade Launching Blunderbuss
-Leadbelcher Gun
-Rancid Maw
-Ratling Gun
-Serrated Maws
-Venom Surge
-Decapitating Claws
-Fiery Breath (Dark Elves)
-Giant Bow
-Great Weapon
-Grimfrost Weapon
-Hochland Long Rifle
-Infernal Incendiaries
-Plagueflail
-Poisonous Tail
-Ranger&apos;s Glaive
-Spidersilk Lobber
-Steam Drill
-Sword of Hoeth
-Warpfire Thrower
-Blackbriar Javelin
-Cavernous Maw
-Colossal Fang-filled Gob
-Dreadquake Mortar
-Giant Blowpipes
-Halberd
-Monstrous Tusks
-Paired Great Khopeshes
-Pigeon Bombs
-Steam Gun (Dwarfs)
-Warp Grinder
-Writhing Tentacles (Daemons of Chaos)
-Giant&apos;s Club
-Blood of Hashut
-Brimstone Gun
-Cannon of the Sky-Titans
-Cleaving Blades
-Doom Diver
-Hunting Spear
-Morning Star
-Thunderous Bludgeon
-Warplock Jezzail
-Writhing Tentacles (Dark Elves)
-Clattergun
-Darkforged Weapon
-Decapitating Strike
-Poisoned Wind Globes
-Scraplauncher Catapult
-Soporific Breath
-Venom Sting
-Venomous Talons
-Whip
-Asrai Longbow
-Chaintrap
-Fireglaive
-Impaling Claws
-Screaming Skull Catapult
-Spears
-Things-Catcher
-Venom Spray
-Billowing Death
-Blood Vulture
-Enchanted Arrows
-Hailshot Blunderbuss
-Lance
-Tzeentchian Wand
-Arcane Bodkins
-Cavalry Spear
-Distensible Jaw
-Naptha Bombs
-Warpflame
-Warpstone Claws
-Ensorcelled Weapon
-Hagbane Tips
-Harpoon Launcher
-Throwing Spear
-Warp Lightning Cannon
-Daemonic Talons
-Ironfist
-Moonfire Shot
-Plagueclaw Catapult
-Thrusting Spear
-Iron Claw
-Missile Weapons
-Ogre Pistol
-Swiftshiver Shards
-Brace of Ogre Pistols
-Harvester Cannon
-More than One Missile Weapon
-Trueflight Arrows
-Baleful Torrent
-Bows
-Longbow
-Warp Gaze
-Hellblade
-Shortbow
-Plaguesword
-Warbow
-Black Powder Weapons
-Death&apos;s Heads
-Handgun
-Piercing Claws
-Flames of Tzeentch
-Pistol
-Brace of Pistols
-Lamprey&apos;s Bite
-Repeater Handgun
-Repeater Pistol
-Crossbows
-Crossbow
-Repeater Crossbow
-Repeater Handbow
-Brace of Repeater Handbows
-Thrown Weapons
-Throwing Weapons
-Javelin
-Sling
-Throwing Axe
-Armour
-Armour Value
-Light Armour
-Heavy Armour
-Full Plate Armour
-Maximum Armour Value
-No Armour
-Unusual Armour
-Additional Equipment
-Shield
-Barding
-Wizards &amp; Armour (Weapons)</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Across the grim and dangerous Old World and beyond, warriors employ many different types of weapons against a multitude of foes. From the well-wrought axes of the Dwarfs to the less-sophisticated choppas of the Orcs, every race has its favoured weapons.
+It is usual for all the models in a unit to carry the same weapons. It is acceptable for models belonging to the command group to be differently armed for the sake of identification.
+</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -13613,6 +13378,21 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
       <modifiers>
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
+    </profile>
+    <profile name="Press of Battle" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="f067-3c9b-cd7b-73e3">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">In the heat of battle, orderly ranks become a swirling melee. Except during a turn in which it charged, the fighting rank of a unit that has this rule and is arrayed in combat order is not one, but two ranks deep. In other words, models that are directly behind and in base contact with models in the unit’s actual fighting rank are also considered to be within its fighting rank.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Massed Infantry" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="d952-3dbd-0540-96fd">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Numbers alone can sometimes overcome the foe. When determining combat results, if one side has a higher Unit Strength than the other and includes one or more units with this rule, that side may claim a bonus of +1 combat result point.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Parry" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="e42b-d7db-b53d-9dca">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">With sword and shield, warriors attempt to deflect enemy attacks. Whilst engaged in close combat, a model with this rule that is equipped with and chooses to use a hand weapon and shield improves its armour value by 1, to a maximum of 3+.</characteristic>
+      </characteristics>
     </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
