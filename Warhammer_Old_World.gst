@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="149" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="150" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -128,6 +128,7 @@
     <categoryEntry name="Faction: Wood Elf Realms - Host of Talsyn" id="ab10-4058-4013-f8f7" hidden="true"/>
     <categoryEntry name="Faction: Beastmen Brayherds - Minotaur Blood Herd" id="f8bd-9647-bbde-fb7e" hidden="true"/>
     <categoryEntry name="Faction: Beastmen Brayherds - Wild Herd" id="50f7-6ee0-7369-ea5e" hidden="true"/>
+    <categoryEntry name="Faction: Grand Cathay" id="d820-f6f0-6f91-6f18" hidden="true"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="Main Force">
@@ -1414,16 +1415,12 @@ A unit or mount that does not have this special rule becomes subject to it when 
     <profile name="Terror" hidden="false" id="c7a2-35bf-4313-f4f0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="179" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Models with this special rule cause Terror. Models that cause Terror also cause Fear:
+- When a unit that causes Terror declares a charge, the charge target must immediately make a Leadership test. If this test is failed, it must Flee. If this test is passed, it can declare its charge reaction normally.
+- If the winning side of a combat includes one or more units that cause Terror, each unit that belongs to the losing side must apply a -1 modifier to its Leadership characteristic when making its Break test.
 
- 
-• 	When a unit that causes Terror declares a charge, the charge target must immediately make a Leadership test. If this test is failed, it must Flee. If this test is passed, it can declare its charge reaction normally.
+Note that if a charged unit cannot choose to Flee, it does not make this Leadership test.
 
- 
-• 	If the winning side of a combat includes one or more units that cause Terror, each unit that belongs to the losing side must apply a -1 modifier to its Leadership characteristic when making its Break test.
-
- Note that if a charged unit cannot choose to Flee, it does not make this Leadership test.
-
- Models with the Fear special rule Fear models that cause Terror. Models that cause Terror are immune to Terror. A unit that does not cause Terror does not become immune to Terror when joined by a character that does.</characteristic>
+Models with the Fear special rule Fear models that cause Terror. Models that cause Terror are immune to Terror. A unit that does not cause Terror does not become immune to Terror when joined by a character that does.</characteristic>
       </characteristics>
     </profile>
     <profile name="Timmm-Berrr!" hidden="false" id="4f28-3f86-cf88-6b3a" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="179" publicationId="768b-3da1-a182-a1d8">
@@ -13184,8 +13181,7 @@ Related: Unusual Armour</characteristic>
     <profile name="Weapons of War" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="1073-670-d1bd-d05e">
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Across the grim and dangerous Old World and beyond, warriors employ many different types of weapons against a multitude of foes. From the well-wrought axes of the Dwarfs to the less-sophisticated choppas of the Orcs, every race has its favoured weapons.
-It is usual for all the models in a unit to carry the same weapons. It is acceptable for models belonging to the command group to be differently armed for the sake of identification.
-</characteristic>
+It is usual for all the models in a unit to carry the same weapons. It is acceptable for models belonging to the command group to be differently armed for the sake of identification.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
