@@ -13390,6 +13390,14 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
         <characteristic name="Description" typeId="9f84-4221-785a-db50">With sword and shield, warriors attempt to deflect enemy attacks. Whilst engaged in close combat, a model with this rule that is equipped with and chooses to use a hand weapon and shield improves its armour value by 1, to a maximum of 3+.</characteristic>
       </characteristics>
     </profile>
+    <profile name="Base (100x100)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="6135-2228-a2eb-d2e0">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">100x100</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
