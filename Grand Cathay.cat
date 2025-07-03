@@ -796,6 +796,9 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
       <categoryLinks>
         <categoryLink targetId="d820-f6f0-6f91-6f18" id="9f80-8810-70bf-e17a" primary="false" name="Faction: Grand Cathay"/>
       </categoryLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="d65a-8bf1-073a-0090" includeChildSelections="true" includeChildForces="true"/>
+      </constraints>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Cathayan Lance" hidden="true" id="e38c-b076-eb58-48bf" collective="true">
       <constraints>
@@ -1346,8 +1349,16 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
           <infoLinks>
             <infoLink name="Cathayan Cataphracts" id="e830-5ac5-fa6b-caac" hidden="false" type="profile" targetId="4cef-4823-4dd5-a26a"/>
             <infoLink name="Counter Charge" id="f88f-ae7f-a40d-d5fc" hidden="false" type="profile" targetId="5186-798d-69d-6545"/>
-            <infoLink name="First Charge" id="da34-11dc-eee2-3545" hidden="false" type="profile" targetId="785a-2886-af42-dce9"/>
             <infoLink name="Swiftstride" id="be3d-ec43-0476-2418" hidden="false" type="profile" targetId="dc91-48b3-3696-217"/>
+            <infoLink name="First Charge" id="4573-2ea1-6fae-d9b6" hidden="false" type="profile" targetId="785a-2886-af42-dce9">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="a4cc-15c9-cfae-1b3b" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
           </infoLinks>
         </infoGroup>
       </infoGroups>
@@ -1911,6 +1922,30 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="7b93-3279-27a3-373a" targetId="may-have-armour"/>
             <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="5e76-0a74-8c67-5c5f" targetId="may-have-shield"/>
           </categoryLinks>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="dd35-55b3-8c05-deae" collective="true" sortIndex="4">
+              <infoLinks>
+                <infoLink name="Drilled" id="039f-1481-2595-0248" hidden="false" type="profile" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f3b9-fae3-cd64-b946"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="false" id="3069-9dee-91c3-a7f3" collective="true" sortIndex="5">
+              <infoLinks>
+                <infoLink name="Stubborn" id="437c-234e-e734-2d1b" hidden="false" type="profile" targetId="e351-bbd6-f470-b604"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="2"/>
+              </costs>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7f89-1cce-f9f7-339b"/>
+              </constraints>
+            </selectionEntry>
+          </selectionEntries>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -1968,13 +2003,20 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
                   <entryLinks>
                     <entryLink import="true" name="Magic Standards" hidden="false" id="4c14-f057-c920-860d" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6">
                       <constraints>
-                        <constraint type="max" value="25" field="points" scope="parent" shared="false" id="ce92-36fd-18d8-4837"/>
+                        <constraint type="max" value="50" field="points" scope="parent" shared="false" id="ce92-36fd-18d8-4837"/>
                       </constraints>
                     </entryLink>
                   </entryLinks>
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7793-061c-afdf-3ecb"/>
                   </constraints>
+                  <modifiers>
+                    <modifier type="add" value="2c59-8e58-87e6-c0f7" field="category">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="c78e-2478-f451-99a2" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                 </selectionEntry>
               </selectionEntries>
             </selectionEntry>
@@ -2004,7 +2046,7 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             </modifier>
           </modifiers>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Detatchment" id="d028-42e0-dd46-5c13" hidden="false" sortIndex="2">
+        <selectionEntryGroup name="Detachment" id="d028-42e0-dd46-5c13" hidden="false" sortIndex="2">
           <entryLinks>
             <entryLink import="true" name="Detachment" hidden="false" id="ce4d-87e3-bed7-acb0" targetId="551d-34fe-3832-416d" type="selectionEntry" sortIndex="1"/>
           </entryLinks>
@@ -2031,7 +2073,561 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <condition type="atLeast" value="1" field="selections" scope="self" childId="551d-34fe-3832-416d" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
+        <modifier type="add" value="0d07-c4b1-ac2f-46c6" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="dd35-55b3-8c05-deae" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="71aa-3ffd-3214-94b6" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="3069-9dee-91c3-a7f3" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Jade Lancer" hidden="false" id="4cc7-7623-fd30-5dc2">
+      <profiles>
+        <profile name="Jade Lancer" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="cf5e-46d5-213f-8a74">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Heavy cavalry</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">5+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Jade Lancer" hidden="false" id="355c-f719-0843-c27a" sortIndex="1">
+          <constraints>
+            <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="b2a8-8f49-eaff-5dbb"/>
+          </constraints>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="6b43-c965-1af1-a03d" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1c7d-d76c-a6ab-cd23"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Heavy Armour" hidden="false" id="f913-c6db-b040-eb92" type="selectionEntry" targetId="62fb-f89d-afc-1cf1" sortIndex="3">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="051b-f013-08fb-7098"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Cathayan Lance" hidden="false" id="fc41-b9f4-4a9d-3f7f" type="selectionEntry" targetId="e38c-b076-eb58-48bf" sortIndex="2">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="65a6-f245-5dad-663b"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Shield" hidden="false" id="97d6-99c9-15a8-cbac" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="4">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="a3df-5ecf-6cdc-1506"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Cathayan Warhorse" hidden="false" id="845f-2467-a049-efa5" type="selectionEntry" targetId="b3de-9f63-d8b6-b5eb" collective="true">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="3810-a233-1204-b478"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <infoLinks>
+            <infoLink name="Jade Warrior" id="4449-a02f-8533-38e0" hidden="false" type="profile" targetId="5724-94ff-8020-5dbf"/>
+            <infoLink name="Base (30x60)" id="e9b2-bdf9-d0dc-e63b" hidden="false" type="profile" targetId="3a8b-1dd5-77fb-fdc3"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="20"/>
+          </costs>
+          <categoryLinks>
+            <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="5eec-0925-3a39-33a2" targetId="may-have-armour"/>
+            <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="fb0f-1903-2bfc-2340" targetId="may-have-shield"/>
+            <categoryLink targetId="5165-d052-cfc2-5887" id="19b0-7ed1-b0aa-3d58" primary="false" name="Heavy Cavalry"/>
+          </categoryLinks>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="433f-5548-892b-a77d" collective="true" sortIndex="6">
+              <infoLinks>
+                <infoLink name="Drilled" id="7cb1-4690-4ffb-b346" hidden="false" type="profile" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6f53-949f-803e-fd1f"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="false" id="a712-6639-2a2e-e9b7" collective="true" sortIndex="7">
+              <infoLinks>
+                <infoLink name="Stubborn" id="f8fc-c32b-4439-cfc2" hidden="false" type="profile" targetId="e351-bbd6-f470-b604"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="2"/>
+              </costs>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="daa8-9a95-a9a6-d63d"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="0e35-edc6-3e4b-f988" collective="true" sortIndex="5">
+              <infoLinks>
+                <infoLink name="Ambushers" id="853f-4a2f-f964-af69" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2d8d-5420-adf3-74c0"/>
+              </constraints>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Command" id="b349-8f60-f304-cdf4" hidden="false" sortIndex="3">
+          <selectionEntries>
+            <selectionEntry type="model" import="true" name="Jade Lancer Officer" hidden="false" id="547f-aa4a-d06a-76ae" subType="crew" sortIndex="1">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e2d0-2065-7488-67e9" includeChildSelections="false"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="6"/>
+              </costs>
+              <infoLinks>
+                <infoLink name="Jade Lancer" id="ae17-ce06-c95f-dc78" hidden="false" type="profile" targetId="be61-1dc1-4cd1-2805">
+                  <modifiers>
+                    <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
+                    <modifier type="set" value="Jade Lancer Officer" field="name"/>
+                  </modifiers>
+                </infoLink>
+                <infoLink name="Champion" id="2ef0-240c-d905-88f5" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
+              </infoLinks>
+              <comment>upgrades: 355c-f719-0843-c27a</comment>
+              <categoryLinks>
+                <categoryLink name="CHAMPION" hidden="false" id="c0dd-8c14-da32-7be9" targetId="83a1-945c-564c-84af" primary="false"/>
+                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="32c0-a5d7-1428-180d" targetId="may-have-armour"/>
+                <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="a2f5-b5f3-eb8b-044c" targetId="may-have-shield"/>
+                <categoryLink targetId="5165-d052-cfc2-5887" id="16ad-b61c-703e-d7dc" primary="false" name="Heavy Cavalry"/>
+              </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Items" hidden="false" id="330f-2bea-15ef-7bfc" type="selectionEntryGroup" targetId="1539-fd78-88f-badd">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="56ef-489a-96f1-5f24"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+            </selectionEntry>
+            <selectionEntry type="model" import="true" name="Standard Bearer" hidden="false" id="951e-7b7a-f9cb-58e1" subType="crew" sortIndex="2">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1627-6ae0-33a5-b1fa"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="6"/>
+              </costs>
+              <comment>upgrades: 355c-f719-0843-c27a</comment>
+              <infoLinks>
+                <infoLink name="Standard Bearer" id="4846-ecbc-6907-9d83" hidden="false" type="profile" targetId="bcf8-d942-102e-b155"/>
+              </infoLinks>
+              <categoryLinks>
+                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="98bb-de93-1413-39f2" targetId="may-have-armour"/>
+                <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="077b-a363-3e77-443d" targetId="may-have-shield"/>
+                <categoryLink targetId="5165-d052-cfc2-5887" id="6a09-8468-b927-8f74" primary="false" name="Heavy Cavalry"/>
+              </categoryLinks>
+              <entryLinks>
+                <entryLink import="true" name="Magic Standards" hidden="false" id="0883-e511-4040-0662" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6">
+                  <constraints>
+                    <constraint type="max" value="50" field="points" scope="parent" shared="false" id="dad2-9d63-22c8-ac2b"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+            </selectionEntry>
+            <selectionEntry type="model" import="true" name="Musician" hidden="false" id="5576-7bef-b5b3-cc22" subType="crew" sortIndex="3">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bdda-88f3-433b-f68e"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="6"/>
+              </costs>
+              <comment>upgrades: 355c-f719-0843-c27a</comment>
+              <infoLinks>
+                <infoLink name="Musician" id="7a87-b035-554b-217a" hidden="false" type="profile" targetId="40f2-dd77-f0ca-3663"/>
+              </infoLinks>
+              <categoryLinks>
+                <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="7d5f-88c7-f6b5-13ed" targetId="may-have-armour"/>
+                <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="d459-f19e-e05f-185f" targetId="may-have-shield"/>
+                <categoryLink targetId="5165-d052-cfc2-5887" id="afb1-7196-7f85-2bcb" primary="false" name="Heavy Cavalry"/>
+              </categoryLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="ac83-936a-fbba-5edf" hidden="false">
+          <infoLinks>
+            <infoLink name="Cathayan Cataphracts" id="dda9-0ef1-bb62-39b2" hidden="false" type="profile" targetId="4cef-4823-4dd5-a26a"/>
+            <infoLink name="Close Order" id="46e0-df01-2508-b3d2" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+            <infoLink name="Counter Charge" id="e9e2-319a-4025-46df" hidden="false" type="profile" targetId="5186-798d-69d-6545"/>
+            <infoLink name="Horde" id="d601-e66b-29f9-7387" hidden="false" type="profile" targetId="9cba-89a5-1796-5fe4"/>
+            <infoLink name="Swiftstride" id="26c2-532c-07ce-1aca" hidden="false" type="profile" targetId="dc91-48b3-3696-217"/>
+            <infoLink name="Will of the Dragons" id="cc80-1ab4-4c7a-1a9a" hidden="false" type="profile" targetId="50d1-e83d-685e-7c94"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <categoryLinks>
+        <categoryLink name="Faction: Grand Cathay" hidden="false" id="89f1-0d56-60e0-ad13" targetId="d820-f6f0-6f91-6f18" primary="false"/>
+      </categoryLinks>
+      <modifiers>
+        <modifier type="remove" value="5e89-9cfa-f74-43ea" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="551d-34fe-3832-416d" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="f85c-5039-9039-9d19" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="433f-5548-892b-a77d" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="6fd2-9601-b06f-0026" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="a712-6639-2a2e-e9b7" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="3380-3625-1508-d16e" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="0e35-edc6-3e4b-f988" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Cathayan Sentinel" hidden="false" id="9189-88d5-e177-bf2a">
+      <categoryLinks>
+        <categoryLink targetId="d820-f6f0-6f91-6f18" id="38e0-0db4-a576-0211" primary="false" name="Faction: Grand Cathay"/>
+      </categoryLinks>
+      <profiles>
+        <profile name="Cathayan Sentinel" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="6897-f09e-ef68-6c3c">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Behemoth</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">1</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="25af-0190-8537-bb88" hidden="false">
+          <infoLinks>
+            <infoLink name="Close Order" id="b7e6-cf40-4a76-919a" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+            <infoLink name="Immune To Psychology" id="10bf-75e9-61a5-64de" hidden="false" type="profile" targetId="93d9-c75b-f655-30ac"/>
+            <infoLink name="Implacable" id="c6e3-2755-24c9-5258" hidden="false" type="profile" targetId="22be-fd06-f491-d1f9"/>
+            <infoLink name="Large Target" id="f057-d854-1a0e-ca97" hidden="false" type="profile" targetId="c822-7ad0-f24a-e4af"/>
+            <infoLink name="Stomp Attacks" id="dfc2-c91a-09fb-babe" hidden="false" type="profile" targetId="72db-24bb-7493-d753">
+              <modifiers>
+                <modifier type="append" value="(D3+1)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Terror" id="b46f-ffe8-21c6-6c4b" hidden="false" type="profile" targetId="c7a2-35bf-4313-f4f0"/>
+            <infoLink name="Timmm-Berrr!" id="c78a-e6b2-6d2b-1c86" hidden="false" type="profile" targetId="4f28-3f86-cf88-6b3a"/>
+            <infoLink name="Unbreakable" id="a8b8-dc04-4790-8832" hidden="false" type="profile" targetId="d3eb-1fa0-bb19-f390"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Cathayan Sentinel" hidden="false" id="2dcc-2841-3ddc-cfd7">
+          <infoLinks>
+            <infoLink name="Base (100x150)" id="132b-bc73-b1be-0bb7" hidden="false" type="profile" targetId="a35e-8f23-b67-1efe"/>
+            <infoLink name="Jade Sentinel" id="e20a-f3b8-bb77-7ac5" hidden="false" type="profile" targetId="b221-591c-1017-89e3"/>
+          </infoLinks>
+          <categoryLinks>
+            <categoryLink targetId="3755-6732-99b2-c713" id="395a-076c-4da5-3471" primary="false" name="Behemoth"/>
+          </categoryLinks>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="3ad3-5415-8b79-ba99" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="abe6-aa92-d043-c2e4"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Heavy Armour" hidden="false" id="b3a6-f21f-3a8c-2a53" type="selectionEntry" targetId="62fb-f89d-afc-1cf1" sortIndex="3">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6141-60ca-7c40-142a"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="bb2f-0efe-6a9b-3474-min"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bb2f-0efe-6a9b-3474-max"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Great Blade" hidden="false" id="3b59-c060-261c-e8d0" sortIndex="2" collective="true">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="3cc2-456f-7597-1947-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3cc2-456f-7597-1947-max"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Great Blade (Deadly Strike)" id="d24b-97b8-1379-a7ed" hidden="false" type="profile" targetId="1085-72be-d0a2-9dad"/>
+                <infoLink name="Great Blade (Scything Blow)" id="0bb4-1f25-ad28-7fd0" hidden="false" type="profile" targetId="00ec-8265-17bd-9428"/>
+              </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Cathayan Sentinel Stone" id="508c-8ab1-1f4a-bc42" hidden="false" sortIndex="4" flatten="true" collective="true">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Terracotta Sentinel" hidden="false" id="0183-e9e6-445f-e01e" sortIndex="1">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c9d1-a6d5-3d54-1b2e"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Terracotta Sentinel" id="bbb0-b135-4a39-fd64" hidden="false" type="profile" targetId="6b2c-21ff-3566-67c6"/>
+                  </infoLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Jade Sentinel" hidden="false" id="0bf8-44ee-3ea1-c6a2" sortIndex="2">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8bae-f5f9-29fd-83d6"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Jade Sentinel" id="fb72-4c53-c9f4-dc1a" hidden="false" type="profile" targetId="b221-591c-1017-89e3"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="20"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Obsidian Sentinel" hidden="false" id="ef2b-81c0-cf46-f144" sortIndex="3">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5b34-1f3c-1a83-a9d7"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Obsidian Sentinel" id="7f73-0e7d-a8e7-d5ce" hidden="false" type="profile" targetId="9a4e-4351-c116-c8cd"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="25"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Granite Sentinel" hidden="false" id="ade2-7cb6-231b-3c46" sortIndex="4">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e375-73c2-a479-0abb"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Granite Sentinel" id="9883-2d48-622d-0f5f" hidden="false" type="profile" targetId="8e6b-9e0d-4c42-5d2e"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="35"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Warpstone Sentinel" hidden="false" id="6ec6-1488-7b14-50da" sortIndex="5">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b0d8-efcb-849e-5a02"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink name="Warpstone Sentinel" id="acc6-c9cc-30b9-929a" hidden="false" type="profile" targetId="e6af-82b3-7128-ce2f"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="40"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8781-2358-c8df-b038-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8781-2358-c8df-b038-max"/>
+              </constraints>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <costs>
+            <cost name="pts" typeId="points" value="230"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Cathayan Grand Cannon" hidden="false" id="0d66-ce16-3768-0611" collective="false">
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Grand Cannon" hidden="false" id="fe5c-8679-3e0b-f1a9" sortIndex="1">
+          <infoLinks>
+            <infoLink name="Grand Cannon" id="374d-f465-7957-9b81" hidden="false" type="profile" targetId="b593-a5a4-0257-ef04"/>
+            <infoLink name="Base (60x100)" id="8c8d-4c31-68ad-1471" hidden="false" type="profile" targetId="5125-89a4-916a-eabd"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="130"/>
+          </costs>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="4c5c-a73a-cc2b-d167"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ee4d-07d6-cf03-d89f"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink name="War Machine" hidden="false" id="a2a8-e8c4-c529-38ae" targetId="9fcf-19ad-fe84-9c61" primary="false"/>
+          </categoryLinks>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Grand Cannon" hidden="false" id="6d33-73f8-8907-54df">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f86f-f56d-334c-21e4-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f86f-f56d-334c-21e4-max"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Grand cannon" id="439f-1f2b-e061-a92d" hidden="false" type="profile" targetId="ef00-e657-a314-91ab"/>
+              </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+        <selectionEntry type="model" import="true" name="Cathayan Artillery Crew" hidden="false" id="10b8-935f-89fa-ff4d" subType="crew" sortIndex="2">
+          <infoLinks>
+            <infoLink name="Cathayan Artillery Crew" id="8d8a-87f5-08d0-79f3" hidden="false" type="profile" targetId="4ceb-ed1b-1c04-9eaf"/>
+            <infoLink name="Base (25x25)" id="48cf-4060-2281-4332" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="0"/>
+          </costs>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="aca8-61cc-2b08-16f4" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="8e7f-5f26-6384-a3a5"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Light Armour" hidden="false" id="a3f2-a23c-e898-2860" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="2">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="07e3-f1eb-eedb-741e"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <categoryLinks>
+            <categoryLink name="CHARIOT CREW" hidden="false" id="c62a-774c-7b89-bf03" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="2165-e323-ad7b-5a7e" targetId="may-have-armour"/>
+          </categoryLinks>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6745-bb50-c81c-81c8"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="06ee-d664-31c3-366c"/>
+          </constraints>
+        </selectionEntry>
+      </selectionEntries>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="5a41-4add-27c5-e8c8" hidden="false">
+          <infoLinks>
+            <infoLink name="Skirmishers" id="c766-8921-d7f7-f8a0" hidden="false" type="profile" targetId="59a5-7eca-ee35-96ac"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <categoryLinks>
+        <categoryLink targetId="d820-f6f0-6f91-6f18" id="6a0f-8d34-cb9b-b8bf" primary="false" name="Faction: Grand Cathay"/>
+      </categoryLinks>
+      <profiles>
+        <profile name="Cathayan Grand Cannon" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="2cfc-5db8-46b5-8875">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">War machine</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">1</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <entryLinks>
+        <entryLink import="true" name="Ogre Loader" hidden="false" id="b2a7-1c69-1a8c-eb50" type="selectionEntry" targetId="9612-d280-c959-ca0c" sortIndex="3"/>
+      </entryLinks>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Fire Rain Rocket Battery" hidden="false" id="81e7-7528-d4e5-ec71" collective="false">
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Fire Rain Rocket" hidden="false" id="8dce-193e-5698-f1fc" sortIndex="1">
+          <infoLinks>
+            <infoLink name="Fire Rain Rocket" id="8d4a-c2f1-34fc-e603" hidden="false" type="profile" targetId="81ff-82a8-f4ee-1e7d"/>
+            <infoLink name="Base (60x100)" id="0660-56f4-052d-8d64" hidden="false" type="profile" targetId="5125-89a4-916a-eabd"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="130"/>
+          </costs>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="526d-7dcb-19ab-ed7d"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="02c0-362b-56ae-8a8f"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink name="War Machine" hidden="false" id="b305-f482-841d-6625" targetId="9fcf-19ad-fe84-9c61" primary="false"/>
+          </categoryLinks>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Fire Rain Rocket" hidden="false" id="259d-7549-06eb-5b8b">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="d4a8-c6c2-65ed-c361-min"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d4a8-c6c2-65ed-c361-max"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Bastion Rockets" id="35b3-fd0b-4acd-1104" hidden="false" type="profile" targetId="850f-0f9a-58d2-fbce"/>
+                <infoLink name="Rocket Battery" id="fe51-1edd-24ba-37cd" hidden="false" type="profile" targetId="4158-2f69-ead2-c35f"/>
+              </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntry>
+        <selectionEntry type="model" import="true" name="Cathayan Artillery Crew" hidden="false" id="09da-6397-4c9b-f4c7" subType="crew" sortIndex="2">
+          <infoLinks>
+            <infoLink name="Cathayan Artillery Crew" id="8b7f-0b0a-10f9-deb2" hidden="false" type="profile" targetId="4ceb-ed1b-1c04-9eaf"/>
+            <infoLink name="Base (25x25)" id="f9b0-8030-c53e-abeb" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="0"/>
+          </costs>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="889d-add2-7b63-07b9" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="2492-def2-8f10-dca3"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Light Armour" hidden="false" id="d66b-a8c2-d8ee-d407" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="2">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="85aa-f7c4-02f0-0ea0"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <categoryLinks>
+            <categoryLink name="CHARIOT CREW" hidden="false" id="bc6e-d548-dd0c-0920" targetId="4cf7-bf85-308d-c29a" primary="false"/>
+            <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="242d-8298-b19a-f960" targetId="may-have-armour"/>
+          </categoryLinks>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="66ea-6c75-fc02-a2a3"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9d54-7b92-f382-dec3"/>
+          </constraints>
+        </selectionEntry>
+      </selectionEntries>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="90d0-c87b-7080-e95c" hidden="false">
+          <infoLinks>
+            <infoLink name="Skirmishers" id="05f9-0b91-5864-6271" hidden="false" type="profile" targetId="59a5-7eca-ee35-96ac"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <categoryLinks>
+        <categoryLink name="Faction: Grand Cathay" hidden="false" id="af8f-eef8-e270-a08b" targetId="d820-f6f0-6f91-6f18" primary="false"/>
+      </categoryLinks>
+      <profiles>
+        <profile name="Fire Rain Rocket Battery" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="8293-308d-26e1-bc56">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">War machine</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">1</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <entryLinks>
+        <entryLink import="true" name="Ogre Loader" hidden="false" id="03de-d2ba-567b-9c86" type="selectionEntry" targetId="9612-d280-c959-ca0c"/>
+      </entryLinks>
+    </selectionEntry>
+    <selectionEntry type="model" import="true" name="Ogre Loader" hidden="false" id="9612-d280-c959-ca0c">
+      <categoryLinks>
+        <categoryLink targetId="5c55-f9d6-b181-92f8" id="a940-8cce-69f4-626d" primary="false" name="Monstrous Infantry"/>
+      </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Hand Weapon" hidden="false" id="a546-efac-1871-6a7f" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="020a-31bb-010c-0e31"/>
+          </constraints>
+        </entryLink>
+        <entryLink import="true" name="Light Armour" hidden="false" id="12ab-af08-42b9-d360" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="2">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="0b90-b238-1594-81e0"/>
+          </constraints>
+        </entryLink>
+        <entryLink import="true" name="Gunpowder Bombs" hidden="false" id="4898-f203-9cab-214f" type="selectionEntry" targetId="c10f-06ef-3562-1339" sortIndex="3">
+          <costs>
+            <cost name="pts" typeId="points" value="8"/>
+          </costs>
+        </entryLink>
+      </entryLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8196-5d82-8967-04b5"/>
+      </constraints>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="3135-977b-af43-714c" hidden="false">
+          <infoLinks>
+            <infoLink name="Enough for Everyone" id="b2ec-6a3b-ab56-0528" hidden="false" type="profile" targetId="8315-bc8d-9eb9-0cf2"/>
+            <infoLink name="Mercenary Crew" id="0d23-c4a3-c381-b5be" hidden="false" type="profile" targetId="c123-f2f6-4403-869d"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <infoLinks>
+        <infoLink name="Ogre Loader" id="a2f6-bc30-ddb5-fa58" hidden="false" type="profile" targetId="e7a8-84c5-735c-6734"/>
+        <infoLink name="Base (40x40)" id="7bcb-0a4c-63c8-eaf2" hidden="false" type="profile" targetId="1b54-27fc-b510-61b8"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="35"/>
+      </costs>
     </selectionEntry>
   </sharedSelectionEntries>
   <entryLinks>
@@ -2069,11 +2665,46 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
         <categoryLink targetId="d8c9-6b35-ef44-1295" id="4c7c-88c4-8cca-8026" primary="false" name="0-1 Shugengan Lord or Lord Magistrate per 1,000 points"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Sky Lantern" hidden="false" id="8c86-3656-5fce-9e95" type="selectionEntry" targetId="7fbe-ec13-eebe-f476">
+    <entryLink import="true" name="Sky Lantern" hidden="true" id="8c86-3656-5fce-9e95" type="selectionEntry" targetId="7fbe-ec13-eebe-f476">
       <categoryLinks>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="0916-2b67-2f43-1be7" primary="true" name="Special"/>
         <categoryLink targetId="fec1-537a-bbeb-7926" id="9332-8653-bf2b-bf76" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
       </categoryLinks>
+      <comment>Special</comment>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="false" id="7541-9999-b01a-120f" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="1" field="7541-9999-b01a-120f">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="c199-dac4-11c7-e6da" shared="true" includeChildSelections="true">
+                  <comment>Lord Magistrate</comment>
+                </condition>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="a4bc-d4ec-0443-7547" shared="true" includeChildSelections="true">
+                  <comment>Strategist</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <comment>Magistrate of Grand Cathay General</comment>
+        </modifier>
+        <modifier type="set" value="false" field="hidden">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="c199-dac4-11c7-e6da" shared="true" includeChildSelections="true">
+                  <comment>Lord Magistrate</comment>
+                </condition>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="a4bc-d4ec-0443-7547" shared="true" includeChildSelections="true">
+                  <comment>Strategist</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
     </entryLink>
     <entryLink import="true" name="Strategist" hidden="false" id="17d0-185c-3acc-7d79" type="selectionEntry" targetId="370c-024a-ab0f-ca0e">
       <categoryLinks>
@@ -2084,6 +2715,108 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="4cde-2cb8-a40c-dd93" primary="true" name="Core"/>
         <categoryLink targetId="fec1-537a-bbeb-7926" id="e8b6-f457-1485-ed49" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Jade Lancer" hidden="false" id="79ac-6b38-da2c-9644" type="selectionEntry" targetId="4cc7-7623-fd30-5dc2">
+      <comment>Core</comment>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="false" id="a83a-6fd5-6a32-2c09" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="a83a-6fd5-6a32-2c09">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="1256-ca66-2973-7f5d"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="a83a-6fd5-6a32-2c09">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="de03-fe76-bdfc-2ec9" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink targetId="f0e3-2e32-8866-ea32" id="3064-4ecd-10cf-ef9b" primary="true" name="Core"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="b673-f0f4-436f-b999" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Jade Lancer" hidden="false" id="432f-73a2-2978-dc26" type="selectionEntry" targetId="4cc7-7623-fd30-5dc2">
+      <comment>Special</comment>
+      <categoryLinks>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="9843-4f04-1708-bf84" targetId="fec1-537a-bbeb-7926" primary="false"/>
+        <categoryLink targetId="633f-f67a-1b6a-d203" id="94f6-8ab8-f12e-76d8" primary="true" name="Special"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Cathayan Sentinel" hidden="true" id="65fd-385e-371a-a5c5" type="selectionEntry" targetId="9189-88d5-e177-bf2a">
+      <comment>Special</comment>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="false" id="076e-716c-dc33-dab6" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="1" field="076e-716c-dc33-dab6">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="3e20-2cd4-c1d2-6b84" shared="true" includeChildSelections="true">
+                  <comment>Shugengan General</comment>
+                </condition>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="7c06-de73-ddca-1d7a" shared="true" includeChildSelections="true">
+                  <comment>Shugengan Lord</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <comment>Shugengan Lords of the Celestial Host General</comment>
+        </modifier>
+        <modifier type="set" value="false" field="hidden">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="3e20-2cd4-c1d2-6b84" shared="true" includeChildSelections="true">
+                  <comment>Shugengan General</comment>
+                </condition>
+                <condition type="atLeast" value="1" field="selections" scope="force" childId="7c06-de73-ddca-1d7a" shared="true" includeChildSelections="true">
+                  <comment>Shugengan Lord</comment>
+                </condition>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink targetId="633f-f67a-1b6a-d203" id="be02-ff50-3be9-2f4b" primary="true" name="Special"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="6b15-30a9-4c4d-00cd" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Cathayan Sentinel" hidden="false" id="663b-97ab-1c8d-e79f" type="selectionEntry" targetId="9189-88d5-e177-bf2a">
+      <comment>Rare</comment>
+      <categoryLinks>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="29c3-f316-c003-899a" targetId="fec1-537a-bbeb-7926" primary="false"/>
+        <categoryLink targetId="2bfe-5863-46fe-d284" id="bfd1-03b3-dea6-0a53" primary="true" name="Rare"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Sky Lantern" hidden="false" id="bd6c-1e99-c90e-2507" type="selectionEntry" targetId="7fbe-ec13-eebe-f476">
+      <categoryLinks>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="7210-bc7e-df6f-40a2" targetId="fec1-537a-bbeb-7926" primary="false"/>
+        <categoryLink targetId="2bfe-5863-46fe-d284" id="bd11-be2f-172c-26f8" primary="true" name="Rare"/>
+      </categoryLinks>
+      <comment>Rare</comment>
+    </entryLink>
+    <entryLink import="true" name="Cathayan Grand Cannon" hidden="false" id="ecd9-1d63-8e1d-5b64" type="selectionEntry" targetId="0d66-ce16-3768-0611">
+      <categoryLinks>
+        <categoryLink targetId="633f-f67a-1b6a-d203" id="37f6-2730-f57a-60b7" primary="true" name="Special"/>
+        <categoryLink targetId="64e9-1a5b-41c7-3967" id="f670-338b-166c-f875" primary="false" name="0-3 Fire Rain Rocket Batteries or Cathayan Grand Cannon per 1,000 points"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Fire Rain Rocket Battery" hidden="false" id="4521-c9e5-a035-0161" type="selectionEntry" targetId="81e7-7528-d4e5-ec71">
+      <categoryLinks>
+        <categoryLink targetId="64e9-1a5b-41c7-3967" id="d19f-320d-93b3-e5c8" primary="false" name="0-3 Fire Rain Rocket Batteries or Cathayan Grand Cannon per 1,000 points"/>
+        <categoryLink targetId="633f-f67a-1b6a-d203" id="a780-1995-156d-15e1" primary="true" name="Special"/>
       </categoryLinks>
     </entryLink>
   </entryLinks>
@@ -2146,5 +2879,192 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
         </modifier>
       </modifiers>
     </categoryEntry>
+    <categoryEntry name="0-1 Jade Warrior Unit per 1,000 points may have the Drilled special Rule" id="0d07-c4b1-ac2f-46c6" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="5e2d-bf39-cd4c-6dc0" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="5e2d-bf39-cd4c-6dc0">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="134e-855b-35e9-4bed"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="5e2d-bf39-cd4c-6dc0">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="7f70-8ffd-534a-2e82" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 Jade Warrior Unit per 1,000 points may have the Stubborn special rule" id="71aa-3ffd-3214-94b6" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="4576-3d65-bf62-0e01" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="4576-3d65-bf62-0e01">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="9827-160d-f4b8-638b"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="4576-3d65-bf62-0e01">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="ca3d-6a28-6351-e3a1" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 Jade Warrior Unit per 1,000 points may purchase a magic standard" id="2c59-8e58-87e6-c0f7" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="9edc-31a1-3b89-a4b5" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="9edc-31a1-3b89-a4b5">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="8780-e9b9-b179-28be"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="9edc-31a1-3b89-a4b5">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="7b72-a0c4-3633-dae1" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 Jade Lancer Unit per 1,000 points may have the Drilled special Rule" id="f85c-5039-9039-9d19" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="2858-d823-de93-01cf" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="2858-d823-de93-01cf">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="6c27-3639-4b04-d256"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="2858-d823-de93-01cf">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="360a-2d20-b678-37f2" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 Jade Lancer Unit per 1,000 points may have the Stubborn special rule" id="6fd2-9601-b06f-0026" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="b93a-a4f0-58e0-ba66" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="b93a-a4f0-58e0-ba66">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="d7cc-0d76-cc72-fc28"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="b93a-a4f0-58e0-ba66">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="226d-a3df-7e2b-569e" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 Jade Lancer Unit per 1,000 points may have the Ambusher special rule" id="3380-3625-1508-d16e" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="ae8b-3a28-5731-45d7" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="ae8b-3a28-5731-45d7">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="1b38-8de2-7e56-6361"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="ae8b-3a28-5731-45d7">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="0aee-0b18-05ad-1faf" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-3 Fire Rain Rocket Batteries or Cathayan Grand Cannon per 1,000 points" id="64e9-1a5b-41c7-3967" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="22b2-bab8-6ca4-d481" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="3" field="22b2-bab8-6ca4-d481">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="d4c6-c5b1-ef7d-9307"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="3" field="22b2-bab8-6ca4-d481">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="52aa-fbf4-11de-20cf" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
   </categoryEntries>
+  <rules>
+    <rule name="The Elemental Winds" id="7a50-474d-7ecc-ade9" hidden="false">
+      <description>During each of their Start of Turn sub-phases, the Grand Cathay player rolls a D6 to determine which of the Elemental Winds blow the strongest:
+- On a roll of 1-3, the Winds of Yin blow strongest.
+- On a roll of 4+, the Winds of Yin blow strongest.
+
+
+
+
+**Winds of Yang:** Until your next start of Turn sub-phase, Wizards with the Lore of Yang special rule increase their Dispel range and the range of any Enchantment spells they know by 3&quot;. In addition, all friendly models with the Will of the Dragons special rule gain one* of the following modifiers:
+- +1 Movement
+- +1 Initiative
+
+
+
+
+**Winds of Yin:** Until your next Start of turn sub-phase, Wizards with the Lore of Yin special rule increase the range of any Hex or Magic Missile spells they know by 3&quot;. In addition all friendly models with the Will of the Dragons special rule gain one* of the following modifiers:
+- +1 Weapon Skill
+- +1 Leadership
+
+
+
+
+*\*Note that all eligible models gain the same modifier*</description>
+    </rule>
+  </rules>
 </catalogue>
