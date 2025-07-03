@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="90ea-cdfe-fbbc-00de" name="Grand Cathay" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="149" revision="3" authorUrl="www.newrecruit.eu" authorContact="Discord: Tidomann" authorName="Tidomann" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="false" id="90ea-cdfe-fbbc-00de" name="Grand Cathay" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="149" revision="4" authorUrl="www.newrecruit.eu" authorContact="Discord: Tidomann" authorName="Tidomann" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Mercenaries" id="e9b6-b192-d167-7a28" targetId="12a0-32cd-11d6-f952" importRootEntries="true"/>
     <catalogueLink type="catalogue" name="The Lores of Magic" id="5d2e-edd3-f40d-2c75" targetId="f3c5-af11-649d-5dbb"/>
@@ -1400,20 +1400,13 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <selectionEntryGroup name="Command" id="6069-1736-4231-61b0" hidden="false" sortIndex="4">
               <entryLinks>
                 <entryLink import="true" name="General" hidden="false" id="bcd9-1c97-3977-ef1b" type="selectionEntry" targetId="7d76-b1a1-1535-a04c" sortIndex="1"/>
-                <entryLink import="true" name="Battle Standard Bearer" hidden="true" id="9329-3c0d-1791-a1c7" type="selectionEntry" targetId="5b87-9cf5-953d-3829" flatten="true" sortIndex="2">
+                <entryLink import="true" name="Battle Standard Bearer" hidden="false" id="9329-3c0d-1791-a1c7" type="selectionEntry" targetId="5b87-9cf5-953d-3829" flatten="true" sortIndex="2">
                   <costs>
                     <cost name="pts" typeId="points" value="25"/>
                   </costs>
                   <entryLinks>
                     <entryLink import="true" name="Magic Standards" hidden="false" id="123d-b2cc-9732-d1d4" type="selectionEntryGroup" targetId="6bbe-8054-19b7-e5d6"/>
                   </entryLinks>
-                  <modifiers>
-                    <modifier type="set" value="false" field="hidden">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="2b9f-5cb1-f722-13c7" shared="true"/>
-                      </conditions>
-                    </modifier>
-                  </modifiers>
                 </entryLink>
               </entryLinks>
               <constraints>
@@ -1904,7 +1897,20 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             </entryLink>
           </entryLinks>
           <infoLinks>
-            <infoLink name="Jade Warrior" id="0221-cc14-1ccc-49bf" hidden="false" type="profile" targetId="5724-94ff-8020-5dbf"/>
+            <infoLink name="Jade Warrior" id="0221-cc14-1ccc-49bf" hidden="false" type="profile" targetId="5724-94ff-8020-5dbf">
+              <modifiers>
+                <modifier type="increment" value="1" field="b007-7d58-4f14-1e01">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="3698-a2e4-0d1a-8579" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="c435-6b14-f77e-3c72">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="3698-a2e4-0d1a-8579" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base (25x25)" id="c905-7444-d3b7-339a" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
           </infoLinks>
           <costs>
@@ -1928,7 +1934,7 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="5e76-0a74-8c67-5c5f" targetId="may-have-shield"/>
           </categoryLinks>
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="dd35-55b3-8c05-deae" collective="true" sortIndex="4">
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="dd35-55b3-8c05-deae" collective="true" sortIndex="5">
               <infoLinks>
                 <infoLink name="Drilled" id="039f-1481-2595-0248" hidden="false" type="profile" targetId="1f64-3ddc-db58-12fb"/>
               </infoLinks>
@@ -1939,7 +1945,7 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f3b9-fae3-cd64-b946"/>
               </constraints>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="false" id="3069-9dee-91c3-a7f3" collective="true" sortIndex="5">
+            <selectionEntry type="upgrade" import="true" name="Stubborn" hidden="false" id="3069-9dee-91c3-a7f3" collective="true" sortIndex="6">
               <infoLinks>
                 <infoLink name="Stubborn" id="437c-234e-e734-2d1b" hidden="false" type="profile" targetId="e351-bbd6-f470-b604"/>
               </infoLinks>
@@ -1948,6 +1954,28 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
               </costs>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7f89-1cce-f9f7-339b"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Celestial Dragon Guard" hidden="true" id="21d1-ad09-6909-eee6" collective="true" sortIndex="4">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="force" childId="3698-a2e4-0d1a-8579" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <infoLinks>
+                <infoLink name="Celestial Forged Armour" id="7cb7-1134-aa21-537d" hidden="false" type="profile" targetId="af03-793d-6bbc-5f76">
+                  <modifiers>
+                    <modifier type="append" value="(6+)" field="name"/>
+                  </modifiers>
+                </infoLink>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c1a4-f8ad-4fa4-de50"/>
               </constraints>
             </selectionEntry>
           </selectionEntries>
@@ -1968,6 +1996,16 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
                   <modifiers>
                     <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
                     <modifier type="set" value="Jade Officer" field="name"/>
+                    <modifier type="increment" value="1" field="b007-7d58-4f14-1e01">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="force" childId="3698-a2e4-0d1a-8579" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="increment" value="1" field="c435-6b14-f77e-3c72">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="force" childId="3698-a2e4-0d1a-8579" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
                   </modifiers>
                 </infoLink>
                 <infoLink name="Champion" id="afd2-0b9b-f3d4-82f7" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
@@ -2096,6 +2134,11 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
         <modifier type="add" value="71aa-3ffd-3214-94b6" field="category">
           <conditions>
             <condition type="atLeast" value="1" field="selections" scope="self" childId="3069-9dee-91c3-a7f3" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="b093-1f85-53de-ff61" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="21d1-ad09-6909-eee6" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -3118,6 +3161,11 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
     <categoryEntry name="0-1 Jade Lancer Unit may have the Celestial Dragon Guard upgrade" id="c202-3982-0fab-d078" hidden="true">
       <constraints>
         <constraint type="max" value="1" field="selections" scope="force" shared="true" id="c7c3-e7f5-7fa6-e794" includeChildSelections="true"/>
+      </constraints>
+    </categoryEntry>
+    <categoryEntry name="0-1 Jade Warrior Unit may have the Celestial Dragon Guard upgrade" id="b093-1f85-53de-ff61" hidden="true">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="52d9-a04b-cc8d-32d0" includeChildSelections="true"/>
       </constraints>
     </categoryEntry>
   </categoryEntries>
