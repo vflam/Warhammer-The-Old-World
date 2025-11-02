@@ -1749,12 +1749,29 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="9eed-de6c-1c66-e490" shared="true"/>
               </conditions>
             </modifier>
+            <modifier type="increment" value="1" field="f9d6-5add-32a5-b412">
+              <repeats>
+                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="3707-8c0f-a470-5f0d"/>
+              </repeats>
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="f9d6-5add-32a5-b412">
+              <repeats>
+                <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="5f6b-be32-361a-5927" includeChildSelections="true"/>
+              </repeats>
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <costs>
             <cost name="pts" typeId="points" value="15"/>
           </costs>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5fa7-70f4-6e7e-0e08"/>
+            <constraint type="max" value="0" field="selections" scope="force" shared="true" id="f9d6-5add-32a5-b412" includeChildSelections="true"/>
           </constraints>
           <infoLinks>
             <infoLink name="Ambushers" id="9b74-9b9a-3a5a-8e09" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
@@ -2108,7 +2125,7 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
                   <modifiers>
                     <modifier type="add" value="2c59-8e58-87e6-c0f7" field="category">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="self" childId="c78e-2478-f451-99a2" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="c78e-2478-f451-99a2" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>

@@ -230,6 +230,15 @@
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="33" field="4bbb-90a8-3513-cbec">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="9eed-de6c-1c66-e490" shared="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
           </modifiers>
         </categoryLink>
       </categoryLinks>
