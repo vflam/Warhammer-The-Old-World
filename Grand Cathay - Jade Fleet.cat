@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="9eed-de6c-1c66-e490" name="Grand Cathay - Jade Fleet" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="151" revision="1" authorUrl="www.newrecruit.eu" authorContact="Tidomann" authorName="Tidomann" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="false" id="9eed-de6c-1c66-e490" name="Grand Cathay - Jade Fleet" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="151" revision="2" authorUrl="www.newrecruit.eu" authorContact="Tidomann" authorName="Tidomann" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Grand Cathay" id="b907-e3e4-e36b-0f3f" targetId="90ea-cdfe-fbbc-00de"/>
     <catalogueLink type="catalogue" name="The Empire of Man" id="b9f2-120a-29fe-954d" targetId="7b8f-602e-29cd-5786"/>
@@ -163,6 +163,27 @@
         <categoryLink targetId="fec1-537a-bbeb-7926" id="2a47-f9f1-d0f9-f233" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
       </categoryLinks>
     </entryLink>
+    <entryLink import="true" name="Lord Magistrate" hidden="false" id="c343-cae9-9a66-ade3" type="selectionEntry" targetId="b275-d57b-0848-60ad">
+      <categoryLinks>
+        <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="d595-1f21-99f9-0bd7" primary="true" name="Characters"/>
+        <categoryLink targetId="1a9f-079c-ca75-02f1" id="0e92-4381-e753-2ff0" primary="false" name="Faction: Grand Cathay - Jade Fleet"/>
+        <categoryLink targetId="d8c9-6b35-ef44-1295" id="2f41-2136-5be8-3242" primary="false" name="0-1 Shugengan Lord or Lord Magistrate per 1,000 points"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Pistoliers" hidden="false" id="a3c2-e18d-3545-d0a2" type="selectionEntry" targetId="aa4f-ba89-89d4-91d5">
+      <categoryLinks>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="0039-c992-6f63-9437" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+        <categoryLink targetId="5b84-2c3c-869d-3522" id="65d8-3f5f-9267-7d4b" primary="true" name="Mercenaries"/>
+        <categoryLink targetId="9632-cfe9-e0f3-4610" id="6e31-8507-b179-7820" primary="false" name="0-1 unit of Pistoliers or Outriders per 1,000 points"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Outriders" hidden="false" id="8ebd-3ab7-0285-455e" type="selectionEntry" targetId="8ab0-72be-ce53-8df4">
+      <categoryLinks>
+        <categoryLink targetId="5b84-2c3c-869d-3522" id="1792-1543-1c3a-abac" primary="true" name="Mercenaries"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="f626-e671-4027-6b9e" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+        <categoryLink targetId="9632-cfe9-e0f3-4610" id="3286-3d06-5667-9cda" primary="false" name="0-1 unit of Pistoliers or Outriders per 1,000 points"/>
+      </categoryLinks>
+    </entryLink>
   </entryLinks>
   <categoryEntries>
     <categoryEntry name="0-1 Captain of the Empire, Master Mage, Priest of Sigmar or Priest of Ulric per 1,00 points" id="4aeb-8a81-08d6-3df3" hidden="true">
@@ -181,6 +202,29 @@
         <modifier type="increment" value="1" field="9c62-fff4-edcd-cf86">
           <repeats>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="4a33-a97f-affa-a43f" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 unit of Pistoliers or Outriders per 1,000 points" id="9632-cfe9-e0f3-4610" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="621b-dc60-bce5-b67d" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="621b-dc60-bce5-b67d">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="a496-8791-74ff-da18"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="621b-dc60-bce5-b67d">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="a4c4-94d1-d05f-d4e1" includeChildSelections="true"/>
           </repeats>
           <conditions>
             <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
