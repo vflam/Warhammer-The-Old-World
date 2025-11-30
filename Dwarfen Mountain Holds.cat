@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="1ddf-26c6-1d88-2b8c" name="Dwarfen Mountain Holds" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="8" revision="112" battleScribeVersion="2.03" type="catalogue" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="1ddf-26c6-1d88-2b8c" name="Dwarfen Mountain Holds" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="8" revision="113" battleScribeVersion="2.03" type="catalogue" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedProfiles>
     <profile name="Longbeard" hidden="false" id="fbc8-de41-190b-8903" typeId="b070-143a-73f-2772" typeName="Model">
       <characteristics>
@@ -935,6 +935,54 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
       <characteristics>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Any enemy model that ends its movement within the Command range of one or more characters with this special rule (that are not fleeing or engaged in combat) must make a Dangerous Terrain test.</characteristic>
       </characteristics>
+    </profile>
+    <profile name="Shrine Guard" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="44fd-a481-ad90-1147">
+      <characteristics>
+        <characteristic name="M" typeId="cd3b-a5a4-e185-5a9d">3</characteristic>
+        <characteristic name="WS" typeId="b007-7d58-4f14-1e01">5</characteristic>
+        <characteristic name="BS" typeId="59f9-ccf5-1155-fb05">3</characteristic>
+        <characteristic name="S" typeId="5b6b-1427-2a45-dd0c">4</characteristic>
+        <characteristic name="T" typeId="ab43-8b61-83e7-d090">4</characteristic>
+        <characteristic name="W" typeId="83ed-7b82-bf1f-e558">1</characteristic>
+        <characteristic name="I" typeId="73b1-abe5-72f8-41e2">3</characteristic>
+        <characteristic name="A" typeId="dddc-9fbd-b0fd-a480">2</characteristic>
+        <characteristic name="Ld" typeId="c435-6b14-f77e-3c72">10</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Blessing of Grimnir" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="0d37-cec7-f187-4382">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A model with this special rule may be nominated to attempt a Wizardly Dispel, as if it were a Wizard. However, unlike regular Wizards, a Shrine Keeper does not have a Level of Wizardry to determine their Dispel range or modify their Dispel rolls. Instead, a shrine Keeper has a Dispel range of 21&quot; and may apply a +1 modifier to their Dispel rolls.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="&quot;Look Snorri, Trolls!&quot;" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="a6f4-c419-22fe-d9c4">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">After deployment, but before deploying Scouts or making any Vanguard moves, all units of Slayers and Brotherhood of Grimnir within a Slayer Host Army of Infamy may make a “Look Snorri, Trolls!” move. A unit making a “Look Snorri, Trolls!” move moves D3&quot;+1 as described in the Basic Movement rules. It may manoeuvre normally but cannot march. Roll separately for each eligible unit.</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </profile>
+    <profile name="Wards of Grimnir" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="a8fe-34b6-9e1e-d466">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Any unit in a Slayer Host Army of Infamy that includes a standard bearer may purchase Wards of Grimnir for +1 point per model. A unit with Wards of Grimnir has 6+ Ward save against any wounds suffered during the Shooting phase that were caused by a non-magical enemy attack.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Worst Among Equals" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="true" id="2c6d-0f24-7bb7-dae6">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">If your army includes Ungrim Ironfist, he must be your General. If not, you must nominate a Daemon Slayer or Dragon Slayer to act as your General, even though the Loner special rule would normally prevent this. However, to reflect that Slayers make poor leaders, a Dragon Slayer or Daemon Slayer that is the General of a Slayer Host does not gain the Inspiring Presence special rule.
+*Note that, if the General of a Slayer Host Army of Infamy bears the Rune of the Dishonoured runic tattoo, the enemy player can win the bonus Victory Points for slaying them as normal.*</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </profile>
   </sharedProfiles>
   <entryLinks>
@@ -2690,10 +2738,23 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ad7-b1b6-4083-1db1"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Shield" hidden="false" id="5276-3455-ff5d-951f" type="selectionEntry" targetId="6192-f9f1-5d53-2042">
+            <entryLink import="true" name="Shield" hidden="false" id="5276-3455-ff5d-951f" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="4">
               <costs>
                 <cost name="pts" typeId="points" value="1"/>
               </costs>
+            </entryLink>
+            <entryLink import="true" name="Wards of Grimnir" hidden="false" id="0fb3-a20c-2f5e-b99d" type="selectionEntry" targetId="071c-d071-dde6-4ca4" collective="true">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="3761-f42e-e68d-a788" shared="true" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
           </entryLinks>
           <infoLinks>
@@ -2708,39 +2769,37 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
             <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="e76c-f8a5-9a9-e8e" targetId="may-have-armour"/>
             <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="985c-aaba-8ce-ddac" targetId="may-have-shield"/>
           </categoryLinks>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="8130-65d-7bbf-5144" collective="true" sortIndex="3">
-          <costs>
-            <cost name="pts" typeId="points" value="0"/>
-          </costs>
-          <infoLinks>
-            <infoLink name="Drilled" id="2832-2143-5cc0-b139" hidden="false" type="profile" targetId="1f64-3ddc-db58-12fb"/>
-          </infoLinks>
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="70ab-7e7e-19fc-d688"/>
-          </constraints>
-          <modifiers>
-            <modifier type="increment" value="1" field="points">
-              <repeats>
-                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
-              </repeats>
-            </modifier>
-          </modifiers>
-        </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Veteran" hidden="false" id="970-71b7-98f8-842d" collective="true" sortIndex="4">
-          <constraints>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e15f-89ac-bb27-c4a"/>
-          </constraints>
-          <infoLinks>
-            <infoLink name="Veteran" id="568b-8e15-f038-2143" hidden="false" type="profile" targetId="4022-c403-b083-ba83"/>
-          </infoLinks>
-          <modifiers>
-            <modifier type="increment" value="1" field="points">
-              <repeats>
-                <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
-              </repeats>
-            </modifier>
-          </modifiers>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Drilled" hidden="false" id="8130-65d-7bbf-5144" collective="true">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+              <infoLinks>
+                <infoLink name="Drilled" id="2832-2143-5cc0-b139" hidden="false" type="profile" targetId="1f64-3ddc-db58-12fb"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="70ab-7e7e-19fc-d688"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="parent" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Veteran" hidden="false" id="970-71b7-98f8-842d" collective="true">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e15f-89ac-bb27-c4a"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Veteran" id="568b-8e15-f038-2143" hidden="false" type="profile" targetId="4022-c403-b083-ba83"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -3489,6 +3548,7 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
                     <infoLink name="Motley Crew" hidden="false" type="profile" id="51a5-434a-24d3-a177" targetId="6359-4018-5cd4-3720"/>
                     <infoLink name="Unbreakable" hidden="false" type="profile" id="ae28-5c83-c77f-c250" targetId="d3eb-1fa0-bb19-f390"/>
                     <infoLink name="Slayer" hidden="false" type="profile" id="cdd1-3a6d-dfc4-b589" targetId="ea84-d53c-ef3b-57e8"/>
+                    <infoLink name="&quot;Look Snorri, Trolls!&quot;" id="fe1e-4f3c-fb51-a959" hidden="true" type="profile" targetId="a6f4-c419-22fe-d9c4"/>
                   </infoLinks>
                 </infoGroup>
               </infoGroups>
@@ -3573,6 +3633,15 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
                     <infoLink name="Unbreakable" hidden="false" type="profile" id="d04a-149c-378-2150" targetId="d3eb-1fa0-bb19-f390"/>
                     <infoLink name="Slayer" hidden="false" type="profile" id="3827-53b0-61c9-3ef2" targetId="ea84-d53c-ef3b-57e8"/>
                     <infoLink name="Fight Me!" hidden="false" type="profile" id="7e0a-10a5-fa2e-b4ca" targetId="3251-1b1d-cdeb-8d3e"/>
+                    <infoLink name="&quot;Look Snorri, Trolls!&quot;" id="900e-7768-ef42-2878" hidden="false" type="profile" targetId="a6f4-c419-22fe-d9c4">
+                      <modifiers>
+                        <modifier type="set" value="false" field="hidden">
+                          <conditions>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
+                    </infoLink>
                   </infoLinks>
                 </infoGroup>
               </infoGroups>
@@ -3625,6 +3694,55 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
           <constraints>
             <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="20a2-2487-7f14-cf13"/>
           </constraints>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Special Rules" id="19c7-437e-32ff-2fd5" hidden="true">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="From the Wilds" hidden="true" id="9aa6-9a6b-d9f3-76d4">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4f5e-ad8f-d66a-eeba" includeChildSelections="false"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Ambushers" id="8d8c-0efa-400d-6a9b" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+                <infoLink name="Skirmishers" id="cc84-ede2-ab23-674d" hidden="false" type="profile" targetId="59a5-7eca-ee35-96ac"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="9f80-e41f-57be-c779" childId="model" shared="true" roundUp="false" id="8c8a-189d-c578-0e5a" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="lessThan" value="11" field="selections" scope="9f80-e41f-57be-c779" childId="model" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <entryLinks>
+            <entryLink import="true" name="Wards of Grimnir" hidden="false" id="0166-ad34-b189-faf3" type="selectionEntry" targetId="071c-d071-dde6-4ca4" collective="true">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="35dc-e724-249b-4a1e" shared="true" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="9f80-e41f-57be-c779" childId="model" shared="true" roundUp="false" id="390c-3517-f2f8-b122" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </entryLink>
+          </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <categoryLinks>
@@ -4850,11 +4968,12 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="10b5-dc8f-3409-e126"/>
           </constraints>
           <entryLinks>
-            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="2a49-baf8-83bb-ac6a" targetId="721d-36e3-388a-c0d6" sortIndex="2">
+            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="2a49-baf8-83bb-ac6a" targetId="721d-36e3-388a-c0d6" sortIndex="1">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="ec1e-facf-229c-1463"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="Troll Hunter" hidden="false" id="1645-f97e-55a1-54ff" type="selectionEntry" targetId="9bd5-e59a-12c3-f6eb" sortIndex="3"/>
           </entryLinks>
           <infoLinks>
             <infoLink name="Daemon Slayer" hidden="false" type="profile" id="2667-684c-56fb-a3f" targetId="1522-caf2-2f57-9f8c"/>
@@ -4864,7 +4983,7 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
             <cost name="pts" typeId="points" value="130"/>
           </costs>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Runes" hidden="false" id="8985-6e1a-2e2b-56ab" flatten="false" sortIndex="4">
+            <selectionEntryGroup name="Runes" hidden="false" id="8985-6e1a-2e2b-56ab" flatten="false" sortIndex="5">
               <entryLinks>
                 <entryLink import="true" name="Weapon Runes" hidden="false" type="selectionEntryGroup" id="356-5d8e-26e9-fe7c" targetId="4862-48a0-d10c-9fce" sortIndex="1">
                   <constraints>
@@ -4923,7 +5042,7 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
                 <entryLink import="true" name="Runic Tattoos" hidden="false" id="c89f-e411-44db-f562" type="selectionEntryGroup" targetId="7de6-2ef4-b5d7-a78b" sortIndex="3"/>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Equipment" hidden="false" id="65bf-70bf-f996-4f7e" sortIndex="3">
+            <selectionEntryGroup name="Equipment" hidden="false" id="65bf-70bf-f996-4f7e" sortIndex="2">
               <entryLinks>
                 <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="fa49-67e4-ee5-3d49" targetId="8943-3e16-db2a-b7f3" sortIndex="1">
                   <costs>
@@ -4934,6 +5053,22 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
                   <costs>
                     <cost name="pts" typeId="points" value="4"/>
                   </costs>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Command" id="395d-b9fb-53b9-1b01" hidden="false" sortIndex="4">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="true" id="e6ee-677b-cd5a-0690" type="selectionEntry" targetId="7d76-b1a1-1535-a04c">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <infoLinks>
+                    <infoLink name="Worst Among Equals" id="cb1a-e03b-732f-c555" hidden="false" type="profile" targetId="2c6d-0f24-7bb7-dae6"/>
+                  </infoLinks>
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
@@ -5135,10 +5270,24 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="55-c118-670f-ca77"/>
           </constraints>
           <entryLinks>
-            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="20d0-d29a-f6a0-6650" targetId="721d-36e3-388a-c0d6" sortIndex="2">
+            <entryLink import="true" name="Hand Weapon" hidden="false" type="selectionEntry" id="20d0-d29a-f6a0-6650" targetId="721d-36e3-388a-c0d6" sortIndex="1">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f382-3093-fcce-e228"/>
               </constraints>
+            </entryLink>
+            <entryLink import="true" name="Troll Hunter" hidden="false" id="f1a9-b8be-c9b3-ffca" type="selectionEntry" targetId="9bd5-e59a-12c3-f6eb" sortIndex="4"/>
+            <entryLink import="true" name="Wards of Grimnir" hidden="false" id="14f1-1a62-2cd7-7302" type="selectionEntry" targetId="071c-d071-dde6-4ca4" sortIndex="3" collective="true">
+              <costs>
+                <cost name="pts" typeId="points" value="1"/>
+              </costs>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="5b87-9cf5-953d-3829" shared="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
           </entryLinks>
           <infoLinks>
@@ -5149,7 +5298,7 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
             <cost name="pts" typeId="points" value="70"/>
           </costs>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Runes" hidden="false" id="712f-883b-cb8e-32b" flatten="true" sortIndex="3">
+            <selectionEntryGroup name="Runes" hidden="false" id="712f-883b-cb8e-32b" flatten="true" sortIndex="6">
               <entryLinks>
                 <entryLink import="true" name="Weapon Runes" hidden="false" type="selectionEntryGroup" id="6742-af84-9236-df84" targetId="4862-48a0-d10c-9fce" sortIndex="1">
                   <constraints>
@@ -5164,6 +5313,51 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
                   </modifiers>
                 </entryLink>
                 <entryLink import="true" name="Runic Tattoos" hidden="false" id="fc64-d2ae-9686-057b" type="selectionEntryGroup" targetId="7de6-2ef4-b5d7-a78b" sortIndex="2"/>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Equipment" id="eafa-b7c3-c1e9-cd61" hidden="false" sortIndex="2" flatten="true">
+              <entryLinks>
+                <entryLink import="true" name="Additional Hand Weapon" hidden="false" id="7110-a618-9dc7-8f51" type="selectionEntry" targetId="8943-3e16-db2a-b7f3" sortIndex="1">
+                  <costs>
+                    <cost name="pts" typeId="points" value="3"/>
+                  </costs>
+                </entryLink>
+                <entryLink import="true" name="Great Weapon" hidden="false" id="6c2b-e324-c2eb-a716" type="selectionEntry" targetId="2283-26e9-76c3-6048" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="4"/>
+                  </costs>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Command" id="7e5d-2bf9-a69c-05ee" hidden="false" sortIndex="5">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="true" id="bf60-d46c-7a73-6f59" type="selectionEntry" targetId="7d76-b1a1-1535-a04c">
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <infoLinks>
+                    <infoLink name="Worst Among Equals" id="d233-f9f1-8208-6271" hidden="true" type="profile" targetId="2c6d-0f24-7bb7-dae6"/>
+                  </infoLinks>
+                </entryLink>
+                <entryLink import="true" name="Battle Standard Bearer" hidden="true" id="e004-3b06-4208-a36a" type="selectionEntry" targetId="5b87-9cf5-953d-3829" flatten="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="25"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Standard Runes" hidden="false" id="6f4c-2403-f407-d9d9" type="selectionEntryGroup" targetId="c4a0-bdf6-454f-5e57"/>
+                  </entryLinks>
+                  <modifiers>
+                    <modifier type="set" value="false" field="hidden">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
@@ -5197,22 +5391,6 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
           </infoLinks>
         </infoGroup>
       </infoGroups>
-      <selectionEntryGroups>
-        <selectionEntryGroup name="Equipment" hidden="false" id="eafa-b7c3-c1e9-cd61" sortIndex="2">
-          <entryLinks>
-            <entryLink import="true" name="Additional Hand Weapon" hidden="false" type="selectionEntry" id="7110-a618-9dc7-8f51" targetId="8943-3e16-db2a-b7f3" sortIndex="1">
-              <costs>
-                <cost name="pts" typeId="points" value="3"/>
-              </costs>
-            </entryLink>
-            <entryLink import="true" name="Great Weapon" hidden="false" type="selectionEntry" id="6c2b-e324-c2eb-a716" targetId="2283-26e9-76c3-6048" sortIndex="2">
-              <costs>
-                <cost name="pts" typeId="points" value="4"/>
-              </costs>
-            </entryLink>
-          </entryLinks>
-        </selectionEntryGroup>
-      </selectionEntryGroups>
       <categoryLinks>
         <categoryLink name="Faction: Dwarfen Mountain Holds" hidden="false" id="aef5-b75a-fcfb-1c8b" primary="false" targetId="f4fd-aa79-6ff3-1ea9"/>
       </categoryLinks>
@@ -5847,7 +6025,21 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
           <selectionEntryGroups>
             <selectionEntryGroup name="Command" id="a23d-cbe4-c035-e153" hidden="false" sortIndex="5">
               <entryLinks>
-                <entryLink import="true" name="General" hidden="false" id="60c0-7a40-e724-79a1" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
+                <entryLink import="true" name="General" hidden="false" id="60c0-7a40-e724-79a1" type="selectionEntry" targetId="7d76-b1a1-1535-a04c">
+                  <constraints>
+                    <constraint type="min" value="0" field="selections" scope="parent" shared="true" id="24f5-d8dd-f14e-3041"/>
+                  </constraints>
+                  <modifiers>
+                    <modifier type="set" value="1" field="24f5-d8dd-f14e-3041">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <infoLinks>
+                    <infoLink name="Worst Among Equals" id="a1d4-61d5-211e-7569" hidden="true" type="profile" targetId="2c6d-0f24-7bb7-dae6"/>
+                  </infoLinks>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
@@ -6174,9 +6366,14 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
                   </constraints>
                   <modifiers>
                     <modifier type="set" value="true" field="hidden">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7bbf-73df-eb6d-d411" shared="true"/>
-                      </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7bbf-73df-eb6d-d411" shared="true"/>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
                     </modifier>
                   </modifiers>
                 </selectionEntry>
@@ -6682,6 +6879,228 @@ When a unit of Miners would arrive onto the battlefield as Reserves, it can be p
           </costs>
         </selectionEntry>
       </selectionEntries>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Brotherhood of Grimnir" hidden="false" id="a131-b0cf-8a0d-0837" collective="false">
+      <profiles>
+        <profile name="Brotherhood of Grimnir" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="e634-0b3a-501f-1c70">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Regular infantry</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">5-30</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Shrine Guard" hidden="false" id="bc1e-07ba-8029-0f6b" sortIndex="1" collapsible="false">
+          <infoLinks>
+            <infoLink name="Shrine Guard" id="8bc6-921c-d515-6b3a" hidden="false" type="profile" targetId="44fd-a481-ad90-1147">
+              <modifiers>
+                <modifier type="set" value="Shrine Keeper" field="name">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="b0f5-be16-6e39-9c4a" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="b007-7d58-4f14-1e01">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="b0f5-be16-6e39-9c4a" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Base (25x25)" id="e539-aa2b-a8a8-dd73" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="18"/>
+          </costs>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="700e-7d38-38cd-fd73" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="2b1f-00eb-a157-1794"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="9a52-bc43-ce30-f73b"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Equipment" id="3136-275f-b308-1d97" hidden="false" sortIndex="2" flatten="true">
+              <entryLinks>
+                <entryLink import="true" name="Additional Hand Weapon" hidden="false" id="d6e4-6844-e08a-c38f" type="selectionEntry" targetId="8943-3e16-db2a-b7f3" sortIndex="1">
+                  <costs>
+                    <cost name="pts" typeId="points" value="2"/>
+                  </costs>
+                </entryLink>
+                <entryLink import="true" name="Great Weapon" hidden="false" id="ebb1-f2d1-275a-13bb" type="selectionEntry" targetId="2283-26e9-76c3-6048" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="1"/>
+                  </costs>
+                </entryLink>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="772b-98d5-187e-589e" includeChildSelections="false"/>
+              </constraints>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Command" id="a896-9c94-1954-5f06" hidden="false" sortIndex="4">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Shrine Keeper" hidden="false" id="b0f5-be16-6e39-9c4a" sortIndex="1" collapsible="true">
+                  <infoLinks>
+                    <infoLink name="Champion" id="6ed7-fc7e-71b3-742f" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
+                    <infoLink name="Blessing of Grimnir" id="70ce-ed37-590e-c247" hidden="false" type="profile" targetId="0d37-cec7-f187-4382"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="21"/>
+                  </costs>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="ad37-08a4-864d-0a1c" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="a131-b0cf-8a0d-0837" shared="true" id="ffd2-fc16-3c9e-16a9" includeChildSelections="true"/>
+                  </constraints>
+                  <comment>upgrades: bc1e-07ba-8029-0f6b</comment>
+                  <categoryLinks>
+                    <categoryLink name="Regular Infantry" hidden="false" id="2b4c-49ad-293b-04e8" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                  </categoryLinks>
+                  <selectionEntryGroups>
+                    <selectionEntryGroup name="Runes" id="850e-cb6b-7d8c-6256" hidden="false">
+                      <entryLinks>
+                        <entryLink import="true" name="Talismanic Runes" hidden="false" id="ce3e-2a6a-3ab9-6ac3" targetId="bb15-91b5-9a62-f31a" type="selectionEntryGroup" sortIndex="3">
+                          <constraints>
+                            <constraint type="max" value="50" field="points" scope="parent" shared="false" id="eccb-7e6f-dd29-7399" includeChildSelections="true"/>
+                          </constraints>
+                        </entryLink>
+                        <entryLink import="true" name="Weapon Runes" hidden="false" id="74a9-e32f-d7d4-da30" type="selectionEntryGroup" targetId="4862-48a0-d10c-9fce" sortIndex="2">
+                          <constraints>
+                            <constraint type="max" value="50" field="points" scope="parent" shared="true" id="54aa-c5d0-7049-1d86"/>
+                          </constraints>
+                        </entryLink>
+                        <entryLink import="true" name="Runic Tattoos" hidden="false" id="1f19-ee09-f1ca-e78f" type="selectionEntryGroup" targetId="7de6-2ef4-b5d7-a78b" sortIndex="1"/>
+                      </entryLinks>
+                    </selectionEntryGroup>
+                  </selectionEntryGroups>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Standard Bearer" hidden="false" id="dd04-7e0d-69c4-5b68" sortIndex="2" collapsible="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="6"/>
+                  </costs>
+                  <infoLinks>
+                    <infoLink name="Standard Bearer" id="9e24-b4c6-a564-ad97" hidden="false" type="profile" targetId="bcf8-d942-102e-b155"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="c797-d4bd-fb2a-41bc" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="a131-b0cf-8a0d-0837" shared="true" id="bf69-869b-1cd8-9b09" includeChildSelections="true"/>
+                  </constraints>
+                  <comment>upgrades: bc1e-07ba-8029-0f6b</comment>
+                  <categoryLinks>
+                    <categoryLink name="Regular Infantry" hidden="false" id="b55f-63fb-0364-1401" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                  </categoryLinks>
+                  <entryLinks>
+                    <entryLink import="true" name="Standard Runes" hidden="false" id="6fef-2745-b252-f443" type="selectionEntryGroup" targetId="c4a0-bdf6-454f-5e57">
+                      <constraints>
+                        <constraint type="max" value="100" field="points" scope="parent" shared="false" id="ce48-abbb-3e2f-2a0a" includeChildSelections="false"/>
+                      </constraints>
+                      <modifiers>
+                        <modifier type="increment" value="25" field="ce48-abbb-3e2f-2a0a">
+                          <conditions>
+                            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7bbf-73df-eb6d-d411" shared="true"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
+                    </entryLink>
+                  </entryLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Musician" hidden="false" id="67d7-0cd7-a807-012a" sortIndex="3" collapsible="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="6"/>
+                  </costs>
+                  <infoLinks>
+                    <infoLink name="Musician" id="2c04-941e-a1db-30b5" hidden="false" type="profile" targetId="40f2-dd77-f0ca-3663"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="ad97-1c1d-8794-3e94" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="a131-b0cf-8a0d-0837" shared="true" id="de82-14e4-e268-0a58" includeChildSelections="true"/>
+                  </constraints>
+                  <comment>upgrades: bc1e-07ba-8029-0f6b</comment>
+                  <categoryLinks>
+                    <categoryLink name="Regular Infantry" hidden="false" id="64d8-9657-9a85-2fcb" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                  </categoryLinks>
+                </selectionEntry>
+              </selectionEntries>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5c7d-1582-2144-64a3"/>
+              </constraints>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <constraints>
+            <constraint type="min" value="5" field="selections" scope="parent" shared="true" id="9dc2-f5a6-3c88-5eb0"/>
+            <constraint type="max" value="30" field="selections" scope="parent" shared="true" id="3bd8-3b2c-b4da-d534"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="7847-b675-a968-a62b" targetId="f3f7-ca43-674e-115f" primary="false"/>
+            <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="7401-49a5-3a9b-e605" targetId="may-have-armour"/>
+            <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="3bfd-d838-872b-920c" targetId="may-have-shield"/>
+          </categoryLinks>
+        </selectionEntry>
+      </selectionEntries>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="ab02-b34a-c58b-12a8" hidden="false">
+          <infoLinks>
+            <infoLink name="Close Order" id="77d7-92ef-8547-0841" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+            <infoLink name="Deathblow" id="10f6-56cc-4872-c17f" hidden="false" type="profile" targetId="233a-1715-82be-1410"/>
+            <infoLink name="Gromril Weapons" id="d3cd-5ab7-0d5b-b01a" hidden="false" type="profile" targetId="2e16-e293-353e-6881"/>
+            <infoLink name="Hatred" id="ef94-799c-217e-e3c4" hidden="false" type="profile" targetId="f4b3-18af-16bf-78dd">
+              <modifiers>
+                <modifier type="append" value="(Orcs &amp; Goblins)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Immune To Psychology" id="0bbd-e8e9-af0e-5dd7" hidden="false" type="profile" targetId="93d9-c75b-f655-30ac"/>
+            <infoLink name="Loner" id="d0d6-d9a3-6617-b943" hidden="false" type="profile" targetId="2ecd-c6b3-bd8b-864b"/>
+            <infoLink name="Magic Resistance" id="3f95-a91f-378c-2544" hidden="false" type="profile" targetId="90ed-c9be-a611-79cc">
+              <modifiers>
+                <modifier type="append" value="(-2)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Motley Crew" id="e29c-48d7-bf72-f266" hidden="false" type="profile" targetId="6359-4018-5cd4-3720"/>
+            <infoLink name="Resolute" id="7dc6-9788-1ce3-e5d1" hidden="false" type="profile" targetId="a230-c540-6a65-4974"/>
+            <infoLink name="Slayer" id="7970-8448-517a-7a17" hidden="false" type="profile" targetId="ea84-d53c-ef3b-57e8"/>
+            <infoLink name="Unbreakable" id="ad4d-b6c1-441f-8451" hidden="false" type="profile" targetId="d3eb-1fa0-bb19-f390"/>
+            <infoLink name="&quot;Look Snorri, Trolls!&quot;" id="ce47-ae15-51f8-a2fe" hidden="true" type="profile" targetId="a6f4-c419-22fe-d9c4"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <categoryLinks>
+        <categoryLink targetId="f4fd-aa79-6ff3-1ea9" id="3613-61c3-a615-5074" primary="false" name="Faction: Dwarfen Mountain Holds"/>
+      </categoryLinks>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Special Rules" id="9afc-8047-f300-b9de" hidden="true">
+          <modifiers>
+            <modifier type="set" value="false" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <entryLinks>
+            <entryLink import="true" name="Wards of Grimnir" hidden="false" id="7a86-507e-c7ef-1a22" type="selectionEntry" targetId="071c-d071-dde6-4ca4" collective="true">
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="dd04-7e0d-69c4-5b68" shared="true" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="a131-b0cf-8a0d-0837" childId="model" shared="true" roundUp="false" id="db84-f9d0-1234-4354" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Wards of Grimnir" hidden="true" id="071c-d071-dde6-4ca4">
+      <infoLinks>
+        <infoLink name="Wards of Grimnir" id="2a38-b1e6-db55-f442" hidden="false" type="profile" targetId="a8fe-34b6-9e1e-d466"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c4ba-c2ca-029f-d2ec"/>
+      </constraints>
     </selectionEntry>
   </sharedSelectionEntries>
   <catalogueLinks>

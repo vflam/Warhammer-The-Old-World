@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="true" id="12a0-32cd-11d6-f952" name="Mercenaries" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="99" revision="25" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="true" id="12a0-32cd-11d6-f952" name="Mercenaries" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="99" revision="26" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Badlands Ogre Bulls" hidden="false" id="a4af-ea3a-49ea-d56e" collective="false">
       <profiles>
@@ -312,19 +312,20 @@
             <cost name="pts" typeId="points" value="50"/>
           </costs>
           <entryLinks>
-            <entryLink import="true" name="Hand Weapon" hidden="false" id="a433-3eb5-7d1d-4ea4" type="selectionEntry" targetId="721d-36e3-388a-c0d6">
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="a433-3eb5-7d1d-4ea4" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="2">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c86d-a3fc-0143-c81d-min"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c86d-a3fc-0143-c81d-max"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="Troll Hunter" hidden="false" id="871f-6cef-ba35-f8b5" type="selectionEntry" targetId="9bd5-e59a-12c3-f6eb" sortIndex="1"/>
           </entryLinks>
           <infoLinks>
             <infoLink name="Base (25x25)" id="1122-2321-1cb2-529a" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
             <infoLink name="Doomseeker" id="9904-6c9c-85c9-92ae" hidden="false" type="profile" targetId="dc03-c410-d3ec-508d"/>
           </infoLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Runes" id="e9d6-0ca1-54b2-cb76" hidden="false">
+            <selectionEntryGroup name="Runes" id="e9d6-0ca1-54b2-cb76" hidden="false" sortIndex="3">
               <entryLinks>
                 <entryLink import="true" name="Weapon Runes" hidden="false" id="c714-943c-0600-d28d" type="selectionEntryGroup" targetId="4862-48a0-d10c-9fce" sortIndex="1">
                   <constraints>
@@ -1081,6 +1082,41 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Troll Hunter" hidden="true" id="9bd5-e59a-12c3-f6eb" collective="true">
+      <infoLinks>
+        <infoLink name="Scouts" id="a004-b4f5-f076-f83b" hidden="false" type="profile" targetId="fe5e-8838-7fbd-a7ec"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="10"/>
+      </costs>
+      <modifiers>
+        <modifier type="set" value="false" field="hidden">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a6d0-e072-75ec-45d8" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="598e-22df-1929-bf42">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="598e-22df-1929-bf42">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="29cd-7993-715e-09d4"/>
+        <constraint type="max" value="0" field="selections" scope="force" shared="false" id="598e-22df-1929-bf42" includeChildSelections="true"/>
+      </constraints>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedProfiles>
     <profile name="Ogre" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="5ccf-bbe6-f153-88b2">
@@ -1342,6 +1378,7 @@ Bonegrinder Giant Attacks Table
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="5e58-9ce8-a93c-272d" shared="true"/>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c997-9d47-72ad-c5f1" shared="true"/>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="eaaf-1e11-a32d-ab11" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f59c-fbc6-8d1c-8877" shared="true"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -1362,6 +1399,7 @@ Bonegrinder Giant Attacks Table
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7b8f-602e-29cd-5786" shared="true"/>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f59c-fbc6-8d1c-8877" shared="true"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -1383,6 +1421,7 @@ Bonegrinder Giant Attacks Table
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7b8f-602e-29cd-5786" shared="true"/>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f59c-fbc6-8d1c-8877" shared="true"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -1427,6 +1466,7 @@ Bonegrinder Giant Attacks Table
               <conditions>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="7b8f-602e-29cd-5786" shared="true"/>
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="f59c-fbc6-8d1c-8877" shared="true"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
