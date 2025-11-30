@@ -230,6 +230,11 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
 - May take an additional hand weapon (+3 points)</characteristic>
       </characteristics>
     </profile>
+    <profile name="The Wandering Duelists" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c225-027e-5757-6fd9">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">For each character in your army that has the Wandering Diestro Infamous Origin, 0-1 unit of Border Princes Brigands may have a +1 modifier to their Weapon Skill characteristic for +2 points per model. In addition, once per game, models within this unit may make enemy models that direct their attacks against them during the Combat phase re-roll successful rolls To Hit.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Renegade Prince" hidden="false" id="99cf-7544-f1f7-b014">
@@ -266,7 +271,40 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
             <entryLink import="true" name="Infamous Origin" hidden="false" id="06f1-6e3e-d985-35fe" type="selectionEntryGroup" targetId="11e8-3863-9a43-3fba" sortIndex="6"/>
           </entryLinks>
           <infoLinks>
-            <infoLink name="Renegade Prince" id="20a2-00e6-f9f6-4783" hidden="false" type="profile" targetId="7db7-3746-841e-04ed"/>
+            <infoLink name="Renegade Prince" id="20a2-00e6-f9f6-4783" hidden="false" type="profile" targetId="7db7-3746-841e-04ed">
+              <modifiers>
+                <modifier type="increment" value="1" field="c435-6b14-f77e-3c72">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="2eb5-a7b0-0b76-0841" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="2622-06cf-429e-12bc" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="increment" value="1" field="b007-7d58-4f14-1e01">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="5aa8-1537-7506-e149" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="5b6b-1427-2a45-dd0c">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="5aa8-1537-7506-e149" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="59f9-ccf5-1155-fb05">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="2622-06cf-429e-12bc" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="2" field="b007-7d58-4f14-1e01">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="8ae4-9684-92b3-ecf9" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base (25x25)" id="5dc4-2bce-06ff-0993" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
           </infoLinks>
           <costs>
@@ -287,6 +325,13 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                   <costs>
                     <cost name="pts" typeId="points" value="4"/>
                   </costs>
+                  <modifiers>
+                    <modifier type="set" value="true" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="8ae4-9684-92b3-ecf9" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                 </entryLink>
                 <entryLink import="true" name="Halberd" hidden="false" id="c746-52d4-4d23-7f21" type="selectionEntry" targetId="f0a5-1b2e-3d2b-d540" sortIndex="2">
                   <costs>
@@ -394,6 +439,16 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
+            </modifier>
+            <modifier type="add" value="31d7-4049-b1ba-f056" field="category">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="self" childId="5aa8-1537-7506-e149" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="add" value="e5f1-f9ee-d533-b2dc" field="category">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="self" childId="2622-06cf-429e-12bc" shared="true" includeChildSelections="true"/>
+              </conditions>
             </modifier>
           </modifiers>
         </selectionEntry>
@@ -507,14 +562,48 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="9197-2749-e412-5905"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Shield" hidden="false" id="880f-7305-0a63-8b17" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="6">
+            <entryLink import="true" name="Shield" hidden="false" id="880f-7305-0a63-8b17" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="5">
               <costs>
                 <cost name="pts" typeId="points" value="2"/>
               </costs>
             </entryLink>
+            <entryLink import="true" name="Infamous Origin" hidden="false" id="44bd-49c8-d1cc-0d44" type="selectionEntryGroup" targetId="11e8-3863-9a43-3fba" sortIndex="6"/>
           </entryLinks>
           <infoLinks>
-            <infoLink name="Renegade Captain" id="fa1a-23f1-2aa3-e924" hidden="false" type="profile" targetId="6e4a-85d0-ee19-aa51"/>
+            <infoLink name="Renegade Captain" id="fa1a-23f1-2aa3-e924" hidden="false" type="profile" targetId="6e4a-85d0-ee19-aa51">
+              <modifiers>
+                <modifier type="increment" value="1" field="b007-7d58-4f14-1e01">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="5aa8-1537-7506-e149" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="5b6b-1427-2a45-dd0c">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="5aa8-1537-7506-e149" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="c435-6b14-f77e-3c72">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="2eb5-a7b0-0b76-0841" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="2622-06cf-429e-12bc" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="increment" value="1" field="59f9-ccf5-1155-fb05">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="2622-06cf-429e-12bc" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="2" field="b007-7d58-4f14-1e01">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="8ae4-9684-92b3-ecf9" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base (25x25)" id="36e3-96be-9dea-303c" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
           </infoLinks>
           <costs>
@@ -535,6 +624,13 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                   <costs>
                     <cost name="pts" typeId="points" value="4"/>
                   </costs>
+                  <modifiers>
+                    <modifier type="set" value="true" field="hidden">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="8ae4-9684-92b3-ecf9" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                 </entryLink>
                 <entryLink import="true" name="Halberd" hidden="false" id="fc29-31ca-b640-61b7" type="selectionEntry" targetId="f0a5-1b2e-3d2b-d540" sortIndex="2">
                   <costs>
@@ -651,6 +747,16 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="add" value="31d7-4049-b1ba-f056" field="category">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="self" childId="5aa8-1537-7506-e149" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="add" value="e5f1-f9ee-d533-b2dc" field="category">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="self" childId="2622-06cf-429e-12bc" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </selectionEntry>
       </selectionEntries>
@@ -751,6 +857,16 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                 <condition type="atLeast" value="1" field="selections" scope="parent" childId="551d-34fe-3832-416d" shared="true" includeChildSelections="true"/>
               </conditions>
             </modifier>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="7dcf-5663-1271-4a55" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="add" value="ca7e-d004-ccde-caf3" field="category">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="7dcf-5663-1271-4a55" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <categoryLinks>
             <categoryLink name="Regular Infantry" hidden="false" id="44f0-56f1-e39b-725f" targetId="f3f7-ca43-674e-115f" primary="false"/>
@@ -760,7 +876,7 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" id="f7ed-55aa-9da7-c8d6" hidden="false" sortIndex="3">
+        <selectionEntryGroup name="Command" id="f7ed-55aa-9da7-c8d6" hidden="false" sortIndex="4">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Officer" hidden="false" id="b3a7-9cee-9aa5-bc6f" subType="crew" flatten="true" sortIndex="1">
               <constraints>
@@ -830,9 +946,14 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
             </modifier>
           </modifiers>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Detatchment" id="d0da-2818-bca2-67d6" hidden="false" sortIndex="2">
+        <selectionEntryGroup name="Detachment" id="d0da-2818-bca2-67d6" hidden="false" sortIndex="3">
           <entryLinks>
             <entryLink import="true" name="Detachment" hidden="false" id="f612-b33c-674b-d6de" targetId="551d-34fe-3832-416d" type="selectionEntry" sortIndex="1"/>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Origins of the Infamous" id="3f43-14da-1294-8d96" hidden="false" sortIndex="2">
+          <entryLinks>
+            <entryLink import="true" name="The Mercenary Hosts" hidden="false" id="10d7-6816-918a-b0fa" type="selectionEntry" targetId="7dcf-5663-1271-4a55"/>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -972,7 +1093,7 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" id="e92e-04b5-ed02-e2ca" hidden="false" sortIndex="3">
+        <selectionEntryGroup name="Command" id="e92e-04b5-ed02-e2ca" hidden="false" sortIndex="4">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Veteran Officer" hidden="false" id="c3d8-e6b9-65ee-490e" subType="crew" flatten="true" sortIndex="1">
               <constraints>
@@ -1056,9 +1177,14 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
             </modifier>
           </modifiers>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Detatchment" id="a653-d9f0-1751-9c6b" hidden="false" sortIndex="2">
+        <selectionEntryGroup name="Detatchment" id="a653-d9f0-1751-9c6b" hidden="false" sortIndex="3">
           <entryLinks>
             <entryLink import="true" name="Detachment" hidden="false" id="3739-950a-76d8-ce2e" targetId="551d-34fe-3832-416d" type="selectionEntry" sortIndex="1"/>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Origins of the Infamous" id="6381-9bf2-aef1-6598" hidden="false" sortIndex="2">
+          <entryLinks>
+            <entryLink import="true" name="The Mercenary Hosts" hidden="false" id="6071-e3fb-3731-18c4" type="selectionEntry" targetId="7dcf-5663-1271-4a55"/>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -1110,6 +1236,7 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="e68c-9c19-855c-8f24"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="The Outcast Knights" hidden="false" id="afb5-4186-3d1a-b59a" type="selectionEntry" targetId="6c41-fb63-576c-4703" sortIndex="4"/>
           </entryLinks>
           <infoLinks>
             <infoLink name="Freeblade Knight" id="95fa-8248-a1dc-d67d" hidden="false" type="profile" targetId="1a5a-9056-d781-d594"/>
@@ -1147,7 +1274,7 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mount" id="d1d6-702b-3356-5c89" hidden="false" flatten="true" sortIndex="4" collective="true">
+            <selectionEntryGroup name="Mount" id="d1d6-702b-3356-5c89" hidden="false" flatten="true" sortIndex="5" collective="true">
               <entryLinks>
                 <entryLink import="true" name="Barded Warhorse" hidden="false" id="b05f-98d8-9882-e386" type="selectionEntry" targetId="1de9-ef8b-c9eb-5044" sortIndex="2">
                   <constraints>
@@ -1256,6 +1383,13 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
           </infoLinks>
         </infoGroup>
       </infoGroups>
+      <modifiers>
+        <modifier type="add" value="e858-9106-dd26-7e12" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="6c41-fb63-576c-4703" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Veteran Freeblade" hidden="false" id="07d6-848b-1741-ae3e">
       <profiles>
@@ -1277,6 +1411,7 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6eec-cf93-a00f-29fd"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="The Outcast Knights" hidden="false" id="93a2-9406-65c3-8e9c" type="selectionEntry" targetId="6c41-fb63-576c-4703" sortIndex="4"/>
           </entryLinks>
           <infoLinks>
             <infoLink name="Veteran Freeblade" id="4a64-1230-d417-635c" hidden="false" type="profile" targetId="4c1f-5fe0-cdd2-d886"/>
@@ -1314,7 +1449,7 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mount" id="4e67-7df1-efeb-f7fd" hidden="false" flatten="true" sortIndex="4" collective="true">
+            <selectionEntryGroup name="Mount" id="4e67-7df1-efeb-f7fd" hidden="false" flatten="true" sortIndex="5" collective="true">
               <entryLinks>
                 <entryLink import="true" name="Barded Warhorse" hidden="false" id="fc15-7b93-e7d8-4d35" type="selectionEntry" targetId="1de9-ef8b-c9eb-5044" sortIndex="2">
                   <constraints>
@@ -1445,6 +1580,13 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
           </infoLinks>
         </infoGroup>
       </infoGroups>
+      <modifiers>
+        <modifier type="add" value="e858-9106-dd26-7e12" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="6c41-fb63-576c-4703" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Hireling Outriders" hidden="false" id="b054-af78-cd52-a625">
       <profiles>
@@ -1477,6 +1619,7 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                 <cost name="pts" typeId="points" value="1"/>
               </costs>
             </entryLink>
+            <entryLink import="true" name="The Outlaw &amp; Renegade" hidden="false" id="ac79-c4b3-f897-10d7" type="selectionEntry" targetId="8906-917f-76ba-ca24" sortIndex="7"/>
           </entryLinks>
           <infoLinks>
             <infoLink name="Hireling Outrider" id="a5f7-1bb5-871d-fcca" hidden="false" type="profile" targetId="60d4-dc55-c8a8-a681"/>
@@ -1534,7 +1677,7 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="285c-666b-e8e2-6784"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Special Rules" id="b736-32bc-ad8c-8557" hidden="false" flatten="true" collective="true" sortIndex="6">
+            <selectionEntryGroup name="Special Rules" id="b736-32bc-ad8c-8557" hidden="false" flatten="true" collective="true" sortIndex="8">
               <selectionEntries>
                 <selectionEntry type="upgrade" import="true" name="Feigned Flight" hidden="false" id="943e-6638-3e5a-2d87" collective="true" sortIndex="1">
                   <infoLinks>
@@ -1571,6 +1714,7 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
+            <selectionEntryGroup name="Origins of the Infamous" id="8e52-bf98-dee6-bd48" hidden="false" collective="true" sortIndex="6"/>
           </selectionEntryGroups>
         </selectionEntry>
       </selectionEntries>
@@ -1679,6 +1823,11 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
         <modifier type="add" value="030d-709f-48f3-f774" field="category">
           <conditions>
             <condition type="atLeast" value="1" field="selections" scope="self" childId="19b2-a52b-7113-8ae9" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" value="cbae-50eb-ec06-7fb4" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="8906-917f-76ba-ca24" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -1805,6 +1954,532 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
         </entryLink>
       </entryLinks>
     </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Outcast Wizard" hidden="false" id="ddf6-ca31-05c4-9b82" collective="false">
+      <profiles>
+        <profile name="Outcast Wizard" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="b669-6472-3d85-daa5">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Regular infantry (character)</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">1</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Outcast Wizard" hidden="false" id="f394-f889-2d46-6e1c" sortIndex="1">
+          <infoLinks>
+            <infoLink name="Outcast Wizard" id="15a4-298e-e220-83c9" hidden="false" type="profile" targetId="d233-4946-d756-a7c6">
+              <modifiers>
+                <modifier type="increment" value="1" field="b007-7d58-4f14-1e01">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="5aa8-1537-7506-e149" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="5b6b-1427-2a45-dd0c">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="5aa8-1537-7506-e149" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="c435-6b14-f77e-3c72">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="2eb5-a7b0-0b76-0841" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="self" childId="2622-06cf-429e-12bc" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="increment" value="1" field="59f9-ccf5-1155-fb05">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="2622-06cf-429e-12bc" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="2" field="b007-7d58-4f14-1e01">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="8ae4-9684-92b3-ecf9" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Base (25x25)" id="29b2-68f3-225e-c29b" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="45"/>
+          </costs>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="bee3-a0b2-b510-c391" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="b94a-95de-50b8-16c2"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="c846-0423-b11b-86d5"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Magic Items" hidden="false" id="87e0-6eae-277e-3131" type="selectionEntryGroup" targetId="1539-fd78-88f-badd" sortIndex="7">
+              <constraints>
+                <constraint type="max" value="75" field="points" scope="parent" shared="false" id="2320-ec33-ae80-c88b"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Infamous Origin" hidden="false" id="0430-da46-17a0-f8dd" type="selectionEntryGroup" targetId="11e8-3863-9a43-3fba" sortIndex="2"/>
+          </entryLinks>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Command" id="33f4-02ad-8b6f-597e" hidden="false" sortIndex="3">
+              <entryLinks>
+                <entryLink import="true" name="General" hidden="false" id="0a80-dcd5-fc50-5200" type="selectionEntry" targetId="7d76-b1a1-1535-a04c"/>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Wizard Level" id="b102-e8a9-8854-6793" hidden="false" defaultSelectionEntryId="ac13bfcd-152d3603" sortIndex="5">
+              <entryLinks>
+                <entryLink import="true" name="Wizard Level 1" hidden="false" id="4c17-8c12-c09d-b55e" type="selectionEntry" targetId="7d84-39e9-a5f-947e" sortIndex="1"/>
+                <entryLink import="true" name="Wizard Level 2" hidden="false" id="d3dc-6e33-bb78-ba95" type="selectionEntry" targetId="8e47-73e8-f7f9-808" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="30"/>
+                  </costs>
+                </entryLink>
+                <entryLink import="true" name="Wizard Level 3" hidden="false" id="04b1-4069-0b6e-bd22" type="selectionEntry" targetId="59f1-ac46-8123-3f8d" sortIndex="3">
+                  <costs>
+                    <cost name="pts" typeId="points" value="60"/>
+                  </costs>
+                </entryLink>
+              </entryLinks>
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="c44e-ffcc-3318-c3b5"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="449d-129a-8ac6-3541" includeChildSelections="false"/>
+              </constraints>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Lores of Magic" id="c873-8807-e9b9-4731" hidden="false" sortIndex="6">
+              <entryLinks>
+                <entryLink import="true" name="Battle Magic" hidden="false" id="c427-aaa1-c1ee-fe58" type="selectionEntry" targetId="5b2e-35c6-f987-741e" sortIndex="1"/>
+                <entryLink import="true" name="Daemonology" hidden="false" id="32de-d817-28a1-a478" type="selectionEntry" targetId="c3ec-be1b-91ce-96ed" sortIndex="2"/>
+                <entryLink import="true" name="Dark Magic" hidden="false" id="e077-1fb7-1614-c72b" type="selectionEntry" targetId="e9f-f0fb-d874-4151" sortIndex="3"/>
+                <entryLink import="true" name="Elementalism" hidden="false" id="0815-ee48-67b1-fae6" type="selectionEntry" targetId="2b23-3ae1-f5ad-8e7a" sortIndex="4"/>
+                <entryLink import="true" name="Illusion" hidden="false" id="feec-e24a-7e53-ca79" type="selectionEntry" targetId="af66-671f-5a42-a118" sortIndex="5"/>
+                <entryLink import="true" name="Necromancy" hidden="false" id="06f8-5f45-b948-1ee2" type="selectionEntry" targetId="3d31-fd64-e074-700a" sortIndex="6"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="fbef-3897-5936-80f6"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="a2e4-93df-266b-cd50" includeChildSelections="false"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <comment>Hide if not a wizard</comment>
+                  <conditions>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="7d84-39e9-a5f-947e" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="8e47-73e8-f7f9-808" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="59f1-ac46-8123-3f8d" shared="true"/>
+                    <condition type="equalTo" value="0" field="selections" scope="parent" childId="50bd-b918-574a-60c3" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="set" value="2" field="a2e4-93df-266b-cd50">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="8123-d36e-9442-13a1" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Mount" id="4d82-3102-3b4b-27c1" hidden="false" sortIndex="4">
+              <entryLinks>
+                <entryLink import="true" name="Warhorse" hidden="false" id="ac4d-28b6-c277-6737" type="selectionEntry" targetId="6ca1-80d3-ca3-b92a">
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="59a6-8113-1b58-c21a" includeChildSelections="false"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="12"/>
+                  </costs>
+                  <categoryLinks>
+                    <categoryLink name="Light Cavalry" hidden="false" id="2eb3-ff60-fa8b-2e9d" targetId="600c-7d08-5be1-fe0c" primary="false"/>
+                  </categoryLinks>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="fd0d-98b6-933b-15cc"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="eb29-92c9-b0ee-4231"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="3261-ad02-56cd-19bb" targetId="f3f7-ca43-674e-115f" primary="false"/>
+          </categoryLinks>
+          <modifiers>
+            <modifier type="remove" value="f3f7-ca43-674e-115f" field="category">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="parent" childId="mount" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="add" value="e5f1-f9ee-d533-b2dc" field="category">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="self" childId="2622-06cf-429e-12bc" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </selectionEntry>
+      </selectionEntries>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="a699-ce7d-f30e-8be7" hidden="false">
+          <infoLinks>
+            <infoLink name="Magical Attacks" id="ae2e-e642-1f96-62d0" hidden="false" type="profile" targetId="2125-6aa2-f782-42bf"/>
+            <infoLink name="Magic Resistance" id="83dd-5f03-ecf3-20e2" hidden="false" type="profile" targetId="90ed-c9be-a611-79cc">
+              <modifiers>
+                <modifier type="append" value="(-1)" field="name"/>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Untutored Arcanist" id="afb9-2277-7701-1635" hidden="false" type="profile" targetId="96ca-2ea5-617-1189"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <categoryLinks>
+        <categoryLink name="Faction: Kingdom of Bretonnia" hidden="false" id="8e8c-2ebe-fa26-87b0" primary="false" targetId="31d7-4049-b1ba-f056"/>
+      </categoryLinks>
+      <comment>Renegade Crown Version</comment>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="The Mercenary Hosts" hidden="false" id="7dcf-5663-1271-4a55" collective="true">
+      <costs>
+        <cost name="pts" typeId="points" value="10"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Phalanx" id="cd01-c7d5-990c-b01e" hidden="false" type="profile" targetId="41ff-33d8-aba3-0145"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="37bd-ad1f-07c9-bba2" includeChildSelections="true"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="be7c-e14b-9455-d220"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="37bd-ad1f-07c9-bba2">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="2eb5-a7b0-0b76-0841" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="The Outcast Knights" hidden="false" id="6c41-fb63-576c-4703" collective="true">
+      <costs>
+        <cost name="pts" typeId="points" value="2"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Lance Formation" id="2e57-923c-df52-69ed" hidden="false" type="profile" targetId="cc9a-f69f-d2e7-b352"/>
+        <infoLink name="Noble Disdain" id="be6d-4810-d88c-9127" hidden="false" type="profile" targetId="c05f-2c20-3462-a709"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2f12-b8af-b6d6-3b3f"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="The Outlaw &amp; Renegade" hidden="false" id="8906-917f-76ba-ca24" collective="true">
+      <costs>
+        <cost name="pts" typeId="points" value="1"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="Ambushers" id="976c-ff8d-86c6-f7a5" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ca0f-6a4e-205d-75c9"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Border Princes Brigands" hidden="false" id="6159-e51f-882c-9063" collective="false">
+      <profiles>
+        <profile name="Border Princes Brigands" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="4a24-855f-56da-5239">
+          <characteristics>
+            <characteristic name="Troop Type" typeId="5d94-6b94-bd89-1944">Regular infantry</characteristic>
+            <characteristic name="Unit Size" typeId="80a1-bb6f-66e4-4a5b">10+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Brigand" hidden="false" id="0e61-796b-3b3f-0cf6" sortIndex="1" collapsible="false">
+          <infoLinks>
+            <infoLink name="Brigand" id="9c1c-34dc-c597-5366" hidden="false" type="profile" targetId="d83-ee06-861e-c85f">
+              <modifiers>
+                <modifier type="set" value="Desperado" field="name">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="6611-b707-8d1b-c7f9" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="6611-b707-8d1b-c7f9" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="c435-6b14-f77e-3c72">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="6611-b707-8d1b-c7f9" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="b007-7d58-4f14-1e01">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="8a05-9b69-cf65-d457" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
+            <infoLink name="Base (25x25)" id="4f35-4495-f8f4-a27f" hidden="false" type="profile" targetId="193c-4d0d-de6b-bbb1"/>
+          </infoLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="4"/>
+          </costs>
+          <entryLinks>
+            <entryLink import="true" name="Hand Weapon" hidden="false" id="d3e0-5cda-0114-8766" type="selectionEntry" targetId="721d-36e3-388a-c0d6" sortIndex="1">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="d438-f166-1248-b384"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="f61b-d194-a28a-3bf3"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Light Armour" hidden="false" id="d494-7ccf-ff36-8891" type="selectionEntry" targetId="7cab-40e6-f134-de78" sortIndex="3">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="false" id="950e-cc24-a5f4-7fed"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="462c-4005-b4bf-65bd"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Equipment" id="8865-e5aa-fc58-704d" hidden="false" sortIndex="2" flatten="true">
+              <entryLinks>
+                <entryLink import="true" name="Additional Hand Weapon" hidden="false" id="8dfe-6ffd-caed-9258" type="selectionEntry" targetId="8943-3e16-db2a-b7f3" sortIndex="1">
+                  <costs>
+                    <cost name="pts" typeId="points" value="2"/>
+                  </costs>
+                </entryLink>
+                <entryLink import="true" name="Shield" hidden="false" id="00e2-cef6-bfd9-0746" type="selectionEntry" targetId="6192-f9f1-5d53-2042" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="1"/>
+                  </costs>
+                </entryLink>
+              </entryLinks>
+              <constraints>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="false" id="e266-cf86-ea34-0eed"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="4853-3422-f180-3500" includeChildSelections="false"/>
+              </constraints>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Ranged Weapons" id="cadf-75ad-92fd-d4b7" hidden="false" sortIndex="4" flatten="true">
+              <entryLinks>
+                <entryLink import="true" name="Pistol" hidden="false" id="f8e5-51d8-3853-9843" type="selectionEntry" targetId="d3c7-5222-61e8-9920" sortIndex="1">
+                  <costs>
+                    <cost name="pts" typeId="points" value="2"/>
+                  </costs>
+                </entryLink>
+                <entryLink import="true" name="Blunderbuss" hidden="false" id="47d0-56bd-844b-a9ff" type="selectionEntry" targetId="2219-ef48-79aa-8196" sortIndex="3" collective="false">
+                  <costs>
+                    <cost name="pts" typeId="points" value="4"/>
+                  </costs>
+                </entryLink>
+                <entryLink import="true" name="Crossbow" hidden="false" id="92a6-d052-9a74-8011" type="selectionEntry" targetId="c3af-77b3-b2d5-20db" sortIndex="2">
+                  <costs>
+                    <cost name="pts" typeId="points" value="3"/>
+                  </costs>
+                </entryLink>
+              </entryLinks>
+              <constraints>
+                <constraint type="min" value="0" field="selections" scope="parent" shared="false" id="f075-21d8-7694-baa2"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="6c3b-1b73-48bb-b1f9" includeChildSelections="false"/>
+              </constraints>
+            </selectionEntryGroup>
+            <selectionEntryGroup name="Command" id="5277-a809-0384-cefc" hidden="false" sortIndex="5">
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Desperado" hidden="false" id="6611-b707-8d1b-c7f9" sortIndex="1" collapsible="true">
+                  <infoLinks>
+                    <infoLink name="Champion" id="152e-2a1d-ec95-6885" hidden="false" type="profile" targetId="5f1c-fd04-b0d5-d5e"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="7"/>
+                  </costs>
+                  <entryLinks>
+                    <entryLink import="true" name="Magic Items" hidden="false" id="1855-c542-d95b-9333" type="selectionEntryGroup" targetId="1539-fd78-88f-badd" sortIndex="5">
+                      <constraints>
+                        <constraint type="max" value="50" field="points" scope="parent" shared="false" id="e167-3ccc-35b4-ba19"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="ec0e-7dcb-6663-4275" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="6159-e51f-882c-9063" shared="true" id="d98d-bcde-faca-a8fd" includeChildSelections="true"/>
+                  </constraints>
+                  <comment>upgrades: 412b332b-7ab45579</comment>
+                  <categoryLinks>
+                    <categoryLink name="Regular Infantry" hidden="false" id="cdb3-4dcb-d9dc-1708" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                    <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="ac64-00ec-e1d6-a031" targetId="may-have-armour" primary="false"/>
+                    <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="92fe-f6f0-9eaa-8c72" targetId="may-have-shield" primary="false"/>
+                  </categoryLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Standard Bearer" hidden="false" id="6406-7206-573e-5826" sortIndex="2" collapsible="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="5"/>
+                  </costs>
+                  <infoLinks>
+                    <infoLink name="Standard Bearer" id="36f0-b8cd-ab39-3e1e" hidden="false" type="profile" targetId="bcf8-d942-102e-b155"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="8e5e-1610-0f53-1c88" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="6159-e51f-882c-9063" shared="true" id="0471-688e-553a-8f19" includeChildSelections="true"/>
+                  </constraints>
+                  <comment>upgrades: 412b332b-7ab45579</comment>
+                  <categoryLinks>
+                    <categoryLink name="Regular Infantry" hidden="false" id="b478-f015-42fb-f9e7" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                    <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="d55d-2e97-f1a5-cc80" targetId="may-have-armour" primary="false"/>
+                    <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="bb99-f2e1-a12c-98ef" targetId="may-have-shield" primary="false"/>
+                  </categoryLinks>
+                </selectionEntry>
+                <selectionEntry type="upgrade" import="true" name="Musician" hidden="false" id="c00c-a69f-cc41-880c" sortIndex="3" collapsible="true">
+                  <costs>
+                    <cost name="pts" typeId="points" value="5"/>
+                  </costs>
+                  <infoLinks>
+                    <infoLink name="Musician" id="75ae-4417-10b1-a4d9" hidden="false" type="profile" targetId="40f2-dd77-f0ca-3663"/>
+                  </infoLinks>
+                  <constraints>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="false" id="a721-8dd8-e63d-acf2" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="6159-e51f-882c-9063" shared="true" id="84c5-8868-6401-19b7" includeChildSelections="true"/>
+                  </constraints>
+                  <comment>upgrades: 412b332b-7ab45579</comment>
+                  <categoryLinks>
+                    <categoryLink name="Regular Infantry" hidden="false" id="8b9d-1c26-34ee-a386" targetId="f3f7-ca43-674e-115f" primary="false"/>
+                    <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="040d-3ec9-3ded-4b10" targetId="may-have-armour" primary="false"/>
+                    <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="fee1-3911-96cd-a8ad" targetId="may-have-shield" primary="false"/>
+                  </categoryLinks>
+                </selectionEntry>
+              </selectionEntries>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f47d-5502-7d7a-cf89"/>
+              </constraints>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <constraints>
+            <constraint type="min" value="10" field="selections" scope="parent" shared="true" id="413a-f617-fe03-2674"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink name="Regular Infantry" hidden="false" id="eba0-4c13-48e4-9d93" targetId="f3f7-ca43-674e-115f" primary="false"/>
+            <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="848d-0eff-19ac-8bbb" targetId="may-have-armour"/>
+            <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="f445-1352-4784-ff4b" targetId="may-have-shield"/>
+          </categoryLinks>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Formation" id="20d0-c619-8943-2546" hidden="false" defaultSelectionEntryId="9e1f-551e-17b5-fd68" sortIndex="4">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Open Order" hidden="false" id="888a-818c-0f1d-cedc" sortIndex="1">
+              <infoLinks>
+                <infoLink name="Open Order" id="8b35-875b-5037-bb26" hidden="false" type="profile" targetId="5b67-8535-146c-7cea"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f8e3-6d6f-36e4-4cef" includeChildSelections="false"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Close Order" hidden="false" id="ec2d-affd-00a8-5962" sortIndex="2">
+              <infoLinks>
+                <infoLink name="Close Order" id="562a-5f65-07fe-adff" hidden="false" type="profile" targetId="883e-e1b1-4fe9-5912"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="db25-5ad6-1cb5-d42a" includeChildSelections="false"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="af43-c97c-49ef-4831" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="1" field="af43-c97c-49ef-4831">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="3332-57cc-4e2d-954f"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="false" id="d377-6888-f4d7-0836" sortIndex="3">
+              <infoLinks>
+                <infoLink name="Skirmishers" id="bfb0-7ec3-1ddd-b1bc" hidden="false" type="profile" targetId="59a5-7eca-ee35-96ac"/>
+              </infoLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9a19-7c11-a5ce-1e09" includeChildSelections="false"/>
+                <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="6c6e-d5ed-43ad-9d57" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="increment" value="1" field="6c6e-d5ed-43ad-9d57">
+                  <repeats>
+                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="2d64-a86e-d343-fc9c"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b224-a4f4-5887-7bb9" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="02b5-4138-3c03-96f5" includeChildSelections="false"/>
+          </constraints>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Special Rules" id="f496-a0ba-f54b-e67e" hidden="false" sortIndex="3">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="true" id="e20b-f6a0-d613-bc40" sortIndex="1">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6e92-6ef2-f273-78e0" includeChildSelections="false"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Ambushers" id="ae6a-ed40-d2d9-c588" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="2" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="6159-e51f-882c-9063" childId="model" shared="true" roundUp="false" id="b3a6-67da-e442-d58c" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="d377-6888-f4d7-0836" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Scouts" hidden="true" id="14e1-6711-a60a-3973" sortIndex="2">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f3ed-a11a-b90a-cd74" includeChildSelections="false"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Scouts" id="c35e-6c0a-50aa-4087" hidden="false" type="profile" targetId="fe5e-8838-7fbd-a7ec"/>
+              </infoLinks>
+              <modifiers>
+                <modifier type="increment" value="1" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="6159-e51f-882c-9063" childId="model" shared="true" roundUp="false" id="24bf-b323-2e1e-9824" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+                <modifier type="set" value="false" field="hidden">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="d377-6888-f4d7-0836" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="The Wandering Duelists" hidden="false" id="8a05-9b69-cf65-d457">
+              <modifiers>
+                <modifier type="increment" value="2" field="points">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="6159-e51f-882c-9063" childId="model" shared="true" roundUp="false" id="d55d-4f60-6ce8-3f74" includeChildSelections="true"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <infoLinks>
+                <infoLink name="The Wandering Duelists" id="97c5-f031-2476-bdfb" hidden="false" type="profile" targetId="c225-027e-5757-6fd9"/>
+              </infoLinks>
+            </selectionEntry>
+          </selectionEntries>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ed50-7688-62cd-c937"/>
+          </constraints>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <infoGroups>
+        <infoGroup name="Special Rules" id="2007-a37b-2037-f2e7" hidden="false">
+          <infoLinks>
+            <infoLink name="Horde" id="585d-42cc-cdb8-616b" hidden="false" type="profile" targetId="9cba-89a5-1796-5fe4"/>
+            <infoLink name="Impetuous" id="45f1-daa3-c231-1b72" hidden="false" type="profile" targetId="b664-8530-a988-7ba9"/>
+            <infoLink name="Levies" id="50ca-7e55-37b9-c36a" hidden="false" type="profile" targetId="8cc3-d6f5-da17-6600"/>
+            <infoLink name="Motley Crew" id="d8c9-5bf2-5e19-6ab3" hidden="false" type="profile" targetId="6359-4018-5cd4-3720"/>
+            <infoLink name="Open Order" id="0d7a-59c9-6262-0dde" hidden="false" type="profile" targetId="5b67-8535-146c-7cea"/>
+            <infoLink name="Warband" id="af99-fbfa-21d0-678c" hidden="false" type="profile" targetId="505f-e12d-2e36-31d0"/>
+          </infoLinks>
+        </infoGroup>
+      </infoGroups>
+      <categoryLinks>
+        <categoryLink name="Faction: Kingdom of Bretonnia" hidden="false" id="88b3-af62-1842-c5db" primary="false" targetId="31d7-4049-b1ba-f056"/>
+      </categoryLinks>
+      <comment>Renegade Crown Version</comment>
+      <modifiers>
+        <modifier type="add" value="1c49-d35c-2d41-8dcf" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="8a05-9b69-cf65-d457" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </selectionEntry>
   </sharedSelectionEntries>
   <entryLinks>
     <entryLink import="true" name="Renegade Captain" hidden="false" id="2eb7-f13a-07b0-3b28" type="selectionEntry" targetId="fed5-80cb-a11c-3272">
@@ -1928,10 +2603,27 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
         <categoryLink targetId="633f-f67a-1b6a-d203" id="add2-6018-2ef9-9c50" primary="true" name="Special"/>
       </categoryLinks>
     </entryLink>
-    <entryLink import="true" name="Border Princes Brigands" hidden="false" id="af36-cddb-9e42-6fe8" type="selectionEntry" targetId="a812242e-b7308d38">
+    <entryLink import="true" name="Outcast Wizard" hidden="false" id="dd3d-de3c-3e3c-a367" type="selectionEntry" targetId="ddf6-ca31-05c4-9b82">
       <categoryLinks>
-        <categoryLink targetId="2bfe-5863-46fe-d284" id="3d92-cd20-7a1c-4ff6" primary="true" name="Rare"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="69e3-a799-847f-a118" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+        <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="ff4e-1444-6700-9488" primary="true" name="Characters"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Free Company Militia" hidden="false" id="62d7-60e3-5bd1-1d45" type="selectionEntry" targetId="bd9f-3c86-c12a-fbb1">
+      <categoryLinks>
+        <categoryLink targetId="f0e3-2e32-8866-ea32" id="5e50-5a6b-c25a-7dff" primary="true" name="Core"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="9d08-25f0-2b07-8337" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Empire Archers" hidden="false" id="5823-7285-9aaf-65de" type="selectionEntry" targetId="9737-2bec-4f15-d7ca">
+      <categoryLinks>
+        <categoryLink targetId="f0e3-2e32-8866-ea32" id="4453-fcb3-0195-ffda" primary="true" name="Core"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="e17a-c34d-7190-107f" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Border Princes Brigands" hidden="false" id="5467-2f2a-58d5-1a77" type="selectionEntry" targetId="6159-e51f-882c-9063">
+      <categoryLinks>
+        <categoryLink targetId="2bfe-5863-46fe-d284" id="3596-ed78-3909-aa8e" primary="true" name="Rare"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="59dc-e23f-ee11-9044" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
       </categoryLinks>
     </entryLink>
   </entryLinks>
@@ -1980,7 +2672,7 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
                     <cost name="pts" typeId="points" value="6"/>
                   </costs>
                 </entryLink>
-                <entryLink import="true" name="Repeater Handbow" hidden="false" id="f5b1-ac87-e1f5-a104" type="selectionEntry" targetId="4f02-c0c2-a8f7-1672" sortIndex="2">
+                <entryLink import="true" name="Repeater Handgun" hidden="false" id="f5b1-ac87-e1f5-a104" type="selectionEntry" targetId="1748-87d-961c-9278" sortIndex="2">
                   <costs>
                     <cost name="pts" typeId="points" value="8"/>
                   </costs>
@@ -2230,6 +2922,42 @@ If a unit with this special rule wishes to adopt Marching Column and march at tr
           <conditions>
             <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
           </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 Freeblade or Veteran Freeblade Knight may have the Outcast Knight Origin for each character in your army that has the Renegade Knight Infamous Origin" id="e858-9106-dd26-7e12" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="6cb9-04f2-c1e6-774e" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="6cb9-04f2-c1e6-774e">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="5aa8-1537-7506-e149" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 unit of Hireling Outriders may have the Outlaw &amp; Renegade Origin for each character in your army that has the Noble Outlaw Infamous Origin" id="cbae-50eb-ec06-7fb4" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="a6e3-73e7-c42b-cffd" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="a6e3-73e7-c42b-cffd">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="2622-06cf-429e-12bc" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 Border Princes Brigands may have the Wandering Duelists Origin for each character in your army that has the Wandering Diestro Infamous Origin" id="1c49-d35c-2d41-8dcf" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="c036-3c19-ff33-02d7" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="c036-3c19-ff33-02d7">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="8ae4-9684-92b3-ecf9" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
         </modifier>
       </modifiers>
     </categoryEntry>
