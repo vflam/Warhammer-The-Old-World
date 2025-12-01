@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="153" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="154" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -13373,7 +13373,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
         <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">2 (6)</characteristic>
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-2 (-3)</characteristic>
         <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Armour Bane (1), Bombardment, Cumbersome, Move or Shoot, Multiple Wounds (D3)</characteristic>
-        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
+        <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">This weapon does not use its crew’s Ballistic Skill. Instead, it shoots like a stone thrower, using the Bombardment special rule. This weapon uses a 5&quot; blast template and the Black Powder Misfire table. The Multiple Wounds (D3) special rule applies only to a single model whose base lies underneath the central hole of the blast template.</characteristic>
       </characteristics>
     </profile>
     <profile name="Stone Thrower" typeId="a378-c633-912d-11ce" typeName="Weapon" hidden="false" id="bfbc-c435-2046-4691">
