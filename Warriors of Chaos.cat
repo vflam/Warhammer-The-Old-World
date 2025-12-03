@@ -4107,19 +4107,6 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <categoryLink name="MAY_HAVE_ARMOUR" hidden="false" id="3ff0-8ca5-2c7b-ddad" targetId="may-have-armour"/>
             <categoryLink name="MAY_HAVE_SHIELD" hidden="false" id="bd16-39da-66e3-88c7" targetId="may-have-shield"/>
           </categoryLinks>
-          <modifiers>
-            <modifier type="remove" value="600c-7d08-5be1-fe0c" field="category" id="3888-fb2e-491b-593c">
-              <comment>if mounted</comment>
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="c96a-608-5de4-b943" includeChildSelections="true" shared="true"/>
-                    <condition type="atLeast" value="1" field="selections" scope="self" childId="mount" includeChildSelections="true" shared="true"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="38f5-cb3d-b175-dd70" collective="true" sortIndex="6">
               <costs>
@@ -5863,7 +5850,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       <selectionEntryGroups>
         <selectionEntryGroup name="Chaotic Traits" id="d24f-969f-0df7-ea90" hidden="false">
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Battle Hunger" hidden="false" id="5115-cbe5-8929-61a5">
+            <selectionEntry type="upgrade" import="true" name="Battle Hunger" hidden="true" id="5115-cbe5-8929-61a5">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fd3e-e14e-dcce-1ef6" includeChildSelections="false"/>
               </constraints>
@@ -5876,9 +5863,23 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                     <condition type="lessThan" value="1" field="selections" scope="parent" childId="5115-cbe5-8929-61a5" shared="true"/>
                   </conditions>
                 </modifier>
+                <modifier type="set" value="false" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5c55-f9d6-b181-92f8" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="f3f7-ca43-674e-115f" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="ca7e-d004-ccde-caf3" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="f3f7-ca43-674e-115f" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="5c55-f9d6-b181-92f8" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="ca7e-d004-ccde-caf3" shared="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
               </modifiers>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Brazen Will" hidden="false" id="bc5f-6b33-a4e4-4749">
+            <selectionEntry type="upgrade" import="true" name="Brazen Will" hidden="true" id="bc5f-6b33-a4e4-4749">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3b69-0914-3ba0-6c82" includeChildSelections="false"/>
               </constraints>
@@ -5888,8 +5889,28 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               <modifiers>
                 <modifier type="set" value="15 pts/unit" field="annotation">
                   <conditions>
-                    <condition type="lessThan" value="1" field="selections" scope="parent" childId="5115-cbe5-8929-61a5" shared="true"/>
+                    <condition type="lessThan" value="1" field="selections" scope="parent" childId="bc5f-6b33-a4e4-4749" shared="true"/>
                   </conditions>
+                </modifier>
+                <modifier type="set" value="false" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="ca7e-d004-ccde-caf3" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5c55-f9d6-b181-92f8" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="2c85-5f2b-9288-1257" shared="true" includeChildSelections="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="f3f7-ca43-674e-115f" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="f3f7-ca43-674e-115f" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2c85-5f2b-9288-1257" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="5c55-f9d6-b181-92f8" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="ca7e-d004-ccde-caf3" shared="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
             </selectionEntry>
@@ -5921,9 +5942,19 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                     <condition type="lessThan" value="1" field="selections" scope="parent" childId="10af-dee0-d3bf-ea0a" shared="true"/>
                   </conditions>
                 </modifier>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="62fb-f89d-afc-1cf1" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2505-873d-1655-3b0b" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
               </modifiers>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Dark Hearts" hidden="false" id="2dd7-93e7-e9fb-1ce2">
+            <selectionEntry type="upgrade" import="true" name="Dark Hearts" hidden="true" id="2dd7-93e7-e9fb-1ce2">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="232b-2c33-427c-5f5e" includeChildSelections="false"/>
               </constraints>
@@ -5935,6 +5966,26 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                   <conditions>
                     <condition type="lessThan" value="1" field="selections" scope="parent" childId="2dd7-93e7-e9fb-1ce2" shared="true"/>
                   </conditions>
+                </modifier>
+                <modifier type="set" value="false" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="ca7e-d004-ccde-caf3" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5c55-f9d6-b181-92f8" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="2c85-5f2b-9288-1257" shared="true" includeChildSelections="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="f3f7-ca43-674e-115f" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="f3f7-ca43-674e-115f" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2c85-5f2b-9288-1257" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="5c55-f9d6-b181-92f8" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="ca7e-d004-ccde-caf3" shared="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
             </selectionEntry>
@@ -5949,6 +6000,31 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                 <modifier type="set" value="1 pts/model" field="annotation">
                   <conditions>
                     <condition type="lessThan" value="1" field="selections" scope="parent" childId="e1de-4582-08ce-81ba" shared="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="62fb-f89d-afc-1cf1" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2505-873d-1655-3b0b" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="count" min="0" max="2">
+                      <conditions>
+                        <condition type="instanceOf" value="2" field="selections" scope="parent" childId="e1de-4582-08ce-81ba" shared="true" includeChildSelections="true"/>
+                        <condition type="instanceOf" value="2" field="selections" scope="parent" childId="21b9-919d-4e7a-66f7" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="add" value="33c0-b0f2-9232-a51a" field="category" scope="parent">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="e1de-4582-08ce-81ba" shared="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
@@ -5973,7 +6049,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         </selectionEntryGroup>
         <selectionEntryGroup name="Chaotic Traits" id="8787-c8f0-a7f4-c6c9" hidden="false">
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Battle Hunger" hidden="false" id="9504-a86e-3ce7-4574">
+            <selectionEntry type="upgrade" import="true" name="Battle Hunger" hidden="true" id="9504-a86e-3ce7-4574">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a97f-49e0-9268-e389" includeChildSelections="false"/>
               </constraints>
@@ -5983,8 +6059,24 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               <costs>
                 <cost name="pts" typeId="points" value="10"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="ca7e-d004-ccde-caf3" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5c55-f9d6-b181-92f8" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="f3f7-ca43-674e-115f" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="f3f7-ca43-674e-115f" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="5c55-f9d6-b181-92f8" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="ca7e-d004-ccde-caf3" shared="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Brazen Will" hidden="false" id="97bf-9a81-b7ed-347a">
+            <selectionEntry type="upgrade" import="true" name="Brazen Will" hidden="true" id="97bf-9a81-b7ed-347a">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a987-9181-2062-5081" includeChildSelections="false"/>
               </constraints>
@@ -5994,6 +6086,28 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               <costs>
                 <cost name="pts" typeId="points" value="10"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="ca7e-d004-ccde-caf3" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5c55-f9d6-b181-92f8" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="2c85-5f2b-9288-1257" shared="true" includeChildSelections="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="f3f7-ca43-674e-115f" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="f3f7-ca43-674e-115f" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2c85-5f2b-9288-1257" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="5c55-f9d6-b181-92f8" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="ca7e-d004-ccde-caf3" shared="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Prophetic Foresight" hidden="false" id="5503-6524-be13-eb6c">
               <constraints>
@@ -6016,8 +6130,20 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               <costs>
                 <cost name="pts" typeId="points" value="20"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="62fb-f89d-afc-1cf1" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2505-873d-1655-3b0b" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
             </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Dark Hearts" hidden="false" id="eca3-2eb8-b509-d5f8">
+            <selectionEntry type="upgrade" import="true" name="Dark Hearts" hidden="true" id="eca3-2eb8-b509-d5f8">
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="990f-c28d-cc89-7453" includeChildSelections="false"/>
               </constraints>
@@ -6027,6 +6153,28 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               <costs>
                 <cost name="pts" typeId="points" value="20"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="ca7e-d004-ccde-caf3" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5c55-f9d6-b181-92f8" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="2c85-5f2b-9288-1257" shared="true" includeChildSelections="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="f3f7-ca43-674e-115f" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="f3f7-ca43-674e-115f" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2c85-5f2b-9288-1257" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="5c55-f9d6-b181-92f8" shared="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="ca7e-d004-ccde-caf3" shared="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Longstriders" hidden="false" id="21b9-919d-4e7a-66f7">
               <constraints>
@@ -6038,6 +6186,23 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               <costs>
                 <cost name="pts" typeId="points" value="15"/>
               </costs>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="62fb-f89d-afc-1cf1" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="2505-873d-1655-3b0b" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="add" value="33c0-b0f2-9232-a51a" field="category" scope="parent">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="21b9-919d-4e7a-66f7" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Enhanced Reflexes" hidden="false" id="b4ea-be46-6561-4a38">
               <constraints>
@@ -6480,6 +6645,29 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         <modifier type="increment" value="1" field="ae61-e8e5-82a3-0941">
           <repeats>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="fcd5-f6c5-0e9a-5d65" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+    <categoryEntry name="0-1 Longstrider Chaotic Trait per 1,000 points " id="33c0-b0f2-9232-a51a" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="c31d-59ac-9577-7afd" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="c31d-59ac-9577-7afd">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="7964-7716-923c-5088"/>
+          </repeats>
+        </modifier>
+        <modifier type="increment" value="1" field="c31d-59ac-9577-7afd">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="863e-6b55-a43f-af52" includeChildSelections="true"/>
           </repeats>
           <conditions>
             <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
