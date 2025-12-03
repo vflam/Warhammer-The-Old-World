@@ -2507,6 +2507,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                 <cost name="pts" typeId="points" value="1"/>
               </costs>
             </entryLink>
+            <entryLink import="true" name="Chaotic Cults" hidden="false" id="3f0f-be30-47c9-b34c" type="selectionEntryGroup" targetId="d8f9-34b1-c1fa-947c" sortIndex="6">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d140-c839-1a2f-063a" includeChildSelections="false"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <selectionEntryGroups>
             <selectionEntryGroup name="Equipment" hidden="false" id="5fc1-aea4-a17f-ff05" sortIndex="2" flatten="true">
@@ -2555,7 +2560,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="85d7-fda4-b8c0-1cdf" sortIndex="4">
+        <selectionEntryGroup name="Command" hidden="false" id="85d7-fda4-b8c0-1cdf" sortIndex="5">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Marauder Headman" hidden="false" id="4ba3-56cd-22f3-f3b5" subType="crew" sortIndex="1">
               <constraints>
@@ -2659,7 +2664,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Formation" id="ab88-208e-e0d8-120e" hidden="false" defaultSelectionEntryId="d3dd-3d17-1f10-fcd0" sortIndex="5">
+        <selectionEntryGroup name="Formation" id="ab88-208e-e0d8-120e" hidden="false" defaultSelectionEntryId="d3dd-3d17-1f10-fcd0" sortIndex="6">
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="Skirmishers" hidden="false" id="ef16-f207-2fde-9ab0" sortIndex="2">
               <infoLinks>
@@ -2721,9 +2726,60 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <condition type="atLeast" value="1" field="selections" scope="self" childId="ef16-f207-2fde-9ab0" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
+        <modifier type="increment" value="2" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="10af-dee0-d3bf-ea0a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="2dd7-93e7-e9fb-1ce2" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="e1de-4582-08ce-81ba" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="625f-4c66-1a06-3d53" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="20" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="5115-cbe5-8929-61a5" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="15" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="bc5f-6b33-a4e4-4749" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="10" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="01d2-dcba-bf06-eb23" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <entryLinks>
-        <entryLink import="true" name="Chaotic Cults" hidden="false" id="3f0f-be30-47c9-b34c" type="selectionEntryGroup" targetId="d8f9-34b1-c1fa-947c" sortIndex="3"/>
+        <entryLink import="true" name="Chaotic Traits" hidden="false" id="f5dd-4048-e0d2-d48e" type="selectionEntryGroup" targetId="d24f-969f-0df7-ea90" sortIndex="4">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="224c-44af-bcd5-2fbf" includeChildSelections="false"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Forsaken" hidden="false" id="1951-80d7-6aa4-acdd">
@@ -5375,7 +5431,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         </profile>
         <profile name="Prophetic Foresight" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4d65-6cf6-3680-e288">
           <characteristics>
-            <characteristic name="Description" typeId="9f84-4221-785a-db50">Enemy unit that deploy using the Scouts special rule cannot b deployed within 18&quot; of a unit which every model has this Chaotic Trait (rather than the usual 12&quot;). In addition, enemy unit that deploy using the Ambushers special rule may be not placed within 12&quot; (rather than the usual 8&quot;) of a unit in which every model has this Chaotic Trait. </characteristic>
+            <characteristic name="Description" typeId="9f84-4221-785a-db50">Enemy unit that deploy using the Scouts special rule cannot b deployed within 18&quot; of a unit which every model has this Chaotic Trait (rather than the usual 12&quot;). In addition, enemy unit that deploy using the Ambushers special rule may be not placed within 12&quot; (rather than the usual 8&quot;) of a unit in which every model has this Chaotic Trait.</characteristic>
           </characteristics>
         </profile>
         <profile name="Unnatural Fortitude" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="656b-0602-1d1e-7b60">
@@ -5394,9 +5450,13 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               <infoLinks>
                 <infoLink name="Battle Hunger" id="0450-da55-b51e-766c" hidden="false" type="profile" targetId="eb34-2513-4a4f-8a60"/>
               </infoLinks>
-              <costs>
-                <cost name="pts" typeId="points" value="20"/>
-              </costs>
+              <modifiers>
+                <modifier type="set" value="20 pts/unit" field="annotation">
+                  <conditions>
+                    <condition type="lessThan" value="1" field="selections" scope="parent" childId="5115-cbe5-8929-61a5" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Brazen Will" hidden="false" id="bc5f-6b33-a4e4-4749">
               <constraints>
@@ -5405,20 +5465,13 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               <infoLinks>
                 <infoLink name="Brazen Will" id="f0c2-785a-b6a3-a899" hidden="false" type="profile" targetId="acd6-016d-d294-7dc9"/>
               </infoLinks>
-              <costs>
-                <cost name="pts" typeId="points" value="15"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry type="upgrade" import="true" name="Prophetic Foresight" hidden="false" id="acba-a91c-a6d1-349a">
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c446-0181-3892-7c4d" includeChildSelections="false"/>
-              </constraints>
-              <infoLinks>
-                <infoLink name="Prophetic Foresight" id="656b-0602-1d1e-7b59" hidden="false" type="profile" targetId="656b-0602-1d1e-7b59"/>
-              </infoLinks>
-              <costs>
-                <cost name="pts" typeId="points" value="10"/>
-              </costs>
+              <modifiers>
+                <modifier type="set" value="15 pts/unit" field="annotation">
+                  <conditions>
+                    <condition type="lessThan" value="1" field="selections" scope="parent" childId="5115-cbe5-8929-61a5" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Prophetic Foresight" hidden="false" id="01d2-dcba-bf06-eb23">
               <constraints>
@@ -5427,9 +5480,13 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               <infoLinks>
                 <infoLink name="Prophetic Foresight" id="4091-92de-2d0b-89c5" hidden="false" type="profile" targetId="4d65-6cf6-3680-e288"/>
               </infoLinks>
-              <costs>
-                <cost name="pts" typeId="points" value="10"/>
-              </costs>
+              <modifiers>
+                <modifier type="set" value="10 pts/unit" field="annotation">
+                  <conditions>
+                    <condition type="lessThan" value="1" field="selections" scope="parent" childId="01d2-dcba-bf06-eb23" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Unnatural Fortitude" hidden="false" id="10af-dee0-d3bf-ea0a">
               <constraints>
@@ -5438,9 +5495,13 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               <infoLinks>
                 <infoLink name="Unnatural Fortitude" id="55a9-4217-bf92-c90c" hidden="false" type="profile" targetId="656b-0602-1d1e-7b60"/>
               </infoLinks>
-              <costs>
-                <cost name="pts" typeId="points" value="2"/>
-              </costs>
+              <modifiers>
+                <modifier type="set" value="2 pts/model" field="annotation">
+                  <conditions>
+                    <condition type="lessThan" value="1" field="selections" scope="parent" childId="10af-dee0-d3bf-ea0a" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Dark Hearts" hidden="false" id="2dd7-93e7-e9fb-1ce2">
               <constraints>
@@ -5449,9 +5510,13 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               <infoLinks>
                 <infoLink name="Dark Hearts" id="40ce-ef39-65ef-c050" hidden="false" type="profile" targetId="395a-c3b4-a3a3-6d13"/>
               </infoLinks>
-              <costs>
-                <cost name="pts" typeId="points" value="1"/>
-              </costs>
+              <modifiers>
+                <modifier type="set" value="1 pts/model" field="annotation">
+                  <conditions>
+                    <condition type="lessThan" value="1" field="selections" scope="parent" childId="2dd7-93e7-e9fb-1ce2" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Longstriders" hidden="false" id="e1de-4582-08ce-81ba">
               <constraints>
@@ -5460,9 +5525,13 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               <infoLinks>
                 <infoLink name="Longstriders" id="994d-5ce4-d638-458f" hidden="false" type="profile" targetId="0a20-40ca-2051-3847"/>
               </infoLinks>
-              <costs>
-                <cost name="pts" typeId="points" value="1"/>
-              </costs>
+              <modifiers>
+                <modifier type="set" value="1 pts/model" field="annotation">
+                  <conditions>
+                    <condition type="lessThan" value="1" field="selections" scope="parent" childId="e1de-4582-08ce-81ba" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Enhanced Reflexes" hidden="false" id="625f-4c66-1a06-3d53">
               <constraints>
@@ -5471,9 +5540,13 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               <infoLinks>
                 <infoLink name="Enhanced Reflexes" id="dc30-a871-6887-e9a4" hidden="false" type="profile" targetId="6e4d-8c43-6110-a9bb"/>
               </infoLinks>
-              <costs>
-                <cost name="pts" typeId="points" value="1"/>
-              </costs>
+              <modifiers>
+                <modifier type="set" value="1 pts/model" field="annotation">
+                  <conditions>
+                    <condition type="lessThan" value="1" field="selections" scope="parent" childId="625f-4c66-1a06-3d53" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
           </selectionEntries>
           <comment># Units</comment>
