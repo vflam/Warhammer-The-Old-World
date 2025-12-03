@@ -866,6 +866,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d5e2-adca-c81e-5ba4-max"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="Chaotic Traits" hidden="false" id="3b09-933d-ad12-79af" type="selectionEntryGroup" targetId="8787-c8f0-a7f4-c6c9" sortIndex="11">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f4c7-2c3e-5b1d-7806"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <infoLinks>
             <infoLink name="Aspiring Champion" hidden="false" type="profile" id="c7df-1e01-1b9f-6de4" targetId="e0d5-5c58-e490-6f45"/>
@@ -1299,6 +1304,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d4e2-359-6db9-3609-max"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="Chaotic Traits" hidden="false" id="ab6f-597c-11c8-5991" type="selectionEntryGroup" targetId="8787-c8f0-a7f4-c6c9" sortIndex="10">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="38eb-a5a3-79b3-e436"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <infoLinks>
             <infoLink name="Exalted Champion" hidden="false" type="profile" id="4249-93e7-c933-b7dd" targetId="5a46-f5d0-ffd5-609e"/>
@@ -1500,6 +1510,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <entryLink import="true" name="Gifts of Chaos" hidden="false" type="selectionEntryGroup" id="bf08-3c61-4b2a-5c90" targetId="82fd-ec27-de63-3852" sortIndex="9">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="6ca4-3dee-9ee9-7520"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Chaotic Traits" hidden="false" id="6955-edec-21e9-ac00" type="selectionEntryGroup" targetId="8787-c8f0-a7f4-c6c9" sortIndex="10">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d8dd-9c5e-3eb0-254d"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -1723,6 +1738,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="5a0a-fd95-48b1-d5b-max"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="Chaotic Traits" hidden="false" id="1ca1-5ee3-995b-be5b" type="selectionEntryGroup" targetId="8787-c8f0-a7f4-c6c9" sortIndex="10">
+              <constraints>
+                <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="4216-081d-6aa7-3258"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <infoLinks>
             <infoLink name="Chaos Lord" hidden="false" type="profile" id="69e0-c579-f02-e160" targetId="4e25-202b-ff9b-82a"/>
@@ -1909,6 +1929,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <entryLink import="true" name="Gifts of Chaos" hidden="false" type="selectionEntryGroup" id="799f-724b-d07-28c6" targetId="82fd-ec27-de63-3852" sortIndex="9">
               <constraints>
                 <constraint type="max" value="50" field="points" scope="parent" shared="false" id="962e-a6d9-22b0-6ba5"/>
+              </constraints>
+            </entryLink>
+            <entryLink import="true" name="Chaotic Traits" hidden="false" id="ddf6-30ac-4990-37b4" type="selectionEntryGroup" targetId="8787-c8f0-a7f4-c6c9" sortIndex="10">
+              <constraints>
+                <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="889f-3923-9ec4-b28e"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -2193,7 +2218,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="39d3-b4f7-aabb-5de9" sortIndex="2">
+        <selectionEntryGroup name="Command" hidden="false" id="39d3-b4f7-aabb-5de9" sortIndex="3">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Champion" hidden="false" id="f871-7227-b85e-4617" subType="crew" sortIndex="1">
               <constraints>
@@ -2287,6 +2312,62 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       <categoryLinks>
         <categoryLink name="Faction: Warriors of Chaos" hidden="false" id="e671-54ae-493e-efdb" primary="false" targetId="75a1-ee95-da32-b765"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="increment" value="2" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="10af-dee0-d3bf-ea0a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="2dd7-93e7-e9fb-1ce2" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="e1de-4582-08ce-81ba" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="625f-4c66-1a06-3d53" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="20" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="5115-cbe5-8929-61a5" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="15" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="bc5f-6b33-a4e4-4749" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="10" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="01d2-dcba-bf06-eb23" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <entryLinks>
+        <entryLink import="true" name="Chaotic Traits" hidden="false" id="a3ae-621c-8d02-1d4c" type="selectionEntryGroup" targetId="d24f-969f-0df7-ea90" sortIndex="2">
+          <constraints>
+            <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="9a48-31c2-0494-596c" includeChildSelections="false"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Chaos Warriors" hidden="false" id="c166-6219-6b1c-412c">
       <profiles>
@@ -2387,7 +2468,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" hidden="false" id="5394-5154-e386-1082" sortIndex="2">
+        <selectionEntryGroup name="Command" hidden="false" id="5394-5154-e386-1082" sortIndex="3">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Champion" hidden="false" id="6879-5336-8b4e-d972" subType="crew" sortIndex="1">
               <constraints>
@@ -2476,6 +2557,62 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       <categoryLinks>
         <categoryLink name="Faction: Warriors of Chaos" hidden="false" id="6c9-db04-40e6-16fa" primary="false" targetId="75a1-ee95-da32-b765"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Chaotic Traits" hidden="false" id="530a-e6d1-3178-78be" type="selectionEntryGroup" targetId="d24f-969f-0df7-ea90" sortIndex="2">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3385-44b4-f98b-3a0f" includeChildSelections="false"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <modifiers>
+        <modifier type="increment" value="2" field="points" affects="recursive">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="10af-dee0-d3bf-ea0a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="2dd7-93e7-e9fb-1ce2" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="e1de-4582-08ce-81ba" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="625f-4c66-1a06-3d53" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="20" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="5115-cbe5-8929-61a5" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="15" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="bc5f-6b33-a4e4-4749" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="10" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="01d2-dcba-bf06-eb23" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Chaos Marauders" hidden="false" id="8573-1345-8484-74cb">
       <profiles>
@@ -2970,7 +3107,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup id="da65-d247-91de-d5a0" name="Command" collective="false" hidden="false" sortIndex="2">
+        <selectionEntryGroup id="da65-d247-91de-d5a0" name="Command" collective="false" hidden="false" sortIndex="3">
           <selectionEntries>
             <selectionEntry id="22a2-4f66-7b6b-62b" name="Musician" type="model" collective="false" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -3069,6 +3206,62 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       <categoryLinks>
         <categoryLink name="Faction: Warriors of Chaos" hidden="false" id="1d23-fd9d-afa6-a3d5" primary="false" targetId="75a1-ee95-da32-b765"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="increment" value="2" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="10af-dee0-d3bf-ea0a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="2dd7-93e7-e9fb-1ce2" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="e1de-4582-08ce-81ba" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="625f-4c66-1a06-3d53" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="20" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="5115-cbe5-8929-61a5" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="15" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="bc5f-6b33-a4e4-4749" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="10" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="01d2-dcba-bf06-eb23" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <entryLinks>
+        <entryLink import="true" name="Chaotic Traits" hidden="false" id="bc23-46b5-c17e-7aa4" type="selectionEntryGroup" targetId="d24f-969f-0df7-ea90" sortIndex="2">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1e0d-91da-ff96-d300" includeChildSelections="false"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry id="2a29-2193-ba7b-fe47" name="Chosen Chaos Knights" type="unit" collective="false" hidden="false" page="0">
       <costs>
@@ -3195,7 +3388,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup id="110b-b529-455b-de58" name="Command" collective="false" hidden="false" sortIndex="2">
+        <selectionEntryGroup id="110b-b529-455b-de58" name="Command" collective="false" hidden="false" sortIndex="3">
           <selectionEntries>
             <selectionEntry id="652e-a827-403a-af88" name="Musician" type="model" collective="false" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -3300,6 +3493,62 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       <categoryLinks>
         <categoryLink name="Faction: Warriors of Chaos" hidden="false" id="3c4-2b93-5b1-f143" primary="false" targetId="75a1-ee95-da32-b765"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="increment" value="2" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="10af-dee0-d3bf-ea0a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="2dd7-93e7-e9fb-1ce2" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="e1de-4582-08ce-81ba" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="625f-4c66-1a06-3d53" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="20" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="5115-cbe5-8929-61a5" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="15" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="bc5f-6b33-a4e4-4749" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="10" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="01d2-dcba-bf06-eb23" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <entryLinks>
+        <entryLink import="true" name="Chaotic Traits" hidden="false" id="da33-38ac-60cc-8303" type="selectionEntryGroup" targetId="d24f-969f-0df7-ea90" sortIndex="2">
+          <constraints>
+            <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="a800-ef52-cc1d-333b" includeChildSelections="false"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Chimera" hidden="false" id="5ada-cf2f-6d8a-327d">
       <profiles>
@@ -3848,7 +4097,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
           </selectionEntryGroups>
           <infoLinks>
             <infoLink name="Marauder Horsemen" hidden="false" type="profile" id="acc5-95b2-8d14-bf12" targetId="47c6-a730-4d4e-dd28"/>
-            <infoLink name="Base (30x30)" hidden="false" type="profile" id="dac8-4f58-e5e-9830" targetId="7f1f-eba6-b670-ece0"/>
+            <infoLink name="Base (30x60)" hidden="false" type="profile" id="dac8-4f58-e5e-9830" targetId="3a8b-1dd5-77fb-fdc3"/>
           </infoLinks>
           <costs>
             <cost name="pts" typeId="points" value="12"/>
@@ -3887,7 +4136,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup id="6085-6b8-e79b-1ecc" name="Command" collective="false" hidden="false" sortIndex="2">
+        <selectionEntryGroup id="6085-6b8-e79b-1ecc" name="Command" collective="false" hidden="false" sortIndex="4">
           <selectionEntries>
             <selectionEntry id="dbf0-68bf-b07c-cd57" name="Musician" type="model" collective="false" hidden="false" subType="crew" sortIndex="3">
               <costs>
@@ -3964,7 +4213,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Unit Options" id="fa6e-7d86-6349-3bf2" hidden="false" sortIndex="3">
+        <selectionEntryGroup name="Unit Options" id="fa6e-7d86-6349-3bf2" hidden="false" sortIndex="2">
           <entryLinks>
             <entryLink import="true" name="Ambushers (Frydaal)" hidden="true" id="5b5d-9fd2-d900-01c2" type="selectionEntry" targetId="dee4-b7d7-0e86-d1d6" sortIndex="1" flatten="true"/>
           </entryLinks>
@@ -4032,7 +4281,61 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <condition type="atLeast" value="1" field="selections" scope="self" childId="fb9b-130b-c791-15af" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
+        <modifier type="increment" value="2" field="points" affects="recursive">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="10af-dee0-d3bf-ea0a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="2dd7-93e7-e9fb-1ce2" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="e1de-4582-08ce-81ba" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="625f-4c66-1a06-3d53" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="20" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="5115-cbe5-8929-61a5" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="15" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="bc5f-6b33-a4e4-4749" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="10" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="01d2-dcba-bf06-eb23" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
+      <entryLinks>
+        <entryLink import="true" name="Chaotic Traits" hidden="false" id="e91b-40b9-f906-f40a" type="selectionEntryGroup" targetId="d24f-969f-0df7-ea90" sortIndex="3">
+          <constraints>
+            <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="b460-3b89-339e-744c" includeChildSelections="false"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Chaos Chariot" hidden="false" id="6cfb-92ff-9f22-de1a" flatten="true">
       <constraints>
@@ -4453,6 +4756,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="eed0-0d05-7786-241d"/>
               </constraints>
             </entryLink>
+            <entryLink import="true" name="Chaotic Traits" hidden="false" id="d451-6365-4ec6-03ca" type="selectionEntryGroup" targetId="8787-c8f0-a7f4-c6c9" sortIndex="9">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="30d9-b283-29fe-3211"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <infoLinks>
             <infoLink name="Marauder Tribe Chieftain" id="6260-5c52-c03c-aca3" hidden="false" type="profile" targetId="ab16-4716-e0f7-a03f"/>
@@ -4683,7 +4991,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <categoryLink targetId="f3f7-ca43-674e-115f" id="e0f7-a846-2a28-57e9" primary="false" name="Regular Infantry"/>
           </categoryLinks>
         </selectionEntry>
-        <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="632f-aefb-995b-a349" sortIndex="3">
+        <selectionEntry type="upgrade" import="true" name="Ambushers" hidden="false" id="632f-aefb-995b-a349" sortIndex="4">
           <infoLinks>
             <infoLink name="Ambushers" id="b6d2-2dfa-9432-2b22" hidden="false" type="profile" targetId="8c0b-6fe6-dc06-512"/>
           </infoLinks>
@@ -4703,7 +5011,7 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup name="Command" id="0b20-0f24-4de7-5cd0" hidden="false" sortIndex="2">
+        <selectionEntryGroup name="Command" id="0b20-0f24-4de7-5cd0" hidden="false" sortIndex="3">
           <selectionEntries>
             <selectionEntry type="model" import="true" name="Headtaker" hidden="false" id="b752-75c8-dcb7-6538" subType="crew" sortIndex="1">
               <constraints>
@@ -4783,6 +5091,62 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       <categoryLinks>
         <categoryLink name="Faction: Warriors of Chaos" hidden="false" id="1359-a3f4-a718-f007" primary="false" targetId="75a1-ee95-da32-b765"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Chaotic Traits" hidden="false" id="c3f4-cfae-b6b0-bea6" type="selectionEntryGroup" targetId="d24f-969f-0df7-ea90" sortIndex="2">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4aca-4466-a1c2-1751" includeChildSelections="false"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <modifiers>
+        <modifier type="increment" value="2" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="10af-dee0-d3bf-ea0a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="2dd7-93e7-e9fb-1ce2" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="e1de-4582-08ce-81ba" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="625f-4c66-1a06-3d53" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="20" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="5115-cbe5-8929-61a5" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="15" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="bc5f-6b33-a4e4-4749" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="10" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="01d2-dcba-bf06-eb23" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Marauder Tribe Huscarls" hidden="false" id="2f71-73ea-2d03-e414">
       <profiles>
@@ -5038,6 +5402,62 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       <categoryLinks>
         <categoryLink name="Faction: Warriors of Chaos" hidden="false" id="5a92-ba2a-c30d-40cd" primary="false" targetId="75a1-ee95-da32-b765"/>
       </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Chaotic Traits" hidden="false" id="c8d7-e42c-36fd-91ab" type="selectionEntryGroup" targetId="d24f-969f-0df7-ea90" sortIndex="4">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="97b7-e135-d7bb-6f0d" includeChildSelections="false"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <modifiers>
+        <modifier type="increment" value="2" field="points" affects="recursive">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="10af-dee0-d3bf-ea0a" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="2dd7-93e7-e9fb-1ce2" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="e1de-4582-08ce-81ba" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="points">
+          <repeats>
+            <repeat value="1" repeats="1" field="selections" scope="self" childId="model" shared="true" roundUp="false" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="625f-4c66-1a06-3d53" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="20" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="5115-cbe5-8929-61a5" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="15" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="bc5f-6b33-a4e4-4749" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="10" field="points">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="01d2-dcba-bf06-eb23" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Skin Wolves" hidden="false" id="0fc9-8c14-c91a-60b8">
       <profiles>
@@ -5550,6 +5970,88 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </selectionEntry>
           </selectionEntries>
           <comment># Units</comment>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Chaotic Traits" id="8787-c8f0-a7f4-c6c9" hidden="false">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Battle Hunger" hidden="false" id="9504-a86e-3ce7-4574">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a97f-49e0-9268-e389" includeChildSelections="false"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Battle Hunger" id="cc16-5157-57a0-8e9a" hidden="false" type="profile" targetId="eb34-2513-4a4f-8a60"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Brazen Will" hidden="false" id="97bf-9a81-b7ed-347a">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a987-9181-2062-5081" includeChildSelections="false"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Brazen Will" id="0b04-71dd-bc19-dc99" hidden="false" type="profile" targetId="acd6-016d-d294-7dc9"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Prophetic Foresight" hidden="false" id="5503-6524-be13-eb6c">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1443-b1db-137f-c5b6" includeChildSelections="false"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Prophetic Foresight" id="2d25-564f-86a1-1dde" hidden="false" type="profile" targetId="4d65-6cf6-3680-e288"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Unnatural Fortitude" hidden="false" id="eedf-5c57-5eb9-b626">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c4c9-aaac-76fc-c212" includeChildSelections="false"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Unnatural Fortitude" id="2882-c476-647b-e695" hidden="false" type="profile" targetId="656b-0602-1d1e-7b60"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="20"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Dark Hearts" hidden="false" id="eca3-2eb8-b509-d5f8">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="990f-c28d-cc89-7453" includeChildSelections="false"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Dark Hearts" id="8c94-b97c-9cbd-c8a8" hidden="false" type="profile" targetId="395a-c3b4-a3a3-6d13"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="20"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Longstriders" hidden="false" id="21b9-919d-4e7a-66f7">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="aa54-5e9a-df93-753f" includeChildSelections="false"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Longstriders" id="ddab-278f-ae92-6fca" hidden="false" type="profile" targetId="0a20-40ca-2051-3847"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="15"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Enhanced Reflexes" hidden="false" id="b4ea-be46-6561-4a38">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6c9a-485a-b190-a40d" includeChildSelections="false"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Enhanced Reflexes" id="e494-5c57-1168-1065" hidden="false" type="profile" targetId="6e4d-8c43-6110-a9bb"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="10"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <comment># Char</comment>
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntry>
