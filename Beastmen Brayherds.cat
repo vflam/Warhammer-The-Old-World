@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="eaaf-1e11-a32d-ab11" name="Beastmen Brayherds" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="106" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="eaaf-1e11-a32d-ab11" name="Beastmen Brayherds" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="107" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Blood Rage" hidden="false" id="8117-de6e-d7df-3eca" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="115" publicationId="7c89-736c-3139-24a0">
       <characteristics>
@@ -3076,6 +3076,7 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                 </modifier>
               </modifiers>
             </entryLink>
+            <entryLink import="true" name="The Sons of Ghorros" hidden="false" id="cef0-5c26-2c71-7ab8" type="selectionEntry" targetId="9c15-2325-1b88-77db" sortIndex="7"/>
           </entryLinks>
           <selectionEntryGroups>
             <selectionEntryGroup name="Throwing Weapon" hidden="false" id="ebe8-66c6-b451-862e" sortIndex="4" flatten="true">
@@ -3119,7 +3120,25 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
             </selectionEntryGroup>
           </selectionEntryGroups>
           <infoLinks>
-            <infoLink name="Centigor" hidden="false" type="profile" id="cc54-3348-7710-fe53" targetId="ad26-25b5-b05-3272"/>
+            <infoLink name="Centigor" hidden="false" type="profile" id="cc54-3348-7710-fe53" targetId="ad26-25b5-b05-3272">
+              <modifiers>
+                <modifier type="set" value="The Sons of Ghorros" field="name">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="9c15-2325-1b88-77db" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="b007-7d58-4f14-1e01">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="9c15-2325-1b88-77db" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" value="1" field="c435-6b14-f77e-3c72">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="self" childId="9c15-2325-1b88-77db" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </infoLink>
             <infoLink name="Base (30x60)" hidden="false" type="profile" id="271a-130-7ca0-b097" targetId="3a8b-1dd5-77fb-fdc3"/>
           </infoLinks>
           <costs>
@@ -3140,6 +3159,14 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
               <costs>
                 <cost name="pts" typeId="points" value="1"/>
               </costs>
+              <modifiers>
+                <modifier type="add" value="a46c-a27a-d380-08c3" field="category" scope="root-entry">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="bcb9-bb7-3ba2-2510" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Roaming Warbands" hidden="true" id="ebb9-a79c-f8eb-4053" collective="true" sortIndex="6">
               <infoLinks>
@@ -3153,6 +3180,11 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                   <conditions>
                     <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
                     <condition type="lessThan" value="6" field="selections" scope="root-entry" childId="model" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="add" value="e3e7-100e-4258-2e5d" field="category" scope="root-entry">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="parent" childId="ebb9-a79c-f8eb-4053" shared="true" includeChildSelections="true"/>
                   </conditions>
                 </modifier>
               </modifiers>
@@ -3176,6 +3208,16 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                     <modifier type="increment" value="1" field="dddc-9fbd-b0fd-a480"/>
                     <modifier type="set" value="Gorehoof" field="name"/>
                     <modifier type="increment" value="1" field="c435-6b14-f77e-3c72"/>
+                    <modifier type="increment" value="1" field="b007-7d58-4f14-1e01">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="9c15-2325-1b88-77db" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="increment" value="1" field="c435-6b14-f77e-3c72">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="9c15-2325-1b88-77db" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </modifier>
                   </modifiers>
                 </infoLink>
                 <infoLink name="Champion" hidden="false" type="profile" id="9b33-b8c4-fd28-334d" targetId="5f1c-fd04-b0d5-d5e"/>
@@ -3206,14 +3248,14 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
                 <infoLink name="Standard Bearer" hidden="false" type="profile" id="ebe8-e0e-f0b7-535b" targetId="bcf8-d942-102e-b155"/>
               </infoLinks>
               <entryLinks>
-                <entryLink import="true" name="Magic Standards" hidden="true" type="selectionEntryGroup" id="7b1e-8cc2-45e2-18d2" targetId="6bbe-8054-19b7-e5d6">
+                <entryLink import="true" name="Magic Standards" hidden="false" type="selectionEntryGroup" id="7b1e-8cc2-45e2-18d2" targetId="6bbe-8054-19b7-e5d6">
                   <constraints>
                     <constraint type="max" value="50" field="points" scope="parent" shared="false" id="da97-3404-1b8e-5eb8"/>
                   </constraints>
                   <modifiers>
-                    <modifier type="set" value="false" field="hidden">
+                    <modifier type="add" value="0026-65a6-af75-a4fd" field="category" scope="parent">
                       <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="43aa-997b-b101-b0b" childId="a73b-ac73-41bb-4c5a" shared="true" includeChildSelections="true"/>
+                        <condition type="atLeast" value="1" field="selections" scope="parent" childId="any" shared="true" includeChildSelections="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
@@ -3242,31 +3284,6 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Unit Options" hidden="false" id="f16-87ac-26c4-5912" sortIndex="4">
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Magic Standard" hidden="false" id="a73b-ac73-41bb-4c5a" sortIndex="1">
-              <categoryLinks>
-                <categoryLink targetId="49a9-ce63-af1a-18f7" id="78b9-3b9d-e51b-4375" primary="false" name="NO EXPORT"/>
-              </categoryLinks>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4d1c-d977-9a1d-7e7a"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="false" id="5da6-f9ff-79fe-ade6" includeChildSelections="true"/>
-              </constraints>
-              <modifiers>
-                <modifier type="set" value="Standard Runes" field="name">
-                  <conditions>
-                    <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="1ddf-26c6-1d88-2b8c" shared="true"/>
-                  </conditions>
-                </modifier>
-                <modifier type="increment" value="1" field="5da6-f9ff-79fe-ade6">
-                  <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="4ef9-c346-4578-c663" includeChildSelections="true"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-            </selectionEntry>
-          </selectionEntries>
-        </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="bef9-751c-57ac-5c0a">
@@ -3292,19 +3309,6 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
       <categoryLinks>
         <categoryLink name="Faction: Beastmen Brayherds" hidden="false" id="b97a-3c05-388c-caf9" primary="false" targetId="a265-1c26-e439-8f2c"/>
       </categoryLinks>
-      <modifiers>
-        <modifier type="add" value="a46c-a27a-d380-08c3" field="category">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="bcb9-bb7-3ba2-2510" shared="true" includeChildSelections="true"/>
-            <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="a9dd-e192-9fec-b81e" shared="true"/>
-          </conditions>
-        </modifier>
-        <modifier type="add" value="e3e7-100e-4258-2e5d" field="category">
-          <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="ebb9-a79c-f8eb-4053" shared="true" includeChildSelections="true"/>
-          </conditions>
-        </modifier>
-      </modifiers>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Chaos Warhounds" hidden="false" id="22da-f2b2-cf5a-f8e7">
       <profiles>
@@ -5125,6 +5129,29 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
         <categoryLink targetId="a265-1c26-e439-8f2c" id="636f-3a44-e7f8-270b" primary="false" name="Faction: Beastmen Brayherds"/>
       </categoryLinks>
     </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="The Sons of Ghorros" hidden="false" id="9c15-2325-1b88-77db" collective="true">
+      <costs>
+        <cost name="pts" typeId="points" value="2"/>
+      </costs>
+      <infoLinks>
+        <infoLink name="The Sons of Ghorros" id="7630-fa24-225a-d2b8" hidden="false" type="profile" targetId="353f-f21a-bb7c-d516"/>
+        <infoLink name="Armour Bane" id="3aaf-c375-5241-b3b3" hidden="false" type="profile" targetId="2af0-975f-bb14-8b8f">
+          <modifiers>
+            <modifier type="append" value="(1)" field="name"/>
+          </modifiers>
+        </infoLink>
+      </infoLinks>
+      <modifiers>
+        <modifier type="add" value="6234-eca2-9b20-e45d" field="category" scope="root-entry">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="parent" childId="9c15-2325-1b88-77db" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="064d-e25e-ee2d-1026"/>
+      </constraints>
+    </selectionEntry>
   </sharedSelectionEntries>
   <entryLinks>
     <entryLink import="true" name="Beastlord" hidden="false" type="selectionEntry" id="4dba-c90b-4718-d53e" targetId="4533-c25f-76b4-5f7b">
@@ -5743,6 +5770,34 @@ Alternatively, if the Herdstone is replacing a special feature specified by a sc
       <constraints>
         <constraint type="max" value="1" field="selections" scope="force" shared="true" id="6411-0371-5dc0-fbd7" includeChildSelections="true"/>
       </constraints>
+    </categoryEntry>
+    <categoryEntry name="0-1 Centigor Herd in the same muster list as Ghorros may be upgraded to Sons of Ghorros" id="6234-eca2-9b20-e45d" hidden="true">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="2a64-2340-2454-9194" includeChildSelections="true"/>
+      </constraints>
+    </categoryEntry>
+    <categoryEntry name="0-1 Centigor Herd per 1,000 points may purchase a magic standard" id="0026-65a6-af75-a4fd" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="9799-216b-d37f-aeb5" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="9799-216b-d37f-aeb5">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="0204-118e-2dbd-3328"/>
+          </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" value="1" field="9799-216b-d37f-aeb5">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="4cba-f216-4456-726e" includeChildSelections="true"/>
+          </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </categoryEntry>
   </categoryEntries>
 </catalogue>
