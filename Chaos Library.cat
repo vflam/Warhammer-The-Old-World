@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="true" id="a4ff-b11e-14a0-4bcf" name="Chaos Library" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="47" revision="44" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="true" id="a4ff-b11e-14a0-4bcf" name="Chaos Library" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="47" revision="45" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Chaos Giants" hidden="false" id="b352-fa53-fad5-dfad">
       <profiles>
@@ -112,7 +112,7 @@
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6eb4-fa09-eed7-d8c4"/>
               </constraints>
             </entryLink>
-            <entryLink import="true" name="Heavy Armour" hidden="false" type="selectionEntry" id="5eea-cc7d-d3f2-a921" targetId="62fb-f89d-afc-1cf1" sortIndex="2">
+            <entryLink import="true" name="Heavy Armour" hidden="false" type="selectionEntry" id="5eea-cc7d-d3f2-a921" targetId="62fb-f89d-afc-1cf1" sortIndex="3">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="8db1-38a-f685-a428"/>
               </constraints>
@@ -126,7 +126,7 @@
             <cost name="pts" typeId="points" value="33"/>
           </costs>
           <selectionEntryGroups>
-            <selectionEntryGroup name="Equipment" hidden="false" id="ee36-4fbe-4854-ea1e" sortIndex="4">
+            <selectionEntryGroup name="Equipment" hidden="false" id="ee36-4fbe-4854-ea1e" sortIndex="2" flatten="true">
               <entryLinks>
                 <entryLink import="true" name="Great Weapon" hidden="false" type="selectionEntry" id="ed24-b0de-1db7-6f67" targetId="2283-26e9-76c3-6048" sortIndex="2">
                   <costs>
@@ -143,7 +143,7 @@
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9802-f499-e693-4ce5"/>
               </constraints>
             </selectionEntryGroup>
-            <selectionEntryGroup name="Mark of Chaos" hidden="false" id="4d03-bead-f4a1-c948" defaultSelectionEntryId="895c-7973-3827-7ca8" sortIndex="3">
+            <selectionEntryGroup name="Mark of Chaos" hidden="false" id="4d03-bead-f4a1-c948" defaultSelectionEntryId="895c-7973-3827-7ca8" sortIndex="4">
               <constraints>
                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="68b5-27f3-e280-ffa4"/>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="714b-3e47-d2f4-53fa"/>
@@ -271,11 +271,7 @@
         <categoryLink targetId="6e6a-5413-b34f-c86c" id="a146-e565-8188-a3e8" primary="false" name="MARK OF CHAOS UNDIVIDED"/>
       </categoryLinks>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Mark of Khorne" hidden="false" id="dbfd-c8b3-5688-4550" collective="true">
-      <infoLinks>
-        <infoLink name="Mark of Khorne" hidden="false" type="profile" id="3914-da7c-27e8-e95" targetId="47ce-619-7fe2-fd08"/>
-      </infoLinks>
-    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Mark of Khorne" hidden="false" id="dbfd-c8b3-5688-4550" collective="true"/>
     <selectionEntry type="upgrade" import="true" name="Mark of Nurgle" hidden="false" id="f69c-c9ca-68f1-eebf" collective="true">
       <infoLinks>
         <infoLink name="Mark of Nurgle" hidden="false" type="profile" id="7151-2682-c203-5a90" targetId="afeb-3bc4-18-88d7"/>
@@ -1337,6 +1333,16 @@ Effect: If this Bound spell is cast, all units within 6&quot; of this model (fri
         <characteristic name="Description" typeId="9f84-4221-785a-db50">For every Wound this character loses during a challenge, their enemy suffers a Strength 4 hit, with an AP of -2.</characteristic>
       </characteristics>
     </profile>
+    <profile name="Chaotic Cults" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="3858-0a3a-f1c4-26e2">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Units of Chaos Marauders and Marauder Horseman have the option to belong to a &apos;Chaotic Cult&apos;:
+• A model cannot belong to more than one Chaotic Cult.
+• A character with a Mark of Chaos can join a unit belonging to any Chaotic Cult as normal.
+
+**Praising The Gods**
+Once per game, during the Command sub-phase of its turn, a unit belonging to a Chaotic Cult may implore its patron for their blessing by making a Leadership test. If this test is passed, until its next Start of Turn sub-phase, all Chaotic Cult models within the unit gain the benefit specified by the specific cult. If this test is failed, the unit&apos;s implorations go unheeded.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Giant Library" id="9c40-414e-3832-13af" targetId="4013-4240-7515-27e0"/>
@@ -1699,6 +1705,58 @@ Effect: If this Bound spell is cast, all units within 6&quot; of this model (fri
           <costs>
             <cost name="pts" typeId="points" value="15"/>
           </costs>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup name="Chaotic Cults" id="d8f9-34b1-c1fa-947c" hidden="false">
+      <selectionEntries>
+        <selectionEntry type="upgrade" import="true" name="The Cult of the Bloodied Hound" hidden="false" id="ff5a-a52d-f281-1bde" sortIndex="1" collective="true">
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+          <profiles>
+            <profile name="The Cult of the Bloodied Hound" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="513f-e846-72c7-3ce9">
+              <characteristics>
+                <characteristic name="Description" typeId="9f84-4221-785a-db50">Models belonging to this Chaotic Cult gain a +1 modifier to their Weapon Skill characteristic</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="The Cult of the Fell Raptor" hidden="false" id="23e8-ddae-a88b-8db6" sortIndex="3" collective="true">
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+          <profiles>
+            <profile name="The Cult of the Fell Raptor" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="8dbc-93e6-333e-2651">
+              <characteristics>
+                <characteristic name="Description" typeId="9f84-4221-785a-db50">Models belonging to this Chaotic Cult gain a 6+ Ward save against any wounds suffered that where caused by a non-magical enemy attack</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="The Cult of the Slithering Serpent" hidden="false" id="0bc0-aa41-ac89-81de" sortIndex="4" collective="true">
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+          <profiles>
+            <profile name="The Cult of the Slithering Serpent" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c107-a76b-15cd-0d77">
+              <characteristics>
+                <characteristic name="Description" typeId="9f84-4221-785a-db50">Models belonging to this Chaotic Cult gain the Poisoned Attacks special rule</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="The Cult of the Carrion Crow" hidden="false" id="2089-85b8-4cd0-4fa9" sortIndex="2" collective="true">
+          <costs>
+            <cost name="pts" typeId="points" value="1"/>
+          </costs>
+          <profiles>
+            <profile name="The Cult of the Carrion Crow" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b656-8775-36b4-859f">
+              <characteristics>
+                <characteristic name="Description" typeId="9f84-4221-785a-db50">Models belonging to this Chaotic Cult gain a +1 modifier to their Toughness characteristic</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
