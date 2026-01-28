@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="158" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="159" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -1144,7 +1144,7 @@ Note that unless a character also has this special rule, their Leadership cannot
     </profile>
     <profile name="Frenzy" hidden="false" id="3b0c-a477-8823-3a25" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="170" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">During a turn in which it made a charge move, or during the turn after it made a follow up move, a Frenzied model has a +1 modifier to its Attacks characteristic. However, a Frenzied rider does not confer this modifier to their mount, and vice versa.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">During a turn in which it made a charge move, or during the turn after it made a follow up move, a Frenzied model has a +1 modifier to its Attacks characteristic. This modifier does not apply to the model’s mount (in the case of a cavalry model), to the beasts that draw it (in the case of a chariot), or to its rider (in the case of a monster).
 
 In addition:
 - If the majority of the models in a unit are Frenzied, the unit automatically passes any Fear, Panic or Terror tests it is required to make.
@@ -1422,7 +1422,7 @@ In combat, each handler adds its attacks to those of the monster. If the monster
     </profile>
     <profile name="Poisoned Attacks" hidden="false" id="81f5-4895-4abc-fc39" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="175" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">For each roll To Hit of a natural 6 a model with Poisoned Attacks makes, they may apply a +2 modifier to one of their rolls To Wound. Unless otherwise stated, a model with this special rule may use it when making both shooting and combat attacks. Any spells cast by the model are unaffected, as are any attacks made with magic weapons. Note that if an attack needs a To Hit roll of 7+, or hits automatically, this special rule cannot be used.</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">If a model with Poisoned Attacks rolls a natural 6 when making a roll To Hit, it may apply a +2 modifier to that hit’s roll To Wound. Unless otherwise stated, a model with this special rule may use it when making both shooting and combat attacks. Any spells cast by the model are unaffected, as are any attacks made with magic weapons. Note that if an attack needs a To Hit roll of 7+, or hits automatically, this special rule cannot be used.</characteristic>
       </characteristics>
     </profile>
     <profile name="Random Attacks" hidden="false" id="1b08-4621-6379-ff1f" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="176" publicationId="768b-3da1-a182-a1d8">
@@ -1478,8 +1478,8 @@ If every model in a unit has this special rule, roll once for the entire unit. I
     </profile>
     <profile name="Stupidity" hidden="false" id="f7af-e016-1f9c-54c0" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="178" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless it is fleeing or engaged in combat, a unit with this special rule must make a Stupidity test by testing against its Leadership during the Start of Turn sub-phase of each of its turns. If this test is failed, the unit succumbs to Stupidity until its next Start of Turn sub-phase. A unit that has succumbed to Stupidity:
-- Cannot move.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Unless it is fleeing or engaged in combat, a unit with this special rule must test for Stupidity by making a Leadership test during the Start of Turn sub-phase of each of its turns. If this test is failed, the unit succumbs to Stupidity until its next Start of Turn sub-phase. A unit that has succumbed to Stupidity:
+- Cannot move (except to flee).
 - Cannot shoot or cast spells.
 - Cannot attempt a Wizardly dispel.
 - Must &quot;Hold&quot; if charged by an enemy.
@@ -1527,9 +1527,9 @@ Models with the Fear special rule Fear models that cause Terror. Models that cau
     </profile>
     <profile name="Unstable" hidden="false" id="a10e-13b7-e959-ab5" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="180" publicationId="768b-3da1-a182-a1d8">
       <characteristics>
-        <characteristic name="Description" typeId="9f84-4221-785a-db50">If a unit with this special rule loses a round of combat, it loses one additional Wound for every combat result point by which it lost. These Wounds are lost after combat results have been calculated but before Break tests are made.
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">If a unit with this special rule loses a round of combat, it loses one additional Wound for every combat result point by which it lost. These Wounds are lost after combat results have been calculated but before Break tests are made. These Wounds cannot be recovered by a Regeneration save.
 
- If an Unstable unit contains any Unstable characters, allocate wounds to the unit until each model has been allocated one wound. Any remaining wounds are divided as equally as possible between the character(s) and the unit.</characteristic>
+If an Unstable unit contains any Unstable characters, allocate wounds to the unit until each model has been allocated one wound. Any remaining wounds are divided as equally as possible between the character(s) and the unit.</characteristic>
       </characteristics>
     </profile>
     <profile name="Standard Bearer" hidden="false" id="bcf8-d942-102e-b155" typeId="52d4-d959-fe4d-90fa" typeName="Command">
@@ -2239,7 +2239,7 @@ Related: Hills</characteristic>
     </profile>
     <profile name="Woodland Boundaries" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="5c45-9bcf-4490-83e1">
       <characteristics>
-        <characteristic name="Description" id="c1f4-274e-5d10-a313" hidden="false" typeId="9f84-4221-785a-db50">A woodland terrain feature must have a clearly defined edge. This allows individual trees to be removed and replaced to facilitate the movement of models. Regardless of the position of any individual trees within the terrain feature, any model or unit counts as being behind partial cover as long as up to half of the model, or up to half of the models within the unit, is within the woods (i.e., within the terrain feature&apos;s clearly defined edge).</characteristic>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">A woodland terrain feature must have a clearly defined edge. This allows individual trees to be removed and replaced to facilitate the movement of models. Regardless of the position of any individual trees within the terrain feature, any model or unit counts as being behind partial cover as long as over half of the model, or over half of the models within the unit, is within the woods (i.e., within the terrain feature’s clearly defined edge).</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
@@ -3530,9 +3530,7 @@ Related: Spell Categories</characteristic>
         <characteristic name="Description" typeId="9f84-4221-785a-db50">To dispel a spell, you must make a &apos;Dispel&apos; roll. To make a Dispel roll, roll 2D6. This represents either the efforts of a Wizard to counter enemy magic, or the twists of fate that can see the Winds of Magic suddenly dissipate.
 If you are attempting a Wizardly dispel, the Dispel roll is modified by adding the Wizard’s Level of Wizardry divided by 2 (rounding fractions up) to give a &quot;dispel result&quot;.
 - If the dispel result exceeds the casting result, the spell is successfully dispelled and immediately ends.
-- If the dispel result is equal to or less than the casting result, the dispel attempt has failed. The spell is not dispelled.*
-
-* Admin Note: This has been flagged by the community as conflicting with the &quot; Dispelling A Spell&quot; section of the Quick Reference . Current consensus is this version of the rule is the intended way to play.</characteristic>
+- If the dispel result is equal to or less than the casting result, the dispel attempt has failed. The spell is not dispelled.</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
