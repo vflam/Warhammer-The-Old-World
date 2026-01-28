@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="157" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="158" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -878,7 +878,7 @@
         <characteristicType id="80a1-bb6f-66e4-4a5b" name="Unit Size"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Model" hidden="false" id="b070-143a-73f-2772" sortIndex="1">
+    <profileType name="Model" hidden="false" id="b070-143a-73f-2772" sortIndex="1" kind="model">
       <characteristicTypes>
         <characteristicType id="cd3b-a5a4-e185-5a9d" name="M"/>
         <characteristicType id="b007-7d58-4f14-1e01" name="WS"/>
@@ -896,7 +896,7 @@
         <characteristicType id="1adf-d238-57ca-2226" name="Base Size"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Special Rule" hidden="false" id="c1ac-c1c8-f9d5-9673" sortIndex="25">
+    <profileType name="Special Rule" hidden="false" id="c1ac-c1c8-f9d5-9673" sortIndex="25" kind="rule">
       <characteristicTypes>
         <characteristicType id="9f84-4221-785a-db50" name="Description"/>
       </characteristicTypes>
@@ -906,12 +906,12 @@
         <characteristicType id="adcd-c649-e6fc-a9f6" name="Description"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Command" hidden="false" id="52d4-d959-fe4d-90fa" sortIndex="9">
+    <profileType name="Command" hidden="false" id="52d4-d959-fe4d-90fa" sortIndex="9" kind="rule">
       <characteristicTypes>
         <characteristicType id="441a-ef3a-c07e-95f" name="Description"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Spell" hidden="false" id="8232-ae14-b1f6-b4df" sortIndex="8">
+    <profileType name="Spell" hidden="false" id="8232-ae14-b1f6-b4df" sortIndex="8" kind="spell">
       <characteristicTypes>
         <characteristicType id="8a2b-690b-e552-6aa0" name="Number"/>
         <characteristicType id="c2ca-5fd1-5e9d-bc90" name="Type"/>
@@ -920,7 +920,7 @@
         <characteristicType id="64ba-31-acf0-5a" name="Effect"/>
       </characteristicTypes>
     </profileType>
-    <profileType name="Weapon" hidden="false" id="a378-c633-912d-11ce" sortIndex="3">
+    <profileType name="Weapon" hidden="false" id="a378-c633-912d-11ce" sortIndex="3" kind="weapon">
       <characteristicTypes>
         <characteristicType id="2360-c777-5e07-ed58" name="R"/>
         <characteristicType id="ac19-f99c-72e9-a1a7" name="S"/>
