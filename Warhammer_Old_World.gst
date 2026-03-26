@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="163" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="164" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -873,20 +873,11 @@
         <categoryLink name="Characters" hidden="false" id="fe97-182c-629f-d203" targetId="a4cc-15c9-cfae-1b3b">
           <constraints>
             <constraint type="max" value="50" field="limit::points" scope="force" shared="true" id="37ee-44d3-251c-171d" percentValue="true" includeChildSelections="true" includeChildForces="false"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="96aa-6f5c-39de-94cf" includeChildForces="true"/>
           </constraints>
-          <modifiers>
-            <modifier type="increment" value="1" field="96aa-6f5c-39de-94cf">
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-              </repeats>
-            </modifier>
-          </modifiers>
         </categoryLink>
         <categoryLink name="Core" hidden="false" id="08fd-33b8-8978-ad74" targetId="f0e3-2e32-8866-ea32">
           <constraints>
             <constraint type="min" value="25" field="limit::points" scope="force" shared="true" id="e025-c6ff-123e-846c" percentValue="true" includeChildSelections="true"/>
-            <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="7846-55fd-aafe-b91f" includeChildForces="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="33" field="e025-c6ff-123e-846c">
@@ -915,17 +906,11 @@
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="increment" value="1" field="7846-55fd-aafe-b91f">
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-              </repeats>
-            </modifier>
           </modifiers>
         </categoryLink>
         <categoryLink name="Special" hidden="false" id="2b69-24e6-a48a-3345" targetId="633f-f67a-1b6a-d203">
           <constraints>
             <constraint type="max" value="50" field="limit::points" scope="force" shared="true" id="b3c5-bd0a-f16d-b84a" percentValue="true" includeChildSelections="true"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3fed-3e8a-0e1d-6719" includeChildForces="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="33" field="b3c5-bd0a-f16d-b84a">
@@ -933,17 +918,11 @@
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c637-f6be-935d-faae" shared="true"/>
               </conditions>
             </modifier>
-            <modifier type="increment" value="1" field="3fed-3e8a-0e1d-6719">
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-              </repeats>
-            </modifier>
           </modifiers>
         </categoryLink>
         <categoryLink name="Rare" hidden="false" id="9009-1ee8-81b5-f65b" targetId="2bfe-5863-46fe-d284">
           <constraints>
             <constraint type="max" value="25" field="limit::points" scope="force" shared="true" id="3888-e1fe-357c-0da1" percentValue="true" includeChildSelections="true"/>
-            <constraint type="max" value="0" field="selections" scope="parent" shared="true" id="90a5-8383-bfda-5d98" includeChildForces="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="33" field="3888-e1fe-357c-0da1">
@@ -963,11 +942,6 @@
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
-            </modifier>
-            <modifier type="increment" value="1" field="90a5-8383-bfda-5d98">
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-              </repeats>
             </modifier>
           </modifiers>
         </categoryLink>
@@ -2367,20 +2341,11 @@
         <categoryLink name="Characters" hidden="false" id="d744-8f2a-4880-b74c" targetId="a4cc-15c9-cfae-1b3b">
           <constraints>
             <constraint type="max" value="50" field="limit::points" scope="force" shared="true" id="09cf-b13c-106f-d509" percentValue="true" includeChildSelections="true" includeChildForces="false"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="bb99-7657-6b67-32de" includeChildForces="true"/>
           </constraints>
-          <modifiers>
-            <modifier type="increment" value="1" field="bb99-7657-6b67-32de">
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-              </repeats>
-            </modifier>
-          </modifiers>
         </categoryLink>
         <categoryLink name="Core" hidden="false" id="cf0a-7d19-3ab7-668f" targetId="f0e3-2e32-8866-ea32">
           <constraints>
             <constraint type="min" value="25" field="limit::points" scope="force" shared="true" id="3c46-7b04-f2ef-d4fa" percentValue="true" includeChildSelections="true"/>
-            <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="486a-43e3-1e0a-1eda" includeChildForces="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="33" field="3c46-7b04-f2ef-d4fa">
@@ -2409,17 +2374,11 @@
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="increment" value="1" field="486a-43e3-1e0a-1eda">
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-              </repeats>
-            </modifier>
           </modifiers>
         </categoryLink>
         <categoryLink name="Special" hidden="false" id="f61a-4310-921f-cdf9" targetId="633f-f67a-1b6a-d203">
           <constraints>
             <constraint type="max" value="50" field="limit::points" scope="force" shared="true" id="3c02-b37d-fc86-1f88" percentValue="true" includeChildSelections="true"/>
-            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e3c0-2649-cd97-d33d" includeChildForces="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="33" field="3c02-b37d-fc86-1f88">
@@ -2427,17 +2386,11 @@
                 <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="c637-f6be-935d-faae" shared="true"/>
               </conditions>
             </modifier>
-            <modifier type="increment" value="1" field="e3c0-2649-cd97-d33d">
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-              </repeats>
-            </modifier>
           </modifiers>
         </categoryLink>
         <categoryLink name="Rare" hidden="false" id="c450-1968-5018-94fc" targetId="2bfe-5863-46fe-d284">
           <constraints>
             <constraint type="max" value="25" field="limit::points" scope="force" shared="true" id="bdbc-ae04-0a5b-9281" percentValue="true" includeChildSelections="true"/>
-            <constraint type="max" value="0" field="selections" scope="parent" shared="true" id="d740-e173-9dc4-0ab4" includeChildForces="true"/>
           </constraints>
           <modifiers>
             <modifier type="set" value="33" field="bdbc-ae04-0a5b-9281">
@@ -2457,11 +2410,6 @@
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
-            </modifier>
-            <modifier type="increment" value="1" field="d740-e173-9dc4-0ab4">
-              <repeats>
-                <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-              </repeats>
             </modifier>
           </modifiers>
         </categoryLink>
