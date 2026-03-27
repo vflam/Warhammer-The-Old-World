@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="d03c-d17e-e3f7-d3fd" name="Orc and Goblin Tribes - Nomadic Waaagh!" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="98" revision="13" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="false" id="d03c-d17e-e3f7-d3fd" name="Orc and Goblin Tribes - Nomadic Waaagh!" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="98" revision="16" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Orc and Goblin Tribes" id="50cc-f36e-f099-680b" targetId="c997-9d47-72ad-c5f1"/>
   </catalogueLinks>
@@ -7,14 +7,14 @@
     <entryLink import="true" name="Black Orc Warboss" hidden="false" id="5071-6554-d52d-e1a" type="selectionEntry" targetId="5f11-e9c2-fece-fff8">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="1e98-d23d-e728-487e" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-        <categoryLink name="Black Orc Boss" hidden="false" id="321e-9c0f-63ff-2589" targetId="e489-6d00-d4ee-c777" primary="false"/>
+        <categoryLink name="Black Orc Boss (0-1 Black Orc Warboss or Black Orc Bigboss per Black Orc Boar Chariot)" hidden="false" id="321e-9c0f-63ff-2589" targetId="e489-6d00-d4ee-c777" primary="false"/>
         <categoryLink name="Faction: Orc and Goblin Tribes - Nomadic Waagh!" hidden="false" id="b7a8-732f-bad2-bd2" primary="false" targetId="f89b-a1c3-e6eb-e69a"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Black Orc Bigboss" hidden="false" id="e4bc-2fe7-b4a1-8f9" type="selectionEntry" targetId="3a60-b23d-7e34-aecf">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="6e09-86fd-b698-956c" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-        <categoryLink name="Black Orc Boss" hidden="false" id="f4e8-be7a-537c-ef5b" targetId="e489-6d00-d4ee-c777" primary="false"/>
+        <categoryLink name="Black Orc Boss (0-1 Black Orc Warboss or Black Orc Bigboss per Black Orc Boar Chariot)" hidden="false" id="f4e8-be7a-537c-ef5b" targetId="e489-6d00-d4ee-c777" primary="false"/>
         <categoryLink name="Faction: Orc and Goblin Tribes - Nomadic Waagh!" hidden="false" id="c234-fcb3-a461-649e" primary="false" targetId="f89b-a1c3-e6eb-e69a"/>
       </categoryLinks>
     </entryLink>
@@ -28,20 +28,34 @@
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="adc8-774e-a011-0a81">
-          <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
           <repeats>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
           </repeats>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="increment" value="1" field="adc8-774e-a011-0a81">
-          <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
           <repeats>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
           </repeats>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="decrement" value="1" field="adc8-774e-a011-0a81">
           <repeats>
@@ -64,17 +78,31 @@
           <repeats>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
           </repeats>
-          <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="increment" value="1" field="c597-eafe-fd84-dbb1">
           <repeats>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
           </repeats>
-          <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="decrement" value="1" field="c597-eafe-fd84-dbb1">
           <repeats>

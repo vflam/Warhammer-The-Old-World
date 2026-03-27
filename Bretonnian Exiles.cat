@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="c637-f6be-935d-faae" name="Kingdom of Bretonnia - Bretonnian Exiles" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="77" revision="14" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="false" id="c637-f6be-935d-faae" name="Kingdom of Bretonnia - Bretonnian Exiles" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="77" revision="17" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Kingdom of Bretonnia" id="7db7-5c17-f100-570c" targetId="f8cb-e518-1881-292"/>
     <catalogueLink type="catalogue" name="The Empire of Man" id="254-944b-97a5-4b18" targetId="7b8f-602e-29cd-5786"/>
@@ -18,9 +18,16 @@
           <repeats>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="846f-e82e-eb40-b5de"/>
           </repeats>
-          <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="decrement" value="1" field="b13-b76f-4f59-afc3">
           <repeats>
@@ -31,9 +38,16 @@
           <repeats>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="e779-dfa9-542d-cab3"/>
           </repeats>
-          <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
     </entryLink>
@@ -68,14 +82,14 @@
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="e767-39d3-f49-aabe" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="8eed-3a2e-1966-fe1" primary="false" targetId="c796-bbb0-377c-76b1"/>
-        <categoryLink name="Units" hidden="false" id="b184-58ad-954e-430c" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="b184-58ad-954e-430c" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Squires" hidden="false" id="77a1-3760-4a90-7271" type="selectionEntry" targetId="fe35-2f6a-54fe-68a0">
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="109a-e2c3-e327-b93d" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="78cb-d313-c06-1c51" primary="false" targetId="c796-bbb0-377c-76b1"/>
-        <categoryLink name="Units" hidden="false" id="f192-73e6-ab64-571d" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="f192-73e6-ab64-571d" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Knights of the Realm on Foot" hidden="false" type="selectionEntry" id="3938-abe4-613b-fa75" targetId="a70a-7cbc-f4ac-ebd8">
@@ -92,7 +106,7 @@
       <categoryLinks>
         <categoryLink name="Core" hidden="false" id="ff3a-2b3f-8485-a4ad" targetId="f0e3-2e32-8866-ea32" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="68e0-8193-307c-e4d2" primary="false" targetId="c796-bbb0-377c-76b1"/>
-        <categoryLink name="Units" hidden="false" id="f07e-b2d2-48de-981e" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="f07e-b2d2-48de-981e" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Mounted Knights of the Realm" hidden="false" type="selectionEntry" id="7fbc-6390-2e62-e1a2" targetId="7fe1-69ab-7c6b-20d0">
@@ -109,7 +123,7 @@
       <categoryLinks>
         <categoryLink name="Core" hidden="false" id="3822-1cad-6799-4e25" targetId="f0e3-2e32-8866-ea32" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="4aa2-d068-b89b-7695" primary="false" targetId="c796-bbb0-377c-76b1"/>
-        <categoryLink name="Units" hidden="false" id="de29-3fd6-14ab-6b7e" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="de29-3fd6-14ab-6b7e" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Yeomen Guard" hidden="false" type="selectionEntry" id="8896-a10b-5397-3a3" targetId="eef6-a719-3c0a-ef00">
@@ -126,7 +140,7 @@
       <categoryLinks>
         <categoryLink name="Core" hidden="false" id="aaea-38f9-e63-2fa6" targetId="f0e3-2e32-8866-ea32" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="ff91-8bf1-db96-2cd3" primary="false" targetId="c796-bbb0-377c-76b1"/>
-        <categoryLink name="Units" hidden="false" id="6eba-4c76-1a74-7100" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="6eba-4c76-1a74-7100" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Peasant Bowmen" hidden="false" type="selectionEntry" id="8fb0-e47a-f651-970" targetId="5e10-1040-5760-5ed2">
@@ -143,7 +157,7 @@
       <categoryLinks>
         <categoryLink name="Core" hidden="false" id="5d32-fb3a-1e86-b747" targetId="f0e3-2e32-8866-ea32" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="288a-2c99-4039-381e" primary="false" targetId="c796-bbb0-377c-76b1"/>
-        <categoryLink name="Units" hidden="false" id="973e-890b-9725-2385" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="973e-890b-9725-2385" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Knights Errant" hidden="false" id="f30b-6982-9123-7238" type="selectionEntry" targetId="8ae5-43d-e70d-8133">
@@ -155,30 +169,44 @@
           <repeats>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="70a2-23e1-efad-7582"/>
           </repeats>
-          <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="increment" value="1" field="2902-e6e8-26bb-463d">
           <repeats>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="b6b5-993b-0eb5-8105"/>
           </repeats>
-          <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <categoryLinks>
         <categoryLink name="Core" hidden="false" id="d5b0-6ab4-f0b8-1e4b" targetId="f0e3-2e32-8866-ea32" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="7ddc-873b-8938-9ae8" primary="false" targetId="c796-bbb0-377c-76b1"/>
-        <categoryLink name="Units" hidden="false" id="8e70-d1f3-4779-1c04" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="8e70-d1f3-4779-1c04" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Mounted Yeomen" hidden="false" id="1d51-2a1d-3e2-4781" type="selectionEntry" targetId="f349-7fe2-2170-2f98">
       <categoryLinks>
         <categoryLink name="Core" hidden="false" id="f071-17ea-1b95-c269" targetId="f0e3-2e32-8866-ea32" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="53be-4633-872b-2f84" primary="false" targetId="c796-bbb0-377c-76b1"/>
-        <categoryLink name="Units" hidden="false" id="0fd7-ee5f-0007-044d" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="0fd7-ee5f-0007-044d" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Border Princes Bombard" hidden="false" id="88d-c309-420b-ddc7" type="selectionEntry" targetId="2450-622c-6c12-6cac">
@@ -190,17 +218,31 @@
           <repeats>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="5181-7f4a-8f35-dc5d"/>
           </repeats>
-          <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="increment" value="1" field="bf0c-d430-4071-49ad">
           <repeats>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="8810-29eb-78bf-2ab7"/>
           </repeats>
-          <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <categoryLinks>
@@ -217,23 +259,37 @@
           <repeats>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="b0d5-b0ae-a7f3-56e6"/>
           </repeats>
-          <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="increment" value="1" field="4d9b-e48e-1a32-6584">
           <repeats>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="ef9e-349c-626f-bf0b"/>
           </repeats>
-          <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="549f-b614-3f1c-b2a" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="4636-851c-8f1d-b571" primary="false" targetId="c796-bbb0-377c-76b1"/>
-        <categoryLink name="Units" hidden="false" id="7c8f-d786-d116-a2b2" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="7c8f-d786-d116-a2b2" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Field Trebuchet" hidden="false" id="6d4e-2c45-788e-9919" type="selectionEntry" targetId="787e-752a-bf30-df0d">
@@ -245,17 +301,31 @@
           <repeats>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="4bb2-471c-866e-1591"/>
           </repeats>
-          <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="increment" value="1" field="308b-7989-72f4-aafe">
           <repeats>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="9c94-e76f-7c89-7f53"/>
           </repeats>
-          <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <categoryLinks>
@@ -267,20 +337,20 @@
       <categoryLinks>
         <categoryLink name="Rare" hidden="false" id="5fe5-1a00-99a9-8b8" targetId="2bfe-5863-46fe-d284" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="6ee7-35cb-87ba-e066" primary="false" targetId="c796-bbb0-377c-76b1"/>
-        <categoryLink name="Units" hidden="false" id="5d14-9ff8-881e-a8ba" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="5d14-9ff8-881e-a8ba" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Questing Knights" hidden="false" id="6276-87dc-ec36-df2f" type="selectionEntry" targetId="d7ca-225f-7ad7-c2df">
       <categoryLinks>
         <categoryLink name="Rare" hidden="false" id="13eb-dc28-1319-9988" targetId="2bfe-5863-46fe-d284" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="3c65-9c89-1029-aeb8" primary="false" targetId="c796-bbb0-377c-76b1"/>
-        <categoryLink name="Units" hidden="false" id="6f46-ec9d-b9bd-e66e" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="6f46-ec9d-b9bd-e66e" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Free Company Militia" hidden="false" id="573e-8b20-794f-778d" type="selectionEntry" targetId="bd9f-3c86-c12a-fbb1">
       <categoryLinks>
         <categoryLink name="Mercenaries" hidden="false" id="b850-27c9-38e1-df81" targetId="5b84-2c3c-869d-3522" primary="true"/>
-        <categoryLink name="Units" hidden="false" id="af89-38b7-8d01-f651" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="af89-38b7-8d01-f651" primary="false" targetId="fec1-537a-bbeb-7926"/>
         <categoryLink targetId="e5f1-f9ee-d533-b2dc" id="d3d4-95c5-cc3b-261b" primary="false" name="Faction: The Empire of Man"/>
       </categoryLinks>
     </entryLink>
@@ -314,7 +384,7 @@
     <entryLink import="true" name="Empire Archers" hidden="false" id="d2ee-ecdd-5767-1a6" type="selectionEntry" targetId="9737-2bec-4f15-d7ca">
       <categoryLinks>
         <categoryLink name="Mercenaries" hidden="false" id="42a7-951-457-75b8" targetId="5b84-2c3c-869d-3522" primary="true"/>
-        <categoryLink name="Units" hidden="false" id="f11b-1d9d-8b31-66a2" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="f11b-1d9d-8b31-66a2" primary="false" targetId="fec1-537a-bbeb-7926"/>
         <categoryLink targetId="e5f1-f9ee-d533-b2dc" id="dbef-4e0c-2206-10f8" primary="false" name="Faction: The Empire of Man"/>
       </categoryLinks>
     </entryLink>
@@ -322,9 +392,8 @@
       <categoryLinks>
         <categoryLink name="Core" hidden="false" id="4887-b8c-575b-ae64" targetId="f0e3-2e32-8866-ea32" primary="true"/>
         <categoryLink name="Faction: Kingdom of Bretonnia - Bretonnian Exiles" hidden="false" id="ee3d-ed6a-f8ac-bbb3" primary="false" targetId="c796-bbb0-377c-76b1"/>
-        <categoryLink name="Units" hidden="false" id="5e97-29e4-cfca-507d" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="5e97-29e4-cfca-507d" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
     </entryLink>
   </entryLinks>
-  <comment></comment>
 </catalogue>

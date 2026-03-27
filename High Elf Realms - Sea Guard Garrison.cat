@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="142f-feb2-1509-865b" name="High Elf Realms - Sea Guard Garrison" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="120" revision="4" authorUrl="www.newrecruit.eu" authorContact="Discord: Tidomann" authorName="Tidomann" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="false" id="142f-feb2-1509-865b" name="High Elf Realms - Sea Guard Garrison" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="120" revision="7" authorUrl="www.newrecruit.eu" authorContact="Discord: Tidomann" authorName="Tidomann" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <catalogueLinks>
     <catalogueLink type="catalogue" name="High Elf Realms" id="a710-0fff-9b94-36c9" targetId="56fb-835b-a377-6639"/>
   </catalogueLinks>
@@ -41,7 +41,7 @@
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="b400-723b-7da8-35c2" primary="true" name="Core"/>
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="f91d-fb29-bf1f-77d3" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="f4fb-d381-facd-75e3" primary="false" name="Units"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="f4fb-d381-facd-75e3" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
         <categoryLink targetId="5e89-9cfa-f74-43ea" id="6472-7ee0-2b97-06a8" primary="false" name="Regimental Unit"/>
       </categoryLinks>
     </entryLink>
@@ -49,7 +49,7 @@
       <categoryLinks>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="4317-2988-0730-9c22" primary="true" name="Core"/>
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="3bc3-129d-d660-5482" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="c9b3-274f-f6fa-d91e" primary="false" name="Units"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="c9b3-274f-f6fa-d91e" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
       </categoryLinks>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="false" id="3b98-1042-d01f-7365" includeChildSelections="true"/>
@@ -59,17 +59,31 @@
           <repeats>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="1dd5-2a67-6193-6515"/>
           </repeats>
-          <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="increment" value="1" field="3b98-1042-d01f-7365">
           <repeats>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="b6db-2a2a-0cec-1930" includeChildSelections="true"/>
           </repeats>
-          <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
     </entryLink>
@@ -77,12 +91,12 @@
       <categoryLinks>
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="2684-de91-abe9-1ae8" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="45d5-e396-b7de-1c14" primary="true" name="Special"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="1eb6-3a72-3716-953b" primary="false" name="Units"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="1eb6-3a72-3716-953b" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Great Eagles" hidden="false" id="7bff-6ac1-6fc2-429b" type="selectionEntry" targetId="d396-3cda-d56f-6131">
       <categoryLinks>
-        <categoryLink name="Units" hidden="false" id="d537-1623-79c9-fbe9" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="d537-1623-79c9-fbe9" primary="false" targetId="fec1-537a-bbeb-7926"/>
         <categoryLink name="0-2 Great Eagles per 1,000 points" hidden="false" id="a015-8a6f-23c8-7395" targetId="bdbd-fde2-eff2-c55b" primary="false"/>
         <categoryLink targetId="633f-f67a-1b6a-d203" id="f13c-8a2c-7697-b2a5" primary="true" name="Special"/>
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="dd02-584d-89d1-6aca" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
@@ -97,7 +111,7 @@
     </entryLink>
     <entryLink import="true" name="Ellyrian Reavers" hidden="false" id="6e5d-1150-0e81-4dca" type="selectionEntry" targetId="d02f-84c5-86bf-ff87">
       <categoryLinks>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="97d8-ce1a-8c98-053f" primary="false" name="Units"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="97d8-ce1a-8c98-053f" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
         <categoryLink targetId="2bfe-5863-46fe-d284" id="4f1c-b258-267c-cb35" primary="true" name="Rare"/>
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="099d-b713-ee50-1ea4" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
       </categoryLinks>
@@ -106,7 +120,7 @@
       <categoryLinks>
         <categoryLink name="0-1 Flamespyre or Frostheart Phoenix (not counting character mounts) per 1,000 points" hidden="false" id="37ae-ef79-9cc3-c6cc" targetId="8294-bb96-8083-3508" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="b047-0270-5f38-c0f2" targetId="2bfe-5863-46fe-d284" primary="true"/>
-        <categoryLink name="Units" hidden="false" id="799a-a0bf-232b-86d7" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="799a-a0bf-232b-86d7" primary="false" targetId="fec1-537a-bbeb-7926"/>
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="81bc-cf66-0176-ebd8" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
       </categoryLinks>
     </entryLink>
@@ -114,7 +128,7 @@
       <categoryLinks>
         <categoryLink name="0-1 Flamespyre or Frostheart Phoenix (not counting character mounts) per 1,000 points" hidden="false" id="9370-2dc7-fda2-9108" targetId="8294-bb96-8083-3508" primary="false"/>
         <categoryLink name="Rare" hidden="false" id="ee21-3d58-5e11-9463" targetId="2bfe-5863-46fe-d284" primary="true"/>
-        <categoryLink name="Units" hidden="false" id="c493-1ac4-e3b1-aca3" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="c493-1ac4-e3b1-aca3" primary="false" targetId="fec1-537a-bbeb-7926"/>
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="a54f-086a-576e-44be" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
       </categoryLinks>
     </entryLink>
@@ -122,7 +136,7 @@
       <categoryLinks>
         <categoryLink targetId="2bfe-5863-46fe-d284" id="2295-f262-3b41-1ce5" primary="true" name="Rare"/>
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="bbfa-7a9d-80fa-80a9" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="caf8-3039-9c06-5b5b" primary="false" name="Units"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="caf8-3039-9c06-5b5b" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
       </categoryLinks>
     </entryLink>
     <entryLink import="true" name="Ishaya Vess, Sentinel of the Silent Isle" hidden="false" id="b9ad-2a5e-24f4-4bb9" type="selectionEntry" targetId="c0a1-5714-db32-95ae">
@@ -136,7 +150,7 @@
       <categoryLinks>
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="d57e-c19a-19da-6e62" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
         <categoryLink targetId="f0e3-2e32-8866-ea32" id="7787-693f-581c-8556" primary="true" name="Core"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="33b7-5c44-eecc-c10e" primary="false" name="Units"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="33b7-5c44-eecc-c10e" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
       </categoryLinks>
     </entryLink>
   </entryLinks>
