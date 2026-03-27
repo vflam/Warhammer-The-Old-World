@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="13b1-ec94-d107-d711" name="Wood Elf Realms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="100" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="13b1-ec94-d107-d711" name="Wood Elf Realms" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="98" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Elven Reflexes" hidden="false" id="a8c1-1eef-eaba-d157" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
@@ -4054,7 +4054,7 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
                         <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
                       </repeats>
                       <conditions>
-                        <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="c586-b327-4cc4-c4b8" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
                       </conditions>
                     </modifier>
                     <modifier type="increment" value="1" field="b5c4-7907-b0eb-6553">
@@ -4062,7 +4062,7 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
                         <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
                       </repeats>
                       <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="force" childId="c586-b327-4cc4-c4b8" shared="true"/>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
                       </conditions>
                     </modifier>
                   </modifiers>
@@ -5734,486 +5734,60 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
         <categoryLink name="Core" hidden="false" id="95ef-feff-8ce-efc9" targetId="f0e3-2e32-8866-ea32" primary="true"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="4e42-3d76-23a3-2c98" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="03cd-8f47-3495-8ee7" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="f26b-13c9-46bd-6b06" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="03cd-8f47-3495-8ee7">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="03cd-8f47-3495-8ee7">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="2" field="f26b-13c9-46bd-6b06">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="f26b-13c9-46bd-6b06">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Glade Guard" hidden="false" type="selectionEntry" id="4aaa-8b49-81fa-859d" targetId="886b-7a97-d451-3f0c">
       <constraints>
         <constraint type="min" value="1" field="selections" scope="force" shared="true" id="b9d9-ec20-75d7-185a" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="6930-37e6-5b68-d34e" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="c73f-fb50-d246-4a18" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
       </constraints>
       <categoryLinks>
         <categoryLink name="Core" hidden="false" id="63e7-b714-92b6-ebd" targetId="f0e3-2e32-8866-ea32" primary="true"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="6245-1e95-76d9-c2bf" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
-      <modifiers>
-        <modifier type="set" value="0" field="6930-37e6-5b68-d34e">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="6930-37e6-5b68-d34e">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="2" field="c73f-fb50-d246-4a18">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="c73f-fb50-d246-4a18">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Glade Lord" hidden="false" type="selectionEntry" id="6cf2-ab8a-edb5-2fe9" targetId="3923-9999-f3e2-9245">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="33d0-e837-459c-4b11" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
         <categoryLink targetId="71a0-34a3-9bbf-e645" id="16bd-82e1-dbfa-69d6" primary="false" name="0-1 Glade Lord or Spellweaver per 1,000 points"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="6b13-1140-eaf7-0a44" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="7199-f48e-d195-e38c" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="6b13-1140-eaf7-0a44">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="6b13-1140-eaf7-0a44">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="7199-f48e-d195-e38c">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="7199-f48e-d195-e38c">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Eternal Guard" hidden="false" type="selectionEntry" id="8538-cdff-3de9-7a4f" targetId="d3d1-dd14-80c2-840e">
       <categoryLinks>
         <categoryLink name="Core" hidden="false" id="c46f-567d-2f4a-9d84" targetId="f0e3-2e32-8866-ea32" primary="true"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="54d0-cbb9-3d1a-ba06" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="55b7-9275-bebc-9d80" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="a47a-2515-ed2f-7cda" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="55b7-9275-bebc-9d80">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="55b7-9275-bebc-9d80">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="2" field="a47a-2515-ed2f-7cda">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="a47a-2515-ed2f-7cda">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Treemen" hidden="false" type="selectionEntry" id="8ec7-c8f2-d94f-2eb5" targetId="226a-c7c5-2a68-5f72">
       <categoryLinks>
         <categoryLink name="Rare" hidden="false" id="8f6f-28cb-3d0-94cb" targetId="2bfe-5863-46fe-d284" primary="true"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="2b28-c4e0-7937-1f50" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="4e82-fbf2-bbd3-bc63" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="1cb0-6bb8-4787-573b" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="4e82-fbf2-bbd3-bc63">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="4e82-fbf2-bbd3-bc63">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="0" field="1cb0-6bb8-4787-573b">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="1cb0-6bb8-4787-573b">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Wardancers" hidden="false" type="selectionEntry" id="c6c1-4fad-5477-e824" targetId="4a01-6b67-783-6d3a">
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="5d36-9e3a-ec44-2f2" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="e536-4a9c-76a1-c836" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="7908-1922-7429-6204" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="83ee-5fa0-637e-13d0" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="7908-1922-7429-6204">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="7908-1922-7429-6204">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="83ee-5fa0-637e-13d0">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="83ee-5fa0-637e-13d0">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Tree Kin" hidden="false" type="selectionEntry" id="6d53-f8ec-6498-9f9c" targetId="ff64-94cc-3afd-5333">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="false" id="9eda-3087-db4f-fd58" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="c77c-3660-d687-706f" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="4cc0-c7c2-d5bc-98ac" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="c77c-3660-d687-706f">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="c77c-3660-d687-706f">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+        <modifier type="increment" value="2" field="9eda-3087-db4f-fd58">
           <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
           </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
         </modifier>
-        <modifier type="set" value="1" field="4cc0-c7c2-d5bc-98ac">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="4cc0-c7c2-d5bc-98ac">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+        <modifier type="increment" value="2" field="9eda-3087-db4f-fd58">
           <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
           </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
         </modifier>
       </modifiers>
       <categoryLinks>
@@ -6227,550 +5801,58 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="cbbf-7cac-83e6-94e5" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <comment>Special</comment>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="f178-c70b-76fb-eed2" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="961f-cbec-db10-1a58" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="f178-c70b-76fb-eed2">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="f178-c70b-76fb-eed2">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="961f-cbec-db10-1a58">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="961f-cbec-db10-1a58">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Glade Captain" hidden="false" type="selectionEntry" id="cc75-3d13-3683-1c2f" targetId="f957-3ded-9234-666f">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="15d6-712-e35b-977f" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="b9b2-ba12-3f21-bad7" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="e58b-7dce-6c91-ebf9" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="b9b2-ba12-3f21-bad7">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="b9b2-ba12-3f21-bad7">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="e58b-7dce-6c91-ebf9">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="e58b-7dce-6c91-ebf9">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Branchwraiths" hidden="false" type="selectionEntry" id="898c-2c5b-4552-5734" targetId="4b26-6fe7-b18f-8392">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="b0f6-78d4-4d50-535a" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="7db6-3909-d434-861a" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="3df4-5b7f-a1f0-07d2" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="7db6-3909-d434-861a">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="7db6-3909-d434-861a">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="3df4-5b7f-a1f0-07d2">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="3df4-5b7f-a1f0-07d2">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Spellsinger" hidden="false" type="selectionEntry" id="3260-b29b-a3b4-f5c2" targetId="8192-39b4-a938-caec">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="cc05-53a7-fe53-75a9" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="1a1c-270e-6f50-8e63" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="8df5-8d9d-9679-e13d" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="1a1c-270e-6f50-8e63">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="1a1c-270e-6f50-8e63">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="8df5-8d9d-9679-e13d">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="8df5-8d9d-9679-e13d">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Spellweaver" hidden="false" type="selectionEntry" id="1983-72f1-846f-aede" targetId="2fbc-5442-c332-f043">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="b912-b11f-1e87-7fd4" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
         <categoryLink targetId="71a0-34a3-9bbf-e645" id="8125-6456-e6a8-8072" primary="false" name="0-1 Glade Lord or Spellweaver per 1,000 points"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="dcea-d8ec-95b8-62c9" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="10e8-2e2f-1976-51a3" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="dcea-d8ec-95b8-62c9">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="dcea-d8ec-95b8-62c9">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="10e8-2e2f-1976-51a3">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="10e8-2e2f-1976-51a3">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Shadowdancers" hidden="false" type="selectionEntry" id="9548-175a-d19d-4f24" targetId="96d3-d1a9-ff94-84f6">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="708d-f0c7-fad6-fa21" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="0e50-07ea-9fac-0853" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="7fd8-9d62-dbc5-582a" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="0e50-07ea-9fac-0853">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="0e50-07ea-9fac-0853">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="7fd8-9d62-dbc5-582a">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="7fd8-9d62-dbc5-582a">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Waystalkers" hidden="false" type="selectionEntry" id="1983-2db2-a1e9-1a36" targetId="4fdd-d23b-8a59-56db">
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="9a58-d5eb-b70b-bf2e" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="270e-9890-f0c1-e09b" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="fe8a-ca41-fefc-a535" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="270e-9890-f0c1-e09b">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="270e-9890-f0c1-e09b">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="fe8a-ca41-fefc-a535">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="fe8a-ca41-fefc-a535">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Treemen Ancients" hidden="false" type="selectionEntry" id="3722-55f5-d24-2cc2" targetId="2cc9-e0e8-dd72-422a">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="false" id="75cd-c01c-7860-13ba" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="be8b-6d06-5e14-f59e" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="783c-2a74-d490-92bc" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="be8b-6d06-5e14-f59e">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="be8b-6d06-5e14-f59e">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+        <modifier type="increment" value="1" field="75cd-c01c-7860-13ba">
           <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
           </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
         </modifier>
-        <modifier type="set" value="1" field="783c-2a74-d490-92bc">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="783c-2a74-d490-92bc">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+        <modifier type="increment" value="1" field="75cd-c01c-7860-13ba">
           <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
           </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
         </modifier>
       </modifiers>
       <categoryLinks>
@@ -6782,344 +5864,33 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
         <categoryLink name="Core" hidden="false" id="59bc-5be0-8073-9049" targetId="f0e3-2e32-8866-ea32" primary="true"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="2b5f-a943-2850-8bec" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="7ca5-cbcd-ad73-203c" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="fe5f-2b9c-32e6-666e" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="7ca5-cbcd-ad73-203c">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="7ca5-cbcd-ad73-203c">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="2" field="fe5f-2b9c-32e6-666e">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="fe5f-2b9c-32e6-666e">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Warhawk Riders" hidden="false" type="selectionEntry" id="7b51-92f4-72b9-a5c6" targetId="f701-8966-f816-10c8">
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="f79d-fad0-c6f7-21de" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="6914-7ecb-8027-6e47" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="2037-511a-f9c8-31f1" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="ea98-6ff8-6576-c6af" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="2037-511a-f9c8-31f1">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="2037-511a-f9c8-31f1">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="ea98-6ff8-6576-c6af">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="ea98-6ff8-6576-c6af">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Wildwood Rangers" hidden="false" type="selectionEntry" id="2f11-1136-9c37-7ffa" targetId="d37c-a95d-615e-71d9">
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="6002-1f69-e0d7-bc35" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="ffe6-2704-7315-b96f" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="b5c2-ccb8-777b-0d1f" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="d409-c0ff-04e0-2d6e" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="b5c2-ccb8-777b-0d1f">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="b5c2-ccb8-777b-0d1f">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="d409-c0ff-04e0-2d6e">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="d409-c0ff-04e0-2d6e">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Wild Riders" hidden="false" type="selectionEntry" id="c8ee-228f-f211-54cf" targetId="3f3d-ccd8-ad95-1750">
       <categoryLinks>
         <categoryLink name="Special" hidden="false" id="f29a-12fa-f3c-1212" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="c4b8-5fdf-a2bd-bb8f" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="2fc4-84ef-8a5a-7b18" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="1249-1baf-a18e-ca4f" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="2fc4-84ef-8a5a-7b18">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="2fc4-84ef-8a5a-7b18">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="1249-1baf-a18e-ca4f">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="1249-1baf-a18e-ca4f">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Waywatchers" hidden="false" type="selectionEntry" id="2aac-1f4-31b8-2c66" targetId="a167-14b-f89a-2f11">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="9401-3036-b2d8-1bbc" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="ae52-c9f1-8ca1-c5fe" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="cf2a-5457-40dc-f801" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="ae52-c9f1-8ca1-c5fe">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="ae52-c9f1-8ca1-c5fe">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+        <modifier type="increment" value="1" field="9401-3036-b2d8-1bbc">
           <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="0" field="cf2a-5457-40dc-f801">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="cf2a-5457-40dc-f801">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+            <repeat value="1" repeats="1" field="selections" scope="force" childId="1983-2db2-a1e9-1a36" shared="true" roundUp="false" id="9a1b-6889-4f64-a360" includeChildSelections="true"/>
           </repeats>
         </modifier>
       </modifiers>
@@ -7133,135 +5904,27 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
         <categoryLink name="Special" hidden="false" id="63f2-16e5-6ee4-cc57" targetId="633f-f67a-1b6a-d203" primary="true"/>
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="2615-c1ed-51db-4965" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="45cd-8e30-2243-6220" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="ae68-ab30-3dea-31a9" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="45cd-8e30-2243-6220">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="45cd-8e30-2243-6220">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="ae68-ab30-3dea-31a9">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="ae68-ab30-3dea-31a9">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Great Eagles" hidden="false" type="selectionEntry" id="879a-689f-6804-dce4" targetId="db57-f9aa-42fe-a3bd">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="false" id="1477-5e82-290f-65c8" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="c896-1026-aeb2-a4ea" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="894c-3662-5380-f8e8" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="c896-1026-aeb2-a4ea">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="c896-1026-aeb2-a4ea">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+        <modifier type="increment" value="3" field="1477-5e82-290f-65c8">
           <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
           </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
         </modifier>
-        <modifier type="set" value="0" field="894c-3662-5380-f8e8">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="894c-3662-5380-f8e8">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+        <modifier type="increment" value="3" field="1477-5e82-290f-65c8">
           <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
           </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
         </modifier>
       </modifiers>
       <categoryLinks>
@@ -7272,67 +5935,23 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
     <entryLink import="true" name="Deepwood Scouts" hidden="false" type="selectionEntry" id="b940-5b75-2113-ecc1" targetId="9264-289b-db3a-5b8d">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="false" id="19ee-c390-c555-24db" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="7e9b-f90b-0a16-9070" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="15ce-e958-3af5-6ff7" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="7e9b-f90b-0a16-9070">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="7e9b-f90b-0a16-9070">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+        <modifier type="increment" value="1" field="19ee-c390-c555-24db">
           <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
           </repeats>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
         </modifier>
-        <modifier type="set" value="2" field="15ce-e958-3af5-6ff7">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="15ce-e958-3af5-6ff7">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+        <modifier type="increment" value="1" field="19ee-c390-c555-24db">
           <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
           </repeats>
+          <conditions>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+          </conditions>
         </modifier>
       </modifiers>
       <categoryLinks>
@@ -7346,42 +5965,6 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
         <categoryLink targetId="3ba8-a41e-b6ae-d4ba" id="fca8-663b-ddee-a741" primary="true" name="Named Characters"/>
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="e04e-042d-5556-c44c" primary="false" name="Characters"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="8562-afb8-363d-bc1c" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="8562-afb8-363d-bc1c">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="8562-afb8-363d-bc1c">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Araloth, Lord of Talsyn" hidden="false" id="5c6e-620b-55da-c2e9" type="selectionEntry" targetId="22da-2e6a-3ff1-d441">
       <categoryLinks>
@@ -7389,112 +5972,12 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="a8d5-5b60-2c75-6c16" primary="false" name="Characters"/>
         <categoryLink targetId="71a0-34a3-9bbf-e645" id="d58a-c889-c15a-f148" primary="false" name="0-1 Glade Lord or Spellweaver per 1,000 points"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3e98-f16e-b59c-9bc7" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="3e98-f16e-b59c-9bc7">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="3e98-f16e-b59c-9bc7">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
     <entryLink import="true" name="Wood Elf Beast Packs" hidden="false" id="6ab7-c81a-d632-055f" type="selectionEntry" targetId="806b-f97c-3a1c-28e2">
       <categoryLinks>
         <categoryLink targetId="fec1-537a-bbeb-7926" id="948e-bd8a-4c23-b25f" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
         <categoryLink targetId="2bfe-5863-46fe-d284" id="35ad-d60b-31c0-44d4" primary="true" name="Rare"/>
       </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="6ed3-a258-d621-ec2d" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="bba9-8fff-9e1a-d78d" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="6ed3-a258-d621-ec2d">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="6ed3-a258-d621-ec2d">
-          <comment>Grand melee</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true" includeChildForces="true">
-                  <comment>replaced</comment>
-                </condition>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true" includeChildForces="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="4" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="0" field="bba9-8fff-9e1a-d78d">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="bba9-8fff-9e1a-d78d">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
-      </modifiers>
     </entryLink>
   </entryLinks>
   <readme>Battlescribe is abandonware, go to www.newrecruit.eu for a much better alternative!</readme>
@@ -8008,7 +6491,7 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
           </repeats>
           <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="c586-b327-4cc4-c4b8" shared="true"/>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
           </conditions>
         </modifier>
         <modifier type="increment" value="1" field="57c3-94ae-d52c-6e55">
@@ -8016,7 +6499,7 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
           </repeats>
           <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="force" childId="c586-b327-4cc4-c4b8" shared="true"/>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -8031,7 +6514,7 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
           </repeats>
           <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="c586-b327-4cc4-c4b8" shared="true"/>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
           </conditions>
         </modifier>
         <modifier type="increment" value="1" field="263d-6409-5328-ce51">
@@ -8039,7 +6522,7 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
           </repeats>
           <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="force" childId="c586-b327-4cc4-c4b8" shared="true"/>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -8054,7 +6537,7 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
           </repeats>
           <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="c586-b327-4cc4-c4b8" shared="true"/>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
           </conditions>
         </modifier>
         <modifier type="increment" value="1" field="d252-839f-5951-f4ce">
@@ -8062,7 +6545,7 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
           </repeats>
           <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="force" childId="c586-b327-4cc4-c4b8" shared="true"/>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -8077,7 +6560,7 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
           </repeats>
           <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="c586-b327-4cc4-c4b8" shared="true"/>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
           </conditions>
         </modifier>
         <modifier type="increment" value="1" field="ebf9-3185-01dc-4743">
@@ -8085,7 +6568,7 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
           </repeats>
           <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="force" childId="c586-b327-4cc4-c4b8" shared="true"/>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -8100,7 +6583,7 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false"/>
           </repeats>
           <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="c586-b327-4cc4-c4b8" shared="true"/>
+            <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
           </conditions>
         </modifier>
         <modifier type="increment" value="1" field="6ebf-6a58-f5e8-076f">
@@ -8108,7 +6591,7 @@ If this test is failed, only rolls of natural 6 will hit.</characteristic>
             <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false"/>
           </repeats>
           <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="force" childId="c586-b327-4cc4-c4b8" shared="true"/>
+            <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
           </conditions>
         </modifier>
       </modifiers>
