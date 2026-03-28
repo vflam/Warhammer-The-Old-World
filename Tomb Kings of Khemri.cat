@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="be27-8084-f552-1f4" name="Tomb Kings of Khemri" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="33" revision="110" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="be27-8084-f552-1f4" name="Tomb Kings of Khemri" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="33" revision="111" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Dry as Dust" hidden="false" id="ae9b-6cef-787a-da54" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" page="153" publicationId="7c89-736c-3139-24a0">
       <characteristics>
@@ -3407,7 +3407,7 @@ However, if this model casts the Light of Death Bound spell, this Bound spell wi
                 <modifier type="remove" value="5165-d052-cfc2-5887" field="category"/>
               </modifiers>
             </entryLink>
-            <entryLink import="true" name="Light Armour" hidden="false" type="selectionEntry" id="c261-d1a8-7f97-b92e" targetId="7cab-40e6-f134-de78" sortIndex="5">
+            <entryLink import="true" name="Light Armour" hidden="false" type="selectionEntry" id="c261-d1a8-7f97-b92e" targetId="7cab-40e6-f134-de78" sortIndex="6">
               <costs>
                 <cost name="pts" typeId="points" value="1"/>
               </costs>
@@ -3421,7 +3421,7 @@ However, if this model casts the Light of Death Bound spell, this Bound spell wi
             <cost name="pts" typeId="points" value="11"/>
           </costs>
           <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Chariot Runners" hidden="false" id="a4e4-3587-b5a7-c6a1" collective="true" sortIndex="4">
+            <selectionEntry type="upgrade" import="true" name="Chariot Runners" hidden="false" id="a4e4-3587-b5a7-c6a1" collective="true" sortIndex="5">
               <infoLinks>
                 <infoLink name="Chariot Runners" hidden="false" type="profile" id="8317-aa19-9862-9d6f" targetId="afa3-a46a-2608-f62c"/>
               </infoLinks>
@@ -3431,6 +3431,29 @@ However, if this model casts the Light of Death Bound spell, this Bound spell wi
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="a5a9-142c-6d5d-c0fa"/>
               </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Masterful Outriders" hidden="true" id="4d8d-7fe6-6f8a-9959" collective="true" sortIndex="4">
+              <infoLinks>
+                <infoLink name="Chariot Runners" id="1ba-fe6f-cf35-e42f" hidden="false" type="profile" targetId="afa3-a46a-2608-f62c"/>
+              </infoLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="0"/>
+              </costs>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="67b0-417e-9d34-d1fd"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="false" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="708f-d597-bd5f-a586" shared="true"/>
+                        <condition type="atMost" value="0" field="selections" scope="ccfd-b30b-4a66-1b31" childId="a4e4-3587-b5a7-c6a1" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
             </selectionEntry>
           </selectionEntries>
           <categoryLinks>
@@ -3500,39 +3523,6 @@ However, if this model casts the Light of Death Bound spell, this Bound spell wi
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
-        <selectionEntryGroup name="Royal Host" hidden="false" id="1c72-199a-2263-b144" sortIndex="3">
-          <selectionEntries>
-            <selectionEntry type="upgrade" import="true" name="Chariot Runners" hidden="true" id="4d8d-7fe6-6f8a-9959" collective="true">
-              <infoLinks>
-                <infoLink name="Chariot Runners" hidden="false" type="profile" id="1ba-fe6f-cf35-e42f" targetId="afa3-a46a-2608-f62c"/>
-              </infoLinks>
-              <costs>
-                <cost name="pts" typeId="points" value="0"/>
-              </costs>
-              <constraints>
-                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="67b0-417e-9d34-d1fd"/>
-                <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="76cd-9837-fdb4-452c" includeChildSelections="true"/>
-              </constraints>
-              <modifiers>
-                <modifier type="set" value="false" field="hidden">
-                  <conditionGroups>
-                    <conditionGroup type="and">
-                      <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="primary-catalogue" childId="708f-d597-bd5f-a586" shared="true"/>
-                        <condition type="atMost" value="0" field="selections" scope="ccfd-b30b-4a66-1b31" childId="a4e4-3587-b5a7-c6a1" shared="true" includeChildSelections="true"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-                <modifier type="increment" value="1" field="76cd-9837-fdb4-452c">
-                  <repeats>
-                    <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="4c28-eaa-4dcd-9b2b"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-            </selectionEntry>
-          </selectionEntries>
-        </selectionEntryGroup>
       </selectionEntryGroups>
       <infoGroups>
         <infoGroup name="Special Rules" hidden="false" id="6760-1af2-8680-84d2">
@@ -3555,6 +3545,13 @@ However, if this model casts the Light of Death Bound spell, this Bound spell wi
       <categoryLinks>
         <categoryLink name="Faction: Tomb Kings of Khemri" hidden="false" id="16a4-58cd-9f38-9d4f" primary="false" targetId="6850-3df1-29ed-581"/>
       </categoryLinks>
+      <modifiers>
+        <modifier type="add" value="6198-b71f-11d8-75c7" field="category">
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="self" childId="4d8d-7fe6-6f8a-9959" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Skeleton Horsemen" hidden="false" id="3aa7-ad25-7cea-ce6b">
       <profiles>
@@ -9490,4 +9487,43 @@ However, if this model casts the Light of Death Bound spell, this Bound spell wi
       </modifiers>
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
+  <categoryEntries>
+    <categoryEntry name="0-1 Skeleton Horse Archers  Unit per 1,000 points may have the Chariot Runner special rule for free" id="6198-b71f-11d8-75c7" hidden="true">
+      <constraints>
+        <constraint type="max" value="0" field="selections" scope="force" shared="true" id="ab1d-bacd-25f5-3e3d" includeChildSelections="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="increment" value="1" field="ab1d-bacd-25f5-3e3d">
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="e590-fe97-478b-8784"/>
+          </repeats>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="ab1d-bacd-25f5-3e3d">
+          <repeats>
+            <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="15c0-df6e-908f-9a0a"/>
+          </repeats>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
+  </categoryEntries>
 </catalogue>
