@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c908-5f26-5bdf-2a48" name="Warriors of Chaos" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="106" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c908-5f26-5bdf-2a48" name="Warriors of Chaos" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="22" revision="107" authorUrl="www.newrecruit.eu" authorContact="Discord: vflam" authorName="Flammy" battleScribeVersion="2.03" type="catalogue">
   <sharedProfiles>
     <profile name="Chaos Armour" hidden="false" id="5073-af52-fe26-36ff" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule">
       <characteristics>
@@ -5473,9 +5473,6 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
     <entryLink import="true" name="Hellcannon" hidden="false" type="selectionEntry" id="c1fd-4b8f-e1cf-9a34" targetId="6b92-b342-53c6-d701">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="124c-b6c0-4424-ebd4" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="7d45-0620-1aa1-e0b0" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="c9dd-357f-4243-8c2c" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -5484,31 +5481,6 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         <modifier type="increment" value="1" field="124c-b6c0-4424-ebd4">
           <repeats>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="d143-3319-1f2a-3541"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="0" field="7d45-0620-1aa1-e0b0">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="7d45-0620-1aa1-e0b0">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
         <modifier type="set" value="0" field="c9dd-357f-4243-8c2c">
@@ -5578,39 +5550,14 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="e313-c219-31d5-4370" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="2462-cab6-0e3f-4136" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="ae26-0b1e-8b0b-c721" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="f806-2e91-9867-fcb8" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="2462-cab6-0e3f-4136">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="2462-cab6-0e3f-4136">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="ae26-0b1e-8b0b-c721">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -5666,24 +5613,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Gorebeast Chariots" hidden="false" type="selectionEntry" id="5e58-5bb2-a1bb-7f6f" targetId="7587-df82-a8b8-11b8">
-      <categoryLinks>
-        <categoryLink name="Rare" hidden="false" id="95d0-3c33-42f-49cb" targetId="2bfe-5863-46fe-d284" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="45b9-e600-fa82-b300" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="7c23-4aa7-0a7d-6298" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="f806-2e91-9867-fcb8">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="a6f0-24b2-b02c-c6d8" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="7c23-4aa7-0a7d-6298">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5693,8 +5627,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="7c23-4aa7-0a7d-6298">
+        <modifier type="increment" value="1" field="f806-2e91-9867-fcb8">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5707,6 +5644,36 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="f806-2e91-9867-fcb8">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Gorebeast Chariots" hidden="false" type="selectionEntry" id="5e58-5bb2-a1bb-7f6f" targetId="7587-df82-a8b8-11b8">
+      <categoryLinks>
+        <categoryLink name="Rare" hidden="false" id="95d0-3c33-42f-49cb" targetId="2bfe-5863-46fe-d284" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="45b9-e600-fa82-b300" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="a6f0-24b2-b02c-c6d8" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="8f72-995d-a44c-d298" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="a6f0-24b2-b02c-c6d8">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -5762,24 +5729,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Chaos Chariots" hidden="false" type="selectionEntry" id="d194-f6a-63b0-49e2" targetId="4b61-4393-1b35-f951">
-      <categoryLinks>
-        <categoryLink name="Special" hidden="false" id="6052-5f58-711e-8bb5" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="480d-84f9-379e-0e1a" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5b3e-d5e5-228a-2565" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="0" field="8f72-995d-a44c-d298">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="30c7-dc69-ed2c-1db2" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="5b3e-d5e5-228a-2565">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5789,8 +5743,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="5b3e-d5e5-228a-2565">
+        <modifier type="increment" value="1" field="8f72-995d-a44c-d298">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5803,6 +5760,36 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="8f72-995d-a44c-d298">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Chaos Chariots" hidden="false" type="selectionEntry" id="d194-f6a-63b0-49e2" targetId="4b61-4393-1b35-f951">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="6052-5f58-711e-8bb5" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="480d-84f9-379e-0e1a" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="30c7-dc69-ed2c-1db2" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="ec1f-3407-9c75-446d" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="30c7-dc69-ed2c-1db2">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -5858,23 +5845,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Chaos Warhounds" hidden="false" type="selectionEntry" id="4261-f9ac-795c-c038" targetId="c2cc-8da1-a926-e033">
-      <categoryLinks>
-        <categoryLink name="Core" hidden="false" id="5280-7f80-7a58-fd58" targetId="f0e3-2e32-8866-ea32" primary="true"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="0392-7256-4814-cf1c" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="ec1f-3407-9c75-446d">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="7c81-4fc8-139b-b22b" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="2" field="0392-7256-4814-cf1c">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5884,8 +5859,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="0392-7256-4814-cf1c">
+        <modifier type="increment" value="1" field="ec1f-3407-9c75-446d">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5898,6 +5876,35 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="ec1f-3407-9c75-446d">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Chaos Warhounds" hidden="false" type="selectionEntry" id="4261-f9ac-795c-c038" targetId="c2cc-8da1-a926-e033">
+      <categoryLinks>
+        <categoryLink name="Core" hidden="false" id="5280-7f80-7a58-fd58" targetId="f0e3-2e32-8866-ea32" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="7c81-4fc8-139b-b22b" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="a53c-5573-c259-816b" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="7c81-4fc8-139b-b22b">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -5953,24 +5960,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Chaos Spawn" hidden="false" type="selectionEntry" id="abc3-5571-5e3b-b2fb" targetId="26f1-368c-8def-c49b">
-      <categoryLinks>
-        <categoryLink name="Special" hidden="false" id="c5c1-a3fb-374b-814d" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="f8cf-9aa2-311e-e257" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="ac46-4f8c-7855-8e20" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="2" field="a53c-5573-c259-816b">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="f1de-cd83-d4a0-fff9" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="ac46-4f8c-7855-8e20">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5980,8 +5974,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="ac46-4f8c-7855-8e20">
+        <modifier type="increment" value="1" field="a53c-5573-c259-816b">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5994,6 +5991,36 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="a53c-5573-c259-816b">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Chaos Spawn" hidden="false" type="selectionEntry" id="abc3-5571-5e3b-b2fb" targetId="26f1-368c-8def-c49b">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="c5c1-a3fb-374b-814d" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="f8cf-9aa2-311e-e257" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="f1de-cd83-d4a0-fff9" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="3b6b-0b99-9fdf-37cc" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="f1de-cd83-d4a0-fff9">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -6049,24 +6076,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Chaos Trolls" hidden="false" type="selectionEntry" id="6647-38b0-5c8d-ee55" targetId="df02-abd1-c7f7-4233">
-      <categoryLinks>
-        <categoryLink name="Special" hidden="false" id="50e9-4f23-fb56-2756" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="692f-ebf4-d2a4-2a32" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="0ccb-c3e8-eb91-bb20" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="3b6b-0b99-9fdf-37cc">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="8bbc-6904-4a73-7f4f" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="0ccb-c3e8-eb91-bb20">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6076,8 +6090,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="0ccb-c3e8-eb91-bb20">
+        <modifier type="increment" value="1" field="3b6b-0b99-9fdf-37cc">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6090,6 +6107,36 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="3b6b-0b99-9fdf-37cc">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Chaos Trolls" hidden="false" type="selectionEntry" id="6647-38b0-5c8d-ee55" targetId="df02-abd1-c7f7-4233">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="50e9-4f23-fb56-2756" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="692f-ebf4-d2a4-2a32" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="8bbc-6904-4a73-7f4f" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="3902-0a34-1e70-84e5" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="8bbc-6904-4a73-7f4f">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -6145,24 +6192,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Chaos Ogres" hidden="false" type="selectionEntry" id="fce6-876b-1bcb-85a3" targetId="d7c9-d-55d4-9c7f">
-      <categoryLinks>
-        <categoryLink name="Special" hidden="false" id="46cc-470c-383d-a0f4" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="d487-c95c-f172-3e2a" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="a64e-d11b-6dd8-7f4d" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="3902-0a34-1e70-84e5">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="e08b-c35a-d43e-6f74" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="a64e-d11b-6dd8-7f4d">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6172,8 +6206,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="a64e-d11b-6dd8-7f4d">
+        <modifier type="increment" value="1" field="3902-0a34-1e70-84e5">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6186,6 +6223,36 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="3902-0a34-1e70-84e5">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Chaos Ogres" hidden="false" type="selectionEntry" id="fce6-876b-1bcb-85a3" targetId="d7c9-d-55d4-9c7f">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="46cc-470c-383d-a0f4" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="d487-c95c-f172-3e2a" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="e08b-c35a-d43e-6f74" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="490c-b08a-d88a-e346" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="e08b-c35a-d43e-6f74">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -6241,24 +6308,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Marauder Horsemen" hidden="false" type="selectionEntry" id="c5dc-5ac9-95ca-4828" targetId="10a8-69ca-b180-fad8">
-      <categoryLinks>
-        <categoryLink name="Core" hidden="false" id="94b6-1eac-f6a1-bad5" targetId="f0e3-2e32-8866-ea32" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="608d-5781-9327-0a30" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="4eb9-da34-2c11-d8b1" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="490c-b08a-d88a-e346">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="ab29-3929-9a5f-7fe2" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="2" field="4eb9-da34-2c11-d8b1">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6268,8 +6322,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="4eb9-da34-2c11-d8b1">
+        <modifier type="increment" value="1" field="490c-b08a-d88a-e346">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6282,6 +6339,36 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="490c-b08a-d88a-e346">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Marauder Horsemen" hidden="false" type="selectionEntry" id="c5dc-5ac9-95ca-4828" targetId="10a8-69ca-b180-fad8">
+      <categoryLinks>
+        <categoryLink name="Core" hidden="false" id="94b6-1eac-f6a1-bad5" targetId="f0e3-2e32-8866-ea32" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="608d-5781-9327-0a30" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="ab29-3929-9a5f-7fe2" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="c13c-c568-e951-aeed" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="ab29-3929-9a5f-7fe2">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -6337,25 +6424,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Chosen Chaos Knights" hidden="false" type="selectionEntry" id="9c3-bb00-59f2-8388" targetId="2a29-2193-ba7b-fe47">
-      <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="5a86-91eb-3d68-2646" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="7967-d33d-526c-8b42" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="2" field="c13c-c568-e951-aeed">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="67fc-1d12-d2eb-f741" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <categoryLinks>
-        <categoryLink name="Special" hidden="false" id="14bc-8260-5b31-6057" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="555a-31bc-c2da-9ae0" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <modifiers>
-        <modifier type="set" value="1" field="7967-d33d-526c-8b42">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6365,8 +6438,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="7967-d33d-526c-8b42">
+        <modifier type="increment" value="1" field="c13c-c568-e951-aeed">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6379,6 +6455,34 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="c13c-c568-e951-aeed">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Chosen Chaos Knights" hidden="false" type="selectionEntry" id="9c3-bb00-59f2-8388" targetId="2a29-2193-ba7b-fe47">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="5a86-91eb-3d68-2646" includeChildSelections="true"/>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="67fc-1d12-d2eb-f741" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+      </constraints>
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="14bc-8260-5b31-6057" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="555a-31bc-c2da-9ae0" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <modifiers>
         <modifier type="set" value="0" field="67fc-1d12-d2eb-f741">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -6442,39 +6546,14 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="7d1c-8b01-6351-8e04" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="207c-f58d-4a08-dc15" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="5cfe-8e59-0bf5-c8d7" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="b501-2bef-80d0-a7d5" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="2" field="207c-f58d-4a08-dc15">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="207c-f58d-4a08-dc15">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="5cfe-8e59-0bf5-c8d7">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -6530,24 +6609,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Forsaken" hidden="false" type="selectionEntry" id="1fdc-5057-18c5-a73f" targetId="1951-80d7-6aa4-acdd">
-      <categoryLinks>
-        <categoryLink name="Core" hidden="false" id="9b50-b034-d0b4-358e" targetId="f0e3-2e32-8866-ea32" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="feb2-96df-cf6b-bb17" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="2556-aa28-3e46-d306" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="2" field="b501-2bef-80d0-a7d5">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="df03-7eb2-e50a-ce74" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="2" field="2556-aa28-3e46-d306">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6557,8 +6623,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="2556-aa28-3e46-d306">
+        <modifier type="increment" value="1" field="b501-2bef-80d0-a7d5">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6571,6 +6640,36 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="b501-2bef-80d0-a7d5">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Forsaken" hidden="false" type="selectionEntry" id="1fdc-5057-18c5-a73f" targetId="1951-80d7-6aa4-acdd">
+      <categoryLinks>
+        <categoryLink name="Core" hidden="false" id="9b50-b034-d0b4-358e" targetId="f0e3-2e32-8866-ea32" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="feb2-96df-cf6b-bb17" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="df03-7eb2-e50a-ce74" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="22d5-7064-a387-345c" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="df03-7eb2-e50a-ce74">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -6626,24 +6725,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Chaos Marauders" hidden="false" type="selectionEntry" id="4e85-4591-43fa-f399" targetId="8573-1345-8484-74cb">
-      <categoryLinks>
-        <categoryLink name="Core" hidden="false" id="64f7-3438-338-2129" targetId="f0e3-2e32-8866-ea32" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="0249-d355-bda2-a223" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="fc64-4c0c-dd3c-f36d" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="2" field="22d5-7064-a387-345c">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="2c88-5c11-8d9c-8eb1" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="2" field="fc64-4c0c-dd3c-f36d">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6653,8 +6739,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="fc64-4c0c-dd3c-f36d">
+        <modifier type="increment" value="1" field="22d5-7064-a387-345c">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6667,6 +6756,36 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="22d5-7064-a387-345c">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Chaos Marauders" hidden="false" type="selectionEntry" id="4e85-4591-43fa-f399" targetId="8573-1345-8484-74cb">
+      <categoryLinks>
+        <categoryLink name="Core" hidden="false" id="64f7-3438-338-2129" targetId="f0e3-2e32-8866-ea32" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="0249-d355-bda2-a223" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="2c88-5c11-8d9c-8eb1" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5dbf-fe20-eb2b-5953" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="2c88-5c11-8d9c-8eb1">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -6722,25 +6841,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Chosen Chaos Warriors" hidden="false" type="selectionEntry" id="82a0-6b96-349d-2957" targetId="42b3-1ede-8566-e53d">
-      <constraints>
-        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="1232-20ca-c8e6-afec" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="cd3c-9b6a-cfb4-37d9" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="2" field="5dbf-fe20-eb2b-5953">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="bb67-39e4-ce90-7ac7" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <categoryLinks>
-        <categoryLink name="Special" hidden="false" id="fd00-e498-7502-9e3e" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="3e13-2257-e620-a35e" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <modifiers>
-        <modifier type="set" value="1" field="cd3c-9b6a-cfb4-37d9">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6750,8 +6855,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="cd3c-9b6a-cfb4-37d9">
+        <modifier type="increment" value="1" field="5dbf-fe20-eb2b-5953">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6764,6 +6872,34 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="5dbf-fe20-eb2b-5953">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Chosen Chaos Warriors" hidden="false" type="selectionEntry" id="82a0-6b96-349d-2957" targetId="42b3-1ede-8566-e53d">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="1232-20ca-c8e6-afec" includeChildSelections="true"/>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="bb67-39e4-ce90-7ac7" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+      </constraints>
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="fd00-e498-7502-9e3e" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="3e13-2257-e620-a35e" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <modifiers>
         <modifier type="set" value="0" field="bb67-39e4-ce90-7ac7">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -6827,39 +6963,14 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="3d4c-8a9a-3cdc-b773" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="dbc6-979e-5b5f-5250" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="cb69-460c-10fb-edd5" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="6b80-966b-09c3-050b" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="2" field="dbc6-979e-5b5f-5250">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="dbc6-979e-5b5f-5250">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="cb69-460c-10fb-edd5">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -6915,23 +7026,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Exalted Sorcerer" hidden="false" type="selectionEntry" id="b653-b182-faf-92c9" targetId="182a-16df-53da-c950">
-      <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="d416-c831-3c0b-d118" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="f68b-7a5d-87b5-f73a" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="2" field="6b80-966b-09c3-050b">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="12c2-3dcd-a6de-bf81" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="f68b-7a5d-87b5-f73a">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6941,8 +7040,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="f68b-7a5d-87b5-f73a">
+        <modifier type="increment" value="1" field="6b80-966b-09c3-050b">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -6955,6 +7057,35 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="6b80-966b-09c3-050b">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Exalted Sorcerer" hidden="false" type="selectionEntry" id="b653-b182-faf-92c9" targetId="182a-16df-53da-c950">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="d416-c831-3c0b-d118" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="12c2-3dcd-a6de-bf81" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="7f00-4f12-5991-1321" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="12c2-3dcd-a6de-bf81">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -7010,24 +7141,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Sorcerer Lord" hidden="false" type="selectionEntry" id="7e5b-ac25-dfee-a59" targetId="415c-fa0b-bb8e-4424">
-      <categoryLinks>
-        <categoryLink name="Exalted Champions or Sorcerer Lords" hidden="false" id="a0f0-447c-b665-4a4b" targetId="698-dd6-5dd4-aed3" primary="false"/>
-        <categoryLink name="Characters" hidden="false" id="411c-74ce-bd51-a5a" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="4a60-6a45-3478-2583" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="7f00-4f12-5991-1321">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3975-d096-af50-a5dc" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="4a60-6a45-3478-2583">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -7037,8 +7155,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="4a60-6a45-3478-2583">
+        <modifier type="increment" value="1" field="7f00-4f12-5991-1321">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -7051,6 +7172,33 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="7f00-4f12-5991-1321">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Sorcerer Lord" hidden="false" type="selectionEntry" id="7e5b-ac25-dfee-a59" targetId="415c-fa0b-bb8e-4424">
+      <categoryLinks>
+        <categoryLink name="Exalted Champions or Sorcerer Lords" hidden="false" id="a0f0-447c-b665-4a4b" targetId="698-dd6-5dd4-aed3" primary="false"/>
+        <categoryLink name="Characters" hidden="false" id="411c-74ce-bd51-a5a" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3975-d096-af50-a5dc" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="3975-d096-af50-a5dc">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -7114,39 +7262,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         <categoryLink name="Characters" hidden="false" id="89e0-9777-ff7c-8e70" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="ba9a-f1ee-e927-678d" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="e8d8-35a7-84a6-357b" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="ba9a-f1ee-e927-678d">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="ba9a-f1ee-e927-678d">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="e8d8-35a7-84a6-357b">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -7209,39 +7329,14 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         <categoryLink name="Characters" hidden="false" id="656c-1d9f-e85f-51ee" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="9124-6c41-105c-cb87" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="42cc-1fdd-af19-ce8e" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="132b-4c93-d15e-17ce" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="9124-6c41-105c-cb87">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="9124-6c41-105c-cb87">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="42cc-1fdd-af19-ce8e">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -7297,24 +7392,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Exalted Champion" hidden="false" type="selectionEntry" id="c91e-61d9-5831-a574" targetId="bc7b-ed68-f25f-efea">
-      <categoryLinks>
-        <categoryLink name="Exalted Champions or Sorcerer Lords" hidden="false" id="96f2-c00c-4403-ca54" targetId="698-dd6-5dd4-aed3" primary="false"/>
-        <categoryLink name="Characters" hidden="false" id="31c2-113f-ab9f-10f9" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="acae-3738-f359-8954" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="132b-4c93-d15e-17ce">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3303-b466-fbf6-d6a4" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="acae-3738-f359-8954">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -7324,8 +7406,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="acae-3738-f359-8954">
+        <modifier type="increment" value="1" field="132b-4c93-d15e-17ce">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -7338,6 +7423,33 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="132b-4c93-d15e-17ce">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Exalted Champion" hidden="false" type="selectionEntry" id="c91e-61d9-5831-a574" targetId="bc7b-ed68-f25f-efea">
+      <categoryLinks>
+        <categoryLink name="Exalted Champions or Sorcerer Lords" hidden="false" id="96f2-c00c-4403-ca54" targetId="698-dd6-5dd4-aed3" primary="false"/>
+        <categoryLink name="Characters" hidden="false" id="31c2-113f-ab9f-10f9" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3303-b466-fbf6-d6a4" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="3303-b466-fbf6-d6a4">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -7401,39 +7513,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         <categoryLink name="Characters" hidden="false" id="dd0a-6421-3ab0-6f85" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="b641-f5a3-8ef4-ca2a" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="92ba-8399-af85-93b5" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="b641-f5a3-8ef4-ca2a">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="b641-f5a3-8ef4-ca2a">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="92ba-8399-af85-93b5">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -7498,9 +7582,6 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       </categoryLinks>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="roster" shared="true" id="d701-fa03-c530-40ff" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="7307-182c-9362-ee13" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="766d-c806-03ce-9c50" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -7509,31 +7590,6 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         <modifier type="increment" value="1" field="d701-fa03-c530-40ff">
           <repeats>
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="87b6-6f16-395-d1fa"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="0" field="7307-182c-9362-ee13">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="7307-182c-9362-ee13">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
         <modifier type="set" value="0" field="766d-c806-03ce-9c50">
@@ -7600,9 +7656,6 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       </categoryLinks>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="5c65-3b39-c08e-4b2b" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="97e3-f55a-a8b7-1139" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3fd9-ca8b-ad97-9952" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -7611,31 +7664,6 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         <modifier type="increment" value="1" field="5c65-3b39-c08e-4b2b">
           <repeats>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="cc2d-9a2b-68e-81f4" shared="true" roundUp="false" id="f6f2-e29a-e342-504" includeChildSelections="true"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="0" field="97e3-f55a-a8b7-1139">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="97e3-f55a-a8b7-1139">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
         <modifier type="set" value="0" field="3fd9-ca8b-ad97-9952">
@@ -7701,39 +7729,14 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="0b4d-75cc-a7dc-4bc6" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="2773-5a3a-b83a-c31e" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="9c3f-e64d-f67c-ccc0" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="69b5-fdad-8b26-8e2f" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="2773-5a3a-b83a-c31e">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="2773-5a3a-b83a-c31e">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="9c3f-e64d-f67c-ccc0">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -7788,6 +7791,51 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
           <repeats>
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
+        </modifier>
+        <modifier type="set" value="1" field="69b5-fdad-8b26-8e2f">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="69b5-fdad-8b26-8e2f">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="69b5-fdad-8b26-8e2f">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </entryLink>
@@ -7937,11 +7985,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
       </categoryLinks>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="parent" shared="true" id="2516-faf3-02c7-d546"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="3465-c283-ece1-aed3" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="2ec6-a1b1-53ce-cd23" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="6e00-f3c6-942c-6188" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
         </constraint>
       </constraints>
       <modifiers>
@@ -7974,31 +8022,6 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
               </conditions>
             </conditionGroup>
           </conditionGroups>
-        </modifier>
-        <modifier type="set" value="0" field="3465-c283-ece1-aed3">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="3465-c283-ece1-aed3">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
         </modifier>
         <modifier type="set" value="0" field="2ec6-a1b1-53ce-cd23">
           <comment>Grand melee</comment>
@@ -8055,25 +8078,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Warpfire Dragons" hidden="false" id="e2ae-ec53-9c56-0ef5" type="selectionEntry" targetId="9a4d-bb0a-06b2-f7d5">
-      <categoryLinks>
-        <categoryLink targetId="2bfe-5863-46fe-d284" id="325d-2f1f-2a49-2545" primary="true" name="Rare"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="da94-9b9b-0fec-6126" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="1" field="selections" scope="force" shared="false" id="1e9e-4075-9153-d961"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="7cab-e276-e627-c71b" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="0" field="6e00-f3c6-942c-6188">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="13fa-9f16-aa8c-8b3a" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="7cab-e276-e627-c71b">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8083,8 +8092,11 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="7cab-e276-e627-c71b">
+        <modifier type="increment" value="1" field="6e00-f3c6-942c-6188">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8097,6 +8109,34 @@ Note that, should a Bretonnian army accept the challenge, it counts as having pr
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="6e00-f3c6-942c-6188">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Warpfire Dragons" hidden="false" id="e2ae-ec53-9c56-0ef5" type="selectionEntry" targetId="9a4d-bb0a-06b2-f7d5">
+      <categoryLinks>
+        <categoryLink targetId="2bfe-5863-46fe-d284" id="325d-2f1f-2a49-2545" primary="true" name="Rare"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="da94-9b9b-0fec-6126" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="false" id="1e9e-4075-9153-d961"/>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="13fa-9f16-aa8c-8b3a" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="13fa-9f16-aa8c-8b3a">
           <comment>Grand melee</comment>
           <conditionGroups>

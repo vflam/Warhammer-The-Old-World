@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="6dc7-f698-014b-63e1" name="High Elf Realms - Chracian Warhost" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="120" revision="7" authorUrl="www.newrecruit.eu" authorContact="Discord: Tidomann" authorName="Tidomann" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="false" id="6dc7-f698-014b-63e1" name="High Elf Realms - Chracian Warhost" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="120" revision="8" authorUrl="www.newrecruit.eu" authorContact="Discord: Tidomann" authorName="Tidomann" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <catalogueLinks>
     <catalogueLink type="catalogue" name="High Elf Realms" id="9b0a-00ff-e8bb-1d68" targetId="56fb-835b-a377-6639"/>
   </catalogueLinks>
@@ -21,39 +21,14 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
         <categoryLink targetId="79c5-dc15-19d1-9fb1" id="a5cd-fcaa-7c7c-f12b" primary="false" name="Faction: High Elf Realms - Chracian Warhost"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="287c-5fee-e4e9-26cb" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="7631-5a7b-2a5b-100f" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="8f8c-ddc6-3201-b8bc" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="287c-5fee-e4e9-26cb">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="287c-5fee-e4e9-26cb">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="7631-5a7b-2a5b-100f">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -109,25 +84,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Chracian Chieftains" hidden="false" id="b5be-d548-9538-a58a" type="selectionEntry" targetId="e301-4036-7607-d2bd">
-      <categoryLinks>
-        <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="8538-2963-c820-ad7c" primary="true" name="Characters"/>
-        <categoryLink targetId="79c5-dc15-19d1-9fb1" id="4beb-0ec0-4bda-737c" primary="false" name="Faction: High Elf Realms - Chracian Warhost"/>
-        <categoryLink targetId="0aff-c20f-1d03-5b07" id="ec9f-49be-5e01-344c" primary="false" name="0-1 Chracian Chieftain or Storm Weaver per 1,000 points"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="21b3-3954-e65b-179c" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="8f8c-ddc6-3201-b8bc">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="e4b1-acc0-8d68-32ab" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="21b3-3954-e65b-179c">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -137,8 +98,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="21b3-3954-e65b-179c">
+        <modifier type="increment" value="1" field="8f8c-ddc6-3201-b8bc">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -151,6 +115,34 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="8f8c-ddc6-3201-b8bc">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Chracian Chieftains" hidden="false" id="b5be-d548-9538-a58a" type="selectionEntry" targetId="e301-4036-7607-d2bd">
+      <categoryLinks>
+        <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="8538-2963-c820-ad7c" primary="true" name="Characters"/>
+        <categoryLink targetId="79c5-dc15-19d1-9fb1" id="4beb-0ec0-4bda-737c" primary="false" name="Faction: High Elf Realms - Chracian Warhost"/>
+        <categoryLink targetId="0aff-c20f-1d03-5b07" id="ec9f-49be-5e01-344c" primary="false" name="0-1 Chracian Chieftain or Storm Weaver per 1,000 points"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="e4b1-acc0-8d68-32ab" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="e4b1-acc0-8d68-32ab">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -215,39 +207,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="23e8-b3e7-e68f-8094" primary="true" name="Characters"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="2aa3-592f-f59b-1d8a" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="d6e8-65d5-dfe2-e88b" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="2aa3-592f-f59b-1d8a">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="2aa3-592f-f59b-1d8a">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="d6e8-65d5-dfe2-e88b">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -312,39 +276,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
         <categoryLink targetId="9766-01f4-0611-f01c" id="8f48-341c-5a5a-c7b3" primary="false" name="0-1 High Elf Prince or Archmage per 1,000 points"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="4fd6-8a43-4ce5-c517" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3643-10a8-71e2-c0ab" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="4fd6-8a43-4ce5-c517">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="4fd6-8a43-4ce5-c517">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="3643-10a8-71e2-c0ab">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -409,39 +345,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
         <categoryLink targetId="79c5-dc15-19d1-9fb1" id="8d78-82a6-d305-f740" primary="false" name="Faction: High Elf Realms - Chracian Warhost"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="eb5f-e12d-6252-a2c9" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="0e6d-1019-461c-68f9" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="eb5f-e12d-6252-a2c9">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="eb5f-e12d-6252-a2c9">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="0e6d-1019-461c-68f9">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -506,39 +414,14 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
         <categoryLink targetId="79c5-dc15-19d1-9fb1" id="f655-16ff-c71b-0c63" primary="false" name="Faction: High Elf Realms - Chracian Warhost"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="c9d5-b11a-b6de-2bb0" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="0282-bc03-0d50-d756" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="743b-f09a-fc3e-aa4e" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="2" field="c9d5-b11a-b6de-2bb0">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="c9d5-b11a-b6de-2bb0">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="0282-bc03-0d50-d756">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -594,25 +477,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Elven Archers" hidden="false" id="4bca-f9b6-171e-6dd5" type="selectionEntry" targetId="bf06-d67a-9359-a1eb">
-      <categoryLinks>
-        <categoryLink targetId="79c5-dc15-19d1-9fb1" id="5cb0-a0d8-41d3-55e3" primary="false" name="Faction: High Elf Realms - Chracian Warhost"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="def6-277b-b274-9224" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
-        <categoryLink targetId="f0e3-2e32-8866-ea32" id="cfc2-2967-23fa-8ae3" primary="true" name="Core"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="25c1-9b64-e6b8-ddfd" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="2" field="743b-f09a-fc3e-aa4e">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="5319-805f-03c8-1af3" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="2" field="25c1-9b64-e6b8-ddfd">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -622,8 +491,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="25c1-9b64-e6b8-ddfd">
+        <modifier type="increment" value="1" field="743b-f09a-fc3e-aa4e">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -636,6 +508,37 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="743b-f09a-fc3e-aa4e">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Elven Archers" hidden="false" id="4bca-f9b6-171e-6dd5" type="selectionEntry" targetId="bf06-d67a-9359-a1eb">
+      <categoryLinks>
+        <categoryLink targetId="79c5-dc15-19d1-9fb1" id="5cb0-a0d8-41d3-55e3" primary="false" name="Faction: High Elf Realms - Chracian Warhost"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="def6-277b-b274-9224" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+        <categoryLink targetId="f0e3-2e32-8866-ea32" id="cfc2-2967-23fa-8ae3" primary="true" name="Core"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="5319-805f-03c8-1af3" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="e205-a870-1e35-c39f" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="5319-805f-03c8-1af3">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -691,25 +594,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Chracian Woodsmen" hidden="false" id="a3b1-bfe1-444f-bd0a" type="selectionEntry" targetId="fb73-811c-02a4-df6f">
-      <categoryLinks>
-        <categoryLink targetId="f0e3-2e32-8866-ea32" id="2fff-5287-3973-c7c4" primary="true" name="Core"/>
-        <categoryLink targetId="79c5-dc15-19d1-9fb1" id="c276-5bf1-d69c-6166" primary="false" name="Faction: High Elf Realms - Chracian Warhost"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="b10b-0547-cbd7-afd1" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="cf99-4bf2-3f32-8e43" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="2" field="e205-a870-1e35-c39f">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="2a0e-5ddd-ea77-40ef" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="2" field="cf99-4bf2-3f32-8e43">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -719,8 +608,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="cf99-4bf2-3f32-8e43">
+        <modifier type="increment" value="1" field="e205-a870-1e35-c39f">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -733,6 +625,37 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="e205-a870-1e35-c39f">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Chracian Woodsmen" hidden="false" id="a3b1-bfe1-444f-bd0a" type="selectionEntry" targetId="fb73-811c-02a4-df6f">
+      <categoryLinks>
+        <categoryLink targetId="f0e3-2e32-8866-ea32" id="2fff-5287-3973-c7c4" primary="true" name="Core"/>
+        <categoryLink targetId="79c5-dc15-19d1-9fb1" id="c276-5bf1-d69c-6166" primary="false" name="Faction: High Elf Realms - Chracian Warhost"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="b10b-0547-cbd7-afd1" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="2a0e-5ddd-ea77-40ef" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="a724-1fff-87e2-7a8c" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="2a0e-5ddd-ea77-40ef">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -788,6 +711,51 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="2" field="a724-1fff-87e2-7a8c">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="a724-1fff-87e2-7a8c">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="a724-1fff-87e2-7a8c">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="White Lions of Chrace" hidden="false" id="17f5-5caf-f76c-1a46" type="selectionEntry" targetId="24cb-795c-4110-f2d1">
@@ -799,9 +767,6 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
       <comment>Core</comment>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="false" id="8cbb-7321-45fc-29db" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="b045-d5c0-25c2-4aec" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="58f6-39c8-5d84-662a" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -836,31 +801,6 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
               </conditions>
             </conditionGroup>
           </conditionGroups>
-        </modifier>
-        <modifier type="set" value="2" field="b045-d5c0-25c2-4aec">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="b045-d5c0-25c2-4aec">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
         </modifier>
         <modifier type="set" value="0" field="58f6-39c8-5d84-662a">
           <comment>Grand melee</comment>
@@ -927,39 +867,14 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
       </categoryLinks>
       <comment>Special</comment>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="ba88-ed51-0c15-f585" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="4e16-2422-6fce-6ee1" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="f1fb-2d9a-e3cb-3674" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="ba88-ed51-0c15-f585">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="ba88-ed51-0c15-f585">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="4e16-2422-6fce-6ee1">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -1015,25 +930,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Lion Chariot of Chrace" hidden="false" id="6bea-4b75-f872-172a" type="selectionEntry" targetId="7daf-778-c076-1be1">
-      <categoryLinks>
-        <categoryLink targetId="79c5-dc15-19d1-9fb1" id="5495-f10b-76c0-94b8" primary="false" name="Faction: High Elf Realms - Chracian Warhost"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="4ab1-629d-0455-2568" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
-        <categoryLink targetId="633f-f67a-1b6a-d203" id="d707-1daf-0afe-fdf0" primary="true" name="Special"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="d1c2-f9f1-c29c-d7e1" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="f1fb-2d9a-e3cb-3674">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="99cd-2cf8-eac4-d53e" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="d1c2-f9f1-c29c-d7e1">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -1043,8 +944,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="d1c2-f9f1-c29c-d7e1">
+        <modifier type="increment" value="1" field="f1fb-2d9a-e3cb-3674">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -1057,6 +961,37 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="f1fb-2d9a-e3cb-3674">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Lion Chariot of Chrace" hidden="false" id="6bea-4b75-f872-172a" type="selectionEntry" targetId="7daf-778-c076-1be1">
+      <categoryLinks>
+        <categoryLink targetId="79c5-dc15-19d1-9fb1" id="5495-f10b-76c0-94b8" primary="false" name="Faction: High Elf Realms - Chracian Warhost"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="4ab1-629d-0455-2568" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+        <categoryLink targetId="633f-f67a-1b6a-d203" id="d707-1daf-0afe-fdf0" primary="true" name="Special"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="99cd-2cf8-eac4-d53e" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="4a6b-f2d4-c613-d0ed" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="99cd-2cf8-eac4-d53e">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -1112,6 +1047,51 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="1" field="4a6b-f2d4-c613-d0ed">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="4a6b-f2d4-c613-d0ed">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="4a6b-f2d4-c613-d0ed">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="War Lions" hidden="false" id="fd6a-02d0-7b44-4029" type="selectionEntry" targetId="258f-0652-7313-560c">
@@ -1121,9 +1101,6 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
       </categoryLinks>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="false" id="9986-3d68-2612-18f8" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="09b3-821b-75f0-e025" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="6110-e8a6-8be4-cfbd" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -1158,31 +1135,6 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
               </conditions>
             </conditionGroup>
           </conditionGroups>
-        </modifier>
-        <modifier type="set" value="1" field="09b3-821b-75f0-e025">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="09b3-821b-75f0-e025">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
         </modifier>
         <modifier type="set" value="0" field="6110-e8a6-8be4-cfbd">
           <comment>Grand melee</comment>
@@ -1249,39 +1201,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
       </categoryLinks>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="force" shared="true" id="f855-026c-a1fc-fa6c" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="f32d-db5c-9f65-236b" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="436e-8bca-d66a-c4bc" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="f32d-db5c-9f65-236b">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="f32d-db5c-9f65-236b">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="436e-8bca-d66a-c4bc">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -1347,39 +1271,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
         <categoryLink targetId="258f-baad-7535-8fd1" id="ba41-b8e7-5db4-9605" primary="false" name="0-1 unit of Shadow Warriors or Sisters of Avelorn per 1,000 points"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="c916-cfd4-8b09-2fa4" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="9f32-c400-47d7-6b47" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="c916-cfd4-8b09-2fa4">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="c916-cfd4-8b09-2fa4">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="9f32-c400-47d7-6b47">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -1445,39 +1341,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
         <categoryLink targetId="fec1-537a-bbeb-7926" id="fbc8-a11d-bd76-06cc" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5ffe-ffe4-7450-0785" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="bcea-bef2-db60-9579" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="5ffe-ffe4-7450-0785">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="5ffe-ffe4-7450-0785">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="bcea-bef2-db60-9579">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -1543,39 +1411,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
         <categoryLink targetId="2bfe-5863-46fe-d284" id="dbdd-cab5-48c0-939e" primary="true" name="Rare"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="bb7e-5847-26a2-1dea" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="dcd5-3a29-e4b9-28b5" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="bb7e-5847-26a2-1dea">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="bb7e-5847-26a2-1dea">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="dcd5-3a29-e4b9-28b5">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -1640,39 +1480,11 @@ In addition, once per game, after rolling to determine if a unit with the Ambush
         <categoryLink targetId="a633-f8db-02c6-879d" id="26b9-bd0e-47ce-3a74" primary="false" name="0-1 Eagle Claw Bolt Throwers per 1,000 points"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="7dc9-0d10-123d-4afd" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="6445-6666-babb-9e36" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="7dc9-0d10-123d-4afd">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="7dc9-0d10-123d-4afd">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="6445-6666-babb-9e36">
           <comment>Grand melee</comment>
           <conditionGroups>

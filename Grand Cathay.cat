@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="90ea-cdfe-fbbc-00de" name="Grand Cathay" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="149" revision="18" authorUrl="www.newrecruit.eu" authorContact="Discord: Tidomann" authorName="Tidomann" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="false" id="90ea-cdfe-fbbc-00de" name="Grand Cathay" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="149" revision="19" authorUrl="www.newrecruit.eu" authorContact="Discord: Tidomann" authorName="Tidomann" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Mercenaries" id="e9b6-b192-d167-7a28" targetId="12a0-32cd-11d6-f952" importRootEntries="true"/>
     <catalogueLink type="catalogue" name="The Lores of Magic" id="5d2e-edd3-f40d-2c75" targetId="f3c5-af11-649d-5dbb"/>
@@ -3686,39 +3686,14 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="4cac-be00-d6a0-d66f" primary="true" name="Characters"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="f956-8265-d80f-0c19" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="f886-6d8c-0ddd-272f" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="467e-275a-c718-1fb5" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="f956-8265-d80f-0c19">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="f956-8265-d80f-0c19">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="f886-6d8c-0ddd-272f">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -3773,6 +3748,51 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
           <repeats>
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
+        </modifier>
+        <modifier type="set" value="1" field="467e-275a-c718-1fb5">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="467e-275a-c718-1fb5">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="467e-275a-c718-1fb5">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </entryLink>
@@ -3849,39 +3869,14 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="3bf0-ae6e-0844-8adf" primary="true" name="Characters"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="7e0e-6827-62d7-dccb" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="5b39-2703-27a7-89e1" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="cbf2-9518-27f0-6f8e" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="7e0e-6827-62d7-dccb">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="7e0e-6827-62d7-dccb">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="5b39-2703-27a7-89e1">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -3936,6 +3931,51 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
           <repeats>
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
+        </modifier>
+        <modifier type="set" value="1" field="cbf2-9518-27f0-6f8e">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="cbf2-9518-27f0-6f8e">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="cbf2-9518-27f0-6f8e">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </entryLink>
@@ -4180,39 +4220,14 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="7c3d-1eed-66a8-e4e3" primary="true" name="Characters"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="e812-827f-4f39-417c" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="c666-4372-e7bb-9be1" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="4b3e-8b25-3e8f-5071" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="e812-827f-4f39-417c">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="e812-827f-4f39-417c">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="c666-4372-e7bb-9be1">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -4268,24 +4283,11 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Jade Warriors" hidden="false" id="3870-a621-ebdc-8a35" type="selectionEntry" targetId="c5f3-400c-e140-fb65">
-      <categoryLinks>
-        <categoryLink targetId="f0e3-2e32-8866-ea32" id="4cde-2cb8-a40c-dd93" primary="true" name="Core"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="e8b6-f457-1485-ed49" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="389c-997d-f05a-05d8" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="4b3e-8b25-3e8f-5071">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="8613-3e5d-923c-6155" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="2" field="389c-997d-f05a-05d8">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -4295,8 +4297,11 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="389c-997d-f05a-05d8">
+        <modifier type="increment" value="1" field="4b3e-8b25-3e8f-5071">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -4309,6 +4314,36 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="4b3e-8b25-3e8f-5071">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Jade Warriors" hidden="false" id="3870-a621-ebdc-8a35" type="selectionEntry" targetId="c5f3-400c-e140-fb65">
+      <categoryLinks>
+        <categoryLink targetId="f0e3-2e32-8866-ea32" id="4cde-2cb8-a40c-dd93" primary="true" name="Core"/>
+        <categoryLink targetId="fec1-537a-bbeb-7926" id="e8b6-f457-1485-ed49" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="8613-3e5d-923c-6155" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5455-b149-7c7f-ef2a" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="8613-3e5d-923c-6155">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -4363,6 +4398,51 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
           <repeats>
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
+        </modifier>
+        <modifier type="set" value="2" field="5455-b149-7c7f-ef2a">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="5455-b149-7c7f-ef2a">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="5455-b149-7c7f-ef2a">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </entryLink>
@@ -4472,39 +4552,14 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
         <categoryLink targetId="633f-f67a-1b6a-d203" id="94f6-8ab8-f12e-76d8" primary="true" name="Special"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="cd92-c59a-d4ae-d156" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="1689-562a-f3c2-0b70" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="4754-77a1-e28a-7b19" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="cd92-c59a-d4ae-d156">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="cd92-c59a-d4ae-d156">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="1689-562a-f3c2-0b70">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -4559,6 +4614,51 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
           <repeats>
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
+        </modifier>
+        <modifier type="set" value="1" field="4754-77a1-e28a-7b19">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="4754-77a1-e28a-7b19">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="4754-77a1-e28a-7b19">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </entryLink>
@@ -4668,39 +4768,14 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
         <categoryLink targetId="2bfe-5863-46fe-d284" id="bfd1-03b3-dea6-0a53" primary="true" name="Rare"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="8e34-c396-f110-b49e" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="37ea-58c4-9d81-e359" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="522f-574c-1490-774f" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="8e34-c396-f110-b49e">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="8e34-c396-f110-b49e">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="37ea-58c4-9d81-e359">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -4756,25 +4831,11 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Sky Lantern" hidden="false" id="bd6c-1e99-c90e-2507" type="selectionEntry" targetId="7fbe-ec13-eebe-f476">
-      <categoryLinks>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="7210-bc7e-df6f-40a2" targetId="fec1-537a-bbeb-7926" primary="false"/>
-        <categoryLink targetId="2bfe-5863-46fe-d284" id="bd11-be2f-172c-26f8" primary="true" name="Rare"/>
-      </categoryLinks>
-      <comment>Rare</comment>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="4550-6d94-f243-e062" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="0" field="522f-574c-1490-774f">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="dd0b-20bc-9a86-c166" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="4550-6d94-f243-e062">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -4784,8 +4845,11 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="4550-6d94-f243-e062">
+        <modifier type="increment" value="1" field="522f-574c-1490-774f">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -4798,6 +4862,37 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="522f-574c-1490-774f">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Sky Lantern" hidden="false" id="bd6c-1e99-c90e-2507" type="selectionEntry" targetId="7fbe-ec13-eebe-f476">
+      <categoryLinks>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="7210-bc7e-df6f-40a2" targetId="fec1-537a-bbeb-7926" primary="false"/>
+        <categoryLink targetId="2bfe-5863-46fe-d284" id="bd11-be2f-172c-26f8" primary="true" name="Rare"/>
+      </categoryLinks>
+      <comment>Rare</comment>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="dd0b-20bc-9a86-c166" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="fba4-23c2-d241-472c" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="dd0b-20bc-9a86-c166">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -4852,6 +4947,51 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
           <repeats>
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
+        </modifier>
+        <modifier type="set" value="0" field="fba4-23c2-d241-472c">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="fba4-23c2-d241-472c">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="fba4-23c2-d241-472c">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </entryLink>
@@ -5064,39 +5204,14 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
         <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="1a88-a279-9f7b-43b3" primary="true" name="Characters"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="1ce9-31b9-a955-5cc5" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="ae1d-73cf-1faa-c587" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="7b89-c151-dcb4-6dd9" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="1ce9-31b9-a955-5cc5">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="1ce9-31b9-a955-5cc5">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="ae1d-73cf-1faa-c587">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -5152,20 +5267,11 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Peasant Levy" hidden="false" id="9010-af07-d96c-36ed" type="selectionEntry" targetId="20af-747a-31ff-ea0a">
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5900-b77f-bbd9-3c93" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="7b89-c151-dcb4-6dd9">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="602e-862a-91eb-9c29" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="2" field="5900-b77f-bbd9-3c93">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5175,8 +5281,11 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="5900-b77f-bbd9-3c93">
+        <modifier type="increment" value="1" field="7b89-c151-dcb4-6dd9">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5189,6 +5298,32 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="7b89-c151-dcb4-6dd9">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Peasant Levy" hidden="false" id="9010-af07-d96c-36ed" type="selectionEntry" targetId="20af-747a-31ff-ea0a">
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="602e-862a-91eb-9c29" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5e99-65af-8be2-3285" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="602e-862a-91eb-9c29">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -5244,26 +5379,11 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-      <categoryLinks>
-        <categoryLink targetId="f0e3-2e32-8866-ea32" id="b43b-ebee-414f-3c62" primary="true" name="Core"/>
-      </categoryLinks>
-    </entryLink>
-    <entryLink import="true" name="Crane Gunner Team" hidden="false" id="f8ee-1c0f-9c13-58a9" type="selectionEntry" targetId="8d5a-b1d5-8c39-5e3d">
-      <categoryLinks>
-        <categoryLink targetId="633f-f67a-1b6a-d203" id="ef75-7d8d-5a90-c967" primary="true" name="Special"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="0b57-1030-af7e-215c" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="2" field="5e99-65af-8be2-3285">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="f514-4074-5386-bf59" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="0b57-1030-af7e-215c">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5273,8 +5393,11 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="0b57-1030-af7e-215c">
+        <modifier type="increment" value="1" field="5e99-65af-8be2-3285">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5287,6 +5410,38 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="5e99-65af-8be2-3285">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink targetId="f0e3-2e32-8866-ea32" id="b43b-ebee-414f-3c62" primary="true" name="Core"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink import="true" name="Crane Gunner Team" hidden="false" id="f8ee-1c0f-9c13-58a9" type="selectionEntry" targetId="8d5a-b1d5-8c39-5e3d">
+      <categoryLinks>
+        <categoryLink targetId="633f-f67a-1b6a-d203" id="ef75-7d8d-5a90-c967" primary="true" name="Special"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="f514-4074-5386-bf59" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="26e1-21ed-0c4b-609b" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="f514-4074-5386-bf59">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -5342,23 +5497,11 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Iron Hail Gunners" hidden="false" id="c60e-4e30-15ff-fef4" type="selectionEntry" targetId="7ec9-6f7f-def1-13aa">
-      <categoryLinks>
-        <categoryLink targetId="633f-f67a-1b6a-d203" id="7efd-b35e-300d-10a6" primary="true" name="Special"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="06b7-7b81-7e3a-52e9" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="26e1-21ed-0c4b-609b">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="1228-44ac-eb0c-3feb" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="06b7-7b81-7e3a-52e9">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5368,8 +5511,11 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="06b7-7b81-7e3a-52e9">
+        <modifier type="increment" value="1" field="26e1-21ed-0c4b-609b">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5382,6 +5528,35 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="26e1-21ed-0c4b-609b">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Iron Hail Gunners" hidden="false" id="c60e-4e30-15ff-fef4" type="selectionEntry" targetId="7ec9-6f7f-def1-13aa">
+      <categoryLinks>
+        <categoryLink targetId="633f-f67a-1b6a-d203" id="7efd-b35e-300d-10a6" primary="true" name="Special"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="1228-44ac-eb0c-3feb" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="116e-0c6e-7f14-4037" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="1228-44ac-eb0c-3feb">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -5436,6 +5611,51 @@ The crew of any war machine joined by an Ogre Loader gains a +1 modifier to its 
           <repeats>
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
+        </modifier>
+        <modifier type="set" value="1" field="116e-0c6e-7f14-4037">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="116e-0c6e-7f14-4037">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="116e-0c6e-7f14-4037">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </entryLink>

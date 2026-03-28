@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue library="false" id="142f-feb2-1509-865b" name="High Elf Realms - Sea Guard Garrison" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="120" revision="7" authorUrl="www.newrecruit.eu" authorContact="Discord: Tidomann" authorName="Tidomann" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue library="false" id="142f-feb2-1509-865b" name="High Elf Realms - Sea Guard Garrison" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="120" revision="8" authorUrl="www.newrecruit.eu" authorContact="Discord: Tidomann" authorName="Tidomann" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <catalogueLinks>
     <catalogueLink type="catalogue" name="High Elf Realms" id="a710-0fff-9b94-36c9" targetId="56fb-835b-a377-6639"/>
   </catalogueLinks>
@@ -10,39 +10,14 @@
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="ecce-3069-d0d6-c6f4" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="d620-35c8-e806-3091" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="bdf1-e505-ee7d-b6cf" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5075-d9d6-e6d4-b40b" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="d620-35c8-e806-3091">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="d620-35c8-e806-3091">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="bdf1-e505-ee7d-b6cf">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -98,24 +73,11 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Storm Weavers" hidden="false" id="d604-23bd-6268-5f07" type="selectionEntry" targetId="0f41-dfe4-0b5a-b1ec">
-      <categoryLinks>
-        <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="c1bb-38e4-a6df-9cb1" primary="true" name="Characters"/>
-        <categoryLink targetId="0caf-45de-6e99-3bb9" id="00c9-d62a-e49b-cb0d" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="6ac7-3366-b42d-2824" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="5075-d9d6-e6d4-b40b">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3468-58a6-f637-9671" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="6ac7-3366-b42d-2824">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -125,8 +87,11 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="6ac7-3366-b42d-2824">
+        <modifier type="increment" value="1" field="5075-d9d6-e6d4-b40b">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -139,6 +104,36 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="5075-d9d6-e6d4-b40b">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Storm Weavers" hidden="false" id="d604-23bd-6268-5f07" type="selectionEntry" targetId="0f41-dfe4-0b5a-b1ec">
+      <categoryLinks>
+        <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="c1bb-38e4-a6df-9cb1" primary="true" name="Characters"/>
+        <categoryLink targetId="0caf-45de-6e99-3bb9" id="00c9-d62a-e49b-cb0d" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3468-58a6-f637-9671" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="00c5-c5be-0101-8336" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="3468-58a6-f637-9671">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -194,25 +189,11 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Dragon Mage" hidden="false" id="86a0-6bec-7aec-a864" type="selectionEntry" targetId="aeb6-a2b9-b47d-a1b">
-      <categoryLinks>
-        <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="b8db-dd88-0cf8-36a0" primary="true" name="Characters"/>
-        <categoryLink targetId="0caf-45de-6e99-3bb9" id="e261-61c8-acf4-5e6f" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
-        <categoryLink targetId="1f64-7848-ff0e-b2fc" id="5b7e-107f-0874-42e0" primary="false" name="0-1 Dragon Mage, High Elf Noble, or High Elf Mage per 1,000 points"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="47c4-0c06-8547-d872" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="00c5-c5be-0101-8336">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3a4b-8bbd-0ed4-934b" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="47c4-0c06-8547-d872">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -222,8 +203,11 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="47c4-0c06-8547-d872">
+        <modifier type="increment" value="1" field="00c5-c5be-0101-8336">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -236,6 +220,34 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="00c5-c5be-0101-8336">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Dragon Mage" hidden="false" id="86a0-6bec-7aec-a864" type="selectionEntry" targetId="aeb6-a2b9-b47d-a1b">
+      <categoryLinks>
+        <categoryLink targetId="a4cc-15c9-cfae-1b3b" id="b8db-dd88-0cf8-36a0" primary="true" name="Characters"/>
+        <categoryLink targetId="0caf-45de-6e99-3bb9" id="e261-61c8-acf4-5e6f" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
+        <categoryLink targetId="1f64-7848-ff0e-b2fc" id="5b7e-107f-0874-42e0" primary="false" name="0-1 Dragon Mage, High Elf Noble, or High Elf Mage per 1,000 points"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3a4b-8bbd-0ed4-934b" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="3a4b-8bbd-0ed4-934b">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -300,39 +312,11 @@
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="0d84-bc5b-f632-8c0b" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="03b6-e393-064b-7aed" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="add0-43a3-02f8-8948" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="03b6-e393-064b-7aed">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="03b6-e393-064b-7aed">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="add0-43a3-02f8-8948">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -397,39 +381,11 @@
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="9f36-2fdb-e49c-d777" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="a427-cc79-e512-f3e2" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="dade-f830-8352-2f27" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="a427-cc79-e512-f3e2">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="a427-cc79-e512-f3e2">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="dade-f830-8352-2f27">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -495,39 +451,14 @@
         <categoryLink targetId="5e89-9cfa-f74-43ea" id="6472-7ee0-2b97-06a8" primary="false" name="Regimental Unit"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="8f64-fd31-410e-c712" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3e6d-8a45-46a2-5b07" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="3ef0-84bf-97bc-b67b" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="2" field="8f64-fd31-410e-c712">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="8f64-fd31-410e-c712">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="3e6d-8a45-46a2-5b07">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -583,6 +514,51 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="2" field="3ef0-84bf-97bc-b67b">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="3ef0-84bf-97bc-b67b">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="3ef0-84bf-97bc-b67b">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="Shadow Warriors" hidden="false" id="1f38-91b1-4ce1-00ee" type="selectionEntry" targetId="c62c-5e5-1191-14">
@@ -593,9 +569,6 @@
       </categoryLinks>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="false" id="3b98-1042-d01f-7365" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="308b-c2f7-4c6e-fc15" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="b894-98a6-922e-7e84" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -630,31 +603,6 @@
               </conditions>
             </conditionGroup>
           </conditionGroups>
-        </modifier>
-        <modifier type="set" value="2" field="308b-c2f7-4c6e-fc15">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="308b-c2f7-4c6e-fc15">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
         </modifier>
         <modifier type="set" value="0" field="b894-98a6-922e-7e84">
           <comment>Grand melee</comment>
@@ -720,39 +668,14 @@
         <categoryLink targetId="fec1-537a-bbeb-7926" id="1eb6-3a72-3716-953b" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="fa11-99a5-12ac-a472" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="76ef-b30a-4ccf-dce1" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="88f0-ed64-e017-d481" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="fa11-99a5-12ac-a472">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="fa11-99a5-12ac-a472">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="76ef-b30a-4ccf-dce1">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -808,26 +731,11 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Great Eagles" hidden="false" id="7bff-6ac1-6fc2-429b" type="selectionEntry" targetId="d396-3cda-d56f-6131">
-      <categoryLinks>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="d537-1623-79c9-fbe9" primary="false" targetId="fec1-537a-bbeb-7926"/>
-        <categoryLink name="0-2 Great Eagles per 1,000 points" hidden="false" id="a015-8a6f-23c8-7395" targetId="bdbd-fde2-eff2-c55b" primary="false"/>
-        <categoryLink targetId="633f-f67a-1b6a-d203" id="f13c-8a2c-7697-b2a5" primary="true" name="Special"/>
-        <categoryLink targetId="0caf-45de-6e99-3bb9" id="dd02-584d-89d1-6aca" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="2b31-cdf5-6184-d56e" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="88f0-ed64-e017-d481">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="0cfb-2a35-73b4-7245" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="2b31-cdf5-6184-d56e">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -837,8 +745,11 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="2b31-cdf5-6184-d56e">
+        <modifier type="increment" value="1" field="88f0-ed64-e017-d481">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -851,6 +762,35 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="88f0-ed64-e017-d481">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Great Eagles" hidden="false" id="7bff-6ac1-6fc2-429b" type="selectionEntry" targetId="d396-3cda-d56f-6131">
+      <categoryLinks>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="d537-1623-79c9-fbe9" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink name="0-2 Great Eagles per 1,000 points" hidden="false" id="a015-8a6f-23c8-7395" targetId="bdbd-fde2-eff2-c55b" primary="false"/>
+        <categoryLink targetId="633f-f67a-1b6a-d203" id="f13c-8a2c-7697-b2a5" primary="true" name="Special"/>
+        <categoryLink targetId="0caf-45de-6e99-3bb9" id="dd02-584d-89d1-6aca" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="0cfb-2a35-73b4-7245" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="0cfb-2a35-73b4-7245">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -915,39 +855,11 @@
         <categoryLink targetId="98bf-42de-403b-d8a8" id="8f86-2589-1529-d48d" primary="false" name="0-3 Eagle Claw Bolt Throwers per 1,000 points"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="e258-e9df-a4cb-1d66" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="a10f-4f5f-b9d3-807b" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="e258-e9df-a4cb-1d66">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="e258-e9df-a4cb-1d66">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="a10f-4f5f-b9d3-807b">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -1012,39 +924,14 @@
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="099d-b713-ee50-1ea4" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="518a-c1d1-6460-3bcf" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="fb2a-078e-5435-0e0f" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="0fe5-22c0-fab6-befd" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="518a-c1d1-6460-3bcf">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="518a-c1d1-6460-3bcf">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="fb2a-078e-5435-0e0f">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -1100,26 +987,11 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Flamespyre Phoenix" hidden="false" id="0ec5-60b2-57c6-4bf6" type="selectionEntry" targetId="938a-1775-845-a8bd">
-      <categoryLinks>
-        <categoryLink name="0-1 Flamespyre or Frostheart Phoenix (not counting character mounts) per 1,000 points" hidden="false" id="37ae-ef79-9cc3-c6cc" targetId="8294-bb96-8083-3508" primary="false"/>
-        <categoryLink name="Rare" hidden="false" id="b047-0270-5f38-c0f2" targetId="2bfe-5863-46fe-d284" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="799a-a0bf-232b-86d7" primary="false" targetId="fec1-537a-bbeb-7926"/>
-        <categoryLink targetId="0caf-45de-6e99-3bb9" id="81bc-cf66-0176-ebd8" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="3eb3-8a5e-468a-cc63" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="0" field="0fe5-22c0-fab6-befd">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3707-c050-296e-c00d" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="3eb3-8a5e-468a-cc63">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -1129,8 +1001,11 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="3eb3-8a5e-468a-cc63">
+        <modifier type="increment" value="1" field="0fe5-22c0-fab6-befd">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -1143,6 +1018,35 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="0fe5-22c0-fab6-befd">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Flamespyre Phoenix" hidden="false" id="0ec5-60b2-57c6-4bf6" type="selectionEntry" targetId="938a-1775-845-a8bd">
+      <categoryLinks>
+        <categoryLink name="0-1 Flamespyre or Frostheart Phoenix (not counting character mounts) per 1,000 points" hidden="false" id="37ae-ef79-9cc3-c6cc" targetId="8294-bb96-8083-3508" primary="false"/>
+        <categoryLink name="Rare" hidden="false" id="b047-0270-5f38-c0f2" targetId="2bfe-5863-46fe-d284" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="799a-a0bf-232b-86d7" primary="false" targetId="fec1-537a-bbeb-7926"/>
+        <categoryLink targetId="0caf-45de-6e99-3bb9" id="81bc-cf66-0176-ebd8" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3707-c050-296e-c00d" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="3707-c050-296e-c00d">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -1208,39 +1112,11 @@
         <categoryLink targetId="0caf-45de-6e99-3bb9" id="a54f-086a-576e-44be" primary="false" name="Faction: High Elf Realms - Sea Guard Garrison"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5a20-78ef-3417-9c23" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="f5b1-4216-fd67-88ef" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="5a20-78ef-3417-9c23">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="5a20-78ef-3417-9c23">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="f5b1-4216-fd67-88ef">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -1305,39 +1181,14 @@
         <categoryLink targetId="fec1-537a-bbeb-7926" id="caf8-3039-9c06-5b5b" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="9de2-2cd8-b8b6-c7d8" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="b382-00e4-c852-787d" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="92aa-f664-df77-c4fe" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="0" field="9de2-2cd8-b8b6-c7d8">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="9de2-2cd8-b8b6-c7d8">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="b382-00e4-c852-787d">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -1392,6 +1243,51 @@
           <repeats>
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
+        </modifier>
+        <modifier type="set" value="0" field="92aa-f664-df77-c4fe">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="92aa-f664-df77-c4fe">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="92aa-f664-df77-c4fe">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </entryLink>
@@ -1471,39 +1367,14 @@
         <categoryLink targetId="fec1-537a-bbeb-7926" id="33b7-5c44-eecc-c10e" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="ccd1-8449-9190-8029" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="1ea6-a242-6304-46a7" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="8cc2-6915-f33c-ee25" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="2" field="ccd1-8449-9190-8029">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="ccd1-8449-9190-8029">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="1ea6-a242-6304-46a7">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -1558,6 +1429,51 @@
           <repeats>
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
+        </modifier>
+        <modifier type="set" value="2" field="8cc2-6915-f33c-ee25">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="8cc2-6915-f33c-ee25">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="8cc2-6915-f33c-ee25">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </entryLink>

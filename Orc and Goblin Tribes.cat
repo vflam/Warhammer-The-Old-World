@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="175" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="176" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Orc Mobs" hidden="false" id="51e8-1471-ce4c-d5dd">
       <profiles>
@@ -7860,39 +7860,14 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="4575-2b77-ff00-55bc" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="1cb1-ab8c-d445-76d1" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="6a07-ce71-1dc7-f435" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="68a1-886a-3d6b-537b" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="2" field="1cb1-ab8c-d445-76d1">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="1cb1-ab8c-d445-76d1">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="6a07-ce71-1dc7-f435">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -7948,25 +7923,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Black Orc Mobs" hidden="false" type="selectionEntry" id="1001-6da0-1c40-3ed8" targetId="7b25-6b08-b644-f26f">
-      <categoryLinks>
-        <categoryLink name="Special" hidden="false" id="eaed-250-c9f2-eed8" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="2ade-5f04-04ca-b34e" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <comment>Special</comment>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="da05-7206-af2f-96f9" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="2" field="68a1-886a-3d6b-537b">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="e8d5-bed9-8974-f950" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="da05-7206-af2f-96f9">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -7976,8 +7937,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="da05-7206-af2f-96f9">
+        <modifier type="increment" value="1" field="68a1-886a-3d6b-537b">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -7990,6 +7954,37 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="68a1-886a-3d6b-537b">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Black Orc Mobs" hidden="false" type="selectionEntry" id="1001-6da0-1c40-3ed8" targetId="7b25-6b08-b644-f26f">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="eaed-250-c9f2-eed8" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="2ade-5f04-04ca-b34e" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <comment>Special</comment>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="e8d5-bed9-8974-f950" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="2214-f4b7-7023-72a9" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="e8d5-bed9-8974-f950">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -8045,24 +8040,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Goblin Mobs" hidden="false" type="selectionEntry" id="e9a9-7cea-f6d4-4895" targetId="6ce4-96c1-6e66-4e65">
-      <categoryLinks>
-        <categoryLink name="Core" hidden="false" id="fb7f-39e3-bb92-67e7" targetId="f0e3-2e32-8866-ea32" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="0631-47c5-7111-5ad6" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="9701-406d-96f9-8a73" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="2214-f4b7-7023-72a9">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="424d-dbe6-d893-bffe" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="2" field="9701-406d-96f9-8a73">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8072,8 +8054,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="9701-406d-96f9-8a73">
+        <modifier type="increment" value="1" field="2214-f4b7-7023-72a9">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8086,6 +8071,36 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="2214-f4b7-7023-72a9">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Goblin Mobs" hidden="false" type="selectionEntry" id="e9a9-7cea-f6d4-4895" targetId="6ce4-96c1-6e66-4e65">
+      <categoryLinks>
+        <categoryLink name="Core" hidden="false" id="fb7f-39e3-bb92-67e7" targetId="f0e3-2e32-8866-ea32" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="0631-47c5-7111-5ad6" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="424d-dbe6-d893-bffe" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="456e-10aa-b7a1-c90d" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="424d-dbe6-d893-bffe">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -8141,14 +8156,56 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="2" field="456e-10aa-b7a1-c90d">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="456e-10aa-b7a1-c90d">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="456e-10aa-b7a1-c90d">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="Night Goblin Mobs" hidden="false" type="selectionEntry" id="f808-e93-8975-59d1" targetId="399b-6e05-9a74-e18f">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="6059-d846-4ad5-6cf" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="4064-f4ac-f58d-e225" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="f960-b92f-137d-7eaf" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -8160,31 +8217,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1" repeats="1" field="selections" scope="force" childId="24cc-92eb-c7db-86f9" shared="true" roundUp="false" id="56fd-db33-cb45-6ef9" includeChildSelections="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="1e80-132e-1771-a31" shared="true" roundUp="false" id="23f1-3c5c-e02d-9d84" includeChildSelections="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="438c-dab2-28a1-868f" shared="true" roundUp="false" id="c980-69f3-05bb-8ab9" includeChildSelections="false"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="2" field="4064-f4ac-f58d-e225">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="4064-f4ac-f58d-e225">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
         <modifier type="set" value="0" field="f960-b92f-137d-7eaf">
@@ -8253,39 +8285,14 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
         <categoryLink name="Core" hidden="false" id="b8fa-dbff-5c35-cafa" targetId="f0e3-2e32-8866-ea32" primary="true"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="8e19-8dec-cb5a-f3df" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="6c99-57ca-7266-2c60" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="3bd7-f763-627c-2661" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="2" field="8e19-8dec-cb5a-f3df">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="8e19-8dec-cb5a-f3df">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="6c99-57ca-7266-2c60">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -8341,24 +8348,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Common Troll Mobs" hidden="false" type="selectionEntry" id="5f32-1c6b-3827-e64e" targetId="afd2-472f-d0bd-942f">
-      <categoryLinks>
-        <categoryLink name="Special" hidden="false" id="71ba-2467-7bd1-1df0" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="c59d-e943-b046-21c4" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="c253-ca79-e9cb-f67a" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="2" field="3bd7-f763-627c-2661">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="b954-f24d-4673-1a5a" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="c253-ca79-e9cb-f67a">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8368,8 +8362,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="c253-ca79-e9cb-f67a">
+        <modifier type="increment" value="1" field="3bd7-f763-627c-2661">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8382,6 +8379,36 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="3bd7-f763-627c-2661">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Common Troll Mobs" hidden="false" type="selectionEntry" id="5f32-1c6b-3827-e64e" targetId="afd2-472f-d0bd-942f">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="71ba-2467-7bd1-1df0" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="c59d-e943-b046-21c4" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="b954-f24d-4673-1a5a" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="e931-0c01-9de0-024a" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="b954-f24d-4673-1a5a">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -8437,24 +8464,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="River Troll Mobs" hidden="false" type="selectionEntry" id="398c-8fd9-5aae-a201" targetId="a6f0-e007-d5e4-318b">
-      <categoryLinks>
-        <categoryLink name="Special" hidden="false" id="4e5d-bde4-9488-88b1" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="00ad-1e4f-820e-41ff" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="0b76-0a41-edaf-0125" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="e931-0c01-9de0-024a">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="9709-eafb-a55a-ac68" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="0b76-0a41-edaf-0125">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8464,8 +8478,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="0b76-0a41-edaf-0125">
+        <modifier type="increment" value="1" field="e931-0c01-9de0-024a">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8478,6 +8495,36 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="e931-0c01-9de0-024a">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="River Troll Mobs" hidden="false" type="selectionEntry" id="398c-8fd9-5aae-a201" targetId="a6f0-e007-d5e4-318b">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="4e5d-bde4-9488-88b1" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="00ad-1e4f-820e-41ff" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="9709-eafb-a55a-ac68" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="0e6d-8e74-d142-993c" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="9709-eafb-a55a-ac68">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -8533,24 +8580,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Stone Troll Mobs" hidden="false" type="selectionEntry" id="cd96-6119-f73b-fbfa" targetId="7255-5510-3bf2-87a6">
-      <categoryLinks>
-        <categoryLink name="Special" hidden="false" id="4855-b00a-bcfb-e534" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="8306-a708-c791-2dde" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="01f0-4d53-8764-c703" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="0e6d-8e74-d142-993c">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="c453-dba9-bf7d-09f5" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="01f0-4d53-8764-c703">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8560,8 +8594,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="01f0-4d53-8764-c703">
+        <modifier type="increment" value="1" field="0e6d-8e74-d142-993c">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8574,6 +8611,36 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="0e6d-8e74-d142-993c">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Stone Troll Mobs" hidden="false" type="selectionEntry" id="cd96-6119-f73b-fbfa" targetId="7255-5510-3bf2-87a6">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="4855-b00a-bcfb-e534" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="8306-a708-c791-2dde" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="c453-dba9-bf7d-09f5" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="0eb3-b55c-f0c5-7196" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="c453-dba9-bf7d-09f5">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -8629,24 +8696,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Orc Boar Boy Mobs" hidden="false" type="selectionEntry" id="d532-e092-677f-7f2" targetId="5b90-17e7-7f9c-f674">
-      <categoryLinks>
-        <categoryLink name="Special" hidden="false" id="15fa-9033-4ccb-ddec" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="b2a3-1ec2-2d4f-0170" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="d810-3725-fcb5-19d7" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="0eb3-b55c-f0c5-7196">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="5f49-2c20-b052-bf83" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="d810-3725-fcb5-19d7">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8656,8 +8710,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="d810-3725-fcb5-19d7">
+        <modifier type="increment" value="1" field="0eb3-b55c-f0c5-7196">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8670,6 +8727,36 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="0eb3-b55c-f0c5-7196">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Orc Boar Boy Mobs" hidden="false" type="selectionEntry" id="d532-e092-677f-7f2" targetId="5b90-17e7-7f9c-f674">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="15fa-9033-4ccb-ddec" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="b2a3-1ec2-2d4f-0170" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="5f49-2c20-b052-bf83" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="0aff-b6de-ac70-c22d" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="5f49-2c20-b052-bf83">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -8725,24 +8812,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Goblin Spider Rider Mobs" hidden="false" type="selectionEntry" id="d60f-4d1b-dab8-b3f7" targetId="f8e2-1ac4-c646-af1c">
-      <categoryLinks>
-        <categoryLink name="Core" hidden="false" id="f899-facb-468-32b2" targetId="f0e3-2e32-8866-ea32" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="0149-8893-2012-44b3" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="6c10-5ebd-3919-bc5e" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="0aff-b6de-ac70-c22d">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="082a-3ec4-7e63-e2ee" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="2" field="6c10-5ebd-3919-bc5e">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8752,8 +8826,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="6c10-5ebd-3919-bc5e">
+        <modifier type="increment" value="1" field="0aff-b6de-ac70-c22d">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8766,6 +8843,36 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="0aff-b6de-ac70-c22d">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Goblin Spider Rider Mobs" hidden="false" type="selectionEntry" id="d60f-4d1b-dab8-b3f7" targetId="f8e2-1ac4-c646-af1c">
+      <categoryLinks>
+        <categoryLink name="Core" hidden="false" id="f899-facb-468-32b2" targetId="f0e3-2e32-8866-ea32" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="0149-8893-2012-44b3" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="082a-3ec4-7e63-e2ee" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="0409-b28c-9f58-b442" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="082a-3ec4-7e63-e2ee">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -8821,24 +8928,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Goblin Wolf Rider Mobs" hidden="false" type="selectionEntry" id="4fa8-d3a0-f10-4eb0" targetId="e36d-11d8-5d9a-1198">
-      <categoryLinks>
-        <categoryLink name="Core" hidden="false" id="d253-caa6-6f06-9730" targetId="f0e3-2e32-8866-ea32" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="8df9-4311-8950-08b3" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="7bea-156e-ca3d-a54a" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="2" field="0409-b28c-9f58-b442">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="0e8d-36d2-43a2-f931" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="2" field="7bea-156e-ca3d-a54a">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8848,8 +8942,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="7bea-156e-ca3d-a54a">
+        <modifier type="increment" value="1" field="0409-b28c-9f58-b442">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -8862,6 +8959,36 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="0409-b28c-9f58-b442">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Goblin Wolf Rider Mobs" hidden="false" type="selectionEntry" id="4fa8-d3a0-f10-4eb0" targetId="e36d-11d8-5d9a-1198">
+      <categoryLinks>
+        <categoryLink name="Core" hidden="false" id="d253-caa6-6f06-9730" targetId="f0e3-2e32-8866-ea32" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="8df9-4311-8950-08b3" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="0e8d-36d2-43a2-f931" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="395a-5dbf-47f9-c81a" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="0e8d-36d2-43a2-f931">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -8917,14 +9044,56 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="2" field="395a-5dbf-47f9-c81a">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="395a-5dbf-47f9-c81a">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="395a-5dbf-47f9-c81a">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="Night Goblin Squig Hopper Mobs" hidden="false" type="selectionEntry" id="f868-35f9-eeef-1aa" targetId="6949-f50f-89e4-99c8">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="d4d3-1075-e8-b414" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="aff5-f56e-0c2e-e3a6" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="ff99-7927-d6d6-1be6" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -8936,31 +9105,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1" repeats="1" field="selections" scope="force" childId="24cc-92eb-c7db-86f9" shared="true" roundUp="false" id="3f8c-cb8c-ddd8-d55e" includeChildSelections="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="1e80-132e-1771-a31" shared="true" roundUp="false" id="de3f-cf94-959f-9907" includeChildSelections="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="438c-dab2-28a1-868f" shared="true" roundUp="false" id="ce43-762d-bc59-edaa" includeChildSelections="false"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="aff5-f56e-0c2e-e3a6">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="aff5-f56e-0c2e-e3a6">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
         <modifier type="set" value="0" field="ff99-7927-d6d6-1be6">
@@ -9030,39 +9174,14 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="5a60-f48a-030a-7849" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="2741-91d9-e514-90a9" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="2b60-7823-7fd4-35af" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="3633-b4a7-9628-ca4e" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="2741-91d9-e514-90a9">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="2741-91d9-e514-90a9">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="2b60-7823-7fd4-35af">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -9118,24 +9237,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Giants" hidden="false" type="selectionEntry" id="ecad-9b4e-cb1f-9c9e" targetId="2e4e-ec04-8461-5da3">
-      <categoryLinks>
-        <categoryLink name="Rare" hidden="false" id="1212-6f20-7485-adca" targetId="2bfe-5863-46fe-d284" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="7522-07ec-3493-8c7f" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="eb8c-fc25-822a-bc25" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="3633-b4a7-9628-ca4e">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="247d-8dce-ec49-a72b" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="eb8c-fc25-822a-bc25">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -9145,8 +9251,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="eb8c-fc25-822a-bc25">
+        <modifier type="increment" value="1" field="3633-b4a7-9628-ca4e">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -9159,6 +9268,36 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="3633-b4a7-9628-ca4e">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Giants" hidden="false" type="selectionEntry" id="ecad-9b4e-cb1f-9c9e" targetId="2e4e-ec04-8461-5da3">
+      <categoryLinks>
+        <categoryLink name="Rare" hidden="false" id="1212-6f20-7485-adca" targetId="2bfe-5863-46fe-d284" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="7522-07ec-3493-8c7f" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="247d-8dce-ec49-a72b" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="1785-19ae-1e91-c246" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="247d-8dce-ec49-a72b">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -9214,6 +9353,51 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="0" field="1785-19ae-1e91-c246">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="1785-19ae-1e91-c246">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="1785-19ae-1e91-c246">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="Goblin Rock Lobbers" hidden="false" type="selectionEntry" id="5aa6-da75-2f87-3abf" targetId="d7f0-af29-e9dc-6eda">
@@ -9247,31 +9431,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
               </conditions>
             </conditionGroup>
           </conditionGroups>
-        </modifier>
-        <modifier type="set" value="0" field="bc68-0186-7c41-db91">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="bc68-0186-7c41-db91">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
         </modifier>
         <modifier type="set" value="0" field="7347-3d78-5d19-1896">
           <comment>Grand melee</comment>
@@ -9331,9 +9490,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
       </modifiers>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="643-3ec0-8552-41b4" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="bc68-0186-7c41-db91" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="7347-3d78-5d19-1896" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -9345,9 +9501,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
     <entryLink import="true" name="Doom Diver Catapults" hidden="false" type="selectionEntry" id="ba24-f4c2-236e-9a34" targetId="20d9-d374-f5d5-82bc">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="b138-8f3b-590f-b148" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5527-38f7-025a-56a0" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="b355-9f13-982a-c50e" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -9382,31 +9535,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
               </conditions>
             </conditionGroup>
           </conditionGroups>
-        </modifier>
-        <modifier type="set" value="0" field="5527-38f7-025a-56a0">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="5527-38f7-025a-56a0">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
         </modifier>
         <modifier type="set" value="0" field="b355-9f13-982a-c50e">
           <comment>Grand melee</comment>
@@ -9474,39 +9602,14 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
         <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="d7ff-b9a7-88aa-cd4b" primary="false" targetId="fec1-537a-bbeb-7926"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="605d-fc27-97da-d70a" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3f54-7de7-6430-d552" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="7eca-3899-320c-8921" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="605d-fc27-97da-d70a">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="605d-fc27-97da-d70a">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="3f54-7de7-6430-d552">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -9562,24 +9665,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Goblin Wolf Chariots" hidden="false" type="selectionEntry" id="b84c-7c69-32ca-d38a" targetId="5f86-179a-d64d-3014">
-      <categoryLinks>
-        <categoryLink name="Special" hidden="false" id="91ad-6e7d-c8b0-a65a" targetId="633f-f67a-1b6a-d203" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="2f6e-0392-f2b2-6950" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="a028-8d3f-2b10-6050" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="7eca-3899-320c-8921">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="7917-9207-6781-e97d" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="a028-8d3f-2b10-6050">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -9589,8 +9679,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="a028-8d3f-2b10-6050">
+        <modifier type="increment" value="1" field="7eca-3899-320c-8921">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -9603,6 +9696,36 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="7eca-3899-320c-8921">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Goblin Wolf Chariots" hidden="false" type="selectionEntry" id="b84c-7c69-32ca-d38a" targetId="5f86-179a-d64d-3014">
+      <categoryLinks>
+        <categoryLink name="Special" hidden="false" id="91ad-6e7d-c8b0-a65a" targetId="633f-f67a-1b6a-d203" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="2f6e-0392-f2b2-6950" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="7917-9207-6781-e97d" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="3ee5-6227-883d-0155" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="7917-9207-6781-e97d">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -9658,24 +9781,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Black Orc Bigboss" hidden="false" type="selectionEntry" id="af2f-a321-e720-9fb1" targetId="3a60-b23d-7e34-aecf">
-      <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="b8-eb9-9db2-88c3" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-        <categoryLink targetId="0ba6-6cb2-c5f4-904a" id="338c-d502-7830-dc2f" primary="false" name="Black Orc Boss (Da Boyz Special Rule)"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="68de-0c1d-2876-bb15" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="3ee5-6227-883d-0155">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="97f6-6cc0-0ddf-955b" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="68de-0c1d-2876-bb15">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -9685,8 +9795,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="68de-0c1d-2876-bb15">
+        <modifier type="increment" value="1" field="3ee5-6227-883d-0155">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -9699,6 +9812,33 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="3ee5-6227-883d-0155">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Black Orc Bigboss" hidden="false" type="selectionEntry" id="af2f-a321-e720-9fb1" targetId="3a60-b23d-7e34-aecf">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="b8-eb9-9db2-88c3" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+        <categoryLink targetId="0ba6-6cb2-c5f4-904a" id="338c-d502-7830-dc2f" primary="false" name="Black Orc Boss (Da Boyz Special Rule)"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="97f6-6cc0-0ddf-955b" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="97f6-6cc0-0ddf-955b">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -9763,9 +9903,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
       </categoryLinks>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="cfdd-321a-7124-e2ea"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="808e-1e61-ffae-4ad0" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="8a8b-2787-a6e7-22f1" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -9806,31 +9943,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1" repeats="1" field="selections" scope="force" childId="92b4-e584-76ef-ab7" shared="true" roundUp="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="4a90-3060-c790-2d98" shared="true" roundUp="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="11368718-3481c082" shared="true" roundUp="false"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="808e-1e61-ffae-4ad0">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="808e-1e61-ffae-4ad0">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
         <modifier type="set" value="0" field="8a8b-2787-a6e7-22f1">
@@ -9897,9 +10009,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
       </categoryLinks>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="4dba-2186-ec98-d9be"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="1a7e-5eb2-edd9-6578" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="9413-1c07-884d-5626" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -9940,31 +10049,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1" repeats="1" field="selections" scope="force" childId="5f11-e9c2-fece-fff8" shared="true" roundUp="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="4a90-3060-c790-2d98" shared="true" roundUp="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="11368718-3481c082" shared="true" roundUp="false"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="1a7e-5eb2-edd9-6578">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="1a7e-5eb2-edd9-6578">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
         <modifier type="set" value="0" field="9413-1c07-884d-5626">
@@ -10029,39 +10113,14 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
         <categoryLink name="Characters" hidden="false" id="e26e-a3e8-6c96-7a7b" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="516a-44a3-c828-be72" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="31c1-b76a-30df-3ed6" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="bcdc-8b19-5289-c18c" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="516a-44a3-c828-be72">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="516a-44a3-c828-be72">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="31c1-b76a-30df-3ed6">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -10117,23 +10176,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Goblin Bigboss" hidden="false" type="selectionEntry" id="9a7b-bfaf-fc0d-dc40" targetId="3c83-df5f-3c4-9bff">
-      <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="5322-e0c6-82f4-8429" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="321c-4df5-517d-1814" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="bcdc-8b19-5289-c18c">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="e4ec-4a10-8133-b0d8" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="321c-4df5-517d-1814">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10143,8 +10190,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="321c-4df5-517d-1814">
+        <modifier type="increment" value="1" field="bcdc-8b19-5289-c18c">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10157,6 +10207,35 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="bcdc-8b19-5289-c18c">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Goblin Bigboss" hidden="false" type="selectionEntry" id="9a7b-bfaf-fc0d-dc40" targetId="3c83-df5f-3c4-9bff">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="5322-e0c6-82f4-8429" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="e4ec-4a10-8133-b0d8" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="dd74-3759-568e-e8ab" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="e4ec-4a10-8133-b0d8">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -10212,23 +10291,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Orc Bigboss" hidden="false" type="selectionEntry" id="875f-3dc0-26a5-659f" targetId="cc13-c8e5-a88a-542a">
-      <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="c93b-38e3-ea17-f2f1" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="8380-afaa-10fb-81f7" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="dd74-3759-568e-e8ab">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="0ed0-d91a-c5aa-d0cf" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="8380-afaa-10fb-81f7">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10238,8 +10305,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="8380-afaa-10fb-81f7">
+        <modifier type="increment" value="1" field="dd74-3759-568e-e8ab">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10252,6 +10322,35 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="dd74-3759-568e-e8ab">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Orc Bigboss" hidden="false" type="selectionEntry" id="875f-3dc0-26a5-659f" targetId="cc13-c8e5-a88a-542a">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="c93b-38e3-ea17-f2f1" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="0ed0-d91a-c5aa-d0cf" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="3273-cd04-7c53-e5dd" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="0ed0-d91a-c5aa-d0cf">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -10307,23 +10406,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Orc Weirdboy" hidden="false" type="selectionEntry" id="d5b5-24b7-5a8f-5ff9" targetId="e9f5-b8ba-7d18-f2fc">
-      <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="eaf0-c038-cd41-bbcb" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5d5b-fadd-c08f-ecaf" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="3273-cd04-7c53-e5dd">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="5997-6191-bed1-5d3f" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="5d5b-fadd-c08f-ecaf">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10333,8 +10420,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="5d5b-fadd-c08f-ecaf">
+        <modifier type="increment" value="1" field="3273-cd04-7c53-e5dd">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10347,6 +10437,35 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="3273-cd04-7c53-e5dd">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Orc Weirdboy" hidden="false" type="selectionEntry" id="d5b5-24b7-5a8f-5ff9" targetId="e9f5-b8ba-7d18-f2fc">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="eaf0-c038-cd41-bbcb" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="5997-6191-bed1-5d3f" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="0f40-591c-c348-6632" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="5997-6191-bed1-5d3f">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -10402,6 +10521,51 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="1" field="0f40-591c-c348-6632">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="0f40-591c-c348-6632">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="0f40-591c-c348-6632">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="Orc Weirdnob" hidden="false" type="selectionEntry" id="7836-506f-79f7-f95a" targetId="4a90-3060-c790-2d98">
@@ -10410,9 +10574,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
       </categoryLinks>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="83e5-863c-76b0-5f3b"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="4b7b-e636-cb4c-31f2" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="3bb3-e1f4-ef89-ccdd" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -10453,31 +10614,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1" repeats="1" field="selections" scope="force" childId="5f11-e9c2-fece-fff8" shared="true" roundUp="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="92b4-e584-76ef-ab7" shared="true" roundUp="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="11368718-3481c082" shared="true" roundUp="false"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="1" field="4b7b-e636-cb4c-31f2">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="4b7b-e636-cb4c-31f2">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
         <modifier type="set" value="0" field="3bb3-e1f4-ef89-ccdd">
@@ -10542,39 +10678,14 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
         <categoryLink name="Characters" hidden="false" id="79e-b717-1319-ddb6" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
       </categoryLinks>
       <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="eade-b5b1-8138-4a41" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="1801-998c-6841-99b1" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="84d7-4655-a314-9873" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <modifiers>
-        <modifier type="set" value="1" field="eade-b5b1-8138-4a41">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="eade-b5b1-8138-4a41">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="1801-998c-6841-99b1">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -10630,23 +10741,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Night Goblin Oddgit" hidden="false" type="selectionEntry" id="cc75-997d-1ae6-8f5c" targetId="438c-dab2-28a1-868f">
-      <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="8bb2-eddb-6cc7-d4cb" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="900e-5d5b-9d83-b609" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="84d7-4655-a314-9873">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="064b-76e1-d07d-81c8" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="900e-5d5b-9d83-b609">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10656,8 +10755,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="900e-5d5b-9d83-b609">
+        <modifier type="increment" value="1" field="84d7-4655-a314-9873">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10670,6 +10772,35 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="84d7-4655-a314-9873">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Night Goblin Oddgit" hidden="false" type="selectionEntry" id="cc75-997d-1ae6-8f5c" targetId="438c-dab2-28a1-868f">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="8bb2-eddb-6cc7-d4cb" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="064b-76e1-d07d-81c8" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="6ca7-d098-9698-5baf" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="064b-76e1-d07d-81c8">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -10725,23 +10856,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Night Goblin Oddnob" hidden="false" type="selectionEntry" id="4c0b-b1a5-a7d7-ef2e" targetId="1e80-132e-1771-a31">
-      <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="f47c-f5cb-6c81-3f66" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="2e1b-9b81-9317-2f2d" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="6ca7-d098-9698-5baf">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="b4d6-8ecc-bfda-bb48" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="2e1b-9b81-9317-2f2d">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10751,8 +10870,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="2e1b-9b81-9317-2f2d">
+        <modifier type="increment" value="1" field="6ca7-d098-9698-5baf">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10765,6 +10887,35 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="6ca7-d098-9698-5baf">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Night Goblin Oddnob" hidden="false" type="selectionEntry" id="4c0b-b1a5-a7d7-ef2e" targetId="1e80-132e-1771-a31">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="f47c-f5cb-6c81-3f66" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="b4d6-8ecc-bfda-bb48" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="b209-bcd4-40a1-564c" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="b4d6-8ecc-bfda-bb48">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -10820,23 +10971,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Night Goblin Warboss" hidden="false" type="selectionEntry" id="5b92-be0-1dc6-efbf" targetId="5dfc-f215-9ae1-b579">
-      <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="397c-77b4-7d22-badf" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="6009-ecbf-c2f7-17dc" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="b209-bcd4-40a1-564c">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="d6d7-b40f-a357-e89d" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="6009-ecbf-c2f7-17dc">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10846,8 +10985,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="6009-ecbf-c2f7-17dc">
+        <modifier type="increment" value="1" field="b209-bcd4-40a1-564c">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10860,6 +11002,35 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="b209-bcd4-40a1-564c">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Night Goblin Warboss" hidden="false" type="selectionEntry" id="5b92-be0-1dc6-efbf" targetId="5dfc-f215-9ae1-b579">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="397c-77b4-7d22-badf" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="d6d7-b40f-a357-e89d" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="f339-2bfb-e682-e9a1" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="d6d7-b40f-a357-e89d">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -10915,23 +11086,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Goblin Oddnob" hidden="false" type="selectionEntry" id="8406-d51f-9ad2-444" targetId="e003-269f-146e-ffa7">
-      <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="5ee2-e8ae-4bba-e6a1" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="8ecd-d029-80a4-3bc6" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="f339-2bfb-e682-e9a1">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="fd74-63bf-ff8b-ad71" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="8ecd-d029-80a4-3bc6">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10941,8 +11100,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="8ecd-d029-80a4-3bc6">
+        <modifier type="increment" value="1" field="f339-2bfb-e682-e9a1">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -10955,6 +11117,35 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="f339-2bfb-e682-e9a1">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Goblin Oddnob" hidden="false" type="selectionEntry" id="8406-d51f-9ad2-444" targetId="e003-269f-146e-ffa7">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="5ee2-e8ae-4bba-e6a1" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="fd74-63bf-ff8b-ad71" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="14f7-a922-ae9f-b195" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="fd74-63bf-ff8b-ad71">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -11010,23 +11201,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Goblin Oddgit" hidden="false" type="selectionEntry" id="c93d-3bcf-ffd9-89ee" targetId="32a5-e82a-ec0e-2994">
-      <categoryLinks>
-        <categoryLink name="Characters" hidden="false" id="85df-edfc-5d81-6153" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="8d73-d776-629b-2846" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="14f7-a922-ae9f-b195">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="92a2-6b3e-0ce8-4f6b" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="1" field="8d73-d776-629b-2846">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -11036,8 +11215,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="8d73-d776-629b-2846">
+        <modifier type="increment" value="1" field="14f7-a922-ae9f-b195">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -11050,6 +11232,35 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="14f7-a922-ae9f-b195">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Goblin Oddgit" hidden="false" type="selectionEntry" id="c93d-3bcf-ffd9-89ee" targetId="32a5-e82a-ec0e-2994">
+      <categoryLinks>
+        <categoryLink name="Characters" hidden="false" id="85df-edfc-5d81-6153" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="92a2-6b3e-0ce8-4f6b" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="671c-995a-95a4-f563" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="92a2-6b3e-0ce8-4f6b">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -11105,24 +11316,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-      </modifiers>
-    </entryLink>
-    <entryLink import="true" name="Arachnarok Spider" hidden="false" type="selectionEntry" id="7b6d-a954-d75e-43d2" targetId="705b-522c-1c00-2338">
-      <categoryLinks>
-        <categoryLink name="Rare" hidden="false" id="4c73-fb72-8e12-7245" targetId="2bfe-5863-46fe-d284" primary="true"/>
-        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="efc9-9a34-4a90-38a9" primary="false" targetId="fec1-537a-bbeb-7926"/>
-      </categoryLinks>
-      <constraints>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5af9-baf2-882c-33fc" includeChildSelections="true" includeChildForces="true">
+        <modifier type="set" value="1" field="671c-995a-95a4-f563">
           <comment>Combined arms</comment>
-        </constraint>
-        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="f88a-4623-87ef-b5a6" includeChildSelections="true" includeChildForces="true" percentValue="false">
-          <comment>Grand melee</comment>
-        </constraint>
-      </constraints>
-      <modifiers>
-        <modifier type="set" value="0" field="5af9-baf2-882c-33fc">
-          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -11132,8 +11330,11 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="5af9-baf2-882c-33fc">
+        <modifier type="increment" value="1" field="671c-995a-95a4-f563">
           <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -11146,6 +11347,36 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="3" field="671c-995a-95a4-f563">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink import="true" name="Arachnarok Spider" hidden="false" type="selectionEntry" id="7b6d-a954-d75e-43d2" targetId="705b-522c-1c00-2338">
+      <categoryLinks>
+        <categoryLink name="Rare" hidden="false" id="4c73-fb72-8e12-7245" targetId="2bfe-5863-46fe-d284" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="efc9-9a34-4a90-38a9" primary="false" targetId="fec1-537a-bbeb-7926"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="-1" field="points" scope="self" shared="true" id="f88a-4623-87ef-b5a6" includeChildSelections="true" includeChildForces="true" percentValue="false">
+          <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="a688-dae7-a20b-3fbb" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
+      </constraints>
+      <modifiers>
         <modifier type="set" value="0" field="f88a-4623-87ef-b5a6">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -11201,14 +11432,56 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="0" field="a688-dae7-a20b-3fbb">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="a688-dae7-a20b-3fbb">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="a688-dae7-a20b-3fbb">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="Night Goblin Squig Herds" hidden="false" type="selectionEntry" id="1203-e354-fe18-f5e5" targetId="96e4-22ac-eb93-11e9">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="b52a-37b-d74f-8d5" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="c1cd-6550-a664-8c11" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="eb7b-0d0e-1590-2c2e" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -11220,31 +11493,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1" repeats="1" field="selections" scope="force" childId="24cc-92eb-c7db-86f9" shared="true" roundUp="false" id="a865-8b37-cc27-09a4" includeChildSelections="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="1e80-132e-1771-a31" shared="true" roundUp="false" id="dfce-071f-74fd-93eb" includeChildSelections="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="438c-dab2-28a1-868f" shared="true" roundUp="false" id="afb0-e85a-23bd-69d5" includeChildSelections="false"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="2" field="c1cd-6550-a664-8c11">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="c1cd-6550-a664-8c11">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
         <modifier type="set" value="0" field="eb7b-0d0e-1590-2c2e">
@@ -11311,9 +11559,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
     <entryLink import="true" name="Mangler Squigs" hidden="false" type="selectionEntry" id="c304-da33-8244-17dc" targetId="7cb0-f4e4-57e3-fb07">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="7aa8-154a-af33-e191" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="1e4a-ebae-e9e4-f25d" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="c582-ba2e-f9f7-9069" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -11325,31 +11570,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             <repeat value="1" repeats="1" field="selections" scope="force" childId="24cc-92eb-c7db-86f9" shared="true" roundUp="false" id="27d1-705e-4460-1e8a" includeChildSelections="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="1e80-132e-1771-a31" shared="true" roundUp="false" id="c5b0-1737-e1cc-763a" includeChildSelections="false"/>
             <repeat value="1" repeats="1" field="selections" scope="force" childId="438c-dab2-28a1-868f" shared="true" roundUp="false" id="c166-1918-f8ea-0f6f" includeChildSelections="false"/>
-          </repeats>
-        </modifier>
-        <modifier type="set" value="0" field="1e4a-ebae-e9e4-f25d">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="1e4a-ebae-e9e4-f25d">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
         <modifier type="set" value="0" field="c582-ba2e-f9f7-9069">
@@ -11445,31 +11665,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="set" value="1" field="37e4-b6a7-f346-aff7">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="37e4-b6a7-f346-aff7">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="2063-e961-4f75-675a">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -11528,9 +11723,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
       </modifiers>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="8d21-c63b-6f2a-f120" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="37e4-b6a7-f346-aff7" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="2063-e961-4f75-675a" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -11546,31 +11738,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
       </categoryLinks>
       <modifiers>
         <modifier type="remove" value="633f-f67a-1b6a-d203" field="category"/>
-        <modifier type="set" value="2" field="907c-9572-16e2-0f6b">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="907c-9572-16e2-0f6b">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
-        </modifier>
         <modifier type="set" value="0" field="df89-0845-fa26-3c8f">
           <comment>Grand melee</comment>
           <conditionGroups>
@@ -11646,9 +11813,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
       </modifierGroups>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="force" shared="false" id="6e6c-65e5-ddf5-6b0a"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="907c-9572-16e2-0f6b" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="df89-0845-fa26-3c8f" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -11796,9 +11960,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
     <entryLink import="true" name="Troll Hag" hidden="false" id="6ad8-4621-6ed6-9409" type="selectionEntry" targetId="cc7549d2-1d43331c">
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="1e28-838a-c1c8-17f7" includeChildSelections="true"/>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="e7fd-a26b-f57a-17c7" includeChildSelections="true" includeChildForces="true">
-          <comment>Combined arms</comment>
-        </constraint>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="20ca-f185-c6cb-ba09" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
@@ -11814,31 +11975,6 @@ Each time an enemy unit loses a Wound as a result of an Indiscriminate Hunger at
               </conditions>
             </conditionGroup>
           </conditionGroups>
-        </modifier>
-        <modifier type="set" value="0" field="e7fd-a26b-f57a-17c7">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" value="1" field="e7fd-a26b-f57a-17c7">
-          <comment>Combined arms</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
-                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-          <repeats>
-            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
-          </repeats>
         </modifier>
         <modifier type="set" value="0" field="20ca-f185-c6cb-ba09">
           <comment>Grand melee</comment>
