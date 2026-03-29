@@ -3671,7 +3671,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="c3f9-1603-6732-8f0e" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="657c-3b2e-840f-7283" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="888e-a29b-f9ce-039f" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -3731,7 +3731,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="657c-3b2e-840f-7283">
+        <modifier type="set" value="1" field="888e-a29b-f9ce-039f">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -3745,7 +3745,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="657c-3b2e-840f-7283">
+        <modifier type="increment" value="1" field="888e-a29b-f9ce-039f">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -3762,7 +3762,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="657c-3b2e-840f-7283">
+        <modifier type="set" value="3" field="888e-a29b-f9ce-039f">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -4288,11 +4288,59 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="2" field="f3a7-5053-ad71-f8ab">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="f3a7-5053-ad71-f8ab">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="4" field="f3a7-5053-ad71-f8ab">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <constraints>
         <constraint type="min" value="0" field="selections" scope="force" shared="true" id="107f-472c-6f30-a2a0" includeChildSelections="true"/>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="1f71-4544-53af-ec20" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="f3a7-5053-ad71-f8ab" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
         </constraint>
       </constraints>
     </entryLink>
@@ -4468,7 +4516,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="219f-2494-9fd2-c6da" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="c6f8-7172-00f7-d624" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="9aa5-753d-df15-ee5c" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -4528,7 +4576,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="2" field="c6f8-7172-00f7-d624">
+        <modifier type="set" value="2" field="9aa5-753d-df15-ee5c">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -4542,7 +4590,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="c6f8-7172-00f7-d624">
+        <modifier type="increment" value="1" field="9aa5-753d-df15-ee5c">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -4559,7 +4607,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="c6f8-7172-00f7-d624">
+        <modifier type="set" value="4" field="9aa5-753d-df15-ee5c">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -4690,7 +4738,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="5c97-cc24-76fc-1551" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="6639-19b0-353d-003b" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="ca2b-8a4a-6cfb-9f71" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -4750,7 +4798,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="2" field="6639-19b0-353d-003b">
+        <modifier type="set" value="2" field="ca2b-8a4a-6cfb-9f71">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -4764,7 +4812,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="6639-19b0-353d-003b">
+        <modifier type="increment" value="1" field="ca2b-8a4a-6cfb-9f71">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -4781,7 +4829,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="6639-19b0-353d-003b">
+        <modifier type="set" value="4" field="ca2b-8a4a-6cfb-9f71">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -4806,7 +4854,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="53d8-6108-dee8-9629" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="0339-9188-f086-8371" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="d968-0960-ef58-4733" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -4866,7 +4914,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="2" field="0339-9188-f086-8371">
+        <modifier type="set" value="2" field="d968-0960-ef58-4733">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -4880,7 +4928,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="0339-9188-f086-8371">
+        <modifier type="increment" value="1" field="d968-0960-ef58-4733">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -4897,7 +4945,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="0339-9188-f086-8371">
+        <modifier type="set" value="4" field="d968-0960-ef58-4733">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -4922,7 +4970,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="7b73-6741-8e2f-70af" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="4dcd-1006-6b2e-a1d3" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="338d-233a-f1d9-0791" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -4982,7 +5030,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="4dcd-1006-6b2e-a1d3">
+        <modifier type="set" value="1" field="338d-233a-f1d9-0791">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -4996,7 +5044,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="4dcd-1006-6b2e-a1d3">
+        <modifier type="increment" value="1" field="338d-233a-f1d9-0791">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -5013,7 +5061,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="4dcd-1006-6b2e-a1d3">
+        <modifier type="set" value="3" field="338d-233a-f1d9-0791">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -6112,7 +6160,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="80f7-7027-10ab-40cf">
+        <modifier type="set" value="1" field="9af8-cedf-663f-63af">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -6126,7 +6174,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="80f7-7027-10ab-40cf">
+        <modifier type="increment" value="1" field="9af8-cedf-663f-63af">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -6143,7 +6191,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="80f7-7027-10ab-40cf">
+        <modifier type="set" value="3" field="9af8-cedf-663f-63af">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -6162,7 +6210,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="8bda-ca21-676d-0166" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="80f7-7027-10ab-40cf" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="9af8-cedf-663f-63af" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -6236,7 +6284,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="e589-1510-e5ab-f4bd">
+        <modifier type="set" value="1" field="5cb9-66c7-9098-56b8">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -6250,7 +6298,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="e589-1510-e5ab-f4bd">
+        <modifier type="increment" value="1" field="5cb9-66c7-9098-56b8">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -6267,7 +6315,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="e589-1510-e5ab-f4bd">
+        <modifier type="set" value="3" field="5cb9-66c7-9098-56b8">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -6286,7 +6334,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="d6d1-20dd-d734-ae9e" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="e589-1510-e5ab-f4bd" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5cb9-66c7-9098-56b8" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -6359,7 +6407,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="1b1e-a762-4226-7677">
+        <modifier type="set" value="1" field="db4d-fde8-5834-1d2b">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -6373,7 +6421,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="1b1e-a762-4226-7677">
+        <modifier type="increment" value="1" field="db4d-fde8-5834-1d2b">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -6390,7 +6438,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="1b1e-a762-4226-7677">
+        <modifier type="set" value="3" field="db4d-fde8-5834-1d2b">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -6410,7 +6458,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="8c3b-3e9b-500e-2ada" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="1b1e-a762-4226-7677" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="db4d-fde8-5834-1d2b" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -6484,7 +6532,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="2" field="45f5-be7e-e8d4-e00b">
+        <modifier type="set" value="2" field="28e1-e3e6-f090-f991">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -6498,7 +6546,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="45f5-be7e-e8d4-e00b">
+        <modifier type="increment" value="1" field="28e1-e3e6-f090-f991">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -6515,7 +6563,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="45f5-be7e-e8d4-e00b">
+        <modifier type="set" value="4" field="28e1-e3e6-f090-f991">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -6535,7 +6583,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="91cf-64c1-7274-fd52" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="45f5-be7e-e8d4-e00b" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="28e1-e3e6-f090-f991" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -6771,7 +6819,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="960a-fa42-dfa0-c0bc">
+        <modifier type="set" value="1" field="443a-d327-f869-9bde">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -6785,7 +6833,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="960a-fa42-dfa0-c0bc">
+        <modifier type="increment" value="1" field="443a-d327-f869-9bde">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -6802,7 +6850,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="960a-fa42-dfa0-c0bc">
+        <modifier type="set" value="3" field="443a-d327-f869-9bde">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -6822,7 +6870,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="873d-644a-7038-888a" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="960a-fa42-dfa0-c0bc" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="443a-d327-f869-9bde" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -6896,7 +6944,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="152f-f3ba-a140-d1fb">
+        <modifier type="set" value="1" field="a6b6-84e7-adba-4f62">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -6910,7 +6958,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="152f-f3ba-a140-d1fb">
+        <modifier type="increment" value="1" field="a6b6-84e7-adba-4f62">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -6927,7 +6975,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="152f-f3ba-a140-d1fb">
+        <modifier type="set" value="3" field="a6b6-84e7-adba-4f62">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -6947,7 +6995,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="2f91-84ec-48ab-8000" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="152f-f3ba-a140-d1fb" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="a6b6-84e7-adba-4f62" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -7024,7 +7072,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="ef5c-4bfb-28fc-8b8e">
+        <modifier type="set" value="1" field="55a9-d36f-3157-e4af">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -7038,7 +7086,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="ef5c-4bfb-28fc-8b8e">
+        <modifier type="increment" value="1" field="55a9-d36f-3157-e4af">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -7055,7 +7103,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="ef5c-4bfb-28fc-8b8e">
+        <modifier type="set" value="3" field="55a9-d36f-3157-e4af">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -7075,7 +7123,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="0e4d-d292-8d23-d382" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="ef5c-4bfb-28fc-8b8e" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="55a9-d36f-3157-e4af" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -7152,7 +7200,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="3fd8-a48e-1c1b-8015">
+        <modifier type="set" value="1" field="433c-d9fb-bd1a-b6fa">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -7166,7 +7214,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="3fd8-a48e-1c1b-8015">
+        <modifier type="increment" value="1" field="433c-d9fb-bd1a-b6fa">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -7183,7 +7231,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="3fd8-a48e-1c1b-8015">
+        <modifier type="set" value="3" field="433c-d9fb-bd1a-b6fa">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -7203,7 +7251,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="8a5f-a15f-a8b9-3769" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="3fd8-a48e-1c1b-8015" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="433c-d9fb-bd1a-b6fa" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -7277,7 +7325,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="df47-8eec-ad08-cbad">
+        <modifier type="set" value="1" field="f049-0b86-b414-fa81">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -7291,7 +7339,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="df47-8eec-ad08-cbad">
+        <modifier type="increment" value="1" field="f049-0b86-b414-fa81">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -7308,7 +7356,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="df47-8eec-ad08-cbad">
+        <modifier type="set" value="3" field="f049-0b86-b414-fa81">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -7328,7 +7376,7 @@ Any unit that suffers one or more unsaved wounds from this weapon must make a Pa
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="303d-946a-d2bf-85e1" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="df47-8eec-ad08-cbad" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="f049-0b86-b414-fa81" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>

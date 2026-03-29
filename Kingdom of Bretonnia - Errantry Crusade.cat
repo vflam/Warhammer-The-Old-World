@@ -292,6 +292,9 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="37e1-b900-c2df-b792" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="bfb7-235b-317f-5342" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
+        </constraint>
       </constraints>
       <categoryLinks>
         <categoryLink name="Characters" hidden="false" id="9b77-2a80-fb77-d996" targetId="a4cc-15c9-cfae-1b3b" primary="true"/>
@@ -353,6 +356,51 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="1" field="bfb7-235b-317f-5342">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="bfb7-235b-317f-5342">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="3" field="bfb7-235b-317f-5342">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="Damsel" hidden="false" id="f843-242a-e612-1791" type="selectionEntry" targetId="969e-5f92-cb5e-1cd8">
@@ -364,7 +412,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="e483-bda6-368a-604d" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="f1a9-cbce-dc5c-25bc" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="47e5-58db-8371-a979" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -424,7 +472,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="f1a9-cbce-dc5c-25bc">
+        <modifier type="set" value="1" field="47e5-58db-8371-a979">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -438,7 +486,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="f1a9-cbce-dc5c-25bc">
+        <modifier type="increment" value="1" field="47e5-58db-8371-a979">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -455,7 +503,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="f1a9-cbce-dc5c-25bc">
+        <modifier type="set" value="3" field="47e5-58db-8371-a979">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -480,7 +528,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="bf8d-a483-f9ce-a277" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="19d7-60ee-7562-8ce6" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5467-b353-e76a-bb04" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -540,7 +588,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="19d7-60ee-7562-8ce6">
+        <modifier type="set" value="1" field="5467-b353-e76a-bb04">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -554,7 +602,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="19d7-60ee-7562-8ce6">
+        <modifier type="increment" value="1" field="5467-b353-e76a-bb04">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -571,7 +619,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="19d7-60ee-7562-8ce6">
+        <modifier type="set" value="3" field="5467-b353-e76a-bb04">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -597,6 +645,9 @@
         <constraint type="min" value="0" field="selections" scope="force" shared="true" id="d2ec-dc6a-2400-1225" includeChildSelections="true"/>
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="8949-cc1a-492d-655e" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
+        </constraint>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="d5dd-643b-e8fb-34ce" includeChildSelections="true" includeChildForces="true">
+          <comment>Combined arms</comment>
         </constraint>
       </constraints>
       <modifiers>
@@ -685,6 +736,51 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
+        <modifier type="set" value="2" field="d5dd-643b-e8fb-34ce">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" value="1" field="d5dd-643b-e8fb-34ce">
+          <comment>Combined arms</comment>
+          <conditions>
+            <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <repeats>
+            <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" value="4" field="d5dd-643b-e8fb-34ce">
+          <comment>Combined arms</comment>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="0750-5d17-d708-f990" shared="true"/>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="1ae6-ed95-069e-a390" shared="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+          <conditions>
+            <condition type="lessThan" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink import="true" name="Battle Pilgrims &amp; Grail Reliquae" hidden="false" id="5d6-bffc-4159-e560" type="selectionEntry" targetId="573b-ddad-d3fe-b920">
@@ -768,7 +864,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="e662-b976-67ff-c0ef" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="2314-1609-4516-9cc5" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="ddf2-9525-53d6-902e" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -828,7 +924,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="2" field="2314-1609-4516-9cc5">
+        <modifier type="set" value="2" field="ddf2-9525-53d6-902e">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -842,7 +938,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="2314-1609-4516-9cc5">
+        <modifier type="increment" value="1" field="ddf2-9525-53d6-902e">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -859,7 +955,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="2314-1609-4516-9cc5">
+        <modifier type="set" value="4" field="ddf2-9525-53d6-902e">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -885,7 +981,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="357a-94df-cf45-195a" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="6675-f1fb-67c0-d37b" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="a795-38bd-16ff-feca" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -945,7 +1041,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="2" field="6675-f1fb-67c0-d37b">
+        <modifier type="set" value="2" field="a795-38bd-16ff-feca">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -959,7 +1055,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="6675-f1fb-67c0-d37b">
+        <modifier type="increment" value="1" field="a795-38bd-16ff-feca">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -976,7 +1072,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="6675-f1fb-67c0-d37b">
+        <modifier type="set" value="4" field="a795-38bd-16ff-feca">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -1002,7 +1098,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="2799-fecf-7d8d-9319" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="085b-d811-77a6-57a1" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="0801-4bac-cf2b-2293" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -1062,7 +1158,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="2" field="085b-d811-77a6-57a1">
+        <modifier type="set" value="2" field="0801-4bac-cf2b-2293">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1076,7 +1172,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="085b-d811-77a6-57a1">
+        <modifier type="increment" value="1" field="0801-4bac-cf2b-2293">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1093,7 +1189,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="085b-d811-77a6-57a1">
+        <modifier type="set" value="4" field="0801-4bac-cf2b-2293">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -1119,7 +1215,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="7c15-6f62-d603-0c1e" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="8b3e-2fe4-21ae-adb9" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="ede4-296f-a883-95d4" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -1179,7 +1275,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="8b3e-2fe4-21ae-adb9">
+        <modifier type="set" value="1" field="ede4-296f-a883-95d4">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1193,7 +1289,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="8b3e-2fe4-21ae-adb9">
+        <modifier type="increment" value="1" field="ede4-296f-a883-95d4">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1210,7 +1306,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="8b3e-2fe4-21ae-adb9">
+        <modifier type="set" value="3" field="ede4-296f-a883-95d4">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -1236,7 +1332,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="81bf-eb93-3fbb-da0d" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="574c-ebe3-80dc-bab0" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="72fe-d590-ffd7-5604" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -1296,7 +1392,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="574c-ebe3-80dc-bab0">
+        <modifier type="set" value="1" field="72fe-d590-ffd7-5604">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1310,7 +1406,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="574c-ebe3-80dc-bab0">
+        <modifier type="increment" value="1" field="72fe-d590-ffd7-5604">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1327,7 +1423,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="574c-ebe3-80dc-bab0">
+        <modifier type="set" value="3" field="72fe-d590-ffd7-5604">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -1353,7 +1449,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="8fb2-30a9-5504-af10" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="8b7f-e5cb-d910-9769" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="9dd3-3ced-8d4a-2caf" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -1413,7 +1509,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="8b7f-e5cb-d910-9769">
+        <modifier type="set" value="1" field="9dd3-3ced-8d4a-2caf">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1427,7 +1523,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="8b7f-e5cb-d910-9769">
+        <modifier type="increment" value="1" field="9dd3-3ced-8d4a-2caf">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1444,7 +1540,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="8b7f-e5cb-d910-9769">
+        <modifier type="set" value="3" field="9dd3-3ced-8d4a-2caf">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -1471,7 +1567,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="f132-8895-32fa-348e" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="cd15-4a0f-69d7-a99e" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="af06-5092-2d48-7dfa" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -1531,7 +1627,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="cd15-4a0f-69d7-a99e">
+        <modifier type="set" value="1" field="af06-5092-2d48-7dfa">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1545,7 +1641,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="cd15-4a0f-69d7-a99e">
+        <modifier type="increment" value="1" field="af06-5092-2d48-7dfa">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1562,7 +1658,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="cd15-4a0f-69d7-a99e">
+        <modifier type="set" value="3" field="af06-5092-2d48-7dfa">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -1588,7 +1684,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="434c-2a75-0349-da35" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="8c4e-b374-d438-2ef7" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="3799-3437-e159-924c" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -1648,7 +1744,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="1" field="8c4e-b374-d438-2ef7">
+        <modifier type="set" value="1" field="3799-3437-e159-924c">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1662,7 +1758,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="8c4e-b374-d438-2ef7">
+        <modifier type="increment" value="1" field="3799-3437-e159-924c">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1679,7 +1775,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="8c4e-b374-d438-2ef7">
+        <modifier type="set" value="3" field="3799-3437-e159-924c">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -1774,7 +1870,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="5d11-9ae0-ae72-e0b9" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="eb96-c1a2-b472-c678" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="6778-7f16-0729-e95c" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -1834,7 +1930,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="0" field="eb96-c1a2-b472-c678">
+        <modifier type="set" value="0" field="6778-7f16-0729-e95c">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1848,7 +1944,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="eb96-c1a2-b472-c678">
+        <modifier type="increment" value="1" field="6778-7f16-0729-e95c">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1865,7 +1961,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="eb96-c1a2-b472-c678">
+        <modifier type="set" value="2" field="6778-7f16-0729-e95c">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -1891,7 +1987,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="e5d1-c505-2681-d709" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="0343-9564-c8a3-f850" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="e548-069d-4437-e21c" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -1951,7 +2047,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="0" field="0343-9564-c8a3-f850">
+        <modifier type="set" value="0" field="e548-069d-4437-e21c">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1965,7 +2061,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="0343-9564-c8a3-f850">
+        <modifier type="increment" value="1" field="e548-069d-4437-e21c">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -1982,7 +2078,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="0343-9564-c8a3-f850">
+        <modifier type="set" value="2" field="e548-069d-4437-e21c">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -2008,7 +2104,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="df4e-ebf1-bf6b-8220" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="431b-37f9-4710-fa55" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="9880-ba17-0995-1413" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -2068,7 +2164,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="0" field="431b-37f9-4710-fa55">
+        <modifier type="set" value="0" field="9880-ba17-0995-1413">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -2082,7 +2178,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="431b-37f9-4710-fa55">
+        <modifier type="increment" value="1" field="9880-ba17-0995-1413">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -2099,7 +2195,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="431b-37f9-4710-fa55">
+        <modifier type="set" value="2" field="9880-ba17-0995-1413">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
@@ -2125,7 +2221,7 @@
         <constraint type="max" value="-1" field="points" scope="self" shared="true" id="c35c-0c8f-c5af-e73a" includeChildSelections="true" includeChildForces="true" percentValue="false">
           <comment>Grand melee</comment>
         </constraint>
-        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="c9fa-2740-ef19-ec44" includeChildSelections="true" includeChildForces="true">
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="5f48-28d1-d675-e84f" includeChildSelections="true" includeChildForces="true">
           <comment>Combined arms</comment>
         </constraint>
       </constraints>
@@ -2185,7 +2281,7 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="0" field="c9fa-2740-ef19-ec44">
+        <modifier type="set" value="0" field="5f48-28d1-d675-e84f">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -2199,7 +2295,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" value="1" field="c9fa-2740-ef19-ec44">
+        <modifier type="increment" value="1" field="5f48-28d1-d675-e84f">
           <comment>Combined arms</comment>
           <conditions>
             <condition type="atLeast" value="2000" field="limit::points" scope="roster" childId="any" shared="true" includeChildSelections="true" includeChildForces="true"/>
@@ -2216,7 +2312,7 @@
             <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="set" value="3" field="c9fa-2740-ef19-ec44">
+        <modifier type="set" value="2" field="5f48-28d1-d675-e84f">
           <comment>Combined arms</comment>
           <conditionGroups>
             <conditionGroup type="or">
