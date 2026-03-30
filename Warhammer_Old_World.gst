@@ -41,6 +41,12 @@
         <modifier type="floor" value="1" field="1890-4637-17c9-3a7c">
           <comment>Battle march</comment>
         </modifier>
+        <modifier type="floor" value="1" field="1890-4637-17c9-3a7c">
+          <comment>Battle march</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </categoryEntry>
     <categoryEntry name="GOBLIN HERO" hidden="true" id="70ab-75e7-1b17-6f49"/>
