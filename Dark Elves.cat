@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="d9b0-fa44-a251-bfea" name="Dark Elves" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="71" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: Giloushaker#2496" authorUrl="www.newrecruit.eu" authorName="Giloushaker">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="d9b0-fa44-a251-bfea" name="Dark Elves" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="49" revision="72" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: Giloushaker#2496" authorUrl="www.newrecruit.eu" authorName="Giloushaker">
   <sharedProfiles>
     <profile name="Dark Elf Dreadlord" typeId="b070-143a-73f-2772" typeName="Model" hidden="false" id="ee4f-5f57-cc9d-7dbb">
       <characteristics>
@@ -10107,17 +10107,33 @@ Blessings of Khaine" field="9f84-4221-785a-db50">
               <repeats>
                 <repeat value="1000" repeats="1" field="limit::points" scope="roster" childId="any" shared="true" roundUp="false" id="46ee-ed5a-a138-1aeb"/>
               </repeats>
-              <conditions>
-                <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true"/>
+                    <condition type="instanceOf" value="1" field="selections" scope="force" childId="e40a-36c4-0c66-472a" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
             <modifier type="increment" value="1" field="92e9-60de-f4f6-7a07">
               <repeats>
                 <repeat value="1000" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" id="5256-e6c3-cbe2-79ba" includeChildSelections="true"/>
               </repeats>
-              <conditions>
-                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="8214-cf48-b1cd-5f5e" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="1ae6-ed95-069e-a390" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="cdbe-ecb9-27cb-fd2b" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="0750-5d17-d708-f990" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="e40a-36c4-0c66-472a" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
             <modifier type="floor" value="1" field="92e9-60de-f4f6-7a07">
               <comment>Battle march</comment>
