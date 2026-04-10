@@ -137,7 +137,18 @@
     <categoryEntry name="Faction: Grand Cathay" id="d820-f6f0-6f91-6f18" hidden="true"/>
     <categoryEntry name="Faction: Grand Cathay - Jade Fleet" id="1a9f-079c-ca75-02f1" hidden="true"/>
     <categoryEntry name="WIGHT" id="9d1b-6add-67b9-fd3a" hidden="true"/>
-    <categoryEntry name="OnePerThousandConstraint" id="27c9-52f0-c942-681e" hidden="true"/>
+    <categoryEntry name="1 single &apos;per 1000 points&apos; selection in Battle March" id="27c9-52f0-c942-681e" hidden="true">
+      <constraints>
+        <constraint type="max" value="-1" field="selections" scope="roster" shared="true" id="9944-aff1-9f6f-90bb" includeChildSelections="true" includeChildForces="true"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="1" field="9944-aff1-9f6f-90bb">
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true" childName="5. Battle March"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </categoryEntry>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="8214-cf48-b1cd-5f5e" name="1. Open War">
@@ -17014,6 +17025,9 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
       </constraints>
       <categoryLinks>
         <categoryLink name="Wizard" hidden="false" id="c160-3c13-5a79-6b97" targetId="f954-b4c0-b835-a048" primary="false"/>
+        <categoryLink name="1 single 'per 1000 points' selection in Battle March" hidden="true" id="b344-d495-1260-8f78" targetId="27c9-52f0-c942-681e" primary="false">
+          <comment>Battle March Category</comment>
+        </categoryLink>
       </categoryLinks>
       <modifiers>
         <modifier type="set" value="0" field="539e-6d66-69f0-a736">

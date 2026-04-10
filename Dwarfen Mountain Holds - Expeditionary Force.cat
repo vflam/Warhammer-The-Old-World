@@ -1804,8 +1804,11 @@
     </entryLink>
     <entryLink import="true" name="Scout Gyrocopters" hidden="false" id="6c58-9e17-c599-d0aa" type="selectionEntry" targetId="b091-b415-c678-b9b9">
       <categoryLinks>
-        <categoryLink targetId="f0e3-2e32-8866-ea32" id="bc4f-82f6-7dd1-3d0d" primary="true" name="Core"/>
-        <categoryLink targetId="fec1-537a-bbeb-7926" id="e869-4dfd-cee7-fb4e" primary="false" name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)"/>
+        <categoryLink name="Core" hidden="false" id="bc4f-82f6-7dd1-3d0d" targetId="f0e3-2e32-8866-ea32" primary="true"/>
+        <categoryLink name="Units (not including units whose troop type is &apos;swarms&apos;, &apos;war beasts&apos; or &apos;war machines&apos;)" hidden="false" id="e869-4dfd-cee7-fb4e" targetId="fec1-537a-bbeb-7926" primary="false"/>
+        <categoryLink name="1 single 'per 1000 points' selection in Battle March" hidden="true" id="8949-5fc3-63e4-2152" targetId="27c9-52f0-c942-681e" primary="false">
+          <comment>Battle March Category</comment>
+        </categoryLink>
       </categoryLinks>
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="false" id="849a-1e6c-92b6-3d3e"/>
@@ -1906,12 +1909,6 @@
             <repeat value="4" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
         </modifier>
-        <modifier type="floor" value="1" field="849a-1e6c-92b6-3d3e">
-          <comment>Battle march</comment>
-          <conditions>
-            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
-          </conditions>
-        </modifier>
         <modifier type="set" value="0" field="7de5-d818-a853-28b8">
           <comment>Battle March points</comment>
           <conditionGroups>
@@ -1965,6 +1962,12 @@
           <repeats>
             <repeat value="2.857142857142857" repeats="1" field="points" scope="force" childId="any" shared="true" roundUp="false" includeChildSelections="true" includeChildForces="true"/>
           </repeats>
+        </modifier>
+        <modifier type="floor" value="1" field="849a-1e6c-92b6-3d3e">
+          <comment>Battle march</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+          </conditions>
         </modifier>
       </modifiers>
       <comment>core</comment>
