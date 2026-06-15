@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="174" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="175" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -17025,9 +17025,6 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
       </constraints>
       <categoryLinks>
         <categoryLink name="Wizard" hidden="false" id="c160-3c13-5a79-6b97" targetId="f954-b4c0-b835-a048" primary="false"/>
-        <categoryLink name="1 single 'per 1000 points' selection in Battle March" hidden="true" id="b344-d495-1260-8f78" targetId="27c9-52f0-c942-681e" primary="false">
-          <comment>Battle March Category</comment>
-        </categoryLink>
       </categoryLinks>
       <modifiers>
         <modifier type="set" value="0" field="539e-6d66-69f0-a736">
@@ -17092,6 +17089,12 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
               </conditions>
             </conditionGroup>
           </conditionGroups>
+        </modifier>
+        <modifier type="floor" value="1" field="3e33-1f5c-d970-9a20">
+          <comment>Battle March</comment>
+          <conditions>
+            <condition type="atLeast" value="1" field="selections" scope="roster" childId="any" shared="true" includeChildSelections="true"/>
+          </conditions>
         </modifier>
       </modifiers>
     </selectionEntry>
