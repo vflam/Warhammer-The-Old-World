@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="176" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="177" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -126,7 +126,11 @@
     </categoryEntry>
     <categoryEntry name="Faction: The Empire of Man - Knightly Order" id="7135-7f44-2427-9af9" hidden="true"/>
     <categoryEntry name="Faction: The Empire of Man - City-state of Nuln" id="38be-5fe9-9738-fd43" hidden="true"/>
-    <categoryEntry name="Outrider Non-Ponderous" id="71d6-3c4f-f6e3-819d" hidden="true"/>
+    <categoryEntry name="Outrider Non-Ponderous" id="71d6-3c4f-f6e3-819d" hidden="true">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="b534-488e-fb44-5433" includeChildSelections="true"/>
+      </constraints>
+    </categoryEntry>
     <categoryEntry name="Faction: High Elf Realms - Chracian Warhost" id="79c5-dc15-19d1-9fb1" hidden="true"/>
     <categoryEntry name="Faction: High Elf Realms - Sea Guard Garrison" id="0caf-45de-6e99-3bb9" hidden="true"/>
     <categoryEntry name="Order of the Knights Panther Battle Standard Bearer" id="cbc0-f22f-0315-0d56" hidden="true"/>
@@ -16597,6 +16601,17 @@ Any war machine that has its Toughness reduced in this way also loses the Move o
       <modifiers>
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
+    </profile>
+    <profile name="Dispersed Formation" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="adc0-7a37-8c2c-c716">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">*Units that fly high above the battlefield adopt dispersed formations to prevent calamity.*
+To maintain Skirmish formation, every model in this unit must be within 3&quot; of another model belonging to the same unit, rather than the usual 1&quot;. However, unlike most Skirmishers, models with this special rule do not have a 360° vision arc; they instead have a 90° vision arc, corresponding to their front arc.</characteristic>
+      </characteristics>
+    </profile>
+    <profile name="Extra Note on Skirmisher but too lazy to make a rule for individual models billion dollar company" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="9be9-5b4c-8a52-83f0">
+      <characteristics>
+        <characteristic name="Description" typeId="9f84-4221-785a-db50">Note that, unlike most Skirmishers, this model does not have a 360° vision arc; they instead have a 90° vision arc, corresponding to their front arc.</characteristic>
+      </characteristics>
     </profile>
   </sharedProfiles>
   <sharedSelectionEntries>
