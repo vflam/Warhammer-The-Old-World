@@ -16490,7 +16490,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
         <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
         <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
-        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Extra Atacks (+1), Require Two Hands</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Extra Attacks (+1), Require Two Hands</characteristic>
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
@@ -16526,7 +16526,7 @@ An Ironfist cannot be used alongside a magic weapon to gain an extra attack, or 
         <characteristic name="R" typeId="2360-c777-5e07-ed58">Combat</characteristic>
         <characteristic name="S" typeId="ac19-f99c-72e9-a1a7">S</characteristic>
         <characteristic name="AP" typeId="9429-ffe7-2ce5-e9a5">-</characteristic>
-        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Extra Atacks (+1), Require Two Hands</characteristic>
+        <characteristic name="Special Rules" typeId="5f83-3633-336b-93b4">Extra Attacks (+1), Require Two Hands</characteristic>
         <characteristic name="Notes" typeId="772a-a7ff-f6b3-df71">-</characteristic>
       </characteristics>
     </profile>
