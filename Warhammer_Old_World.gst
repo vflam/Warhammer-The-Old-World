@@ -74,6 +74,7 @@
     <categoryEntry name="Faction: High Elf Realms" id="1c06-7519-6638-3075" hidden="true"/>
     <categoryEntry name="Faction: Kingdom of Bretonnia - Errantry Crusade" id="6acb-f99a-8d48-1c3d" hidden="true"/>
     <categoryEntry name="Faction: Lizardmen" id="be26-401b-c3e5-1869" hidden="true"/>
+    <categoryEntry name="Faction: Lizardmen - Renegades v2" id="f7b1-28cd-9e4a-5c60" hidden="true"/>
     <categoryEntry name="Faction: Ogre Kingdoms" id="4c95-8c52-22e7-15dc" hidden="true"/>
     <categoryEntry name="Faction: Orc and Goblin Tribes - Nomadic Waagh!" id="f89b-a1c3-e6eb-e69a" hidden="true"/>
     <categoryEntry name="Faction: Orc and Goblin Tribes - Troll Horde" id="f812-7780-6897-718b" hidden="true"/>
@@ -7155,6 +7156,24 @@ Higher State of Mind (60 pts)
       </characteristics>
       <comment>imported</comment>
     </profile>
+
+<profile name="Disciplines of the Old Ones v2" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="fe4c-b5a4-a574-992f">
+      <characteristics>
+        <characteristic name="Description" id="4c8a-f7e2-1d96-b3ab" hidden="false" typeId="9f84-4221-785a-db50">The Slann Mage-Priests possess prodigious knowledge of matters both mundane and metaphysical, and they display an impressive arsenal of arcane abilities and mental attributes.
+ A Slann Mage-Priest may purchase up to three Discipline of the Old Ones. Each discipline may only be purchased once per army.
+ Focused Rumination (65 pts)
+ - Higher State of Consciousness (60 pts)
+ - Focus of Mystery (45 pts)
+ - Becalming Cogitation (30 pts)
+ - Wandering Deliberations (35 pts)
+ - Transcendent Healing (35 pts)
+ - Sorcerous Void (25 pts)
+ - Harrowing Scrutiny (20 pts)
+ - Soul of Stone (15 pts)</characteristic>
+      </characteristics>
+      <comment>imported</comment>
+    </profile>
+
     <profile name="Elven Honours" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="5b22-3306-335b-be47">
       <characteristics>
         <characteristic name="Description" id="2b2e-93e5-281b-c731" hidden="false" typeId="9f84-4221-785a-db50">Throughout their long lives, Elves are able to spend considerable time in pursuit of their various interests, mastering their skills and earning much respect for their abilities. Many walk a particular path for so long that they become exemplars of their craft, and this is particularly true of those nobles that dedicate themselves to military causes.
@@ -7518,6 +7537,34 @@ Blade of Revered Tzunki (65 pts)
       </characteristics>
       <comment>imported</comment>
     </profile>
+
+    <profile name="Lizardmen Magic Items v2" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="81de-4a7c-f295-63b8">
+      <characteristics>
+        <characteristic name="Description" id="e1b7-5c9d-a42f-8d30" hidden="false" typeId="9f84-4221-785a-db50">These magic items are unique to Lizardmen Renegades v2 armies. These can be purchased by models within a Lizardmen army in exactly the same way as Common magic items, as described in the  Warhammer: the Old World  rulebook.
+ 
+Blade of Revered Tzunki (65 pts)
+ - Scimitar of the Sun Resplendent (50 pts)
+ - Staff of the Lost Sun (40 pts)
+ - Piranha Blade (35 pts)
+ - Shield of the Mirror Pool (40 pts)
+ - Hide of the Cold Ones (20 pts)
+ - Glyph Necklace (45 pts)
+ - Aura of Quetzl (40 pts)
+ - Sun Standard of Chotec (65 pts)
+ - Skavenpelt Banner (35 pts)
+ - Totem of Prophecy (30 pts)
+ - Jaguar Standard (30 pts)
+ - Cloak of Feathers (40 pts)
+ - Venom of the Firefly Frog (15 pts)
+ - Horned One* (10 pts)
+ - Cube of Darkness* (50 pts)
+ - Itxi Grub* (20 pts)
+ - Cupped Hands of the Old Ones (55 pts)</characteristic>
+      </characteristics>
+      <comment>imported</comment>
+    </profile>
+
+
     <profile name="Magic Armour" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="de2d-f66b-59bb-58bd">
       <characteristics>
         <characteristic name="Description" id="9b8b-ca12-9412-68d9" hidden="false" typeId="9f84-4221-785a-db50">Only a model that is equipped with (or that has the option to be equipped with) armour, a shield or barding may purchase a magical equivalent. A model can only wear a single suit of armour and can only carry one shield, and a mount can only wear a single suit of barding. Therefore, magic armour replaces any mundane equivalent the model is, or may be, equipped with.
@@ -16613,6 +16660,7 @@ To maintain Skirmish formation, every model in this unit must be within 3&quot; 
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Note that, unlike most Skirmishers, this model does not have a 360° vision arc; they instead have a 90° vision arc, corresponding to their front arc.</characteristic>
       </characteristics>
     </profile>
+    
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
