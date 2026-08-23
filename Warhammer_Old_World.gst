@@ -4694,6 +4694,14 @@ If the only other remaining models in a unit are the champion and standard beare
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
     </profile>
+    <profile name="Base (60x60)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="4f8e-c261-5bd9-a74c">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">60x60</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
+    </profile>
     <profile name="Base (40x60)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="edea-5f38-530a-57f1">
       <characteristics>
         <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">40x60</characteristic>
@@ -7157,7 +7165,7 @@ Higher State of Mind (60 pts)
       <comment>imported</comment>
     </profile>
 
-<profile name="Disciplines of the Old Ones v2" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="fe4c-b5a4-a574-992f">
+<profile name="Disciplines of the Old Ones v2" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="8be4-d927-1f6c-a35d">
       <characteristics>
         <characteristic name="Description" id="4c8a-f7e2-1d96-b3ab" hidden="false" typeId="9f84-4221-785a-db50">The Slann Mage-Priests possess prodigious knowledge of matters both mundane and metaphysical, and they display an impressive arsenal of arcane abilities and mental attributes.
  A Slann Mage-Priest may purchase up to three Discipline of the Old Ones. Each discipline may only be purchased once per army.
@@ -8659,6 +8667,7 @@ Stone Shaper
 The Quickening Storm
 Too Horrible To Die
 Beast Handlers
+Skink Riders
 Carrion Feeders
 Curse of the Necropolis
 Dive Bomb
@@ -8684,6 +8693,7 @@ Casualty Removal
 Deathblow
 Drop Rocks
 Extra Attacks (+X)
+Predatory Fighter
 Indomitable (X)
 Lion Cloak
 Scurry Away
@@ -14757,6 +14767,42 @@ Related: Army Composition Lists</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
+    <profile name="Lizardmen v2" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4a7e-b192-d8f3-6c5a">
+      <characteristics>
+        <characteristic name="Description" id="1681-d51d-8ccc-69cc" hidden="false" typeId="9f84-4221-785a-db50">This army list is intended for use alongside the  Forming Units  and  Warhammer Armies  sections of the  Warhammer: the Old World  rulebook.
+ # Grand Army Composition List
+ *Characters*
+ Up to 50% of your army&apos;s points value may be spent on:
+ - 0-1 Slann Mage-Priest or 0-1 Saurus Oldblood per 1,000 points
+ - Saurus Scar-Veterans and Skink Chiefs, and Skink Priests
+
+ *Core*
+ At least 25% of your army&apos;s points value must be spent on:
+ - Saurus Warriors, Skink Cohorts, Skink Skirmishers and Jungle Swarms
+ - 0-1 unit of Temple Guard (if your General is a Slann Mage-Priest)
+
+ *Special*
+ Up to 50% of your army&apos;s points value may be spent on:
+ - Chameleon Skinks, Kroxigor, Ripperdactyl Riders, Terradon Riders, Bastiladons, Stegadons, Temple Guard and Cold One Riders
+
+ *Rare*
+ Up to 25% of your army&apos;s points value may be spent on:
+ - Ancient Stegadons, Salamander Packs, Razordon Packs and Troglodons
+
+ *Mercenaries*
+ Up to 20% of your army&apos;s points value may be spent on  mercenaries .
+ *Allies*
+ Up to 25% of your army&apos;s points value may be spent on a single  allied contingent  drawn from one of the following Grand Army composition lists:
+ - High Elf Realms
+
+ *Battle Standard Bearer*
+ A single Slann Mage-Priest, Saurus Scar-Veteran or Skink Chief in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit. A Slann Mage-Priest may be both your army’s Battle Standard Bearer and its General.</characteristic>
+      </characteristics>
+      <comment>imported</comment>
+    </profile>
+    
+
+
     <profile name="Mercenaries (Warhammer Armies)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b849-9b50-c491-76f1">
       <characteristics>
         <characteristic name="Description" id="5c43-e26f-31cd-2264" hidden="false" typeId="9f84-4221-785a-db50">Some army composition lists include a &apos;mercenaries&apos; section, which lists a number of units from different army lists. These units can be &apos;hired&apos; from those army lists to fight for your army as mercenaries. Using mercenaries in this way can greatly enhance the appearance and character of your army, as well as improve its fighting abilities.
