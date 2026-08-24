@@ -10752,6 +10752,15 @@ Related: Ark of Sotek</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
+       <profile name="Slithering Serpents v2" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c762-4fa9-18de-b35c">
+      <characteristics>
+        <characteristic name="Description" id="1ad8-e6f3-72b4-9c05" hidden="false" typeId="9f84-4221-785a-db50">During the Shooting phase of its turn, every enemy unit within D6&quot; of this model suffers 2D6 Strength 2 hits, each with an  AP  of - with the Poison Attacks special rule.
+
+
+Related: Ark of Sotek</characteristic>
+      </characteristics>
+      <comment>imported</comment>
+    </profile>
     <profile name="Slow Reload" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="7b3b-b612-13e7-2f3c">
       <characteristics>
         <characteristic name="Description" id="2ed7-9fe6-5d2d-39b4" hidden="false" typeId="9f84-4221-785a-db50">If this weapon shot during your previous turn, it may be unable to shoot during this turn. Roll a D6 before shooting with this weapon. On a roll of 1-2, the slow and ponderous reload process has not yet been completed and the weapon does not shoot this turn. If the Dreadquake Mortar has an Ogre Loader, you may apply a +1 modifier to this roll.</characteristic>
