@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="179" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
+<gameSystem xmlns="http://www.battlescribe.net/schema/gameSystemSchema" id="sys-31d1-bf57-53ea-ad55" name="Warhammer The Old World" battleScribeVersion="2.03" revision="180" type="gameSystem" library="true" authorName="Flammy" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu" publicationId="768b-3da1-a182-a1d8">
   <categoryEntries>
     <categoryEntry name="Named Characters" hidden="false" id="3ba8-a41e-b6ae-d4ba"/>
     <categoryEntry name="Characters" hidden="false" id="a4cc-15c9-cfae-1b3b"/>
@@ -74,6 +74,7 @@
     <categoryEntry name="Faction: High Elf Realms" id="1c06-7519-6638-3075" hidden="true"/>
     <categoryEntry name="Faction: Kingdom of Bretonnia - Errantry Crusade" id="6acb-f99a-8d48-1c3d" hidden="true"/>
     <categoryEntry name="Faction: Lizardmen" id="be26-401b-c3e5-1869" hidden="true"/>
+    <categoryEntry name="Faction: Lizardmen - Renegades v2" id="f7b1-28cd-9e4a-5c60" hidden="true"/>
     <categoryEntry name="Faction: Ogre Kingdoms" id="4c95-8c52-22e7-15dc" hidden="true"/>
     <categoryEntry name="Faction: Orc and Goblin Tribes - Nomadic Waagh!" id="f89b-a1c3-e6eb-e69a" hidden="true"/>
     <categoryEntry name="Faction: Orc and Goblin Tribes - Troll Horde" id="f812-7780-6897-718b" hidden="true"/>
@@ -4693,6 +4694,14 @@ If the only other remaining models in a unit are the champion and standard beare
         <modifier type="set" value="Base" field="name"/>
       </modifiers>
     </profile>
+    <profile name="Base (60x60)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="4f8e-c261-5bd9-a74c">
+      <characteristics>
+        <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">60x60</characteristic>
+      </characteristics>
+      <modifiers>
+        <modifier type="set" value="Base" field="name"/>
+      </modifiers>
+    </profile>
     <profile name="Base (40x60)" typeId="1ae4-7f34-4055-fd5f" typeName="Base" hidden="false" id="edea-5f38-530a-57f1">
       <characteristics>
         <characteristic name="Base Size" typeId="1adf-d238-57ca-2226">40x60</characteristic>
@@ -7155,6 +7164,24 @@ Higher State of Mind (60 pts)
       </characteristics>
       <comment>imported</comment>
     </profile>
+
+<profile name="Disciplines of the Old Ones v2" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="8be4-d927-1f6c-a35d">
+      <characteristics>
+        <characteristic name="Description" id="4c8a-f7e2-1d96-b3ab" hidden="false" typeId="9f84-4221-785a-db50">The Slann Mage-Priests possess prodigious knowledge of matters both mundane and metaphysical, and they display an impressive arsenal of arcane abilities and mental attributes.
+ A Slann Mage-Priest may purchase up to three Discipline of the Old Ones. Each discipline may only be purchased once per army.
+ Focused Rumination (65 pts)
+ - Higher State of Consciousness (60 pts)
+ - Focus of Mystery (45 pts)
+ - Becalming Cogitation (30 pts)
+ - Wandering Deliberations (35 pts)
+ - Transcendent Healing (35 pts)
+ - Sorcerous Void (25 pts)
+ - Harrowing Scrutiny (20 pts)
+ - Soul of Stone (15 pts)</characteristic>
+      </characteristics>
+      <comment>imported</comment>
+    </profile>
+
     <profile name="Elven Honours" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="5b22-3306-335b-be47">
       <characteristics>
         <characteristic name="Description" id="2b2e-93e5-281b-c731" hidden="false" typeId="9f84-4221-785a-db50">Throughout their long lives, Elves are able to spend considerable time in pursuit of their various interests, mastering their skills and earning much respect for their abilities. Many walk a particular path for so long that they become exemplars of their craft, and this is particularly true of those nobles that dedicate themselves to military causes.
@@ -7518,6 +7545,34 @@ Blade of Revered Tzunki (65 pts)
       </characteristics>
       <comment>imported</comment>
     </profile>
+
+    <profile name="Lizardmen Magic Items v2" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="81de-4a7c-f295-63b8">
+      <characteristics>
+        <characteristic name="Description" id="e1b7-5c9d-a42f-8d30" hidden="false" typeId="9f84-4221-785a-db50">These magic items are unique to Lizardmen Renegades v2 armies. These can be purchased by models within a Lizardmen army in exactly the same way as Common magic items, as described in the  Warhammer: the Old World  rulebook.
+ 
+Blade of Revered Tzunki (65 pts)
+ - Scimitar of the Sun Resplendent (50 pts)
+ - Staff of the Lost Sun (40 pts)
+ - Piranha Blade (35 pts)
+ - Shield of the Mirror Pool (40 pts)
+ - Hide of the Cold Ones (20 pts)
+ - Glyph Necklace (45 pts)
+ - Aura of Quetzl (40 pts)
+ - Sun Standard of Chotec (65 pts)
+ - Skavenpelt Banner (35 pts)
+ - Totem of Prophecy (30 pts)
+ - Jaguar Standard (30 pts)
+ - Cloak of Feathers (40 pts)
+ - Venom of the Firefly Frog (15 pts)
+ - Horned One* (10 pts)
+ - Cube of Darkness* (50 pts)
+ - Itxi Grub* (20 pts)
+ - Cupped Hands of the Old Ones (55 pts)</characteristic>
+      </characteristics>
+      <comment>imported</comment>
+    </profile>
+
+
     <profile name="Magic Armour" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="de2d-f66b-59bb-58bd">
       <characteristics>
         <characteristic name="Description" id="9b8b-ca12-9412-68d9" hidden="false" typeId="9f84-4221-785a-db50">Only a model that is equipped with (or that has the option to be equipped with) armour, a shield or barding may purchase a magical equivalent. A model can only wear a single suit of armour and can only carry one shield, and a mount can only wear a single suit of barding. Therefore, magic armour replaces any mundane equivalent the model is, or may be, equipped with.
@@ -8612,6 +8667,7 @@ Stone Shaper
 The Quickening Storm
 Too Horrible To Die
 Beast Handlers
+Skink Riders
 Carrion Feeders
 Curse of the Necropolis
 Dive Bomb
@@ -8637,6 +8693,7 @@ Casualty Removal
 Deathblow
 Drop Rocks
 Extra Attacks (+X)
+Predatory Fighter
 Indomitable (X)
 Lion Cloak
 Scurry Away
@@ -10689,6 +10746,15 @@ Mark of Tzeentch</characteristic>
     <profile name="Slithering Serpents" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="dcef-d996-383e-c1ea">
       <characteristics>
         <characteristic name="Description" id="12ff-e8d3-d126-9353" hidden="false" typeId="9f84-4221-785a-db50">During the  Command  sub-phase of its turn, every enemy unit within D6&quot; of this model suffers 2D6 Strength 2 hits, each with an  AP  of -.
+
+
+Related: Ark of Sotek</characteristic>
+      </characteristics>
+      <comment>imported</comment>
+    </profile>
+       <profile name="Slithering Serpents v2" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="c762-4fa9-18de-b35c">
+      <characteristics>
+        <characteristic name="Description" id="1ad8-e6f3-72b4-9c05" hidden="false" typeId="9f84-4221-785a-db50">During the Shooting phase of its turn, every enemy unit within D6&quot; of this model suffers 2D6 Strength 2 hits, each with an  AP  of - with the Poison Attacks special rule.
 
 
 Related: Ark of Sotek</characteristic>
@@ -14710,6 +14776,42 @@ Related: Army Composition Lists</characteristic>
       </characteristics>
       <comment>imported</comment>
     </profile>
+    <profile name="Lizardmen v2" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="4a7e-b192-d8f3-6c5a">
+      <characteristics>
+        <characteristic name="Description" id="1681-d51d-8ccc-69cc" hidden="false" typeId="9f84-4221-785a-db50">This army list is intended for use alongside the  Forming Units  and  Warhammer Armies  sections of the  Warhammer: the Old World  rulebook.
+ # Grand Army Composition List
+ *Characters*
+ Up to 50% of your army&apos;s points value may be spent on:
+ - 0-1 Slann Mage-Priest or 0-1 Saurus Oldblood per 1,000 points
+ - Saurus Scar-Veterans and Skink Chiefs, and Skink Priests
+
+ *Core*
+ At least 25% of your army&apos;s points value must be spent on:
+ - Saurus Warriors, Skink Cohorts, Skink Skirmishers and Jungle Swarms
+ - 0-1 unit of Temple Guard (if your General is a Slann Mage-Priest)
+
+ *Special*
+ Up to 50% of your army&apos;s points value may be spent on:
+ - Chameleon Skinks, Kroxigor, Ripperdactyl Riders, Terradon Riders, Bastiladons, Stegadons, Temple Guard and Cold One Riders
+
+ *Rare*
+ Up to 25% of your army&apos;s points value may be spent on:
+ - Ancient Stegadons, Salamander Packs, Razordon Packs and Troglodons
+
+ *Mercenaries*
+ Up to 20% of your army&apos;s points value may be spent on  mercenaries .
+ *Allies*
+ Up to 25% of your army&apos;s points value may be spent on a single  allied contingent  drawn from one of the following Grand Army composition lists:
+ - High Elf Realms
+
+ *Battle Standard Bearer*
+ A single Slann Mage-Priest, Saurus Scar-Veteran or Skink Chief in your army may be upgraded to be your  Battle Standard Bearer  for +25 points. In addition to their usual allowance of points to spend on magic items, a Battle Standard Bearer can purchase a single magic standard with no points limit. A Slann Mage-Priest may be both your army’s Battle Standard Bearer and its General.</characteristic>
+      </characteristics>
+      <comment>imported</comment>
+    </profile>
+    
+
+
     <profile name="Mercenaries (Warhammer Armies)" typeId="c1ac-c1c8-f9d5-9673" typeName="Special Rule" hidden="false" id="b849-9b50-c491-76f1">
       <characteristics>
         <characteristic name="Description" id="5c43-e26f-31cd-2264" hidden="false" typeId="9f84-4221-785a-db50">Some army composition lists include a &apos;mercenaries&apos; section, which lists a number of units from different army lists. These units can be &apos;hired&apos; from those army lists to fight for your army as mercenaries. Using mercenaries in this way can greatly enhance the appearance and character of your army, as well as improve its fighting abilities.
@@ -16613,6 +16715,7 @@ To maintain Skirmish formation, every model in this unit must be within 3&quot; 
         <characteristic name="Description" typeId="9f84-4221-785a-db50">Note that, unlike most Skirmishers, this model does not have a 360° vision arc; they instead have a 90° vision arc, corresponding to their front arc.</characteristic>
       </characteristics>
     </profile>
+    
   </sharedProfiles>
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Hand Weapon" hidden="false" id="721d-36e3-388a-c0d6" collective="true">
