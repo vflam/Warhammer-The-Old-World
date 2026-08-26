@@ -2,6 +2,9 @@
 <catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="c997-9d47-72ad-c5f1" name="Orc and Goblin Tribes" gameSystemId="sys-31d1-bf57-53ea-ad55" gameSystemRevision="19" revision="186" authorName="Flammy" battleScribeVersion="2.03" type="catalogue" authorContact="Discord: vflam" authorUrl="www.newrecruit.eu">
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Orc Mobs" hidden="false" id="51e8-1471-ce4c-d5dd">
+      <constraints>
+        <constraint type="max" value="-1" field="selections" scope="parent" shared="true" id="1a91-d0fa-73b5-850c"/>
+      </constraints>
       <profiles>
         <profile name="Orc Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="257d-5056-608-2108">
           <characteristics>
@@ -276,6 +279,20 @@
             <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="a8bf-d5a9-117a-1b88" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
+        <modifier type="set" value="0" field="1a91-d0fa-73b5-850c">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="21" field="selections" scope="self" childId="f3f7-ca43-674e-115f" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="append" value="(exceeds max Unit Strength 20)" field="name">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="21" field="selections" scope="self" childId="f3f7-ca43-674e-115f" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Big Un&apos;s" hidden="false" id="e06e-f7ee-cc7f-ec67">
@@ -509,6 +526,7 @@
       <constraints>
         <constraint type="max" value="0" field="selections" scope="force" shared="true" id="848c-d08e-f372-9ae2"/>
         <constraint type="min" value="0" field="selections" scope="force" shared="true" id="9e08-7846-059e-a5b5"/>
+        <constraint type="max" value="-1" field="selections" scope="parent" shared="true" id="2102-5505-363e-6395"/>
       </constraints>
       <modifiers>
         <modifier type="increment" value="1" field="848c-d08e-f372-9ae2">
@@ -532,12 +550,29 @@
             <condition type="lessThan" value="1" field="selections" scope="force" childId="0ba6-6cb2-c5f4-904a" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
+        <modifier type="set" value="0" field="2102-5505-363e-6395">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="21" field="selections" scope="self" childId="ca7e-d004-ccde-caf3" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="append" value="(exceeds max Unit Strength 20)" field="name">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="21" field="selections" scope="self" childId="ca7e-d004-ccde-caf3" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <categoryLinks>
         <categoryLink name="Faction: Orc and Goblin Tribes" hidden="false" id="5480-f8c0-d5b5-71d9" primary="false" targetId="96f6-a6de-3328-b74c"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Goblin Mobs" hidden="false" id="6ce4-96c1-6e66-4e65" flatten="false">
+      <constraints>
+        <constraint type="max" value="-1" field="selections" scope="parent" shared="true" id="9836-b7d8-8061-4764"/>
+      </constraints>
       <profiles>
         <profile name="Goblin Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="6b30-f6b9-24f2-870d">
           <characteristics>
@@ -805,9 +840,42 @@
             <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="7062-dff1-ac19-8a7c" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
+        <modifier type="set" value="0" field="9836-b7d8-8061-4764">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="21" field="selections" scope="self" childId="f3f7-ca43-674e-115f" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="append" value="(exceeds max Unit Strength 20)" field="name">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="21" field="selections" scope="self" childId="f3f7-ca43-674e-115f" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Night Goblin Mobs" hidden="false" id="399b-6e05-9a74-e18f">
+      <constraints>
+        <constraint type="max" value="-1" field="selections" scope="parent" shared="true" id="5895-51bb-a089-8629"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="5895-51bb-a089-8629">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="21" field="selections" scope="self" childId="f3f7-ca43-674e-115f" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="append" value="(exceeds max Unit Strength 20)" field="name">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="21" field="selections" scope="self" childId="f3f7-ca43-674e-115f" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile name="Night Goblin Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="d71d-b44f-ed1c-5871">
           <characteristics>
@@ -1071,6 +1139,25 @@
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Snotling Mobs" hidden="false" id="42b6-c48e-b345-102a">
+      <constraints>
+        <constraint type="max" value="-1" field="selections" scope="parent" shared="true" id="44e4-7537-89ef-6651"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="44e4-7537-89ef-6651">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="7" field="selections" scope="self" childId="db92-54fd-e023-d69f" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="append" value="(exceeds max Unit Strength 20)" field="name">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="7" field="selections" scope="self" childId="db92-54fd-e023-d69f" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile name="Snotling Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="6383-54c3-dfe1-7c2e">
           <characteristics>
@@ -1129,6 +1216,25 @@
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Common Troll Mobs" hidden="false" id="afd2-472f-d0bd-942f">
+      <constraints>
+        <constraint type="max" value="-1" field="selections" scope="parent" shared="true" id="7b10-fcf9-ef4b-f144"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="7b10-fcf9-ef4b-f144">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="7" field="selections" scope="self" childId="5c55-f9d6-b181-92f8" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="append" value="(exceeds max Unit Strength 20)" field="name">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="7" field="selections" scope="self" childId="5c55-f9d6-b181-92f8" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile name="Common Troll Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="3ca3-7615-27ce-8ab0">
           <characteristics>
@@ -1226,6 +1332,25 @@
       </infoLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="River Troll Mobs" hidden="false" id="a6f0-e007-d5e4-318b">
+      <constraints>
+        <constraint type="max" value="-1" field="selections" scope="parent" shared="true" id="fe92-fc1d-4b2c-61a4"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="fe92-fc1d-4b2c-61a4">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="7" field="selections" scope="self" childId="5c55-f9d6-b181-92f8" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="append" value="(exceeds max Unit Strength 20)" field="name">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="7" field="selections" scope="self" childId="5c55-f9d6-b181-92f8" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile name="River Troll Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="18eb-444d-73b-1b09">
           <characteristics>
@@ -1314,6 +1439,25 @@
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Stone Troll Mobs" hidden="false" id="7255-5510-3bf2-87a6">
+      <constraints>
+        <constraint type="max" value="-1" field="selections" scope="parent" shared="true" id="c435-21a0-9639-ced1"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="c435-21a0-9639-ced1">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="7" field="selections" scope="self" childId="5c55-f9d6-b181-92f8" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="append" value="(exceeds max Unit Strength 20)" field="name">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="7" field="selections" scope="self" childId="5c55-f9d6-b181-92f8" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile name="Stone Troll Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="4da2-fe9f-56c1-b0bc">
           <characteristics>
@@ -1412,6 +1556,9 @@
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Orc Boar Boy Mobs" hidden="false" id="5b90-17e7-7f9c-f674">
+      <constraints>
+        <constraint type="max" value="-1" field="selections" scope="parent" shared="true" id="458d-07aa-cdf6-6045"/>
+      </constraints>
       <profiles>
         <profile name="Orc Boar Boy Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="fa03-b035-5b14-4c5a">
           <characteristics>
@@ -1724,9 +1871,42 @@
             <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="592-dd42-954-f62f" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
+        <modifier type="set" value="0" field="458d-07aa-cdf6-6045">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="11" field="selections" scope="self" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="append" value="(exceeds max Unit Strength 20)" field="name">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="11" field="selections" scope="self" childId="5165-d052-cfc2-5887" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Goblin Spider Rider Mobs" hidden="false" id="f8e2-1ac4-c646-af1c">
+      <constraints>
+        <constraint type="max" value="-1" field="selections" scope="parent" shared="true" id="e823-963a-ef59-20b2"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="e823-963a-ef59-20b2">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="11" field="selections" scope="self" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="append" value="(exceeds max Unit Strength 20)" field="name">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="11" field="selections" scope="self" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile name="Goblin Spider Rider Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="71c3-3b22-2e42-478b">
           <characteristics>
@@ -1941,6 +2121,9 @@
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Goblin Wolf Rider Mobs" hidden="false" id="e36d-11d8-5d9a-1198">
+      <constraints>
+        <constraint type="max" value="-1" field="selections" scope="parent" shared="true" id="9baf-e880-b3e1-84da"/>
+      </constraints>
       <profiles>
         <profile name="Goblin Wolf Rider Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="ff2b-1c5c-b2d5-7717">
           <characteristics>
@@ -2326,9 +2509,42 @@
             <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="c50b-cede-fd3b-7ab1" shared="true" includeChildSelections="true"/>
           </conditions>
         </modifier>
+        <modifier type="set" value="0" field="9baf-e880-b3e1-84da">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="11" field="selections" scope="self" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="append" value="(exceeds max Unit Strength 20)" field="name">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="11" field="selections" scope="self" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Night Goblin Squig Hopper Mobs" hidden="false" id="6949-f50f-89e4-99c8">
+      <constraints>
+        <constraint type="max" value="-1" field="selections" scope="parent" shared="true" id="f6ee-3280-676b-c79a"/>
+      </constraints>
+      <modifiers>
+        <modifier type="set" value="0" field="f6ee-3280-676b-c79a">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="11" field="selections" scope="self" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+        <modifier type="append" value="(exceeds max Unit Strength 20)" field="name">
+          <comment>Battle March: maximum unit strength 20</comment>
+          <conditions>
+            <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="e40a-36c4-0c66-472a" shared="true"/>
+            <condition type="atLeast" value="11" field="selections" scope="self" childId="600c-7d08-5be1-fe0c" shared="true" includeChildSelections="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile name="Night Goblin Squig Hopper Mobs" typeId="2878-9a1f-dd74-48e3" typeName="Unit" hidden="false" id="542d-4dda-dc5a-42cd">
           <characteristics>
