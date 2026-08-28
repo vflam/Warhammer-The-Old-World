@@ -2,16 +2,6 @@
   "catalogue": {
     "sharedSelectionEntries": [
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "1a91-d0fa-73b5-850c"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -210,7 +200,18 @@
                 "hidden": false,
                 "id": "9601-28c5-b717-6ebd",
                 "flatten": false,
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "9d5a-280f-c336-5226",
+                    "name": "Boss",
+                    "id": "a49b-9159-f721-e864",
+                    "childName": "Orc Boy"
+                  }
+                ]
               },
               {
                 "infoLinks": [
@@ -266,7 +267,18 @@
                 "name": "Musician",
                 "hidden": false,
                 "id": "2dc5-4d59-bfda-e453",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "9d5a-280f-c336-5226",
+                    "name": "Musician",
+                    "id": "a3aa-96f2-4363-ce83",
+                    "childName": "Orc Boy"
+                  }
+                ]
               },
               {
                 "infoLinks": [
@@ -390,7 +402,18 @@
                 "hidden": false,
                 "id": "44b5-5969-34f5-f4e0",
                 "flatten": false,
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "9d5a-280f-c336-5226",
+                    "name": "Standard Bearer",
+                    "id": "ca2d-8b75-7c93-6900",
+                    "childName": "Orc Boy"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -782,7 +805,15 @@
             "name": "Orc Boy",
             "hidden": false,
             "id": "9d5a-280f-c336-5226",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "categoryLinks": [
@@ -876,32 +907,10 @@
             "field": "category"
           },
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "1a91-d0fa-73b5-850c"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "f783-99b6-dc11-726a",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -910,27 +919,27 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
         ],
         "type": "unit",
         "import": true,
         "name": "Orc Mobs",
         "hidden": false,
-        "id": "51e8-1471-ce4c-d5dd"
+        "id": "51e8-1471-ce4c-d5dd",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "f783-99b6-dc11-726a",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ]
       },
       {
         "costs": [
@@ -1663,7 +1672,15 @@
             "hidden": false,
             "id": "907e-90b-b5a5-a8a3",
             "sortIndex": 2,
-            "flatten": false
+            "flatten": false,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "constraints": [
@@ -1686,10 +1703,12 @@
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "2102-5505-363e-6395"
+            "id": "9ead-894a-c3e8-2505",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
@@ -1778,32 +1797,10 @@
             "field": "error"
           },
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "ca7e-d004-ccde-caf3",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "2102-5505-363e-6395"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "9ead-894a-c3e8-2505",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -1812,20 +1809,8 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "ca7e-d004-ccde-caf3",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
         ],
         "categoryLinks": [
@@ -1844,16 +1829,6 @@
         "id": "7b25-6b08-b644-f26f"
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "9836-b7d8-8061-4764"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -2019,13 +1994,23 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Boss",
                 "hidden": false,
                 "id": "da17-193-b220-7bf2",
                 "sortIndex": 1,
-                "subType": "crew"
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "cc90-ad95-55c1-2261",
+                    "name": "Boss",
+                    "id": "47d8-5464-2b65-18ee",
+                    "childName": "Goblin"
+                  }
+                ]
               },
               {
                 "infoLinks": [
@@ -2076,13 +2061,23 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "ef57-a7ab-90d9-e961",
                 "sortIndex": 3,
-                "subType": "crew"
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "cc90-ad95-55c1-2261",
+                    "name": "Musician",
+                    "id": "ed41-12bd-6f75-2fb9",
+                    "childName": "Goblin"
+                  }
+                ]
               },
               {
                 "infoLinks": [
@@ -2372,13 +2367,23 @@
                     "id": "e86d-2ae7-e493-5942"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "8bce-415a-f44b-c12a",
                 "sortIndex": 2,
-                "subType": "crew"
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "cc90-ad95-55c1-2261",
+                    "name": "Standard Bearer",
+                    "id": "215f-ebfb-4935-c122",
+                    "childName": "Goblin"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -2662,7 +2667,15 @@
             "name": "Goblin",
             "hidden": false,
             "id": "cc90-ad95-55c1-2261",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "entryLinks": [
@@ -2720,32 +2733,10 @@
             "field": "category"
           },
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "9836-b7d8-8061-4764"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "100b-ddc2-c46f-23bb",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -2754,20 +2745,8 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
         ],
         "type": "unit",
@@ -2775,71 +2754,21 @@
         "name": "Goblin Mobs",
         "hidden": false,
         "id": "6ce4-96c1-6e66-4e65",
-        "flatten": false
-      },
-      {
+        "flatten": false,
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "5895-51bb-a089-8629"
+            "id": "100b-ddc2-c46f-23bb",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "5895-51bb-a089-8629"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -2993,7 +2922,18 @@
                 "name": "Boss",
                 "hidden": false,
                 "id": "f93-c0e5-d0cc-1afc",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "f241-11e2-3771-3b16",
+                    "name": "Boss",
+                    "id": "3ee7-35da-2a3f-962a",
+                    "childName": "Night Goblin"
+                  }
+                ]
               },
               {
                 "infoLinks": [
@@ -3043,7 +2983,18 @@
                 "name": "Musician",
                 "hidden": false,
                 "id": "66b3-c618-f5ac-16bd",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "f241-11e2-3771-3b16",
+                    "name": "Musician",
+                    "id": "5a86-0e8a-3b56-1e6a",
+                    "childName": "Night Goblin"
+                  }
+                ]
               },
               {
                 "infoLinks": [
@@ -3338,7 +3289,18 @@
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "fecb-cd1-c8b7-b87f",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "f241-11e2-3771-3b16",
+                    "name": "Standard Bearer",
+                    "id": "0c11-c9b3-e552-44c2",
+                    "childName": "Night Goblin"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -3562,7 +3524,15 @@
             "name": "Night Goblin",
             "hidden": false,
             "id": "f241-11e2-3771-3b16",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           },
           {
             "costs": [
@@ -3684,47 +3654,25 @@
         "import": true,
         "name": "Night Goblin Mobs",
         "hidden": false,
-        "id": "399b-6e05-9a74-e18f"
-      },
-      {
+        "id": "399b-6e05-9a74-e18f",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "44e4-7537-89ef-6651"
+            "id": "d14a-ec03-d4c0-56e1",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "db92-54fd-e023-d69f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "44e4-7537-89ef-6651"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "d14a-ec03-d4c0-56e1",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -3733,22 +3681,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "db92-54fd-e023-d69f",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -3925,7 +3863,15 @@
             "import": true,
             "name": "Snotling",
             "hidden": false,
-            "id": "ce1-559f-6de4-ad59"
+            "id": "ce1-559f-6de4-ad59",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 3,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "categoryLinks": [
@@ -3941,47 +3887,25 @@
         "import": true,
         "name": "Snotling Mobs",
         "hidden": false,
-        "id": "42b6-c48e-b345-102a"
-      },
-      {
+        "id": "42b6-c48e-b345-102a",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "7b10-fcf9-ef4b-f144"
+            "id": "ad55-f137-0adb-cb86",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5c55-f9d6-b181-92f8",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "7b10-fcf9-ef4b-f144"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "ad55-f137-0adb-cb86",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -3990,22 +3914,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5c55-f9d6-b181-92f8",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -4265,7 +4179,15 @@
             "import": true,
             "name": "Common Troll",
             "hidden": false,
-            "id": "746-ce49-cbf9-b506"
+            "id": "746-ce49-cbf9-b506",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 3,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "categoryLinks": [
@@ -4281,7 +4203,37 @@
         "import": true,
         "name": "Common Troll Mobs",
         "hidden": false,
-        "id": "afd2-472f-d0bd-942f"
+        "id": "afd2-472f-d0bd-942f",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "f547-04f4-88a1-5117",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "f547-04f4-88a1-5117",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "constraints": [
@@ -4318,68 +4270,6 @@
         "id": "5fa5-9f5d-71b6-8777"
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "fe92-fc1d-4b2c-61a4"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5c55-f9d6-b181-92f8",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "fe92-fc1d-4b2c-61a4"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5c55-f9d6-b181-92f8",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -4638,7 +4528,15 @@
             "import": true,
             "name": "River Troll",
             "hidden": false,
-            "id": "1f09-bcd2-8a32-77da"
+            "id": "1f09-bcd2-8a32-77da",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 3,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "categoryLinks": [
@@ -4654,47 +4552,25 @@
         "import": true,
         "name": "River Troll Mobs",
         "hidden": false,
-        "id": "a6f0-e007-d5e4-318b"
-      },
-      {
+        "id": "a6f0-e007-d5e4-318b",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "c435-21a0-9639-ced1"
+            "id": "5e4c-4b8a-2225-fabe",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5c55-f9d6-b181-92f8",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "c435-21a0-9639-ced1"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "5e4c-4b8a-2225-fabe",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -4703,22 +4579,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5c55-f9d6-b181-92f8",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -5005,7 +4871,15 @@
             "import": true,
             "name": "Stone Troll",
             "hidden": false,
-            "id": "cefc-8502-9f03-9f41"
+            "id": "cefc-8502-9f03-9f41",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 3,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "categoryLinks": [
@@ -5021,19 +4895,39 @@
         "import": true,
         "name": "Stone Troll Mobs",
         "hidden": false,
-        "id": "7255-5510-3bf2-87a6"
-      },
-      {
+        "id": "7255-5510-3bf2-87a6",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "458d-07aa-cdf6-6045"
+            "id": "8673-67ef-07c9-1163",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "8673-67ef-07c9-1163",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -5255,7 +5149,18 @@
                 "name": "Boss",
                 "hidden": false,
                 "id": "eb-6921-ac45-dbcf",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "f5d0-bbda-d0bc-bfc7",
+                    "name": "Boss",
+                    "id": "67f9-7255-e9e7-5d4d",
+                    "childName": "Boar Boy"
+                  }
+                ]
               },
               {
                 "infoLinks": [
@@ -5311,7 +5216,18 @@
                 "name": "Musician",
                 "hidden": false,
                 "id": "c881-ff4f-1cfe-f494",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "f5d0-bbda-d0bc-bfc7",
+                    "name": "Musician",
+                    "id": "396e-198c-7d9e-2d94",
+                    "childName": "Boar Boy"
+                  }
+                ]
               },
               {
                 "infoLinks": [
@@ -5604,7 +5520,18 @@
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "e2bf-5fa-a608-264c",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "f5d0-bbda-d0bc-bfc7",
+                    "name": "Standard Bearer",
+                    "id": "50da-2fde-809b-e485",
+                    "childName": "Boar Boy"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -5800,6 +5727,43 @@
                 "value": "5165-d052-cfc2-5887",
                 "field": "category",
                 "id": "5f48-f420-c99c-516a"
+              },
+              {
+                "type": "set",
+                "value": 2,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "selectionEntryGroups": [
@@ -6048,32 +6012,10 @@
             "field": "category"
           },
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5165-d052-cfc2-5887",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "458d-07aa-cdf6-6045"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "d291-fd03-b1bf-e9dd",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -6082,91 +6024,29 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5165-d052-cfc2-5887",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
         ],
         "type": "unit",
         "import": true,
         "name": "Orc Boar Boy Mobs",
         "hidden": false,
-        "id": "5b90-17e7-7f9c-f674"
-      },
-      {
+        "id": "5b90-17e7-7f9c-f674",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "e823-963a-ef59-20b2"
+            "id": "d291-fd03-b1bf-e9dd",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "600c-7d08-5be1-fe0c",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "e823-963a-ef59-20b2"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "600c-7d08-5be1-fe0c",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -6321,7 +6201,18 @@
                 "name": "Boss",
                 "hidden": false,
                 "id": "853e-7188-7f50-e12f",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "3f4e-6005-eaa3-8d96",
+                    "name": "Boss",
+                    "id": "c2d0-d34a-24f2-4fda",
+                    "childName": "Spider Rider"
+                  }
+                ]
               },
               {
                 "infoLinks": [
@@ -6356,7 +6247,18 @@
                 "name": "Musician",
                 "hidden": false,
                 "id": "c4a-8dd8-74fb-c3f2",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "3f4e-6005-eaa3-8d96",
+                    "name": "Musician",
+                    "id": "2073-d6e8-ad8b-3d21",
+                    "childName": "Spider Rider"
+                  }
+                ]
               },
               {
                 "infoLinks": [
@@ -6636,7 +6538,18 @@
                 "hidden": false,
                 "id": "c6c7-44ba-9c0d-5c50",
                 "sortIndex": 2,
-                "flatten": false
+                "flatten": false,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "3f4e-6005-eaa3-8d96",
+                    "name": "Standard Bearer",
+                    "id": "989a-ab1e-c82d-e001",
+                    "childName": "Spider Rider"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -6853,6 +6766,43 @@
                 "value": "600c-7d08-5be1-fe0c",
                 "field": "category",
                 "id": "820a-dec2-50a9-4a9a"
+              },
+              {
+                "type": "set",
+                "value": 2,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -6876,19 +6826,39 @@
         "import": true,
         "name": "Goblin Spider Rider Mobs",
         "hidden": false,
-        "id": "f8e2-1ac4-c646-af1c"
-      },
-      {
+        "id": "f8e2-1ac4-c646-af1c",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "9baf-e880-b3e1-84da"
+            "id": "882a-bb5d-1439-ec20",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "882a-bb5d-1439-ec20",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -7155,7 +7125,18 @@
                 "name": "Boss",
                 "hidden": false,
                 "id": "5228-b892-417-7dfa",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "5a41-2602-e813-ecd3",
+                    "name": "Boss",
+                    "id": "4ad6-9f87-3495-992b",
+                    "childName": "Wolf Rider"
+                  }
+                ]
               },
               {
                 "infoLinks": [
@@ -7211,7 +7192,18 @@
                 "name": "Musician",
                 "hidden": false,
                 "id": "7503-2b51-9981-70d",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "5a41-2602-e813-ecd3",
+                    "name": "Musician",
+                    "id": "08ed-3701-9402-19a5",
+                    "childName": "Wolf Rider"
+                  }
+                ]
               },
               {
                 "infoLinks": [
@@ -7506,7 +7498,18 @@
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "5154-9cb7-4cb7-74fc",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "5a41-2602-e813-ecd3",
+                    "name": "Standard Bearer",
+                    "id": "f798-95e5-bc9c-3b49",
+                    "childName": "Wolf Rider"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -8065,6 +8068,43 @@
                 "value": "600c-7d08-5be1-fe0c",
                 "field": "category",
                 "id": "1aa5-9dad-c930-f7f0"
+              },
+              {
+                "type": "set",
+                "value": 2,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -8135,32 +8175,10 @@
             "field": "category"
           },
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "600c-7d08-5be1-fe0c",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "9baf-e880-b3e1-84da"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "3934-ef1b-fe12-0108",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -8169,91 +8187,29 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "600c-7d08-5be1-fe0c",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
         ],
         "type": "unit",
         "import": true,
         "name": "Goblin Wolf Rider Mobs",
         "hidden": false,
-        "id": "e36d-11d8-5d9a-1198"
-      },
-      {
+        "id": "e36d-11d8-5d9a-1198",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "f6ee-3280-676b-c79a"
+            "id": "3934-ef1b-fe12-0108",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "600c-7d08-5be1-fe0c",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "f6ee-3280-676b-c79a"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "600c-7d08-5be1-fe0c",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -8454,7 +8410,18 @@
                 "import": true,
                 "name": "Boss",
                 "hidden": false,
-                "id": "c88-4380-a254-963a"
+                "id": "c88-4380-a254-963a",
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "f5cf-4368-31b0-bfe2",
+                    "name": "Boss",
+                    "id": "7fed-8706-f49c-c8a2",
+                    "childName": "Squig Hopper"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -8601,6 +8568,43 @@
                 "value": "600c-7d08-5be1-fe0c",
                 "field": "category",
                 "id": "5c19-411d-361f-e007"
+              },
+              {
+                "type": "set",
+                "value": 2,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -8624,7 +8628,37 @@
         "import": true,
         "name": "Night Goblin Squig Hopper Mobs",
         "hidden": false,
-        "id": "6949-f50f-89e4-99c8"
+        "id": "6949-f50f-89e4-99c8",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "44ff-cfd7-b520-8bca",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "44ff-cfd7-b520-8bca",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -8986,7 +9020,15 @@
         "hidden": false,
         "id": "b583-e43-546a-187f",
         "collective": true,
-        "subType": "mount"
+        "subType": "mount",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 2,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -9075,7 +9117,15 @@
         "hidden": false,
         "id": "1b49-a3e9-82ac-f4c",
         "collective": true,
-        "subType": "mount"
+        "subType": "mount",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 2,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "categoryLinks": [
@@ -9147,7 +9197,37 @@
         "import": true,
         "name": "Orc Boar Chariots",
         "hidden": false,
-        "id": "7990-59e-8323-b39c"
+        "id": "7990-59e-8323-b39c",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "7896-3e54-f342-0934",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "7896-3e54-f342-0934",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "entryLinks": [
@@ -9413,7 +9493,15 @@
             "import": true,
             "name": "Giant",
             "hidden": false,
-            "id": "7442-e18f-5a0-9e7b"
+            "id": "7442-e18f-5a0-9e7b",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 6,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "categoryLinks": [
@@ -9429,7 +9517,37 @@
         "import": true,
         "name": "Giants",
         "hidden": false,
-        "id": "2e4e-ec04-8461-5da3"
+        "id": "2e4e-ec04-8461-5da3",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "ecce-6415-b587-e6b0",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "ecce-6415-b587-e6b0",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -9662,7 +9780,15 @@
             "name": "Doom Diver Catapult",
             "hidden": false,
             "id": "5505-825b-f093-3522",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 3,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "entryLinks": [
@@ -9716,7 +9842,37 @@
         "import": true,
         "name": "Doom Diver Catapults",
         "hidden": false,
-        "id": "20d9-d374-f5d5-82bc"
+        "id": "20d9-d374-f5d5-82bc",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "fb8e-0dc7-b446-b1dc",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "fb8e-0dc7-b446-b1dc",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -9869,7 +10025,15 @@
             "name": "Goblin Rock Lobber",
             "hidden": false,
             "id": "5bca-1e89-f6ae-3fd0",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 4,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "entryLinks": [
@@ -9923,7 +10087,37 @@
         "import": true,
         "name": "Goblin Rock Lobbers",
         "hidden": false,
-        "id": "d7f0-af29-e9dc-6eda"
+        "id": "d7f0-af29-e9dc-6eda",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "7b3b-c85e-3cf8-fa84",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "7b3b-c85e-3cf8-fa84",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "selectionEntries": [
@@ -10143,7 +10337,15 @@
         "name": "Wyvern",
         "hidden": false,
         "id": "84e5-c8c3-3a09-473e",
-        "subType": "mount"
+        "subType": "mount",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 4,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "profiles": [
@@ -10339,7 +10541,15 @@
             "import": true,
             "name": "Snotling Pump Wagon",
             "hidden": false,
-            "id": "f802-ebc1-1ca4-fb17"
+            "id": "f802-ebc1-1ca4-fb17",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 3,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "categoryLinks": [
@@ -10355,7 +10565,37 @@
         "import": true,
         "name": "Snotling Pump Wagons",
         "hidden": false,
-        "id": "2f44-19e3-996-656b"
+        "id": "2f44-19e3-996-656b",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "e7c2-4887-c2a5-c7ac",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "e7c2-4887-c2a5-c7ac",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -10496,7 +10736,37 @@
         "import": true,
         "name": "Goblin Wolf Chariots",
         "hidden": false,
-        "id": "5f86-179a-d64d-3014"
+        "id": "5f86-179a-d64d-3014",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "7aa7-ba2a-fb17-d635",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "7aa7-ba2a-fb17-d635",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -11046,6 +11316,43 @@
                 "value": "ca7e-d004-ccde-caf3",
                 "field": "category",
                 "id": "d8ae-2f11-32ab-3e18"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -11068,7 +11375,37 @@
         "import": true,
         "name": "Black Orc Warboss",
         "hidden": false,
-        "id": "5f11-e9c2-fece-fff8"
+        "id": "5f11-e9c2-fece-fff8",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "828d-92d5-d850-5287",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "828d-92d5-d850-5287",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -11672,6 +12009,43 @@
                 "value": "ca7e-d004-ccde-caf3",
                 "field": "category",
                 "id": "97b-6794-1b22-41d5"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -11697,7 +12071,37 @@
         "name": "Black Orc Bigboss",
         "hidden": false,
         "id": "3a60-b23d-7e34-aecf",
-        "flatten": false
+        "flatten": false,
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "a845-b0ba-b1f4-73e7",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "a845-b0ba-b1f4-73e7",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -12208,6 +12612,43 @@
                 "value": "f3f7-ca43-674e-115f",
                 "field": "category",
                 "id": "2794-c5ab-9a2-14a8"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -12230,7 +12671,37 @@
         "import": true,
         "name": "Goblin Warboss",
         "hidden": false,
-        "id": "eeb7-9f82-7439-3650"
+        "id": "eeb7-9f82-7439-3650",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "b0a8-05d8-a6c2-49e0",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "b0a8-05d8-a6c2-49e0",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -12784,6 +13255,43 @@
                 "value": "f3f7-ca43-674e-115f",
                 "field": "category",
                 "id": "7c57-e23f-26a2-ae19"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -12807,7 +13315,37 @@
         "import": true,
         "name": "Orc Bigboss",
         "hidden": false,
-        "id": "cc13-c8e5-a88a-542a"
+        "id": "cc13-c8e5-a88a-542a",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "3773-1886-82fa-6b1d",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "3773-1886-82fa-6b1d",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -13290,6 +13828,43 @@
                 "value": "f3f7-ca43-674e-115f",
                 "field": "category",
                 "id": "a31c-489b-f0a9-2da5"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -13312,7 +13887,37 @@
         "import": true,
         "name": "Orc Weirdnob",
         "hidden": false,
-        "id": "4a90-3060-c790-2d98"
+        "id": "4a90-3060-c790-2d98",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "1a57-a548-bc87-6241",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "1a57-a548-bc87-6241",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -13779,6 +14384,43 @@
                 "value": "f3f7-ca43-674e-115f",
                 "field": "category",
                 "id": "2335-8975-b46a-25b0"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -13802,7 +14444,37 @@
         "import": true,
         "name": "Orc Weirdboy",
         "hidden": false,
-        "id": "e9f5-b8ba-7d18-f2fc"
+        "id": "e9f5-b8ba-7d18-f2fc",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "463d-8b1b-79a4-fffe",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "463d-8b1b-79a4-fffe",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -14334,6 +15006,43 @@
                 "value": "f3f7-ca43-674e-115f",
                 "field": "category",
                 "id": "d2a7-6f6e-d6e5-1465"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -14357,7 +15066,37 @@
         "import": true,
         "name": "Orc Warboss",
         "hidden": false,
-        "id": "92b4-e584-76ef-ab7"
+        "id": "92b4-e584-76ef-ab7",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "8b12-d7cc-95d9-60d0",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "8b12-d7cc-95d9-60d0",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -14918,6 +15657,43 @@
                 "value": "f3f7-ca43-674e-115f",
                 "field": "category",
                 "id": "cf2e-8580-3de8-2b8f"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -14940,7 +15716,37 @@
         "import": true,
         "name": "Goblin Bigboss",
         "hidden": false,
-        "id": "3c83-df5f-3c4-9bff"
+        "id": "3c83-df5f-3c4-9bff",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "638e-f608-0654-58f8",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "638e-f608-0654-58f8",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "categoryLinks": [
@@ -15304,14 +16110,52 @@
             "import": true,
             "name": "Night Goblin Oddgit",
             "hidden": false,
-            "id": "48ca-bb42-9fa3-a38"
+            "id": "48ca-bb42-9fa3-a38",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "type": "unit",
         "import": true,
         "name": "Night Goblin Oddgit",
         "hidden": false,
-        "id": "438c-dab2-28a1-868f"
+        "id": "438c-dab2-28a1-868f",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "290a-4709-0aab-cd0f",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "290a-4709-0aab-cd0f",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -15850,6 +16694,43 @@
                 "value": "f3f7-ca43-674e-115f",
                 "field": "category",
                 "id": "77d4-93c-345-2197"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -15872,7 +16753,37 @@
         "import": true,
         "name": "Goblin Oddnob",
         "hidden": false,
-        "id": "e003-269f-146e-ffa7"
+        "id": "e003-269f-146e-ffa7",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "62ff-d70f-d31c-8a2f",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "62ff-d70f-d31c-8a2f",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -16404,6 +17315,43 @@
                 "value": "f3f7-ca43-674e-115f",
                 "field": "category",
                 "id": "e803-656a-88f0-d0e4"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -16426,7 +17374,37 @@
         "import": true,
         "name": "Goblin Oddgit",
         "hidden": false,
-        "id": "32a5-e82a-ec0e-2994"
+        "id": "32a5-e82a-ec0e-2994",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "9e18-b872-7a74-816b",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "9e18-b872-7a74-816b",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "categoryLinks": [
@@ -16783,7 +17761,15 @@
             "import": true,
             "name": "Night Goblin Oddnob",
             "hidden": false,
-            "id": "d0c3-d5f5-d56e-cbb"
+            "id": "d0c3-d5f5-d56e-cbb",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "infoLinks": [
@@ -16799,7 +17785,37 @@
         "import": true,
         "name": "Night Goblin Oddnob",
         "hidden": false,
-        "id": "1e80-132e-1771-a31"
+        "id": "1e80-132e-1771-a31",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "68bd-6854-f2bb-3f3c",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "68bd-6854-f2bb-3f3c",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "categoryLinks": [
@@ -17203,6 +18219,43 @@
                 "value": "f3f7-ca43-674e-115f",
                 "field": "category",
                 "id": "4622-38f5-386a-be03"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -17216,7 +18269,37 @@
         "import": true,
         "name": "Night Goblin Warboss",
         "hidden": false,
-        "id": "5dfc-f215-9ae1-b579"
+        "id": "5dfc-f215-9ae1-b579",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "353d-1891-44a2-6590",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "353d-1891-44a2-6590",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "categoryLinks": [
@@ -17658,6 +18741,43 @@
                 "value": "f3f7-ca43-674e-115f",
                 "field": "category",
                 "id": "efd4-e2eb-d8bc-9783"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -17671,7 +18791,37 @@
         "import": true,
         "name": "Night Goblin Bigboss",
         "hidden": false,
-        "id": "516d-86e7-6eed-f3d1"
+        "id": "516d-86e7-6eed-f3d1",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "3379-537b-329c-1ef0",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "3379-537b-329c-1ef0",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "categoryLinks": [
@@ -17916,7 +19066,37 @@
         "import": true,
         "name": "Arachnarok Spider",
         "hidden": false,
-        "id": "705b-522c-1c00-2338"
+        "id": "705b-522c-1c00-2338",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "944a-e996-f428-efb5",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "944a-e996-f428-efb5",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -18035,7 +19215,15 @@
         "hidden": false,
         "id": "afdb-4eef-2a31-c951",
         "collective": true,
-        "subType": "mount"
+        "subType": "mount",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 3,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -18173,7 +19361,15 @@
         "hidden": false,
         "id": "3d51-77-691f-c5ba",
         "collective": true,
-        "subType": "mount"
+        "subType": "mount",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 2,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -18521,6 +19717,12 @@
                     "type": "increment",
                     "value": 1,
                     "field": "43be-4ce3-4d25-d378"
+                  },
+                  {
+                    "type": "set",
+                    "value": 1,
+                    "field": "73ea-910d-c188-35d0",
+                    "comment": "Unit strenght script"
                   }
                 ],
                 "type": "model",
@@ -18611,7 +19813,15 @@
                 "sortIndex": 2,
                 "defaultAmount": 5,
                 "flatten": false,
-                "collective": false
+                "collective": false,
+                "modifiers": [
+                  {
+                    "type": "set",
+                    "value": 1,
+                    "field": "73ea-910d-c188-35d0",
+                    "comment": "Unit strenght script"
+                  }
+                ]
               }
             ],
             "infoGroups": [
@@ -18713,7 +19923,37 @@
         "import": true,
         "name": "Night Goblin Squig Herds",
         "hidden": false,
-        "id": "96e4-22ac-eb93-11e9"
+        "id": "96e4-22ac-eb93-11e9",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "44c4-2d6d-2fad-7177",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "44c4-2d6d-2fad-7177",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "selectionEntries": [
@@ -18836,7 +20076,15 @@
             "import": true,
             "name": "Mangler Squig",
             "hidden": false,
-            "id": "b07d-1ccc-8b52-f526"
+            "id": "b07d-1ccc-8b52-f526",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 4,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "infoGroups": [
@@ -18980,7 +20228,37 @@
         "import": true,
         "name": "Mangler Squigs",
         "hidden": false,
-        "id": "7cb0-f4e4-57e3-fb07"
+        "id": "7cb0-f4e4-57e3-fb07",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "3cff-23d9-a1eb-9cf5",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "3cff-23d9-a1eb-9cf5",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "costs": [
@@ -19097,7 +20375,15 @@
             "collective": false,
             "hidden": false,
             "publicationId": "3a81ff07--pubd1e638",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 3,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "profiles": [
@@ -19196,7 +20482,37 @@
         "type": "unit",
         "collective": false,
         "hidden": false,
-        "page": 0
+        "page": 0,
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "ffab-4c9e-9637-9877",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "ffab-4c9e-9637-9877",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "costs": [
@@ -19392,6 +20708,43 @@
             "type": "increment",
             "value": 5,
             "field": "points"
+          },
+          {
+            "type": "set",
+            "value": 3,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          },
+          {
+            "type": "multiply",
+            "value": 0,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script",
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "value": 1,
+                    "field": "selections",
+                    "scope": "self",
+                    "childId": "c96a-608-5de4-b943",
+                    "includeChildSelections": true,
+                    "shared": true
+                  },
+                  {
+                    "type": "atLeast",
+                    "value": 1,
+                    "field": "selections",
+                    "scope": "self",
+                    "childId": "mount",
+                    "includeChildSelections": true,
+                    "shared": true
+                  }
+                ]
+              }
+            ]
           }
         ],
         "categoryLinks": [
@@ -19750,7 +21103,15 @@
         "import": true,
         "name": "Arachnarok Spider",
         "hidden": false,
-        "id": "1472-2eff-b604-c7"
+        "id": "1472-2eff-b604-c7",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 7,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "costs": [
@@ -19992,6 +21353,43 @@
             "type": "increment",
             "value": 10,
             "field": "points"
+          },
+          {
+            "type": "set",
+            "value": 5,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          },
+          {
+            "type": "multiply",
+            "value": 0,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script",
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "value": 1,
+                    "field": "selections",
+                    "scope": "self",
+                    "childId": "c96a-608-5de4-b943",
+                    "includeChildSelections": true,
+                    "shared": true
+                  },
+                  {
+                    "type": "atLeast",
+                    "value": 1,
+                    "field": "selections",
+                    "scope": "self",
+                    "childId": "mount",
+                    "includeChildSelections": true,
+                    "shared": true
+                  }
+                ]
+              }
+            ]
           }
         ],
         "infoGroups": [
@@ -20926,7 +22324,15 @@
                 "hidden": false,
                 "id": "bb66c176-cafa3040",
                 "subType": "mount",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "modifiers": [
+                  {
+                    "type": "set",
+                    "value": 1,
+                    "field": "73ea-910d-c188-35d0",
+                    "comment": "Unit strenght script"
+                  }
+                ]
               }
             ],
             "selectionEntryGroups": [
@@ -21090,7 +22496,46 @@
             "name": "Kiknik Toofsnatcha",
             "hidden": false,
             "id": "fcb50d15-2ef2a30b",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ],
         "categoryLinks": [
@@ -21107,7 +22552,37 @@
         "name": "Kiknik Toofsnatcha",
         "hidden": false,
         "id": "e4515634-4d2abd3e",
-        "collective": false
+        "collective": false,
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "8068-749d-a2ba-f19f",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "8068-749d-a2ba-f19f",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -21448,7 +22923,15 @@
             "import": true,
             "name": "Ogdruz Swampdigga",
             "hidden": false,
-            "id": "c4206938-9e20ab22"
+            "id": "c4206938-9e20ab22",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "categoryLinks": [
@@ -21465,7 +22948,37 @@
         "name": "Ogdruz Swampdigga",
         "hidden": false,
         "id": "11368718-3481c082",
-        "collective": false
+        "collective": false,
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "22b2-d9fa-36f8-c989",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "22b2-d9fa-36f8-c989",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -21868,7 +23381,15 @@
             "import": true,
             "name": "Troll Hag",
             "hidden": false,
-            "id": "80b56ee-5a4a29f8"
+            "id": "80b56ee-5a4a29f8",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 6,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "infoGroups": [
@@ -21999,7 +23520,37 @@
         "name": "Troll Hag",
         "hidden": false,
         "id": "cc7549d2-1d43331c",
-        "collective": false
+        "collective": false,
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "fcd0-fa22-aa69-15a9",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "fcd0-fa22-aa69-15a9",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -22170,7 +23721,15 @@
                 "hidden": false,
                 "id": "8bb31cd9-a61ceb2f",
                 "subType": "mount",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "modifiers": [
+                  {
+                    "type": "set",
+                    "value": 5,
+                    "field": "73ea-910d-c188-35d0",
+                    "comment": "Unit strenght script"
+                  }
+                ]
               },
               {
                 "infoLinks": [
@@ -22400,7 +23959,46 @@
             "name": "Chariot",
             "hidden": false,
             "id": "115-e957-7f7-e5ff",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 5,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ],
         "infoGroups": [
@@ -22503,7 +24101,37 @@
         "name": "Black Orc Chariot",
         "hidden": false,
         "id": "5f35-1bc8-110c-3dc1",
-        "collective": false
+        "collective": false,
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "f417-39ff-526d-fc67",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "f417-39ff-526d-fc67",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -22656,7 +24284,15 @@
             "hidden": false,
             "id": "c9d2-7003-6a38-d2e4",
             "subType": "mount",
-            "sortIndex": 3
+            "sortIndex": 3,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 5,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           },
           {
             "infoLinks": [
@@ -22973,7 +24609,15 @@
         "name": "Black Orc Chariot",
         "hidden": false,
         "id": "5c04-51ef-2af2-53c7",
-        "subType": "mount"
+        "subType": "mount",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 5,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "costs": [
@@ -51694,7 +53338,7 @@
     "name": "Orc and Goblin Tribes",
     "gameSystemId": "sys-31d1-bf57-53ea-ad55",
     "gameSystemRevision": 19,
-    "revision": 186,
+    "revision": 189,
     "authorName": "Flammy",
     "battleScribeVersion": 2.03,
     "type": "catalogue",

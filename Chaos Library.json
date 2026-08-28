@@ -206,7 +206,15 @@
             "name": "Chaos Giant",
             "hidden": false,
             "id": "3f2a-8add-af40-8db1",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 6,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "infoGroups": [
@@ -294,47 +302,25 @@
         "import": true,
         "name": "Chaos Giants",
         "hidden": false,
-        "id": "b352-fa53-fad5-dfad"
-      },
-      {
+        "id": "b352-fa53-fad5-dfad",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "da84-b9f5-6083-c398"
+            "id": "674f-5477-46f4-5da6",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5c55-f9d6-b181-92f8",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "da84-b9f5-6083-c398"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "674f-5477-46f4-5da6",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -343,22 +329,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5c55-f9d6-b181-92f8",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -636,7 +612,15 @@
             "name": "Chaos Ogre",
             "hidden": false,
             "id": "2b02-d213-8aab-487c",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 3,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -710,13 +694,23 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Champion",
                 "hidden": false,
                 "id": "82-f792-3ddb-b58a",
-                "subType": "crew",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "2b02-d213-8aab-487c",
+                    "name": "Champion",
+                    "id": "a264-4ba7-9fc1-2a38",
+                    "childName": "Chaos Ogre"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -761,13 +755,23 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "f20-d338-3a0f-ac1e",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "2b02-d213-8aab-487c",
+                    "name": "Standard Bearer",
+                    "id": "5a3f-7fc3-cdf2-e992",
+                    "childName": "Chaos Ogre"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -812,13 +816,23 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "fdb8-f32f-8fdd-cf8b",
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "2b02-d213-8aab-487c",
+                    "name": "Musician",
+                    "id": "7da2-27c6-5b70-1d3a",
+                    "childName": "Chaos Ogre"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -898,7 +912,37 @@
         "import": true,
         "name": "Chaos Ogres",
         "hidden": false,
-        "id": "d7c9-d-55d4-9c7f"
+        "id": "d7c9-d-55d4-9c7f",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "e7f9-784f-ab02-7534",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "e7f9-784f-ab02-7534",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -1246,7 +1290,15 @@
             "name": "Dragon Ogre Shaggoth",
             "hidden": false,
             "id": "6317-c9dc-3a4e-9ca7",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 6,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "infoGroups": [
@@ -1299,7 +1351,7 @@
                 "hidden": false,
                 "type": "profile",
                 "id": "408d-13b2-6f1-1085",
-                "targetId": "fe92-e9d9-91b4-e794"
+                "targetId": "68ed-9275-f95a-a3f5"
               },
               {
                 "name": "Immune To Psychology",
@@ -1362,7 +1414,37 @@
         "import": true,
         "name": "Dragon Ogre Shaggoth",
         "hidden": false,
-        "id": "8ffe-f069-f303-d976"
+        "id": "8ffe-f069-f303-d976",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "295e-8cb8-1472-db3f",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "295e-8cb8-1472-db3f",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -1596,7 +1678,15 @@
             "name": "Dragon Ogre",
             "hidden": false,
             "id": "85ac-c8dd-ef57-5f3d",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 3,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -1710,12 +1800,22 @@
                     "sortIndex": 2
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Shartak",
                 "hidden": false,
                 "id": "63fc-f0e0-a627-d67a",
-                "subType": "crew"
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "85ac-c8dd-ef57-5f3d",
+                    "name": "Shartak",
+                    "id": "b1f7-4bfc-06c4-9f72",
+                    "childName": "Dragon Ogre"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -1760,7 +1860,7 @@
                 "hidden": false,
                 "type": "profile",
                 "id": "4fae-a112-cc7-6ac4",
-                "targetId": "fe92-e9d9-91b4-e794"
+                "targetId": "68ed-9275-f95a-a3f5"
               },
               {
                 "name": "Fear",
@@ -1823,47 +1923,25 @@
         "import": true,
         "name": "Dragon Ogres",
         "hidden": false,
-        "id": "c4b9-69c-da42-9e0b"
-      },
-      {
+        "id": "c4b9-69c-da42-9e0b",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "ffc6-f947-cd60-61ac"
+            "id": "1961-867e-b029-f860",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5c55-f9d6-b181-92f8",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "ffc6-f947-cd60-61ac"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "1961-867e-b029-f860",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -1872,22 +1950,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5c55-f9d6-b181-92f8",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -2092,7 +2160,15 @@
             "name": "Chaos Troll",
             "hidden": false,
             "id": "b123-38dc-ce27-9f6",
-            "flatten": false
+            "flatten": false,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 3,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "infoGroups": [
@@ -2180,7 +2256,37 @@
         "import": true,
         "name": "Chaos Trolls",
         "hidden": false,
-        "id": "df02-abd1-c7f7-4233"
+        "id": "df02-abd1-c7f7-4233",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "c16a-a39f-19d7-ab37",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "c16a-a39f-19d7-ab37",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -2427,7 +2533,15 @@
             "import": true,
             "name": "Chaos Spawn",
             "hidden": false,
-            "id": "48cf-eea2-945f-33d8"
+            "id": "48cf-eea2-945f-33d8",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 3,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "infoGroups": [
@@ -2522,7 +2636,37 @@
         "import": true,
         "name": "Chaos Spawn",
         "hidden": false,
-        "id": "26f1-368c-8def-c49b"
+        "id": "26f1-368c-8def-c49b",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "7b84-978f-0d2c-6d19",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "7b84-978f-0d2c-6d19",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "costs": [
@@ -2666,7 +2810,15 @@
             "collective": false,
             "hidden": false,
             "publicationId": "3a81ff07--pubd1e638",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 5,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "profiles": [
@@ -2832,7 +2984,37 @@
         "type": "unit",
         "collective": false,
         "hidden": false,
-        "page": 0
+        "page": 0,
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "1942-d94c-8a3d-22d5",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "1942-d94c-8a3d-22d5",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "costs": [
@@ -3211,7 +3393,15 @@
             "name": "Gigantic Spawn",
             "hidden": false,
             "id": "d02a-4b90-9fbb-6d80",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 6,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "infoGroups": [
@@ -3327,7 +3517,37 @@
         "import": true,
         "name": "Gigantic Spawn of Chaos",
         "hidden": false,
-        "id": "375a-3b64-713e-8b34"
+        "id": "375a-3b64-713e-8b34",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "1d0e-9f2a-ef31-8635",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "1d0e-9f2a-ef31-8635",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -3716,20 +3936,6 @@
         "typeName": "Special Rule",
         "hidden": false,
         "id": "b16f-ba5a-7099-c0d9"
-      },
-      {
-        "characteristics": [
-          {
-            "$text": "A hand weapon carried by a model with this special rule has the Magical Attacks special rule and an Armour Piercing characteristic of -1.",
-            "name": "Description",
-            "typeId": "9f84-4221-785a-db50"
-          }
-        ],
-        "name": "Ensorcelled Weapons",
-        "hidden": false,
-        "id": "fe92-e9d9-91b4-e794",
-        "typeId": "c1ac-c1c8-f9d5-9673",
-        "typeName": "Special Rule"
       },
       {
         "characteristics": [
@@ -6358,7 +6564,7 @@
     "name": "Chaos Library",
     "gameSystemId": "sys-31d1-bf57-53ea-ad55",
     "gameSystemRevision": 47,
-    "revision": 54,
+    "revision": 57,
     "authorUrl": "www.newrecruit.eu",
     "authorContact": "Discord: vflam",
     "authorName": "Flammy",

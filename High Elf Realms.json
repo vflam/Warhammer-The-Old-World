@@ -4132,7 +4132,15 @@
         "hidden": false,
         "id": "7a-d663-c417-b3f2",
         "collective": true,
-        "subType": "mount"
+        "subType": "mount",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 4,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -4270,68 +4278,6 @@
         "subType": "mount"
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "fd52-64a5-127a-b5a8"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "fd52-64a5-127a-b5a8"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -4492,7 +4438,15 @@
             "name": "Elven Spearman",
             "hidden": false,
             "id": "7fd0-ec5a-104d-4a6d",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           },
           {
             "infoLinks": [
@@ -4658,13 +4612,23 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Sentinel",
                 "hidden": false,
                 "id": "b4e4-d2eb-f26-3f15",
-                "subType": "crew",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "7fd0-ec5a-104d-4a6d",
+                    "name": "Sentinel",
+                    "id": "1fe3-55d4-bca9-548e",
+                    "childName": "Elven Spearman"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -4753,14 +4717,24 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "c3c-b899-960d-d06f",
-                "subType": "crew",
                 "flatten": true,
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "7fd0-ec5a-104d-4a6d",
+                    "name": "Standard Bearer",
+                    "id": "56f6-dba5-2adc-79fd",
+                    "childName": "Elven Spearman"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -4811,13 +4785,23 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "c1d7-c15a-3fde-e0bc",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "7fd0-ec5a-104d-4a6d",
+                    "name": "Musician",
+                    "id": "c3e6-e64e-146d-3b82",
+                    "childName": "Elven Spearman"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -5587,7 +5571,37 @@
         "import": true,
         "name": "Elven Spearmen",
         "hidden": false,
-        "id": "93df-6c31-ecb8-bc77"
+        "id": "93df-6c31-ecb8-bc77",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "2323-78d6-bdb3-608f",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "2323-78d6-bdb3-608f",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -7277,6 +7291,43 @@
                 "value": "f3f7-ca43-674e-115f",
                 "field": "category",
                 "id": "5068-e243-9f27-ead1"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "categoryLinks": [
@@ -7412,7 +7463,37 @@
         "import": true,
         "name": "Noble",
         "hidden": false,
-        "id": "37d5-3ec1-ea71-3a6e"
+        "id": "37d5-3ec1-ea71-3a6e",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "3996-d18d-bd6a-7555",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "3996-d18d-bd6a-7555",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -7522,7 +7603,15 @@
         "hidden": false,
         "id": "c29e-def2-fb14-e28d",
         "collective": true,
-        "subType": "mount"
+        "subType": "mount",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 2,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "profiles": [
@@ -8731,6 +8820,43 @@
                 "type": "add",
                 "value": "may-have-armour",
                 "field": "category"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -8824,7 +8950,37 @@
         "import": true,
         "name": "Archmage",
         "hidden": false,
-        "id": "c0b9-dfe0-7a7e-167"
+        "id": "c0b9-dfe0-7a7e-167",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "4f34-4944-aba5-6c03",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "4f34-4944-aba5-6c03",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -10607,6 +10763,43 @@
                 "value": "f3f7-ca43-674e-115f",
                 "field": "category",
                 "id": "2fc6-98f4-5dab-48e6"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "categoryLinks": [
@@ -10742,7 +10935,37 @@
         "import": true,
         "name": "Prince",
         "hidden": false,
-        "id": "917e-4846-1500-c216"
+        "id": "917e-4846-1500-c216",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "33ca-32e1-d7b4-f56d",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "33ca-32e1-d7b4-f56d",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -11074,6 +11297,43 @@
                 "value": "3755-6732-99b2-c713",
                 "field": "category",
                 "id": "2cfa-c3b1-c12b-7615"
+              },
+              {
+                "type": "set",
+                "value": 2,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -11226,7 +11486,37 @@
         "import": true,
         "name": "Dragon Mage",
         "hidden": false,
-        "id": "aeb6-a2b9-b47d-a1b"
+        "id": "aeb6-a2b9-b47d-a1b",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "1d81-5ede-6613-df0d",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "1d81-5ede-6613-df0d",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -11501,7 +11791,15 @@
             "import": true,
             "name": "Handmaiden of the Everqueen",
             "hidden": false,
-            "id": "4aab-2521-3ad3-709c"
+            "id": "4aab-2521-3ad3-709c",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "infoGroups": [
@@ -11575,7 +11873,37 @@
         "import": true,
         "name": "Handmaiden of the Everqueen",
         "hidden": false,
-        "id": "9117-2bee-3a99-c73f"
+        "id": "9117-2bee-3a99-c73f",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "4bf8-5d6a-b260-474e",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "4bf8-5d6a-b260-474e",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -12630,6 +12958,43 @@
                 "type": "add",
                 "value": "may-have-armour",
                 "field": "category"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -12723,7 +13088,37 @@
         "import": true,
         "name": "Mage",
         "hidden": false,
-        "id": "7c6e-11dc-9fb-1702"
+        "id": "7c6e-11dc-9fb-1702",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "c460-8e1e-dc79-b001",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "c460-8e1e-dc79-b001",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "constraints": [
@@ -12788,68 +13183,6 @@
         "collective": false
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "6088-2dd2-9f47-0032"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "6088-2dd2-9f47-0032"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -12993,7 +13326,15 @@
             "name": "Elven Archer",
             "hidden": false,
             "id": "45b1-3bee-c8f-38e3",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           },
           {
             "infoLinks": [
@@ -13119,13 +13460,23 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Sentinel",
                 "hidden": false,
                 "id": "57a9-d3d5-40e2-e549",
-                "subType": "crew",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "45b1-3bee-c8f-38e3",
+                    "name": "Sentinel",
+                    "id": "a5bd-c204-05ca-d850",
+                    "childName": "Elven Archer"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -13208,14 +13559,24 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "9345-387-814-f260",
-                "subType": "crew",
                 "flatten": true,
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "45b1-3bee-c8f-38e3",
+                    "name": "Standard Bearer",
+                    "id": "88e9-406b-a024-e9b7",
+                    "childName": "Elven Archer"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -13260,13 +13621,23 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "1283-b87f-9955-b6d4",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "45b1-3bee-c8f-38e3",
+                    "name": "Musician",
+                    "id": "f66d-8fd7-856e-b25d",
+                    "childName": "Elven Archer"
+                  }
+                ]
               }
             ],
             "modifiers": [
@@ -14085,47 +14456,25 @@
         "import": true,
         "name": "Elven Archers",
         "hidden": false,
-        "id": "bf06-d67a-9359-a1eb"
-      },
-      {
+        "id": "bf06-d67a-9359-a1eb",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "8920-3ed4-ca67-7d9c"
+            "id": "7ccb-3646-d264-4669",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "8920-3ed4-ca67-7d9c"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "7ccb-3646-d264-4669",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -14134,22 +14483,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -14326,7 +14665,15 @@
             "name": "Lothern Sea Guard",
             "hidden": false,
             "id": "3ef9-e7ba-25f6-6dd8",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -14431,13 +14778,23 @@
                     "targetId": "1539-fd78-88f-badd"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Sea Master",
                 "hidden": false,
                 "id": "8063-c8a9-e0b5-5f56",
-                "subType": "crew",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "3ef9-e7ba-25f6-6dd8",
+                    "name": "Sea Master",
+                    "id": "f6c6-3119-c60c-ff80",
+                    "childName": "Lothern Sea Guard"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -14526,13 +14883,23 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "1ccc-9597-2491-44f9",
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "3ef9-e7ba-25f6-6dd8",
+                    "name": "Standard Bearer",
+                    "id": "48ea-79b2-dffb-6fa7",
+                    "childName": "Lothern Sea Guard"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -14583,13 +14950,23 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "3b76-3582-64b2-e4b5",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "3ef9-e7ba-25f6-6dd8",
+                    "name": "Musician",
+                    "id": "3f6d-5857-6552-b8dc",
+                    "childName": "Lothern Sea Guard"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -15367,47 +15744,25 @@
         "import": true,
         "name": "Lothern Sea Guard",
         "hidden": false,
-        "id": "12f4-405f-3fb5-75dc"
-      },
-      {
+        "id": "12f4-405f-3fb5-75dc",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "4699-26b1-bf15-d2dd"
+            "id": "974c-6abd-5bde-735f",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "4699-26b1-bf15-d2dd"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "974c-6abd-5bde-735f",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -15416,22 +15771,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -15661,7 +16006,15 @@
             "name": "White Lion",
             "hidden": false,
             "id": "2743-7020-5369-92ab",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -15755,13 +16108,23 @@
                     "targetId": "1539-fd78-88f-badd"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Guardian",
                 "hidden": false,
                 "id": "4834-644d-c52b-d291",
-                "subType": "crew",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "2743-7020-5369-92ab",
+                    "name": "Guardian",
+                    "id": "9b44-ada2-47bc-c475",
+                    "childName": "White Lion"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -15826,13 +16189,23 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "e19f-6d43-5d4b-50be",
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "2743-7020-5369-92ab",
+                    "name": "Standard Bearer",
+                    "id": "81b2-c7ee-9cc9-9f1c",
+                    "childName": "White Lion"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -15877,13 +16250,23 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "cea7-dd45-68a7-c3e6",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "2743-7020-5369-92ab",
+                    "name": "Musician",
+                    "id": "2616-17d2-043b-550f",
+                    "childName": "White Lion"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -15970,7 +16353,37 @@
         "import": true,
         "name": "White Lions of Chrace",
         "hidden": false,
-        "id": "24cb-795c-4110-f2d1"
+        "id": "24cb-795c-4110-f2d1",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "3725-c57b-36af-1073",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "3725-c57b-36af-1073",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "constraints": [
@@ -16054,68 +16467,6 @@
         "collective": true
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "4f82-0cef-8346-5703"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "4f82-0cef-8346-5703"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -16291,7 +16642,15 @@
             "name": "Swordmaster",
             "hidden": false,
             "id": "b9b2-e70c-b197-d3af",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -16385,13 +16744,23 @@
                     "targetId": "1539-fd78-88f-badd"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Bladelord",
                 "hidden": false,
                 "id": "ba53-6387-9c50-df6b",
-                "subType": "crew",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "b9b2-e70c-b197-d3af",
+                    "name": "Bladelord",
+                    "id": "d914-6435-3cbd-c8bb",
+                    "childName": "Swordmaster"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -16456,13 +16825,23 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "9453-4a57-fd7e-ab79",
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "b9b2-e70c-b197-d3af",
+                    "name": "Standard Bearer",
+                    "id": "2fb1-dd8b-fbeb-73ef",
+                    "childName": "Swordmaster"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -16507,13 +16886,23 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "41bc-ebd8-5881-7dc9",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "b9b2-e70c-b197-d3af",
+                    "name": "Musician",
+                    "id": "fa53-9bb1-9f90-f857",
+                    "childName": "Swordmaster"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -16607,47 +16996,25 @@
         "import": true,
         "name": "Swordmasters of Hoeth",
         "hidden": false,
-        "id": "242d-b760-d547-df4c"
-      },
-      {
+        "id": "242d-b760-d547-df4c",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "dc47-e57a-30b3-c9b6"
+            "id": "0abf-37cf-c9b5-50bb",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "ca7e-d004-ccde-caf3",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "dc47-e57a-30b3-c9b6"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "0abf-37cf-c9b5-50bb",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -16656,22 +17023,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "ca7e-d004-ccde-caf3",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -16847,7 +17204,15 @@
             "name": "Phoenix Guard",
             "hidden": false,
             "id": "1dcd-2699-70e4-b4ac",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -16941,13 +17306,23 @@
                     "targetId": "1539-fd78-88f-badd"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Keeper of the Flame",
                 "hidden": false,
                 "id": "1bf5-80f0-661f-c77",
-                "subType": "crew",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "1dcd-2699-70e4-b4ac",
+                    "name": "Keeper of the Flame",
+                    "id": "1c63-535e-f9d3-4246",
+                    "childName": "Phoenix Guard"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -17012,14 +17387,24 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "b2df-1bea-f237-f758",
-                "subType": "crew",
                 "flatten": true,
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "1dcd-2699-70e4-b4ac",
+                    "name": "Standard Bearer",
+                    "id": "c793-2fa0-2358-c0f8",
+                    "childName": "Phoenix Guard"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -17064,13 +17449,23 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "8475-306d-4be3-435e",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "1dcd-2699-70e4-b4ac",
+                    "name": "Musician",
+                    "id": "5061-fc04-9259-a25f",
+                    "childName": "Phoenix Guard"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -17150,47 +17545,25 @@
         "import": true,
         "name": "Phoenix Guard",
         "hidden": false,
-        "id": "13c7-a5e6-3b4d-23b6"
-      },
-      {
+        "id": "13c7-a5e6-3b4d-23b6",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "f3f7-ae83-7aea-e7cc"
+            "id": "65e4-98c0-bd6e-ea5b",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "f3f7-ae83-7aea-e7cc"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "65e4-98c0-bd6e-ea5b",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -17199,22 +17572,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -17350,7 +17713,15 @@
             "name": "Shadow Warrior",
             "hidden": false,
             "id": "c4f6-b393-404d-6fde",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -17444,13 +17815,23 @@
                     "targetId": "1539-fd78-88f-badd"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Shadow Walker",
                 "hidden": false,
                 "id": "651-7e2-ecc7-2039",
-                "subType": "crew",
-                "flatten": true
+                "flatten": true,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "c4f6-b393-404d-6fde",
+                    "name": "Shadow Walker",
+                    "id": "c7fc-9280-ccbd-e131",
+                    "childName": "Shadow Warrior"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -17821,47 +18202,25 @@
         "import": true,
         "name": "Shadow Warriors",
         "hidden": false,
-        "id": "c62c-5e5-1191-14"
-      },
-      {
+        "id": "c62c-5e5-1191-14",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "378e-a29c-b24f-2d4f"
+            "id": "9349-d79e-0f51-5784",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "378e-a29c-b24f-2d4f"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "9349-d79e-0f51-5784",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -17870,22 +18229,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -18022,7 +18371,15 @@
             "name": "Sister of Avelorn",
             "hidden": false,
             "id": "980c-75b0-a301-a13c",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -18116,13 +18473,23 @@
                     "targetId": "1539-fd78-88f-badd"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "High Sister",
                 "hidden": false,
                 "id": "53b7-9360-52c6-e73b",
-                "subType": "crew",
-                "flatten": true
+                "flatten": true,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "980c-75b0-a301-a13c",
+                    "name": "High Sister",
+                    "id": "e18d-9622-9317-aea2",
+                    "childName": "Sister of Avelorn"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -18342,47 +18709,25 @@
         "import": true,
         "name": "Sisters of Avelorn",
         "hidden": false,
-        "id": "ec7-689f-9d5b-cdc2"
-      },
-      {
+        "id": "ec7-689f-9d5b-cdc2",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "b1c7-af14-2641-f6e7"
+            "id": "8da9-6e08-7c94-2f37",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "600c-7d08-5be1-fe0c",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "b1c7-af14-2641-f6e7"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "8da9-6e08-7c94-2f37",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -18391,22 +18736,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "600c-7d08-5be1-fe0c",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -18647,6 +18982,43 @@
                 "value": "600c-7d08-5be1-fe0c",
                 "field": "category",
                 "id": "a142-886f-9d93-7905"
+              },
+              {
+                "type": "set",
+                "value": 2,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -18753,14 +19125,24 @@
                     "targetId": "1539-fd78-88f-badd"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Harbinger",
                 "hidden": false,
                 "id": "1400-f719-2acc-249d",
-                "subType": "crew",
                 "flatten": true,
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "8705-f7b6-83d2-33b7",
+                    "name": "Harbinger",
+                    "id": "bbcc-eb1b-c0a6-bc30",
+                    "childName": "Ellyrian Reaver"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -18843,14 +19225,24 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "3c5c-1d7e-4020-6822",
-                "subType": "crew",
                 "flatten": true,
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "8705-f7b6-83d2-33b7",
+                    "name": "Standard Bearer",
+                    "id": "b56a-4de2-4060-cf13",
+                    "childName": "Ellyrian Reaver"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -18895,13 +19287,23 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "80f8-275-6551-becc",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "8705-f7b6-83d2-33b7",
+                    "name": "Musician",
+                    "id": "06d0-2cce-63fb-6fa0",
+                    "childName": "Ellyrian Reaver"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -19635,47 +20037,25 @@
         "import": true,
         "name": "Ellyrian Reavers",
         "hidden": false,
-        "id": "d02f-84c5-86bf-ff87"
-      },
-      {
+        "id": "d02f-84c5-86bf-ff87",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "006d-6d16-40a0-b993"
+            "id": "54f0-a23f-b3ee-9bf2",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5165-d052-cfc2-5887",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "006d-6d16-40a0-b993"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "54f0-a23f-b3ee-9bf2",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -19684,22 +20064,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5165-d052-cfc2-5887",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -19884,7 +20254,46 @@
             "name": "Silver Helm",
             "hidden": false,
             "id": "86ce-f079-90-884f",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 2,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -19983,13 +20392,23 @@
                     "targetId": "1539-fd78-88f-badd"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "High Helm",
                 "hidden": false,
                 "id": "afb2-302d-def4-9d90",
-                "subType": "crew",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "86ce-f079-90-884f",
+                    "name": "High Helm",
+                    "id": "5e52-ebde-fef5-3f8d",
+                    "childName": "Silver Helm"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -20059,14 +20478,24 @@
                     "name": "Heavy Cavalry"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "5483-4605-97fc-1a31",
-                "subType": "crew",
                 "flatten": true,
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "86ce-f079-90-884f",
+                    "name": "Standard Bearer",
+                    "id": "87c1-192a-3607-055c",
+                    "childName": "Silver Helm"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -20116,13 +20545,23 @@
                     "name": "Heavy Cavalry"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "bb2b-7adc-9520-83cc",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "86ce-f079-90-884f",
+                    "name": "Musician",
+                    "id": "0b59-ab9b-5056-da30",
+                    "childName": "Silver Helm"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -20195,47 +20634,25 @@
         "import": true,
         "name": "Silver Helms",
         "hidden": false,
-        "id": "e9b1-22cd-7328-5fde"
-      },
-      {
+        "id": "e9b1-22cd-7328-5fde",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "8b12-59f6-e596-8242"
+            "id": "da59-78ce-b9a1-91b1",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5165-d052-cfc2-5887",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "8b12-59f6-e596-8242"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "da59-78ce-b9a1-91b1",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -20244,22 +20661,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5165-d052-cfc2-5887",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -20474,6 +20881,43 @@
                 "value": "5165-d052-cfc2-5887",
                 "field": "category",
                 "id": "b2c6-1d20-b5f9-c46"
+              },
+              {
+                "type": "set",
+                "value": 2,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -20581,13 +21025,23 @@
                     "targetId": "1539-fd78-88f-badd"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Drakemaster",
                 "hidden": false,
                 "id": "df34-c59c-638c-af27",
-                "subType": "crew",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "a19e-2867-63ce-2aa7",
+                    "name": "Drakemaster",
+                    "id": "22b0-0af3-9952-ec1f",
+                    "childName": "Dragon Prince"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -20658,13 +21112,23 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "ecba-e234-c8ee-6258",
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "a19e-2867-63ce-2aa7",
+                    "name": "Standard Bearer",
+                    "id": "724f-a30f-883c-3c76",
+                    "childName": "Dragon Prince"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -20715,13 +21179,23 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "7e3d-d59e-96df-d6c8",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "a19e-2867-63ce-2aa7",
+                    "name": "Musician",
+                    "id": "d6da-ac83-f174-2fcc",
+                    "childName": "Dragon Prince"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -20836,7 +21310,37 @@
         "import": true,
         "name": "Dragon Princes",
         "hidden": false,
-        "id": "3660-5d1a-17d4-588c"
+        "id": "3660-5d1a-17d4-588c",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "3736-ce66-c708-42ac",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "3736-ce66-c708-42ac",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "categoryLinks": [
@@ -20878,7 +21382,37 @@
         "import": true,
         "name": "Lothern Skycutters",
         "hidden": false,
-        "id": "f791-3799-a489-5626"
+        "id": "f791-3799-a489-5626",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "79f2-65dc-0e3b-958d",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "79f2-65dc-0e3b-958d",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -21180,7 +21714,37 @@
         "import": true,
         "name": "Tiranoc Chariot",
         "hidden": false,
-        "id": "5df5-4e92-bff2-2cf2"
+        "id": "5df5-4e92-bff2-2cf2",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "804a-8cf7-2f07-2f95",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "804a-8cf7-2f07-2f95",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -21268,7 +21832,37 @@
         "import": true,
         "name": "Lion Chariot of Chrace",
         "hidden": false,
-        "id": "7daf-778-c076-1be1"
+        "id": "7daf-778-c076-1be1",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "a2ef-8d19-6c04-c406",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "a2ef-8d19-6c04-c406",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -21483,7 +22077,15 @@
         "hidden": false,
         "id": "980b-53a7-5a56-b78d",
         "collective": true,
-        "subType": "mount"
+        "subType": "mount",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 3,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "constraints": [
@@ -21679,7 +22281,15 @@
         "hidden": false,
         "id": "6b47-6d26-641d-eac",
         "collective": true,
-        "subType": "mount"
+        "subType": "mount",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 5,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -21840,7 +22450,15 @@
         "hidden": false,
         "id": "bf9f-b2ce-968f-a226",
         "collective": true,
-        "subType": "mount"
+        "subType": "mount",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 6,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "profiles": [
@@ -21911,7 +22529,37 @@
         "import": true,
         "name": "Frostheart Phoenix",
         "hidden": false,
-        "id": "9f05-174d-3f08-d020"
+        "id": "9f05-174d-3f08-d020",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "da85-8282-d9c5-9126",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "da85-8282-d9c5-9126",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -22076,7 +22724,37 @@
         "import": true,
         "name": "Flamespyre Phoenix",
         "hidden": false,
-        "id": "938a-1775-845-a8bd"
+        "id": "938a-1775-845-a8bd",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "7117-f9a3-3dd2-8ff1",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "7117-f9a3-3dd2-8ff1",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -22206,7 +22884,37 @@
         "import": true,
         "name": "Great Eagles",
         "hidden": false,
-        "id": "d396-3cda-d56f-6131"
+        "id": "d396-3cda-d56f-6131",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "59d1-61b7-eda0-8caf",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "59d1-61b7-eda0-8caf",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -22335,7 +23043,15 @@
             "name": "Eagle-Claw Bolt Thrower",
             "hidden": false,
             "id": "46fc-58c5-8d31-5e9b",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 2,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "infoGroups": [
@@ -22381,7 +23097,37 @@
         "import": true,
         "name": "Eagle-Claw Bolt Thrower",
         "hidden": false,
-        "id": "8312-1ed9-ecb-2e51"
+        "id": "8312-1ed9-ecb-2e51",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "fab3-fbf3-e1d6-4bb1",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "fab3-fbf3-e1d6-4bb1",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -22650,7 +23396,15 @@
         "import": true,
         "name": "Lion Chariot",
         "hidden": false,
-        "id": "4241-ed8c-7577-151a"
+        "id": "4241-ed8c-7577-151a",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 5,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "entryLinks": [
@@ -22857,7 +23611,46 @@
         "import": true,
         "name": "Tiranoc Chariot",
         "hidden": false,
-        "id": "2b2c-8dbc-c4b7-b31"
+        "id": "2b2c-8dbc-c4b7-b31",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 3,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          },
+          {
+            "type": "multiply",
+            "value": 0,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script",
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "value": 1,
+                    "field": "selections",
+                    "scope": "self",
+                    "childId": "c96a-608-5de4-b943",
+                    "includeChildSelections": true,
+                    "shared": true
+                  },
+                  {
+                    "type": "atLeast",
+                    "value": 1,
+                    "field": "selections",
+                    "scope": "self",
+                    "childId": "mount",
+                    "includeChildSelections": true,
+                    "shared": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
         "infoGroups": [
@@ -23010,7 +23803,15 @@
         "import": true,
         "name": "Great Eagle",
         "hidden": false,
-        "id": "6f38-c8ec-7045-7307"
+        "id": "6f38-c8ec-7045-7307",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 3,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -23231,7 +24032,15 @@
         "name": "Flamespyre Phoenix",
         "hidden": false,
         "id": "a9d0-9d7a-9fe8-53cb",
-        "collective": true
+        "collective": true,
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 5,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -23431,7 +24240,15 @@
         "name": "Frostheart Phoenix",
         "hidden": false,
         "id": "95a-c6b6-575d-4dc5",
-        "collective": true
+        "collective": true,
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 5,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "constraints": [
@@ -24001,7 +24818,15 @@
         "import": true,
         "name": "Lothern Skycutter",
         "hidden": false,
-        "id": "8974-f98a-d8a8-b38e"
+        "id": "8974-f98a-d8a8-b38e",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 5,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "profiles": [
@@ -24233,7 +25058,15 @@
             "import": true,
             "name": "Ishaya Vess, Sentinel of the Silent Isle",
             "hidden": false,
-            "id": "f23d-e9f6-06ff-25c5"
+            "id": "f23d-e9f6-06ff-25c5",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "infoGroups": [
@@ -24307,7 +25140,37 @@
         "import": true,
         "name": "Ishaya Vess, Sentinel of the Silent Isle",
         "hidden": false,
-        "id": "c0a1-5714-db32-95ae"
+        "id": "c0a1-5714-db32-95ae",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "0e1c-0a57-bd71-d742",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "0e1c-0a57-bd71-d742",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -24583,6 +25446,43 @@
                 "value": "ca7e-d004-ccde-caf3",
                 "field": "category",
                 "id": "4c1b-7959-6f35-6ea3"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -24670,7 +25570,37 @@
         "import": true,
         "name": "Korhil Lionmane, Captain of the White Lions",
         "hidden": false,
-        "id": "4869-a8d7-57ec-f296"
+        "id": "4869-a8d7-57ec-f296",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "c38a-3c57-4868-4e32",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "c38a-3c57-4868-4e32",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -25066,7 +25996,46 @@
             "import": true,
             "name": "Sea Guard Garrison Commander",
             "hidden": false,
-            "id": "4752-8bd1-3e12-e10a"
+            "id": "4752-8bd1-3e12-e10a",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ],
         "infoGroups": [
@@ -25133,7 +26102,37 @@
         "import": true,
         "name": "Sea Guard Garrison Commanders",
         "hidden": false,
-        "id": "46f2-0e0d-db14-67c6"
+        "id": "46f2-0e0d-db14-67c6",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "33da-fa8e-2e93-62f3",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "33da-fa8e-2e93-62f3",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -25475,6 +26474,43 @@
                 "value": "ca7e-d004-ccde-caf3",
                 "field": "category",
                 "id": "01fd-c46d-d8e8-ce23"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -25601,7 +26637,37 @@
         "import": true,
         "name": "Chracian Chieftains",
         "hidden": false,
-        "id": "e301-4036-7607-d2bd"
+        "id": "e301-4036-7607-d2bd",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "6493-5612-e79e-ab0d",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "6493-5612-e79e-ab0d",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoLinks": [
@@ -25883,7 +26949,15 @@
             "name": "Chracian Lion",
             "hidden": false,
             "id": "671e-746e-d909-f8db",
-            "subType": "mount"
+            "subType": "mount",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 5,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "type": "model",
@@ -25892,7 +26966,15 @@
         "hidden": false,
         "id": "29ef-156c-ea6d-e574",
         "collective": true,
-        "subType": "mount"
+        "subType": "mount",
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 5,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
+          }
+        ]
       },
       {
         "profiles": [
@@ -26224,6 +27306,43 @@
                 "value": "f3f7-ca43-674e-115f",
                 "field": "category",
                 "id": "6ad1-0e96-78c6-8b1e"
+              },
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -26292,7 +27411,37 @@
         "import": true,
         "name": "Storm Weavers",
         "hidden": false,
-        "id": "0f41-dfe4-0b5a-b1ec"
+        "id": "0f41-dfe4-0b5a-b1ec",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "e8e8-1cef-3a45-dd99",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "e8e8-1cef-3a45-dd99",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "infoGroups": [
@@ -26430,71 +27579,17 @@
         "name": "Unicorn",
         "hidden": false,
         "id": "f12b-191e-4749-f215",
-        "subType": "mount"
-      },
-      {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "c034-1cbd-2783-f05d"
-          }
-        ],
+        "subType": "mount",
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "c034-1cbd-2783-f05d"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            "value": 3,
+            "field": "73ea-910d-c188-35d0",
+            "comment": "Unit strenght script"
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -26688,7 +27783,15 @@
             "name": "Ship's Company",
             "hidden": false,
             "id": "e8e8-5f2d-05bb-da2e",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -26743,13 +27846,23 @@
                     "name": "MAY_HAVE_ARMOUR"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "4998-b870-6c21-017d",
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "e8e8-5f2d-05bb-da2e",
+                    "name": "Standard Bearer",
+                    "id": "9896-cd9d-3654-075e",
+                    "childName": "Ship's Company"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -26800,13 +27913,23 @@
                     "name": "MAY_HAVE_ARMOUR"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "e21c-aa18-0734-f4c0",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "e8e8-5f2d-05bb-da2e",
+                    "name": "Musician",
+                    "id": "986d-88d2-ee87-5cb7",
+                    "childName": "Ship's Company"
+                  }
+                ]
               }
             ],
             "selectionEntryGroups": [
@@ -26887,13 +28010,23 @@
                         "name": "MAY_HAVE_ARMOUR"
                       }
                     ],
-                    "type": "model",
+                    "type": "upgrade",
                     "import": true,
                     "name": "Midshipman",
                     "hidden": false,
                     "id": "2c60-3f4f-17ec-1f9c",
-                    "subType": "crew",
-                    "sortIndex": 1
+                    "sortIndex": 1,
+                    "associations": [
+                      {
+                        "min": 1,
+                        "max": 1,
+                        "scope": "parent",
+                        "childId": "e8e8-5f2d-05bb-da2e",
+                        "name": "Midshipman",
+                        "id": "aaba-cfb4-04fe-95cd",
+                        "childName": "Ship's Company"
+                      }
+                    ]
                   },
                   {
                     "constraints": [
@@ -26970,13 +28103,23 @@
                         "name": "MAY_HAVE_ARMOUR"
                       }
                     ],
-                    "type": "model",
+                    "type": "upgrade",
                     "import": true,
                     "name": "Bosun",
                     "hidden": false,
                     "id": "01dd-bdaf-a357-976c",
-                    "subType": "crew",
-                    "sortIndex": 2
+                    "sortIndex": 2,
+                    "associations": [
+                      {
+                        "min": 1,
+                        "max": 1,
+                        "scope": "parent",
+                        "childId": "e8e8-5f2d-05bb-da2e",
+                        "name": "Bosun",
+                        "id": "9cd5-5438-990c-19b0",
+                        "childName": "Ship's Company"
+                      }
+                    ]
                   }
                 ],
                 "constraints": [
@@ -27586,47 +28729,25 @@
         "import": true,
         "name": "Ship's Company",
         "hidden": false,
-        "id": "ce15-1811-01c5-2348"
-      },
-      {
+        "id": "ce15-1811-01c5-2348",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "8990-a7de-7560-a80d"
+            "id": "3e4e-946a-7504-bcbd",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "ca7e-d004-ccde-caf3",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "8990-a7de-7560-a80d"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "3e4e-946a-7504-bcbd",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -27635,22 +28756,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "ca7e-d004-ccde-caf3",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -27785,7 +28896,15 @@
             "name": "Lion Guard",
             "hidden": false,
             "id": "b28c-ec70-ff5d-4636",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -27853,13 +28972,23 @@
                     "targetId": "6bbe-8054-19b7-e5d6"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "99a2-001a-5236-57e3",
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "b28c-ec70-ff5d-4636",
+                    "name": "Standard Bearer",
+                    "id": "ea4e-c737-96bf-cca8",
+                    "childName": "Lion Guard"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -27903,13 +29032,23 @@
                     "name": "Heavy Infantry"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "cf0b-244a-c54d-7c39",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "b28c-ec70-ff5d-4636",
+                    "name": "Musician",
+                    "id": "40ad-d689-2cbe-ba8f",
+                    "childName": "Lion Guard"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -27999,13 +29138,23 @@
                     "targetId": "1539-fd78-88f-badd"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Lion Guard Captain",
                 "hidden": false,
                 "id": "e23a-598e-7049-9cd7",
-                "subType": "crew",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "b28c-ec70-ff5d-4636",
+                    "name": "Lion Guard Captain",
+                    "id": "767d-1800-3dbc-84f5",
+                    "childName": "Lion Guard"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -28085,47 +29234,25 @@
         "import": true,
         "name": "Lion Guard",
         "hidden": false,
-        "id": "e76a-6460-5457-a60d"
-      },
-      {
+        "id": "e76a-6460-5457-a60d",
         "constraints": [
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "22eb-2014-46b4-95b4"
+            "id": "0eb8-8ca8-3596-b78c",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "modifiers": [
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "22eb-2014-46b4-95b4"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "0eb8-8ca8-3596-b78c",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -28134,22 +29261,12 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "f3f7-ca43-674e-115f",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
-        ],
+        ]
+      },
+      {
         "profiles": [
           {
             "characteristics": [
@@ -28374,7 +29491,15 @@
             "name": "Chracian Woodsman",
             "hidden": false,
             "id": "e6f4-59d4-be8b-6f7f",
-            "sortIndex": 1
+            "sortIndex": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -28417,13 +29542,23 @@
                     "primary": false
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "5b1c-4712-0fcc-e254",
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "e6f4-59d4-be8b-6f7f",
+                    "name": "Standard Bearer",
+                    "id": "a9ee-0091-3683-1744",
+                    "childName": "Chracian Woodsman"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -28462,13 +29597,23 @@
                     "primary": false
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "b0bc-7367-55cb-6492",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "e6f4-59d4-be8b-6f7f",
+                    "name": "Musician",
+                    "id": "0054-75b6-b6cd-fafd",
+                    "childName": "Chracian Woodsman"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -28533,13 +29678,23 @@
                     "primary": false
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Chracian Captain",
                 "hidden": false,
                 "id": "760c-73fd-2e5d-7d15",
-                "subType": "crew",
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "e6f4-59d4-be8b-6f7f",
+                    "name": "Chracian Captain",
+                    "id": "32cd-6c8d-6da6-27a8",
+                    "childName": "Chracian Woodsman"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -28743,7 +29898,37 @@
         "import": true,
         "name": "Chracian Woodsmen",
         "hidden": false,
-        "id": "fb73-811c-02a4-df6f"
+        "id": "fb73-811c-02a4-df6f",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "e015-2ff1-a032-4db3",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "e015-2ff1-a032-4db3",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -28903,14 +30088,52 @@
             "import": true,
             "name": "War Lion",
             "hidden": false,
-            "id": "1eb7-703e-459f-d037"
+            "id": "1eb7-703e-459f-d037",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 1,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "type": "unit",
         "import": true,
         "name": "War Lions",
         "hidden": false,
-        "id": "258f-0652-7313-560c"
+        "id": "258f-0652-7313-560c",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "da1f-bb7f-0dd5-2287",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "da1f-bb7f-0dd5-2287",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "profiles": [
@@ -29198,14 +30421,52 @@
             "import": true,
             "name": "Merwyrm",
             "hidden": false,
-            "id": "9bd8-8852-1617-c1dd"
+            "id": "9bd8-8852-1617-c1dd",
+            "modifiers": [
+              {
+                "type": "set",
+                "value": 6,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              }
+            ]
           }
         ],
         "type": "unit",
         "import": true,
         "name": "Merwyrms",
         "hidden": false,
-        "id": "7c00-eaaf-94a4-0ca5"
+        "id": "7c00-eaaf-94a4-0ca5",
+        "constraints": [
+          {
+            "type": "max",
+            "value": -1,
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
+            "shared": true,
+            "id": "cd3d-81a7-af24-5f6a",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
+          }
+        ],
+        "modifiers": [
+          {
+            "type": "set",
+            "value": 20,
+            "field": "cd3d-81a7-af24-5f6a",
+            "comment": "Unit strenght script",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "value": 1,
+                "field": "selections",
+                "scope": "ancestor",
+                "childId": "e40a-36c4-0c66-472a",
+                "shared": true
+              }
+            ]
+          }
+        ]
       }
     ],
     "entryLinks": [
@@ -48221,7 +49482,7 @@
     "name": "High Elf Realms",
     "gameSystemId": "sys-31d1-bf57-53ea-ad55",
     "gameSystemRevision": 22,
-    "revision": 127,
+    "revision": 129,
     "authorUrl": "www.newrecruit.eu",
     "authorContact": "Discord: vflam",
     "authorName": "Flammy",

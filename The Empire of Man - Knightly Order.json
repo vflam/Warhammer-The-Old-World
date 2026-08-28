@@ -16126,6 +16126,43 @@
                 "value": "5165-d052-cfc2-5887",
                 "field": "category",
                 "id": "cd84-3557-a20d-bd53"
+              },
+              {
+                "type": "set",
+                "value": 2,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -16239,7 +16276,7 @@
                     "targetId": "5f1c-fd04-b0d5-d5e"
                   }
                 ],
-                "comment": "upgrades: e74f-2c1f-6e75-d2d0",
+                "comment": "upgrades: 76ed-a398-43d3-7c73",
                 "entryLinks": [
                   {
                     "constraints": [
@@ -16289,14 +16326,24 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Inner Circle Preceptor",
                 "hidden": false,
                 "id": "301a-9cfc-5f30-3bf3",
-                "subType": "crew",
                 "flatten": true,
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "76ed-a398-43d3-7c73",
+                    "name": "Inner Circle Preceptor",
+                    "id": "4d62-807b-979d-5028",
+                    "childName": "Inner Circle Knight"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -16316,7 +16363,7 @@
                     "value": 7
                   }
                 ],
-                "comment": "upgrades: e74f-2c1f-6e75-d2d0",
+                "comment": "upgrades: 76ed-a398-43d3-7c73",
                 "infoLinks": [
                   {
                     "name": "Musician",
@@ -16347,13 +16394,23 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "5a73-08aa-df1a-0880",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "76ed-a398-43d3-7c73",
+                    "name": "Musician",
+                    "id": "7441-5848-c65f-91e5",
+                    "childName": "Inner Circle Knight"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -16373,7 +16430,7 @@
                     "value": 7
                   }
                 ],
-                "comment": "upgrades: e74f-2c1f-6e75-d2d0",
+                "comment": "upgrades: 76ed-a398-43d3-7c73",
                 "infoLinks": [
                   {
                     "name": "Standard Bearer",
@@ -16424,14 +16481,24 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "3c42-c84a-1d3c-78da",
-                "subType": "crew",
                 "flatten": true,
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "76ed-a398-43d3-7c73",
+                    "name": "Standard Bearer",
+                    "id": "36ca-e408-bd85-6aca",
+                    "childName": "Inner Circle Knight"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -16998,32 +17065,10 @@
             "field": "05d3-ac7e-0e1a-13b9"
           },
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5165-d052-cfc2-5887",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "921e-04e1-1cf2-8b0b"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "f0ac-1681-e52c-c40a",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -17032,20 +17077,8 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5165-d052-cfc2-5887",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
         ],
         "categoryLinks": [
@@ -17121,10 +17154,12 @@
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "921e-04e1-1cf2-8b0b"
+            "id": "f0ac-1681-e52c-c40a",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "type": "unit",
@@ -17509,6 +17544,43 @@
                 "value": "5165-d052-cfc2-5887",
                 "field": "category",
                 "id": "e856-4df6-7689-f723"
+              },
+              {
+                "type": "set",
+                "value": 2,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script"
+              },
+              {
+                "type": "multiply",
+                "value": 0,
+                "field": "73ea-910d-c188-35d0",
+                "comment": "Unit strenght script",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "c96a-608-5de4-b943",
+                        "includeChildSelections": true,
+                        "shared": true
+                      },
+                      {
+                        "type": "atLeast",
+                        "value": 1,
+                        "field": "selections",
+                        "scope": "self",
+                        "childId": "mount",
+                        "includeChildSelections": true,
+                        "shared": true
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "type": "model",
@@ -17603,7 +17675,7 @@
                     "targetId": "5f1c-fd04-b0d5-d5e"
                   }
                 ],
-                "comment": "upgrades: 99fc-882a-4d6c-8c85",
+                "comment": "upgrades: fa06-e591-e99e-9258",
                 "entryLinks": [
                   {
                     "constraints": [
@@ -17652,14 +17724,24 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Preceptor",
                 "hidden": false,
                 "id": "189f-aef9-3ada-0025",
-                "subType": "crew",
                 "flatten": true,
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "fa06-e591-e99e-9258",
+                    "name": "Preceptor",
+                    "id": "f78e-63a5-fa60-f2b9",
+                    "childName": "Empire Knight"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -17679,7 +17761,7 @@
                     "value": 6
                   }
                 ],
-                "comment": "upgrades: 99fc-882a-4d6c-8c85",
+                "comment": "upgrades: fa06-e591-e99e-9258",
                 "infoLinks": [
                   {
                     "name": "Musician",
@@ -17710,13 +17792,23 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Musician",
                 "hidden": false,
                 "id": "dd12-4f0d-7112-dece",
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "fa06-e591-e99e-9258",
+                    "name": "Musician",
+                    "id": "dada-92e2-ef05-333a",
+                    "childName": "Empire Knight"
+                  }
+                ]
               },
               {
                 "constraints": [
@@ -17736,7 +17828,7 @@
                     "value": 6
                   }
                 ],
-                "comment": "upgrades: 99fc-882a-4d6c-8c85",
+                "comment": "upgrades: fa06-e591-e99e-9258",
                 "infoLinks": [
                   {
                     "name": "Standard Bearer",
@@ -17787,14 +17879,24 @@
                     "targetId": "may-have-shield"
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "name": "Standard Bearer",
                 "hidden": false,
                 "id": "6d6a-b032-edd1-0910",
-                "subType": "crew",
                 "flatten": true,
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "fa06-e591-e99e-9258",
+                    "name": "Standard Bearer",
+                    "id": "b821-28a1-18b2-d86a",
+                    "childName": "Empire Knight"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -18607,32 +18709,10 @@
             "field": "d7e0-3845-494e-4f44"
           },
           {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5165-d052-cfc2-5887",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
             "type": "set",
-            "value": 0,
-            "field": "8c9d-c122-8585-9567"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
+            "value": 20,
+            "field": "beb6-4f56-9fce-b0d3",
+            "comment": "Unit strenght script",
             "conditions": [
               {
                 "type": "instanceOf",
@@ -18641,20 +18721,8 @@
                 "scope": "ancestor",
                 "childId": "e40a-36c4-0c66-472a",
                 "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "5165-d052-cfc2-5887",
-                "shared": true,
-                "includeChildSelections": true
               }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
+            ]
           }
         ],
         "constraints": [
@@ -18685,10 +18753,12 @@
           {
             "type": "max",
             "value": -1,
-            "field": "selections",
-            "scope": "parent",
+            "field": "73ea-910d-c188-35d0",
+            "scope": "self",
             "shared": true,
-            "id": "8c9d-c122-8585-9567"
+            "id": "beb6-4f56-9fce-b0d3",
+            "comment": "Unit strenght script",
+            "includeChildSelections": true
           }
         ],
         "type": "unit",
@@ -18703,7 +18773,7 @@
     "name": "The Empire of Man - Knightly Order",
     "gameSystemId": "sys-31d1-bf57-53ea-ad55",
     "gameSystemRevision": 127,
-    "revision": 17,
+    "revision": 19,
     "authorUrl": "www.newrecruit.eu",
     "authorContact": "Discord: Tidomann",
     "authorName": "Tidomann",
