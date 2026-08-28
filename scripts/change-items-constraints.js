@@ -48,8 +48,13 @@ function iterateConditions(node) {
 
 export default {
   name: "Update Magic Item Constraints",
+  description:
+    "Rewrites magic item visibility conditions: an instanceOf on primary-catalogue becomes the " +
+    "matching \"Faction:\" category in ancestor scope. A rewritten condition no longer matches, so " +
+    "re-running is safe.",
   arguments: [
     {
+      name: "catalogues",
       type: "catalogue[]",
     },
   ],
