@@ -6457,68 +6457,6 @@
         "subType": "mount"
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "07a0-7a5e-3ee1-e5a2"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "07a0-7a5e-3ee1-e5a2"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -6634,13 +6572,6 @@
                 "hidden": false,
                 "id": "f61f-3f3e-5601-1443",
                 "targetId": "may-have-armour"
-              },
-              {
-                "name": "UNIT STRENGTH 1",
-                "hidden": false,
-                "id": "ad81-d0eb-2c09-f9a9",
-                "primary": false,
-                "targetId": "9688-d67c-36b3-a17e"
               }
             ],
             "type": "model",
@@ -6723,12 +6654,22 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
-                "subType": "crew",
+                "type": "upgrade",
                 "name": "Bloodreaper",
                 "id": "e04d6b3c-887fddc6",
                 "hidden": false,
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "6a56d133-1fc68e1",
+                    "name": "Bloodreaper",
+                    "id": "12a2-8bce-feea-bf6d",
+                    "childName": "Bloodletter"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -6803,11 +6744,21 @@
                 ],
                 "name": "Standard Bearer",
                 "id": "ff1eae71-2776ab47",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "6a56d133-1fc68e1",
+                    "name": "Standard Bearer",
+                    "id": "ce62-e49b-1d58-6d43",
+                    "childName": "Bloodletter"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -6855,11 +6806,21 @@
                 ],
                 "name": "Musician",
                 "id": "de75f754-ccc9705e",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "6a56d133-1fc68e1",
+                    "name": "Musician",
+                    "id": "ae64-408d-c04c-6a7b",
+                    "childName": "Bloodletter"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -6943,16 +6904,6 @@
         "collective": false
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "c778-0b12-008f-9f8e"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -7067,13 +7018,6 @@
                 "hidden": false,
                 "id": "1c09-e594-25b0-315e",
                 "targetId": "may-have-armour"
-              },
-              {
-                "name": "UNIT STRENGTH 2",
-                "hidden": false,
-                "id": "b949-bc8c-898d-d114",
-                "primary": false,
-                "targetId": "4064-fc34-c0b3-ce57"
               }
             ],
             "selectionEntryGroups": [
@@ -7297,56 +7241,6 @@
             "type": "add",
             "value": "23b0-980c-fe27-93ab",
             "field": "category"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "4064-fc34-c0b3-ce57",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "c778-0b12-008f-9f8e"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "4064-fc34-c0b3-ce57",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
           }
         ],
         "type": "unit",
@@ -7584,12 +7478,22 @@
                     "targetId": "may-have-armour"
                   }
                 ],
-                "type": "model",
-                "subType": "crew",
+                "type": "upgrade",
                 "name": "Bloodreaper",
                 "id": "9b251312-93aab25c",
                 "hidden": false,
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "ed61878d-f84ebfc3",
+                    "name": "Bloodreaper",
+                    "id": "40e3-f05f-dcf1-5bdd",
+                    "childName": "Bloodletter"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -7657,11 +7561,21 @@
                 ],
                 "name": "Standard Bearer",
                 "id": "443b4db3-bbd90161",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "ed61878d-f84ebfc3",
+                    "name": "Standard Bearer",
+                    "id": "32e0-8bb1-ebe0-1451",
+                    "childName": "Bloodletter"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -7702,11 +7616,21 @@
                 ],
                 "name": "Musician",
                 "id": "28696806-e0742790",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "ed61878d-f84ebfc3",
+                    "name": "Musician",
+                    "id": "5c6c-2741-9471-a811",
+                    "childName": "Bloodletter"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -9443,68 +9367,6 @@
         "subType": "mount"
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "bcec-0a69-e76e-2180"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "bcec-0a69-e76e-2180"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -9595,13 +9457,6 @@
                 "id": "7a87-3623-9ac0-5dc2",
                 "targetId": "f3f7-ca43-674e-115f",
                 "primary": false
-              },
-              {
-                "name": "UNIT STRENGTH 1",
-                "hidden": false,
-                "id": "22c2-c639-85ea-c0c9",
-                "primary": false,
-                "targetId": "9688-d67c-36b3-a17e"
               }
             ],
             "type": "model",
@@ -9678,12 +9533,22 @@
                     "primary": false
                   }
                 ],
-                "type": "model",
-                "subType": "crew",
+                "type": "upgrade",
                 "name": "Plagueridden",
                 "id": "9e632a56-d45d9320",
                 "hidden": false,
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "f54427d-abf689b3",
+                    "name": "Plagueridden",
+                    "id": "fd03-aa1d-c458-6907",
+                    "childName": "Plaguebearer"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -9752,11 +9617,21 @@
                 ],
                 "name": "Standard Bearer",
                 "id": "ceed2440-5f07678a",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "f54427d-abf689b3",
+                    "name": "Standard Bearer",
+                    "id": "e4f2-1e97-4660-c82a",
+                    "childName": "Plaguebearer"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -9798,11 +9673,21 @@
                 ],
                 "name": "Musician",
                 "id": "c3850e1b-9c4803a9",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "f54427d-abf689b3",
+                    "name": "Musician",
+                    "id": "825e-0a20-d966-064f",
+                    "childName": "Plaguebearer"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -9886,68 +9771,6 @@
         "collective": false
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "1848-342a-d2ef-8c84"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "bad7-4882-1eb2-a2da",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "1848-342a-d2ef-8c84"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "bad7-4882-1eb2-a2da",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -10066,13 +9889,6 @@
                 "id": "5c3b-a80a-3475-5e21",
                 "targetId": "5c55-f9d6-b181-92f8",
                 "primary": false
-              },
-              {
-                "name": "UNIT STRENGTH 3",
-                "hidden": false,
-                "id": "cc38-ce98-9792-f780",
-                "primary": false,
-                "targetId": "bad7-4882-1eb2-a2da"
               }
             ],
             "type": "model",
@@ -10205,68 +10021,6 @@
         "collective": false
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "aa8a-a34f-feb7-d075"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "bad7-4882-1eb2-a2da",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "aa8a-a34f-feb7-d075"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "bad7-4882-1eb2-a2da",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -10357,13 +10111,6 @@
                 "id": "c818-3d12-4ee1-b00",
                 "targetId": "db92-54fd-e023-d69f",
                 "primary": false
-              },
-              {
-                "name": "UNIT STRENGTH 3",
-                "hidden": false,
-                "id": "26d6-616b-6da4-5121",
-                "primary": false,
-                "targetId": "bad7-4882-1eb2-a2da"
               }
             ],
             "type": "model",
@@ -10858,12 +10605,22 @@
                     "primary": false
                   }
                 ],
-                "type": "model",
-                "subType": "crew",
+                "type": "upgrade",
                 "name": "Plagueridden",
                 "id": "8af7c85d-6c399c13",
                 "hidden": false,
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "d0c1234a-b876aa74",
+                    "name": "Plagueridden",
+                    "id": "719e-8a6c-6d60-651a",
+                    "childName": "Plaguebearer"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -10932,11 +10689,21 @@
                 ],
                 "name": "Standard Bearer",
                 "id": "55440195-6e65f38b",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "d0c1234a-b876aa74",
+                    "name": "Standard Bearer",
+                    "id": "ce3c-39cf-89bf-084e",
+                    "childName": "Plaguebearer"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -10978,11 +10745,21 @@
                 ],
                 "name": "Musician",
                 "id": "f8009658-b40155c2",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "d0c1234a-b876aa74",
+                    "name": "Musician",
+                    "id": "7791-15ae-dca7-94f5",
+                    "childName": "Plaguebearer"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -12291,68 +12068,6 @@
         "subType": "mount"
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "d56b-f798-248c-4014"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "d56b-f798-248c-4014"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -12443,13 +12158,6 @@
                 "id": "4cd4-639b-cfa-b6ca",
                 "targetId": "f3f7-ca43-674e-115f",
                 "primary": false
-              },
-              {
-                "name": "UNIT STRENGTH 1",
-                "hidden": false,
-                "id": "f0f5-4988-fd01-332d",
-                "primary": false,
-                "targetId": "9688-d67c-36b3-a17e"
               }
             ],
             "type": "model",
@@ -12526,12 +12234,22 @@
                     "primary": false
                   }
                 ],
-                "type": "model",
-                "subType": "crew",
+                "type": "upgrade",
                 "name": "Alluress",
                 "id": "58d98790-12b7fada",
                 "hidden": false,
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "9bb0fe07-1f61e655",
+                    "name": "Alluress",
+                    "id": "f1fa-7001-9cac-6ab7",
+                    "childName": "Daemonette"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -12600,11 +12318,21 @@
                 ],
                 "name": "Standard Bearer",
                 "id": "9ce1b061-bbdfc837",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "9bb0fe07-1f61e655",
+                    "name": "Standard Bearer",
+                    "id": "213b-4857-3a8f-9bdf",
+                    "childName": "Daemonette"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -12646,11 +12374,21 @@
                 ],
                 "name": "Musician",
                 "id": "be8cba84-c3657c4e",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "9bb0fe07-1f61e655",
+                    "name": "Musician",
+                    "id": "5b0d-94bc-4cb8-5546",
+                    "childName": "Daemonette"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -12713,68 +12451,6 @@
         "collective": false
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "debf-5df0-6659-e869"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "4064-fc34-c0b3-ce57",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "debf-5df0-6659-e869"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 11,
-                "field": "selections",
-                "scope": "self",
-                "childId": "4064-fc34-c0b3-ce57",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -12866,13 +12542,6 @@
                 "id": "c579-9e8a-63a9-7540",
                 "targetId": "600c-7d08-5be1-fe0c",
                 "primary": false
-              },
-              {
-                "name": "UNIT STRENGTH 2",
-                "hidden": false,
-                "id": "ff56-8f48-7b45-4509",
-                "primary": false,
-                "targetId": "4064-fc34-c0b3-ce57"
               }
             ],
             "selectionEntries": [
@@ -13039,12 +12708,22 @@
                     "primary": false
                   }
                 ],
-                "type": "model",
-                "subType": "crew",
+                "type": "upgrade",
                 "name": "Heartseeker",
                 "id": "fa9c5c9f-e905072d",
                 "hidden": false,
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "6e1e0be3-ea5da11",
+                    "name": "Heartseeker",
+                    "id": "c0fe-c90a-c33e-ae17",
+                    "childName": "Seeker"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -13113,11 +12792,21 @@
                 ],
                 "name": "Standard Bearer",
                 "id": "e4e75e76-618de540",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "6e1e0be3-ea5da11",
+                    "name": "Standard Bearer",
+                    "id": "1aad-094d-3512-a36d",
+                    "childName": "Seeker"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -13159,11 +12848,21 @@
                 ],
                 "name": "Musician",
                 "id": "21e81e09-2a9c6bdf",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "6e1e0be3-ea5da11",
+                    "name": "Musician",
+                    "id": "8ddd-d564-6b53-c5f0",
+                    "childName": "Seeker"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -13468,68 +13167,6 @@
         "collective": false
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "03d3-beda-f306-8e26"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "bad7-4882-1eb2-a2da",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "03d3-beda-f306-8e26"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "bad7-4882-1eb2-a2da",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "categoryLinks": [
           {
             "name": "Daemon of Slaanesh",
@@ -13574,16 +13211,7 @@
             "hidden": false,
             "id": "2bba-1ac2-ffbd-01bd",
             "type": "selectionEntry",
-            "targetId": "648d-9422-e2b7-f13c",
-            "categoryLinks": [
-              {
-                "name": "UNIT STRENGTH 3",
-                "hidden": false,
-                "id": "a40e-c141-4ade-52e0",
-                "primary": false,
-                "targetId": "bad7-4882-1eb2-a2da"
-              }
-            ]
+            "targetId": "648d-9422-e2b7-f13c"
           }
         ],
         "type": "unit",
@@ -15070,68 +14698,6 @@
         "subType": "mount"
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "1aa0-9d71-ecc5-5a0e"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "1aa0-9d71-ecc5-5a0e"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -15242,13 +14808,6 @@
                 "id": "2fc8-164f-90e4-fe9",
                 "targetId": "f3f7-ca43-674e-115f",
                 "primary": false
-              },
-              {
-                "name": "UNIT STRENGTH 1",
-                "hidden": false,
-                "id": "4812-5f6e-2cf7-8cde",
-                "primary": false,
-                "targetId": "9688-d67c-36b3-a17e"
               }
             ],
             "type": "model",
@@ -15318,12 +14877,22 @@
                     "primary": false
                   }
                 ],
-                "type": "model",
-                "subType": "crew",
+                "type": "upgrade",
                 "name": "Iridescent Horror",
                 "id": "191343c1-f981117",
                 "hidden": false,
-                "sortIndex": 1
+                "sortIndex": 1,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "19fb269d-11b00853",
+                    "name": "Iridescent Horror",
+                    "id": "328e-8925-0cd0-f19e",
+                    "childName": "Pink Horror"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -15392,11 +14961,21 @@
                 ],
                 "name": "Standard Bearer",
                 "id": "7d7f65eb-3f50f239",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 2
+                "sortIndex": 2,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "19fb269d-11b00853",
+                    "name": "Standard Bearer",
+                    "id": "2f28-60c9-a9c5-5c16",
+                    "childName": "Pink Horror"
+                  }
+                ]
               },
               {
                 "costs": [
@@ -15438,11 +15017,21 @@
                 ],
                 "name": "Musician",
                 "id": "b5abf3e-a41e5c88",
-                "type": "model",
+                "type": "upgrade",
                 "import": true,
                 "hidden": false,
-                "subType": "crew",
-                "sortIndex": 3
+                "sortIndex": 3,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "19fb269d-11b00853",
+                    "name": "Musician",
+                    "id": "3e3f-6cd4-dd89-a72c",
+                    "childName": "Pink Horror"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -15512,68 +15101,6 @@
         "collective": false
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "855c-6dd7-ba68-8367"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "855c-6dd7-ba68-8367"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -15684,13 +15211,6 @@
                 "id": "8c3d-30bb-fa40-48a1",
                 "targetId": "f3f7-ca43-674e-115f",
                 "primary": false
-              },
-              {
-                "name": "UNIT STRENGTH 1",
-                "hidden": false,
-                "id": "c571-b226-48b2-b2bd",
-                "primary": false,
-                "targetId": "9688-d67c-36b3-a17e"
               }
             ],
             "type": "model",
@@ -15767,11 +15287,21 @@
                     "primary": false
                   }
                 ],
-                "type": "model",
-                "subType": "crew",
+                "type": "upgrade",
                 "name": "Ectoplasmic Horror",
                 "id": "24e950bf-eb01b6cd",
-                "hidden": false
+                "hidden": false,
+                "associations": [
+                  {
+                    "min": 1,
+                    "max": 1,
+                    "scope": "parent",
+                    "childId": "d6a49f45-52025c3b",
+                    "name": "Ectoplasmic Horror",
+                    "id": "e078-0ae1-5799-c625",
+                    "childName": "Blue Horror"
+                  }
+                ]
               }
             ],
             "name": "Command",
@@ -16269,12 +15799,11 @@
                     "includeChildSelections": false
                   }
                 ],
-                "type": "model",
+                "type": "upgrade",
                 "name": "Exalted Flamer",
                 "id": "15f85ef2-a9bcfbbc",
                 "hidden": false,
-                "sortIndex": 2,
-                "subType": "crew"
+                "sortIndex": 2
               },
               {
                 "infoLinks": [
@@ -16358,8 +15887,7 @@
                     "id": "ea72-76a0-c928-2579"
                   }
                 ],
-                "type": "model",
-                "subType": "crew",
+                "type": "upgrade",
                 "name": "Pyroclaster",
                 "id": "155ab54-530b845e",
                 "hidden": false,
@@ -16478,68 +16006,6 @@
         "collective": false
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "64d4-fe13-f4eb-662f"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "bad7-4882-1eb2-a2da",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "64d4-fe13-f4eb-662f"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 7,
-                "field": "selections",
-                "scope": "self",
-                "childId": "bad7-4882-1eb2-a2da",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -16630,13 +16096,6 @@
                 "id": "87df-69b1-1c86-b023",
                 "targetId": "db92-54fd-e023-d69f",
                 "primary": false
-              },
-              {
-                "name": "UNIT STRENGTH 3",
-                "hidden": false,
-                "id": "f64a-28c6-aaf9-c482",
-                "primary": false,
-                "targetId": "bad7-4882-1eb2-a2da"
               }
             ],
             "type": "model",
@@ -16713,68 +16172,6 @@
         "collective": false
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "447d-4775-2d33-617d"
-          }
-        ],
-        "modifiers": [
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "447d-4775-2d33-617d"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -16865,13 +16262,6 @@
                 "id": "4675-a034-6cfa-cd33",
                 "targetId": "19f9-8dd8-bba4-625b",
                 "primary": false
-              },
-              {
-                "name": "UNIT STRENGTH 1",
-                "hidden": false,
-                "id": "e4d0-6100-d84a-b9ed",
-                "primary": false,
-                "targetId": "9688-d67c-36b3-a17e"
               }
             ],
             "type": "model",
@@ -18741,16 +18131,6 @@
         "collective": false
       },
       {
-        "constraints": [
-          {
-            "type": "max",
-            "value": -1,
-            "field": "selections",
-            "scope": "parent",
-            "shared": true,
-            "id": "c7a1-7299-e5a8-3300"
-          }
-        ],
         "profiles": [
           {
             "characteristics": [
@@ -18841,13 +18221,6 @@
                 "id": "d999-7691-33a8-5ef3",
                 "targetId": "f3f7-ca43-674e-115f",
                 "primary": false
-              },
-              {
-                "name": "UNIT STRENGTH 1",
-                "hidden": false,
-                "id": "ccc9-aa60-a598-9ed0",
-                "primary": false,
-                "targetId": "9688-d67c-36b3-a17e"
               }
             ],
             "selectionEntryGroups": [
@@ -19183,56 +18556,6 @@
             "type": "add",
             "value": "e20-3c11-13b5-e880",
             "field": "category"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "set",
-            "value": 0,
-            "field": "c7a1-7299-e5a8-3300"
-          },
-          {
-            "comment": "Battle March: maximum unit strength 20",
-            "conditions": [
-              {
-                "type": "instanceOf",
-                "value": 1,
-                "field": "selections",
-                "scope": "ancestor",
-                "childId": "e40a-36c4-0c66-472a",
-                "shared": true
-              },
-              {
-                "type": "atLeast",
-                "value": 21,
-                "field": "selections",
-                "scope": "self",
-                "childId": "9688-d67c-36b3-a17e",
-                "shared": true,
-                "includeChildSelections": true
-              }
-            ],
-            "type": "append",
-            "value": "(exceeds max Unit Strength 20)",
-            "field": "name"
           }
         ],
         "categoryLinks": [
@@ -55238,7 +54561,7 @@
     "name": "Daemons of Chaos",
     "gameSystemId": "sys-31d1-bf57-53ea-ad55",
     "gameSystemRevision": 49,
-    "revision": 105,
+    "revision": 108,
     "battleScribeVersion": 2.03,
     "type": "catalogue",
     "authorContact": "Giloushaker#2496"
