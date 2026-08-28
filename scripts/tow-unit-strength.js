@@ -285,6 +285,10 @@ function battleMarchCapModifier(constraintId) {
 
 export default {
   name: "Unit Strength",
+  description:
+    "Sets the Unit Strength cost on every model and mount from its troop type, zeroes a rider " +
+    "when it takes a mount, and caps each unit at 20 Unit Strength inside the Battle March force. " +
+    "Safe to re-run: it removes its own previous output first.",
   arguments: [{ type: "catalogue[]" }],
 
   async run(catalogues) {
