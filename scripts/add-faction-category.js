@@ -13,8 +13,12 @@ function addCategoryIfNotExists(gst, catName) {
 
 export default {
   name: "Add Faction Categories",
+  description:
+    "Creates a hidden \"Faction: <catalogue>\" category per book and links it onto every unit of " +
+    "that book. Guarded on both sides, so re-running only picks up new catalogues.",
   arguments: [
     {
+      name: "catalogues",
       type: "catalogue[]",
     },
   ],
