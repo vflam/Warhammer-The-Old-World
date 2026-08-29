@@ -6,7 +6,12 @@ const __dirname = __filename.split('/').slice(0, -1).join('/')
 
 export default {
     name: "Fix Newlines",
+    description:
+      "Repairs the stray line breaks PDF extraction leaves in profile characteristics and rule " +
+      "descriptions. A normalisation: running it twice yields the same text. Skips nodes " +
+      "commented \"imported\".",
     arguments: [{
+        name: "catalogues",
         type: 'catalogue[]'
     }],
 
