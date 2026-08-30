@@ -32987,6 +32987,29 @@
             "scope": "parent",
             "shared": true,
             "id": "f783-f5cb-c86a-b88b"
+          },
+          {
+            "type": "max",
+            "value": 0,
+            "field": "selections",
+            "childId": "model",
+            "scope": "parent",
+            "includeChildSelections": true,
+            "shared": true,
+            "id": "5fc1-53f9-1766-5082",
+            "message": "A detachment may contain at most half as many models as its regimental unit"
+          },
+          {
+            "type": "max",
+            "value": 2,
+            "field": "associations",
+            "childId": "551d-34fe-3832-416d",
+            "scope": "self",
+            "traverseAssociationGroup": true,
+            "shared": true,
+            "id": "f3b3-7201-1978-f905",
+            "comment": "Core Rulebook p282 - a regimental unit can be accompanied by up to two detachments. Counted across the association group; childId is the Detachment entry, which only the regimental unit's scope indexes - the association id is indexed by both ends and would double-count.",
+            "message": "A regimental unit can be accompanied by at most 2 detachments"
           }
         ],
         "associations": [
@@ -32997,14 +33020,36 @@
             "childId": "5e89-9cfa-f74-43ea",
             "name": "Regimental Unit",
             "id": "8a3-f6f1-b585-dab5",
-            "includeChildSelections": true
+            "includeChildSelections": true,
+            "action": "group"
           }
         ],
         "type": "upgrade",
         "import": true,
         "name": "Detachment",
         "hidden": false,
-        "id": "551d-34fe-3832-416d"
+        "id": "551d-34fe-3832-416d",
+        "modifiers": [
+          {
+            "type": "increment",
+            "value": 1,
+            "field": "5fc1-53f9-1766-5082",
+            "comment": "Core Rulebook p282 - a detachment ranges from 5 models to half the models of its regimental unit (rounding down)",
+            "repeats": [
+              {
+                "repeats": 1,
+                "value": 2,
+                "roundUp": false,
+                "field": "selections",
+                "childId": "model",
+                "scope": "self",
+                "includeChildSelections": true,
+                "traverseAssociationGroup": true,
+                "shared": true
+              }
+            ]
+          }
+        ]
       },
       {
         "constraints": [
@@ -33169,7 +33214,7 @@
     "id": "sys-31d1-bf57-53ea-ad55",
     "name": "Warhammer The Old World",
     "battleScribeVersion": 2.03,
-    "revision": 185,
+    "revision": 187,
     "type": "gameSystem",
     "library": true,
     "authorName": "Flammy",
