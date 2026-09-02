@@ -20,6 +20,10 @@
  *      outside Battle March) plus a modifier raising it to 20 inside the
  *      "5. Battle March" force.
  *
+ * `crew` entries get NOTHING: a crew has no Unit Strength of its own, the unit it belongs
+ * to carries it. Marking a model `subType: "crew"` is therefore how you keep it out of its
+ * parent's Battle March cap — the script then only cleans up what it wrote there before.
+ *
  * Why modifiers instead of plain `costs`: a BattleScribe cost has no `comment` field,
  * so nothing would identify what the script wrote. A modifier does.
  *
@@ -375,7 +379,13 @@ export default {
         const kind = node.getType();
         if (kind === "model" || kind === "mount") pending.push(() => processModelOrMount(node, kind));
         else if (kind === "unit") pending.push(() => processUnit(node));
-        else if (kind === "crew") report.skippedCrew++;
+        // A crew carries no Unit Strength of its own — its unit does. Still clear what a
+        // previous run wrote: an entry re-typed from "model" to "crew" would otherwise keep
+        // the `set <US>` modifier forever, since skipping it also skips the cleanup.
+        else if (kind === "crew") {
+          pending.push(() => clearMarked(node, "modifiers"));
+          report.skippedCrew++;
+        }
       });
 
       // Mutations are deferred: add_node / del_node change the very arrays that
