@@ -3244,7 +3244,7 @@
         "characteristics": [
           {
             "name": "Description",
-            "$text": "Single use. During the Command sub-phase of their turn, the bearer of a Black Dragon Egg can consume it. Until the end of that turn, the model has a Toughness characteristic of 6 (which cannot be improved further) and gains noxious breath (see page 18).",
+            "$text": "Single use. During the Command sub-phase of their turn, the bearer of a Black Dragon Egg can consume it. Until your next Command sub-phase, the model has a Toughness characteristic of 6 (which cannot be improved further) and gains noxious breath (see page 18).",
             "typeId": "cea7-7573-475d-cc1d"
           }
         ]
@@ -3287,7 +3287,7 @@
           {"name": "R", "$text": "Combat", "typeId": "51c8-c0d6-94db-264c"},
           {"name": "S", "$text": "S+1", "typeId": "4f75-25c9-31bd-7074"},
           {"name": "AP", "$text": "-1", "typeId": "15e2-fff4-477f-ea26"},
-          {"name": "Special Rules", "$text": "Magical Attacks, Strike First", "typeId": "57a7-47c0-8d74-d54c"},
+          {"name": "Special Rules", "$text": "Magical Attacks", "typeId": "57a7-47c0-8d74-d54c"},
           {
             "name": "Note",
             "$text": "High Beastmasters only. Any enemy model that suffers one or more unsaved wounds from the Whip of Agony suffers a -1 modifier to its Toughness characteristic (to a minimum of 1) for the remainder of the game.",
@@ -3434,7 +3434,7 @@
         "characteristics": [
           {
             "name": "Description",
-            "$text": "Single use. A unit carrying the Cold-blooded Banner may use it when making any test against its Leadership characteristic, including a Break test. When it does, it may roll an extra D6 and discard the highest result.",
+            "$text": "Single use. A unit carrying the Cold-blooded Banner may use it after making any test against its Leadership characteristic, including a Break test. When it does, it may re-roll the test. ",
             "typeId": "cea7-7573-475d-cc1d"
           }
         ]
@@ -3490,7 +3490,7 @@
         "characteristics": [
           {
             "name": "Description",
-            "$text": "Single use. The owner of a Focus Familiar may use it when they attempt to cast a spell. Place a marker (such as a Familiar model) completely within 12\" of the owner. The range and all effects of the spell are measured from this marker, rather than from the owner. If the spell requires a line of sight, this is determined from the marker (which has a 360° vision arc).",
+            "$text": "Single use. The owner of a Focus Familiar may use it when they attempt to cast a spell. Place a marker (such as a Familiar model) completely within 12\" of the owner. The range (including the range to dispel unless it is a vortex) and all effects of the spell, are measured from this marker, rather than from the owner. If the spell requires a line of sight, this is determined from the marker (which has a 360° vision arc). If the spell remains in play, keep the marker on the board until the spell is dispelled or removed from play. ",
             "typeId": "fdd8-b367-1d68-c9cd"
           }
         ]
@@ -9191,15 +9191,101 @@
                   {"id": "f6f5-7789-ed21-7698", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 1}
                 ],
                 "costs": [{"name": "pts", "typeId": "points", "value": 30}],
-                "infoLinks": [{"name": "Whip Of Agony", "id": "9b92-37d0-3e74-dacf", "hidden": false, "targetId": "8298-6201-faf7-8c86", "type": "profile"}],
+                "infoLinks": [
+                  {
+                    "name": "Whip Of Agony",
+                    "id": "9b92-37d0-3e74-dacf",
+                    "hidden": true,
+                    "targetId": "8298-6201-faf7-8c86",
+                    "type": "profile",
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": false,
+                        "conditions": [
+                          {
+                            "childId": "f64e-146a-86bd-73da",
+                            "childName": "Faction: Dark Elves",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Whip Of Agony",
+                    "id": "d9e8-54a1-c5cc-055d",
+                    "hidden": true,
+                    "targetId": "8298-6201-faf7-8c86",
+                    "type": "profile",
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": false,
+                        "conditions": [
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
                 "modifiers": [
                   {
                     "field": "hidden",
                     "type": "set",
                     "value": false,
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditionGroups": [
+                          {
+                            "type": "or",
+                            "conditions": [
+                              {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                              {
+                                "childId": "172e-9d83-eae4-aa8a",
+                                "childName": "Faction: Dark Elves - Renegades v2.0",
+                                "field": "selections",
+                                "scope": "ancestor",
+                                "shared": true,
+                                "type": "instanceOf",
+                                "value": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "conditions": [{"childId": "b9658fae-bf8c9cb8", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ]
+                  },
+                  {
+                    "field": "points",
+                    "type": "set",
+                    "value": 20,
                     "conditions": [
-                      {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
-                      {"childId": "b9658fae-bf8c9cb8", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                      {
+                        "childId": "172e-9d83-eae4-aa8a",
+                        "childName": "Faction: Dark Elves - Renegades v2.0",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      }
                     ]
                   }
                 ]
@@ -9222,7 +9308,23 @@
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -9244,7 +9346,23 @@
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -9266,7 +9384,23 @@
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -11768,9 +11902,28 @@
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [
-                      {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
-                      {"childId": "may-have-shield", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditionGroups": [
+                          {
+                            "type": "or",
+                            "conditions": [
+                              {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                              {
+                                "childId": "172e-9d83-eae4-aa8a",
+                                "childName": "Faction: Dark Elves - Renegades v2.0",
+                                "field": "selections",
+                                "scope": "ancestor",
+                                "shared": true,
+                                "type": "instanceOf",
+                                "value": 1
+                              }
+                            ]
+                          }
+                        ],
+                        "conditions": [{"childId": "may-have-shield", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
                     ]
                   }
                 ]
@@ -12179,9 +12332,23 @@
                           {"childId": "ca7e-d004-ccde-caf3", "field": "selections", "includeChildSelections": true, "scope": "parent", "shared": true, "type": "atLeast", "value": 1},
                           {"childId": "5c55-f9d6-b181-92f8", "field": "selections", "includeChildSelections": true, "scope": "parent", "shared": true, "type": "atLeast", "value": 1}
                         ]
+                      },
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
                       }
-                    ],
-                    "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    ]
                   }
                 ]
               },
@@ -14635,13 +14802,72 @@
             "type": "upgrade",
             "constraints": [{"id": "c908-22e5-e4d6-7b0c", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 1}],
             "costs": [{"name": "pts", "typeId": "points", "value": 20}],
-            "infoLinks": [{"name": "Cold-Blooded Banner", "id": "5cf0-de67-d29a-8231", "hidden": false, "targetId": "fddc-460f-9a0b-38d", "type": "profile"}],
+            "infoLinks": [
+              {
+                "name": "Cold-Blooded Banner",
+                "id": "5cf0-de67-d29a-8231",
+                "hidden": true,
+                "targetId": "fddc-460f-9a0b-38d",
+                "type": "profile",
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": false,
+                    "conditions": [
+                      {"childId": "f64e-146a-86bd-73da", "childName": "Faction: Dark Elves", "field": "selections", "scope": "parent", "shared": true, "type": "atLeast", "value": 1}
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Cold-Blooded Banner",
+                "id": "63ac-9971-f4eb-fe08",
+                "hidden": true,
+                "targetId": "fddc-460f-9a0b-38d",
+                "type": "profile",
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": false,
+                    "conditions": [
+                      {
+                        "childId": "172e-9d83-eae4-aa8a",
+                        "childName": "Faction: Dark Elves - Renegades v2.0",
+                        "field": "selections",
+                        "scope": "parent",
+                        "shared": true,
+                        "type": "atLeast",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
             "modifiers": [
               {
                 "field": "hidden",
                 "type": "set",
                 "value": false,
-                "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {
+                        "childId": "172e-9d83-eae4-aa8a",
+                        "childName": "Faction: Dark Elves - Renegades v2.0",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -14660,7 +14886,39 @@
                 "field": "hidden",
                 "type": "set",
                 "value": false,
-                "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {
+                        "childId": "172e-9d83-eae4-aa8a",
+                        "childName": "Faction: Dark Elves - Renegades v2.0",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "field": "points",
+                "type": "set",
+                "value": 50,
+                "conditions": [
+                  {
+                    "childId": "172e-9d83-eae4-aa8a",
+                    "childName": "Faction: Dark Elves - Renegades v2.0",
+                    "field": "selections",
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  }
+                ]
               }
             ]
           },
@@ -14679,7 +14937,23 @@
                 "field": "hidden",
                 "type": "set",
                 "value": false,
-                "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {
+                        "childId": "172e-9d83-eae4-aa8a",
+                        "childName": "Faction: Dark Elves - Renegades v2.0",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -14698,7 +14972,23 @@
                 "field": "hidden",
                 "type": "set",
                 "value": false,
-                "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {
+                        "childId": "172e-9d83-eae4-aa8a",
+                        "childName": "Faction: Dark Elves - Renegades v2.0",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -16775,7 +17065,23 @@
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -16805,7 +17111,23 @@
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -18132,13 +18454,70 @@
                 "type": "upgrade",
                 "constraints": [{"id": "423a-c078-4216-3849", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 1}],
                 "costs": [{"name": "pts", "typeId": "points", "value": 35}],
-                "infoLinks": [{"name": "Black Dragon Egg", "id": "e66c-9d8a-a2d-ca30", "hidden": false, "targetId": "bb81-a1a7-d2fc-e3d0", "type": "profile"}],
+                "infoLinks": [
+                  {
+                    "name": "Black Dragon Egg",
+                    "id": "e66c-9d8a-a2d-ca30",
+                    "hidden": true,
+                    "targetId": "bb81-a1a7-d2fc-e3d0",
+                    "type": "profile",
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": false,
+                        "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Black Dragon Egg",
+                    "id": "43f1-c28e-8a54-644b",
+                    "hidden": true,
+                    "targetId": "bb81-a1a7-d2fc-e3d0",
+                    "type": "profile",
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": false,
+                        "conditions": [
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
                 "modifiers": [
                   {
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -18157,7 +18536,23 @@
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -18176,7 +18571,23 @@
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -19691,7 +20102,7 @@
                 "id": "332b-2ad0-5a80-167",
                 "hidden": false,
                 "import": true,
-                "sortIndex": 11,
+                "sortIndex": 12,
                 "type": "upgrade",
                 "costs": [{"name": "pts", "typeId": "points", "value": 20}],
                 "infoLinks": [{"name": "Dispel Scroll", "id": "79ed-53fb-d916-f9e4", "hidden": false, "targetId": "a4d9-9393-9230-6ae6", "type": "profile"}]
@@ -19701,7 +20112,7 @@
                 "id": "4dfa-5f77-7f4c-4cab",
                 "hidden": false,
                 "import": true,
-                "sortIndex": 13,
+                "sortIndex": 14,
                 "type": "upgrade",
                 "costs": [{"name": "pts", "typeId": "points", "value": 20}],
                 "infoLinks": [{"name": "Power Scroll", "id": "d78f-2326-4ac8-7846", "hidden": false, "targetId": "8d49-9b39-7e0b-4489", "type": "profile"}]
@@ -19711,7 +20122,7 @@
                 "id": "90b3-c639-518e-46e3",
                 "hidden": true,
                 "import": true,
-                "sortIndex": 16,
+                "sortIndex": 17,
                 "type": "upgrade",
                 "costs": [{"name": "pts", "typeId": "points", "value": 25}],
                 "infoLinks": [{"name": "Hieratic Jar", "id": "8585-ccb-8749-e821", "hidden": false, "targetId": "7ced-b473-887b-231c", "type": "profile"}],
@@ -19738,7 +20149,7 @@
                 "id": "3268-c332-504f-9dd2",
                 "hidden": true,
                 "import": true,
-                "sortIndex": 18,
+                "sortIndex": 19,
                 "type": "upgrade",
                 "costs": [{"name": "pts", "typeId": "points", "value": 30}],
                 "infoLinks": [{"name": "Sacrament of the Lady", "id": "b780-2b4d-42ab-4f5b", "hidden": false, "targetId": "162b-d3de-2468-5b29", "type": "profile"}],
@@ -19765,7 +20176,7 @@
                 "id": "23d2-d892-502f-718",
                 "hidden": false,
                 "import": true,
-                "sortIndex": 27,
+                "sortIndex": 28,
                 "type": "upgrade",
                 "costs": [{"name": "pts", "typeId": "points", "value": 50}],
                 "infoLinks": [{"name": "Scroll of Transmogrification", "id": "d73d-6a17-38cb-8f09", "hidden": false, "targetId": "1610-786d-cf0-cf8e", "type": "profile"}]
@@ -19775,7 +20186,7 @@
                 "id": "fc4f-f9de-b307-93b5",
                 "hidden": true,
                 "import": true,
-                "sortIndex": 25,
+                "sortIndex": 26,
                 "type": "upgrade",
                 "costs": [{"name": "pts", "typeId": "points", "value": 40}],
                 "infoLinks": [{"name": "Sigil of Asuryan", "id": "2bd1-276d-ed8b-b741", "hidden": false, "targetId": "c954-e038-ef58-30b4", "type": "profile"}],
@@ -19793,7 +20204,7 @@
                 "id": "d1b0-2cbb-2718-73d1",
                 "hidden": true,
                 "import": true,
-                "sortIndex": 19,
+                "sortIndex": 20,
                 "type": "upgrade",
                 "costs": [{"name": "pts", "typeId": "points", "value": 30}],
                 "infoLinks": [{"name": "Scroll Of Binding", "id": "9062-cf03-f4f4-3c11", "hidden": false, "targetId": "3e9f-f011-7f3b-17b7", "type": "profile"}],
@@ -19811,7 +20222,7 @@
                 "id": "1241-5f23-a038-5112",
                 "hidden": true,
                 "import": true,
-                "sortIndex": 10,
+                "sortIndex": 11,
                 "type": "upgrade",
                 "constraints": [{"id": "8d73-a63-c938-b82a", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 3}],
                 "costs": [{"name": "pts", "typeId": "points", "value": 15}],
@@ -19900,13 +20311,70 @@
                 "sortIndex": 2,
                 "type": "upgrade",
                 "costs": [{"name": "pts", "typeId": "points", "value": 10}],
-                "infoLinks": [{"name": "Focus Familiar", "id": "9f1e-3037-eba-a36e", "hidden": false, "targetId": "45fe-d889-d2e5-91e1", "type": "profile"}],
+                "infoLinks": [
+                  {
+                    "name": "Focus Familiar",
+                    "id": "9f1e-3037-eba-a36e",
+                    "hidden": true,
+                    "targetId": "45fe-d889-d2e5-91e1",
+                    "type": "profile",
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": false,
+                        "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Focus Familiar",
+                    "id": "9b4a-cab3-2242-c653",
+                    "hidden": true,
+                    "targetId": "45fe-d889-d2e5-91e1",
+                    "type": "profile",
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": false,
+                        "conditions": [
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
                 "modifiers": [
                   {
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          },
+                          {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -19915,7 +20383,7 @@
                 "id": "b46a-7929-7f1d-5b10",
                 "hidden": true,
                 "import": true,
-                "sortIndex": 26,
+                "sortIndex": 27,
                 "type": "upgrade",
                 "costs": [{"name": "pts", "typeId": "points", "value": 50}],
                 "infoLinks": [{"name": "Cube Of Darkness", "id": "aeb5-66dc-e8f0-3ced", "hidden": false, "targetId": "9ed9-af0d-9156-3a2d", "type": "profile"}],
@@ -19941,7 +20409,7 @@
                 "id": "6732-766f-cb51-c87",
                 "hidden": true,
                 "import": true,
-                "sortIndex": 17,
+                "sortIndex": 18,
                 "type": "upgrade",
                 "costs": [{"name": "pts", "typeId": "points", "value": 30}],
                 "infoLinks": [{"name": "Itxi Grub", "id": "7150-6107-f854-f792", "hidden": false, "targetId": "36f5-8c01-bd14-19a9", "type": "profile"}],
@@ -19959,7 +20427,7 @@
                 "id": "7c4a-d9e1-b38f-6a2d",
                 "hidden": true,
                 "import": true,
-                "sortIndex": 12,
+                "sortIndex": 13,
                 "type": "upgrade",
                 "costs": [{"name": "pts", "typeId": "points", "value": 20}],
                 "infoLinks": [{"name": "Itxi Grub v2", "id": "e514-2a86-cd39-70b1", "hidden": false, "targetId": "5e21-f8bd-3c47-9a10", "type": "profile"}],
@@ -19978,7 +20446,7 @@
                 "collective": true,
                 "hidden": true,
                 "import": true,
-                "sortIndex": 14,
+                "sortIndex": 15,
                 "type": "upgrade",
                 "constraints": [{"id": "e53c-dc63-51c9-7a34", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 3}],
                 "costs": [{"name": "pts", "typeId": "points", "value": 20}],
@@ -20006,7 +20474,7 @@
                 "id": "1dbe-13a7-9211-5d60",
                 "hidden": true,
                 "import": true,
-                "sortIndex": 24,
+                "sortIndex": 25,
                 "type": "upgrade",
                 "constraints": [{"id": "e761-6ebb-4b67-f84", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
                 "costs": [{"name": "pts", "id": "3355-369f-b5e3-ea61", "hidden": false, "typeId": "points", "value": 35}],
@@ -20025,7 +20493,7 @@
                 "id": "d229-652f-c96d-51d0",
                 "hidden": true,
                 "import": true,
-                "sortIndex": 15,
+                "sortIndex": 16,
                 "type": "upgrade",
                 "constraints": [{"id": "b46b-0c9d-891a-2643", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
                 "costs": [{"name": "pts", "typeId": "points", "value": 20}],
@@ -20062,7 +20530,7 @@
                 "id": "8347-73dd-1e4f-f60d",
                 "hidden": true,
                 "import": true,
-                "sortIndex": 21,
+                "sortIndex": 22,
                 "type": "upgrade",
                 "costs": [{"name": "pts", "typeId": "points", "value": 35}],
                 "infoLinks": [{"name": "Blood of the Shadowgave", "id": "bdc7-cdb3-c9da-c9b8", "hidden": false, "targetId": "fefb-5c2e-5dd7-79d1", "type": "profile"}],
@@ -20119,7 +20587,7 @@
                 "id": "401f-d8b0-f8cf-9a0a",
                 "hidden": true,
                 "import": true,
-                "sortIndex": 22,
+                "sortIndex": 23,
                 "type": "upgrade",
                 "constraints": [{"id": "87bc-43de-d483-f17b", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
                 "costs": [{"name": "pts", "typeId": "points", "value": 35}],
@@ -20140,7 +20608,7 @@
                 "id": "3a99-a9d1-a941-9201",
                 "hidden": true,
                 "import": true,
-                "sortIndex": 23,
+                "sortIndex": 24,
                 "type": "upgrade",
                 "constraints": [{"id": "919e-fa8a-b50b-4c2a", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
                 "costs": [{"name": "pts", "typeId": "points", "value": 35}],
@@ -20159,7 +20627,7 @@
                 "id": "2df0-dd79-5912-cd94",
                 "hidden": false,
                 "import": true,
-                "sortIndex": 20,
+                "sortIndex": 21,
                 "type": "upgrade",
                 "constraints": [
                   {"id": "9a75-c500-c93b-85cc", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1},
@@ -20264,6 +20732,36 @@
                         "name": "Description",
                         "$text": "0-3 per model. Single use. After making a Casting roll for a spell from the Lore of the Great Maw, the bearer may choose to use a Tooth-Gnoblar. If they do so, apply a +1 modifier to the result. A model may only use one Tooth-Gnoblar per Casting roll.",
                         "typeId": "fdd8-b367-1d68-c9cd"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Tome Of Furion",
+                "id": "dfcd-4f5b-c06f-2627",
+                "comment": "Extra Spells: 1",
+                "hidden": true,
+                "import": true,
+                "sortIndex": 10,
+                "type": "upgrade",
+                "constraints": [{"id": "955d-4098-e865-a63b", "field": "selections", "includeChildSelections": true, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "pts", "typeId": "points", "value": 15}],
+                "infoLinks": [{"name": "Tome Of Furion", "id": "3afb-9a67-74fe-27db", "hidden": false, "targetId": "43c1-c051-2422-2f08", "type": "profile"}],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": false,
+                    "conditions": [
+                      {
+                        "childId": "172e-9d83-eae4-aa8a",
+                        "childName": "Faction: Dark Elves - Renegades v2.0",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
                       }
                     ]
                   }
@@ -21103,7 +21601,23 @@
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [{"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "f64e-146a-86bd-73da", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                          {
+                            "childId": "172e-9d83-eae4-aa8a",
+                            "childName": "Faction: Dark Elves - Renegades v2.0",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
