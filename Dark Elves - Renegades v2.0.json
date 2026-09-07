@@ -9,6 +9,791 @@
     "library": false,
     "revision": 1,
     "type": "catalogue",
+    "catalogueLinks": [
+      {"name": "Magic Items", "id": "b45f-b703-873c-3172", "targetId": "6c22-b0e4-7c83-f9ce", "type": "catalogue"},
+      {"name": "The Lores of Magic", "id": "fc42-c4e5-202e-b8a6", "targetId": "f3c5-af11-649d-5dbb", "type": "catalogue"}
+    ],
+    "categoryEntries": [
+      {
+        "name": "0-1 Dark Elf Dreadlord or Supreme Sorceress per 1,000 points",
+        "id": "1901-ab60-0242-a9b2",
+        "hidden": true,
+        "constraints": [{"id": "ee9b-932c-d9fb-400f", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "max", "value": 0}],
+        "modifiers": [
+          {
+            "field": "ee9b-932c-d9fb-400f",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "8214-cf48-b1cd-5f5e", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [{"id": "92e8-c27d-5230-4923", "childId": "any", "field": "limit::points", "repeats": 1, "roundUp": false, "scope": "roster", "shared": true, "value": 1000}]
+          },
+          {
+            "field": "ee9b-932c-d9fb-400f",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "and",
+                "conditions": [
+                  {"childId": "8214-cf48-b1cd-5f5e", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [
+              {
+                "id": "601a-84c4-bdac-cd7c",
+                "childId": "any",
+                "field": "points",
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "force",
+                "shared": true,
+                "value": 1000
+              }
+            ]
+          },
+          {
+            "comment": "Battle march",
+            "field": "ee9b-932c-d9fb-400f",
+            "type": "floor",
+            "value": 1,
+            "conditions": [{"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+          }
+        ]
+      }
+    ],
+    "entryLinks": [
+      {
+        "name": "Dark Elf Dreadlord",
+        "id": "950c-e508-2d69-4a02",
+        "hidden": false,
+        "import": true,
+        "targetId": "80bf-d7fb-a5a9-1d2d",
+        "type": "selectionEntry",
+        "categoryLinks": [
+          {"name": "Characters", "id": "3993-8915-8343-5b74", "hidden": false, "primary": true, "targetId": "a4cc-15c9-cfae-1b3b"},
+          {
+            "name": "1 single 'per 1000 points' selection in Battle March",
+            "id": "a603-587b-9d40-58d2",
+            "comment": "Battle March Category",
+            "hidden": true,
+            "primary": false,
+            "targetId": "27c9-52f0-c942-681e"
+          },
+          {
+            "name": "0-1 Dark Elf Dreadlord or Supreme Sorceress per 1,000 points",
+            "id": "1249-0735-4ff6-4af7",
+            "hidden": false,
+            "primary": false,
+            "targetId": "1901-ab60-0242-a9b2"
+          }
+        ],
+        "constraints": [
+          {
+            "id": "d9c3-f7aa-6c5e-ffc8",
+            "comment": "Grand melee",
+            "field": "points",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "percentValue": false,
+            "scope": "self",
+            "shared": true,
+            "type": "max",
+            "value": -1
+          },
+          {
+            "id": "2822-c001-1c0c-26d2",
+            "comment": "Battle March points",
+            "field": "points",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "percentValue": false,
+            "scope": "self",
+            "shared": true,
+            "type": "max",
+            "value": -1
+          }
+        ],
+        "modifiers": [
+          {
+            "comment": "Grand melee",
+            "field": "d9c3-f7aa-6c5e-ffc8",
+            "type": "set",
+            "value": 0,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {
+                    "childId": "cdbe-ecb9-27cb-fd2b",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  },
+                  {
+                    "childId": "0750-5d17-d708-f990",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "comment": "Grand melee",
+            "field": "d9c3-f7aa-6c5e-ffc8",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {
+                    "childId": "cdbe-ecb9-27cb-fd2b",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  },
+                  {
+                    "childId": "0750-5d17-d708-f990",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "8214-cf48-b1cd-5f5e", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "roster",
+                "shared": true,
+                "value": 4
+              }
+            ]
+          },
+          {
+            "comment": "Grand melee",
+            "field": "d9c3-f7aa-6c5e-ffc8",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {
+                    "childId": "cdbe-ecb9-27cb-fd2b",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  },
+                  {
+                    "childId": "0750-5d17-d708-f990",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "and",
+                "conditions": [
+                  {"childId": "8214-cf48-b1cd-5f5e", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "force",
+                "shared": true,
+                "value": 4
+              }
+            ]
+          },
+          {
+            "comment": "Battle March points",
+            "field": "2822-c001-1c0c-26d2",
+            "type": "set",
+            "value": 0,
+            "conditionGroups": [
+              {
+                "type": "and",
+                "conditions": [{"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+              }
+            ]
+          },
+          {
+            "comment": "Battle March points",
+            "field": "2822-c001-1c0c-26d2",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "and",
+                "conditions": [{"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+              },
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "roster",
+                "shared": true,
+                "value": 4
+              }
+            ]
+          },
+          {
+            "comment": "Battle March points",
+            "field": "2822-c001-1c0c-26d2",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "and",
+                "conditions": [{"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+              },
+              {
+                "type": "and",
+                "conditions": [
+                  {"childId": "8214-cf48-b1cd-5f5e", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "force",
+                "shared": true,
+                "value": 4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dark Elf Master",
+        "id": "3e2b-7a9f-0c6c-d627",
+        "hidden": false,
+        "import": true,
+        "targetId": "2120-afe0-accb-30ce",
+        "type": "selectionEntry",
+        "categoryLinks": [{"name": "Characters", "id": "f0d1-d7ef-0dde-9f30", "hidden": false, "primary": true, "targetId": "a4cc-15c9-cfae-1b3b"}],
+        "constraints": [
+          {
+            "id": "95e4-6dd5-fea5-a3ce",
+            "comment": "Grand melee",
+            "field": "points",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "percentValue": false,
+            "scope": "self",
+            "shared": true,
+            "type": "max",
+            "value": -1
+          },
+          {
+            "id": "ba7f-ce8a-dd20-b928",
+            "comment": "Combined arms",
+            "field": "selections",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "scope": "roster",
+            "shared": true,
+            "type": "max",
+            "value": -1
+          },
+          {
+            "id": "dbb7-f985-9c4f-2d22",
+            "comment": "Battle March points",
+            "field": "points",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "percentValue": false,
+            "scope": "self",
+            "shared": true,
+            "type": "max",
+            "value": -1
+          }
+        ],
+        "modifiers": [
+          {
+            "comment": "Grand melee",
+            "field": "95e4-6dd5-fea5-a3ce",
+            "type": "set",
+            "value": 0,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {
+                    "childId": "cdbe-ecb9-27cb-fd2b",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  },
+                  {
+                    "childId": "0750-5d17-d708-f990",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "comment": "Grand melee",
+            "field": "95e4-6dd5-fea5-a3ce",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {
+                    "childId": "cdbe-ecb9-27cb-fd2b",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  },
+                  {
+                    "childId": "0750-5d17-d708-f990",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "8214-cf48-b1cd-5f5e", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "roster",
+                "shared": true,
+                "value": 4
+              }
+            ]
+          },
+          {
+            "comment": "Grand melee",
+            "field": "95e4-6dd5-fea5-a3ce",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {
+                    "childId": "cdbe-ecb9-27cb-fd2b",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  },
+                  {
+                    "childId": "0750-5d17-d708-f990",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "and",
+                "conditions": [
+                  {"childId": "8214-cf48-b1cd-5f5e", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "force",
+                "shared": true,
+                "value": 4
+              }
+            ]
+          },
+          {
+            "comment": "Combined arms",
+            "field": "ba7f-ce8a-dd20-b928",
+            "type": "set",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "scope": "roster",
+                "shared": true,
+                "type": "atLeast",
+                "value": 2000
+              }
+            ]
+          },
+          {
+            "comment": "Combined arms",
+            "field": "ba7f-ce8a-dd20-b928",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "scope": "roster",
+                "shared": true,
+                "type": "atLeast",
+                "value": 2000
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "roster",
+                "shared": true,
+                "value": 1000
+              }
+            ]
+          },
+          {
+            "comment": "Combined arms",
+            "field": "ba7f-ce8a-dd20-b928",
+            "type": "set",
+            "value": 3,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "scope": "roster",
+                "shared": true,
+                "type": "lessThan",
+                "value": 2000
+              }
+            ]
+          },
+          {
+            "comment": "Battle March points",
+            "field": "dbb7-f985-9c4f-2d22",
+            "type": "set",
+            "value": 0,
+            "conditionGroups": [
+              {
+                "type": "and",
+                "conditions": [{"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+              }
+            ]
+          },
+          {
+            "comment": "Battle March points",
+            "field": "dbb7-f985-9c4f-2d22",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "and",
+                "conditions": [{"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+              },
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "roster",
+                "shared": true,
+                "value": 4
+              }
+            ]
+          },
+          {
+            "comment": "Battle March points",
+            "field": "dbb7-f985-9c4f-2d22",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "and",
+                "conditions": [{"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+              },
+              {
+                "type": "and",
+                "conditions": [
+                  {"childId": "8214-cf48-b1cd-5f5e", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "force",
+                "shared": true,
+                "value": 4
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sharedInfoGroups": [
+      {
+        "name": "Lore of Naggaroth",
+        "id": "3bbe-222c-3abb-7469",
+        "hidden": false,
+        "page": "",
+        "profiles": [
+          {
+            "name": "Cursing Word - Renegades",
+            "id": "85ee-ca60-7d8e-07e1",
+            "hidden": false,
+            "typeId": "8232-ae14-b1f6-b4df",
+            "typeName": "Spell",
+            "characteristics": [
+              {"name": "Number", "$text": "-", "typeId": "8a2b-690b-e552-6aa0"},
+              {"name": "Type", "$text": "Hex", "typeId": "c2ca-5fd1-5e9d-bc90"},
+              {"name": "Casting Value", "$text": "9+", "typeId": "d84d-3b8b-654a-9e1a"},
+              {"name": "Range", "$text": "12\"", "typeId": "1043-a0ad-2909-dd28"},
+              {
+                "name": "Effect",
+                "$text": "Whilst this spell is in play, the target enemy unit reduces either its Weapon skill characteristic, or its Ballistic Skill characteristic (chosen by the casting Wizard’s controlling player) by D3. If this spell is cast, the effects of any other Hex previously cast on the target unit immediately expire. This spell lasts until the beginning of your next Start of Turn sub-phase.",
+                "typeId": "64ba-31-acf0-5a"
+              }
+            ]
+          },
+          {
+            "name": "Black Horror - Renegades",
+            "id": "858e-d961-c737-fb93",
+            "hidden": false,
+            "typeId": "8232-ae14-b1f6-b4df",
+            "typeName": "Spell",
+            "characteristics": [
+              {"name": "Number", "$text": "-", "typeId": "8a2b-690b-e552-6aa0"},
+              {"name": "Type", "$text": "Magical Vortex", "typeId": "c2ca-5fd1-5e9d-bc90"},
+              {"name": "Casting Value", "$text": "9+", "typeId": "d84d-3b8b-654a-9e1a"},
+              {"name": "Range", "$text": "18\"", "typeId": "1043-a0ad-2909-dd28"},
+              {
+                "name": "Effect",
+                "$text": "Remains in play. Place a large (5\") blast template so that its central hole is within 18\" of the caster. Whilst in play, the template is treated as difficult terrain. The template scatters 2D6” during every Start of Turn sub-phase (see page 95). Any enemy unit that moves through the template, or that the template moves over must immediately make D6 Strength Tests. For each test that is failed, the unit loses a single Wound.",
+                "typeId": "64ba-31-acf0-5a"
+              }
+            ]
+          },
+          {
+            "name": "Power of Darkness - Renegades",
+            "id": "0d92-ec20-520d-4674",
+            "hidden": false,
+            "typeId": "8232-ae14-b1f6-b4df",
+            "typeName": "Spell",
+            "characteristics": [
+              {"name": "Number", "$text": "-", "typeId": "8a2b-690b-e552-6aa0"},
+              {"name": "Type", "$text": "Enchantment", "typeId": "c2ca-5fd1-5e9d-bc90"},
+              {"name": "Casting Value", "$text": "7+", "typeId": "d84d-3b8b-654a-9e1a"},
+              {"name": "Range", "$text": "Self", "typeId": "1043-a0ad-2909-dd28"},
+              {
+                "name": "Effect",
+                "$text": "Remains in Play. Whilst this spell is in play, the caster gains a +1 modifier to their Casting rolls.",
+                "typeId": "64ba-31-acf0-5a"
+              }
+            ]
+          }
+        ]
+      }
+    ],
     "sharedProfiles": [
       {
         "name": "Cleaving Blow",
@@ -113,6 +898,2178 @@
             "name": "Description",
             "$text": "A model with this special rule improves its armour value by 1 (to a maximum of 2+) against non-magical shooting attacks.",
             "typeId": "9f84-4221-785a-db50"
+          }
+        ]
+      },
+      {
+        "name": "Dark Elf Dreadlord",
+        "id": "a2a7-95f2-0aa4-6458",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "5", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "7", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "7", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "4", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "3", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "3", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "6", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "4", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "10", "typeId": "c435-6b14-f77e-3c72"}
+        ]
+      },
+      {
+        "name": "Cauldron of Blood",
+        "id": "d53b-9832-4da0-88ed",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "5", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "-", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "-", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "5", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "5", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "5", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "-", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "-", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "-", "typeId": "c435-6b14-f77e-3c72"}
+        ]
+      },
+      {
+        "name": "Blessings Of Khaine",
+        "id": "a1b1-565b-7d89-5769",
+        "hidden": false,
+        "typeId": "c1ac-c1c8-f9d5-9673",
+        "typeName": "Special Rule",
+        "characteristics": [
+          {
+            "name": "Description",
+            "$text": "Even if engaged in combat, this model can cast the following Bound spell, with a Power Level of 2:\n\nBlessings of Khaine",
+            "typeId": "9f84-4221-785a-db50"
+          }
+        ]
+      },
+      {
+        "name": "Witch Elf Crew",
+        "id": "c0b6-2edf-5674-ea25",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "-", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "4", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "4", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "3", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "-", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "-", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "5", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "1", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "8", "typeId": "c435-6b14-f77e-3c72"}
+        ]
+      },
+      {
+        "name": "Dark Pegasus",
+        "id": "7a02-7923-9414-911f",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "8", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "3", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "-", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "4", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "-", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "(+1)", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "4", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "3", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "-", "typeId": "c435-6b14-f77e-3c72"}
+        ]
+      },
+      {
+        "name": "Manticore",
+        "id": "0117-fead-324f-65de",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "6", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "5", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "-", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "5", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "(+2)", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "(+4)", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "5", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "4", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "-", "typeId": "c435-6b14-f77e-3c72"}
+        ]
+      },
+      {
+        "name": "Wicked Claws",
+        "id": "b54b-336b-cc22-8f44",
+        "hidden": false,
+        "typeId": "a378-c633-912d-11ce",
+        "typeName": "Weapon",
+        "characteristics": [
+          {"name": "R", "$text": "Combat", "typeId": "2360-c777-5e07-ed58"},
+          {"name": "S", "$text": "S", "typeId": "ac19-f99c-72e9-a1a7"},
+          {"name": "AP", "$text": "-2", "typeId": "9429-ffe7-2ce5-e9a5"},
+          {"name": "Special Rules", "$text": "-", "typeId": "5f83-3633-336b-93b4"},
+          {"name": "Notes", "typeId": "772a-a7ff-f6b3-df71"}
+        ]
+      },
+      {
+        "name": "Venomous tail",
+        "id": "462f-6902-faf6-595b",
+        "hidden": false,
+        "typeId": "a378-c633-912d-11ce",
+        "typeName": "Weapon",
+        "characteristics": [
+          {"name": "R", "$text": "Combat", "typeId": "2360-c777-5e07-ed58"},
+          {"name": "S", "$text": "S", "typeId": "ac19-f99c-72e9-a1a7"},
+          {"name": "AP", "$text": "-", "typeId": "9429-ffe7-2ce5-e9a5"},
+          {"name": "Special Rules", "$text": "Poisoned Attacks, Strike First", "typeId": "5f83-3633-336b-93b4"},
+          {"name": "Notes", "$text": "In combat, this model must make one of its attacks each turn with this weapon.", "typeId": "772a-a7ff-f6b3-df71"}
+        ]
+      },
+      {
+        "name": "Wilful Beast",
+        "id": "f24e-27a6-1012-86d2",
+        "hidden": false,
+        "typeId": "c1ac-c1c8-f9d5-9673",
+        "typeName": "Special Rule",
+        "characteristics": [
+          {
+            "name": "Description",
+            "$text": "During the Start of Turn sub-phase of each of their turns, this model must make a Leadership test (using its own unmodified Leadership). If this test is passed, the rider is able to keep control of their mount. If, however, this test is failed, the rider has lost control and their mount becomes subject to the Frenzy special rule until their next Start of Turn sub-phase.\n\n*Note that the rider does not gain a +1 modifier to their Attacks characteristic.*",
+            "typeId": "9f84-4221-785a-db50"
+          }
+        ]
+      },
+      {
+        "name": "Noxious breath",
+        "id": "ebef-8855-11e0-c1a1",
+        "hidden": false,
+        "typeId": "a378-c633-912d-11ce",
+        "typeName": "Weapon",
+        "characteristics": [
+          {"name": "R", "id": "fb8c-ed3d-2123-246c", "$text": "N/A", "hidden": false, "typeId": "2360-c777-5e07-ed58"},
+          {"name": "S", "id": "9040-ddce-5d18-fc3b", "$text": "4", "hidden": false, "typeId": "ac19-f99c-72e9-a1a7"},
+          {"name": "AP", "id": "161d-7863-3927-b6b1", "$text": "N/A", "hidden": false, "typeId": "9429-ffe7-2ce5-e9a5"},
+          {"name": "Special Rules", "id": "388b-0b6b-56ff-2b00", "$text": "Breath Weapon", "hidden": false, "typeId": "5f83-3633-336b-93b4"},
+          {
+            "name": "Notes",
+            "id": "8553-c89e-9108-0a57",
+            "$text": "Until your next Start of Turn sub-phase, every model in a unit that suffers one or more unsaved wounds from this weapon suffers a -1 modifier to its Weapon Skill characteristic (to a minimum of 1). No armour save is permitted against wounds caused by this weapon (Ward and Regeneration saves can be attempted as normal).",
+            "hidden": false,
+            "typeId": "772a-a7ff-f6b3-df71"
+          }
+        ]
+      },
+      {
+        "name": "Black Dragon",
+        "id": "7dda-05a1-ab74-6979",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "6", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "6", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "-", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "7", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "(+3)", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "(+6)", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "4", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "6", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "-", "typeId": "c435-6b14-f77e-3c72"}
+        ]
+      },
+      {
+        "name": "Dark Steed",
+        "id": "b11b-ad1a-b33a-fbf8",
+        "comment": "Dark Steed/Dark Steed",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "9", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "3", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "-", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "3", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "-", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "-", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "4", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "1", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "-", "typeId": "c435-6b14-f77e-3c72"}
+        ]
+      },
+      {
+        "name": "Cold One",
+        "id": "37d1-a697-7672-527d",
+        "comment": "Cold One/Cold One",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "7", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "3", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "-", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "4", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "(+1)", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "-", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "2", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "2", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "-", "typeId": "c435-6b14-f77e-3c72"}
+        ]
+      },
+      {
+        "name": "Scourgerunner Chariot",
+        "id": "dc55-4f32-8e6c-5380",
+        "comment": "Scourgerunner Chariots/Chariot",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "-", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "-", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "-", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "4", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "4", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "4", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "-", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "-", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "-", "typeId": "c435-6b14-f77e-3c72"}
+        ],
+        "modifiers": [
+          {
+            "field": "83ed-7b82-bf1f-e558",
+            "type": "set",
+            "value": "(+4)",
+            "conditions": [{"childId": "a4cc-15c9-cfae-1b3b", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+          }
+        ]
+      },
+      {
+        "name": "Beastmaster Crew",
+        "id": "38e0-7ace-1937-8943",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "-", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "4", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "4", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "3", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "-", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "-", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "4", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "1", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "8", "typeId": "c435-6b14-f77e-3c72"}
+        ]
+      },
+      {
+        "name": "Dark Steed",
+        "id": "7485-cbb0-1026-db45",
+        "comment": "Scourgerunner Chariots/Dark Steed",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "9", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "3", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "-", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "3", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "-", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "-", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "4", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "1", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "-", "typeId": "c435-6b14-f77e-3c72"}
+        ]
+      },
+      {
+        "name": "Cold One Chariot",
+        "id": "b952-802c-644d-08f3",
+        "comment": "Cold One Chariots/Chariot",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "-", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "-", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "-", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "5", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "5", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "4", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "-", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "-", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "-", "typeId": "c435-6b14-f77e-3c72"}
+        ],
+        "modifiers": [
+          {
+            "field": "83ed-7b82-bf1f-e558",
+            "type": "set",
+            "value": "(+4)",
+            "conditions": [{"childId": "a4cc-15c9-cfae-1b3b", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+          }
+        ]
+      },
+      {
+        "name": "Cold One",
+        "id": "4b06-2231-8227-c8a7",
+        "comment": "Cold One Chariots/Cold One",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "7", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "3", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "-", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "4", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "-", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "-", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "2", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "2", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "-", "typeId": "c435-6b14-f77e-3c72"}
+        ]
+      },
+      {
+        "name": "Knight Charioteer",
+        "id": "9559-a79c-f64d-6036",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "-", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "5", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "4", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "4", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "-", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "-", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "5", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "1", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "9", "typeId": "c435-6b14-f77e-3c72"}
+        ]
+      },
+      {
+        "name": "Dark Elf Master",
+        "id": "2b5e-0843-c63f-81b4",
+        "hidden": false,
+        "typeId": "b070-143a-73f-2772",
+        "typeName": "Model",
+        "characteristics": [
+          {"name": "M", "$text": "5", "typeId": "cd3b-a5a4-e185-5a9d"},
+          {"name": "WS", "$text": "6", "typeId": "b007-7d58-4f14-1e01"},
+          {"name": "BS", "$text": "6", "typeId": "59f9-ccf5-1155-fb05"},
+          {"name": "S", "$text": "4", "typeId": "5b6b-1427-2a45-dd0c"},
+          {"name": "T", "$text": "3", "typeId": "ab43-8b61-83e7-d090"},
+          {"name": "W", "$text": "2", "typeId": "83ed-7b82-bf1f-e558"},
+          {"name": "I", "$text": "5", "typeId": "73b1-abe5-72f8-41e2"},
+          {"name": "A", "$text": "3", "typeId": "dddc-9fbd-b0fd-a480"},
+          {"name": "Ld", "$text": "9", "typeId": "c435-6b14-f77e-3c72"}
+        ]
+      }
+    ],
+    "sharedSelectionEntries": [
+      {
+        "name": "Dark Elf Dreadlord",
+        "id": "80bf-d7fb-a5a9-1d2d",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "unit",
+        "categoryLinks": [{"name": "Faction: Dark Elves - Renegades v2.0", "id": "94fc-f109-0319-520e", "hidden": false, "primary": false, "targetId": "172e-9d83-eae4-aa8a"}],
+        "constraints": [
+          {
+            "id": "d86b-1651-8912-7b63",
+            "comment": "Unit strenght script",
+            "field": "73ea-910d-c188-35d0",
+            "includeChildSelections": true,
+            "scope": "self",
+            "shared": true,
+            "type": "max",
+            "value": -1
+          }
+        ],
+        "infoGroups": [
+          {
+            "name": "Special Rules",
+            "id": "61b3-f69e-e3e0-15d1",
+            "hidden": false,
+            "infoLinks": [
+              {"name": "Eternal Hatred", "id": "223f-5aa8-a5b5-8b85", "hidden": false, "targetId": "0f8e-d358-7dd7-2e1d", "type": "profile"},
+              {
+                "name": "Hatred",
+                "id": "471b-56ac-c17b-8319",
+                "hidden": false,
+                "targetId": "f4b3-18af-16bf-78dd",
+                "type": "profile",
+                "modifiers": [{"field": "name", "type": "append", "value": "(High Elves)"}]
+              },
+              {"name": "Murderous", "id": "98ef-0dc1-085a-bb16", "hidden": false, "targetId": "7d46-0117-b69f-5d06", "type": "profile"},
+              {
+                "name": "Strike First",
+                "id": "7e84-b8ba-fc00-036f",
+                "hidden": false,
+                "targetId": "48fd-23c1-c0d5-ae1d",
+                "type": "profile",
+                "modifiers": [
+                  {
+                    "field": "annotation",
+                    "type": "set",
+                    "value": "does not apply to this model's mount should it have one",
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "c96a-608-5de4-b943", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1},
+                          {"childId": "mount", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "modifiers": [
+          {
+            "comment": "Unit strenght script",
+            "field": "d86b-1651-8912-7b63",
+            "type": "set",
+            "value": 20,
+            "conditions": [{"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+          }
+        ],
+        "profiles": [
+          {
+            "name": "Dark Elf Dreadlord",
+            "id": "9c24-d465-8b19-dd59",
+            "hidden": false,
+            "typeId": "2878-9a1f-dd74-48e3",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Troop Type", "$text": "Regular infantry (character)", "typeId": "5d94-6b94-bd89-1944"},
+              {"name": "Unit Size", "$text": "1", "typeId": "80a1-bb6f-66e4-4a5b"}
+            ]
+          }
+        ],
+        "selectionEntries": [
+          {
+            "name": "Dark Elf Dreadlord",
+            "id": "d661-4059-c141-978d",
+            "hidden": false,
+            "import": true,
+            "type": "model",
+            "categoryLinks": [
+              {"name": "MAY_HAVE_ARMOUR", "id": "e8d3-7919-56cb-9724", "hidden": false, "targetId": "may-have-armour"},
+              {"name": "MAY_HAVE_SHIELD", "id": "190f-2982-aadc-2f1f", "hidden": false, "targetId": "may-have-shield"},
+              {"name": "Regular Infantry", "id": "2e19-3198-dcac-68be", "hidden": false, "primary": false, "targetId": "f3f7-ca43-674e-115f"}
+            ],
+            "constraints": [
+              {"id": "1595-31bb-eb56-329f", "field": "selections", "scope": "parent", "shared": true, "type": "min", "value": 1},
+              {"id": "825c-830a-8708-3bb8", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}
+            ],
+            "costs": [{"name": "pts", "typeId": "points", "value": 130}],
+            "entryLinks": [
+              {
+                "name": "Hand Weapon",
+                "id": "9e66-1d0e-a10b-cfec",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "targetId": "721d-36e3-388a-c0d6",
+                "type": "selectionEntry",
+                "constraints": [{"id": "4fc2-8993-ffd1-0d2d", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              },
+              {
+                "name": "Mount",
+                "id": "6ce4-fcf3-cfcc-2ac7",
+                "collapsible": false,
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "targetId": "2d39-d82f-385b-2f62",
+                "type": "selectionEntryGroup"
+              },
+              {
+                "name": "Magic Items",
+                "id": "9591-e351-f0e6-d7b2",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 7,
+                "targetId": "1539-fd78-88f-badd",
+                "type": "selectionEntryGroup",
+                "constraints": [{"id": "e60f-d0cd-a2f0-c73a", "field": "points", "scope": "parent", "shared": false, "type": "max", "value": 100}]
+              },
+              {
+                "name": "Shield",
+                "id": "070b-c075-0c72-4448",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "targetId": "6192-f9f1-5d53-2042",
+                "type": "selectionEntry",
+                "constraints": [{"id": "7290-2196-ee73-665c", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 1}],
+                "costs": [{"name": "pts", "typeId": "points", "value": 2}]
+              }
+            ],
+            "infoLinks": [
+              {"name": "Dark Elf Dreadlord", "id": "a60a-46fe-7b2a-86df", "hidden": false, "targetId": "a2a7-95f2-0aa4-6458", "type": "profile"},
+              {"name": "Base (25x25)", "id": "8cac-e043-2e3f-72a6", "hidden": false, "targetId": "193c-4d0d-de6b-bbb1", "type": "profile"}
+            ],
+            "modifiers": [
+              {
+                "id": "4461-7fbe-4532-97c2",
+                "comment": "if mounted",
+                "field": "category",
+                "type": "remove",
+                "value": "f3f7-ca43-674e-115f",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "c96a-608-5de4-b943", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1},
+                      {"childId": "mount", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1}
+                    ]
+                  }
+                ]
+              },
+              {"comment": "Unit strenght script", "field": "73ea-910d-c188-35d0", "type": "set", "value": 1},
+              {
+                "comment": "Unit strenght script",
+                "field": "73ea-910d-c188-35d0",
+                "type": "multiply",
+                "value": 0,
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "c96a-608-5de4-b943", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1},
+                      {"childId": "mount", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1}
+                    ]
+                  }
+                ]
+              }
+            ],
+            "selectionEntryGroups": [
+              {
+                "name": "Command",
+                "id": "13bd-2c01-f91c-96fc",
+                "hidden": false,
+                "sortIndex": 8,
+                "entryLinks": [{"name": "General", "id": "597e-d6ac-b8ab-2554", "hidden": false, "import": true, "targetId": "7d76-b1a1-1535-a04c", "type": "selectionEntry"}]
+              },
+              {
+                "name": "Weapons",
+                "id": "3fe6-ccce-2d3c-c371",
+                "hidden": false,
+                "sortIndex": 5,
+                "constraints": [
+                  {"id": "795d-c818-ea2b-177f", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 0},
+                  {"id": "934a-32cf-6b13-ab1d", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 1}
+                ],
+                "entryLinks": [
+                  {
+                    "name": "Additional Hand Weapon",
+                    "id": "bb24-808d-54cc-ef77",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "targetId": "8943-3e16-db2a-b7f3",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 3}]
+                  },
+                  {
+                    "name": "Great Weapon",
+                    "id": "db60-1163-9fcf-14bc",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "targetId": "2283-26e9-76c3-6048",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 4}]
+                  },
+                  {
+                    "name": "Halberd",
+                    "id": "4729-2f5b-af46-937e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "targetId": "f0a5-1b2e-3d2b-d540",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 3}]
+                  },
+                  {
+                    "name": "Lance",
+                    "id": "76dd-bf05-37b4-6d04",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "targetId": "906a-c09d-9f34-a31f",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 4}]
+                  }
+                ]
+              },
+              {
+                "name": "Ranged Weapons",
+                "id": "811f-5bf0-2aa6-47a3",
+                "hidden": false,
+                "sortIndex": 4,
+                "constraints": [
+                  {"id": "e324-2fa4-2f3c-f4bd", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 0},
+                  {"id": "a83f-6d82-304f-e291", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 1}
+                ],
+                "entryLinks": [
+                  {
+                    "name": "Repeater Crossbow",
+                    "id": "cdfd-0e50-b1da-358e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "targetId": "40ad-23e9-f0c7-4c15",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 6}]
+                  },
+                  {
+                    "name": "Repeater Handbow",
+                    "id": "066b-2d0f-efd7-d96f",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "targetId": "4f02-c0c2-a8f7-1672",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 5}]
+                  },
+                  {
+                    "name": "Brace of Repeater Handbows",
+                    "id": "8d7a-5d8b-e3bb-9e03",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "targetId": "9f47-81ce-2112-83e1",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 10}]
+                  }
+                ]
+              },
+              {
+                "name": "Armour",
+                "id": "e91a-cbc2-64b7-f8d1",
+                "defaultSelectionEntryId": "74ce0376-ab176240",
+                "hidden": false,
+                "sortIndex": 6,
+                "constraints": [
+                  {"id": "bf21-a61e-355e-fbec", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1},
+                  {"id": "9b09-e477-734c-61aa", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 1}
+                ],
+                "entryLinks": [
+                  {
+                    "name": "Heavy Armour",
+                    "id": "bfff-6d97-cf8a-05d9",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "targetId": "62fb-f89d-afc-1cf1",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 3}]
+                  },
+                  {
+                    "name": "Full Plate Armour",
+                    "id": "f3d5-79c9-6b69-c7e8",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "targetId": "2505-873d-1655-3b0b",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 6}]
+                  },
+                  {
+                    "name": "Light Armour",
+                    "id": "5f78-94fb-973f-ce50",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "targetId": "7cab-40e6-f134-de78",
+                    "type": "selectionEntry",
+                    "constraints": [{"id": "b0d4-e961-202b-8881", "field": "selections", "scope": "parent", "shared": false, "type": "max", "value": 1}]
+                  }
+                ]
+              },
+              {
+                "name": "Special Rules",
+                "id": "ac2a-5b9d-d71d-98ce",
+                "hidden": false,
+                "sortIndex": 9,
+                "selectionEntries": [
+                  {
+                    "name": "Sea Dragon Cloak",
+                    "id": "6583-429a-0b42-c0f0",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [{"id": "704b-ae3c-81f8-b7d2", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 1}],
+                    "costs": [{"name": "pts", "typeId": "points", "value": 4}],
+                    "infoLinks": [{"name": "Sea Dragon Cloak", "id": "2099-4b3a-3e6e-cecb", "hidden": false, "targetId": "bdfa-e3ad-e40b-b2a4", "type": "profile"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Scourgerunner Chariot",
+        "id": "81b0-e3ac-eee6-3176",
+        "hidden": false,
+        "import": true,
+        "type": "model",
+        "categoryLinks": [{"name": "Light Chariot", "id": "d061-9be0-d332-f39b", "hidden": false, "primary": false, "targetId": "7dce-b0f0-2217-2820"}],
+        "costs": [{"name": "pts", "typeId": "points", "value": 85}],
+        "entryLinks": [
+          {
+            "name": "Ravager harpoon",
+            "id": "a1e9-15bc-0c2a-b22e",
+            "hidden": false,
+            "import": true,
+            "sortIndex": 3,
+            "targetId": "1a11-44f6-24c1-5dca",
+            "type": "selectionEntry",
+            "constraints": [{"id": "38f4-ff1b-878d-4129", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+          }
+        ],
+        "infoGroups": [
+          {
+            "name": "Special Rules",
+            "id": "f195-3b4d-6528-4dc5",
+            "hidden": false,
+            "infoLinks": [
+              {"name": "Elven Reflexes", "id": "76e9-2b65-8094-238d", "hidden": false, "targetId": "b4cb-3fa9-d302-03cd", "type": "profile"},
+              {
+                "name": "Hatred",
+                "id": "a50c-b30e-8e55-2cc8",
+                "hidden": false,
+                "targetId": "f4b3-18af-16bf-78dd",
+                "type": "profile",
+                "modifiers": [{"field": "name", "type": "append", "value": "(High Elves)"}]
+              },
+              {
+                "name": "Impact Hits",
+                "id": "828b-12ac-0ac0-5400",
+                "hidden": false,
+                "targetId": "5c2-e9dd-2715-a0c0",
+                "type": "profile",
+                "modifiers": [{"field": "name", "type": "append", "value": "(D6)"}]
+              },
+              {"name": "Open Order", "id": "cd11-b013-324e-2781", "hidden": false, "targetId": "5b67-8535-146c-7cea", "type": "profile"},
+              {"name": "Sea Dragon Cloak", "id": "16a4-78eb-03ff-a804", "hidden": false, "targetId": "bdfa-e3ad-e40b-b2a4", "type": "profile"},
+              {"name": "Swiftstride", "id": "e55a-50da-b5ae-d0a9", "hidden": false, "targetId": "dc91-48b3-3696-217", "type": "profile"},
+              {
+                "name": "Armour Value",
+                "id": "4320-17f8-4ea3-0a47",
+                "hidden": false,
+                "targetId": "e099-1ebb-9e85-34c8",
+                "type": "profile",
+                "modifiers": [{"field": "name", "type": "append", "value": ":  5+"}]
+              }
+            ]
+          }
+        ],
+        "infoLinks": [
+          {"name": "Scourgerunner Chariot", "id": "94c1-b2b1-5d69-3343", "hidden": false, "targetId": "dc55-4f32-8e6c-5380", "type": "profile"},
+          {"name": "Base (50x100)", "id": "555a-9d45-dbab-e083", "hidden": false, "targetId": "d456-e30e-f85d-14d", "type": "profile"}
+        ],
+        "modifiers": [{"comment": "Unit strenght script", "field": "73ea-910d-c188-35d0", "type": "set", "value": 3}],
+        "selectionEntries": [
+          {
+            "name": "Dark Steed",
+            "id": "4608-b21f-6c95-2ab1",
+            "hidden": false,
+            "import": true,
+            "sortIndex": 2,
+            "type": "model",
+            "categoryLinks": [{"name": "CHARIOT CREW", "id": "6e92-c3e4-1967-6157", "hidden": false, "primary": false, "targetId": "4cf7-bf85-308d-c29a"}],
+            "constraints": [
+              {"id": "2632-fa52-ac96-4c5a", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 2},
+              {"id": "3d80-16aa-af13-3e9d", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 2}
+            ],
+            "costs": [{"name": "pts", "typeId": "points", "value": 0}],
+            "entryLinks": [
+              {
+                "name": "Hand Weapon",
+                "id": "4d61-0f1a-b5c7-298c",
+                "hidden": false,
+                "import": true,
+                "targetId": "721d-36e3-388a-c0d6",
+                "type": "selectionEntry",
+                "constraints": [{"id": "ccea-cbb8-4ce8-e84f", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              }
+            ],
+            "infoLinks": [{"name": "Dark Steed", "id": "9065-4f06-0f61-0cb8", "hidden": false, "targetId": "7485-cbb0-1026-db45", "type": "profile"}],
+            "modifiers": [{"comment": "Unit strenght script", "field": "73ea-910d-c188-35d0", "type": "set", "value": 3}]
+          },
+          {
+            "name": "Beastmaster Crew",
+            "id": "ca40-93fb-fb8b-31c2",
+            "hidden": false,
+            "import": true,
+            "sortIndex": 1,
+            "subType": "crew",
+            "type": "model",
+            "categoryLinks": [{"name": "CHARIOT CREW", "id": "5320-882d-1711-5fff", "hidden": false, "primary": false, "targetId": "4cf7-bf85-308d-c29a"}],
+            "constraints": [
+              {"id": "d7be-143c-5ce4-22a3", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 2},
+              {"id": "d76d-517c-ed17-46ad", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 2}
+            ],
+            "costs": [{"name": "pts", "typeId": "points", "value": 0}],
+            "entryLinks": [
+              {
+                "name": "Hand Weapon",
+                "id": "cf14-8542-14ec-2258",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "targetId": "721d-36e3-388a-c0d6",
+                "type": "selectionEntry",
+                "constraints": [{"id": "a089-5e75-64fc-e3ab", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              },
+              {
+                "name": "Cavalry Spear",
+                "id": "a06c-9a04-1fac-fc6d",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "targetId": "a2d0-40e9-83ad-23dc",
+                "type": "selectionEntry",
+                "constraints": [{"id": "8b24-5500-b105-85f8", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              },
+              {
+                "name": "Repeater Crossbow",
+                "id": "2ed6-d35d-9200-3156",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "targetId": "40ad-23e9-f0c7-4c15",
+                "type": "selectionEntry",
+                "constraints": [{"id": "4eab-b0c0-cd22-6be2", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              }
+            ],
+            "infoLinks": [{"name": "Beastmaster Crew", "id": "d91b-0c7c-1f53-87ae", "hidden": false, "targetId": "38e0-7ace-1937-8943", "type": "profile"}]
+          }
+        ]
+      },
+      {
+        "name": "Cold One Chariot",
+        "id": "d701-19f9-fcdf-500f",
+        "hidden": false,
+        "import": true,
+        "type": "model",
+        "categoryLinks": [{"name": "Heavy Chariot", "id": "51bf-0dbe-c7a3-739d", "hidden": false, "primary": false, "targetId": "d768-7cf0-de0a-c249"}],
+        "costs": [{"name": "pts", "typeId": "points", "value": 110}, {"name": "Unit Strength", "typeId": "73ea-910d-c188-35d0", "value": 0}],
+        "infoGroups": [
+          {
+            "name": "Special Rules",
+            "id": "efa6-ca18-cec4-fd1f",
+            "hidden": false,
+            "infoLinks": [
+              {
+                "name": "Armour Bane",
+                "id": "dae4-f17c-aa20-30f3",
+                "hidden": false,
+                "targetId": "2af0-975f-bb14-8b8f",
+                "type": "profile",
+                "modifiers": [{"field": "name", "type": "append", "value": "(1, Cold One only)"}]
+              },
+              {"name": "Close Order", "id": "1557-8732-c9ac-6f6a", "hidden": false, "targetId": "883e-e1b1-4fe9-5912", "type": "profile"},
+              {"name": "Elven Reflexes", "id": "306c-cc00-16f6-ce60", "hidden": false, "targetId": "b4cb-3fa9-d302-03cd", "type": "profile"},
+              {"name": "Fear", "id": "f005-1694-f893-2021", "hidden": false, "targetId": "5ec9-a98-d8c5-e18b", "type": "profile"},
+              {"name": "First Charge", "id": "be96-1bf9-63f3-13ec", "hidden": false, "targetId": "785a-2886-af42-dce9", "type": "profile"},
+              {
+                "name": "Hatred",
+                "id": "68b6-ee3e-8ef8-8714",
+                "hidden": false,
+                "targetId": "f4b3-18af-16bf-78dd",
+                "type": "profile",
+                "modifiers": [{"field": "name", "type": "append", "value": "(High Elves)"}]
+              },
+              {
+                "name": "Impact Hits",
+                "id": "109f-9880-aae6-7407",
+                "hidden": false,
+                "targetId": "5c2-e9dd-2715-a0c0",
+                "type": "profile",
+                "modifiers": [{"field": "name", "type": "append", "value": "(D6+1)"}]
+              },
+              {"name": "Stupidity", "id": "0dd3-14ac-d7e9-5d1a", "hidden": false, "targetId": "f7af-e016-1f9c-54c0", "type": "profile"},
+              {
+                "name": "Armour Value",
+                "id": "4386-fca7-fc06-dbbf",
+                "hidden": false,
+                "targetId": "e099-1ebb-9e85-34c8",
+                "type": "profile",
+                "modifiers": [{"field": "name", "type": "append", "value": ":  4+"}]
+              }
+            ]
+          }
+        ],
+        "infoLinks": [
+          {"name": "Cold One Chariot", "id": "4316-d8b3-ccc2-95b8", "hidden": false, "targetId": "b952-802c-644d-08f3", "type": "profile"},
+          {"name": "Base (50x100)", "id": "c19c-7047-43ed-9ae4", "hidden": false, "targetId": "d456-e30e-f85d-14d", "type": "profile"}
+        ],
+        "modifiers": [{"comment": "Unit strenght script", "field": "73ea-910d-c188-35d0", "type": "set", "value": 5}],
+        "selectionEntries": [
+          {
+            "name": "Knight Charioteer",
+            "id": "34d9-f74d-19f8-c831",
+            "hidden": false,
+            "import": true,
+            "sortIndex": 1,
+            "type": "upgrade",
+            "categoryLinks": [{"name": "CHARIOT CREW", "id": "3a8a-6b54-4536-a3f2", "hidden": false, "primary": false, "targetId": "4cf7-bf85-308d-c29a"}],
+            "constraints": [
+              {"id": "06ac-ecd7-eb2c-dca1", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 2},
+              {"id": "cd5f-75d8-2c7b-be49", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 2}
+            ],
+            "costs": [{"name": "pts", "typeId": "points", "value": 0}],
+            "entryLinks": [
+              {
+                "name": "Hand Weapon",
+                "id": "aee4-9b86-dcd6-beba",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "targetId": "721d-36e3-388a-c0d6",
+                "type": "selectionEntry",
+                "constraints": [{"id": "57c8-e753-c3ea-01b0", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              },
+              {
+                "name": "Cavalry Spear",
+                "id": "6104-f1ff-894b-e5a4",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "targetId": "a2d0-40e9-83ad-23dc",
+                "type": "selectionEntry",
+                "constraints": [{"id": "bfbb-fccf-d15f-e057", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              },
+              {
+                "name": "Repeater Crossbow",
+                "id": "ab8d-5834-8a2d-c549",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "targetId": "40ad-23e9-f0c7-4c15",
+                "type": "selectionEntry",
+                "constraints": [{"id": "ea74-7dda-2ba4-c891", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              }
+            ],
+            "infoLinks": [{"name": "Knight Charioteer", "id": "6577-3401-11dc-0d10", "hidden": false, "targetId": "9559-a79c-f64d-6036", "type": "profile"}]
+          },
+          {
+            "name": "Cold One",
+            "id": "3ce1-a1f1-5664-9e45",
+            "hidden": false,
+            "import": true,
+            "sortIndex": 2,
+            "type": "upgrade",
+            "categoryLinks": [{"name": "CHARIOT CREW", "id": "a17c-d572-6ba7-fd34", "hidden": false, "primary": false, "targetId": "4cf7-bf85-308d-c29a"}],
+            "constraints": [
+              {"id": "be96-e416-d20a-4520", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 2},
+              {"id": "f8bb-7c49-d694-c1f3", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 2}
+            ],
+            "costs": [{"name": "pts", "typeId": "points", "value": 0}],
+            "entryLinks": [
+              {
+                "name": "Hand Weapon",
+                "id": "15f3-9106-259e-b032",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "targetId": "721d-36e3-388a-c0d6",
+                "type": "selectionEntry",
+                "constraints": [{"id": "b5e8-73fc-e7d4-e745", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              }
+            ],
+            "infoLinks": [{"name": "Cold One", "id": "48e6-e3ea-2224-60f8", "hidden": false, "targetId": "4b06-2231-8227-c8a7", "type": "profile"}]
+          }
+        ]
+      },
+      {
+        "name": "Wicked claws",
+        "id": "c414-118e-8076-32a9",
+        "collective": true,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "constraints": [{"id": "8da0-464f-7f28-ca4c", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+        "infoLinks": [{"name": "Wicked Claws", "id": "8f9d-fc27-21d0-7145", "hidden": false, "targetId": "b54b-336b-cc22-8f44", "type": "profile"}]
+      },
+      {
+        "name": "Venomous tail",
+        "id": "69c2-e6b5-996e-82e1",
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "constraints": [{"id": "540d-41f6-259b-2c92", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+        "infoLinks": [{"name": "Venomous tail", "id": "1917-618a-1f3b-3d23", "hidden": false, "targetId": "462f-6902-faf6-595b", "type": "profile"}]
+      },
+      {
+        "name": "Noxious breath",
+        "id": "4d7e-7937-3d23-792e",
+        "collective": true,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "constraints": [{"id": "4613-7d22-fa4d-97ea", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+        "infoLinks": [{"name": "Noxious breath", "id": "660d-45e9-9f70-3f46", "hidden": false, "targetId": "ebef-8855-11e0-c1a1", "type": "profile"}]
+      },
+      {
+        "name": "Ravager harpoon",
+        "id": "1a11-44f6-24c1-5dca",
+        "collective": true,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "constraints": [{"id": "f24d-cebe-f4ac-2084", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+        "profiles": [
+          {
+            "name": "Ravager harpoon",
+            "id": "f8f3-15b8-341a-9baf",
+            "hidden": false,
+            "typeId": "a378-c633-912d-11ce",
+            "typeName": "Weapon",
+            "characteristics": [
+              {"name": "R", "$text": "24\"", "typeId": "2360-c777-5e07-ed58"},
+              {"name": "S", "$text": "6", "typeId": "ac19-f99c-72e9-a1a7"},
+              {"name": "AP", "$text": "-3", "typeId": "9429-ffe7-2ce5-e9a5"},
+              {"name": "Special Rules", "$text": "Cumbersome, Multiple Wounds (D3)", "typeId": "5f83-3633-336b-93b4"},
+              {
+                "name": "Notes",
+                "$text": "During the Shooting phase, one of the Beastmaster Crew may fire this weapon instead of their repeater crossbow.",
+                "typeId": "772a-a7ff-f6b3-df71"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dark Elf Master",
+        "id": "2120-afe0-accb-30ce",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "unit",
+        "categoryLinks": [{"name": "Faction: Dark Elves - Renegades v2.0", "id": "8684-7a81-5924-927b", "hidden": false, "primary": false, "targetId": "172e-9d83-eae4-aa8a"}],
+        "constraints": [
+          {
+            "id": "78d4-5d3b-7934-8066",
+            "comment": "Unit strenght script",
+            "field": "73ea-910d-c188-35d0",
+            "includeChildSelections": true,
+            "scope": "self",
+            "shared": true,
+            "type": "max",
+            "value": -1
+          }
+        ],
+        "infoGroups": [
+          {
+            "name": "Special Rules",
+            "id": "62e7-516e-fcb8-0ac3",
+            "hidden": false,
+            "infoLinks": [
+              {"name": "Eternal Hatred", "id": "d8ab-1493-3026-c3ef", "hidden": false, "targetId": "0f8e-d358-7dd7-2e1d", "type": "profile"},
+              {
+                "name": "Hatred",
+                "id": "988c-a677-5c0c-4629",
+                "hidden": false,
+                "targetId": "f4b3-18af-16bf-78dd",
+                "type": "profile",
+                "modifiers": [{"field": "name", "type": "append", "value": "(High Elves)"}]
+              },
+              {"name": "Murderous", "id": "e6a3-fe51-cd9d-a94d", "hidden": false, "targetId": "7d46-0117-b69f-5d06", "type": "profile"},
+              {
+                "name": "Strike First",
+                "id": "4c70-fbf4-803e-8608",
+                "hidden": false,
+                "targetId": "48fd-23c1-c0d5-ae1d",
+                "type": "profile",
+                "modifiers": [
+                  {
+                    "field": "annotation",
+                    "type": "set",
+                    "value": "does not apply to this model's mount should it have one",
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "c96a-608-5de4-b943", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1},
+                          {"childId": "mount", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "modifiers": [
+          {
+            "comment": "Unit strenght script",
+            "field": "78d4-5d3b-7934-8066",
+            "type": "set",
+            "value": 20,
+            "conditions": [{"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+          }
+        ],
+        "profiles": [
+          {
+            "name": "Dark Elf Master",
+            "id": "1167-e6ad-28a7-c942",
+            "hidden": false,
+            "typeId": "2878-9a1f-dd74-48e3",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Troop Type", "$text": "Regular infantry (character)", "typeId": "5d94-6b94-bd89-1944"},
+              {"name": "Unit Size", "$text": "1", "typeId": "80a1-bb6f-66e4-4a5b"}
+            ]
+          }
+        ],
+        "selectionEntries": [
+          {
+            "name": "Dark Elf Master",
+            "id": "de10-9041-9de4-ce6e",
+            "hidden": false,
+            "import": true,
+            "type": "model",
+            "categoryLinks": [
+              {"name": "Regular Infantry", "id": "f1c8-c6a6-5c9d-cbe3", "hidden": false, "primary": false, "targetId": "f3f7-ca43-674e-115f"},
+              {"name": "MAY_HAVE_ARMOUR", "id": "5454-2535-7d3c-93e4", "hidden": false, "targetId": "may-have-armour"},
+              {"name": "MAY_HAVE_ARMOUR", "id": "aacc-231f-e52f-e7b5", "hidden": false, "targetId": "may-have-armour"},
+              {"name": "MAY_HAVE_ARMOUR", "id": "b4af-e26c-46de-fe65", "hidden": false, "targetId": "may-have-armour"},
+              {"name": "MAY_HAVE_SHIELD", "id": "80c3-cdce-3291-43a2", "hidden": false, "targetId": "may-have-shield"}
+            ],
+            "constraints": [
+              {"id": "ca50-1d54-de3b-7101", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "min", "value": 1},
+              {"id": "3b63-f79d-f4ec-758a", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}
+            ],
+            "costs": [{"name": "pts", "typeId": "points", "value": 70}],
+            "entryLinks": [
+              {
+                "name": "Hand Weapon",
+                "id": "85f5-c25c-cc0e-9645",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "targetId": "721d-36e3-388a-c0d6",
+                "type": "selectionEntry",
+                "constraints": [{"id": "f7c5-cf32-b4ac-b2d9", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              },
+              {
+                "name": "Magic Items",
+                "id": "043c-4de1-9a4e-f083",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 8,
+                "targetId": "1539-fd78-88f-badd",
+                "type": "selectionEntryGroup",
+                "constraints": [{"id": "1b48-1f02-c711-e368", "field": "points", "scope": "parent", "shared": false, "type": "max", "value": 50}]
+              },
+              {
+                "name": "Mount",
+                "id": "4214-0573-c6f4-15c8",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "targetId": "2d39-d82f-385b-2f62",
+                "type": "selectionEntryGroup"
+              },
+              {
+                "name": "Shield",
+                "id": "fc1b-2c89-5f5d-a843",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "targetId": "6192-f9f1-5d53-2042",
+                "type": "selectionEntry",
+                "costs": [{"name": "pts", "typeId": "points", "value": 2}]
+              }
+            ],
+            "infoLinks": [
+              {"name": "Dark Elf Master", "id": "a5a1-cf8c-721d-b53d", "hidden": false, "targetId": "2b5e-0843-c63f-81b4", "type": "profile"},
+              {"name": "Base (25x25)", "id": "9a0b-b0ae-6175-51ce", "hidden": false, "targetId": "193c-4d0d-de6b-bbb1", "type": "profile"}
+            ],
+            "modifiers": [
+              {
+                "id": "6495-1411-99fb-b66b",
+                "comment": "if mounted",
+                "field": "category",
+                "type": "remove",
+                "value": "f3f7-ca43-674e-115f",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "c96a-608-5de4-b943", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1},
+                      {"childId": "mount", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1}
+                    ]
+                  }
+                ]
+              },
+              {"comment": "Unit strenght script", "field": "73ea-910d-c188-35d0", "type": "set", "value": 1},
+              {
+                "comment": "Unit strenght script",
+                "field": "73ea-910d-c188-35d0",
+                "type": "multiply",
+                "value": 0,
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "c96a-608-5de4-b943", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1},
+                      {"childId": "mount", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1}
+                    ]
+                  }
+                ]
+              }
+            ],
+            "selectionEntryGroups": [
+              {
+                "name": "Command",
+                "id": "7c29-3550-7b69-fae8",
+                "hidden": false,
+                "sortIndex": 9,
+                "entryLinks": [
+                  {"name": "General", "id": "4f29-c870-0721-21e2", "hidden": false, "import": true, "sortIndex": 1, "targetId": "7d76-b1a1-1535-a04c", "type": "selectionEntry"},
+                  {
+                    "name": "Battle Standard Bearer",
+                    "id": "2d81-3144-45be-8ba9",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "targetId": "5b87-9cf5-953d-3829",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 25}],
+                    "entryLinks": [{"name": "Magic Standards", "id": "405a-5016-cbea-4d5f", "hidden": false, "import": true, "targetId": "6bbe-8054-19b7-e5d6", "type": "selectionEntryGroup"}]
+                  }
+                ]
+              },
+              {
+                "name": "Weapons",
+                "id": "7f57-3f81-7360-0ede",
+                "hidden": false,
+                "sortIndex": 5,
+                "constraints": [{"id": "a123-2137-dcb0-d70d", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 1}],
+                "entryLinks": [
+                  {
+                    "name": "Additional Hand Weapon",
+                    "id": "796e-e445-d70f-bc26",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "targetId": "8943-3e16-db2a-b7f3",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 3}]
+                  },
+                  {
+                    "name": "Great Weapon",
+                    "id": "56ab-a28e-572b-6cf9",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "targetId": "2283-26e9-76c3-6048",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 4}]
+                  },
+                  {
+                    "name": "Halberd",
+                    "id": "9d4a-3a5d-4f3e-858a",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "targetId": "f0a5-1b2e-3d2b-d540",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 3}]
+                  },
+                  {
+                    "name": "Lance",
+                    "id": "3736-eb0d-01d3-ffbf",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "targetId": "906a-c09d-9f34-a31f",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 4}]
+                  }
+                ]
+              },
+              {
+                "name": "Ranged Weapons",
+                "id": "8df0-71bc-5594-a60d",
+                "hidden": false,
+                "sortIndex": 4,
+                "constraints": [{"id": "367f-bfce-0ac2-06e5", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 1}],
+                "entryLinks": [
+                  {
+                    "name": "Repeater Crossbow",
+                    "id": "9af7-c5d6-f489-65d4",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "targetId": "40ad-23e9-f0c7-4c15",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 6}]
+                  },
+                  {
+                    "name": "Repeater Handbow",
+                    "id": "9047-9394-8c44-4621",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "targetId": "4f02-c0c2-a8f7-1672",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 5}]
+                  },
+                  {
+                    "name": "Brace of Repeater Handbows",
+                    "id": "e8eb-8898-04a2-bcde",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "targetId": "9f47-81ce-2112-83e1",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 10}]
+                  }
+                ]
+              },
+              {"name": "Equipment", "id": "955d-84a8-8862-7d76", "hidden": false, "sortIndex": 7},
+              {
+                "name": "Special Rules",
+                "id": "60a6-1fd3-55ac-f626",
+                "hidden": false,
+                "sortIndex": 10,
+                "selectionEntries": [
+                  {
+                    "name": "Sea Dragon Cloak",
+                    "id": "0064-04d4-a484-c41c",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [{"id": "8f67-336d-13d6-b567", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 1}],
+                    "costs": [{"name": "pts", "typeId": "points", "value": 4}],
+                    "infoLinks": [{"name": "Sea Dragon Cloak", "id": "3fd1-afd2-ca62-28b1", "hidden": false, "targetId": "bdfa-e3ad-e40b-b2a4", "type": "profile"}]
+                  }
+                ]
+              },
+              {
+                "name": "Armour",
+                "id": "00f0-184c-237e-c41e",
+                "defaultSelectionEntryId": "28818c9f-9e40b72d",
+                "hidden": false,
+                "sortIndex": 6,
+                "constraints": [
+                  {"id": "a251-80b7-c0a4-25db", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1},
+                  {"id": "a4ef-ec85-6a00-4ec5", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 1}
+                ],
+                "entryLinks": [
+                  {
+                    "name": "Heavy Armour",
+                    "id": "1fa5-021e-0eab-991b",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "targetId": "62fb-f89d-afc-1cf1",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 3}]
+                  },
+                  {
+                    "name": "Full Plate Armour",
+                    "id": "2d50-1756-e5af-0729",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "targetId": "2505-873d-1655-3b0b",
+                    "type": "selectionEntry",
+                    "costs": [{"name": "pts", "typeId": "points", "value": 6}]
+                  },
+                  {
+                    "name": "Light Armour",
+                    "id": "12d1-cb51-f64c-7742",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "targetId": "7cab-40e6-f134-de78",
+                    "type": "selectionEntry"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sharedSelectionEntryGroups": [
+      {
+        "name": "Mount",
+        "id": "2d39-d82f-385b-2f62",
+        "collapsible": true,
+        "hidden": false,
+        "constraints": [{"id": "03ac-2789-da9e-87ba", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+        "entryLinks": [
+          {
+            "name": "Cold One Chariot",
+            "id": "3bf3-c941-380d-c0b7",
+            "hidden": true,
+            "import": true,
+            "sortIndex": 5,
+            "targetId": "d701-19f9-fcdf-500f",
+            "type": "selectionEntry",
+            "categoryLinks": [{"name": "MOUNT", "id": "38a1-905e-2614-a26d", "hidden": false, "primary": false, "targetId": "c96a-608-5de4-b943"}],
+            "modifiers": [
+              {
+                "field": "hidden",
+                "type": "set",
+                "value": false,
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "2120-afe0-accb-30ce", "childName": "Dark Elf Master", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {
+                        "childId": "80bf-d7fb-a5a9-1d2d",
+                        "childName": "Dark Elf Dreadlord",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Scourgerunner Chariot",
+            "id": "c8b2-8233-5341-78e2",
+            "hidden": true,
+            "import": true,
+            "sortIndex": 4,
+            "targetId": "81b0-e3ac-eee6-3176",
+            "type": "selectionEntry",
+            "categoryLinks": [{"name": "MOUNT", "id": "e8e3-f224-f111-fcc8", "hidden": false, "primary": false, "targetId": "c96a-608-5de4-b943"}],
+            "modifiers": [
+              {
+                "field": "hidden",
+                "type": "set",
+                "value": false,
+                "conditions": [{"childId": "b9658fae-bf8c9cb8", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+              }
+            ]
+          }
+        ],
+        "selectionEntries": [
+          {
+            "name": "Cold One",
+            "id": "de91-87b2-c85e-7a74",
+            "hidden": true,
+            "import": true,
+            "sortIndex": 2,
+            "subType": "mount",
+            "type": "model",
+            "categoryLinks": [{"name": "Heavy Cavalry", "id": "dd60-5269-f569-2e85", "hidden": false, "primary": false, "targetId": "5165-d052-cfc2-5887"}],
+            "constraints": [{"id": "c9ba-d5c2-fc2c-d513", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "costs": [{"name": "pts", "typeId": "points", "value": 18}],
+            "entryLinks": [
+              {
+                "name": "Hand Weapon",
+                "id": "7d49-a794-96bd-3625",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "targetId": "721d-36e3-388a-c0d6",
+                "type": "selectionEntry",
+                "constraints": [{"id": "8496-de50-a84f-468c", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              }
+            ],
+            "infoGroups": [
+              {
+                "name": "Special Rules",
+                "id": "760c-ddae-3759-c655",
+                "hidden": false,
+                "infoLinks": [
+                  {
+                    "name": "Armour Bane",
+                    "id": "20d6-a400-502a-3d25",
+                    "hidden": false,
+                    "targetId": "2af0-975f-bb14-8b8f",
+                    "type": "profile",
+                    "modifiers": [{"field": "name", "type": "append", "value": "(1, Cold One only)"}]
+                  },
+                  {
+                    "name": "Armoured Hide",
+                    "id": "dffc-eebf-3d32-5b0c",
+                    "hidden": false,
+                    "targetId": "5450-cbf1-3e74-254a",
+                    "type": "profile",
+                    "modifiers": [{"field": "name", "type": "append", "value": "(1)"}]
+                  },
+                  {"name": "Fear", "id": "b170-d0c1-5b6a-61d4", "hidden": false, "targetId": "5ec9-a98-d8c5-e18b", "type": "profile"},
+                  {"name": "First Charge", "id": "9eb8-c43b-da35-adc0", "hidden": false, "targetId": "785a-2886-af42-dce9", "type": "profile"},
+                  {"name": "Stupidity", "id": "5ccd-d8a3-0595-e530", "hidden": false, "targetId": "f7af-e016-1f9c-54c0", "type": "profile"},
+                  {"name": "Swiftstride", "id": "de62-39fb-aac7-b657", "hidden": false, "targetId": "dc91-48b3-3696-217", "type": "profile"},
+                  {"name": "Counter Charge", "id": "db01-cff9-5723-3044", "hidden": false, "targetId": "5186-798d-69d-6545", "type": "profile"}
+                ]
+              }
+            ],
+            "infoLinks": [
+              {"name": "Cold One", "id": "08c9-bdeb-6cbd-e9d9", "hidden": false, "targetId": "37d1-a697-7672-527d", "type": "profile"},
+              {"name": "Base (30x60)", "id": "3230-0d3c-2214-793e", "hidden": false, "targetId": "3a8b-1dd5-77fb-fdc3", "type": "profile"}
+            ],
+            "modifiers": [
+              {
+                "field": "hidden",
+                "type": "set",
+                "value": false,
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "2120-afe0-accb-30ce", "childName": "Dark Elf Master", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {"childId": "d570962-f7ce68ac", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {
+                        "childId": "80bf-d7fb-a5a9-1d2d",
+                        "childName": "Dark Elf Dreadlord",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      },
+                      {"childId": "d9292409-23a541df", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                    ]
+                  }
+                ]
+              },
+              {"comment": "Unit strenght script", "field": "73ea-910d-c188-35d0", "type": "set", "value": 2}
+            ]
+          },
+          {
+            "name": "Dark Steed",
+            "id": "2156-fdd1-3980-db97",
+            "hidden": true,
+            "import": true,
+            "sortIndex": 1,
+            "subType": "mount",
+            "type": "model",
+            "categoryLinks": [{"name": "Light Cavalry", "id": "0e7a-4190-b36b-905d", "hidden": false, "primary": false, "targetId": "600c-7d08-5be1-fe0c"}],
+            "constraints": [{"id": "8250-d5fb-a72b-19ec", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "costs": [{"name": "pts", "typeId": "points", "value": 14}],
+            "entryLinks": [
+              {
+                "name": "Hand Weapon",
+                "id": "cb83-49be-9998-47a6",
+                "hidden": false,
+                "import": true,
+                "targetId": "721d-36e3-388a-c0d6",
+                "type": "selectionEntry",
+                "constraints": [{"id": "dfb1-970b-7b4e-ff85", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              }
+            ],
+            "infoGroups": [
+              {
+                "name": "Special Rules",
+                "id": "1282-2004-aff3-a2a8",
+                "hidden": false,
+                "infoLinks": [
+                  {"name": "Fast Cavalry", "id": "2fb3-ad6f-c64d-5280", "hidden": false, "targetId": "df-a39-e62-1c57", "type": "profile"},
+                  {"name": "Swiftstride", "id": "65c2-ff8a-2bca-a325", "hidden": false, "targetId": "dc91-48b3-3696-217", "type": "profile"}
+                ]
+              }
+            ],
+            "infoLinks": [
+              {"name": "Dark Steed", "id": "f1cd-3a20-210e-01e1", "hidden": false, "targetId": "b11b-ad1a-b33a-fbf8", "type": "profile"},
+              {"name": "Base (30x60)", "id": "d566-fa88-6564-e8d1", "hidden": false, "targetId": "3a8b-1dd5-77fb-fdc3", "type": "profile"}
+            ],
+            "modifiers": [
+              {
+                "field": "hidden",
+                "type": "set",
+                "value": false,
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "2120-afe0-accb-30ce", "childName": "Dark Elf Master", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {"childId": "d570962-f7ce68ac", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {
+                        "childId": "80bf-d7fb-a5a9-1d2d",
+                        "childName": "Dark Elf Dreadlord",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      },
+                      {"childId": "d9292409-23a541df", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                    ]
+                  }
+                ]
+              },
+              {"comment": "Unit strenght script", "field": "73ea-910d-c188-35d0", "type": "set", "value": 2}
+            ]
+          },
+          {
+            "name": "Black Dragon",
+            "id": "116d-8d68-0fbb-5acf",
+            "hidden": true,
+            "import": true,
+            "sortIndex": 8,
+            "subType": "mount",
+            "type": "model",
+            "categoryLinks": [
+              {"name": "Behemoth", "id": "8326-55b2-29c9-dbd2", "hidden": false, "primary": false, "targetId": "3755-6732-99b2-c713"},
+              {"name": "MAY_HAVE_ARMOUR", "id": "91b7-bf9c-109c-ad6b", "hidden": false, "targetId": "may-have-armour"}
+            ],
+            "constraints": [{"id": "d481-2af3-c48b-4be3", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "costs": [{"name": "pts", "typeId": "points", "value": 280}],
+            "entryLinks": [
+              {
+                "name": "Wicked claws",
+                "id": "6b0e-89c6-4de0-83aa",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "targetId": "c414-118e-8076-32a9",
+                "type": "selectionEntry",
+                "constraints": [{"id": "c905-b23a-81db-caff", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              },
+              {
+                "name": "Serrated Maw",
+                "id": "bf11-1428-8548-42e1",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "targetId": "1e93-bd5f-4eab-4521",
+                "type": "selectionEntry",
+                "constraints": [{"id": "3840-0589-b44c-3ae4", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              },
+              {
+                "name": "Noxious breath",
+                "id": "ecfe-aed7-da0f-0113",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "targetId": "4d7e-7937-3d23-792e",
+                "type": "selectionEntry",
+                "constraints": [{"id": "b720-b130-1bdd-dd57", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              },
+              {
+                "name": "Full Plate Armour",
+                "id": "560b-61c3-971d-9a40",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 4,
+                "targetId": "2505-873d-1655-3b0b",
+                "type": "selectionEntry",
+                "constraints": [{"id": "d4e8-1b16-a9d5-15f4", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              }
+            ],
+            "infoGroups": [
+              {
+                "name": "Special Rules",
+                "id": "5f6d-91aa-f161-e08a",
+                "hidden": false,
+                "infoLinks": [
+                  {"name": "Close Order", "id": "986c-fa81-2eb8-8223", "hidden": false, "targetId": "883e-e1b1-4fe9-5912", "type": "profile"},
+                  {
+                    "name": "Fly",
+                    "id": "d2be-5e1c-05aa-4902",
+                    "hidden": false,
+                    "targetId": "c557-6102-9a35-bbcd",
+                    "type": "profile",
+                    "modifiers": [{"field": "name", "type": "append", "value": "(10)"}]
+                  },
+                  {
+                    "name": "Hatred",
+                    "id": "b25e-0b46-4cc6-bc2e",
+                    "hidden": false,
+                    "targetId": "f4b3-18af-16bf-78dd",
+                    "type": "profile",
+                    "modifiers": [{"field": "name", "type": "append", "value": "(High Elves)"}]
+                  },
+                  {"name": "Large Target", "id": "3a88-8060-f749-9f2f", "hidden": false, "targetId": "c822-7ad0-f24a-e4af", "type": "profile"},
+                  {
+                    "name": "Stomp Attacks",
+                    "id": "d607-a948-19d0-0d63",
+                    "hidden": false,
+                    "targetId": "72db-24bb-7493-d753",
+                    "type": "profile",
+                    "modifiers": [{"field": "name", "type": "append", "value": "(D6)"}]
+                  },
+                  {"name": "Swiftstride", "id": "978b-1483-9528-ec3a", "hidden": false, "targetId": "dc91-48b3-3696-217", "type": "profile"},
+                  {"name": "Terror", "id": "1929-36d5-fbac-0a50", "hidden": false, "targetId": "c7a2-35bf-4313-f4f0", "type": "profile"}
+                ]
+              }
+            ],
+            "infoLinks": [
+              {"name": "Black Dragon", "id": "0192-61f7-74ee-88be", "hidden": false, "targetId": "7dda-05a1-ab74-6979", "type": "profile"},
+              {"name": "Base (60x100)", "id": "2daa-7bfc-d301-4d52", "hidden": false, "targetId": "5125-89a4-916a-eabd", "type": "profile"}
+            ],
+            "modifiers": [
+              {
+                "field": "hidden",
+                "type": "set",
+                "value": false,
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "childId": "80bf-d7fb-a5a9-1d2d",
+                        "childName": "Dark Elf Dreadlord",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      },
+                      {"childId": "d9292409-23a541df", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                    ]
+                  }
+                ]
+              },
+              {"comment": "Unit strenght script", "field": "73ea-910d-c188-35d0", "type": "set", "value": 6}
+            ]
+          },
+          {
+            "name": "Manticore",
+            "id": "fbe9-ef31-efb2-c76f",
+            "hidden": true,
+            "import": true,
+            "sortIndex": 6,
+            "subType": "mount",
+            "type": "model",
+            "categoryLinks": [
+              {"name": "Monstrous Creature", "id": "0e24-aac6-eee1-7fe3", "hidden": false, "primary": false, "targetId": "fb36-5275-617-c895"},
+              {"name": "MAY_HAVE_ARMOUR", "id": "d309-c030-fdd1-2adb", "hidden": false, "targetId": "may-have-armour"}
+            ],
+            "constraints": [{"id": "4352-4c31-40e7-3a07", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "costs": [{"name": "pts", "typeId": "points", "value": 130}],
+            "entryLinks": [
+              {
+                "name": "Wicked claws",
+                "id": "6af5-05f6-72d4-08f9",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "targetId": "c414-118e-8076-32a9",
+                "type": "selectionEntry",
+                "constraints": [{"id": "15ec-1901-ef3b-16d4", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              },
+              {
+                "name": "Heavy Armour",
+                "id": "2c98-1732-690f-a747",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "targetId": "62fb-f89d-afc-1cf1",
+                "type": "selectionEntry",
+                "constraints": [
+                  {"id": "77b9-2f97-bc0c-eb93", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1},
+                  {"id": "924f-12ec-53dd-0fba", "field": "selections", "scope": "parent", "shared": false, "type": "max", "value": 1}
+                ]
+              },
+              {
+                "name": "Venomous tail",
+                "id": "aa49-3348-c46d-d72b",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "targetId": "69c2-e6b5-996e-82e1",
+                "type": "selectionEntry",
+                "costs": [{"name": "pts", "typeId": "points", "value": 15}]
+              }
+            ],
+            "infoGroups": [
+              {
+                "name": "Special Rules",
+                "id": "0417-5efa-ec7c-4c38",
+                "hidden": false,
+                "infoLinks": [
+                  {"name": "Close Order", "id": "68f6-e321-fcc5-2975", "hidden": false, "targetId": "883e-e1b1-4fe9-5912", "type": "profile"},
+                  {
+                    "name": "Fly",
+                    "id": "8eba-5af7-ff33-829e",
+                    "hidden": false,
+                    "targetId": "c557-6102-9a35-bbcd",
+                    "type": "profile",
+                    "modifiers": [{"field": "name", "type": "append", "value": "(9)"}]
+                  },
+                  {"name": "Large Target", "id": "66e0-0a3b-b8d2-2432", "hidden": false, "targetId": "c822-7ad0-f24a-e4af", "type": "profile"},
+                  {
+                    "name": "Stomp Attacks",
+                    "id": "eb1d-04d8-d259-2e5e",
+                    "hidden": false,
+                    "targetId": "72db-24bb-7493-d753",
+                    "type": "profile",
+                    "modifiers": [{"field": "name", "type": "append", "value": "(D3)"}]
+                  },
+                  {"name": "Swiftstride", "id": "da3c-efba-db72-f617", "hidden": false, "targetId": "dc91-48b3-3696-217", "type": "profile"},
+                  {"name": "Terror", "id": "77c8-61bd-00eb-71af", "hidden": false, "targetId": "c7a2-35bf-4313-f4f0", "type": "profile"},
+                  {"name": "Wilful Beast", "id": "f7b4-82d7-52c3-7a65", "hidden": false, "targetId": "f24e-27a6-1012-86d2", "type": "profile"}
+                ]
+              }
+            ],
+            "infoLinks": [
+              {"name": "Manticore", "id": "51b5-759c-87a6-e675", "hidden": false, "targetId": "0117-fead-324f-65de", "type": "profile"},
+              {"name": "Base (60x100)", "id": "ba12-cc7b-be9b-d673", "hidden": false, "targetId": "5125-89a4-916a-eabd", "type": "profile"}
+            ],
+            "modifiers": [
+              {
+                "field": "hidden",
+                "type": "set",
+                "value": false,
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "b9658fae-bf8c9cb8", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {
+                        "childId": "80bf-d7fb-a5a9-1d2d",
+                        "childName": "Dark Elf Dreadlord",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              },
+              {"comment": "Unit strenght script", "field": "73ea-910d-c188-35d0", "type": "set", "value": 4}
+            ]
+          },
+          {
+            "name": "Dark Pegasus",
+            "id": "e0ce-4833-e28e-950c",
+            "hidden": true,
+            "import": true,
+            "sortIndex": 3,
+            "subType": "mount",
+            "type": "model",
+            "categoryLinks": [{"name": "Monstrous Cavalry", "id": "9380-cd7b-e16c-0914", "hidden": false, "primary": false, "targetId": "2c85-5f2b-9288-1257"}],
+            "constraints": [{"id": "4760-28ee-63d2-c646", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "costs": [{"name": "pts", "typeId": "points", "value": 35}],
+            "entryLinks": [
+              {
+                "name": "Hand Weapon",
+                "id": "6cdf-73d0-d41c-e1a2",
+                "hidden": false,
+                "import": true,
+                "targetId": "721d-36e3-388a-c0d6",
+                "type": "selectionEntry",
+                "constraints": [{"id": "92a5-f727-2e2a-b966", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+              }
+            ],
+            "infoGroups": [
+              {
+                "name": "Special Rules",
+                "id": "d5d6-c69a-5eaa-1fbd",
+                "hidden": false,
+                "infoLinks": [
+                  {
+                    "name": "Armour Bane",
+                    "id": "fa6b-f6d7-85c4-a948",
+                    "hidden": false,
+                    "targetId": "2af0-975f-bb14-8b8f",
+                    "type": "profile",
+                    "modifiers": [{"field": "name", "type": "append", "value": "(1, Dark Pegasus only)"}]
+                  },
+                  {"name": "Counter Charge", "id": "b9cc-3182-97a6-b431", "hidden": false, "targetId": "5186-798d-69d-6545", "type": "profile"},
+                  {"name": "First Charge", "id": "de48-7fa2-7617-2dd6", "hidden": false, "targetId": "785a-2886-af42-dce9", "type": "profile"},
+                  {
+                    "name": "Fly",
+                    "id": "1018-fe3c-d6a3-319d",
+                    "hidden": false,
+                    "targetId": "c557-6102-9a35-bbcd",
+                    "type": "profile",
+                    "modifiers": [{"field": "name", "type": "append", "value": "(10)"}]
+                  },
+                  {"name": "Swiftstride", "id": "4ae0-dcde-2abd-7562", "hidden": false, "targetId": "dc91-48b3-3696-217", "type": "profile"}
+                ]
+              }
+            ],
+            "infoLinks": [
+              {"name": "Dark Pegasus", "id": "7ddb-d4da-707c-8c61", "hidden": false, "targetId": "7a02-7923-9414-911f", "type": "profile"},
+              {"name": "Base (40x60)", "id": "25c2-630d-0dc3-378f", "hidden": false, "targetId": "edea-5f38-530a-57f1", "type": "profile"}
+            ],
+            "modifiers": [
+              {
+                "field": "hidden",
+                "type": "set",
+                "value": false,
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "d570962-f7ce68ac", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {"childId": "d9292409-23a541df", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {
+                        "childId": "80bf-d7fb-a5a9-1d2d",
+                        "childName": "Dark Elf Dreadlord",
+                        "comment": "\n",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      },
+                      {
+                        "childId": "2120-afe0-accb-30ce",
+                        "childName": "Dark Elf Master",
+                        "comment": "\n",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              },
+              {"comment": "Unit strenght script", "field": "73ea-910d-c188-35d0", "type": "set", "value": 3}
+            ]
+          },
+          {
+            "name": "Cauldron of Blood",
+            "id": "7b92-7096-0707-88c2",
+            "hidden": true,
+            "import": true,
+            "sortIndex": 7,
+            "subType": "mount",
+            "type": "model",
+            "categoryLinks": [
+              {"name": "Heavy Chariot", "id": "fd39-4969-9ed4-6414", "hidden": false, "primary": false, "targetId": "d768-7cf0-de0a-c249"},
+              {
+                "name": "1 single 'per 1000 points' selection in Battle March",
+                "id": "9de1-ab46-5760-e26f",
+                "comment": "Battle March Category",
+                "hidden": true,
+                "primary": false,
+                "targetId": "27c9-52f0-c942-681e"
+              }
+            ],
+            "constraints": [
+              {"id": "705f-f943-659a-97ec", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1},
+              {"id": "d951-5135-b438-4852", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "max", "value": 0}
+            ],
+            "costs": [{"name": "pts", "typeId": "points", "value": 150}],
+            "infoGroups": [
+              {
+                "name": "Special Rules",
+                "id": "899b-7c3f-4491-f079",
+                "hidden": false,
+                "infoLinks": [
+                  {"name": "Close Order", "id": "3c6b-7465-29d0-1472", "hidden": false, "targetId": "883e-e1b1-4fe9-5912", "type": "profile"},
+                  {"name": "Dragged Along", "id": "8dfa-6506-076f-2114", "hidden": false, "targetId": "a042-c2f5-ebcb-2bab", "type": "profile"},
+                  {"name": "Elven Reflexes", "id": "98ef-1c07-9ba1-8c04", "hidden": false, "targetId": "b4cb-3fa9-d302-03cd", "type": "profile"},
+                  {"name": "Frenzy", "id": "b242-86a7-8af7-f072", "hidden": false, "targetId": "3b0c-a477-8823-3a25", "type": "profile"},
+                  {
+                    "name": "Hatred",
+                    "id": "b48a-dd34-6763-39a8",
+                    "hidden": false,
+                    "targetId": "f4b3-18af-16bf-78dd",
+                    "type": "profile",
+                    "modifiers": [{"field": "name", "type": "append", "value": "(High Elves)"}]
+                  },
+                  {
+                    "name": "Impact Hits",
+                    "id": "ba7f-bcb1-09fc-b55a",
+                    "hidden": false,
+                    "targetId": "5c2-e9dd-2715-a0c0",
+                    "type": "profile",
+                    "modifiers": [{"field": "name", "type": "append", "value": "(D6+1)"}]
+                  },
+                  {"name": "Large Target", "id": "9c31-dce4-cd59-002f", "hidden": false, "targetId": "c822-7ad0-f24a-e4af", "type": "profile"},
+                  {
+                    "name": "Magic Resistance",
+                    "id": "b904-d374-f44f-16fa",
+                    "hidden": false,
+                    "targetId": "90ed-c9be-a611-79cc",
+                    "type": "profile",
+                    "modifiers": [{"field": "name", "type": "append", "value": "(-1)"}]
+                  },
+                  {"name": "Murderous", "id": "5540-b1e7-56d9-aa99", "hidden": false, "targetId": "7d46-0117-b69f-5d06", "type": "profile"},
+                  {"name": "Poisoned Attacks", "id": "cedf-cf23-520a-6827", "hidden": false, "targetId": "81f5-4895-4abc-fc39", "type": "profile"},
+                  {"name": "Terror", "id": "3c12-7781-6f16-dd44", "hidden": false, "targetId": "c7a2-35bf-4313-f4f0", "type": "profile"},
+                  {
+                    "name": "Armour Value",
+                    "id": "09a7-72ab-6bb8-8087",
+                    "hidden": false,
+                    "targetId": "e099-1ebb-9e85-34c8",
+                    "type": "profile",
+                    "modifiers": [{"field": "name", "type": "append", "value": ":  4+"}]
+                  },
+                  {
+                    "name": "Blessings Of Khaine",
+                    "id": "92bb-88c4-acd5-3933",
+                    "hidden": false,
+                    "targetId": "a1b1-565b-7d89-5769",
+                    "type": "profile",
+                    "modifiers": [
+                      {
+                        "comment": "Renegades",
+                        "field": "9f84-4221-785a-db50",
+                        "type": "set",
+                        "value": "Even if engaged in combat, this model can cast the following Bound spell, with a Power Level of 3:\n\n\nBlessings of Khaine",
+                        "conditions": [
+                          {
+                            "childId": "974c-3bf3-af4b-701d",
+                            "comment": "Renegades",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "force",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "infoLinks": [
+              {
+                "name": "Cauldron of Blood",
+                "id": "631c-13d8-9d9c-04d3",
+                "hidden": false,
+                "targetId": "d53b-9832-4da0-88ed",
+                "type": "profile",
+                "modifiers": [
+                  {
+                    "field": "83ed-7b82-bf1f-e558",
+                    "type": "set",
+                    "value": "(+5)",
+                    "conditions": [{"childId": "a4cc-15c9-cfae-1b3b", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ]
+              },
+              {"name": "Base (60x100)", "id": "48f6-e501-6f8b-35e9", "hidden": false, "targetId": "5125-89a4-916a-eabd", "type": "profile"},
+              {"name": "Cauldron of Blood", "id": "39ad-f12d-30d6-aa1e", "hidden": false, "targetId": "bb96-1acf-9e5d-a071", "type": "infoGroup"}
+            ],
+            "modifiers": [
+              {
+                "field": "hidden",
+                "type": "set",
+                "value": false,
+                "conditionGroups": [{"type": "or", "conditions": [{"childId": "1f988b3-6bcd6461", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]}]
+              },
+              {
+                "field": "d951-5135-b438-4852",
+                "type": "increment",
+                "value": 1,
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "8214-cf48-b1cd-5f5e", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                      {"childId": "1ae6-ed95-069e-a390", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                      {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                      {"childId": "0750-5d17-d708-f990", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                      {"childId": "e40a-36c4-0c66-472a", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "instanceOf", "value": 1}
+                    ]
+                  }
+                ],
+                "repeats": [{"id": "7674-86f8-d176-f5b2", "childId": "any", "field": "limit::points", "repeats": 1, "roundUp": false, "scope": "roster", "shared": true, "value": 1000}]
+              },
+              {
+                "field": "d951-5135-b438-4852",
+                "type": "increment",
+                "value": 1,
+                "conditionGroups": [
+                  {
+                    "type": "and",
+                    "conditions": [
+                      {"childId": "8214-cf48-b1cd-5f5e", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                      {"childId": "1ae6-ed95-069e-a390", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                      {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                      {"childId": "0750-5d17-d708-f990", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                      {"childId": "e40a-36c4-0c66-472a", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1}
+                    ]
+                  }
+                ],
+                "repeats": [
+                  {
+                    "id": "bde4-f2bd-3746-a98c",
+                    "childId": "any",
+                    "field": "points",
+                    "includeChildSelections": true,
+                    "repeats": 1,
+                    "roundUp": false,
+                    "scope": "force",
+                    "shared": true,
+                    "value": 1000
+                  }
+                ]
+              },
+              {
+                "comment": "Battle march",
+                "field": "d951-5135-b438-4852",
+                "type": "floor",
+                "value": 1,
+                "conditions": [{"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+              },
+              {"comment": "Unit strenght script", "field": "73ea-910d-c188-35d0", "type": "set", "value": 5}
+            ],
+            "profiles": [
+              {
+                "name": "Base (75x100)",
+                "id": "601e-7e79-7b3a-5209",
+                "hidden": false,
+                "typeId": "1ae4-7f34-4055-fd5f",
+                "typeName": "Base",
+                "characteristics": [{"name": "Base Size", "$text": "", "typeId": "1adf-d238-57ca-2226"}],
+                "modifiers": [{"field": "name", "type": "set", "value": "Base"}]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Witch Elf Crew",
+                "id": "d9f3-f2db-d6a6-c8e8",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "subType": "crew",
+                "type": "model",
+                "categoryLinks": [{"name": "CHARIOT CREW", "id": "6a7d-940a-c1a2-45e0", "hidden": false, "primary": false, "targetId": "4cf7-bf85-308d-c29a"}],
+                "constraints": [
+                  {"id": "69b6-be2d-f59e-3dbc", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 2},
+                  {"id": "3691-7b19-3d5f-f6b5", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": false, "type": "max", "value": 2}
+                ],
+                "costs": [{"name": "pts", "typeId": "points", "value": 0}],
+                "entryLinks": [
+                  {
+                    "name": "Two Hand Weapons",
+                    "id": "9ca5-a1b9-6752-68bb",
+                    "hidden": false,
+                    "import": true,
+                    "targetId": "a5bd-e584-3c96-550f",
+                    "type": "selectionEntry",
+                    "constraints": [{"id": "6b8d-062d-c3e8-2590", "field": "selections", "scope": "parent", "shared": false, "type": "min", "value": 1}]
+                  }
+                ],
+                "infoLinks": [{"name": "Witch Elf Crew", "id": "2d0d-6c9a-e18e-d6f0", "hidden": false, "targetId": "c0b6-2edf-5674-ea25", "type": "profile"}]
+              }
+            ]
           }
         ]
       }
