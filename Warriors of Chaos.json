@@ -20781,7 +20781,6 @@
           {
             "name": "Chaos Cultists",
             "id": "eaf2-c9b6-8664-e47d",
-            "sortIndex": 1,
             "type": "model",
             "categoryLinks": [{"name": "Regular Infantry", "id": "24a8-a770-1033-cb69", "hidden": false, "primary": false, "targetId": "f3f7-ca43-674e-115f"}],
             "constraints": [
@@ -20795,6 +20794,43 @@
             ],
             "modifiers": [{"comment": "Unit strenght script", "field": "73ea-910d-c188-35d0", "type": "set", "value": 1}],
             "selectionEntryGroups": [
+              {
+                "name": "Command",
+                "id": "f6ad-98ab-8d21-66f4",
+                "hidden": false,
+                "constraints": [{"id": "c373-0bec-503c-744f", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Apostle",
+                    "id": "6e51-8e77-1741-7080",
+                    "hidden": false,
+                    "subType": "crew",
+                    "type": "model",
+                    "constraints": [{"id": "1b22-b6de-304a-5c59", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "pts", "typeId": "points", "value": 7}],
+                    "profiles": [
+                      {
+                        "name": "Apostle",
+                        "id": "b355-92a4-4812-40ff",
+                        "hidden": false,
+                        "typeId": "b070-143a-73f-2772",
+                        "typeName": "Model",
+                        "characteristics": [
+                          {"name": "M", "$text": "4", "typeId": "cd3b-a5a4-e185-5a9d"},
+                          {"name": "WS", "$text": "3", "typeId": "b007-7d58-4f14-1e01"},
+                          {"name": "BS", "$text": "3", "typeId": "59f9-ccf5-1155-fb05"},
+                          {"name": "S", "$text": "3", "typeId": "5b6b-1427-2a45-dd0c"},
+                          {"name": "T", "$text": "3", "typeId": "ab43-8b61-83e7-d090"},
+                          {"name": "W", "$text": "1", "typeId": "83ed-7b82-bf1f-e558"},
+                          {"name": "I", "$text": "3", "typeId": "73b1-abe5-72f8-41e2"},
+                          {"name": "A", "$text": "2", "typeId": "dddc-9fbd-b0fd-a480"},
+                          {"name": "Ld", "$text": "7", "typeId": "c435-6b14-f77e-3c72"}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
               {
                 "name": "Weapons",
                 "id": "59b3-fd6b-c548-c49b",
@@ -20857,48 +20893,6 @@
                         "type": "selectionEntry",
                         "constraints": [{"id": "906b-3d50-ac3c-e60f", "field": "selections", "scope": "parent", "shared": true, "type": "min", "value": 1}]
                       }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "selectionEntryGroups": [
-          {
-            "name": "Command",
-            "id": "f6ad-98ab-8d21-66f4",
-            "hidden": false,
-            "sortIndex": 2,
-            "constraints": [{"id": "c373-0bec-503c-744f", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
-            "selectionEntries": [
-              {
-                "name": "Apostle",
-                "id": "6e51-8e77-1741-7080",
-                "hidden": false,
-                "import": true,
-                "subType": "crew",
-                "type": "model",
-                "associations": [{"name": "Chaos Cultist", "id": "eb00-5599-7a23-3964", "childId": "eaf2-c9b6-8664-e47d", "childName": "Chaos Cultists", "max": 1, "min": 1, "scope": "parent"}],
-                "constraints": [{"id": "1b22-b6de-304a-5c59", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
-                "costs": [{"name": "pts", "typeId": "points", "value": 7}],
-                "profiles": [
-                  {
-                    "name": "Apostle",
-                    "id": "b355-92a4-4812-40ff",
-                    "hidden": false,
-                    "typeId": "b070-143a-73f-2772",
-                    "typeName": "Model",
-                    "characteristics": [
-                      {"name": "M", "$text": "4", "typeId": "cd3b-a5a4-e185-5a9d"},
-                      {"name": "WS", "$text": "3", "typeId": "b007-7d58-4f14-1e01"},
-                      {"name": "BS", "$text": "3", "typeId": "59f9-ccf5-1155-fb05"},
-                      {"name": "S", "$text": "3", "typeId": "5b6b-1427-2a45-dd0c"},
-                      {"name": "T", "$text": "3", "typeId": "ab43-8b61-83e7-d090"},
-                      {"name": "W", "$text": "1", "typeId": "83ed-7b82-bf1f-e558"},
-                      {"name": "I", "$text": "3", "typeId": "73b1-abe5-72f8-41e2"},
-                      {"name": "A", "$text": "2", "typeId": "dddc-9fbd-b0fd-a480"},
-                      {"name": "Ld", "$text": "7", "typeId": "c435-6b14-f77e-3c72"}
                     ]
                   }
                 ]
@@ -21075,12 +21069,21 @@
                   {"id": "b54b-8544-b88a-b425", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}
                 ],
                 "entryLinks": [
-                  {"name": "Heavy Armour", "id": "02c5-44fc-8639-605b", "hidden": false, "import": true, "targetId": "62fb-f89d-afc-1cf1", "type": "selectionEntry"},
+                  {
+                    "name": "Heavy Armour",
+                    "id": "02c5-44fc-8639-605b",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "targetId": "62fb-f89d-afc-1cf1",
+                    "type": "selectionEntry"
+                  },
                   {
                     "name": "Full Plate Armour",
                     "id": "9285-7863-7e9c-7acb",
                     "hidden": false,
                     "import": true,
+                    "sortIndex": 2,
                     "targetId": "2505-873d-1655-3b0b",
                     "type": "selectionEntry",
                     "costs": [{"name": "pts", "typeId": "points", "value": 6}]
