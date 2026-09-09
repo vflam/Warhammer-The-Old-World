@@ -2848,7 +2848,7 @@
         "characteristics": [
           {
             "name": "Description",
-            "$text": "The Shield of the Mirror Pool is a shield. In addition, each time the bearer loses one or more Wounds to a Magic Missile, the caster suffers a single Strength 5 hit with an AP of -2.",
+            "$text": "The Shield of the Mirror Pool is a shield. In addition, any magic missile that strikes the bearer or any unit he is with is reflected on the roll of 4+ on a D6. If the spell is reflected, the caster (and their unit) become the target of the spell. The caster may make a Wizardly dispel attempt.",
             "typeId": "d6b2-9b2a-d88e-eec9"
           }
         ]
@@ -2924,7 +2924,7 @@
         ]
       },
       {
-        "name": "Jaguar Standard v2",
+        "name": "Jaguar Standard",
         "id": "2a9f-d63c-84be-17d5",
         "hidden": false,
         "typeId": "e3be-1b80-f570-96a1",
@@ -2952,7 +2952,7 @@
         ]
       },
       {
-        "name": "Sun Standard Of Chotec v2",
+        "name": "Sun Standard Of Chotec",
         "id": "c40b-9e51-7ad2-f68c",
         "hidden": false,
         "typeId": "e3be-1b80-f570-96a1",
@@ -3538,7 +3538,7 @@
         ]
       },
       {
-        "name": "Venom Of The Firefly Frog v2",
+        "name": "Venom Of The Firefly Frog",
         "id": "d94f-6b2a-e781-0c5d",
         "hidden": false,
         "typeId": "d29c-a3fb-dcdf-29d6",
@@ -3594,7 +3594,7 @@
         ]
       },
       {
-        "name": "Itxi Grub v2",
+        "name": "Itxi Grub",
         "id": "5e21-f8bd-3c47-9a10",
         "hidden": false,
         "typeId": "65d6-7512-2a53-bd6c",
@@ -12004,40 +12004,62 @@
                   {"id": "9eac-9143-f94b-eded", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 1}
                 ],
                 "costs": [{"name": "pts", "typeId": "points", "value": 40}],
-                "infoLinks": [{"name": "Shield Of The Mirror Pool", "id": "25f9-f10d-a2b7-8786", "hidden": false, "targetId": "47ef-6609-5d58-7ea5", "type": "profile"}],
-                "modifiers": [
+                "infoLinks": [
                   {
-                    "field": "hidden",
-                    "type": "set",
-                    "value": false,
-                    "conditions": [
-                      {"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
-                      {"childId": "may-have-shield", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                    "name": "Shield Of The Mirror Pool",
+                    "id": "25f9-f10d-a2b7-8786",
+                    "hidden": true,
+                    "targetId": "47ef-6609-5d58-7ea5",
+                    "type": "profile",
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": false,
+                        "conditions": [{"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Shield Of The Mirror Pool",
+                    "id": "d58a-f6ef-e1ed-e0ba",
+                    "hidden": true,
+                    "targetId": "47ef-6609-5d58-7ea5",
+                    "type": "profile",
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": false,
+                        "conditions": [
+                          {
+                            "childId": "f7b1-28cd-9e4a-5c60",
+                            "childName": "Faction: Lizardmen - Renegades v2",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
                     ]
                   }
-                ]
-              },
-              {
-                "name": "Shield Of The Mirror Pool",
-                "id": "68ca-b5f2-1d9e-a743",
-                "hidden": true,
-                "import": true,
-                "sortIndex": 11,
-                "type": "upgrade",
-                "constraints": [
-                  {"id": "14be-c79f-a852-d30e", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1},
-                  {"id": "4d7e-91ac-3f26-b8d0", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 1}
                 ],
-                "costs": [{"name": "pts", "typeId": "points", "value": 40}],
-                "infoLinks": [{"name": "Shield Of The Mirror Pool v2", "id": "9d37-e81a-4bc5-2f6d", "hidden": false, "targetId": "3f8a-c176-5ed9-b24f", "type": "profile"}],
                 "modifiers": [
                   {
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [
-                      {"childId": "f7b1-28cd-9e4a-5c60", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
-                      {"childId": "may-have-shield", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                    "conditionGroups": [
+                      {"type": "and", "conditions": [{"childId": "may-have-shield", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]},
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                          {"childId": "f7b1-28cd-9e4a-5c60", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                        ]
+                      }
                     ]
                   }
                 ]
@@ -15265,13 +15287,86 @@
             "type": "upgrade",
             "constraints": [{"id": "ba0e-34f9-4141-2d6c", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 1}],
             "costs": [{"name": "pts", "typeId": "points", "value": 20}],
-            "infoLinks": [{"name": "Jaguar Standard", "id": "482d-8e4c-2517-7e35", "hidden": false, "targetId": "55a-1c95-efc4-db70", "type": "profile"}],
+            "infoLinks": [
+              {
+                "name": "Jaguar Standard",
+                "id": "482d-8e4c-2517-7e35",
+                "hidden": true,
+                "targetId": "55a-1c95-efc4-db70",
+                "type": "profile",
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": false,
+                    "conditions": [
+                      {
+                        "childId": "be26-401b-c3e5-1869",
+                        "childName": "Faction: Lizardmen",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Jaguar Standard",
+                "id": "953a-3cf0-b628-31b6",
+                "hidden": true,
+                "targetId": "2a9f-d63c-84be-17d5",
+                "type": "profile",
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": false,
+                    "conditions": [{"childId": "f7b1-28cd-9e4a-5c60", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ]
+              }
+            ],
             "modifiers": [
               {
                 "field": "hidden",
                 "type": "set",
                 "value": false,
-                "conditions": [{"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "childId": "f7b1-28cd-9e4a-5c60",
+                        "childName": "Faction: Lizardmen - Renegades v2",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      },
+                      {"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                    ]
+                  }
+                ]
+              },
+              {
+                "field": "points",
+                "type": "set",
+                "value": 30,
+                "conditions": [
+                  {
+                    "childId": "f7b1-28cd-9e4a-5c60",
+                    "childName": "Faction: Lizardmen - Renegades v2",
+                    "field": "selections",
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  }
+                ]
               }
             ]
           },
@@ -15284,51 +15379,78 @@
             "type": "upgrade",
             "constraints": [{"id": "5968-94e1-5579-f0fa", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 1}],
             "costs": [{"name": "pts", "typeId": "points", "value": 40}],
-            "infoLinks": [{"name": "Sun Standard Of Chotec", "id": "39cd-854e-4b33-1921", "hidden": false, "targetId": "8576-b-680d-9bdc", "type": "profile"}],
-            "modifiers": [
+            "infoLinks": [
               {
-                "field": "hidden",
-                "type": "set",
-                "value": false,
-                "conditions": [{"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                "name": "Sun Standard Of Chotec",
+                "id": "39cd-854e-4b33-1921",
+                "hidden": true,
+                "targetId": "8576-b-680d-9bdc",
+                "type": "profile",
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": false,
+                    "conditions": [
+                      {
+                        "childId": "be26-401b-c3e5-1869",
+                        "childName": "Faction: Lizardmen",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Sun Standard Of Chotec",
+                "id": "f63e-bf7b-0dc2-d50b",
+                "hidden": true,
+                "targetId": "c40b-9e51-7ad2-f68c",
+                "type": "profile",
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": false,
+                    "conditions": [{"childId": "f7b1-28cd-9e4a-5c60", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ]
               }
-            ]
-          },
-          {
-            "name": "Sun Standard Of Chotec v2",
-            "id": "9e3c-7f5a-1d8b-2f0c",
-            "hidden": true,
-            "import": true,
-            "sortIndex": 102,
-            "type": "upgrade",
-            "constraints": [{"id": "f2a3-4b5c-6d7e-8f90", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 1}],
-            "costs": [{"name": "pts", "typeId": "points", "value": 65}],
-            "infoLinks": [{"name": "Sun Standard Of Chotec v2", "id": "d1f5-3c4e-5b6a-7e8d", "hidden": false, "targetId": "c40b-9e51-7ad2-f68c", "type": "profile"}],
+            ],
             "modifiers": [
               {
                 "field": "hidden",
                 "type": "set",
                 "value": false,
-                "conditions": [{"childId": "f7b1-28cd-9e4a-5c60", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
-              }
-            ]
-          },
-          {
-            "name": "Jaguar Standard v2",
-            "id": "6b19-ce40-7a53-2df8",
-            "hidden": true,
-            "import": true,
-            "sortIndex": 46,
-            "type": "upgrade",
-            "constraints": [{"id": "3c60-b7e9-15da-8f42", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 1}],
-            "costs": [{"name": "pts", "typeId": "points", "value": 30}],
-            "infoLinks": [{"name": "Jaguar Standard v2", "id": "a8f2-5d13-9e67-c04b", "hidden": false, "targetId": "2a9f-d63c-84be-17d5", "type": "profile"}],
-            "modifiers": [
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "f7b1-28cd-9e4a-5c60", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                    ]
+                  }
+                ]
+              },
               {
-                "field": "hidden",
+                "field": "points",
                 "type": "set",
-                "value": false,
-                "conditions": [{"childId": "f7b1-28cd-9e4a-5c60", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                "value": 65,
+                "conditions": [
+                  {
+                    "childId": "f7b1-28cd-9e4a-5c60",
+                    "childName": "Faction: Lizardmen - Renegades v2",
+                    "field": "selections",
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  }
+                ]
               }
             ]
           },
@@ -15374,7 +15496,23 @@
                 "field": "hidden",
                 "type": "set",
                 "value": false,
-                "conditions": [{"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                      {
+                        "childId": "f7b1-28cd-9e4a-5c60",
+                        "childName": "Faction: Lizardmen - Renegades v2",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -18939,13 +19077,80 @@
                 "type": "upgrade",
                 "constraints": [{"id": "2575-c88b-215-58ce", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 1}],
                 "costs": [{"name": "pts", "typeId": "points", "value": 15}],
-                "infoLinks": [{"name": "Venom Of The Firefly Frog", "id": "cbd-fc69-ea47-6a17", "hidden": false, "targetId": "86f2-d24e-5892-bb64", "type": "profile"}],
+                "infoLinks": [
+                  {
+                    "name": "Venom Of The Firefly Frog",
+                    "id": "cbd-fc69-ea47-6a17",
+                    "hidden": true,
+                    "targetId": "86f2-d24e-5892-bb64",
+                    "type": "profile",
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": false,
+                        "conditions": [
+                          {
+                            "childId": "be26-401b-c3e5-1869",
+                            "childName": "Faction: Lizardmen",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Venom Of The Firefly Frog",
+                    "id": "9529-ef8f-05c1-282f",
+                    "hidden": true,
+                    "targetId": "d94f-6b2a-e781-0c5d",
+                    "type": "profile",
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": false,
+                        "conditions": [
+                          {
+                            "childId": "f7b1-28cd-9e4a-5c60",
+                            "childName": "Faction: Lizardmen - Renegades v2",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
                 "modifiers": [
                   {
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [{"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {
+                            "childId": "f7b1-28cd-9e4a-5c60",
+                            "childName": "Faction: Lizardmen - Renegades v2",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          },
+                          {"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -20925,31 +21130,78 @@
                 "sortIndex": 18,
                 "type": "upgrade",
                 "costs": [{"name": "pts", "typeId": "points", "value": 30}],
-                "infoLinks": [{"name": "Itxi Grub", "id": "7150-6107-f854-f792", "hidden": false, "targetId": "36f5-8c01-bd14-19a9", "type": "profile"}],
-                "modifiers": [
+                "infoLinks": [
                   {
-                    "field": "hidden",
-                    "type": "set",
-                    "value": false,
-                    "conditions": [{"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "name": "Itxi Grub",
+                    "id": "7150-6107-f854-f792",
+                    "hidden": true,
+                    "targetId": "36f5-8c01-bd14-19a9",
+                    "type": "profile",
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": false,
+                        "conditions": [
+                          {
+                            "childId": "be26-401b-c3e5-1869",
+                            "childName": "Faction: Lizardmen",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Itxi Grub v2",
+                    "id": "71ac-1a8b-9942-a4e1",
+                    "hidden": true,
+                    "targetId": "5e21-f8bd-3c47-9a10",
+                    "type": "profile",
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": false,
+                        "conditions": [{"childId": "f7b1-28cd-9e4a-5c60", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ]
                   }
-                ]
-              },
-              {
-                "name": "Itxi Grub v2",
-                "id": "7c4a-d9e1-b38f-6a2d",
-                "hidden": true,
-                "import": true,
-                "sortIndex": 13,
-                "type": "upgrade",
-                "costs": [{"name": "pts", "typeId": "points", "value": 20}],
-                "infoLinks": [{"name": "Itxi Grub v2", "id": "e514-2a86-cd39-70b1", "hidden": false, "targetId": "5e21-f8bd-3c47-9a10", "type": "profile"}],
+                ],
                 "modifiers": [
                   {
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [{"childId": "f7b1-28cd-9e4a-5c60", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {"childId": "f7b1-28cd-9e4a-5c60", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                          {"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "field": "points",
+                    "type": "set",
+                    "value": 20,
+                    "conditions": [
+                      {
+                        "childId": "f7b1-28cd-9e4a-5c60",
+                        "childName": "Faction: Lizardmen - Renegades v2",
+                        "field": "selections",
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "instanceOf",
+                        "value": 1
+                      }
+                    ]
                   }
                 ]
               },
@@ -22149,7 +22401,23 @@
                     "field": "hidden",
                     "type": "set",
                     "value": false,
-                    "conditions": [{"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {
+                            "childId": "f7b1-28cd-9e4a-5c60",
+                            "childName": "Faction: Lizardmen - Renegades v2",
+                            "field": "selections",
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "instanceOf",
+                            "value": 1
+                          },
+                          {"childId": "be26-401b-c3e5-1869", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
