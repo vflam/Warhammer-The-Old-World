@@ -859,11 +859,6 @@ export default {
     }
 
     return [
-      report.debugCharacterStructure?.length
-        ? "<h3>Character structure</h3><pre>" +
-        JSON.stringify(report.debugCharacterStructure, null, 2) +
-        "</pre>"
-        : "",
       "<h2>Troop type special rules</h2>",
 
       "<ul>" +
