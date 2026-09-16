@@ -245,7 +245,7 @@ function resolveTroopTypes(node) {
    * For models that have selectable mounts, use the mount troop types
    * instead of the model/unit's infantry troop type.
    */
-  if (node.getType && node.getType() === "model" && hasMount(node)) {
+  if (node.getType && node.getType() === "model" && hasSelectableMount(node)) {
     const mountTypes = new Set();
 
     node.forEachObjectWhitelist((nested) => {
@@ -288,6 +288,31 @@ function resolveTroopTypes(node) {
   if (descendantTypes.size > 0) return descendantTypes;
 
   return new Set();
+}
+
+/**
+ * Returns true only when the node has a selectable "Mount" group — i.e. a
+ * child selection-entry-group named "Mount" that is not itself a mount node.
+ * Character models have this; chariot models with beast crew do not.
+ */
+function hasSelectableMount(node) {
+  let found = false;
+
+  node.forEachObjectWhitelist((nested) => {
+    if (found || nested === node) return;
+
+    const candidate = nested.target || nested;
+
+    if (
+      candidate &&
+      (candidate.name || "").toLowerCase() === "mount" &&
+      candidate.getType?.() !== "mount"
+    ) {
+      found = true;
+    }
+  });
+
+  return found;
 }
 
 /**
@@ -626,6 +651,18 @@ export default {
            * so its own troop-type rules can be linked directly.
            */
           if (kind === "mount") {
+            /**
+             * Mounts inside non-character units (cavalry horses, chariot crew)
+             * are handled by the unit branch. Skipping here prevents mount
+             * troop-type rules from bleeding into chariot units after shared
+             * mount models received their own troop-type category links.
+             *
+             * For character units the model branch already adds conditional
+             * rules (fires earlier in DFS order), so the unconditional add
+             * below becomes a no-op via the idempotency check in linkRules.
+             */
+            if (!isCharacterUnit(unit)) return;
+
             let any = false;
 
             for (const type of types) {
