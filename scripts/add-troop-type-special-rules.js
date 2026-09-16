@@ -544,7 +544,7 @@ function linkRules(
             field: "selections",
             scope: "self",
             childId: mount.id,
-            includeChildSelections: true,
+            includeChildSelections: false,
             shared: true,
           }));
 
