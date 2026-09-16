@@ -907,12 +907,12 @@ export default {
       "<h2>Troop type special rules</h2>",
 
       "<ul>" +
-      `<li>debug: <b>${report.debug.length > 0
-        ? report.debug
-          .map((d) => JSON.stringify(d))
-          .join(" ,")
-        : "None"
-      }</b></li>` +
+      // `<li>debug: <b>${report.debug.length > 0
+      //   ? report.debug
+      //     .map((d) => JSON.stringify(d))
+      //     .join(" ,")
+      //   : "None"
+      // }</b></li>` +
 
       `<li>links added: <b>${report.linksAdded}</b></li>` +
 
@@ -930,15 +930,15 @@ export default {
 
       "</ul>",
 
-      report.debugMountedUnits?.length
-        ? "<h3>mounted units</h3><pre>" +
-        JSON.stringify(
-          report.debugMountedUnits,
-          null,
-          2
-        ) +
-        "</pre>"
-        : "",
+      // report.debugMountedUnits?.length
+      //   ? "<h3>mounted units</h3><pre>" +
+      //   JSON.stringify(
+      //     report.debugMountedUnits,
+      //     null,
+      //     2
+      //   ) +
+      //   "</pre>"
+      //   : "",
 
       report.unresolved.length
         ? "<h3>Unresolved entries</h3><ul>" +
