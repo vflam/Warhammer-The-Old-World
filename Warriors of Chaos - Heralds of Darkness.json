@@ -8646,6 +8646,378 @@
             ]
           }
         ]
+      },
+      {
+        "name": "Champion of Ruin",
+        "id": "3044-ce3b-8474-fd89",
+        "hidden": false,
+        "import": true,
+        "targetId": "383f-0a82-c510-d40b",
+        "type": "selectionEntry",
+        "categoryLinks": [
+          {"name": "Characters", "id": "30f4-d1f9-d8b7-bbe5", "hidden": false, "primary": true, "targetId": "a4cc-15c9-cfae-1b3b"},
+          {"name": "Faction: Warriors of Chaos - Heralds of Darkness", "id": "c40b-54ca-f795-45aa", "hidden": false, "primary": false, "targetId": "6fdd-30cc-ac89-f73c"}
+        ],
+        "constraints": [
+          {
+            "id": "7f06-6173-d8b2-78ea",
+            "comment": "Grand melee",
+            "field": "points",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "percentValue": false,
+            "scope": "self",
+            "shared": true,
+            "type": "max",
+            "value": -1
+          },
+          {
+            "id": "ece9-e50e-0118-19b3",
+            "comment": "Combined arms",
+            "field": "selections",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "scope": "roster",
+            "shared": true,
+            "type": "max",
+            "value": -1
+          },
+          {
+            "id": "bf86-c0dc-3444-6350",
+            "comment": "Battle March points",
+            "field": "points",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "percentValue": false,
+            "scope": "self",
+            "shared": true,
+            "type": "max",
+            "value": -1
+          }
+        ],
+        "modifiers": [
+          {
+            "comment": "Grand melee",
+            "field": "7f06-6173-d8b2-78ea",
+            "type": "set",
+            "value": 0,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {
+                    "childId": "cdbe-ecb9-27cb-fd2b",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  },
+                  {
+                    "childId": "0750-5d17-d708-f990",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "comment": "Combined arms",
+            "field": "ece9-e50e-0118-19b3",
+            "type": "set",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "scope": "roster",
+                "shared": true,
+                "type": "atLeast",
+                "value": 2000
+              }
+            ]
+          },
+          {
+            "comment": "Combined arms",
+            "field": "ece9-e50e-0118-19b3",
+            "type": "set",
+            "value": 3,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "scope": "roster",
+                "shared": true,
+                "type": "lessThan",
+                "value": 2000
+              }
+            ]
+          },
+          {
+            "comment": "Battle March points",
+            "field": "bf86-c0dc-3444-6350",
+            "type": "set",
+            "value": 0,
+            "conditionGroups": [
+              {
+                "type": "and",
+                "conditions": [{"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+              }
+            ]
+          },
+          {
+            "comment": "Grand melee",
+            "field": "7f06-6173-d8b2-78ea",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {
+                    "childId": "cdbe-ecb9-27cb-fd2b",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  },
+                  {
+                    "childId": "0750-5d17-d708-f990",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "8214-cf48-b1cd-5f5e", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "roster",
+                "shared": true,
+                "value": 4
+              }
+            ]
+          },
+          {
+            "comment": "Grand melee",
+            "field": "7f06-6173-d8b2-78ea",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {
+                    "childId": "cdbe-ecb9-27cb-fd2b",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  },
+                  {
+                    "childId": "0750-5d17-d708-f990",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "ancestor",
+                    "shared": true,
+                    "type": "instanceOf",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "and",
+                "conditions": [
+                  {"childId": "8214-cf48-b1cd-5f5e", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "force",
+                "shared": true,
+                "value": 4
+              }
+            ]
+          },
+          {
+            "comment": "Combined arms",
+            "field": "ece9-e50e-0118-19b3",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "scope": "roster",
+                "shared": true,
+                "type": "atLeast",
+                "value": 2000
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "roster",
+                "shared": true,
+                "value": 1000
+              }
+            ]
+          },
+          {
+            "comment": "Battle March points",
+            "field": "bf86-c0dc-3444-6350",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "and",
+                "conditions": [{"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+              },
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "roster",
+                "shared": true,
+                "value": 4
+              }
+            ]
+          },
+          {
+            "comment": "Battle March points",
+            "field": "bf86-c0dc-3444-6350",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "and",
+                "conditions": [{"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+              },
+              {
+                "type": "and",
+                "conditions": [
+                  {"childId": "8214-cf48-b1cd-5f5e", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "cdbe-ecb9-27cb-fd2b", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1},
+                  {"childId": "e40a-36c4-0c66-472a", "field": "selections", "scope": "force", "shared": true, "type": "notInstanceOf", "value": 1}
+                ]
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "force",
+                "shared": true,
+                "value": 4
+              }
+            ]
+          }
+        ]
       }
     ],
     "infoLinks": [
