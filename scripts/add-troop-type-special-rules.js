@@ -834,7 +834,16 @@ export default {
             /**
              * Mount-derived rules:
              * hidden until the specific matching mount is selected.
+             *
+             * Aggregate mounts per rule ID across all types first — several
+             * troop types share the same rule (e.g. "Cavalry Support" appears
+             * for both light and heavy cavalry). Calling linkRules separately
+             * for each type would cause the second call to be silently skipped
+             * by the idempotency check, leaving the rule conditioned only on
+             * the first type's mounts.
              */
+            const ruleToMounts = new Map(); // rule.id → { rule, mounts: Set }
+
             for (const type of types) {
               const rules = TROOP_TYPE_SPECIAL_RULES[type];
 
@@ -846,14 +855,18 @@ export default {
 
               if (matchingMounts.length === 0) continue;
 
-              linkRules(
-                unit,
-                rules,
-                true,
-                report,
-                matchingMounts
-              );
+              for (const rule of rules) {
+                if (!ruleToMounts.has(rule.id)) {
+                  ruleToMounts.set(rule.id, { rule, mounts: new Set() });
+                }
+                for (const mount of matchingMounts) {
+                  ruleToMounts.get(rule.id).mounts.add(mount);
+                }
+              }
+            }
 
+            for (const { rule, mounts } of ruleToMounts.values()) {
+              linkRules(unit, [rule], true, report, [...mounts]);
               any = true;
             }
           } else {
