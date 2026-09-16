@@ -240,6 +240,38 @@ function isMountNode(node) {
   );
 }
 
+/**
+ * Returns true when `nested` (an entryLink or similar wrapper) represents a
+ * selectable mount option — either because its resolved target is a mount
+ * subtype, OR because the link itself carries the MOUNT category (used for
+ * chariot mounts that are plain model entries, not subType:"mount").
+ */
+function isMountLink(nested) {
+  const candidate = nested.target || nested;
+  if (isMountNode(candidate)) return true;
+  if (nested !== candidate) {
+    for (const cl of nested.categoryLinks || []) {
+      if (cl.targetId === MOUNT_CATEGORY_ID) return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * Collect troop types for a mount link, checking both the shared entry and
+ * the entryLink's own categoryLinks (which carry the type when categories
+ * live on the link rather than the shared entry).
+ */
+function troopTypesAtMountLink(nested) {
+  const candidate = nested.target || nested;
+  const found = new Set();
+  for (const type of troopTypesAtNode(candidate)) found.add(type);
+  if (nested !== candidate) {
+    for (const type of ownTroopTypes(nested)) found.add(type);
+  }
+  return found;
+}
+
 function resolveTroopTypes(node) {
   /**
    * For models that have selectable mounts, use the mount troop types
@@ -251,11 +283,9 @@ function resolveTroopTypes(node) {
     node.forEachObjectWhitelist((nested) => {
       if (nested === node) return;
 
-      const candidate = nested.target || nested;
+      if (!isMountLink(nested)) return;
 
-      if (!isMountNode(candidate)) return;
-
-      for (const type of troopTypesAtNode(candidate)) {
+      for (const type of troopTypesAtMountLink(nested)) {
         mountTypes.add(type);
       }
     });
@@ -765,17 +795,19 @@ export default {
           if (guarded) {
             const baseTypes = troopTypesAtNode(node);
             const allMounts = [];
+            const mountTypeMap = new Map(); // mount.id → Set of troop types
 
             node.forEachObjectWhitelist((nested) => {
               if (nested === node) return;
 
               const mount = nested.target || nested;
 
-              if (!isMountNode(mount)) return;
+              if (!isMountLink(nested)) return;
 
               if (!mount.id) return;
 
               allMounts.push(mount);
+              mountTypeMap.set(mount.id, troopTypesAtMountLink(nested));
             });
 
             /**
@@ -809,7 +841,7 @@ export default {
               if (!rules) continue;
 
               const matchingMounts = allMounts.filter((mount) =>
-                troopTypesAtNode(mount).has(type)
+                (mountTypeMap.get(mount.id) || troopTypesAtNode(mount)).has(type)
               );
 
               if (matchingMounts.length === 0) continue;
