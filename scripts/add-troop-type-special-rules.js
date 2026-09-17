@@ -537,16 +537,19 @@ function linkRules(
         });
       } else {
         const conditions = mounts
-          .filter((mount) => mount && mount.id)
-          .map((mount) => ({
-            type: "atLeast",
-            value: 1,
-            field: "selections",
-            scope: "self",
-            childId: mount.id,
-            includeChildSelections: true,
-            shared: true,
-          }));
+          .filter((m) => m && (m.id || m.linkId))
+          .map((m) => {
+            const useLink = m.linkId != null;
+            return {
+              type: "atLeast",
+              value: 1,
+              field: "selections",
+              scope: "self",
+              childId: useLink ? m.linkId : m.id,
+              includeChildSelections: true,
+              shared: !useLink,
+            };
+          });
 
         $store.add_node("modifiers", link, {
           type: "set",
@@ -797,18 +800,41 @@ export default {
             const allMounts = [];
             const mountTypeMap = new Map(); // mount.id → Set of troop types
 
+            // Collect only the top-level mount options from the Mount selection
+            // group. Deep traversal (forEachObjectWhitelist) would also visit
+            // sub-entries of chariot models (e.g. the War Boar inside an Orc
+            // Boar Chariot), which share the same shared-entry id as the
+            // directly-selectable War Boar, causing CS to fire incorrectly when
+            // the chariot is picked.
+            let mountGroupNode = null;
             node.forEachObjectWhitelist((nested) => {
-              if (nested === node) return;
-
-              const mount = nested.target || nested;
-
-              if (!isMountLink(nested)) return;
-
-              if (!mount.id) return;
-
-              allMounts.push(mount);
-              mountTypeMap.set(mount.id, troopTypesAtMountLink(nested));
+              if (mountGroupNode || nested === node) return;
+              const candidate = nested.target || nested;
+              if (
+                (candidate?.name || "").toLowerCase() === "mount" &&
+                candidate.getType?.() !== "mount"
+              ) {
+                mountGroupNode = candidate;
+              }
             });
+
+            if (mountGroupNode) {
+              const directLinks = [
+                ...(mountGroupNode.entryLinks || []),
+                ...(mountGroupNode.selectionEntries || []),
+              ];
+              for (const el of directLinks) {
+                if (!isMountLink(el)) continue;
+                const target = el.target || el;
+                if (!target?.id) continue;
+                // Store the entryLink id alongside the shared entry so the
+                // condition can target the specific mount option (shared:false)
+                // rather than any selection that resolves to the same shared
+                // entry id (shared:true).
+                allMounts.push({ linkId: el.id, id: target.id, target });
+                mountTypeMap.set(target.id, troopTypesAtMountLink(el));
+              }
+            }
 
             /**
              * Character's own Infantry rules:
@@ -849,8 +875,8 @@ export default {
 
               if (!rules) continue;
 
-              const matchingMounts = allMounts.filter((mount) =>
-                (mountTypeMap.get(mount.id) || troopTypesAtNode(mount)).has(type)
+              const matchingMounts = allMounts.filter((m) =>
+                (mountTypeMap.get(m.id) || troopTypesAtNode(m.target || m)).has(type)
               );
 
               if (matchingMounts.length === 0) continue;
