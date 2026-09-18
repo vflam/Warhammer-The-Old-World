@@ -612,17 +612,13 @@ export default {
       mountsProcessed: 0,
       unitsProcessed: 0,
       unresolved: [],
-      debug: [],
     };
 
     for (const catalogue of catalogues) {
       const pending = [];
 
       catalogue.forEachObjectWhitelist((node) => {
-        const debugDetails = {};
         const ancestors = [];
-
-        debugDetails.ancestors = ancestors;
 
         if (!isRealEntry(node)) return;
 
@@ -633,31 +629,6 @@ export default {
         }
 
         const types = resolveTroopTypes(node);
-
-        report.debugMountedUnits = report.debugMountedUnits || [];
-
-        report.debugMountedUnits.push({
-          name: node.name,
-          kind,
-          types: [...types],
-          hasMount: hasMount(node),
-          isCharacter: isCharacterUnit(node, report),
-          categoryLinks: node.categoryLinks
-            ? node.categoryLinks.map((category) => ({
-              name: category.name,
-              id: category.id,
-              targetId: category.targetId,
-              primary: category.primary,
-              target: category.target
-                ? {
-                  name: category.target.name,
-                  id: category.target.id,
-                  targetId: category.target.targetId,
-                }
-                : null,
-            }))
-            : null,
-        });
 
         if (types.size === 0) {
           if (shouldSkipUnresolved(node, types)) return;
@@ -917,7 +888,6 @@ export default {
           }
         });
 
-        report.debug.push(debugDetails);
       });
 
       /**
@@ -933,12 +903,6 @@ export default {
       "<h2>Troop type special rules</h2>",
 
       "<ul>" +
-      // `<li>debug: <b>${report.debug.length > 0
-      //   ? report.debug
-      //     .map((d) => JSON.stringify(d))
-      //     .join(" ,")
-      //   : "None"
-      // }</b></li>` +
 
       `<li>links added: <b>${report.linksAdded}</b></li>` +
 
@@ -955,16 +919,6 @@ export default {
       `<li>Special Rules groups created: <b>${report.groupsCreated}</b></li>` +
 
       "</ul>",
-
-      // report.debugMountedUnits?.length
-      //   ? "<h3>mounted units</h3><pre>" +
-      //   JSON.stringify(
-      //     report.debugMountedUnits,
-      //     null,
-      //     2
-      //   ) +
-      //   "</pre>"
-      //   : "",
 
       report.unresolved.length
         ? "<h3>Unresolved entries</h3><ul>" +
