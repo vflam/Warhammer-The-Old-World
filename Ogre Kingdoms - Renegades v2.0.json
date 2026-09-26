@@ -7218,6 +7218,46 @@
                 "value": 2000
               }
             ]
+          },
+          {
+            "comment": "Combined arms",
+            "field": "8ffb-56a8-8c9d-1453",
+            "type": "increment",
+            "value": 1,
+            "conditionGroups": [
+              {
+                "type": "or",
+                "conditions": [
+                  {"childId": "0750-5d17-d708-f990", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1},
+                  {"childId": "1ae6-ed95-069e-a390", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "scope": "roster",
+                "shared": true,
+                "type": "atLeast",
+                "value": 2000
+              }
+            ],
+            "repeats": [
+              {
+                "childId": "any",
+                "field": "limit::points",
+                "includeChildForces": true,
+                "includeChildSelections": true,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "roster",
+                "shared": true,
+                "value": 1000
+              }
+            ]
           }
         ]
       },
