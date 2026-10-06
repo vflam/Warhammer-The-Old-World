@@ -9016,7 +9016,7 @@
           {"name": "W", "$text": "3", "typeId": "83ed-7b82-bf1f-e558"},
           {"name": "I", "$text": "4", "typeId": "73b1-abe5-72f8-41e2"},
           {"name": "A", "$text": "2", "typeId": "dddc-9fbd-b0fd-a480"},
-          {"name": "Ld", "$text": "4", "typeId": "c435-6b14-f77e-3c72"}
+          {"name": "Ld", "$text": "5", "typeId": "c435-6b14-f77e-3c72"}
         ]
       },
       {
@@ -9555,26 +9555,6 @@
             "$text": "To other races, the cold blooded Lizardmen seem incapable of emotion.\n\nWhen required to make a Leadership or Break Test, models with this special rule may roll an extra D6 and discard the highest result.",
             "typeId": "9f84-4221-785a-db50"
           }
-        ],
-        "modifiers": [
-          {
-            "comment": "Renegades",
-            "field": "9f84-4221-785a-db50",
-            "type": "set",
-            "value": "When required to make a Leadership or Break Test, models with this special rule may roll an extra D6 and discard the highest result.\n",
-            "conditions": [
-              {
-                "childId": "974c-3bf3-af4b-701d",
-                "comment": "Renegades",
-                "field": "selections",
-                "includeChildSelections": true,
-                "scope": "force",
-                "shared": true,
-                "type": "atLeast",
-                "value": 1
-              }
-            ]
-          }
         ]
       },
       {
@@ -9711,10 +9691,14 @@
         "typeName": "Weapon",
         "characteristics": [
           {"name": "R", "$text": "12\"", "typeId": "2360-c777-5e07-ed58"},
-          {"name": "S", "$text": "4", "typeId": "ac19-f99c-72e9-a1a7"},
+          {"name": "S", "$text": "3", "typeId": "ac19-f99c-72e9-a1a7"},
           {"name": "AP", "$text": "-1", "typeId": "9429-ffe7-2ce5-e9a5"},
-          {"name": "Special Rules", "$text": "Move & Shoot, Quick Shot", "typeId": "5f83-3633-336b-93b4"},
-          {"name": "Notes", "typeId": "772a-a7ff-f6b3-df71"}
+          {"name": "Special Rules", "$text": "Move & Shoot, Needs More Nails, Quick Shot", "typeId": "5f83-3633-336b-93b4"},
+          {
+            "name": "Notes",
+            "$text": "Note: If the artillery dice result is a misfire, no shots are fired and D3 Skink Handlers are removed until there are none remaining. If no Skink Handlers remain when a misfire is rolled, a Razordon loses a wound instead.",
+            "typeId": "772a-a7ff-f6b3-df71"
+          }
         ]
       },
       {
@@ -9725,10 +9709,14 @@
         "typeName": "Weapon",
         "characteristics": [
           {"name": "R", "$text": "9\"", "typeId": "2360-c777-5e07-ed58"},
-          {"name": "S", "$text": "S+1", "typeId": "ac19-f99c-72e9-a1a7"},
+          {"name": "S", "$text": "4", "typeId": "ac19-f99c-72e9-a1a7"},
           {"name": "AP", "$text": "-", "typeId": "9429-ffe7-2ce5-e9a5"},
-          {"name": "Special Rules", "$text": "Flaming Attacks, Move & Shoot, Quick Shot", "typeId": "5f83-3633-336b-93b4"},
-          {"name": "Notes", "$text": "", "typeId": "772a-a7ff-f6b3-df71"}
+          {"name": "Special Rules", "$text": "Armourbane (1), Flaming Attacks, Move & Shoot, Quick Shot", "typeId": "5f83-3633-336b-93b4"},
+          {
+            "name": "Notes",
+            "$text": "Notes: A model armed with Fireleech Bolas suffers no negative modifiers for firing at long range. In addition, if the roll To Hit is successful, a Fireleech Bola causes D3 hits to the target enemy unit. ",
+            "typeId": "772a-a7ff-f6b3-df71"
+          }
         ]
       },
       {
@@ -10195,23 +10183,7 @@
         "import": true,
         "type": "upgrade",
         "constraints": [{"id": "80f0-77c0-c348-b4dd", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
-        "infoLinks": [
-          {
-            "name": "Razor barbs",
-            "id": "623baa01-25cb4557",
-            "hidden": false,
-            "targetId": "2637-b726-c17-321",
-            "type": "profile",
-            "modifiers": [
-              {"field": "2360-c777-5e07-ed58", "type": "set", "value": "0\""},
-              {
-                "field": "772a-a7ff-f6b3-df71",
-                "type": "set",
-                "value": "If the artillery dice result is a misfire, no shots are fired and D3 Skink Handlers are removed until there are none remaining. If no Skink Handlers remain when a misfire is rolled, the Razordon loses a wound instead."
-              }
-            ]
-          }
-        ]
+        "infoLinks": [{"name": "Razor barbs", "id": "623baa01-25cb4557", "hidden": false, "targetId": "2637-b726-c17-321", "type": "profile"}]
       },
       {
         "name": "Fireleech bolas",
@@ -10774,6 +10746,30 @@
                     "conditions": [
                       {"childId": "c96a-608-5de4-b943", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1},
                       {"childId": "mount", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1}
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "6a4a-b0a0-169b-ab95",
+                "comment": "if mounted",
+                "field": "category",
+                "type": "add",
+                "value": "5165-d052-cfc2-5887",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "childId": "f2250a12-2cf2f15c",
+                        "childName": "Cold One",
+                        "field": "selections",
+                        "includeChildSelections": true,
+                        "scope": "self",
+                        "shared": true,
+                        "type": "atLeast",
+                        "value": 1
+                      }
                     ]
                   }
                 ]
@@ -12966,8 +12962,7 @@
               {"name": "Beast Handlers", "id": "e7b6718-609fa082", "hidden": false, "targetId": "2d23-e868-8f64-7196", "type": "profile"},
               {"name": "Cold Blooded", "id": "9c8956bf-a9718ccd", "hidden": false, "targetId": "36e4-6605-cfed-f985", "type": "profile"},
               {"name": "Fear", "id": "b1c46b7a-225e6864", "hidden": false, "targetId": "5ec9-a98-d8c5-e18b", "type": "profile"},
-              {"name": "Skirmishers", "id": "543f296c-fe21eeb6", "hidden": false, "targetId": "59a5-7eca-ee35-96ac", "type": "profile"},
-              {"name": "Undisciplined", "id": "3984-d6e0-9eea-c874", "hidden": false, "targetId": "91d0-1ebd-4d28-5798", "type": "profile"}
+              {"name": "Skirmishers", "id": "543f296c-fe21eeb6", "hidden": false, "targetId": "59a5-7eca-ee35-96ac", "type": "profile"}
             ]
           }
         ],
@@ -13424,7 +13419,7 @@
                 "hidden": false,
                 "targetId": "5450-cbf1-3e74-254a",
                 "type": "profile",
-                "modifiers": [{"field": "name", "type": "append", "value": "(1)"}]
+                "modifiers": [{"field": "name", "type": "append", "value": "(2)"}]
               },
               {"name": "Cold Blooded", "id": "b55cc14e-9f4e5758", "hidden": false, "targetId": "36e4-6605-cfed-f985", "type": "profile"},
               {"name": "Drop Rocks", "id": "bf1c4242-7333520c", "hidden": false, "targetId": "2396-465a-571c-8e02", "type": "profile"},
@@ -13447,7 +13442,8 @@
               },
               {"name": "Skirmishers", "id": "703bd307-86ee1355", "hidden": false, "targetId": "59a5-7eca-ee35-96ac", "type": "profile"},
               {"name": "Swiftstride", "id": "3b62631d-40f960d3", "hidden": false, "targetId": "dc91-48b3-3696-217", "type": "profile"},
-              {"name": "Clumsy", "id": "e943-39d3-da43-231a", "hidden": false, "targetId": "27f5-cf1a-a64b-445c", "type": "profile"}
+              {"name": "Fire & Flee", "id": "1673-7377-e2f2-5120", "hidden": false, "targetId": "1a06-31aa-cbfe-1a5", "type": "profile"},
+              {"name": "Skink Riders", "id": "6a9c-b3aa-32d2-e6f3", "hidden": false, "targetId": "f3b8-7d1c-ae64-92bf", "type": "profile"}
             ]
           }
         ],
@@ -13718,7 +13714,6 @@
               {"name": "Skirmishers", "id": "4500a433-9abfa3e1", "hidden": false, "targetId": "59a5-7eca-ee35-96ac", "type": "profile"},
               {"name": "Swiftstride", "id": "24229a89-1a1f045f", "hidden": false, "targetId": "dc91-48b3-3696-217", "type": "profile"},
               {"name": "Toad Rage", "id": "d7b041f6-e3f3acc0", "hidden": false, "targetId": "401b-4fd5-8315-114", "type": "profile"},
-              {"name": "Clumsy", "id": "f518-2c06-3e55-72ae", "hidden": false, "targetId": "27f5-cf1a-a64b-445c", "type": "profile"},
               {"name": "Skink Riders", "id": "601a-40a7-a5c1-77fe", "hidden": false, "targetId": "f3b8-7d1c-ae64-92bf", "type": "profile"}
             ]
           }
@@ -14642,6 +14637,30 @@
                     "conditions": [
                       {"childId": "c96a-608-5de4-b943", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1},
                       {"childId": "mount", "field": "selections", "includeChildSelections": true, "scope": "self", "shared": true, "type": "atLeast", "value": 1}
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "7d10-181e-6f20-3b8b",
+                "comment": "if mounted",
+                "field": "category",
+                "type": "add",
+                "value": "5165-d052-cfc2-5887",
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "childId": "f2250a12-2cf2f15c",
+                        "childName": "Cold One",
+                        "field": "selections",
+                        "includeChildSelections": true,
+                        "scope": "self",
+                        "shared": true,
+                        "type": "atLeast",
+                        "value": 1
+                      }
                     ]
                   }
                 ]
@@ -15882,7 +15901,7 @@
                     "hidden": false,
                     "targetId": "5450-cbf1-3e74-254a",
                     "type": "profile",
-                    "modifiers": [{"field": "name", "type": "append", "value": "(1)"}]
+                    "modifiers": [{"field": "name", "type": "append", "value": "(2)"}]
                   },
                   {
                     "name": "Cleaving Blow",
@@ -15911,7 +15930,9 @@
                   },
                   {"name": "Impetuous", "id": "ccdf67ff-720d140d", "hidden": false, "targetId": "b664-8530-a988-7ba9", "type": "profile"},
                   {"name": "Swiftstride", "id": "4c4567c2-e6e74b8c", "hidden": false, "targetId": "dc91-48b3-3696-217", "type": "profile"},
-                  {"name": "Toad Rage", "id": "154fdf2a-837fbdd4", "hidden": false, "targetId": "401b-4fd5-8315-114", "type": "profile"}
+                  {"name": "Toad Rage", "id": "154fdf2a-837fbdd4", "hidden": false, "targetId": "401b-4fd5-8315-114", "type": "profile"},
+                  {"name": "Skink Riders", "id": "41ac-5f21-4240-a857", "hidden": false, "targetId": "f3b8-7d1c-ae64-92bf", "type": "profile"},
+                  {"name": "Counter Charge", "id": "4d2f-a559-98f5-3d9b", "hidden": false, "targetId": "5186-798d-69d-6545", "type": "profile"}
                 ]
               }
             ],
